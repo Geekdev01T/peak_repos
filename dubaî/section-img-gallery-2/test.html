@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Gallery</title>
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+            --sub-title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --transition-duration: 0.3s;
+            --expanded-height: 550px;
+            --expanded-mobile-height: 600px;
+            --collapsed-height: 200px;
+            --collapsed-width: 150px;
+            --section-margin-top: 1em;
+            --section-margin-bottom: 1em;
+            --section-padding-x: 3rem;
+            --btn-transform: uppercase;
+            --tertiary-btn-size: 14px;
+            --tertiary-btn-color: #212121;
+            --tertiary-btn-padding-x: 4rem;
+            --tertiary-btn-padding-y: 12px;
+            --tertiary-btn-border-width: 0px;
+            --tertiary-btn-border-color: #ffffff;
+            --tertiary-btn-background: #fff;
+            --tertiary-btn-background-hover: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .db-gal-container {
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-gal-container .db-gal-head {
+            margin: 0 auto;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .db-gal-container .db-gal-head .db-sub-title {
+            font-size: var(--sub-title-size);
+            color: var(--primary-color);
+            text-transform: var(--sub-title-text-transform);
+        }
+
+        .db-gal-container .db-gal-head .db-title {
+            font-size: var(--title-size);
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+        }
+
+        .db-gal-container .db-gallery {
+            display: flex;
+            gap: 4px;
+            padding: 1rem;
+            margin: 0 auto;
+            min-height: var(--expanded-height);
+        }
+
+        .db-gal-container .db-gallery-item {
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-duration) ease;
+            flex: 0 0 var(--collapsed-width);
+            height: var(--expanded-height);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style pour le titre vertical */
+        .db-gal-container .db-gallery-item .db-vertical-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            padding-left: .8em;
+            justify-content: start;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            transition: opacity var(--transition-duration) ease;
+        }
+
+        .db-gal-container .db-gallery-item .db-vertical-title span {
+            color: white;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .db-gal-container .db-gallery-item.expanded .db-vertical-title {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .db-gal-container .db-gallery-item.expanded {
+            flex: 1;
+            /* height: 600px; */
+        }
+
+        .db-gal-container .db-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-gal-container .db-gallery-item .db-gallery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            color: white;
+            padding-top: 2rem;
+            padding-left: var(--section-padding-x);
+            padding-bottom: 3rem;
+            opacity: 0;
+            transition: opacity var(--transition-duration) ease;
+        }
+
+        .db-gallery-item.expanded .db-gallery-content {
+            opacity: 1;
+        }
+
+        .db-gal-container .db-gallery-item .db-gallery-content .db-item-title {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .db-gal-container .db-gallery-item .db-gallery-content .db-item-text {
+            font-size: var(--text-content-size);
+            font-weight: lighter;
+            margin-bottom: 14px;
+        }
+
+        .db-gal-container .db-gallery-item .db-gallery-content .db-visit-btn {
+            margin-top: 12px;
+            padding: var(--tertiary-btn-padding-y) var(--tertiary-btn-padding-x);
+            font-size: var(--tertiary-btn-size);
+            color: var(--tertiary-btn-color);
+            background: var(--tertiary-btn-background);
+            border: var(--tertiary-btn-border-width) solid var(--tertiary-btn-border-color);
+            text-transform: var(--btn-transform);
+            cursor: pointer;
+            transform: color var(--transition-duration) ease;
+        }
+
+        .db-gal-container .db-gallery-item .db-gallery-content .db-visit-btn:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .db-gal-container .db-gal-head .db-sub-title {
+                font-size: var(--sub-title-mobile-size);
+            }
+
+            .db-gal-container .db-gal-head .db-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-gal-container .db-gallery {
+                flex-direction: column;
+            }
+
+            .db-gal-container .db-gallery-item {
+                height: var(--collapsed-height);
+                width: 100%;
+                transition: height var(--transition-duration) ease;
+            }
+
+            /* Modifications pour le titre horizontal et centré sur mobile */
+            .db-gal-container .db-gallery-item .db-vertical-title {
+                justify-content: center;
+                padding: 0;
+            }
+
+            .db-gal-container .db-gallery-item .db-vertical-title span {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 25px;
+                text-align: center;
+                letter-spacing: 2px;
+            }
+
+            .db-gal-container .db-gallery-item.expanded {
+                height: var(--expanded-mobile-height);
+            }
+
+            .db-gal-container .db-collapsed-row {
+                display: flex;
+                gap: 0.5rem;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .db-gal-container .db-collapsed-row .db-gallery-item {
+                flex: 0 0 var(--collapsed-width);
+                height: var(--collapsed-height);
+            }
+
+            .db-gal-container .db-gallery-item .db-gallery-content {
+                padding-left: 1rem;
+            }
+
+            .db-collapsed-row .db-gallery-item .db-gallery-content {
+                display: none;
+            }
+
+            .db-collapsed-row .db-gallery-item .db-vertical-title {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .db-collapsed-row .db-gallery-item.active::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
+
+            .db-gal-container .db-gallery-item .db-gallery-content .db-item-title {
+                font-size: 28px;
+            }
+
+            .db-gal-container .db-gallery-item .db-gallery-content .db-item-text {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="db-gal-container">
+
+        <div class="db-gal-head">
+            <p class="db-sub-title">Lorem Ipsum</p>
+            <h2 class="db-title">Lorem ipsum dolor sit</h2>
+        </div>
+
+        <div class="db-gallery" id="db-gallery">
+            <div class="db-gallery-item expanded" data-index="0">
+                <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Pastel-Pink-Bridal-Gown-4.webp"
+                    alt="Fashion 1">
+                <div class="db-vertical-title">
+                    <span>LOREM IPSUM DOLOR</span>
+                </div>
+                <div class="db-gallery-content">
+                    <h3 class="db-item-title">LOREM IPSUM DOLOR</h3>
+                    <p class="db-item-text">Lorem ipsum dolor sit amet</p>
+                    <button class="db-visit-btn">VISITED</button>
+                </div>
+            </div>
+            <div class="db-gallery-item" data-index="1">
+                <img src="https://assets2.andaazfashion.com/media/catalog/product/cache/1/image/500x750/a12781a7f2ccb3d663f7fd01e1bd2e4e/r/u/ruby-pink-art-silk-embroidered-anarkali-suit-lstv122737-1.jpg"
+                    alt="Fashion 2">
+                <div class="db-vertical-title">
+                    <span>IPSUM FESTIVAL</span>
+                </div>
+                <div class="db-gallery-content">
+                    <h3 class="db-item-title">IPSUM FESTIVAL</h3>
+                    <p class="db-item-text">Lorem ipsum dolor sit amet</p>
+                    <button class="db-visit-btn">VISITED</button>
+                </div>
+            </div>
+            <div class="db-gallery-item" data-index="2">
+                <img src="https://missindya.fr/c/8-medium_default/tenue-indienne-salwar-kameez-anarkali-churidar.jpg"
+                    alt="Fashion 3">
+                <div class="db-vertical-title">
+                    <span>DOLOR COLLECTION</span>
+                </div>
+                <div class="db-gallery-content">
+                    <h3 class="db-item-title">DOLOR COLLECTION</h3>
+                    <p class="db-item-text">Lorem ipsum dolor sit amet</p>
+                    <button class="db-visit-btn">VISITED</button>
+                </div>
+            </div>
+            <div class="db-gallery-item" data-index="3">
+                <img src="https://missindya.fr/1448-medium_default/robe-indienne-de-soiree-gris-et-doree.jpg"
+                    alt="Fashion 4">
+                <div class="db-vertical-title">
+                    <span>SIT AMET SERIES</span>
+                </div>
+                <div class="db-gallery-content">
+                    <h3 class="db-item-title">SIT AMET SERIES</h3>
+                    <p class="db-item-text">Lorem ipsum dolor sit amet</p>
+                    <button class="db-visit-btn">VISITED</button>
+                </div>
+            </div>
+            <div class="db-gallery-item" data-index="4">
+                <img src="https://m.media-amazon.com/images/I/61qNtBAbCIL._AC_UY1000_.jpg" alt="Fashion 5">
+                <div class="db-vertical-title">
+                    <span>SIT AMET SERIES</span>
+                </div>
+                <div class="db-gallery-content">
+                    <h3 class="db-item-title">SIT AMET SERIES</h3>
+                    <p class="db-item-text">Lorem ipsum dolor sit amet</p>
+                    <button class="db-visit-btn">VISITED</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // class ExpandingGallery {
+        //     constructor(galleryElement) {
+        //         this.gallery = galleryElement;
+        //         this.items = Array.from(this.gallery.querySelectorAll('.db-gallery-item'));
+        //         this.isMobile = window.innerWidth <= 768;
+        //         this.init();
+        //     }
+
+        //     init() {
+        //         this.setupEventListeners();
+        //         if (this.isMobile) {
+        //             this.setupMobileLayout();
+        //         }
+        //     }
+
+        //     setupEventListeners() {
+        //         this.items.forEach(item => {
+        //             item.addEventListener('click', () => this.expandItem(item));
+        //         });
+
+        //         window.addEventListener('resize', () => {
+        //             const wasMobile = this.isMobile;
+        //             this.isMobile = window.innerWidth <= 768;
+        //             if (wasMobile !== this.isMobile) {
+        //                 this.handleLayoutChange();
+        //             }
+        //         });
+        //     }
+
+        //     expandItem(clickedItem) {
+        //         const index = clickedItem.dataset.index;
+        //         this.items.forEach(item => {
+        //             item.classList.remove('expanded');
+        //             item.classList.remove('active');
+        //         });
+        //         clickedItem.classList.add('expanded');
+        //         clickedItem.classList.add('active');
+
+        //         if (this.isMobile) {
+        //             this.updateMobileLayout(index);
+        //         }
+        //     }
+
+        //     setupMobileLayout() {
+        //         const expandedIndex = this.items.findIndex(item =>
+        //             item.classList.contains('expanded'));
+        //         this.updateMobileLayout(expandedIndex);
+        //     }
+
+        //     updateMobileLayout(expandedIndex) {
+        //         // Nettoyer la galerie
+        //         this.gallery.innerHTML = '';
+
+        //         // Créer le conteneur pour l'élément étendu
+        //         const expandedContainer = document.createElement('div');
+        //         expandedContainer.className = 'db-expanded-container';
+
+        //         // Créer la rangée pour tous les éléments
+        //         const collapsedRow = document.createElement('div');
+        //         collapsedRow.className = 'db-collapsed-row';
+
+        //         // Cloner l'élément étendu pour l'afficher en haut
+        //         const expandedItemClone = this.items[expandedIndex].cloneNode(true);
+        //         expandedItemClone.classList.add('expanded');
+        //         expandedContainer.appendChild(expandedItemClone);
+
+        //         // Ajouter tous les éléments dans la rangée du bas
+        //         this.items.forEach((item, index) => {
+        //             const itemClone = item.cloneNode(true);
+        //             itemClone.classList.toggle('expanded', index === parseInt(expandedIndex));
+        //             itemClone.classList.toggle('active', index === parseInt(expandedIndex));
+        //             // Masquer le contenu détaillé dans la rangée du bas
+        //             itemClone.querySelector('.db-gallery-content').style.display = 'none';
+        //             collapsedRow.appendChild(itemClone);
+        //         });
+
+        //         // Ajouter les conteneurs à la galerie
+        //         this.gallery.appendChild(expandedContainer);
+        //         this.gallery.appendChild(collapsedRow);
+
+        //         // Réattacher les écouteurs d'événements
+        //         collapsedRow.querySelectorAll('.db-gallery-item').forEach(item => {
+        //             item.addEventListener('click', () => {
+        //                 const index = item.dataset.index;
+        //                 this.expandItem(this.items[index]);
+        //             });
+        //         });
+        //     }
+
+        //     handleLayoutChange() {
+        //         if (this.isMobile) {
+        //             this.setupMobileLayout();
+        //         } else {
+        //             // Restaurer la disposition desktop
+        //             this.gallery.innerHTML = '';
+        //             this.items.forEach(item => {
+        //                 this.gallery.appendChild(item);
+        //             });
+        //         }
+        //     }
+        // }
+
+        class ExpandingGallery {
+                constructor(galleryElement) {
+                    this.gallery = galleryElement;
+                    this.items = Array.from(this.gallery.querySelectorAll('.db-gallery-item'));
+                    this.init();
+                }
+
+                init() {
+                    this.setupEventListeners();
+                }
+
+                setupEventListeners() {
+                    this.items.forEach(item => {
+                        item.addEventListener('click', () => this.expandItem(item));
+                    });
+                }
+
+                expandItem(clickedItem) {
+                    this.items.forEach(item => {
+                        item.classList.remove('expanded');
+                    });
+                    clickedItem.classList.add('expanded');
+                }
+            }
+
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     new ExpandingGallery(document.getElementById('db-gallery'));
+            // });
+
+        // Initialiser la galerie
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = new ExpandingGallery(document.getElementById('db-gallery'));
+        });
+    </script>
+</body>
+
+</html>

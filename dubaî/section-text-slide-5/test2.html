@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #333;
+            --accent-color: #f3a847;
+            --text-color: #666;
+            --original-price-color: #999;
+            --sale-badge-color: var(--accent-color);
+            --max-width: 1200px;
+            --spacing-md: 2rem;
+            --spacing-sm: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .hero-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: flex-start;
+            /* Changed from center to flex-start */
+            gap: var(--spacing-md);
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-top: var(--spacing-md);
+        }
+
+        .hero-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-subtitle {
+            color: var(--text-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .slider-container {
+            flex: 2;
+            max-width: 800px;
+            /* Added max-width */
+        }
+
+        .swiper {
+            width: 100%;
+        }
+
+        .product-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 133.33%;
+            /* Aspect ratio 3:4 */
+            overflow: hidden;
+        }
+
+        .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--sale-badge-color);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .product-info {
+            padding: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .product-name {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .original-price {
+            color: var(--original-price-color);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                padding: var(--spacing-sm);
+            }
+
+            .hero-content {
+                text-align: center;
+                margin-bottom: var(--spacing-md);
+                padding-top: 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .slider-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum</h2>
+            <p class="hero-subtitle">lorem ipsum dolor sit amet conquistator lorem</p>
+            <a href="#" class="cta-button">Découvrir</a>
+        </div>
+
+        <div class="slider-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <span class="sale-badge">-20%</span>
+                            <div class="product-image-wrapper">
+                                <img src="https://m.media-amazon.com/images/I/81qHoIVYWIL._AC_UY1000_.jpg"
+                                    alt="Product 1" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Product's Name</h3>
+                                <p class="product-price">€35,90 <span class="original-price">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <span class="sale-badge">-20%</span>
+                            <div class="product-image-wrapper">
+                                <img src="https://m.media-amazon.com/images/I/81qHoIVYWIL._AC_UY1000_.jpg" alt="Product 2" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Product's Name</h3>
+                                <p class="product-price">€35,90 <span class="original-price">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="https://m.media-amazon.com/images/I/81qHoIVYWIL._AC_UY1000_.jpg" alt="Product 3" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Product's Name</h3>
+                                <p class="product-price">€35,90 <span class="original-price">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <img src="https://m.media-amazon.com/images/I/81qHoIVYWIL._AC_UY1000_.jpg" alt="Product 4" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Product's Name</h3>
+                                <p class="product-price">€35,90 <span class="original-price">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

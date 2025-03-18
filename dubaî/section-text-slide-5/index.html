@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --section-bg-color:#F5F5F5;
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+            --sub-title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --secondary-btn-size: 16px;
+            --btn-transform: uppercase;
+            --secondary-btn-color: #ffffff;
+            --secondary-btn-padding-x: 3rem;
+            --secondary-btn-padding-y: 10px;
+            --secondary-btn-border-width: 1px;
+            --secondary-btn-border-color: #000000;
+            --secondary-btn-shadow-color: #000000;
+            --secondary-btn-background: transparent;
+            --secondary-btn-radius: 0px;
+            --secondary-btn-background-hover: #212121;
+            --accent-color: #f3a847;
+            --original-price-color: #999;
+            --page-width: 1200px;
+            --section-padding-x: 3rem;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --section-mobile-padding-x: 2rem;
+            --section-mobile-padding-y: 2rem;
+            --transition-duration: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .db-prod_slider-section {
+            /* max-width: var(--page-width); */
+            margin: 0 auto;
+            padding: var(--section-padding-y) var(--section-padding-x);
+            display: flex;
+            align-items: flex-start;
+            gap: 1em;
+            background: var(--section-bg-color);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-prod_slider-section .db-prod_slider-content {
+            flex: 1;
+        }
+
+        .db-prod_slider-section .db-prod_slider-content .db-prod_slider-sub-title {
+            color: var(--primary-color);
+            font-size: var(--sub-title-size);
+            text-transform: var(--sub-title-text-transform);
+        }
+
+        .db-prod_slider-section .db-prod_slider-content .db-prod_slider-title {
+            color: var(--secondary-color);
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            margin-bottom: 0.2em;
+        }
+
+        .db-prod_slider-section .db-prod_slider-content .db-prod_slider-text-content {
+            color: var(--secondary-color);
+            font-size: var(--text-content-size);
+            margin-bottom: 1em;
+            width: 70%;
+        }
+
+        .db-prod_slider-section .db-prod_slider-content .db-prod_slider-cta {
+            display: inline-block;
+            padding: var(--secondary-btn-padding-y) var(--secondary-btn-padding-x);
+            background-color: var(--secondary-btn-background);
+            font-size: var(--secondary-btn-size);
+            color: var(--secondary-color);
+            border: var(--secondary-btn-border-width) solid var(--secondary-btn-border-color);
+            box-shadow: 0px 0px 2px var(--secondary-btn-shadow-color);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            border-radius: var(--secondary-btn-radius);
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-prod_slider-section .db-prod_slider-content .db-prod_slider-cta:hover {
+            color: var(--text-color);
+            background: var(--secondary-btn-background-hover);
+            border-color: var(--secondary-btn-background-hover);
+            box-shadow: 0px 0px 2px var(--secondary-btn-background-hover);
+        }
+
+        .db-prod_slider-section .db-prod_slider-container {
+            flex: 2;
+            max-width: 800px;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .swiper {
+            width: 100%;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 160%;
+            /* Changé de 133.33% à 150% pour des images plus hautes */
+            overflow: hidden;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 38px;
+            height: 38px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 13px;
+            transform: rotate(20deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-sale {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F5F5F5;
+            color: var(--secondary-color);
+            font-size: 14px;
+            padding: 0.1em 1.4em;
+            z-index: 1;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-info {
+            padding: 1em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-name {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-price {
+            color: var(--primary-color);
+            font-size: 17px;
+        }
+
+        .db-prod_slider-section .db-prod_slider-container .db-prod_slider-price-original {
+            color: var(--original-price-color);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .db-prod_slider-section {
+                flex-direction: column;
+                padding: var(--section-mobile-padding-y) var(--section-mobile-padding-x);
+            }
+
+            .db-prod_slider-section .db-prod_slider-content {
+                text-align: center;
+                margin-bottom: 1em;
+            }
+
+            .db-prod_slider-section .db-prod_slider-content .db-prod_slider-sub-title {
+                font-size: var(--sub-title-mobile-size);
+            }
+
+            .db-prod_slider-section .db-prod_slider-content .db-prod_slider-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-prod_slider-section .db-prod_slider-content .db-prod_slider-text-content {
+                font-size: var(--text-content-mobile-size);
+                width: 100%;
+            }
+
+
+            .db-prod_slider-section .db-prod_slider-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-prod_slider-section">
+        <div class="db-prod_slider-content">
+            <p class="db-prod_slider-sub-title">Lorem Ipsum</p>
+            <h2 class="db-prod_slider-title">Lorem Ipsum</h2>
+            <p class="db-prod_slider-text-content">lorem ipsum dolor sit amet conquistator lorem</p>
+            <a href="#" class="db-prod_slider-cta">Découvrir</a>
+        </div>
+
+        <div class="db-prod_slider-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="db-prod_slider-card">
+                            <span class="db-prod_slider-badge">-20%</span>
+                            <div class="db-prod_slider-image-wrapper">
+                                <img src="https://m.media-amazon.com/images/I/81qHoIVYWIL._AC_UY1000_.jpg"
+                                    alt="Product 1" class="db-prod_slider-image">
+                            </div>
+                            <div class="db-prod_slider-info">
+                                <h3 class="db-prod_slider-name">Product's Name</h3>
+                                <p class="db-prod_slider-price">€35,90 <span
+                                        class="db-prod_slider-price-original">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="db-prod_slider-card">
+                            <span class="db-prod_slider-badge">-20%</span>
+                            <div class="db-prod_slider-image-wrapper">
+                                <img src="https://i0.wp.com/shopkund.wordpress.com/wp-content/uploads/2020/07/prq5456-cream-net-anarkali-suits-as2442.jpg?w=158&h=237&ssl=1"
+                                    alt="Product 2" class="db-prod_slider-image">
+                            </div>
+                            <div class="db-prod_slider-info">
+                                <h3 class="db-prod_slider-name">Product's Name</h3>
+                                <p class="db-prod_slider-price">€35,90 <span
+                                        class="db-prod_slider-price-original">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="db-prod_slider-card">
+                            <div class="db-prod_slider-image-wrapper">
+                                <img src="https://i.pinimg.com/550x/84/6d/ed/846ded1694ecda79cc580292643b784d.jpg"
+                                    alt="Product 3" class="db-prod_slider-image">
+                            </div>
+                            <div class="db-prod_slider-info">
+                                <h3 class="db-prod_slider-name">Product's Name</h3>
+                                <p class="db-prod_slider-price">€35,90 <span
+                                        class="db-prod_slider-price-original">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="db-prod_slider-card">
+                            <span class="db-prod_slider-sale">sale</span>
+                            <div class="db-prod_slider-image-wrapper">
+                                <img src="https://missindya.fr/c/57-medium_default/lehenga-choli-livraison-express.jpg"
+                                    alt="Product 4" class="db-prod_slider-image">
+                            </div>
+                            <div class="db-prod_slider-info">
+                                <h3 class="db-prod_slider-name">Product's Name</h3>
+                                <p class="db-prod_slider-price">€35,90 <span
+                                        class="db-prod_slider-price-original">€38,50</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1.5,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3.5,
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

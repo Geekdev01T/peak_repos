@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --text-color: #ffffff;
+            --overlay-color: rgba(0, 0, 0, 0.2);
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --btn-transform: uppercase;
+            --primary-btn-size: 14px;
+            --primary-btn-color: #ffffff;
+            --primary-btn-padding-x: 5rem;
+            --primary-btn-padding-y: 18px;
+            --primary-btn-border-width: 1px;
+            --primary-btn-border-color: #ffffff;
+            --primary-btn-background: transparent;
+            --primary-btn-background-hover: #ffffff;
+            --section-height: 90vh;
+            --section-max-height:500px;
+            --section-padding-x:3rem;
+            --section-padding-y:3rem;
+            --section-margin-top:1rem;
+            --section-margin-bottom:1rem;
+            --section-mobile-padding-x:2rem;
+            --section-mobile-padding-y:2rem;
+            --transition-duration:0.3s;
+        }
+
+        .db-ban-section {
+            position: relative;
+            height: var(--section-height);
+            max-height: var(--section-min-height);
+            background-image: linear-gradient(var(--overlay-color), var(--overlay-color)),
+                url('https://sudathi.com/cdn/shop/articles/Green_Illustrated_Marketing_Blog_Facebook_Cover_-compressed_3e08d64f-b58e-4c23-906d-b228958a3ad6.jpg?v=1712843926');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: var(--section-padding-y) var(--section-padding-x);
+            margin-top:var(--section-margin-top) ;
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-ban-section .db-ban-content {
+            max-width: 600px;
+            margin-top: -2rem;
+            color: var(--text-color);
+        }
+
+        .db-ban-section .db-ban-content .db-ban-title {
+            font-size: var(--title-size);
+            margin-bottom: 0.8rem;
+            text-transform: var(--title-text-transform);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .db-ban-section .db-ban-content .db-ban-subtitle {
+            font-size: var(--text-content-size);
+            margin-bottom: 2.2rem;
+            opacity: 0.9;
+        }
+
+        .db-ban-section .db-ban-content .db-cta-button {
+            display: inline-block;
+            padding: var(--primary-btn-padding-y) var(--primary-btn-padding-x);
+            border: var(--primary-btn-border-width) solid var(--primary-btn-border-color);
+            color: var(--text-color);
+            background: var(--primary-btn-background);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            font-size: var(--primary-btn-size);
+            letter-spacing: 1px;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-ban-section .db-ban-content .db-cta-button:hover {
+            background-color: var(--primary-btn-background-hover);
+            color: var(--primary-color);
+        }
+
+        /* Media Queries pour Mobile */
+        @media (max-width: 768px) {
+            .db-ban-section {
+                padding: var(--section-mobile-padding-y) var(--section-mobile-padding-x);
+            }
+
+            .db-ban-section .db-ban-content {
+                width: 100%;
+                text-align: center;
+            }
+
+            .db-ban-section .db-ban-content .db-ban-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-ban-section .db-ban-content .db-ban-subtitle {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-ban-section">
+        <div class="db-ban-content">
+            <h1 class="db-ban-title">Bollywood Glam</h1>
+            <p class="db-ban-subtitle">Le glamour de Bollywood dans votre garde-robe</p>
+            <a href="#" class="db-cta-button">Découvrir</a>
+        </div>
+    </section>
+</body>
+
+</html>

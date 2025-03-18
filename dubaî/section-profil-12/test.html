@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        :root {
+            --primary-color: #C17F17;
+            --text-color: #333;
+            --price-color: #E67E22;
+            --border-color: #ddd;
+            --green-color: #27AE60;
+            --star-color: #F1C40F;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+        }
+
+        .product-section {
+            display: flex;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            flex: 1;
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-color);
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary-color);
+        }
+
+        .main-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: var(--spacing-sm);
+            left: var(--spacing-sm);
+            background: var(--price-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .rating {
+            color: var(--star-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .current-price {
+            color: var(--price-color);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .stock-status {
+            display: inline-block;
+            padding: 4px 8px;
+            background: var(--green-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .description {
+            color: #666;
+            margin: var(--spacing-md) 0;
+        }
+
+        .color-options {
+            margin: var(--spacing-md) 0;
+        }
+
+        .color-title {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .color-picker {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .color-option {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .size-selector {
+            margin: var(--spacing-md) 0;
+        }
+
+        .quantity-cart {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .quantity {
+            display: flex;
+            border: 1px solid var(--border-color);
+        }
+
+        .quantity button {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .quantity input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+        }
+
+        .add-to-cart {
+            flex: 1;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: var(--spacing-md);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #A66F15;
+        }
+
+        @media (max-width: 768px) {
+            .product-section {
+                flex-direction: column;
+            }
+
+            .gallery {
+                flex-direction: column;
+            }
+
+            .thumbnails {
+                flex-direction: row;
+                order: 2;
+            }
+
+            .main-image {
+                order: 1;
+                aspect-ratio: 1;
+            }
+
+            .product-info {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-section">
+        <div class="gallery">
+            <div class="thumbnails">
+                <img src="/api/placeholder/80/80" class="thumbnail active" data-src="/api/placeholder/400/400"
+                    alt="Product view 1">
+                <img src="/api/placeholder/80/80" class="thumbnail" data-src="/api/placeholder/400/400"
+                    alt="Product view 2">
+                <img src="/api/placeholder/80/80" class="thumbnail" data-src="/api/placeholder/400/400"
+                    alt="Product view 3">
+                <img src="/api/placeholder/80/80" class="thumbnail" data-src="/api/placeholder/400/400"
+                    alt="Product view 4">
+            </div>
+            <div class="main-image">
+                <span class="promo-badge">-20%</span>
+                <img src="/api/placeholder/400/400" alt="Main product view">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <div class="rating">★★★★★ <span>1500 clients ont aimé ce produit</span></div>
+            <h1 class="product-title">Nom Produit</h1>
+            <div class="price">
+                <span class="current-price">€35,90</span>
+                <span class="old-price">€38,50</span>
+                <span class="stock-status">Disponible</span>
+            </div>
+            <p class="description">
+                lorem ipsum dolor sit amet conquistator lorem ipsum dolor sit amet conquistator lorem ipsumorem ipsum
+            </p>
+            <div class="color-options">
+                <div class="color-title">Couleur</div>
+                <div class="color-picker">
+                    <div class="color-option" style="background-color: red;"></div>
+                    <div class="color-option" style="background-color: yellow;"></div>
+                    <div class="color-option" style="background-color: green;"></div>
+                    <div class="color-option" style="background-color: blue;"></div>
+                </div>
+            </div>
+            <div class="size-selector">
+                <label>Taille</label>
+                <select>
+                    <option>M</option>
+                    <option>S</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+            </div>
+            <div class="quantity-cart">
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" value="1" min="1">
+                    <button class="increase">+</button>
+                </div>
+                <button class="add-to-cart">AJOUTER AU PANIER</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.querySelector('.main-image img');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function () {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked thumbnail
+                    this.classList.add('active');
+                    // Update main image
+                    mainImage.src = this.dataset.src;
+                });
+            });
+
+            // Quantity handlers
+            const quantityInput = document.querySelector('.quantity input');
+            const decreaseBtn = document.querySelector('.decrease');
+            const increaseBtn = document.querySelector('.increase');
+
+            decreaseBtn.addEventListener('click', () => {
+                const currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            });
+
+            increaseBtn.addEventListener('click', () => {
+                const currentValue = parseInt(quantityInput.value);
+                quantityInput.value = currentValue + 1;
+            });
+        });
+    </script>
+</body>
+
+</html>

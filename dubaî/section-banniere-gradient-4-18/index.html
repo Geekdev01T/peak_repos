@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* Colors */
+            --secondary-color: #212121;
+            --gradient-background: linear-gradient(to right, #f7e6d4, #f2e6e6);
+
+            /* Typography */
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: uppercase;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+
+            /* Dimensions */
+            --section-padding-x: 2rem;
+            --section-padding-y: 2rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --header-height: 250px;
+            --page-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .db-gradient-hero-header {
+            width: 100%;
+            height: var(--header-height);
+            background: var(--gradient-background);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-gradient-hero-header .db-gradient-hero-content {
+            max-width: var(--page-width);
+            width: 100%;
+            text-align: center;
+            /* padding: var(--section-padding-y) var(--section-padding-x); */
+        }
+
+        .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-title {
+            font-size: var(--title-size);
+            font-weight: bold;
+            letter-spacing: 8px;
+            line-height: 1.3;
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+        }
+
+        .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-subtitle {
+            font-size: var(--sub-title-size);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-top: .5em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-subtitle {
+                font-size: var(--sub-title-mobile-size);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <header class="db-gradient-hero-header">
+            <div class="db-gradient-hero-content">
+                <h1 class="db-gradient-hero-title">Lorem Ipsum</h1>
+                <p class="db-gradient-hero-subtitle">lorem ipsum dolor sit amet sit amet</p>
+            </div>
+        </header>
+    </body>
+
+</html>

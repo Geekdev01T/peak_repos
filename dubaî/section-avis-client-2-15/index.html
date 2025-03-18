@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --title-size: 64px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --section-mobile-padding-y: 2rem;
+            --page-width:1200px;
+        }
+
+        .db-avis-clients-section {
+            background-color: #F5F5F5;
+        }
+
+        .db-avis-clients-section .db-avis-clients-content {
+            max-width:var(--page-width);
+            margin: 0 auto;
+            display: flex;
+            padding: var(--section-mobile-padding-y);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            align-items: center;
+        }
+
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-title {
+            text-align: left;
+            color: var(--secondary-color);
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            height: fit-content;
+            width: 30%;
+            position: relative;
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.1em;
+            left: 0;
+            width: 40%;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 500px;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .db-avis-bg-block {
+            position: absolute;
+            background: var(--primary-color);
+            width: 85%;
+            height: 100%;
+            right: 0;
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .swiper-wrapper {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            height: 50%;
+            width: 100%;
+            margin-top: -2em;
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .swiper-wrapper .swiper-slide {
+            background: var(--text-color);
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .db-avis-client-text {
+            font-size:var(--text-content-size);
+        }
+
+        .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .db-avis-client-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .db-avis-clients-section .db-avis-clients-content {
+                flex-direction: column;
+                padding: .5rem;
+            }
+
+            .db-avis-clients-section .db-avis-clients-content .db-avis-clients-title {
+                width: 100%;
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider {
+                display: flex;
+                width: 100%;
+                height: 400px;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .swiper-wrapper {
+                height: 70%;
+            }
+
+            .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .swiper-wrapper .swiper-slide {
+                padding: .6em;
+            }
+
+            .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .db-avis-client-text {
+                font-size: var(--text-content-mobile-size);
+            }
+
+            .db-avis-clients-section .db-avis-clients-content .db-avis-clients-slider .db-avis-client-name {
+                font-size: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="db-avis-clients-section">
+        <div class="db-avis-clients-content">
+            <h2 class="db-avis-clients-title">Avis Clients</h2>
+            <div class="db-avis-clients-slider swiper">
+                <div class="db-avis-bg-block"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="db-avis-client-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis in
+                            amet officia porro repudiandae consectetur atque fugiat hic. Rem quaerat tempora ad suscipit
+                            ea, laborum praesentium nobis aspernatur aut magnam!</p>
+                        <h2 class="db-avis-client-name">John Doe</h2>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="db-avis-client-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
+                            quidem, at ipsa velit quae, iusto inventore, in doloribus ratione corrupti id optio. Et,
+                            corporis aspernatur harum exercitationem amet natus excepturi!
+                        </p>
+                        <h2 class="db-avis-client-name">Jane Smith</h2>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="db-avis-client-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
+                            quidem, at ipsa velit quae, iusto inventore, in doloribus ratione corrupti id optio. Et,
+                            corporis aspernatur harum exercitationem amet natus excepturi!
+                        </p>
+                        <h2 class="db-avis-client-name">Jane Smith</h2>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        new Swiper('.db-avis-clients-slider', {
+            slidesPerView: 1.3,
+            spaceBetween: 5,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                // when window width is >= 480px
+                1024: {
+                    slidesPerView: 1.6,
+                    spaceBetween: 35,
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

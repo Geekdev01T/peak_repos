@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Changer Menu</title>
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --title-size: 42px;
+            --title-mobile-size: 32px;
+            --title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --section-mobile-padding-y: 2rem;
+            --transition-duration: 0.3s;
+        }
+
+        .db-text-block-text-changer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--section-padding-y) 0;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 35px;
+            margin-bottom: 30px;
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item {
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            font-weight: 500;
+            color: var(--secondary-color);
+            cursor: pointer;
+            padding: 3px 0;
+            transition: color var(--transition-duration) ease;
+            position: relative;
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            transform: scaleX(0);
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transform-origin: bottom left;
+            transition: transform var(--transition-duration) ease-out;
+
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item.active::after {
+            position: absolute;
+            content: '';
+            width: 70%;
+            transform: scaleX(0.8);
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transform-origin: bottom left;
+            transition: transform var(--transition-duration) ease-out;
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item:hover {
+            color: #666;
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item:hover::after {
+            transform: scaleX(1);
+            width: 100%;
+        }
+
+        .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item.active {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .db-text-block-text-changer .db-text-block-content-container {
+            opacity: 1;
+            transition: opacity var(--transition-duration) ease;
+        }
+
+        .db-text-block-text-changer .db-text-block-content-container .db-text-text-content-change {
+            margin: 0;
+            font-size: var(--text-content-size);
+            line-height: 1.6;
+            color: var(--secondary-color);
+        }
+
+        .db-text-block-text-changer .db-text-block-fade-effect {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .db-text-block-text-changer {
+                padding: var(--section-mobile-padding-y) .5em;
+            }
+
+            .db-text-block-text-changer .db-text-block-menu-container {
+                gap: 15px;
+                justify-content: space-between;
+            }
+
+            .db-text-block-text-changer .db-text-block-menu-container .db-text-block-menu-item {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-text-block-text-changer .db-text-block-content-container .db-text-text-content-change {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="db-text-block-text-changer">
+        <div class="db-text-block-menu-container">
+            <div class="db-text-block-menu-item active"
+                data-content="Lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti assumenda dolorum ipsam est officia sunt dolore exercitationem. Eveniet tempore quasi, in est, inventore ullam fugit illo quod laboriosam iste perspiciatis, veritatis odio tempora animi saepe architecto velit cumque minus ducimus voluptates quidem hic. Est, nostrum. Rem ea voluptate eaque odio.">
+                Titre</div>
+            <div class="db-text-block-menu-item"
+                data-content="Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti assumenda dolorum ipsam est officia sunt dolore exercitationem. Eveniet tempore quasi, in est, inventore ullam fugit illo quod laboriosam iste perspiciatis, veritatis odio tempora animi saepe architecto velit cumque minus ducimus voluptates quidem hic. Est, nostrum. Rem ea voluptate eaque odio.">
+                Titre</div>
+            <div class="db-text-block-menu-item"
+                data-content="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti assumenda dolorum ipsam est officia sunt dolore exercitationem. Eveniet tempore quasi, in est, inventore ullam fugit illo quod laboriosam iste perspiciatis, veritatis odio tempora animi saepe architecto velit cumque minus ducimus voluptates quidem hic. Est, nostrum. Rem ea voluptate eaque odio.">
+                Titre</div>
+            <div class="db-text-block-menu-item"
+                data-content="Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti assumenda dolorum ipsam est officia sunt dolore exercitationem. Eveniet tempore quasi, in est, inventore ullam fugit illo quod laboriosam iste perspiciatis, veritatis odio tempora animi saepe architecto velit cumque minus ducimus voluptates quidem hic. Est, nostrum. Rem ea voluptate eaque odio.">
+                Titre</div>
+        </div>
+        <div class="db-text-block-content-container">
+            <p class="db-text-text-content-change"></p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('.db-text-block-menu-item');
+            const contentContainer = document.querySelector('.db-text-block-content-container');
+            const contentParagraph = contentContainer.querySelector('p');
+
+            // Définir le premier élément comme actif par défaut
+            menuItems[0].classList.add('active');
+            contentParagraph.textContent = menuItems[0].getAttribute('data-content');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Retirer la classe active de tous les éléments
+                    menuItems.forEach(menuItem => {
+                        menuItem.classList.remove('active');
+                    });
+
+                    // Ajouter la classe active à l'élément cliqué
+                    item.classList.add('active');
+
+                    // Ajouter l'effet de fondu
+                    contentContainer.classList.add('db-text-block-fade-effect');
+
+                    // Changer le texte après le fondu
+                    setTimeout(() => {
+                        contentParagraph.textContent = item.getAttribute('data-content');
+                        // Retirer l'effet de fondu
+                        contentContainer.classList.remove('db-text-block-fade-effect');
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

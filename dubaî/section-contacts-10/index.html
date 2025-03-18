@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --newsletter-bg-color: #FDEFDD;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+        }
+
+        .db-newsletter {
+            background-color: var(--newsletter-bg-color);
+            color: var(--secondary-color);
+            padding: 3rem;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            text-align: center;
+        }
+
+        .db-newsletter .db-newsletter-title{
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+        }
+
+        .db-newsletter .db-newsletter-content {
+            font-size: var(--text-content-size);
+            margin-top: -35px;
+        }
+
+        .db-newsletter .db-newsletter_form {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            margin-top: 3em;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .db-newsletter .db-newsletter_form .db-newsletter-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 14px 8px;
+            border: none;
+            background-color: transparent;
+            border: 1px solid;
+            color: var(--secondary-color);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .db-newsletter .db-newsletter_form .db-newsletter-input:focus {
+            box-shadow: 0px 0px 1.5px var(--secondary-color);
+        }
+
+        .db-newsletter form .db-newsletter-button {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: 1px solid var(--secondary-color);
+            padding: 14px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .db-newsletter .db-newsletter-title {
+                font-size: 48px;
+            }
+
+            .db-newsletter .db-newsletter-content {
+                font-size: 18px;
+            }
+
+            .db-newsletter .db-newsletter_form {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .db-newsletter .db-newsletter_form .db-newsletter-input {
+                width: 98%;
+                padding: 14px 2px;
+            }
+
+            .db-newsletter .db-newsletter_form .db-newsletter-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-newsletter">
+        <h2 class="db-newsletter-title">Restez informés</h2>
+        <p class="db-newsletter-content">lorem ipsum dolor sit amet</p>
+        <form class="db-newsletter_form">
+            <input type="email" placeholder="Votre email" class="db-newsletter-input">
+            <button type="submit" class="db-newsletter-button">S'INSCRIRE</button>
+        </form>
+    </section>
+</body>
+
+</html>

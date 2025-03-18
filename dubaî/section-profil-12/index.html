@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #CD8C2E;
+            --text-color: #333;
+            --price-color: #CD8C2E;
+            --border-color: #ddd;
+            --success-color: #28a745;
+            --star-color: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border: 2px solid var(--border-color);
+            padding: 2px;
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary-color);
+        }
+
+        .main-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .product-info {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .rating {
+            color: var(--star-color);
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .current-price {
+            color: var(--price-color);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        .availability {
+            background: var(--success-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .description {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .color-options {
+            margin: 20px 0;
+        }
+
+        .colors {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .size-selector {
+            margin: 20px 0;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .quantity input {
+            width: 60px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .quantity button {
+            padding: 10px;
+            background: none;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+
+            .gallery {
+                flex-direction: column;
+            }
+
+            .thumbnails {
+                flex-direction: row;
+                order: 2;
+            }
+
+            .main-image {
+                order: 1;
+            }
+
+            .product-info {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-container">
+        <div class="gallery">
+            <div class="thumbnails">
+                <img src="/api/placeholder/80/80" alt="Product view 1" class="thumbnail active"
+                    onclick="changeImage(0)">
+                <img src="/api/placeholder/80/80" alt="Product view 2" class="thumbnail" onclick="changeImage(1)">
+                <img src="/api/placeholder/80/80" alt="Product view 3" class="thumbnail" onclick="changeImage(2)">
+                <img src="/api/placeholder/80/80" alt="Product view 4" class="thumbnail" onclick="changeImage(3)">
+            </div>
+            <div class="main-image">
+                <span class="promo-badge">-20%</span>
+                <img src="/api/placeholder/500/500" alt="Main product view" id="mainImage">
+            </div>
+        </div>
+        <div class="product-info">
+            <div class="rating">★★★★★ <span>1500 clients ont aimé ce produit</span></div>
+            <h1 class="product-title">Nom Produit</h1>
+            <div class="price">
+                <span class="current-price">€35,90</span>
+                <span class="old-price">€38,50</span>
+                <span class="availability">Disponible</span>
+            </div>
+            <p class="description">Lorem ipsum dolor sit amet consquisitator lorem ipsum dolor sit amet consquisitator
+                lorem ipsumlorem ipsum</p>
+            <div class="color-options">
+                <label>Couleur</label>
+                <div class="colors">
+                    <div class="color" style="background: red;"></div>
+                    <div class="color" style="background: yellow;"></div>
+                    <div class="color" style="background: green;"></div>
+                    <div class="color" style="background: blue;"></div>
+                </div>
+            </div>
+            <div class="size-selector">
+                <label>Taille</label>
+                <select>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="quantity">
+                <button onclick="updateQuantity(-1)">-</button>
+                <input type="number" value="1" min="1" id="quantity">
+                <button onclick="updateQuantity(1)">+</button>
+            </div>
+            <button class="add-to-cart">AJOUTER AU PANIER</button>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(index) {
+            // Dans un vrai site, vous auriez un tableau d'URLs d'images
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            thumbnails[index].classList.add('active');
+
+            // Simuler le changement d'image
+            document.getElementById('mainImage').src = `/api/placeholder/500/500?v=${index}`;
+        }
+
+        function updateQuantity(change) {
+            const input = document.getElementById('quantity');
+            const newValue = Math.max(1, parseInt(input.value) + change);
+            input.value = newValue;
+        }
+    </script>
+</body>
+
+</html>

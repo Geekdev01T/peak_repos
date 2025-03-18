@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --section-bg-color: #F5F5F5;
+            --newsletter-bg-color: #FDEFDD;
+            --footer-bg-color: #D9D9D9;
+            --original-price-color: #999;
+            --overlay-color: rgba(0, 0, 0, 0.2);
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+            --sub-title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --btn-transform: uppercase;
+            --primary-btn-size: 14px;
+            --primary-btn-color: #ffffff;
+            --primary-btn-padding-x: 5rem;
+            --primary-btn-padding-y: 18px;
+            --primary-btn-border-width: 1px;
+            --primary-btn-border-color: #ffffff;
+            --primary-btn-background: transparent;
+            --primary-btn-background-hover: #ffffff;
+            --secondary-btn-size: 16px;
+            --secondary-btn-color: #ffffff;
+            --secondary-btn-padding-x: 4rem;
+            --secondary-btn-padding-y: 12px;
+            --secondary-btn-border-width: 1px;
+            --secondary-btn-border-color: #000000;
+            --secondary-btn-shadow-color: #000000;
+            --secondary-btn-background: transparent;
+            --secondary-btn-radius: 0px;
+            --secondary-btn-background-hover: #212121;
+            --tertiary-btn-size: 14px;
+            --tertiary-btn-color: #212121;
+            --tertiary-btn-padding-x: 4rem;
+            --tertiary-btn-padding-y: 12px;
+            --tertiary-btn-border-width: 0px;
+            --tertiary-btn-border-color: #ffffff;
+            --tertiary-btn-background: #fff;
+            --tertiary-btn-background-hover: #ffffff;
+            --expanded-height: 550px;
+            --expanded-mobile-height: 400px;
+            --collapsed-height: 200px;
+            --collapsed-width: 150px;
+            --section-height: 90vh;
+            --section-max-height: 500px;
+            --icon-size: 54px;
+            --section-padding-x: 3rem;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --section-mobile-padding-x: 2rem;
+            --section-mobile-padding-y: 2rem;
+            --page-width: 1200px;
+            --transition-duration: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Section Banniere Start */
+        .db-ban-section {
+            position: relative;
+            height: var(--section-height);
+            max-height: var(--section-min-height);
+            background-image: linear-gradient(var(--overlay-color), var(--overlay-color)),
+                url('https://sudathi.com/cdn/shop/articles/Green_Illustrated_Marketing_Blog_Facebook_Cover_-compressed_3e08d64f-b58e-4c23-906d-b228958a3ad6.jpg?v=1712843926');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: var(--section-padding-y) var(--section-padding-x);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-ban-section .db-ban-content {
+            max-width: 600px;
+            margin-top: -2rem;
+            color: var(--text-color);
+        }
+
+        .db-ban-section .db-ban-content .db-ban-title {
+            font-size: var(--title-size);
+            margin-bottom: 0.8rem;
+            text-transform: var(--title-text-transform);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .db-ban-section .db-ban-content .db-ban-subtitle {
+            font-size: var(--text-content-size);
+            margin-bottom: 2.2rem;
+            opacity: 0.9;
+        }
+
+        .db-ban-section .db-ban-content .db-cta-button {
+            display: inline-block;
+            padding: var(--primary-btn-padding-y) var(--primary-btn-padding-x);
+            border: var(--primary-btn-border-width) solid var(--primary-btn-border-color);
+            color: var(--text-color);
+            background: var(--primary-btn-background);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            font-size: var(--primary-btn-size);
+            letter-spacing: 1px;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-ban-section .db-ban-content .db-cta-button:hover {
+            background-color: var(--primary-btn-background-hover);
+            color: var(--primary-color);
+        }
+
+        /* Media Queries pour Mobile */
+        @media (max-width: 768px) {
+            .db-ban-section {
+                padding: var(--section-mobile-padding-y) var(--section-mobile-padding-x);
+            }
+
+            .db-ban-section .db-ban-content {
+                width: 100%;
+                text-align: center;
+            }
+
+            .db-ban-section .db-ban-content .db-ban-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-ban-section .db-ban-content .db-ban-subtitle {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+
+        /* Section Banniere End */
+
+        /* Section Product Slides Style Start */
+
+  .db-img_text-2-product-section {
+            height: var(--section-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            background-color: var(--section-product-bg-color);
+            padding: 0 4rem;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-image {
+            width: 90%;
+            height: 75%;
+            margin: 0 auto;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info {
+            width: 100%;
+            height: auto;
+            padding: var(--section-padding-x);
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-sub-title {
+            font-size: var(--sub-title-size);
+            text-transform: var(--sub-title-text-transform);
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-title {
+            font-size: var(--title-size);
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+            margin-bottom: 20px;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-description {
+            font-size: var(--text-content-size);
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-link {
+            display: inline-block;
+            padding: var(--quaternary-btn-padding-y) var(--quaternary-btn-padding-x);
+            background-color: var(--quaternary-btn-background);
+            font-size: var(--quaternary-btn-size);
+            color: var(--quaternary-btn-color);
+            border: var(--quaternary-btn-border-width) solid var(--quaternary-btn-border-color);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            border-radius: var(--quaternary-btn-radius);
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-link:hover {
+            background: var(--quaternary-btn-background-hover);
+            border-color: var(--quaternary-btn-background-hover);
+            box-shadow: 0px 0px 2px var(--quaternary-btn-background-hover);
+        }
+
+         @media (max-width: 850px) {
+                .db-img_text-2-product-section .db-img_text-2-product-image {
+                    width: 100%;
+                    height: 60%;
+                    margin: 0 auto;
+                }
+            }
+        @media (max-width: 768px) {
+            .db-img_text-2-product-section {
+                height: auto;
+                width: 100%;
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-image,
+            .db-img_text-2-product-section .db-img_text-2-product-info {
+                width: 100%;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info {
+                padding: 2rem 0;
+                text-align: center;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-image {
+                margin-bottom: 30px;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-sub-title {
+                font-size: var(--sub-title-mobile-size);
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-description {
+                font-size: var(--text-content-mobile-size);
+                padding: 1rem;
+            }
+
+        }
+        /* Section Product Slides Style End */
+
+
+        /* Section Image Text 2 Style Start */
+
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --title-size: 42px;
+            --title-mobile-size: 28px;
+            --title-text-transform: capitalize;
+            --text-content-size: 18px;
+            --text-content-mobile-size: 16px;
+            --section-padding-x: 3rem;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --page-width: 1200px;
+            --section-about-height: 100vh;
+        }
+
+        .db-about-section {
+            position: relative;
+            max-width: var(--page-width);
+            background: var(--section-bg-color);
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            height: var(--section-about-height);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-about-section .db-about-image {
+            position: relative;
+            margin-top: -7em;
+            flex: 1;
+            max-width: 45%;
+            height: 80%;
+        }
+
+        .db-about-section .db-about-image::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .db-about-section .db-about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-about-section .db-about-content {
+            position: absolute;
+            width: 55%;
+            height: fit-content;
+            right: 25%;
+            bottom: 40px;
+            padding: var(--section-padding-y) var(--section-padding-x);
+            background: #fff;
+        }
+
+        .db-about-section .db-about-content .db-about-title {
+            font-size: var(--title-size);
+            margin-bottom: 1em;
+            text-transform: var(--title-text-transform);
+            position: relative;
+            width: fit-content;
+        }
+
+        .db-about-section .db-about-content .db-about-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .db-about-section .db-about-content .db-about-text {
+            font-size: var(--text-content-size);
+            color: var(--color-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .db-about-section {
+                max-width: 90%;
+                height: 60vh;
+            }
+
+            .db-about-section .db-about-image {
+                max-width: 50%;
+            }
+
+            .db-about-section .db-about-content {
+                width: 65%;
+                right: 10%;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .db-about-section {
+                max-width: 100%;
+                flex-direction: column;
+                margin: 0 auto;
+                height: var(--section-about-height);
+            }
+
+            .db-about-section .db-about-image {
+                position: relative;
+                height: 50%;
+                max-width: 100%;
+                margin-top: 0;
+            }
+
+            .db-about-section .db-about-content {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 2rem;
+                margin: 0;
+                left: 0%;
+                bottom: 0;
+            }
+
+            .db-about-section .db-about-content .db-about-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-about-section .db-about-content .db-about-text {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+
+        /* Section Image Text 2 Style End */
+
+
+        /* Section Hero Brand Style Start */
+       :root {
+        --primary-color: #C37B06;
+        --secondary-color: #212121;
+        --text-color: #ffffff;
+        --section-bg-color: #F5F5F5;
+        --overlay-color: rgba(0, 0, 0, 0.2);
+        --title-size: 65px;
+        --title-mobile-size: 48px;
+        --title-text-transform: capitalize;
+        --section-padding-x: 4rem;
+        --section-padding-y: 4rem;
+        --section-margin-top: 1rem;
+        --section-margin-bottom: 1rem;
+        --page-width: 1200px;
+        --transition-speed: 0.3s;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .db-brand-services-section {
+        /* width: var(--page-width); */
+        padding: var(--section-padding-y) var(--section-padding-x);
+        /* background-color: var(--section-bg-color); */
+        margin: 0 auto;
+        margin-top: var(--section-margin-top);
+        margin-bottom: var(--section-margin-bottom);
+    }
+
+    .db-brand-services-section .db-brand-section-title {
+        text-align: center;
+        font-size: var(--title-size);
+        color: var(--secondary-color);
+        text-transform: var(--title-text-transform);
+        margin-bottom: 1em;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+
+    .db-brand-services-section .swiper {
+        display: block;
+        width: 100%;
+        padding: 4em 0;
+    }
+
+
+    .db-brand-services-section .swiper .swiper-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .db-brand-services-section .swiper .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+        cursor: grab;
+    }
+
+    .db-brand-services-section .swiper-slide .db-brand-service-brand {
+        width: 70%;
+        height: 70%;
+        object-fit: cover;
+    }
+
+
+    .db-brand-services-section .swiper .swiper-pagination-bullet {
+        background: var(--primary-color);
+    }
+
+    .db-brand-services-section .swiper .swiper-pagination-bullet-active {
+        background: var(--primary-color);
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .db-brand-services-section {
+            /* width: 100%; */
+            padding: 2rem;
+        }
+
+        .db-brand-services-section .swiper .swiper-slide {
+            gap: .4em;
+            justify-content: center;
+        }
+
+        .db-brand-services-section .db-brand-section-title {
+            font-size: var(--title-mobile-size);
+            margin-bottom: 1em;
+        }
+
+        .db-brand-services-section .db-brand-service-item {
+            padding: .6em;
+            cursor: grab;
+        }
+
+    }
+        /* Section Hero Brand Style End */
+
+
+        /* Section Contact Style Start */
+        .db-newsletter {
+            background-color: var(--newsletter-bg-color);
+            color: var(--secondary-color);
+            padding: 3rem;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            text-align: center;
+        }
+
+        .db-newsletter .db-newsletter-title {
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+        }
+
+        .db-newsletter .db-newsletter-content {
+            font-size: var(--text-content-size);
+            margin-top: 12px;
+        }
+
+        .db-newsletter .db-newsletter_form {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            margin-top: 3em;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .db-newsletter .db-newsletter_form .db-newsletter-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 14px 8px;
+            border: none;
+            background-color: transparent;
+            text-decoration: none;
+            border: 1px solid;
+            color: var(--secondary-color);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .db-newsletter .db-newsletter_form .db-newsletter-input:focus {
+            box-shadow: 0px 0px 1.5px var(--secondary-color);
+        }
+
+        .db-newsletter form .db-newsletter-button {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: 1px solid var(--secondary-color);
+            padding: 14px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .db-newsletter .db-newsletter-title {
+                font-size: 48px;
+            }
+
+            .db-newsletter .db-newsletter-content {
+                font-size: 18px;
+            }
+
+            .db-newsletter .db-newsletter_form {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .db-newsletter .db-newsletter_form .db-newsletter-input {
+                max-width: 100%;
+                padding: 14px 2px;
+            }
+
+            .db-newsletter .db-newsletter_form .db-newsletter-button {
+                width: 100%;
+            }
+        }
+
+        /* Section Contact Style End */
+
+        /* Section Footer Style Start */
+
+        :root {
+            --text-content-hover-color: #8d8b8b;
+        }
+
+        .db-footer {
+            background-color: var(--footer-bg-color);
+            color: var(--secondary-color);
+            padding: 0 var(--section-padding-x);
+            padding-top: 2rem;
+            margin-top: var(--section-margin-top);
+            /* margin-bottom: var(--section-margin-bottom); */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .db-footer .db-footer-container {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .db-footer .db-footer-container .db-footer-section {
+            flex-basis: 25%;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide {
+            flex-basis: 50%;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-title {
+            color: var(--secondary-color);
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            margin-top: 0;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-text {
+            color: var(--secondary-color);
+            font-size: var(--text-content-size);
+            width: 80%;
+            margin-top: 1em;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social {
+            display: flex;
+            justify-content: start;
+            gap: 20px;
+            align-items: center;
+            margin-top: 2em;
+        }
+
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social .db-footer-social-link {
+            text-decoration: none;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social .db-footer-social-link svg {
+            color: var(--secondary-color);
+            text-decoration: none;
+            width: 35px;
+            height: 35px;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social .db-footer-social-link svg:hover {
+            color: var(--text-content-hover-color);
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: var(--text-content-size);
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-title .db-footer-title-icon {
+            display: none;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-links {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-links .db-footer-link {
+            color: var(--secondary-color);
+            width: fit-content;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-links .db-footer-link:hover {
+            color: var(--text-content-hover-color);
+        }
+
+
+        .db-footer .db-footer-copyright {
+            width: 100%;
+            height: fit-content;
+            margin: 0 auto;
+            color: var(--secondary-color);
+            text-align: center;
+            letter-spacing: 70px;
+            text-transform: uppercase;
+            font-size: 280px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 1075px) {
+            .db-footer .db-footer-copyright {
+                margin: .3em auto;
+                letter-spacing: 60px;
+                font-size: 180px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .db-footer .db-footer-copyright {
+                margin: .3em auto;
+                letter-spacing: 60px;
+                font-size: 130px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .db-footer {
+                padding: 0 0.5em;
+                padding-top: 2rem;
+            }
+
+            .db-footer .db-footer-container {
+                flex-direction: column;
+            }
+
+            .db-footer .db-footer-container .db-footer-section {
+                flex-basis: auto;
+                margin-bottom: 1px;
+                padding: 0;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide {
+                text-align: center;
+                margin-bottom: 2em;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide .db-footer-title {
+                font-size: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide .db-footer-text {
+                font-size: 18px;
+                width: 100%;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide .db-footer-social {
+                justify-content: center;
+            }
+
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                padding: 8px 12px;
+                background: rgb(119, 118, 118);
+                margin-bottom: 0;
+            }
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-links {
+                display: none;
+            }
+
+            .db-footer .db-footer-section.active .db-footer-links {
+                display: flex;
+                gap: 1px;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                cursor: pointer;
+                background: #ccc;
+            }
+
+            .db-footer .db-footer-container .db-footer-section.active .db-footer-links .db-footer-link {
+                width: 95%;
+                padding: 6px 0;
+                padding-left: 6px;
+                margin-bottom: 0;
+            }
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-title .db-footer-title-icon {
+                display: none;
+                /* Hide SVG completely */
+            }
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-title::after {
+                content: '+';
+                display: block;
+                font-size: 25px;
+                font-weight: bold;
+                transition: all var(--transition-duration) ease;
+            }
+
+            .db-footer .db-footer-container .db-footer-section.active .db-footer-title::after {
+                content: '-';
+                transform: none;
+                /* Remove rotation */
+            }
+
+            /* .db-footer .db-footer-container .db-footer-section .db-footer-title .db-footer-title-icon {
+                display: block;
+                width: 25px;
+                height: 25px;
+                transition: all var(--transition-duration) ease;
+            }
+
+            .db-footer .db-footer-container .db-footer-section.active .db-footer-title .db-footer-title-icon {
+                transform: rotate(180deg);
+            } */
+
+            .db-footer .db-footer-copyright {
+                margin: .4em auto;
+                letter-spacing: 50px;
+                font-size: 130px;
+            }
+        }
+
+        @media (max-width: 695px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 25px;
+                font-size: 130px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 20px;
+                font-size: 110px;
+            }
+        }
+
+        @media (max-width: 465px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 15px;
+                font-size: 90px;
+            }
+        }
+
+        @media (max-width: 385px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 8px;
+                font-size: 80px;
+            }
+        }
+
+        /* Section Footer Style End */
+    </style>
+</head>
+
+<body>
+    <section class="db-ban-section">
+        <div class="db-ban-content">
+            <h1 class="db-ban-title">Bollywood Glam</h1>
+            <p class="db-ban-subtitle">Le glamour de Bollywood dans votre garde-robe</p>
+            <a href="#" class="db-cta-button">Découvrir</a>
+        </div>
+    </section>
+
+
+    <section class="db-img_text-2-product-section">
+        <div class="db-img_text-2-product-image">
+            <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Hand-Embellished-Raw-Silk-Bridal-Lehenga-1.webp"
+                alt="Product Image">
+        </div>
+        <div class="db-img_text-2-product-info">
+            <p class="db-img_text-2-sub-title">Categorie Name</p>
+            <h2 class="db-img_text-2-product-title">Product's Title</h2>
+            <p class="db-img_text-2-product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                labore beatae
+                modi suscipit delectus vel autem quis. Vero eveniet voluptatem maxime officia, accusamus doloremque
+                iusto veniam aliquam dignissimos tempora. Consequuntur, et ducimus praesentium aspernatur velit in
+                officiis. Assumenda, adipisci, error harum quas eaque est repellat maxime magnam ipsam ab accusantium?
+            </p>
+            <a href="#" class="db-img_text-2-product-link">Learn More</a>
+        </div>
+    </section>
+
+<section class="db-brand-services-section">
+    <h2 class="db-brand-section-title">Lorem Ipsum Dolor Amet</h2>
+    <!-- Mobile Slider -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="db-brand-service-brand"
+                    src="https://logowik.com/content/uploads/images/harry-winston8294.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="db-brand-service-brand"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9FueWQSZ967bm84w6Q-tU-otyhUwDtGl4xw&s"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="db-brand-service-brand" src="https://maisondegreef.com/storage/logo_cartier.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="db-brand-service-brand"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1GF6PhK74V0VWn-AD16rJkr7OF7M6vvB6A&s"
+                    alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script>
+    // Initialize Swiper for mobile
+    new Swiper('.swiper', {
+        slidesPerView: 1,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 2,
+            },
+
+            1024: {
+                slidesPerView: 4,
+                centeredSlides: false,
+            }
+        }
+    });
+</script>
+
+
+    <section class="db-newsletter">
+        <h2 class="db-newsletter-title">Restez informés</h2>
+        <p class="db-newsletter-content">lorem ipsum dolor sit amet</p>
+        <form class="db-newsletter_form">
+            <input type="email" placeholder="Votre email" class="db-newsletter-input">
+            <button type="submit" class="db-newsletter-button">S'INSCRIRE</button>
+        </form>
+    </section>
+
+    <footer class="db-footer">
+        <div class="db-footer-container">
+            <div class="db-footer-section--wide">
+                <h3 class="db-footer-title">À Propos</h3>
+                <p class="db-footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="db-footer-social">
+                    <a href="#" class="db-footer-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M16 7a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M12 7.25a4.75 4.75 0 1 0 0 9.5a4.75 4.75 0 0 0 0-9.5M8.75 12a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0"
+                                clip-rule="evenodd" />
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M17.258 2.833a47.7 47.7 0 0 0-10.516 0c-2.012.225-3.637 1.81-3.873 3.832a46 46 0 0 0 0 10.67c.236 2.022 1.86 3.607 3.873 3.832a47.8 47.8 0 0 0 10.516 0c2.012-.225 3.637-1.81 3.873-3.832a46 46 0 0 0 0-10.67c-.236-2.022-1.86-3.607-3.873-3.832m-10.35 1.49a46.2 46.2 0 0 1 10.184 0c1.33.15 2.395 1.199 2.55 2.517a44.4 44.4 0 0 1 0 10.32a2.89 2.89 0 0 1-2.55 2.516a46.2 46.2 0 0 1-10.184 0a2.89 2.89 0 0 1-2.55-2.516a44.4 44.4 0 0 1 0-10.32a2.89 2.89 0 0 1 2.55-2.516"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="db-footer-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+                        </svg>
+                    </a>
+                    <a href="#" class="db-footer-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    d="m14 12l-3.5 2v-4z" />
+                                <path
+                                    d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="db-footer-section">
+                <h3 class="db-footer-title">
+                    Lien
+                    <!-- <svg class="db-footer-title-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg> -->
+                </h3>
+                <div class="db-footer-links">
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                </div>
+            </div>
+            <div class="db-footer-section">
+                <h3 class="db-footer-title">
+                    Lien
+                    <!-- <svg class="db-footer-title-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg> -->
+                </h3>
+                <div class="db-footer-links">
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                </div>
+            </div>
+            <div class="db-footer-section">
+                <h3 class="db-footer-title">
+                    Lien
+                    <!-- <svg class="db-footer-title-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg> -->
+                </h3>
+                <div class="db-footer-links">
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                </div>
+            </div>
+        </div>
+        <h1 class="db-footer-copyright">
+            DUBAI
+        </h1>
+    </footer>
+
+    <script>
+        // Ajouter un écouteur d'événement sur chaque titre
+        const footerTitles = document.querySelectorAll('.db-footer-title');
+
+        footerTitles.forEach((title) => {
+            title.addEventListener('click', () => {
+                footerTitles.forEach((otherTitle) => {
+                    if (otherTitle !== title) {
+                        otherTitle.parentElement.classList.remove('active');
+                    }
+                });
+                title.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

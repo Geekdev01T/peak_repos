@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --section-product-bg-color: #FFDFB9;
+            --text-color: #ffffff;
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+            --sub-title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --quaternary-btn-size: 16px;
+            --btn-transform: uppercase;
+            --quaternary-btn-color: #C37B06;
+            --quaternary-btn-padding-x: 4rem;
+            --quaternary-btn-padding-y: 12px;
+            --quaternary-btn-border-width: 1px;
+            --quaternary-btn-border-color: #C37B06;
+            --quaternary-btn-background: transparent;
+            --quaternary-btn-radius: 0px;
+            --quaternary-btn-background-hover: #ffffff;
+            --font-size-base: 16px;
+            --font-size-heading: 24px;
+            --section-height: 90vh;
+            --section-padding-x: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --transition-duration: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .db-img_text-2-product-section {
+            height: var(--section-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            background-color: var(--section-product-bg-color);
+            padding: 0 4rem;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-image {
+            width: 90%;
+            height: 75%;
+            margin: 0 auto;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info {
+            width: 100%;
+            height: auto;
+            padding: var(--section-padding-x);
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-sub-title {
+            font-size: var(--sub-title-size);
+            text-transform: var(--sub-title-text-transform);
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-title {
+            font-size: var(--title-size);
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+            margin-bottom: 20px;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-description {
+            font-size: var(--text-content-size);
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-link {
+            display: inline-block;
+            padding: var(--quaternary-btn-padding-y) var(--quaternary-btn-padding-x);
+            background-color: var(--quaternary-btn-background);
+            font-size: var(--quaternary-btn-size);
+            color: var(--quaternary-btn-color);
+            border: var(--quaternary-btn-border-width) solid var(--quaternary-btn-border-color);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            border-radius: var(--quaternary-btn-radius);
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-link:hover {
+            background: var(--quaternary-btn-background-hover);
+            border-color: var(--quaternary-btn-background-hover);
+            box-shadow: 0px 0px 2px var(--quaternary-btn-background-hover);
+        }
+
+         @media (max-width: 850px) {
+                .db-img_text-2-product-section .db-img_text-2-product-image {
+                    width: 100%;
+                    height: 60%;
+                    margin: 0 auto;
+                }
+            }
+        @media (max-width: 768px) {
+            .db-img_text-2-product-section {
+                height: auto;
+                width: 100%;
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-image,
+            .db-img_text-2-product-section .db-img_text-2-product-info {
+                width: 100%;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info {
+                padding: 2rem 0;
+                text-align: center;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-image {
+                margin-bottom: 30px;
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-sub-title {
+                font-size: var(--sub-title-mobile-size);
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-img_text-2-product-section .db-img_text-2-product-info .db-img_text-2-product-description {
+                font-size: var(--text-content-mobile-size);
+                padding: 1rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-img_text-2-product-section">
+        <div class="db-img_text-2-product-image">
+            <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Hand-Embellished-Raw-Silk-Bridal-Lehenga-1.webp"
+                alt="Product Image">
+        </div>
+        <div class="db-img_text-2-product-info">
+            <p class="db-img_text-2-sub-title">Categorie Name</p>
+            <h2 class="db-img_text-2-product-title">Product's Title</h2>
+            <p class="db-img_text-2-product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                labore beatae
+                modi suscipit delectus vel autem quis. Vero eveniet voluptatem maxime officia, accusamus doloremque
+                iusto veniam aliquam dignissimos tempora. Consequuntur, et ducimus praesentium aspernatur velit in
+                officiis. Assumenda, adipisci, error harum quas eaque est repellat maxime magnam ipsam ab accusantium?
+            </p>
+            <a href="#" class="db-img_text-2-product-link">Learn More</a>
+        </div>
+    </section>
+</body>
+
+</html>

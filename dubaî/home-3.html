@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --section-bg-color: #F5F5F5;
+            --newsletter-bg-color: #FDEFDD;
+            --footer-bg-color: #D9D9D9;
+            --original-price-color: #999;
+            --overlay-color: rgba(0, 0, 0, 0.2);
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+            --sub-title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --btn-transform: uppercase;
+            --primary-btn-size: 14px;
+            --primary-btn-color: #ffffff;
+            --primary-btn-padding-x: 5rem;
+            --primary-btn-padding-y: 18px;
+            --primary-btn-border-width: 1px;
+            --primary-btn-border-color: #ffffff;
+            --primary-btn-background: transparent;
+            --primary-btn-background-hover: #ffffff;
+            --secondary-btn-size: 16px;
+            --secondary-btn-color: #ffffff;
+            --secondary-btn-padding-x: 4rem;
+            --secondary-btn-padding-y: 12px;
+            --secondary-btn-border-width: 1px;
+            --secondary-btn-border-color: #000000;
+            --secondary-btn-shadow-color: #000000;
+            --secondary-btn-background: transparent;
+            --secondary-btn-radius: 0px;
+            --secondary-btn-background-hover: #212121;
+            --tertiary-btn-size: 14px;
+            --tertiary-btn-color: #212121;
+            --tertiary-btn-padding-x: 4rem;
+            --tertiary-btn-padding-y: 12px;
+            --tertiary-btn-border-width: 0px;
+            --tertiary-btn-border-color: #ffffff;
+            --tertiary-btn-background: #fff;
+            --tertiary-btn-background-hover: #ffffff;
+            --expanded-height: 550px;
+            --expanded-mobile-height: 400px;
+            --collapsed-height: 200px;
+            --collapsed-width: 150px;
+            --section-height: 90vh;
+            --section-max-height: 500px;
+            --icon-size: 54px;
+            --section-padding-x: 3rem;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --section-mobile-padding-x: 2rem;
+            --section-mobile-padding-y: 2rem;
+            --page-width: 1200px;
+            --transition-duration: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Section Banniere Gradient Start */
+
+        :root {
+            /* Colors */
+            --secondary-color: #212121;
+            --gradient-background: linear-gradient(to right, #f7e6d4, #f2e6e6);
+
+            /* Typography */
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: uppercase;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+
+            /* Dimensions */
+            --section-padding-x: 2rem;
+            --section-padding-y: 2rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --header-height: 250px;
+            --page-width: 1200px;
+        }
+
+        .db-gradient-hero-header {
+            width: 100%;
+            height: var(--header-height);
+            background: var(--gradient-background);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-gradient-hero-header .db-gradient-hero-content {
+            max-width: var(--page-width);
+            width: 100%;
+            text-align: center;
+            /* padding: var(--section-padding-y) var(--section-padding-x); */
+        }
+
+        .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-title {
+            font-size: var(--title-size);
+            font-weight: bold;
+            letter-spacing: 8px;
+            line-height: 1.3;
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+        }
+
+        .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-subtitle {
+            font-size: var(--sub-title-size);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-top: .5em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-gradient-hero-header .db-gradient-hero-content .db-gradient-hero-subtitle {
+                font-size: var(--sub-title-mobile-size);
+            }
+        }
+
+        /* Section Banniere Gradient End */
+
+        /* Section Grid Slides Style Start */
+
+        .db-grid-product-section {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            padding: 20px;
+        }
+
+        .db-grid-product-section .db-grid-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-title {
+            font-size: var(--title-size);
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+            margin: 0;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-sub-title {
+            font-size: var(--sub-title-size);
+            color: var(--secondary-color);
+            margin: 0;
+            margin-top: 1em;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-filter-button {
+            display: inline-block;
+            padding: var(--secondary-btn-padding-y) var(--secondary-btn-padding-x);
+            background-color: var(--secondary-btn-background);
+            font-size: var(--secondary-btn-size);
+            color: var(--secondary-color);
+            border: var(--secondary-btn-border-width) solid var(--secondary-btn-border-color);
+            box-shadow: 0px 0px 2px var(--secondary-btn-shadow-color);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: var(--secondary-btn-radius);
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-filter-button:hover {
+            color: var(--text-color);
+            background: var(--secondary-btn-background-hover);
+            border-color: var(--secondary-btn-background-hover);
+            box-shadow: 0px 0px 2px var(--secondary-btn-background-hover);
+        }
+
+        .db-grid-product-section .swiper {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+
+        /* .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+            gap: 20px;
+            justify-content: space-between; 
+        } */
+        .db-grid-product-section .swiper .swiper-slide {
+            aspect-ratio: 2/2.6;
+            /* Ajuste l'aspect ratio selon vos besoins */
+            margin: 0;
+            /* Suppression de l'espace entre les lignes */
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card {
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-image {
+            width: 100%;
+            height: 90%;
+            position: relative;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-image::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-info {
+            padding: 0 12px;
+            padding-top: 12px;
+            text-align: center;
+            font-size: var(--text-content-size);
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-name {
+            font-weight: bold;
+            text-transform: capitalize;
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-price {
+            color: var(--primary-color);
+            margin: 4px 0;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-price .db-grid-original-price {
+            color: #4e4e4e;
+            text-decoration: line-through;
+            margin-left: .5em;
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 50px;
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 20px;
+            font-size: 18px;
+            border-radius: 0 !important;
+            /* Changement effectué ici pour enlever l'arrondi */
+            color: #000;
+            cursor: pointer;
+            opacity: 1;
+            background: #f1f1f1;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet:hover {
+            color: #fff;
+            background: var(--primary-color);
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet-active {
+            color: #fff;
+            background: var(--primary-color);
+        }
+
+        @media(max-width:768px) {
+            .db-grid-product-section .db-grid-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .db-grid-product-section .db-grid-header .db-grid-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-grid-product-section .db-grid-header .db-grid-sub-title {
+                font-size: var(--sub-title-mobile-size);
+            }
+
+            .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-info {
+                font-size: var(--text-content-mobile-size);
+            }
+
+            .db-grid-product-section .swiper .db-grid-pagination {
+                gap: 6px;
+                margin-top: 40px;
+            }
+
+            .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+        /* Section Grid Slides Style End */
+
+        /* Section Footer Style Start */
+
+        :root {
+            --text-content-hover-color: #8d8b8b;
+        }
+
+        .db-footer {
+            background-color: var(--footer-bg-color);
+            color: var(--secondary-color);
+            padding: 0 var(--section-padding-x);
+            padding-top: 2rem;
+            margin-top: var(--section-margin-top);
+            /* margin-bottom: var(--section-margin-bottom); */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .db-footer .db-footer-container {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .db-footer .db-footer-container .db-footer-section {
+            flex-basis: 25%;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide {
+            flex-basis: 50%;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-title {
+            color: var(--secondary-color);
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            margin-top: 0;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-text {
+            color: var(--secondary-color);
+            font-size: var(--text-content-size);
+            width: 80%;
+            margin-top: 1em;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social {
+            display: flex;
+            justify-content: start;
+            gap: 20px;
+            align-items: center;
+            margin-top: 2em;
+        }
+
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social .db-footer-social-link {
+            text-decoration: none;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social .db-footer-social-link svg {
+            color: var(--secondary-color);
+            text-decoration: none;
+            width: 35px;
+            height: 35px;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-footer .db-footer-container .db-footer-section--wide .db-footer-social .db-footer-social-link svg:hover {
+            color: var(--text-content-hover-color);
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: var(--text-content-size);
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-title .db-footer-title-icon {
+            display: none;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-links {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-links .db-footer-link {
+            color: var(--secondary-color);
+            width: fit-content;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-footer .db-footer-container .db-footer-section .db-footer-links .db-footer-link:hover {
+            color: var(--text-content-hover-color);
+        }
+
+
+        .db-footer .db-footer-copyright {
+            width: 100%;
+            height: fit-content;
+            margin: 0 auto;
+            color: var(--secondary-color);
+            text-align: center;
+            letter-spacing: 70px;
+            text-transform: uppercase;
+            font-size: 280px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 1075px) {
+            .db-footer .db-footer-copyright {
+                margin: .3em auto;
+                letter-spacing: 60px;
+                font-size: 180px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .db-footer .db-footer-copyright {
+                margin: .3em auto;
+                letter-spacing: 60px;
+                font-size: 130px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .db-footer {
+                padding: 0 0.5em;
+                padding-top: 2rem;
+            }
+
+            .db-footer .db-footer-container {
+                flex-direction: column;
+            }
+
+            .db-footer .db-footer-container .db-footer-section {
+                flex-basis: auto;
+                margin-bottom: 1px;
+                padding: 0;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide {
+                text-align: center;
+                margin-bottom: 2em;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide .db-footer-title {
+                font-size: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide .db-footer-text {
+                font-size: 18px;
+                width: 100%;
+            }
+
+            .db-footer .db-footer-container .db-footer-section--wide .db-footer-social {
+                justify-content: center;
+            }
+
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                padding: 8px 12px;
+                background: rgb(119, 118, 118);
+                margin-bottom: 0;
+            }
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-links {
+                display: none;
+            }
+
+            .db-footer .db-footer-section.active .db-footer-links {
+                display: flex;
+                gap: 1px;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                cursor: pointer;
+                background: #ccc;
+            }
+
+            .db-footer .db-footer-container .db-footer-section.active .db-footer-links .db-footer-link {
+                width: 95%;
+                padding: 6px 0;
+                padding-left: 6px;
+                margin-bottom: 0;
+            }
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-title .db-footer-title-icon {
+                display: none;
+                /* Hide SVG completely */
+            }
+
+            .db-footer .db-footer-container .db-footer-section .db-footer-title::after {
+                content: '+';
+                display: block;
+                font-size: 25px;
+                font-weight: bold;
+                transition: all var(--transition-duration) ease;
+            }
+
+            .db-footer .db-footer-container .db-footer-section.active .db-footer-title::after {
+                content: '-';
+                transform: none;
+                /* Remove rotation */
+            }
+
+            /* .db-footer .db-footer-container .db-footer-section .db-footer-title .db-footer-title-icon {
+                display: block;
+                width: 25px;
+                height: 25px;
+                transition: all var(--transition-duration) ease;
+            }
+
+            .db-footer .db-footer-container .db-footer-section.active .db-footer-title .db-footer-title-icon {
+                transform: rotate(180deg);
+            } */
+
+            .db-footer .db-footer-copyright {
+                margin: .4em auto;
+                letter-spacing: 50px;
+                font-size: 130px;
+            }
+        }
+
+        @media (max-width: 695px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 25px;
+                font-size: 130px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 20px;
+                font-size: 110px;
+            }
+        }
+
+        @media (max-width: 465px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 15px;
+                font-size: 90px;
+            }
+        }
+
+        @media (max-width: 385px) {
+            .db-footer .db-footer-copyright {
+                letter-spacing: 8px;
+                font-size: 80px;
+            }
+        }
+
+        /* Section Footer Style End */
+    </style>
+</head>
+
+<body>
+    <header class="db-gradient-hero-header">
+        <div class="db-gradient-hero-content">
+            <h1 class="db-gradient-hero-title">Lorem Ipsum</h1>
+            <p class="db-gradient-hero-subtitle">lorem ipsum dolor sit amet sit amet</p>
+        </div>
+    </header>
+
+
+    <section class="db-grid-product-section">
+        <div class="db-grid-header">
+            <div>
+                <h1 class="db-grid-title">Lorem Ipsum</h1>
+                <p class="db-grid-sub-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, quae!
+                </p>
+            </div>
+            <button class="db-grid-filter-button">Filter</button>
+        </div>
+    
+        <div class="swiper db-swiper-grid">
+            <div class="swiper-wrapper">
+                <!-- Each product in its own slide -->
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="db-grid-pagination">
+                <!-- <button class="pagination-button active">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <button class="pagination-button">4</button>
+                    <button class="pagination-button">Suivant</button> -->
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.db-swiper-grid', {
+            slidesPerView: 1.5,
+            grid: {
+                rows: 3,
+                fill: 'row'
+            },
+            spaceBetween: 30,
+            pagination: {
+                el: '.db-grid-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+            },
+            breakpoints: {
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 3,
+                        fill: 'row'
+                    },
+                },
+
+                1024: {
+                    slidesPerView: 3,
+                    grid: {
+                        rows: 3,
+                        fill: 'row'
+                    },
+                }
+            }
+        });
+
+        // Override default Swiper grid styles for exact matching
+        // document.querySelector('.swiper').style.height = 'auto';
+        // document.querySelector('.swiper-wrapper').style.transform = 'translate3d(0px, 0px, 0px)';
+    </script>
+
+
+    <footer class="db-footer">
+        <div class="db-footer-container">
+            <div class="db-footer-section--wide">
+                <h3 class="db-footer-title">À Propos</h3>
+                <p class="db-footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="db-footer-social">
+                    <a href="#" class="db-footer-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M16 7a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M12 7.25a4.75 4.75 0 1 0 0 9.5a4.75 4.75 0 0 0 0-9.5M8.75 12a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0"
+                                clip-rule="evenodd" />
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M17.258 2.833a47.7 47.7 0 0 0-10.516 0c-2.012.225-3.637 1.81-3.873 3.832a46 46 0 0 0 0 10.67c.236 2.022 1.86 3.607 3.873 3.832a47.8 47.8 0 0 0 10.516 0c2.012-.225 3.637-1.81 3.873-3.832a46 46 0 0 0 0-10.67c-.236-2.022-1.86-3.607-3.873-3.832m-10.35 1.49a46.2 46.2 0 0 1 10.184 0c1.33.15 2.395 1.199 2.55 2.517a44.4 44.4 0 0 1 0 10.32a2.89 2.89 0 0 1-2.55 2.516a46.2 46.2 0 0 1-10.184 0a2.89 2.89 0 0 1-2.55-2.516a44.4 44.4 0 0 1 0-10.32a2.89 2.89 0 0 1 2.55-2.516"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="db-footer-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+                        </svg>
+                    </a>
+                    <a href="#" class="db-footer-social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    d="m14 12l-3.5 2v-4z" />
+                                <path
+                                    d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="db-footer-section">
+                <h3 class="db-footer-title">
+                    Lien
+                    <!-- <svg class="db-footer-title-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg> -->
+                </h3>
+                <div class="db-footer-links">
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                </div>
+            </div>
+            <div class="db-footer-section">
+                <h3 class="db-footer-title">
+                    Lien
+                    <!-- <svg class="db-footer-title-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg> -->
+                </h3>
+                <div class="db-footer-links">
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                </div>
+            </div>
+            <div class="db-footer-section">
+                <h3 class="db-footer-title">
+                    Lien
+                    <!-- <svg class="db-footer-title-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg> -->
+                </h3>
+                <div class="db-footer-links">
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                    <a href="#" class="db-footer-link">menu item</a>
+                </div>
+            </div>
+        </div>
+        <h1 class="db-footer-copyright">
+            DUBAI
+        </h1>
+    </footer>
+
+    <script>
+        // Ajouter un écouteur d'événement sur chaque titre
+        const footerTitles = document.querySelectorAll('.db-footer-title');
+
+        footerTitles.forEach((title) => {
+            title.addEventListener('click', () => {
+                footerTitles.forEach((otherTitle) => {
+                    if (otherTitle !== title) {
+                        otherTitle.parentElement.classList.remove('active');
+                    }
+                });
+                title.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

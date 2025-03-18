@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.css">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --section-bg-color: #F5F5F5;
+            --overlay-color: rgba(0, 0, 0, 0.2);
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --section-padding-x: 3rem;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --page-width: 1200px;
+            --transition-duration: 0.3s;
+        }
+
+        .db-product-section-slider {
+            padding: var(--section-padding-y) 0;
+            background: var(--section-bg-color);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-product-section-slider .db-product-container {
+            max-width: var(--page-width);
+            margin: 0 auto;
+        }
+
+        .db-product-section-slider .db-product-container .db-product-section-header {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .db-product-section-slider .db-product-container .db-product-section-header .db-product-section-title {
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .db-product-section-slider .db-product-container .swiper {
+            width: 100%;
+            height: auto;
+            padding-bottom: 90px;
+            /* Espace pour la scrollbar */
+            position: relative;
+        }
+
+        .db-product-section-slider .db-product-container .swiper .swiper-slide {
+            /* aspect-ratio: 2/2.5; */
+            position: relative;
+            cursor: pointer;
+            transition: transform var(--transition-duration) ease;
+        }
+
+        .db-product-section-slider .db-product-container .swiper .swiper-slide:hover {
+            transform: scale(1.02);
+        }
+
+        .db-product-section-slider .db-product-container .swiper .swiper-slide .db-product-slide-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .db-product-section-slider .db-product-container .swiper .swiper-slide .db-product-slide-content {
+            margin-top: 30px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            z-index: 2;
+        }
+
+        .db-product-section-slider .db-product-container .swiper .swiper-slide .db-product-slide-content .db-product-slide-title {
+            font-size: var(--text-content-size);
+            font-weight: 500;
+            margin: 0 0 5px 0;
+            text-align: center;
+        }
+
+        /* Navigation et Scrollbar */
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container .swiper-button-prev,
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container .swiper-button-next {
+            position: static;
+            width: 45px;
+            height: 45px;
+            margin: 0;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: background-color var(--transition-duration) ease;
+        }
+
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container .swiper-button-prev::after,
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container .swiper-button-next::after {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container .swiper-button-prev:hover,
+        .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container .swiper-button-next:hover {
+            background: #e5e5e5;
+            color: var(--secondary-color);
+        }
+
+
+        /* Style de la Scrollbar */
+        .db-product-section-slider .db-product-container .swiper .swiper-scrollbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background: #ccc;
+            /* opacity: 0; */
+            opacity: 1;
+            transition: opacity var(--transition-duration) ease;
+        }
+
+        /* .db-product-section-slider .db-product-container:hover .swiper-scrollbar {
+        opacity: 1;
+    } */
+
+        .db-product-section-slider .db-product-container .swiper .swiper-scrollbar .swiper-scrollbar-drag {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 2px;
+            cursor: grab;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .db-product-section-slider {
+                padding: var(--section-padding-y) 1rem;
+            }
+
+            .db-product-section-slider .db-product-container .swiper {
+                padding-bottom: 50px;
+            }
+
+            .db-product-section-slider .db-product-container .swiper .swiper-slide .db-product-slide-image {
+                height: 400px;
+            }
+
+            .db-product-section-slider .db-product-container .db-product-section-header .db-product-section-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-product-section-slider .db-product-container .swiper .swiper-slide .db-product-slide-content .db-product-slide-title {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+
+        @media (max-width: 580px) {
+            .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .db-product-section-slider .db-product-container .swiper .swiper-slide .db-product-slide-image {
+                height: 300px;
+            }
+
+            .db-product-section-slider .db-product-container .db-product-nav-and-scroll-container {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-product-section-slider">
+        <div class="db-product-container">
+            <div class="db-product-section-header">
+                <h2 class="db-product-section-title">decouvrez aussi</h2>
+                <div class="db-product-nav-and-scroll-container">
+                    <div class="swiper-button-prev" tabindex="0"></div>
+                    <div class="swiper-button-next" tabindex="0"></div>
+                    <style>
+
+                    </style>
+                </div>
+            </div>
+
+            <div class="swiper">
+
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="https://m.media-amazon.com/images/I/61j2ckv28pL._AC_UY1000_.jpg"
+                            alt="Survêtement de sport" class="db-product-slide-image">
+                        <div class="db-product-slide-content">
+                            <h3 class="db-product-slide-title">Survêtement de sport</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="https://i.etsystatic.com/8401531/r/il/014b0b/3996963367/il_570xN.3996963367_sb3q.jpg"
+                            alt="Chaussures de football" class="db-product-slide-image">
+                        <div class="db-product-slide-content">
+                            <h3 class="db-product-slide-title">Chaussures de football</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="https://www.bollywood-fashion-online.com/images/Image/75110350-3804-2809.jpg"
+                            alt="Vêtements d'hiver" class="db-product-slide-image">
+                        <div class="db-product-slide-content">
+                            <h3 class="db-product-slide-title">Vêtements d'hiver</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <img src="https://i.etsystatic.com/18783130/c/1500/1500/0/0/il/509f45/6213377881/il_300x300.6213377881_94g3.jpg"
+                            alt="Collection de mode" class="db-product-slide-image">
+                        <div class="db-product-slide-content">
+                            <h3 class="db-product-slide-title">Collection de mode</h3>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <img src="https://i.etsystatic.com/18783130/c/1500/1500/0/0/il/509f45/6213377881/il_300x300.6213377881_94g3.jpg"
+                            alt="Collection de mode" class="db-product-slide-image">
+                        <div class="db-product-slide-content">
+                            <h3 class="db-product-slide-title">Collection de mode</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            loop: false,
+            speed: 600,
+            grabCursor: true,
+
+            // Navigation
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+                // dragSize: 100
+            },
+
+            // Responsive breakpoints
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --title-size: 42px;
+            --title-mobile-size: 28px;
+            --title-text-transform: capitalize;
+            --text-content-size: 18px;
+            --text-content-mobile-size: 16px;
+            --section-padding-x: 3rem;
+            --section-padding-y: 3rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --page-width: 1200px;
+            --section-about-height: 100vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        .db-about-section {
+            position: relative;
+            max-width: var(--page-width);
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            height: var(--section-about-height);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-about-section .db-about-image {
+            position: relative;
+            margin-top: -7em;
+            flex: 1;
+            max-width: 45%;
+            height: 80%;
+        }
+
+        .db-about-section .db-about-image::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .db-about-section .db-about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-about-section .db-about-content {
+            position: absolute;
+            width: 55%;
+            height: fit-content;
+            right: 20%;
+            bottom: -10%;
+            padding: var(--section-padding-y) var(--section-padding-x);
+            background: #fff;
+        }
+
+        .db-about-section .db-about-content .db-about-title {
+            font-size: var(--title-size);
+            margin-bottom: 1em;
+            text-transform: var(--title-text-transform);
+            position: relative;
+            width: fit-content;
+        }
+
+        .db-about-section .db-about-content .db-about-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .db-about-section .db-about-content .db-about-text {
+            font-size: var(--text-content-size);
+            color: var(--color-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .db-about-section {
+                max-width: 90%;
+                height: 60vh;
+            }
+
+            .db-about-section .db-about-image {
+                max-width: 50%;
+            }
+
+            .db-about-section .db-about-content {
+                width: 65%;
+                right: 10%;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .db-about-section {
+                max-width: 100%;
+                flex-direction: column;
+                margin: 0 auto;
+                height: var(--section-about-height);
+            }
+
+            .db-about-section .db-about-image {
+                position: relative;
+                height: 50%;
+                max-width: 100%;
+                margin-top: 0;
+            }
+
+            .db-about-section .db-about-content {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 2rem;
+                margin: 0;
+                left: 0%;
+                bottom: 0;
+            }
+
+            .db-about-section .db-about-content .db-about-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-about-section .db-about-content .db-about-text {
+                font-size: var(--text-content-mobile-size);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-about-section">
+        <div class="db-about-image">
+            <img src="https://cdn.shopify.com/s/files/1/0533/0560/6313/files/kurta-indien_2048x2048.jpg?v=1640935262"
+                alt="À propos">
+        </div>
+        <div class="db-about-content">
+            <h2 class="db-about-title">À Propos</h2>
+            <p class="db-about-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>

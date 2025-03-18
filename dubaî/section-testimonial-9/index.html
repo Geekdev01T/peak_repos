@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --section-bg-color:#F5F5F5;
+            --overlay-color: rgba(0, 0, 0, 0.4);
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --icon-size: 54px;
+            --section-padding-y: 2rem;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+        }
+
+        .db-slide_testimonial {
+            padding: var(--section-padding-y) 0;
+            background: var(--section-bg-color);
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-title {
+            text-align: center;
+            font-size: var(--title-size);
+            text-transform: var(--title-text-transform);
+            color: var(--secondary-color);
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-container {
+            /* max-width: 1200px; */
+            margin: 0 auto;
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-container .db-slide_testimonial-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-container .db-slide_testimonial-wrapper .db-slide_testimonial-slide {
+            aspect-ratio: 2/2;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-container .db-slide_testimonial-wrapper .db-slide_testimonial-slide::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-container .db-slide_testimonial-wrapper .db-slide_testimonial-slide .db-slide_testimonial-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-slide_testimonial .db-slide_testimonial-container .db-slide_testimonial-wrapper .db-slide_testimonial-slide .db-slide_testimonial-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--icon-size);
+            height: var(--icon-size);
+            color: var(--text-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+         @media (max-width: 768px) {
+        .db-slide_testimonial .db-slide_testimonial-title {
+            font-size: var(--title-mobile-size);
+            margin-bottom: 1.5em;
+        }
+
+    }
+    </style>
+    </style>
+</head>
+
+<body>
+    <section class="db-slide_testimonial">
+        <h2 class="db-slide_testimonial-title">Nos Clientes En Témoignent</h2>
+        <div class="db-slide_testimonial-container swiper">
+            <div class="db-slide_testimonial-wrapper swiper-wrapper">
+                <div class="db-slide_testimonial-slide swiper-slide">
+                    <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Hand-Embellished-Raw-Silk-Bridal-Lehenga-1.webp"
+                        alt="Témoignage 1" class="db-slide_testimonial-image">
+                    <svg class="db-slide_testimonial-logo" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 8.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5" />
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M6.77 3.082a47.5 47.5 0 0 1 10.46 0c1.899.212 3.43 1.707 3.653 3.613a45.7 45.7 0 0 1 0 10.61c-.223 1.906-1.754 3.401-3.652 3.614a47.5 47.5 0 0 1-10.461 0c-1.899-.213-3.43-1.708-3.653-3.613a45.7 45.7 0 0 1 0-10.611C3.34 4.789 4.871 3.294 6.77 3.082M17 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-9.75 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="db-slide_testimonial-slide swiper-slide">
+                    <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Hand-Embellished-Raw-Silk-Bridal-Lehenga-1.webp"
+                        alt="Témoignage 2" class="db-slide_testimonial-image">
+                    <svg class="db-slide_testimonial-logo" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 8.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5" />
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M6.77 3.082a47.5 47.5 0 0 1 10.46 0c1.899.212 3.43 1.707 3.653 3.613a45.7 45.7 0 0 1 0 10.61c-.223 1.906-1.754 3.401-3.652 3.614a47.5 47.5 0 0 1-10.461 0c-1.899-.213-3.43-1.708-3.653-3.613a45.7 45.7 0 0 1 0-10.611C3.34 4.789 4.871 3.294 6.77 3.082M17 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-9.75 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="db-slide_testimonial-slide swiper-slide">
+                    <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Hand-Embellished-Raw-Silk-Bridal-Lehenga-1.webp"
+                        alt="Témoignage 3" class="db-slide_testimonial-image">
+                    <svg class="db-slide_testimonial-logo" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 8.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5" />
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M6.77 3.082a47.5 47.5 0 0 1 10.46 0c1.899.212 3.43 1.707 3.653 3.613a45.7 45.7 0 0 1 0 10.61c-.223 1.906-1.754 3.401-3.652 3.614a47.5 47.5 0 0 1-10.461 0c-1.899-.213-3.43-1.708-3.653-3.613a45.7 45.7 0 0 1 0-10.611C3.34 4.789 4.871 3.294 6.77 3.082M17 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-9.75 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="db-slide_testimonial-slide swiper-slide">
+                    <img src="https://www.shadidress.fr/wp-content/uploads/2024/02/Hand-Embellished-Raw-Silk-Bridal-Lehenga-1.webp"
+                        alt="Témoignage 4" class="db-slide_testimonial-image">
+                    <svg class="db-slide_testimonial-logo" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 8.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5" />
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M6.77 3.082a47.5 47.5 0 0 1 10.46 0c1.899.212 3.43 1.707 3.653 3.613a45.7 45.7 0 0 1 0 10.61c-.223 1.906-1.754 3.401-3.652 3.614a47.5 47.5 0 0 1-10.461 0c-1.899-.213-3.43-1.708-3.653-3.613a45.7 45.7 0 0 1 0-10.611C3.34 4.789 4.871 3.294 6.77 3.082M17 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-9.75 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper for mobile
+        new Swiper('.swiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 1.8,
+                    spaceBetween: 15,
+                },
+
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

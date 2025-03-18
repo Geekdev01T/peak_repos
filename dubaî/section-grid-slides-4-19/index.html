@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary-color: #C37B06;
+            --secondary-color: #212121;
+            --text-color: #ffffff;
+            --overlay-color: rgba(0, 0, 0, 0.2);
+            --title-size: 65px;
+            --title-mobile-size: 48px;
+            --title-text-transform: capitalize;
+            --sub-title-size: 20px;
+            --sub-title-mobile-size: 16px;
+            --text-content-size: 20px;
+            --text-content-mobile-size: 18px;
+            --secondary-btn-size: 16px;
+            --btn-transform: uppercase;
+            --secondary-btn-color: #ffffff;
+            --secondary-btn-padding-x: 4rem;
+            --secondary-btn-padding-y: 12px;
+            --secondary-btn-border-width: 1px;
+            --secondary-btn-border-color: #000000;
+            --secondary-btn-shadow-color: #000000;
+            --secondary-btn-background: transparent;
+            --secondary-btn-radius: 0px;
+            --secondary-btn-background-hover: #212121;
+            --accent-color: #f3a847;
+            --original-price-color: #999;
+            --page-width: 1200px;
+            --section-margin-top: 1rem;
+            --section-margin-bottom: 1rem;
+            --transition-duration: 0.3s;
+        }
+
+        .db-grid-product-section {
+            max-width: var(--page-width);
+            margin: 0 auto;
+            margin-top: var(--section-margin-top);
+            margin-bottom: var(--section-margin-bottom);
+            padding: 20px;
+        }
+
+        .db-grid-product-section .db-grid-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-title {
+            font-size: var(--title-size);
+            color: var(--secondary-color);
+            text-transform: var(--title-text-transform);
+            margin: 0;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-sub-title {
+            font-size: var(--sub-title-size);
+            color: var(--secondary-color);
+            margin: 0;
+            margin-top: 1em;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-filter-button {
+            display: inline-block;
+            padding: var(--secondary-btn-padding-y) var(--secondary-btn-padding-x);
+            background-color: var(--secondary-btn-background);
+            font-size: var(--secondary-btn-size);
+            color: var(--secondary-color);
+            border: var(--secondary-btn-border-width) solid var(--secondary-btn-border-color);
+            box-shadow: 0px 0px 2px var(--secondary-btn-shadow-color);
+            text-transform: var(--btn-transform);
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: var(--secondary-btn-radius);
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-grid-product-section .db-grid-header .db-grid-filter-button:hover {
+            color: var(--text-color);
+            background: var(--secondary-btn-background-hover);
+            border-color: var(--secondary-btn-background-hover);
+            box-shadow: 0px 0px 2px var(--secondary-btn-background-hover);
+        }
+
+        .db-grid-product-section .swiper {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+
+        /* .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+            gap: 20px;
+            justify-content: space-between; 
+        } */
+        .db-grid-product-section .swiper .swiper-slide {
+            aspect-ratio: 2/2.6;
+            /* Ajuste l'aspect ratio selon vos besoins */
+            margin: 0;
+            /* Suppression de l'espace entre les lignes */
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card {
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-image {
+            width: 100%;
+            height: 90%;
+            position: relative;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-image::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-info {
+            padding: 0 12px;
+            padding-top: 12px;
+            text-align: center;
+            font-size: var(--text-content-size);
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-name {
+            font-weight: bold;
+            text-transform: capitalize;
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-price {
+            color: var(--primary-color);
+            margin: 4px 0;
+        }
+
+        .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-price .db-grid-original-price {
+            color: #4e4e4e;
+            text-decoration: line-through;
+            margin-left: .5em;
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 50px;
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 20px;
+            font-size: 18px;
+            border-radius: 0 !important;
+            /* Changement effectué ici pour enlever l'arrondi */
+            color: #000;
+            cursor: pointer;
+            opacity: 1;
+            background: #f1f1f1;
+            transition: all var(--transition-duration) ease;
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet:hover {
+            color: #fff;
+            background: var(--primary-color);
+        }
+
+        .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet-active {
+            color: #fff;
+            background: var(--primary-color);
+        }
+
+        @media(max-width:768px) {
+            .db-grid-product-section .db-grid-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .db-grid-product-section .db-grid-header .db-grid-title {
+                font-size: var(--title-mobile-size);
+            }
+
+            .db-grid-product-section .db-grid-header .db-grid-sub-title {
+                font-size: var(--sub-title-mobile-size);
+            }
+
+            .db-grid-product-section .swiper .swiper-slide .db-grid-product-card .db-grid-product-info {
+                font-size: var(--text-content-mobile-size);
+            }
+
+            .db-grid-product-section .swiper .db-grid-pagination {
+                gap: 6px;
+                margin-top: 40px;
+            }
+
+            .db-grid-product-section .swiper .db-grid-pagination .swiper-pagination-bullet {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="db-grid-product-section">
+        <div class="db-grid-header">
+            <div>
+                <h1 class="db-grid-title">Lorem Ipsum</h1>
+                <p class="db-grid-sub-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, quae!
+                </p>
+            </div>
+            <button class="db-grid-filter-button">Filter</button>
+        </div>
+
+        <div class="swiper db-swiper-grid">
+            <div class="swiper-wrapper">
+                <!-- Each product in its own slide -->
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00 <span class="db-grid-original-price">€50.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="db-grid-product-card">
+                        <div class="db-grid-product-image">
+                            <!-- <img src="" alt=""> -->
+                        </div>
+                        <div class="db-grid-product-info">
+                            <h3 class="db-grid-product-name">Product's Name</h3>
+                            <p class="db-grid-product-price">€45.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="db-grid-pagination">
+                <!-- <button class="pagination-button active">1</button>
+                <button class="pagination-button">2</button>
+                <button class="pagination-button">3</button>
+                <button class="pagination-button">4</button>
+                <button class="pagination-button">Suivant</button> -->
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.db-swiper-grid', {
+            slidesPerView: 1.5,
+            grid: {
+                rows: 3,
+                fill: 'row'
+            },
+            spaceBetween: 30,
+            pagination: {
+                el: '.db-grid-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+            },
+            breakpoints: {
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 3,
+                        fill: 'row'
+                    },
+                },
+
+                1024: {
+                    slidesPerView: 3,
+                    grid: {
+                        rows: 3,
+                        fill: 'row'
+                    },
+                }
+            }
+        });
+
+        // Override default Swiper grid styles for exact matching
+        // document.querySelector('.swiper').style.height = 'auto';
+        // document.querySelector('.swiper-wrapper').style.transform = 'translate3d(0px, 0px, 0px)';
+    </script>
+</body>
+

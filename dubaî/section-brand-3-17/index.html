@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<style>
+    :root {
+        --primary-color: #C37B06;
+        --secondary-color: #212121;
+        --text-color: #ffffff;
+        --section-bg-color: #F5F5F5;
+        --overlay-color: rgba(0, 0, 0, 0.2);
+        --title-size: 65px;
+        --title-mobile-size: 48px;
+        --title-text-transform: capitalize;
+        --section-padding-x: 4rem;
+        --section-padding-y: 4rem;
+        --section-margin-top: 1rem;
+        --section-margin-bottom: 1rem;
+        --page-width: 1200px;
+        --transition-speed: 0.3s;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .db-brand-services-section {
+        /* width: var(--page-width); */
+        padding: var(--section-padding-y) var(--section-padding-x);
+        /* background-color: var(--section-bg-color); */
+        margin: 0 auto;
+        margin-top: var(--section-margin-top);
+        margin-bottom: var(--section-margin-bottom);
+    }
+
+    .db-brand-services-section .db-brand-section-title {
+        text-align: center;
+        font-size: var(--title-size);
+        color: var(--secondary-color);
+        text-transform: var(--title-text-transform);
+        margin-bottom: 1em;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+
+    .db-brand-services-section .swiper {
+        display: block;
+        width: 100%;
+        padding: 4em 0;
+    }
+
+
+    .db-brand-services-section .swiper .swiper-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .db-brand-services-section .swiper .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+        cursor: grab;
+    }
+
+    .db-brand-services-section .swiper-slide .db-brand-service-brand {
+        width: 70%;
+        height: 70%;
+        object-fit: cover;
+    }
+
+
+    .db-brand-services-section .swiper .swiper-pagination-bullet {
+        background: var(--primary-color);
+    }
+
+    .db-brand-services-section .swiper .swiper-pagination-bullet-active {
+        background: var(--primary-color);
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .db-brand-services-section {
+            /* width: 100%; */
+            padding: 2rem;
+        }
+
+        .db-brand-services-section .swiper .swiper-slide {
+            gap: .4em;
+            justify-content: center;
+        }
+
+        .db-brand-services-section .db-brand-section-title {
+            font-size: var(--title-mobile-size);
+            margin-bottom: 1em;
+        }
+
+        .db-brand-services-section .db-brand-service-item {
+            padding: .6em;
+            cursor: grab;
+        }
+
+    }
+</style>
+</head>
+
+<body>
+    <section class="db-brand-services-section">
+        <h2 class="db-brand-section-title">Lorem Ipsum Dolor Amet</h2>
+        <!-- Mobile Slider -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="db-brand-service-brand"
+                        src="https://logowik.com/content/uploads/images/harry-winston8294.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="db-brand-service-brand"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9FueWQSZ967bm84w6Q-tU-otyhUwDtGl4xw&s"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="db-brand-service-brand" src="https://maisondegreef.com/storage/logo_cartier.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="db-brand-service-brand"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1GF6PhK74V0VWn-AD16rJkr7OF7M6vvB6A&s"
+                        alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper for mobile
+        new Swiper('.swiper', {
+            slidesPerView: 1,
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                },
+
+                1024: {
+                    slidesPerView: 4,
+                    centeredSlides: false,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
