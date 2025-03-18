@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            position: fixed;
+            z-index: 2;
+        }
+
+        .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.video-hide {
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .peakconvertion-fixed-video-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease 0s;
+        }
+
+        .peakconvertion-fixed-video-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:hover {
+            transition: all 0.25s ease 0s;
+            transform: scale(103%);
+        }
+
+        .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            width: 150px;
+            height: 200px;
+            border-radius: 8px;
+            border: 0 solid #000000;
+            position: relative;
+            transition: all 0.25s ease 0s;
+        }
+
+        .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.active .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            width: 350px;
+            height: 600px;
+            transition: all 0.25s ease 0s;
+        }
+
+        .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.active .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:after {
+            display: none;
+        }
+
+        .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe,
+        .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0px;
+            box-shadow: none;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* .fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        cursor: pointer;
+        transition: all 0.25s ease 0s;
+      } */
+
+        /* .fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.active:after {
+        transition: all 0.25s ease 0s;
+        background-color: rgba(0,0,0,0.3);
+      } */
+
+        .peakconvertion-fixed-video-close-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            position: absolute;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            top: -11px;
+            right: -11px;
+        }
+
+        .peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            font-size: 13px;
+            transition: all .7s;
+            box-shadow: 0 2px 4px #0003;
+            z-index: 2;
+            width: 22px;
+            height: 22px;
+            color: #353535;
+            cursor: pointer;
+            transform-origin: 50%;
+            background: #2f3137;
+            border-radius: 20px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+        }
+
+        .peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+        }
+
+        .peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease 0s;
+        }
+
+        .peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.active {
+            opacity: 1;
+            pointer-events: all;
+            transition: all 0.25s ease 0s;
+        }
+
+        .peakconvertion-fixed-video-btn-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            -moz-background-clip: border;
+            -webkit-background-clip: border;
+            background-clip: border-box;
+
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding;
+            background-clip: padding-box;
+
+            -moz-background-clip: content;
+            -webkit-background-clip: content;
+            background-clip: content-box;
+
+            width: 60px;
+            height: 60px;
+
+            background-color: #ffffff;
+        }
+
+        .peakconvertion-fixed-video-btn-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid #000000;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .peakconvertion-fixed-video-btn-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 img,
+        .peakconvertion-fixed-video-btn-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .peakconvertion-fixed-video-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .peakconvertion-fixed-video-content-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            display: none;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            bottom: 45px;
+            z-index: 2;
+            width: 80%;
+            padding: 0px 18px;
+        }
+
+        .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.active .peakconvertion-fixed-video-content-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            display: block;
+        }
+
+        .peakconvertion-fixed-video-heading-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            margin: 0;
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 130%;
+            text-transform: unset;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .peakconvertion-fixed-video-button-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            width: 95%;
+            margin: 0;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 100%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 15px 12px;
+            border-radius: 8px;
+            border: 1px solid #ffffff;
+            transition: all 0.25s ease 0s;
+        }
+
+        .peakconvertion-fixed-video-button-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:hover {
+            transition: all 0.25s ease 0s;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+
+        .peakconvertion-fixed-video-button-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .peakconvertion-fixed-video-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:after,
+        .peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        @media(min-width: 1024px) {
+            .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                width: 150px;
+                height: 200px;
+            }
+
+            .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7.active .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                width: 350px;
+                height: 600px;
+            }
+
+            .peakconvertion-fixed-video-content-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                padding: 0px 24px;
+                bottom: 60px;
+            }
+
+            .peakconvertion-fixed-video-heading-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                font-size: 20px;
+            }
+
+            .peakconvertion-fixed-video-button-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                margin-top: 16px;
+                padding: 20px 16px;
+                font-size: 16px;
+            }
+        }
+
+        @media(max-width: 415px) {
+            .peakconvertion-fixed-video-close-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                top: 2px;
+                right: 2px;
+            }
+
+            .peakconvertion-fixed-video-content-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                width: 87%;
+            }
+
+            .peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                width: 100px;
+                height: 100px;
+                box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.356);
+                border-radius: 100%;
+
+            }
+
+            #peakconvertion-video-content {
+                border-radius: 100%;
+            }
+
+            #peakconvertion-video-content.active {
+                border-radius: 8px;
+            }
+
+        }
+
+        .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+            left: 15px;
+            bottom: 15px;
+        }
+
+        @media(min-width: 1024px) {
+            .peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 {
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+    </style>
+
+    <div class="peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+        <div class="peakconvertion-fixed-video-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+            <div
+                class="peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+                <div
+                    class="peakconvertion-fixed-video-close-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+                    <div
+                        class="peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+                        <svg style="width: 10px !important; height: 10px !important;" width="11" height="10"
+                            viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.0547 12.5938C12.8203 12.8281 12.3906 12.8281 12.1562 12.5938L7 7.39844L1.80469 12.5938C1.57031 12.8281 1.14062 12.8281 0.90625 12.5938C0.671875 12.3594 0.671875 11.9297 0.90625 11.6953L6.10156 6.5L0.90625 1.34375C0.671875 1.10938 0.671875 0.679688 0.90625 0.445312C1.14062 0.210938 1.57031 0.210938 1.80469 0.445312L7 5.64062L12.1562 0.445312C12.3906 0.210938 12.8203 0.210938 13.0547 0.445312C13.2891 0.679688 13.2891 1.10938 13.0547 1.34375L7.85938 6.5L13.0547 11.6953C13.2891 11.9297 13.2891 12.3594 13.0547 12.5938Z"
+                                fill="white"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div
+                    class="peakconvertion-fixed-video-content-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+
+                    <p
+                        class="peakconvertion-fixed-video-heading-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+                        FIXED
+                        VIDEO</p>
+
+
+                    <a href=""
+                        class="peakconvertion-fixed-video-button-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">View
+                        All</a>
+
+                </div>
+                <div
+                    class="peakconvertion-fixed-video-btn-element peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+                    <div id="peakconvertion-fixed-btn-first"
+                        class="peakconvertion-fixed-video-btn-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+
+                        <svg fill="#ffffff" version="1.1" id="Capa_1" width="800px" height="800px"
+                            viewBox="0 0 408.221 408.221" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M204.11,0C91.388,0,0,91.388,0,204.111c0,112.725,91.388,204.11,204.11,204.11c112.729,0,204.11-91.385,204.11-204.11
+                            C408.221,91.388,316.839,0,204.11,0z M286.547,229.971l-126.368,72.471c-17.003,9.75-30.781,1.763-30.781-17.834V140.012
+                            c0-19.602,13.777-27.575,30.781-17.827l126.368,72.466C303.551,204.403,303.551,220.217,286.547,229.971z"
+                                        fill="#000000"></path>
+                                </g>
+                            </g>
+                        </svg>
+
+                    </div>
+                </div>
+                <div
+                    class="peakconvertion-fixed-video-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7">
+
+                    <video playsinline="true" autoplay="autoplay" loop="loop" mute="true" muted="muted"
+                        id="peakconvertion-video-content" preload="metadata"
+                        poster="//section.store/cdn/shop/files/preview_images/c65d1a9d9be44d01b526c62cff8a1b93.thumbnail.0000000000_small.jpg?v=1694679562"
+                        __idm_id__="1884161">
+                        <source
+                            src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"
+                            type="video/mp4"><img
+                            src="//section.store/cdn/shop/files/preview_images/c65d1a9d9be44d01b526c62cff8a1b93.thumbnail.0000000000_small.jpg?v=1694679562">
+                    </video>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function initFixedVideo() {
+            if (document.querySelector('.peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7')) {
+                document.querySelector('.peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').addEventListener('click', (e) => {
+                    if (e.target == document.querySelector('.peakconvertion-fixed-video-inner-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7')) {
+                        document.querySelector('.peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').classList.add('active');
+                        document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').classList.add('active');
+                        document.getElementById('peakconvertion-video-content').classList.add('active');
+                        if (document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video')) {
+                            document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video').muted = false;
+                            document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video').play();
+                        }
+                        if (document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe')) {
+                            let frame = document.querySelector('.peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe');
+                            frame.src = frame.src.replace(/mute=1/g, "");
+                        }
+                    }
+                })
+            }
+            if (document.querySelector('.peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7')) {
+                document.querySelector('.peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').addEventListener('click', () => {
+                    if (document.querySelector('.peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').classList.contains('active')) {
+                        document.querySelector('.peakconvertion-fixed-video-close-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').classList.remove('active');
+                        document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').classList.remove('active');
+                        if (document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video')) {
+                            document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video').muted = true;
+                            document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video').play();
+                        }
+                        if (document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe')) {
+                            let frame = document.querySelector('.peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe');
+                            if (frame.src.includes("youtube")) {
+                                frame.src += "&mute=1";
+                            }
+                            if (frame.src.includes("vimeo")) {
+                                frame.src += "&mute=1";
+                            }
+                        }
+
+                        let btn = document.querySelector('.peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7');
+                        if (btn) {
+                            btn.classList.remove('active');
+                        }
+                    } else {
+                        document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7').classList.add('video-hide');
+                        if (document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video')) {
+                            document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video').pause();
+                        }
+                        if (document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe')) {
+                            let frame = document.querySelector('.peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe');
+                            if (frame.src.includes("youtube")) {
+                                frame.src = "https://www.youtube.com/embed/43399112098121?enablejsapi=1";
+                            }
+                            if (frame.src.includes("vimeo")) {
+                                frame.src = "https://player.vimeo.com/video/43399112098121";
+                            }
+                        }
+                    }
+                })
+            }
+
+            if (document.querySelector('.peakconvertion-fixed-video-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7')) {
+                let video = document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video');
+                let wrapper = document.querySelector('.peakconvertion-fixed-video-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7');
+                let btn = document.querySelector('.peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7');
+                wrapper.addEventListener('click', () => {
+                    video.pause();
+                    btn.classList.add('active');
+                })
+            }
+
+            if (document.querySelector('.peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7')) {
+                let video = document.querySelector('.peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7');
+                let frame = document.querySelector('.peakconvertion-fixed-video-frame-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe');
+                let btn = document.querySelector('.peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7');
+                video.addEventListener('click', () => {
+                    frame.src = frame.src.replace(/&autoplay=0/g, '');
+                    frame.src = frame.src.replace(/&autoplay=1/g, '');
+                    btn.classList.add('active');
+                })
+            }
+            if (document.querySelector('.peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7')) {
+                let video = document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 video');
+                let videoFrame = document.querySelector('.peakconvertion-fixed-video-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7 iframe');
+                let btn = document.querySelector('.peakconvertion-fixed-video-btn-wrapper-template--20127418286409__36052f3a-94ef-492d-9ba6-192474fdd6e7');
+                btn.addEventListener('click', () => {
+                    if (video) {
+                        video.muted = true;
+                        video.play();
+                        video.muted = false;
+
+                    }
+                    if (videoFrame) {
+                        videoFrame.src += "&autoplay=1";
+                    }
+                    btn.classList.remove('active');
+                })
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initFixedVideo);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+            <style>
+                .section-ss-header-4 {
+                    border-top: solid #000000 0px;
+                    border-bottom: solid #000000 0px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 0rem;
+                    margin-right: 0rem;
+                    position: relative;
+                    background-color: rgba(0, 0, 0, 0);
+                    transition: all 0.6s ease 0s;
+                    background: #fff !important;
+                }
+    
+                .section-ss-header-4-settings {
+                    margin: 0 auto;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                }
+    
+                .header-ss-header-4.onscroll {
+                    background-color: rgba(0, 0, 0, 0);
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.scroll {
+                    transform: translateY(-150%);
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.scroll.active {
+                    transform: translateY(0);
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.open {
+                    background-color: #bd0abd !important;
+                    transition: all 0.6s ease 0s;
+                }
+    
+                .header-body-ss-header-4 {
+                    display: grid;
+                    align-items: center;
+                    margin-top: 10px;
+                    padding: 0px 0px;
+                    border: 0px solid #000000;
+                    border-radius: 4px;
+                    gap: 10px;
+                    background-color: #ffffff;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.open .header-body-ss-header-4 {
+                    background-color: #bd0abd;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-menu-list-ss-header-4 {
+                    padding: 0px;
+                    margin: 0px;
+                    display: none;
+                    align-items: center;
+                    gap: 0px;
+                    flex-wrap: wrap;
+                    list-style: none;
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-list-ss-header-4 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                }
+    
+                .header-menu-item-ss-header-4 {
+                    line-height: 100%;
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    padding-bottom: 0;
+                }
+    
+                .header-menu-link-ss-header-4 {
+                    margin: 0;
+                    font-size: 24px;
+                    color: #1f171f;
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: 400;
+                    transition: all 0.25s ease;
+                    position: relative;
+                    z-index: 3;
+                }
+    
+                .header-menu-item-main-ss-header-4>.header-menu-link-ss-header-4 {
+                    display: block;
+                    padding: 10px 16px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                }
+    
+                .header-menu-item-main-ss-header-4.active>.header-menu-link-ss-header-4 {
+                    background-color: #fff;
+                }
+    
+                .header-ss-header-4.open .header-menu-item-main-ss-header-4:not(.active) .header-menu-link-ss-header-4 {
+                    background-color: transparent;
+                    color: #ffffff;
+                }
+    
+                .header-ss-header-4.open .header-menu-mobile-inner-ss-header-4 .header-menu-link-ss-header-4 {
+                    color: #ffffff;
+                }
+    
+                .header-submenu-ss-header-4 .header-menu-link-ss-header-4 {
+                    color: #ffffff !important;
+                    font-weight: 400;
+                }
+    
+                .header-submenu-ss-header-4 .header-menu-link-ss-header-4:hover {
+                    color: #a5a2a5 !important;
+                }
+    
+                .header-menu-item-parent-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    max-width: fit-content;
+                    flex-basis: 0;
+                }
+    
+                .header-menu-item-icon-ss-header-4 {
+                    display: block;
+                    flex: 0 0 8px;
+                    width: 8px;
+                    transition: all 0.25s ease 0s;
+                    color: #ffffff;
+                }
+    
+                .header-menu-item-icon-ss-header-4 svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+                .header-submenu-ss-header-4 {
+                    position: absolute;
+                    z-index: 3;
+                    top: calc(100% - 20px);
+                    left: 0;
+                    width: 100%;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.25s ease 0s;
+                    list-style: none;
+                    margin: 0px;
+                }
+    
+                .header-submenu-bg-ss-header-4 {
+                    display: block !important;
+                    height: 20px;
+                    pointer-events: none;
+                }
+    
+                .header-submenu-inner-ss-header-4 {
+                    background-color: #c508c5;
+                    border-bottom: 0px solid #000000;
+                }
+    
+                .header-submenu-ss-header-4 .section-ss-header-4-settings {
+                    padding-top: 40px;
+                }
+    
+                .header-menu-item-parent-ss-header-4.active .header-submenu-ss-header-4 {
+                    opacity: 1;
+                    pointer-events: all;
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-menu-burder-wrapper-ss-header-4 {
+                    position: relative;
+                    cursor: pointer;
+                }
+    
+                .header-menu-burder-wrapper-ss-header-4:after {
+                    content: '';
+                    position: absolute;
+                    top: -6px;
+                    left: 10px;
+                    width: 18px;
+                    height: 100%;
+                    z-index: 2;
+                    min-height: 14px;
+                }
+    
+                .header-menu-burder-ss-header-4 {
+                    position: relative;
+                    z-index: 1;
+                    margin-left: 10px;
+                    display: block;
+                    width: 18px;
+                    position: relative;
+                    z-index: 3;
+                    transition: all 0.25s ease;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: 0px;
+                    box-shadow: none;
+                }
+    
+                .header-menu-burger-icon-ss-header-4 {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -1px;
+                    width: 100%;
+                    height: 1.5px;
+                    background: #1f171f;
+                    transition: transform .4s ease;
+                }
+    
+                .header-ss-header-4.open .header-menu-burger-icon-ss-header-4 {
+                    transform: rotate(45deg);
+                    transition-delay: .22s;
+                    background: #ffffff;
+                }
+    
+                .header-menu-burger-icon-ss-header-4::before,
+                .header-menu-burger-icon-ss-header-4::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 1.5px;
+                    background-color: inherit;
+                    background: #1f171f;
+                }
+    
+                .header-menu-burger-icon-ss-header-4::before {
+                    top: -6px;
+                    transition: top .25s ease .27s, opacity .25s ease, width .25s ease;
+                }
+    
+                .header-ss-header-4.open .header-menu-burger-icon-ss-header-4::before {
+                    top: 0;
+                    opacity: 0;
+                    width: 100%;
+                    transition: top .2s ease, opacity .2s ease .22s, width .1s ease;
+                    background: #bd0abd;
+                }
+    
+                .header-menu-burger-icon-ss-header-4::after {
+                    bottom: -6px;
+                    transition: bottom .25s ease .27s, transform .25s ease, width .25s ease;
+                }
+    
+                .header-ss-header-4.open .header-menu-burger-icon-ss-header-4::after {
+                    bottom: 0;
+                    transform: rotate(-90deg);
+                    width: 100%;
+                    transition: bottom .2s ease, transform .2s ease .22s, width .1s ease;
+                    background: #bd0abd !important;
+                }
+    
+                .header-logo-ss-header-4 {
+                    width: 100%;
+                    max-width: 120px;
+                    text-align: center;
+                    position: relative;
+                    z-index: 3;
+                }
+    
+                .header-logo-image-ss-header-4 img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 0px;
+                    border: 0px solid ;
+                }
+    
+                .header-logo-image-desktop-ss-header-4 {
+                    display: none;
+                }
+    
+                .header-logo-text-ss-header-4 {
+                    margin: 0;
+                    font-size: 18px;
+                    color: #1f171f;
+                    line-height: 100%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: 700;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.open .header-logo-text-ss-header-4 {
+                    transition: all 0.25s ease;
+                    color: #ffffff;
+                }
+    
+                .header-ss-header-4 .header-logo-first-ss-header-4 {
+                    display: block !important;
+                }
+    
+                .header-ss-header-4 .header-logo-second-ss-header-4 {
+                    display: none !important;
+                }
+    
+                .header-ss-header-4.open .header-logo-second-ss-header-4 {
+                    display: block !important;
+                }
+    
+                .header-ss-header-4.open .header-logo-first-ss-header-4 {
+                    display: none !important;
+                }
+    
+                .header-right-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 16px;
+                    flex-wrap: wrap;
+                    position: relative;
+                    z-index: 3;
+                }
+    
+                .header-search-text-ss-header-4,
+                .header-account-text-ss-header-4 {
+                    display: none;
+                    margin: 0;
+                    color: #1f171f;
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-ss-header-4.open .header-search-text-ss-header-4,
+                .header-ss-header-4.open .header-account-text-ss-header-4 {
+                    color: #ffffff;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-text-ss-header-4 {
+                    display: none;
+                    margin: 0;
+                    font-size: 13px;
+                    color: #1f171f;
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-ss-header-4 .cart-count-bubble span {
+                    margin: 0;
+                    font-size: 10px;
+                    color: #1f171f;
+                    line-height: 100%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-search-icon-ss-header-4,
+                .header-account-icon-ss-header-4,
+                .header-cart-icon-ss-header-4 {
+                    display: block;
+                    width: 20px;
+                }
+    
+                .header-search-icon-ss-header-4 svg,
+                .header-account-icon-ss-header-4 svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+                .header-cart-icon-ss-header-4 svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+                .header-search-icon-ss-header-4 svg path,
+                .header-account-icon-ss-header-4 svg path {
+                    stroke: #1f171f;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-icon-ss-header-4 svg path {
+                    stroke: #1f171f;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-ss-header-4.open .header-search-icon-ss-header-4 svg path,
+                .header-ss-header-4.open .header-account-icon-ss-header-4 svg path {
+                    stroke: #ffffff;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-ss-header-4.open .header-cart-icon-ss-header-4 svg path {
+                    stroke: #1f171f;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-ss-header-4,
+                .header-account-ss-header-4 {
+                    text-decoration: none;
+                }
+    
+                .header-search-ss-header-4 {
+                    padding: 0px;
+                    margin: 0px;
+                    background-color: transparent;
+                    border: 0px;
+                    box-shadow: none;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+    
+                .header-cart-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    position: relative;
+                    background-color: #e4fb02;
+                    padding: 10px 10px;
+                    border: 0px solid #000000;
+                    border-radius: 4px;
+                }
+    
+                .header-cart-ss-header-4 .cart-count-bubble {
+                    position: absolute;
+                    left: 52%;
+                    top: 45%;
+                    transform: translateX(-50%);
+                    padding: 0px;
+                    background-color: transparent;
+                    border: 0px;
+                    margin: 0px;
+                    width: fit-content;
+                    height: fit-content;
+                }
+    
+                .header-menu-mobile-ss-header-4 {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100dvh;
+                    overflow-y: auto;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    transform: translateY(-130%);
+                    transition: all 0.25s ease 0s;
+                    z-index: 99;
+                }
+    
+                .header-ss-header-4.open .header-menu-mobile-ss-header-4 {
+                    transform: translateY(0%);
+                }
+    
+                .header-menu-mobile-inner-ss-header-4 {
+                    background-color: #1f171f;
+                    max-width: 100%;
+                    height: 100%;
+                    padding: 20px;
+                    position: relative;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+    
+                .header-mobile-menu-item-parent-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-item-ss-header-4 {
+                    max-width: 100%;
+                    width: 100%;
+                    justify-content: space-between;
+                    position: static;
+                    padding: 12px 0px;
+                    border-bottom: 1px solid #413a41;
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-item-ss-header-4:first-child {
+                    border-top: 1px solid #413a41;
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-item-icon-ss-header-4 {
+                    flex: 0 0 18px;
+                    width: 18px;
+                    transform: rotate(-90deg);
+                }
+    
+                .header-menu-mobile-submenu-ss-header-4 {
+                    position: absolute;
+                    background-color: #1f171f;
+                    z-index: 4;
+                    padding: 20px;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    transform: translateX(110%);
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-mobile-menu-item-parent-ss-header-4.active>.header-menu-mobile-submenu-ss-header-4 {
+                    transform: translateX(0%);
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-menu-mobile-submenu-heading-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%;
+                    background-color: transparent;
+                    border: 0px;
+                    border-top: 1px solid #413a41;
+                    padding: 0px;
+                    padding: 10px 0px;
+                    box-shadow: none;
+                    font-size: 24px;
+                    color: #ffffff;
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: 700;
+                }
+    
+                .header-menu-mobile-submenu-heading-ss-header-4 .header-menu-item-icon-ss-header-4 {
+                    transform: rotate(90deg);
+                }
+    
+                .header-mobile-submenu-list-ss-header-4 {
+                    margin: 0px;
+                    margin-top: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0px;
+                    padding: 0px;
+                    list-style: none;
+                }
+    
+                .header-logo-desktop-ss-header-4 {
+                    display: none;
+                }
+    
+                .header-submenu-inner-ss-header-4 .section-ss-header-4-settings {
+                    display: grid;
+                    gap: 16px;
+                }
+    
+                .header-submenu-menu-ss-header-4 {
+                    display: flex;
+                    gap: 16px;
+                    flex-wrap: wrap;
+                }
+    
+                .header-submenu-menu-ss-header-4 .header-menu-list-ss-header-4 {
+                    display: flex;
+                    align-items: stretch;
+                    gap: 16px;
+                }
+    
+                .header-submenu-menu-ss-header-4>.header-menu-list-ss-header-4 .header-menu-item-with-submenu-ss-header-4>.header-menu-link-ss-header-4:first-child {
+                    display: block;
+                    max-width: fit-content;
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                }
+    
+                .header-submenu-menu-ss-header-4 .header-menu-list-ss-header-4 .header-menu-list-ss-header-4 {
+                    margin-top: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+    
+                .header-submenu-menu-ss-header-4>.header-menu-list-ss-header-4>.header-menu-item-ss-header-4:not(:last-child) {
+                    border-right: 1px solid #413a41;
+                }
+                
+    
+                .header-body-ss-header-4 {
+                    grid-template-columns: 1fr 120px 1fr;
+                }
+                
+                
+                .header-submenu-menu-ss-header-4>.header-menu-list-ss-header-4 .header-menu-item-ss-header-4:not(:last-child) {
+                    padding-right: 16px;
+                }
+          
+                
+                .header-right-ss-header-4 .header-search-ss-header-4 {
+                    display: none;
+                }
+    
+            
+                
+                .header-right-ss-header-4 .header-account-ss-header-4 {
+                    display: none;
+                }
+
+                .header-announcement-ss-header-4 {
+                    background-color: #ffffff;
+                    padding: 6px 10px;
+                    border: 0px solid #000000;
+                    border-radius: 4px;
+                    text-align: center;
+                }
+    
+                .header-announcement-ss-header-4 * {
+                    margin: 0;
+                    font-size: 12px;
+                    color: #1f171f;
+                    line-height: 150%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: 700;
+                }
+
+                 @media(min-width: 1024px) {
+                    .section-ss-header-4-settings {
+                        padding: 0 5rem;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        padding-left: 4rem;
+                        padding-right: 4rem;
+                    }
+    
+                    .header-body-ss-header-4 {
+                        display: grid;
+                        padding: 0px 0px;
+                        margin-top: 10px;
+                        gap: 32px;
+                    }
+    
+                    .header-menu-burder-ss-header-4 {
+                        display: none;
+                    }
+    
+                    .header-menu-list-ss-header-4 {
+                        display: flex;
+                        gap: 4px;
+                    }
+    
+                    .header-menu-link-ss-header-4 {
+                        font-size: 13px;
+                        transition: all 0.25s ease;
+                    }
+    
+                    .header-menu-item-ss-header-4.active>.header-menu-link-ss-header-4 {
+                        transition: all 0.25s ease;
+                        color: #1f171f;
+                    }
+    
+                    .header-submenu-ss-header-4 .header-menu-item-parent-ss-header-4 {
+                        max-width: 100%;
+                    }
+    
+                    .header-submenu-ss-header-4 .header-menu-item-ss-header-4::after {
+                        display: none;
+                    }
+    
+                    .header-menu-item-parent-ss-header-4.active>.header-menu-item-icon-ss-header-4 {
+                        transform: rotate(180deg);
+                        transition: all 0.25s ease 0s;
+                    }
+    
+                    .header-logo-ss-header-4 {
+                        max-width: 130px;
+                    }
+    
+                    .header-logo-image-desktop-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-logo-image-mobile-ss-header-4 {
+                        display: none;
+                    }
+    
+                    .header-logo-text-ss-header-4 {
+                        font-size: 20px;
+                        transition: all 0.25s ease;
+                    }
+    
+                    .header-logo-text-ss-header-4:hover {
+                        transition: all 0.25s ease;
+                        color: #a5a2a5;
+                    }
+    
+                    .header-right-ss-header-4 {
+                        gap: 16px;
+                        order: 3;
+                    }
+    
+                    .header-search-text-ss-header-4,
+                    .header-account-text-ss-header-4 {
+                        display: inline;
+                        font-size: 13px;
+                    }
+    
+                    .header-search-text-ss-header-4:hover,
+                    .header-account-text-ss-header-4:hover {
+                        transition: all .25s ease 0s;
+                        color: #1f171f !important;
+                    }
+    
+                    .header-cart-text-ss-header-4 {
+                        display: inline;
+                    }
+    
+                    .header-cart-ss-header-4:hover .header-cart-text-ss-header-4 {
+                        transition: all .25s ease 0s;
+                        color: #1f171f !important;
+                    }
+    
+                    .header-search-icon-ss-header-4,
+                    .header-account-icon-ss-header-4,
+                    .header-cart-icon-ss-header-4 {
+                        display: none;
+                        width: 16px;
+                    }
+    
+                    .header-search-icon-ss-header-4:hover svg path,
+                    .header-account-icon-ss-header-4:hover svg path {
+                        stroke: #1f171f;
+                        transition: all .25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4:hover .header-cart-icon-ss-header-4 svg path {
+                        stroke: #1f171f;
+                        transition: all .25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4 {
+                        padding: 10px 16px;
+                        transition: all 0.25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4:hover {
+                        background-color: #e4fb02;
+                        border-color: #000000;
+                        transition: all 0.25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4 .cart-count-bubble span {
+                        font-size: 13px;
+                        line-height: 130%;
+                        position: relative;
+                    }
+    
+                    .header-cart-ss-header-4 .cart-count-bubble {
+                        position: static;
+                        transform: translateX(0);
+                    }
+    
+                    .header-cart-ss-header-4:hover .cart-count-bubble span {
+                        transition: all .25s ease 0s;
+                        color: #1f171f;
+                    }
+    
+                    .header-menu-mobile-ss-header-4 {
+                        display: none;
+                    }
+    
+                    .header-logo-desktop-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-logo-mobile-ss-header-4 {
+                        display: none;
+                    }
+    
+                }
+            
+
+                @media(min-width: 1024px) {
+    
+                    .header-body-ss-header-4 {
+                        grid-template-columns: 1fr 130px 1fr;
+                    }
+    
+                    .header-menu-ss-header-4 {
+                        order: 1;
+                    }
+    
+                    .header-logo-ss-header-4 {
+                        order: 2;
+                        text-align: center;
+                    }
+         
+                    
+                    .header-search-icon-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-search-text-ss-header-4 {
+                        display: none;
+                    }
+              
+                    
+                    .header-account-icon-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-account-text-ss-header-4 {
+                        display: none;
+                    }
+                
+                    
+                    .header-right-ss-header-4 .header-search-ss-header-4 {
+                        display: block;
+                    }
+            
+
+                    .header-right-ss-header-4 .header-account-ss-header-4 {
+                        display: block;
+                    }
+               
+                    
+    
+                    .header-announcement-ss-header-4 {
+                        padding: 6px 16px;
+                        text-align: center;
+                    }
+    
+                    .header-announcement-ss-header-4 * {
+                        font-size: 12px;
+                    }
+                }
+            </style>
+    
+    
+            <div class="section-ss-header-4 header-ss-header-4 scroll fixed top active onscroll">
+                <div class="section-ss-header-4-settings">
+    
+    
+                    <div class="header-announcement-ss-header-4">
+                        <p>FREE SHIPPING ON ORDERS ABOVE $100</p>
+                    </div>
+    
+    
+                    <div class="header-body-ss-header-4">
+                        <div class="header-menu-ss-header-4">
+    
+                            <div class="header-menu-burder-wrapper-ss-header-4">
+                                <button class="header-menu-burder-ss-header-4">
+                                    <span class="header-menu-burger-icon-ss-header-4"></span>
+                                </button>
+                            </div>
+                            <ul class="header-menu-list-ss-header-4">
+    
+    
+    
+    
+                                <li
+                                    class="header-menu-item-ss-header-4 header-menu-item-main-ss-header-4 header-menu-item-parent-ss-header-4">
+                                    <p class="header-menu-link-ss-header-4">
+                                        Women
+                                    </p>
+    
+    
+                                    <div class="header-submenu-ss-header-4">
+                                        <div class="header-submenu-bg-ss-header-4"></div>
+                                        <div class="header-submenu-inner-ss-header-4">
+                                            <div class="section-ss-header-4-settings"
+                                                style="grid-template-columns: 1fr 1fr;">
+                                                <div class="header-submenu-menu-ss-header-4">
+    
+                                                    <ul class="header-menu-list-ss-header-4">
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Gifts</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Gift
+                                                                        Guide</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Categories</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#"
+                                                                        class="header-menu-link-ss-header-4">Clothing</a>
+                                                                </li>
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Trending</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Best
+                                                                        Sellers</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                    </ul>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </li>
+    
+    
+    
+                                <li
+                                    class="header-menu-item-ss-header-4 header-menu-item-main-ss-header-4 header-menu-item-parent-ss-header-4">
+                                    <p class="header-menu-link-ss-header-4">
+                                        Men
+                                    </p>
+    
+    
+                                    <div class="header-submenu-ss-header-4">
+                                        <div class="header-submenu-bg-ss-header-4"></div>
+                                        <div class="header-submenu-inner-ss-header-4">
+                                            <div class="section-ss-header-4-settings"
+                                                style="grid-template-columns: 1fr 1fr;">
+                                                <div class="header-submenu-menu-ss-header-4">
+    
+                                                    <ul class="header-menu-list-ss-header-4">
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Gifts</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Gift
+                                                                        Guide</a>
+                                                                </li>
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Categories</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#"
+                                                                        class="header-menu-link-ss-header-4">Clothing</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Trending</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Best
+                                                                        Sellers</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                    </ul>
+    
+                                                </div>
+    
+    
+    
+                                                <div class="header-submenu-collections-ss-header-4">
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </li>
+    
+    
+    
+                                <li
+                                    class="header-menu-item-ss-header-4 header-menu-item-main-ss-header-4 header-menu-item-parent-ss-header-4">
+                                    <p class="header-menu-link-ss-header-4">
+                                        About
+                                    </p>
+    
+    
+                                    <div class="header-submenu-ss-header-4" style="top: calc(100% - 21.3333px);">
+                                        <div class="header-submenu-bg-ss-header-4" style="height: 21.3333px;"></div>
+                                        <div class="header-submenu-inner-ss-header-4">
+                                            <div class="section-ss-header-4-settings" style="grid-template-columns: 1fr ;">
+                                                <div class="header-submenu-menu-ss-header-4">
+    
+                                                    <ul class="header-menu-list-ss-header-4">
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="https://section.store/pages/timeline-2"
+                                                                class="header-menu-link-ss-header-4">About</a>
+    
+    
+                                                        </li>
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="https://section.store/pages/form-builder"
+                                                                class="header-menu-link-ss-header-4">Contact</a>
+    
+    
+                                                        </li>
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="https://section.store/pages/faq-10"
+                                                                class="header-menu-link-ss-header-4">FAQ</a>
+    
+    
+                                                        </li>
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Freebies</a>
+    
+    
+                                                        </li>
+    
+                                                    </ul>
+    
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </li>
+    
+    
+                            </ul>
+    
+                            <div class="header-menu-mobile-ss-header-4">
+                                <div class="header-menu-mobile-inner-ss-header-4">
+                                    <ul class="header-menu-list-ss-header-4">
+    
+                                        <li class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                            <a href="#" class="header-menu-link-ss-header-4">Shop</a>
+    
+                                            <span class="header-menu-item-icon-ss-header-4">
+                                                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 448 512">
+                                                    <path fill="currentColor"
+                                                        d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                        class=""></path>
+                                                </svg>
+                                            </span>
+                                            <div class="header-menu-mobile-submenu-ss-header-4">
+                                                <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                    <span class="header-menu-item-icon-ss-header-4">
+                                                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                class=""></path>
+                                                        </svg>
+                                                    </span>
+                                                    Shop
+                                                </button>
+                                                <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="/collections/new-arrivals"
+                                                            class="header-menu-link-ss-header-4">New Arrivals</a>
+    
+                                                    </li>
+    
+                                                    <li
+                                                        class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Best Sellers</a>
+    
+                                                        <span class="header-menu-item-icon-ss-header-4">
+                                                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 448 512">
+                                                                <path fill="currentColor"
+                                                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                    class=""></path>
+                                                            </svg>
+                                                        </span>
+                                                        <div class="header-menu-mobile-submenu-ss-header-4">
+                                                            <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                                <span class="header-menu-item-icon-ss-header-4">
+                                                                    <svg fill="currentColor"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 448 512">
+                                                                        <path fill="currentColor"
+                                                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                            class=""></path>
+                                                                    </svg>
+                                                                </span>
+                                                                Best Sellers
+                                                            </button>
+                                                            <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Shop
+                                                                        All</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/backpacks"
+                                                                        class="header-menu-link-ss-header-4">Backpacks</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/cardigans"
+                                                                        class="header-menu-link-ss-header-4">Cardigans</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/pullovers"
+                                                                        class="header-menu-link-ss-header-4">Pullovers</a>
+                                                                </li>
+    
+                                                            </ul>
+                                                        </div>
+    
+                                                    </li>
+    
+                                                    <li
+                                                        class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Shop by Price</a>
+    
+                                                        <span class="header-menu-item-icon-ss-header-4">
+                                                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 448 512">
+                                                                <path fill="currentColor"
+                                                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                    class=""></path>
+                                                            </svg>
+                                                        </span>
+                                                        <div class="header-menu-mobile-submenu-ss-header-4">
+                                                            <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                                <span class="header-menu-item-icon-ss-header-4">
+                                                                    <svg fill="currentColor"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 448 512">
+                                                                        <path fill="currentColor"
+                                                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                            class=""></path>
+                                                                    </svg>
+                                                                </span>
+                                                                Shop by Price
+                                                            </button>
+                                                            <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/under-50"
+                                                                        class="header-menu-link-ss-header-4">Under $50</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/50"
+                                                                        class="header-menu-link-ss-header-4">Over $50</a>
+                                                                </li>
+    
+                                                            </ul>
+                                                        </div>
+    
+                                                    </li>
+    
+                                                </ul>
+                                            </div>
+    
+                                        </li>
+    
+                                        <li class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                            <a href="#" class="header-menu-link-ss-header-4">About</a>
+    
+                                            <span class="header-menu-item-icon-ss-header-4">
+                                                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 448 512">
+                                                    <path fill="currentColor"
+                                                        d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                        class=""></path>
+                                                </svg>
+                                            </span>
+                                            <div class="header-menu-mobile-submenu-ss-header-4">
+                                                <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                    <span class="header-menu-item-icon-ss-header-4">
+                                                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                class=""></path>
+                                                        </svg>
+                                                    </span>
+                                                    About
+                                                </button>
+                                                <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Our Story</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Mission</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Sustainability</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Locations</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Contact</a>
+    
+                                                    </li>
+    
+                                                </ul>
+                                            </div>
+    
+                                        </li>
+    
+    
+                                        <li class="header-menu-item-ss-header-4">
+                                            <a href="/search" class="header-menu-link-ss-header-4">Search</a>
+                                        </li>
+    
+    
+                                        <li class="header-menu-item-ss-header-4">
+                                            <a href="/account" class="header-menu-link-ss-header-4">Login</a>
+                                        </li>
+    
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="header-logo-ss-header-4">
+    
+                            <a href="https://section.store" class="header-logo-image-ss-header-4 ">
+                                <img src="//section.store/cdn/shop/files/Logo_section_store_1.png?v=1705941203" alt=""
+                                    class="header-logo-first-ss-header-4">
+    
+                                <img src="//section.store/cdn/shop/files/Logo_section_store_1_12e802d5-2161-4493-a4da-8c5b5e620682.png?v=1709682756"
+                                    alt="" class="header-logo-second-ss-header-4">
+    
+                            </a>
+    
+    
+                        </div>
+    
+                        <div class="header-right-ss-header-4">
+    
+                            <a href="/search" class="header-search-ss-header-4">
+                                <span class="header-search-icon-ss-header-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16"
+                                        width="16">
+                                        <path
+                                            d="M0.9375 5.7125a4.7749999999999995 4.7749999999999995 0 1 0 9.549999999999999 0 4.7749999999999995 4.7749999999999995 0 1 0 -9.549999999999999 0"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m14.0625 14.0625 -5.06875 -5.06875" fill="none" stroke="#000000"
+                                            stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </span>
+                                <span class="header-search-text-ss-header-4">Search</span>
+                            </a>
+    
+    
+                            <a href="https://shopify.com/67048341753/account?locale=en&amp;region_country=US"
+                                class="header-account-ss-header-4">
+                                <span class="header-account-icon-ss-header-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16"
+                                        width="16">
+                                        <path
+                                            d="M3.9187499999999997 4.53125a3.5812500000000003 3.5812500000000003 0 1 0 7.1625000000000005 0 3.5812500000000003 3.5812500000000003 0 1 0 -7.1625000000000005 0"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path
+                                            d="m0.9375 14.675 0.23125 -1.28125A6.4375 6.4375 0 0 1 7.5 8.125a6.4375 6.4375 0 0 1 6.331250000000001 5.28125l0.23125 1.28125"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </span>
+                                <span class="header-account-text-ss-header-4">Login</span>
+                            </a><a href="/cart" class="header-cart-ss-header-4">
+                                <span class="header-cart-icon-ss-header-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16"
+                                        width="16">
+                                        <path d="M2.6,5h10.7v7.8c0,1-.8,1.8-1.8,1.8h-7.2c-1,0-1.8-.8-1.8-1.8h0v-7.8Z"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="M5,5.3v-.9c0-1.6,1.3-3,3-3,1.6,0,3,1.3,3,3v.9" fill="none" stroke="#000000"
+                                            stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </span>
+                                <span class="header-cart-text-ss-header-4">Bag:</span>
+                                <div class="cart-count-bubble"><span aria-hidden="true">0</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <script>
+                function initHeader4() {
+                    let header = document.querySelector('.header-ss-header-4');
+                    let menuMobile = document.querySelector('.header-menu-mobile-ss-header-4');
+                    let logo = document.querySelector('.header-logo-ss-header-4 img');
+                    let subMenus = document.querySelectorAll('.header-submenu-ss-header-4');
+
+                    let mobileSubMenu = document.querySelectorAll('.header-menu-mobile-submenu-ss-header-4');
+                    let parentItems = document.querySelectorAll('.header-menu-item-main-ss-header-4.header-menu-item-parent-ss-header-4');
+                    if (header) {
+                        if (window.scrollY > 0) {
+                            header.classList.add('onscroll');
+                        } else {
+                            header.classList.add('top');
+                        }
+
+                        let lastScrollTop = window.scrollY;
+
+                        document.addEventListener('scroll', () => {
+
+                            if (parentItems) {
+                                parentItems.forEach(el => el.classList.remove('active'));
+                            }
+
+                            header.classList.remove('open');
+
+                            const currentScrollTop = window.scrollY;
+                            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+                            if (currentScrollTop === 0) {
+                                header.classList.add('top');
+                            }
+
+                            if (currentScrollTop <= 0) {
+                                header.classList.add('active');
+                                header.classList.remove('onscroll');
+                                return;
+                            }
+
+                            if (currentScrollTop >= maxScroll) {
+                                header.classList.remove('active');
+                                return;
+                            }
+
+                            if (currentScrollTop !== lastScrollTop) {
+                                if (header.classList.contains('scroll')) {
+                                    if (currentScrollTop > lastScrollTop) {
+                                        header.classList.remove('active');
+                                    } else {
+                                        header.classList.add('active');
+                                    }
+                                }
+
+                                // if (header.classList.contains('transparent')) {
+                                //     if (currentScrollTop === 0) {
+                                //         header.classList.remove('onscroll');
+                                //         header.classList.add('top');
+                                //     } else {
+                                //         header.classList.add('onscroll');
+                                //         header.classList.remove('top');
+                                //     }
+                                // }
+
+                                lastScrollTop = currentScrollTop;
+                            }
+                        });
+
+                        let burger_icon = header.querySelector('.header-menu-burder-wrapper-ss-header-4');
+                        if (burger_icon) {
+                            burger_icon.addEventListener('click', () => {
+                                header.classList.toggle('open');
+                                if (header.classList.contains('open')) {
+                                    document.body.style.overflow = 'hidden';
+                                } else {
+                                    if (mobileMenuItem) {
+                                        mobileMenuItem.forEach(el => {
+                                            el.classList.remove('active');
+                                        })
+                                    }
+                                    document.body.style.overflow = '';
+                                }
+                            })
+                        }
+
+                        document.addEventListener('click', (e) => {
+                            if (e.target == menuMobile) {
+                                document.body.style.overflow = '';
+                                header.classList.remove('open');
+                                if (mobileMenuItem) {
+                                    mobileMenuItem.forEach(el => {
+                                        el.classList.remove('active');
+                                    })
+                                }
+                            }
+                        });
+
+                        if (parentItems) {
+                            parentItems.forEach(el => {
+                                document.addEventListener('click', (event) => {
+                                    if (!el.contains(event.target) && !el.classList.contains('active')) {
+                                        return;
+                                    }
+
+                                    if (!el.contains(event.target) && el.classList.contains('active')) {
+                                        el.classList.remove('active');
+                                    }
+
+                                    if (!el.contains(event.target)) {
+                                        header.classList.remove('open');
+                                    }
+                                });
+
+                                el.addEventListener('mouseenter', () => {
+                                    el.classList.add('active');
+                                    header.classList.add('onscroll');
+                                    header.classList.add('open');
+                                });
+
+                                el.addEventListener('mouseleave', () => {
+                                    el.classList.remove('active');
+                                    header.classList.remove('open');
+                                });
+                            });
+                        }
+
+                        if (mobileSubMenu) {
+                            mobileSubMenu.forEach(el => {
+                                let parentItem = el.closest('.header-mobile-menu-item-parent-ss-header-4');
+                                let heading = el.querySelector('.header-menu-mobile-submenu-heading-ss-header-4');
+
+                                if (parentItem) {
+                                    parentItem.addEventListener('click', () => {
+                                        parentItem.classList.add('active');
+                                    });
+                                }
+
+                                if (heading) {
+                                    heading.addEventListener('click', (event) => {
+                                        event.stopPropagation();
+                                        parentItem.classList.remove('active');
+                                    });
+                                }
+                            });
+                        }
+
+                        if (logo) {
+                            const logoHeight = logo.offsetHeight;
+                            const halfLogoHeight = logoHeight / 1.5;
+
+                            if (subMenus) {
+                                subMenus.forEach(el => {
+                                    el.style.top = `calc(100% - ${halfLogoHeight}px)`;
+                                    let paddingDiv = el.querySelector('.header-submenu-bg-ss-header-4');
+                                    if (paddingDiv) {
+                                        paddingDiv.style.height = `${halfLogoHeight}px`;
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', initHeader4);
+
+                
+            </script>
+    
+    </body>
+</body>
+</html>

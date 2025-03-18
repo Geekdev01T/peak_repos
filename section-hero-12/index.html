@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <style >
+            .section-template--21713878876489__ss_hero_12_PqFye3 {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                overflow: hidden;
+                position: relative;
+                background-color:#535455;
+            }
+    
+            .section-template--21713878876489__ss_hero_12_PqFye3-settings {
+                margin: 0 auto;
+                padding-top: 36px;
+                padding-bottom: 36px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .hero-body-template--21713878876489__ss_hero_12_PqFye3 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+    
+            .hero-content-template--21713878876489__ss_hero_12_PqFye3 {
+                padding: px 0px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .hero-slide-wrapper-template--21713878876489__ss_hero_12_PqFye3 {
+                min-width: 0px;
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+    
+            .hero-slider-template--21713878876489__ss_hero_12_PqFye3 {
+                min-width: 0px;
+                width: 100%;
+            }
+    
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3 {
+                border-radius: 16px;
+                border: 8px solid #ffffff;
+                overflow: hidden !important;
+                cursor: pointer !important;
+                position: relative;
+                z-index: 0;
+                box-sizing: border-box !important;
+            }
+    
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3 video,
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3>svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                box-shadow: none;
+                border: 0px;
+            }
+    
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3>svg {
+                background-color: #F7F7F7;
+            }
+    
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                cursor: pointer;
+            }
+    
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3:not(.swiper-slide-active):after {
+                background-color: rgb(40, 169, 1);
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3 {
+                width: 36px;
+                height: 36px;
+                border: 0px solid #ffffff;
+                border-radius: 50%;
+                background: rgba(0, 0, 0, 0.3);
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                -webkit-appearance: none;
+                transition: all 0.25s ease 0s;
+                position: absolute;
+                top: 24px;
+                right: 12px;
+                z-index: 2;
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3:hover {
+                transition: all 0.25s ease 0s;
+                border: 0px solid #ffffff;
+                background: rgba(255, 255, 255, 0.3);
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3 svg {
+                height: 55%;
+                width: 55%;
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3 svg {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3:hover svg {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3 .hero-unmute-template--21713878876489__ss_hero_12_PqFye3 {
+                display: none;
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3.active .hero-unmute-template--21713878876489__ss_hero_12_PqFye3 {
+                display: block;
+            }
+    
+            .hero-sound-template--21713878876489__ss_hero_12_PqFye3.active .hero-mute-template--21713878876489__ss_hero_12_PqFye3 {
+                display: none;
+            }
+    
+            .hero-play-template--21713878876489__ss_hero_12_PqFye3 {
+                width: 48px;
+                height: 48px;
+                border: 0px solid #ffffff;
+                border-radius: 50%;
+                background: rgba(0, 0, 0, 0.3);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                -webkit-appearance: none;
+                transition: all 0.25s ease 0s;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+            }
+    
+            .hero-play-template--21713878876489__ss_hero_12_PqFye3.active {
+                display: flex;
+            }
+    
+            .hero-play-template--21713878876489__ss_hero_12_PqFye3:hover {
+                transition: all 0.25s ease 0s;
+                border: 0px solid #ffffff;
+                background: rgba(0, 0, 0, 0.3);
+            }
+    
+            .hero-play-template--21713878876489__ss_hero_12_PqFye3 svg {
+                height: 50%;
+                width: 50%;
+            }
+    
+            .hero-play-template--21713878876489__ss_hero_12_PqFye3 svg {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-play-template--21713878876489__ss_hero_12_PqFye3:hover svg {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            #progresstemplate--21713878876489__ss_hero_12_PqFye3 {
+                width: calc(100% - 20px);
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 1;
+                height: 5px;
+            }
+    
+            #progresstemplate--21713878876489__ss_hero_12_PqFye3[value] {
+                appearance: none;
+                border: none;
+                color: #ffffff;
+            }
+    
+            #progresstemplate--21713878876489__ss_hero_12_PqFye3[value]::-webkit-progress-value {
+                background: white;
+                transition: width 0.5s linear;
+            }
+    
+            #progresstemplate--21713878876489__ss_hero_12_PqFye3[value]::-moz-progress-bar {
+                background: #ede8e8;
+            }
+    
+            .hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3 {
+                position: absolute;
+                top: 50%;
+                left: 57%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                display: none;
+                ;
+                align-items: center;
+                justify-content: center;
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                overflow: hidden;
+                background-color: transparent;
+                background-color: #ffffff;
+                border: 0px;
+                border: 0px solid #000000;
+                transition: all 0.25s ease 0s;
+                cursor: pointer;
+            }
+    
+            .hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3:hover {
+                transition: all 0.25s ease 0s;
+                background-color: #ffffff;
+                border-color: #000000;
+            }
+    
+            .hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3 svg {
+                display: block;
+                width: 30px;
+                height: 30px;
+            }
+    
+            .hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3 svg path {
+                fill: #494d50;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3:hover svg path {
+                fill: #818183;
+                transition: all 0.25s ease 0s;
+            }
+    
+            @media(min-width: 1024px) {
+                .section-template--21713878876489__ss_hero_12_PqFye3-settings {
+                    padding: 0 5rem;
+                    padding-top: 100px;
+                    padding-bottom: 140px;
+                    padding-left: 10rem;
+                    padding-right: 10rem;
+                }
+    
+                .hero-body-template--21713878876489__ss_hero_12_PqFye3 {
+                    grid-template-columns: calc(55% - 100.0px) calc(45% - 100.0px);
+                    gap: 200px;
+                    align-items: center;
+                }
+    
+                .hero-content-template--21713878876489__ss_hero_12_PqFye3 {
+                    padding: px 0px;
+                    align-items: start;
+                }
+    
+                .hero-slide-wrapper-template--21713878876489__ss_hero_12_PqFye3 {
+                    margin-right: -10rem;
+                }
+    
+                .hero-slide-template--21713878876489__ss_hero_12_PqFye3:not(.swiper-slide-active) {
+                    mask-image: linear-gradient(90deg, #000 -30%, transparent 85%);
+                }
+    
+                .hero-slide-template--21713878876489__ss_hero_12_PqFye3:not(.swiper-slide-active):after {
+                    background-color: transparent;
+                }
+    
+                .hero-sound-template--21713878876489__ss_hero_12_PqFye3 {
+                    width: 42px;
+                    height: 42px;
+                }
+    
+                .hero-play-template--21713878876489__ss_hero_12_PqFye3 {
+                    width: 48px;
+                    height: 48px;
+                }
+    
+                .hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3 {
+                    display: flex;
+                }
+            }
+      
+            
+            .hero-slide-template--21713878876489__ss_hero_12_PqFye3 {
+                aspect-ratio: 9.6/14;
+            }
+      
+            
+            @media(min-width: 1024px) {
+                .hero-slide-template--21713878876489__ss_hero_12_PqFye3 {
+                    aspect-ratio: 9.6/14;
+                }
+            }
+     
+        
+            
+            .hero-badge-badge_eyjfmh {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: fit-content;
+                width: 100%;
+                text-align: center;
+                padding: 14px 18px;
+                border-radius: 100px;
+                overflow: hidden;
+                border: 1px solid #ffffff;
+                margin-top: 0px;
+                font-size: 14px;
+                color: #ffffff;
+                line-height: 100%;
+                text-transform: unset;
+                text-decoration: none;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .hero-badge-badge_eyjfmh {
+                    padding: 14px 18px;
+                    margin-top: 0px;
+                    font-size: 14px;
+                }
+            }
+       
+            .hero-badge-badge_eyjfmh {
+                font-family: "Anonymous Pro", sans-serif;
+                font-weight: 700;
+                font-style: normal;
+            }
+       
+            
+            .hero-heading-heading_EVnnxK {
+                text-align: center;
+                margin-top: 20px;
+            }
+    
+            .hero-heading-heading_EVnnxK * {
+                margin: 0;
+                font-size: 24px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+                font-weight: 700;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .hero-heading-heading_EVnnxK {
+                    text-align: left;
+                    margin-top: 20px;
+                }
+    
+                .hero-heading-heading_EVnnxK * {
+                    font-size: 48px;
+                }
+            }
+      
+           
+    
+            .hero-text-text_mRExzF {
+                text-align: center;
+                margin-top: 16px;
+            }
+    
+            .hero-text-text_mRExzF * {
+                margin: 0;
+                font-size: 16px;
+                color: #ffffff;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .hero-text-text_mRExzF {
+                    text-align: left;
+                    margin-top: 16px;
+                }
+    
+                .hero-text-text_mRExzF * {
+                    font-size: 18px;
+                }
+            }
+     
+            
+            .hero-product-product_3nw4JL {
+                padding: 20px 20px;
+                background-color: #f3f3f3;
+                border-radius: 16px;
+                overflow: hidden;
+                border: 0px solid #000000;
+                margin-top: 16px;
+                background-color: #f3f3f3;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+    
+            .hero-product-image-product_3nw4JL {
+                flex: 0 0 60px;
+                border: 0px solid #000000;
+                border-radius: 0px;
+                overflow: hidden;
+                /* background-color: #F7F7F7; */
+            }
+    
+            .hero-product-image-product_3nw4JL img,
+            .hero-product-image-product_3nw4JL svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .hero-product-content-product_3nw4JL {
+                flex: 1 1 auto;
+            }
+    
+            .hero-product-title-product_3nw4JL {
+                margin: 0;
+                font-size: 14px;
+                color: #121212;
+                line-height: 150%;
+                text-transform: unset;
+                font-weight: 700;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-product-price-product_3nw4JL {
+                margin-top: 4px;
+                display: none;
+                align-items: center;
+                gap: 5px;
+            }
+    
+            .hero-product-price-product_3nw4JL * {
+                margin: 0;
+                font-size: 16px;
+                color: #121212;
+                line-height: 130%;
+                text-transform: unset;
+                font-style: normal;
+            }
+    
+            .hero-product-compare-price-product_3nw4JL {
+                font-size: 12.8px;
+                color: #a3a3a3;
+                text-decoration: line-through !important;
+            }
+    
+            .hero-product-button-product_3nw4JL {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+                max-width: fit-content;
+                margin: 0;
+                font-size: 15px;
+                color: #ffffff;
+                line-height: 100%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-product-button-product_3nw4JL:hover {
+                color: #121212;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-product-button-product_3nw4JL svg {
+                width: 14px;
+                height: 14px;
+            }
+    
+            .hero-product-button-product_3nw4JL svg path {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .hero-product-button-product_3nw4JL:hover svg path {
+                fill: #121212;
+                transition: all 0.25s ease 0s;
+            }
+    
+            @media(min-width: 1024px) {
+                .hero-product-product_3nw4JL {
+                    margin-top: 16px;
+                    padding: 20px 20px;
+                    gap: 16px;
+                }
+    
+                .hero-product-image-product_3nw4JL {
+                    flex: 0 1 74px;
+                }
+    
+                .hero-product-title-product_3nw4JL {
+                    font-size: 16px;
+                }
+    
+                .hero-product-price-product_3nw4JL {
+                    display: flex;
+                }
+    
+                .hero-product-button-product_3nw4JL {
+                    padding: 12px 24px;
+                    font-size: 15px;
+                }
+    
+            }
+       
+            .hero-product-button-product_3nw4JL {
+                background-color: #4b5b69;
+                border: 1px solid #4b5b69;
+            }
+    
+            .hero-product-button-product_3nw4JL:hover {
+                background-color: #ffffff;
+                border: 1px solid #45494d;
+            }
+     
+            
+            .hero-product-image-product_3nw4JL {
+                aspect-ratio: 12/12;
+            }
+   
+            
+            @media(min-width: 1024px) {
+                .hero-product-image-product_3nw4JL {
+                    aspect-ratio: 12/12;
+                }
+            }
+      
+          
+            
+    
+            .hero-scrolling-wrap-scrolling_text_3XWhHz {
+                width: 200vw;
+                left: -50%;
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                background-attachment: scroll !important;
+                transform-origin: center;
+                padding: 8px 0px;
+            }
+    
+            .hero-scrolling-list-scrolling_text_3XWhHz {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                background-attachment: scroll !important;
+                -webkit-animation: tickerscrolling_text_3XWhHz 32s infinite linear;
+                animation: tickerscrolling_text_3XWhHz 32s infinite linear;
+                flex-shrink: 0;
+            }
+    
+            .hero-scrolling-item-scrolling_text_3XWhHz {
+                display: flex;
+                align-items: center;
+                background-attachment: scroll !important;
+                margin-right: 40px;
+                flex-shrink: 0;
+                text-decoration: none;
+            }
+    
+            .hero-scrolling-text-scrolling_text_3XWhHz {
+                display: inline-block;
+                margin: 0;
+                font-size: 24px;
+                color: #ffffff;
+                line-height: 150%;
+                text-transform: unset;
+                font-weight: 700;
+            }
+    
+            @media(min-width: 1024px) {
+                .hero-scrolling-wrap-scrolling_text_3XWhHz {
+                    position: absolute;
+                    padding: 0px 0px;
+                }
+    
+                .hero-scrolling-list-scrolling_text_3XWhHz {
+                    animation-duration: 20s;
+                }
+    
+                .hero-scrolling-item-scrolling_text_3XWhHz {
+                    margin-right: 50px;
+                }
+    
+                .hero-scrolling-text-scrolling_text_3XWhHz {
+                    font-size: 24px;
+                }
+            }
+    
+            
+            @keyframes tickerscrolling_text_3XWhHz {
+                0% {
+                    transform: translateX(0%);
+                }
+    
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+      
+            
+            .hero-scrolling-wrap-scrolling_text_3XWhHz:hover .hero-scrolling-list-scrolling_text_3XWhHz {
+                animation-play-state: paused
+            }
+   
+            
+            @media(min-width: 1024px) {
+                .hero-scrolling-wrap-scrolling_text_3XWhHz {
+                    bottom: 10px;
+                }
+            }
+        </style>
+    
+    
+        <div class="section-template--21713878876489__ss_hero_12_PqFye3 hero-template--21713878876489__ss_hero_12_PqFye3">
+    
+    
+    
+            <div class="section-template--21713878876489__ss_hero_12_PqFye3-settings">
+                <div class="hero-body-template--21713878876489__ss_hero_12_PqFye3 ">
+                    <div class="hero-content-template--21713878876489__ss_hero_12_PqFye3">
+    
+    
+                        <a href="#" class="hero-badge-badge_eyjfmh">4.8/5 on Trustpilot</a>
+    
+    
+    
+    
+                        <div class="hero-heading-heading_EVnnxK">
+                            <h2>(R)evolution <strong>™ 9L Sidekick</strong></h2>
+                        </div>
+    
+    
+    
+    
+                        <div class="hero-text-text_mRExzF"> 
+                            <p>Every product purchased cleans a pound of trash from the environment.</p>
+                        </div>
+    
+    
+    
+    
+                        <div class="hero-product-product_3nw4JL">
+                            <div class="hero-product-image-product_3nw4JL">
+    
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-1_2999b663-2243-4356-a426-d8b36434689e.jpg?v=1720471873"
+                                    alt="(R)evolution™ 9L Sidekick">
+    
+                            </div>
+                            <div class="hero-product-content-product_3nw4JL">
+    
+                                <p class="hero-product-title-product_3nw4JL">(R)evolution™ 9L Sidekick</p>
+                                <div class="hero-product-price-product_3nw4JL">
+                                    <p class="hero-product-regular-price-product_3nw4JL">$88.00</p>
+    
+                                </div>
+    
+                            </div>
+    
+    
+                            <a href="/products/revolution-9l-sidekick" class="hero-product-button-product_3nw4JL">
+                                View
+    
+                            </a>
+    
+    
+                        </div>
+
+                        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                    </div>
+    
+                    <div class="hero-slide-wrapper-template--21713878876489__ss_hero_12_PqFye3">
+                        <div
+                            class="hero-slider-template--21713878876489__ss_hero_12_PqFye3 swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                            <button class="hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3" tabindex="0"
+                                aria-label="Next slide" aria-controls="swiper-wrapper-a9106a74e2fbafc8f">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em"
+                                    fill="currentColor" class="text-2xl">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <div class="swiper-wrapper" id="swiper-wrapper-a9106a74e2fbafc8f" aria-live="polite"
+                                style="transition-duration: 0ms; transform: translate3d(-2185px, 0px, 0px);">
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-duplicate"
+                                    role="group" aria-label="2 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="1">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="84"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/c79db7a5a982430585936d10fb75e976/c79db7a5a982430585936d10fb75e976.HD-1080p-2.5Mbps-31784666.mp4?v=0"
+                                        muted="" playsinline="" autoplay=""></video>
+    
+                                </div>
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                                    role="group" aria-label="3 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="2">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="0"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"
+                                        muted="" playsinline="" autoplay="" __idm_id__="221187"></video>
+    
+                                </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-duplicate-active"
+                                    role="group" aria-label="1 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="0">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="100"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/60249f2409d84eedaf7900e617270f9e/60249f2409d84eedaf7900e617270f9e.HD-1080p-2.5Mbps-31784659.mp4?v=0"
+                                        muted="" playsinline="" autoplay="" __idm_id__="221185"></video>
+    
+                                </div>
+    
+    
+    
+    
+    
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-duplicate-next"
+                                    role="group" aria-label="2 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="1">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="100"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/c79db7a5a982430585936d10fb75e976/c79db7a5a982430585936d10fb75e976.HD-1080p-2.5Mbps-31784666.mp4?v=0"
+                                        muted="" playsinline="" autoplay=""></video>
+    
+                                </div>
+    
+    
+    
+    
+    
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-prev"
+                                    role="group" aria-label="3 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="2">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="100"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"
+                                        muted="" playsinline="" autoplay="" __idm_id__="221187"></video>
+    
+                                </div>
+    
+    
+    
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-duplicate swiper-slide-active"
+                                    role="group" aria-label="1 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="0">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="100"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/60249f2409d84eedaf7900e617270f9e/60249f2409d84eedaf7900e617270f9e.HD-1080p-2.5Mbps-31784659.mp4?v=0"
+                                        muted="" playsinline="" autoplay="" __idm_id__="221185"></video>
+    
+                                </div>
+
+                                <div class="hero-slide-template--21713878876489__ss_hero_12_PqFye3 swiper-slide swiper-slide-duplicate swiper-slide-next"
+                                    role="group" aria-label="2 / 3" style="width: 444px; margin-right: 16px;"
+                                    data-swiper-slide-index="1">
+    
+                                    <div class="hero-sound-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg class="hero-mute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                                            </path>
+                                        </svg>
+                                        <svg class="hero-unmute-template--21713878876489__ss_hero_12_PqFye3"
+                                            viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                                            </path>
+                                        </svg>
+                                    </div>
+    
+                                    <div class="hero-play-template--21713878876489__ss_hero_12_PqFye3">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                                            <path d="m6 21 15-9L6 3v18Z"></path>
+                                        </svg>
+                                    </div>
+                                    <progress id="progresstemplate--21713878876489__ss_hero_12_PqFye3" max="100"
+                                        value="84"></progress>
+    
+    
+                                    <video
+                                        src="//section.store/cdn/shop/videos/c/vp/c79db7a5a982430585936d10fb75e976/c79db7a5a982430585936d10fb75e976.HD-1080p-2.5Mbps-31784666.mp4?v=0"
+                                        muted="" playsinline="" autoplay="" __idm_id__="221194"></video>
+    
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            <div class="hero-scrolling-wrap-scrolling_text_3XWhHz">
+                <div class="hero-scrolling-list-scrolling_text_3XWhHz">
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                </div>
+                <div class="hero-scrolling-list-scrolling_text_3XWhHz">
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                    <a href="#" class="hero-scrolling-item-scrolling_text_3XWhHz">
+    
+                        <p class="hero-scrolling-text-scrolling_text_3XWhHz">Free shipping on all orders today</p>
+    
+                    </a>
+    
+                </div>
+            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+    
+        <script>
+            function initHero12() {
+                var lazyLoadInstance = new LazyLoad();
+
+                setTimeout(() => {
+                    window.addEventListener("LazyLoad::Initialized", function (event) {
+                        window.lazyLoadInstance = event.detail.instance;
+                    }, false);
+                }, 300)
+
+                const slider = new Swiper(".hero-slider-template--21713878876489__ss_hero_12_PqFye3", {
+                    speed: 600,
+                    spaceBetween: 20,
+                    loop: true,
+                    navigation: {
+                        nextEl: '.hero-slider-btn-next-template--21713878876489__ss_hero_12_PqFye3',
+                    },
+                    breakpoints: {
+                        320: {
+                            spaceBetween: 16,
+                            slidesPerView: 1.5,
+                            centeredSlides: true
+                        },
+                        768: {
+                            spaceBetween: 16,
+                            slidesPerView: 3,
+                            centeredSlides: true
+                        },
+                        1024: {
+                            spaceBetween: 16,
+                            slidesPerView: 1.75,
+                            centeredSlides: false
+                        }
+                    },
+                    on: {
+                        slideChange: function () {
+                            const slides = this.slides;
+
+                            for (let i = 0; i < slides.length; i++) {
+                                let video = slides[i].querySelector('video');
+                                if (i === this.activeIndex) {
+                                    if (video) {
+                                        video.play();
+                                    }
+
+                                } else {
+                                    if (video) {
+                                        video.pause();
+                                    }
+
+                                }
+                            }
+                        },
+                    },
+                });
+
+                document.querySelectorAll('.hero-slide-template--21713878876489__ss_hero_12_PqFye3').forEach(el => {
+                    let soundBtn = el.querySelector('.hero-sound-template--21713878876489__ss_hero_12_PqFye3');
+                    let video = el.querySelector('video');
+                    let progress = el.querySelector('progress');
+                    let playBtn = el.querySelector('.hero-play-template--21713878876489__ss_hero_12_PqFye3');
+
+                    if (video) {
+
+                        video.addEventListener('ended', () => {
+                            video.pause();
+
+                            slider.slideNext();
+                        });
+
+                        if (progress) {
+                            setInterval(function () {
+                                if (video.duration && isFinite(video.duration)) {
+                                    progress.value = Math.round((video.currentTime / video.duration) * 100);
+                                }
+                            });
+                        }
+                    }
+
+                    el.addEventListener('click', (event) => {
+                        if (el.classList.contains('swiper-slide-active')) {
+                            if (event.target == el) {
+                                if (playBtn) {
+                                    if (playBtn.classList.contains('active')) {
+                                        playBtn.classList.remove('active');
+
+                                        if (video) {
+                                            video.play();
+                                        }
+
+                                    } else {
+                                        playBtn.classList.add('active');
+                                        if (video) {
+                                            video.pause();
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    })
+
+                    if (playBtn) {
+                        playBtn.addEventListener('click', () => {
+                            if (playBtn.classList.contains('active')) {
+                                playBtn.classList.remove('active');
+
+                                if (video) {
+                                    video.play();
+                                }
+
+                            } else {
+                                playBtn.classList.add('active');
+                                if (video) {
+                                    video.pause();
+                                }
+
+                            }
+                        })
+                    }
+
+                    if (soundBtn) {
+                        soundBtn.addEventListener('click', () => {
+                            soundBtn.classList.toggle('active');
+                            if (soundBtn.classList.contains('active')) {
+                                if (video) {
+                                    video.muted = false;
+                                }
+                            } else {
+                                if (video) {
+                                    video.muted = true;
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', initHero12);
+        </script>
+</body>
+</html>

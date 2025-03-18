@@ -1,0 +1,1632 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign section_bg = section.settings.section_bg %}
+
+<style>
+  .section-pc-{{section.id}} {
+      margin-top: {{section_mt}}px;
+      margin-bottom: {{section_mb}}px;
+      background-color:{{section_bg}};
+      position: relative;
+      border-top: {{ section.settings.inner_border_w }}px solid {{ section.settings.inner_border_color }};
+      border-bottom: {{ section.settings.inner_border_w }}px solid {{ section.settings.inner_border_color }};
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .header-pc-{{section.id}}.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: calc(100% - 0rem);
+      z-index: 999;
+  }
+
+  .header-pc-{{section.id}}.onscroll {
+      background-color: {{section_bg}} !important;
+      transition: all 0.25s ease;
+  }
+
+  .header-pc-{{section.id}}.scroll {
+      transform: translateY(-150%);
+      transition: all 0.25s ease;
+  }
+
+  .header-pc-{{section.id}}.scroll.active {
+      transform: translateY(0);
+      transition: all 0.25s ease;
+  }
+
+  .header-pc-{{section.id}}.open {
+      background-color: {{section_bg}} !important;
+      transition: all 0.25s ease;
+  }
+
+  .header-body-pc-{{section.id}} {
+      display: grid;
+      align-items: center;
+      gap: 12px;
+  }
+
+  .header-menu-list-pc-{{section.id}} {
+      padding: 0px;
+      margin: 0px;
+      display: none;
+      align-items: center;
+      gap: 0px;
+      flex-wrap: wrap;
+      list-style: none;
+  }
+
+  .header-menu-mobile-pc-{{section.id}} .header-menu-list-pc-{{section.id}} {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+  }
+
+  .header-menu-item-pc-{{section.id}} {
+      line-height: 100%;
+      cursor: pointer;
+      box-sizing: border-box;
+      padding-bottom: 3px;
+  }
+
+  .header-menu-link-pc-{{section.id}} {
+      margin: 0;
+      font-size: {{ section.settings.menu_size_mobile }}px;
+      color: {{ section.settings.menu_size_color }};
+      line-height: 130%;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: {{ section.settings.menu_weight }};
+      transition: all 0.25s ease;
+      position: relative;
+      z-index: 3;
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}.open.transparent .header-menu-link-pc-{{section.id}} {
+      color: {{ section.settings.menu_color }};
+      transition: all 0.25s ease;
+  }
+
+  .header-submenu-pc-{{section.id}} .header-menu-link-pc-{{section.id}} {
+      color: {{ section.settings.sub_menu_color }} !important;
+      font-weight: {{ section.settings.sub_menu_weight }};
+  }
+
+  .header-submenu-pc-{{section.id}} .header-menu-item-pc-{{section.id}}:hover>.header-menu-link-pc-{{section.id}} {
+      color: {{ section.settings.sub_menu_color }} !important;
+  }
+
+  .header-submenu-pc-{{section.id}} .header-menu-item-pc-{{section.id}}:hover>.header-menu-link-pc-{{section.id}}::after {
+      background-color: {{ section.settings.sub_menu_color }} !important;
+  }
+
+  .header-menu-item-parent-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: fit-content;
+      flex-basis: 0;
+  }
+
+  .header-menu-item-icon-pc-{{section.id}} {
+      display: block;
+      flex: 0 0 {{section.settings.menu_icon_w}}px;
+      width: {{section.settings.menu_icon_w}}px;
+      transition: all 0.25s ease 0s;
+      color: {{ section.settings.menu_color }};
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}:not(.onscroll).transparent.open .header-menu-item-icon-pc-{{section.id}} {
+      color: {{ section.settings.menu_color }};
+      transition: all 0.25s ease 0s;
+  }
+
+  .header-menu-item-pc-{{section.id}}:hover .header-menu-item-icon-pc-{{section.id}} {
+      color: {{ section.settings.menu_color }} !important;
+      transition: all 0.25s ease 0s;
+  }
+
+
+
+
+
+  .header-menu-item-icon-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .header-submenu-pc-{{section.id}} {
+      position: absolute;
+      z-index: 3;
+      top: calc(100% - 40px);
+      left: 0;
+      width: 100%;
+      transform: translateY(30px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease 0s;
+      list-style: none;
+      margin: 0px;
+  }
+
+  .header-submenu-bg-pc-{{section.id}} {
+      display: block !important;
+      height: 20px;
+      pointer-events: none;
+  }
+
+  .header-submenu-inner-pc-{{section.id}} {
+      background-color: {{ section.settings.inner_bg }};
+      border-bottom: {{ section.settings.inner_border_w }}px solid {{ section.settings.inner_border_color }};
+  }
+
+  .header-submenu-pc-{{section.id}} .section-pc-{{section.id}}-settings {
+      padding-top: 40px;
+  }
+
+  .header-menu-item-parent-pc-{{section.id}}.active .header-submenu-pc-{{section.id}} {
+      transform: translateY(0px);
+      opacity: 1;
+      pointer-events: all;
+      transition: all 0.25s ease 0s;
+  }
+
+  .header-menu-burder-pc-{{section.id}} {
+      display: block;
+      width: 20px;
+      height: 16px;
+      position: relative;
+      z-index: 3;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0px;
+      box-shadow: none;
+  }
+
+  .header-menu-burger-icon-pc-{{section.id}} {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      width: 100%;
+      height: 2px;
+      background: #181b1a;
+      transition: transform .4s ease;
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}.open .header-menu-burger-icon-pc-{{section.id}} {
+      transform: rotate(45deg);
+      transition-delay: .22s;
+      background: #181b1a !important;
+  }
+
+  .header-menu-burger-icon-pc-{{section.id}}::before,
+  .header-menu-burger-icon-pc-{{section.id}}::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: inherit;
+      background: #181b1a;
+  }
+
+  .header-menu-burger-icon-pc-{{section.id}}::before {
+      top: -7px;
+      transition: top .25s ease .27s, opacity .25s ease, width .25s ease;
+  }
+
+  .header-pc-{{section.id}}.open .header-menu-burger-icon-pc-{{section.id}}::before {
+      top: 0;
+      opacity: 0;
+      width: 100%;
+      transition: top .2s ease, opacity .2s ease .22s, width .1s ease;
+      background: #181b1a;
+  }
+
+  .header-menu-burger-icon-pc-{{section.id}}::after {
+      bottom: -7px;
+      transition: bottom .25s ease .27s, transform .25s ease, width .25s ease;
+  }
+
+  .header-pc-{{section.id}}.open .header-menu-burger-icon-pc-{{section.id}}::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      width: 100%;
+      transition: bottom .2s ease, transform .2s ease .22s, width .1s ease;
+      background: #181b1a !important;
+  }
+
+
+
+
+
+  .header-logo-pc-{{section.id}} {
+      width: 100%;
+      max-width: 150px;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+  }
+
+  .header-logo-image-pc-{{section.id}} img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .header-logo-image-desktop-pc-{{section.id}} {
+      display: none;
+  }
+
+  .header-logo-text-pc-{{section.id}} {
+      margin: 0;
+      font-size: 20px;
+      color: #181b1a;
+      line-height: 100%;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.25s ease;
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}.open.transparent .header-logo-text-pc-{{section.id}} {
+      color: #181b1a;
+      transition: all 0.25s ease;
+  }
+
+  .header-pc-{{section.id}} .header-logo-first-pc-{{section.id}} {
+      display: block !important;
+  }
+
+  .header-pc-{{section.id}} .header-logo-second-pc-{{section.id}} {
+      display: none !important;
+  }
+
+  .header-pc-{{section.id}}:not(.onscroll).transparent .header-logo-first-pc-{{section.id}} {
+      display: none !important;
+  }
+
+  .header-pc-{{section.id}}.open.transparent .header-logo-first-pc-{{section.id}} {
+      display: block !important;
+  }
+
+  .header-pc-{{section.id}}:not(.onscroll).transparent .header-logo-second-pc-{{section.id}} {
+      display: block !important;
+  }
+
+  .header-pc-{{section.id}}.open.transparent .header-logo-second-pc-{{section.id}} {
+      display: none !important;
+  }
+
+  .header-right-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 3;
+  }
+
+  .header-search-text-pc-{{section.id}},
+  .header-account-text-pc-{{section.id}},
+  .header-cart-text-pc-{{section.id}} {
+      display: none;
+      margin: 0;
+      color: {{section.settings.cart_color}};
+      line-height: 130%;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: {{section.settings.cart_weight}};
+      transition: all .7s cubic-bezier(.76, 0, .24, 1);
+  }
+
+  .header-cart-pc-{{section.id}} .cart-count-bubble span {
+      margin: 0;
+      font-size: 8.0px;
+      color: #181b1a;
+      line-height: 130%;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all .7s cubic-bezier(.76, 0, .24, 1);
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}.open.transparent .header-search-text-pc-{{section.id}},
+  .header-pc-{{section.id}}.open.transparent .header-account-text-pc-{{section.id}},
+  .header-pc-{{section.id}}.open.transparent .header-cart-text-pc-{{section.id}} {
+      color: {{section.settings.cart_color}};
+      transition: all .7s cubic-bezier(.76, 0, .24, 1);
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}.open.transparent .header-cart-pc-{{section.id}} .cart-count-bubble span {
+      color: #181b1a;
+  }
+
+  .header-search-icon-pc-{{section.id}},
+  .header-account-icon-pc-{{section.id}},
+  .header-cart-icon-pc-{{section.id}} {
+      display: block;
+      width: {{ section.settings.cart_icon_w }}px;
+  }
+
+  .header-search-icon-pc-{{section.id}} svg,
+  .header-account-icon-pc-{{section.id}} svg,
+  .header-cart-icon-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .header-search-icon-pc-{{section.id}} svg path,
+  .header-account-icon-pc-{{section.id}} svg path,
+  .header-cart-icon-pc-{{section.id}} svg path {
+      fill: {{ section.settings.cart_color }};
+      transition: all .7s cubic-bezier(.76, 0, .24, 1);
+  }
+
+  .header-search-icon-pc-{{section.id}}:hover svg path,
+  .header-account-icon-pc-{{section.id}}:hover svg path,
+  .header-cart-icon-pc-{{section.id}}:hover svg path {
+      fill: {{ section.settings.cart_color_hover }};
+      transition: all .7s cubic-bezier(.76, 0, .24, 1);
+  }
+
+
+
+
+
+  .header-pc-{{section.id}}.open.transparent .header-search-icon-pc-{{section.id}} svg path,
+  .header-pc-{{section.id}}.open.transparent .header-account-icon-pc-{{section.id}} svg path,
+  .header-pc-{{section.id}}.open.transparent .header-cart-icon-pc-{{section.id}} svg path {
+      fill: {{ section.settings.cart_color }};
+      transition: all .7s cubic-bezier(.76, 0, .24, 1);
+  }
+
+  .header-cart-pc-{{section.id}},
+  .header-account-pc-{{section.id}} {
+      text-decoration: none;
+  }
+
+  .header-search-pc-{{section.id}} {
+      padding: 0px;
+      margin: 0px;
+      background-color: transparent;
+      border: 0px;
+      box-shadow: none;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  .header-cart-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+  }
+
+  .header-cart-pc-{{section.id}} .cart-count-bubble {
+      position: absolute;
+      left: 60%;
+      top: -8px;
+      transform: translateX(-50%);
+      padding: 0px;
+      background-color: transparent;
+      border: 0px;
+      margin: 0px;
+      width: fit-content;
+      height: fit-content;
+  }
+
+  .header-menu-mobile-pc-{{section.id}} {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      transform: translateX(-120%);
+      transition: all 0.25s ease 0s;
+      z-index: 99;
+  }
+
+  .header-pc-{{section.id}}.open .header-menu-mobile-pc-{{section.id}} {
+      transform: translateX(0%);
+  }
+
+  .header-menu-mobile-inner-pc-{{section.id}} {
+      background-color: {{section.settings.sub_bg}};
+      max-width: 70%;
+      height: 100%;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .header-mobile-menu-item-parent-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .header-menu-mobile-pc-{{section.id}} .header-menu-item-pc-{{section.id}} {
+      max-width: 100%;
+      width: 100%;
+      justify-content: space-between;
+      position: static;
+      padding: 12px 0px;
+      border-bottom: {{section.settings.sub_border_w}}px solid {{section.settings.sub_border_color}};
+  }
+
+  .header-menu-mobile-pc-{{section.id}} .header-menu-item-pc-{{section.id}}:first-child {
+      border-top: {{section.settings.sub_border_w}}px solid {{section.settings.sub_border_color}};
+  }
+
+  .header-menu-mobile-pc-{{section.id}} .header-menu-item-icon-pc-{{section.id}} {
+      flex: 0 0 {{section.settings.menu_icon_w}}px;
+      width: {{section.settings.menu_icon_w}}px;
+      transform: rotate(-90deg);
+  }
+
+  .header-menu-mobile-submenu-pc-{{section.id}} {
+      position: absolute;
+      background-color: {{section.settings.sub_bg}};
+      z-index: 4;
+      padding: 20px;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      transform: translateX(110%);
+      transition: all 0.25s ease 0s;
+  }
+
+  .header-mobile-menu-item-parent-pc-{{section.id}}.active>.header-menu-mobile-submenu-pc-{{section.id}} {
+      transform: translateX(0%);
+      transition: all 0.25s ease 0s;
+  }
+
+  .header-menu-mobile-submenu-heading-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      background-color: transparent;
+      border: 0px;
+      border-top: {{section.settings.sub_border_w}}px solid {{section.settings.sub_border_color}};
+      padding: 0px;
+      padding: 10px 0px;
+      box-shadow: none;
+      font-size: {{section.settings.sub_size}}px;
+      color: {{section.settings.sub_color}};
+      line-height: 130%;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: {{section.settings.sub_weight}};
+  }
+
+  .header-menu-mobile-submenu-heading-pc-{{section.id}} .header-menu-item-icon-pc-{{section.id}} {
+      transform: rotate(90deg);
+  }
+
+  .header-mobile-submenu-list-pc-{{section.id}} {
+      margin: 0px;
+      margin-top: 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      padding: 0px;
+      list-style: none;
+  }
+
+  .header-logo-desktop-pc-{{section.id}} {
+      display: none;
+  }
+
+  .header-menu-grid-pc-{{section.id}} {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
+  }
+  .header-menu-card-title-pc-{{section.id}} {
+      margin: 0px;
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+      color: #181b1a;
+      line-height: 150%;
+      text-transform: unset;
+      text-decoration: none;
+  }
+
+  .header-menu-button-wrapper-pc-{{section.id}} {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .header-menu-button-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: fit-content;
+      margin: 0;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 100%;
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 6px;
+      transition: all 0.25s ease 0s;
+      background-color: transparent;
+      border: 0px;
+      cursor: pointer;
+      font-weight: 700;
+  }
+
+  .header-menu-button-inner-pc-{{section.id}} {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .header-menu-button-pc-{{section.id}}:hover {
+      color: #ffffff;
+      transition: all 0.25s ease 0s;
+  }
+
+  .header-menu-button-pc-{{section.id}} svg {
+      width: 14px;
+      height: 14px;
+  }
+
+  .header-menu-button-pc-{{section.id}} svg path {
+      fill: #ffffff;
+      transition: all 0.25s ease 0s;
+  }
+
+  .header-menu-button-pc-{{section.id}}:hover svg path {
+      fill: #ffffff;
+      transition: all 0.25s ease 0s;
+  }
+
+  @media(min-width: 1024px) {
+    .section-pc-{{section.id}} {
+      margin-left: 5%;
+    }
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 4rem;
+          padding-right: 4rem;
+      }
+
+      .header-pc-{{section.id}}.transparent {
+          width: calc(100% - 0rem);
+      }
+
+      .header-pc-{{section.id}}.fixed {
+          width: calc(100% - 0rem);
+      }
+
+      .header-body-pc-{{section.id}} {
+          display: grid;
+          gap: 32px;
+      }
+
+      .header-menu-burder-pc-{{section.id}} {
+          display: none;
+      }
+
+      .header-menu-list-pc-{{section.id}} {
+          display: flex;
+          gap: 32px;
+      }
+
+      .header-menu-link-pc-{{section.id}} {
+          font-size: {{ section.settings.menu_size }}px;
+          transition: all 0.25s ease;
+      }
+
+      .header-menu-item-pc-{{section.id}}:hover>.header-menu-link-pc-{{section.id}} {
+          transition: all 0.25s ease;
+          color: #181b1a;
+      }
+
+      .header-menu-link-pc-{{section.id}}::after {
+          content: '';
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          width: 0px;
+          height: 2px;
+          background-color: #181b1a;
+          transition: all 0.25s ease 0s;
+      }
+
+
+      .header-menu-item-pc-{{section.id}}:hover>.header-menu-link-pc-{{section.id}}::after {
+          width: 100%;
+          transition: all 0.25s ease 0s;
+      }
+
+      .header-submenu-pc-{{section.id}} .header-menu-item-parent-pc-{{section.id}} {
+          max-width: 100%;
+      }
+
+      .header-submenu-pc-{{section.id}} .header-menu-item-pc-{{section.id}}::after {
+          display: none;
+      }
+
+
+
+
+
+      .header-menu-item-parent-pc-{{section.id}}.active>.header-menu-item-icon-pc-{{section.id}} {
+          transform: rotate(180deg);
+          transition: all 0.25s ease 0s;
+      }
+
+      .header-logo-pc-{{section.id}} {
+          max-width: 180px;
+      }
+
+      .header-logo-image-desktop-pc-{{section.id}} {
+          display: block;
+      }
+
+      .header-logo-image-mobile-pc-{{section.id}} {
+          display: none;
+      }
+
+      .header-logo-text-pc-{{section.id}} {
+          font-size: 24px;
+          transition: all 0.25s ease;
+      }
+
+      .header-logo-text-pc-{{section.id}}:hover {
+          transition: all 0.25s ease;
+          color: #181b1a;
+      }
+
+
+
+
+
+      .header-right-pc-{{section.id}} {
+          gap: 32px;
+          order: 3;
+      }
+
+      .header-search-text-pc-{{section.id}},
+      .header-account-text-pc-{{section.id}},
+      .header-cart-text-pc-{{section.id}} {
+          display: inline;
+          font-size: {{section.settings.cart_size}}px;
+      }
+
+      .header-search-text-pc-{{section.id}}:hover,
+      .header-account-text-pc-{{section.id}}:hover,
+      .header-cart-text-pc-{{section.id}}:hover {
+          transition: all .7s cubic-bezier(.76, 0, .24, 1);
+          color: {{section.settings.cart_color_hover}} !important;
+      }
+
+
+
+
+
+      .header-search-icon-pc-{{section.id}},
+      .header-account-icon-pc-{{section.id}},
+      .header-cart-icon-pc-{{section.id}} {
+          display: none;
+          width: 20px;
+      }
+
+      .header-search-icon-pc-{{section.id}}:hover svg path,
+      .header-account-icon-pc-{{section.id}}:hover svg path,
+      .header-cart-icon-pc-{{section.id}}:hover svg path {
+          fill: #181b1a;
+          transition: all .7s cubic-bezier(.76, 0, .24, 1);
+      }
+
+
+
+
+
+      .header-cart-pc-{{section.id}} .cart-count-bubble span {
+          font-size: 16px;
+          position: relative;
+      }
+
+      .header-cart-pc-{{section.id}} .cart-count-bubble {
+          position: static;
+          transform: translateX(0);
+      }
+
+      .header-cart-pc-{{section.id}} .cart-count-bubble span:before {
+          content: '(';
+      }
+
+      .header-cart-pc-{{section.id}} .cart-count-bubble span:after {
+          content: ')';
+      }
+
+      .header-cart-pc-{{section.id}}:hover .cart-count-bubble span {
+          transition: all .7s cubic-bezier(.76, 0, .24, 1);
+          color: #181b1a;
+      }
+
+
+
+
+
+      .header-menu-mobile-pc-{{section.id}} {
+          display: none;
+      }
+
+      .header-logo-desktop-pc-{{section.id}} {
+          display: block;
+      }
+
+      .header-logo-mobile-pc-{{section.id}} {
+          display: none;
+      }
+
+  }
+
+
+  .section-pc-{{section.id}} {
+      border-top: 0px;
+  }
+
+
+  .header-body-pc-{{section.id}} {
+      grid-template-columns: 1fr 150px 1fr;
+  }
+
+
+  @media(min-width: 1024px) {
+
+      .header-body-pc-{{section.id}} {
+          grid-template-columns: 1fr 180px 1fr;
+      }
+
+      .header-menu-pc-{{section.id}} {
+          order: 1;
+      }
+
+      .header-logo-pc-{{section.id}} {
+          order: 2;
+          text-align: center;
+      }
+  }
+
+
+  @media(min-width: 1024px) {
+      .header-account-icon-pc-{{section.id}} {
+          display: block;
+      }
+
+      .header-account-text-pc-{{section.id}} {
+          display: none;
+      }
+  }
+</style>
+
+<div class="section-pc-{{section.id}} header-pc-{{section.id}} transparent fixed top active">
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="header-body-pc-{{section.id}}">
+      <div class="header-menu-pc-{{section.id}}">
+        <button class="header-menu-burder-pc-{{section.id}}">
+          <span class="header-menu-burger-icon-pc-{{section.id}}"></span>
+        </button>
+        <ul class="header-menu-list-pc-{{section.id}}">
+          <li class="header-menu-item-pc-{{section.id}} header-menu-item-parent-pc-{{section.id}}">
+            <p class="header-menu-link-pc-{{section.id}}">Shop</p>
+
+            <span class="header-menu-item-icon-pc-{{section.id}}">
+              <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                    class=""></path>
+              </svg>
+            </span>
+
+            <div class="header-submenu-pc-{{section.id}}">
+              <div class="header-submenu-bg-pc-{{section.id}}"></div>
+              <div class="header-submenu-inner-pc-{{section.id}}">
+                <div class="section-pc-{{section.id}}-settings">
+                  <ul class="header-menu-list-pc-{{section.id}}">
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a href="https://section.store/pages/timeline-2" class="header-menu-link-pc-{{section.id}}"
+                        >About</a
+                      >
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a href="https://section.store/pages/form-builder" class="header-menu-link-pc-{{section.id}}"
+                        >Contact</a
+                      >
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a href="https://section.store/pages/faq-10" class="header-menu-link-pc-{{section.id}}">FAQ</a>
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a href="#" class="header-menu-link-pc-{{section.id}}">Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="header-menu-item-pc-{{section.id}} header-menu-item-parent-pc-{{section.id}}">
+            <p class="header-menu-link-pc-{{section.id}}">About</p>
+
+            <span class="header-menu-item-icon-pc-{{section.id}}">
+              <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                    class=""></path>
+              </svg>
+            </span>
+
+            <div class="header-submenu-pc-{{section.id}}">
+              <div class="header-submenu-bg-pc-{{section.id}}"></div>
+              <div class="header-submenu-inner-pc-{{section.id}}">
+                <div class="section-pc-{{section.id}}-settings">
+                  <ul class="header-menu-list-pc-{{section.id}}">
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a
+                        href="https://section.store/pages/timeline-2"
+                        class="header-menu-link-pc-{{section.id}}"
+                        >About</a
+                      >
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a
+                        href="https://section.store/pages/form-builder"
+                        class="header-menu-link-pc-{{section.id}}"
+                        >Contact</a
+                      >
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a
+                        href="https://section.store/pages/faq-10"
+                        class="header-menu-link-pc-{{section.id}}"
+                        >FAQ</a
+                      >
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}}">
+                      <a href="#" class="header-menu-link-pc-{{section.id}}">Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          {% for block in section.blocks %}
+            <li class="header-menu-item-pc-{{section.id}} header-menu-item-parent-pc-{{section.id}}">
+              <p class="header-menu-link-pc-{{section.id}}">{{ block.settings.list_links.title }}</p>
+
+              <span class="header-menu-item-icon-pc-{{section.id}}">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path fill="currentColor"
+                      d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                      class=""></path>
+                </svg>
+              </span>
+
+              <div class="header-submenu-pc-{{section.id}}">
+                <div class="header-submenu-bg-pc-{{section.id}}"></div>
+                <div class="header-submenu-inner-pc-{{section.id}}">
+                  <div class="section-pc-{{section.id}}-settings">
+                    <ul class="header-menu-list-pc-{{section.id}}">
+                      {% for link in block.settings.list_links.links %}
+                        <li class="header-menu-item-pc-{{section.id}}">
+                          <a href="{{ link.url }}" class="header-menu-link-pc-{{section.id}}">
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+
+          <li class="header-menu-item-pc-{{section.id}} ">
+            <a href="/pages/contact" class="header-menu-link-pc-{{section.id}}"> Contact </a>
+          </li>
+        </ul>
+
+        <div class="header-menu-mobile-pc-{{section.id}}">
+          <div class="header-menu-mobile-inner-pc-{{section.id}}">
+            <ul class="header-menu-list-pc-{{section.id}}">
+              <li class="header-menu-item-pc-{{section.id}} header-mobile-menu-item-parent-pc-{{section.id}}">
+                <a href="#" class="header-menu-link-pc-{{section.id}}">Shop</a>
+
+                <span class="header-menu-item-icon-pc-{{section.id}}">
+                  <svg
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path fill="currentColor"
+                        d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                        class=""></path>
+                  </svg>
+                </span>
+                <div class="header-menu-mobile-submenu-pc-{{section.id}}">
+                  <button class="header-menu-mobile-submenu-heading-pc-{{section.id}}">
+                    <span class="header-menu-item-icon-pc-{{section.id}}">
+                      <svg
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                      >
+                        <path fill="currentColor"
+                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                            class=""></path>
+                      </svg>
+                    </span>
+                    Shop
+                  </button>
+                  <ul class="header-mobile-submenu-list-pc-{{section.id}}">
+                    <li class="header-menu-item-pc-{{section.id}} ">
+                      <a
+                        href="/collections/new-arrivals"
+                        class="header-menu-link-pc-{{section.id}}"
+                        >New Arrivals</a
+                      >
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}} header-mobile-menu-item-parent-pc-{{section.id}}">
+                      <a href="#" class="header-menu-link-pc-{{section.id}}">Best Sellers</a>
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}} header-mobile-menu-item-parent-pc-{{section.id}}">
+                      <a href="#" class="header-menu-link-pc-{{section.id}}">Shop by Price</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="header-menu-item-pc-{{section.id}} header-mobile-menu-item-parent-pc-{{section.id}}">
+                <a href="#" class="header-menu-link-pc-{{section.id}}">About</a>
+
+                <span class="header-menu-item-icon-pc-{{section.id}}">
+                  <svg
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path fill="currentColor"
+                        d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                        class=""></path>
+                  </svg>
+                </span>
+                <div class="header-menu-mobile-submenu-pc-{{section.id}}">
+                  <button class="header-menu-mobile-submenu-heading-pc-{{section.id}}">
+                    <span class="header-menu-item-icon-pc-{{section.id}}">
+                      <svg
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                      >
+                        <path fill="currentColor"
+                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                            class=""></path>
+                      </svg>
+                    </span>
+                    About
+                  </button>
+                  <ul class="header-mobile-submenu-list-pc-{{section.id}}">
+                    <li class="header-menu-item-pc-{{section.id}} ">
+                      <a href="#" class="header-menu-link-pc-{{section.id}}">Our Story</a>
+                    </li>
+
+                    <li class="header-menu-item-pc-{{section.id}} ">
+                      <a href="#" class="header-menu-link-pc-{{section.id}}">Mission</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              {% for block in section.blocks %}
+                <li class="header-menu-item-pc-{{section.id}} header-mobile-menu-item-parent-pc-{{section.id}}">
+                  <a href="#" class="header-menu-link-pc-{{section.id}}">{{ block.settings.list_links.title }}</a>
+
+                  <span class="header-menu-item-icon-pc-{{section.id}}">
+                    <svg
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                    >
+                      <path fill="currentColor"
+                          d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                          class=""></path>
+                    </svg>
+                  </span>
+                  <div class="header-menu-mobile-submenu-pc-{{section.id}}">
+                    <button class="header-menu-mobile-submenu-heading-pc-{{section.id}}">
+                      <span class="header-menu-item-icon-pc-{{section.id}}">
+                        <svg
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                        >
+                          <path fill="currentColor"
+                              d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                              class=""></path>
+                        </svg>
+                      </span>
+                      {{ block.settings.list_links.title }}
+                    </button>
+                    <ul class="header-mobile-submenu-list-pc-{{section.id}}">
+                      {% for link in block.settings.list_links.links %}
+                        <li class="header-menu-item-pc-{{section.id}}">
+                          <a href="{{ link.url }}" class="header-menu-link-pc-{{section.id}}">
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-logo-pc-{{section.id}}">
+        <a
+          href="https://section.store"
+          class="header-logo-image-pc-{{section.id}} header-logo-desktop-pc-{{section.id}}"
+        >
+          {% if section.settings.desk_img != blank %}
+            <img
+              src="{{ section.settings.desk_img | img_url:'master' }}"
+              alt=""
+              class="header-logo-first-pc-{{section.id}}"
+            >
+          {% else %}
+            <div class="header-logo-first-pc-{{section.id}}">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+            </div>
+          {% endif %}
+        </a>
+
+        <a
+          href="https://section.store"
+          class="header-logo-image-pc-{{section.id}} header-logo-mobile-pc-{{section.id}}"
+        >
+          {% if section.settings.mobile_img != blank %}
+            <img
+              src="{{ section.settings.mobile_img | img_url:'master' }}"
+              alt=""
+              class="header-logo-first-pc-{{section.id}}"
+            >
+          {% else %}
+            <div class="header-logo-first-pc-{{section.id}}">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+            </div>
+          {% endif %}
+        </a>
+      </div>
+
+      <div class="header-right-pc-{{section.id}}">
+        <a href="/cart" class="header-cart-pc-{{section.id}}">
+          <span class="header-cart-icon-pc-{{section.id}}">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Layer_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 21.3 19.3"
+              style="enable-background:new 0 0 21.3 19.3;"
+              xml:space="preserve"
+            >
+              <path class="st0"
+                  d="M20.4,0.2c-0.5-0.1-1.1,0.2-1.2,0.7l-2.9,11.2h-7l-2.5-12H1.1c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h4.1l2.5,12  h10.2l3.3-12.8C21.3,0.8,20.9,0.3,20.4,0.2z M10.1,17.6c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5  C9.5,16.1,10.1,16.8,10.1,17.6z M16.6,19.1c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5c-0.8,0-1.5,0.7-1.5,1.5S15.8,19.1,16.6,19.1z">
+              </path>
+            </svg>
+          </span>
+          <span class="header-cart-text-pc-{{section.id}}">Cart</span></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initHeader3() {
+      let header = document.querySelector('.header-pc-{{section.id}}');
+      let menuMobile = document.querySelector('.header-menu-mobile-pc-{{section.id}}');
+
+      let mobileSubMenu = document.querySelectorAll('.header-menu-mobile-submenu-pc-{{section.id}}');
+      let parentItems = document.querySelectorAll('.header-menu-item-parent-pc-{{section.id}}');
+      if (header) {
+          if (window.scrollY > 0) {
+              header.classList.add('onscroll');
+          } else {
+              header.classList.add('top');
+          }
+
+          let lastScrollTop = window.scrollY;
+
+          document.addEventListener('scroll', () => {
+
+              if (parentItems) {
+                  parentItems.forEach(el => el.classList.remove('active'));
+              }
+
+              const currentScrollTop = window.scrollY;
+              const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+              if (currentScrollTop === 0) {
+                  header.classList.add('top');
+              }
+
+              if (currentScrollTop <= 0) {
+                  header.classList.add('active');
+                  header.classList.remove('onscroll');
+                  return;
+              }
+
+              if (currentScrollTop >= maxScroll) {
+                  header.classList.remove('active');
+                  return;
+              }
+
+              if (currentScrollTop !== lastScrollTop) {
+                  if (header.classList.contains('scroll')) {
+                      if (currentScrollTop > lastScrollTop) {
+                          header.classList.remove('active');
+                      } else {
+                          header.classList.add('active');
+                      }
+                  }
+
+                  if (header.classList.contains('transparent')) {
+                      if (currentScrollTop === 0) {
+                          header.classList.remove('onscroll');
+                          header.classList.add('top');
+                      } else {
+                          header.classList.add('onscroll');
+                          header.classList.remove('top');
+                      }
+                  }
+
+                  lastScrollTop = currentScrollTop;
+              }
+          });
+
+          let burger_icon = header.querySelector('.header-menu-burder-pc-{{section.id}}');
+          if (burger_icon) {
+              burger_icon.addEventListener('click', () => {
+                  header.classList.toggle('open');
+                  if (header.classList.contains('open')) {
+                      document.body.style.overflow = 'hidden';
+                  } else {
+                      document.body.style.overflow = '';
+                  }
+              })
+          }
+
+          document.addEventListener('click', (e) => {
+              if (e.target == menuMobile) {
+                  document.body.style.overflow = '';
+                  header.classList.remove('open');
+              }
+          });
+
+          if (parentItems) {
+              parentItems.forEach(el => {
+
+
+                  el.addEventListener('mouseenter', () => {
+                      el.classList.add('active');
+                      header.classList.add('onscroll');
+                  });
+
+                  el.addEventListener('mouseleave', () => {
+                      el.classList.remove('active');
+                  });
+
+
+
+                  document.addEventListener('click', (event) => {
+                      if (!el.contains(event.target) && !el.classList.contains('active')) {
+                          return;
+                      }
+
+                      if (!el.contains(event.target) && el.classList.contains('active')) {
+                          el.classList.remove('active');
+                      }
+                  });
+              });
+          }
+
+          if (mobileSubMenu) {
+              mobileSubMenu.forEach(el => {
+                  let parentItem = el.closest('.header-mobile-menu-item-parent-pc-{{section.id}}');
+                  let heading = el.querySelector('.header-menu-mobile-submenu-heading-pc-{{section.id}}');
+
+                  if (parentItem) {
+                      parentItem.addEventListener('click', () => {
+                          parentItem.classList.add('active');
+                      });
+                  }
+
+                  if (heading) {
+                      heading.addEventListener('click', (event) => {
+                          event.stopPropagation();
+                          parentItem.classList.remove('active');
+                      });
+                  }
+              });
+          }
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', initHeader3);
+</script>
+
+{% schema %}
+{
+  "name": "PC - Header #3",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+        "type":"header",
+        "content":"Menu List"
+    },
+    {
+      "type": "range",
+      "id": "menu_size",
+      "label": "Font Size",
+      "default": 16,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "menu_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "menu_weight",
+      "label": "Menu Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "menu_color",
+      "label": "Menu Color",
+      "default":"#181b1a"
+    },
+    {
+      "type": "range",
+      "id": "sub_menu_weight",
+      "label": "Sub Menu Font Weight",
+      "default": 400,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "sub_menu_color",
+      "label": "Sub Menu Color",
+      "default":"#181b1a"
+    },
+    {
+      "type": "color",
+      "id": "sub_menu_color_hover",
+      "label": "Sub Menu Color Hover",
+      "default":"#181b1a"
+    },
+    {
+      "type": "range",
+      "id": "menu_icon_w",
+      "label": "Icon Width",
+      "default":8,
+      "min": 5,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+        "type":"header",
+        "content":"Inner Block"
+    },
+    {
+      "type": "range",
+      "id": "inner_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "inner_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "inner_bg",
+      "label": "Background Color",
+      "default":"#fff"
+    },
+     {
+        "type":"header",
+        "content":"Mobile Sub Menu List"
+    },
+    {
+      "type": "range",
+      "id": "sub_size",
+      "label": "Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "sub_color",
+      "label": "Color",
+      "default":"#181b1a"
+    },
+    {
+      "type": "range",
+      "id": "sub_border_w",
+      "label": "Bottom Border Width",
+      "default":1,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "sub_border_color",
+      "label": "Border Color",
+      "default":"#efefef"
+    },
+    {
+      "type": "color",
+      "id": "sub_bg",
+      "label": "Background Color",
+      "default":"#ffffff"
+    },
+    {
+        "type":"header",
+        "content":"Image Logo"
+    },
+    {
+      "type":"image_picker",
+      "id":"desk_img",
+      "label":"Desktop Image"
+    },
+    {
+      "type":"image_picker",
+      "id":"mobile_img",
+      "label":"Mobile Image"
+    },
+    {
+        "type":"header",
+        "content":"Cart"
+    },
+    {
+      "type":"text",
+      "id":"cart",
+      "label":"cart"
+    },
+    {
+      "type": "range",
+      "id": "cart_size",
+      "label": "Font Size",
+      "default": 16,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cart_weight",
+      "label": "Menu Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "cart_color",
+      "label": "Menu Color",
+      "default":"#181b1a"
+    },
+    {
+      "type": "color",
+      "id": "cart_color_hover",
+      "label": "Menu Color Hover",
+      "default":"#181b1a"
+    },
+    {
+      "type": "range",
+      "id": "cart_icon_w",
+      "label": "Icon Width",
+      "default": 18,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background Color",
+      "default":"#fff"
+    },
+
+  ],
+    "blocks": [
+     {
+      "type":"list_links",
+      "name":"List Links",
+      "settings":[
+        {
+          "type":"link_list",
+          "id":"list_links",
+          "label":"List Links"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Header #3",
+      "blocks":[
+        {
+          "type":"list_links",
+          "settings":{
+            "list_links":"menu-test"
+          }
+        },
+        {
+          "type":"list_links",
+          "settings":{
+            "list_links":"menu-test"
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

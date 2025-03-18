@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .pc-section-section_id {
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-section-section_id-settings {
+            margin: 0 auto;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+
+        .pc-timeline-heading-section_id {
+            width: 100%;
+            text-align: center;
+        }
+
+        .pc-timeline-heading-section_id * {
+            margin: 0;
+            font-size: 28px;
+            color: #232323;
+            line-height: 130%;
+            text-transform: unset;
+        }
+
+        .pc-timeline-items-section_id {
+            width: 100%;
+            max-width: 75%;
+            margin: 0px auto;
+            margin-top: 40px;
+        }
+
+        .pc-timeline-item-section_id {
+            display: flex;
+            position: relative;
+        }
+
+        /* .pc-timeline-item-section_id:before {
+        content: '';
+        height: 100%;
+        width: 0;
+        border-left: 1.5px dashed #002397;
+        position: absolute;
+        top: 0;
+        left: 0;
+      } */
+
+        .pc-timeline-item-section_id:nth-child(odd) {
+            justify-content: flex-end;
+        }
+
+        .pc-timeline-item-section_id:first-child:before {
+            display: none;
+        }
+
+        .pc-timeline-content-inner-section_id {
+            position: relative;
+        }
+
+        .pc-section-section_id .pc-timeline-item-section_id:nth-child(even) .pc-timeline-content-inner-section_id:before {
+            left: -48px;
+            content: '';
+            height: 100%;
+            width: 0;
+            border-left: 1px dashed #002397;
+            position: absolute;
+            top: 0;
+        }
+
+        .pc-section-section_id .pc-timeline-item-section_id:nth-child(odd) .pc-timeline-content-inner-section_id:before {
+            left: -48px;
+            content: '';
+            height: 100%;
+            width: 0;
+            border-left: 1px dashed #002397;
+            position: absolute;
+            top: 0;
+        }
+
+        .pc-timeline-item-section_id:last-child:before {
+            display: none;
+        }
+
+        .pc-timeline-item-section_id:not(:first-child) .pc-timeline-top-section_id {
+            padding-top: 24px;
+            position: relative;
+        }
+
+        .pc-timeline-item-section_id:not(:first-child) .pc-timeline-top-section_id:before {
+            left: -48px;
+            content: '';
+            height: 100%;
+            width: 0;
+            border-left: 1px dashed #002397;
+            position: absolute;
+            top: 0;
+        }
+
+        .pc-timeline-item-section_id:not(:first-child) .pc-timeline-top-section_id:before {
+            left: -48px;
+            content: '';
+            height: 100%;
+            width: 0;
+            border-left: 1px dashed #002397;
+            position: absolute;
+            top: 0;
+        }
+
+        .pc-timeline-content-section_id {
+            padding-left: 48px;
+        }
+
+        .pc-timeline-item-heading-section_id {
+            position: relative;
+        }
+
+        .pc-timeline-item-heading-section_id:before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: #002397;
+            border: 1px solid #002397;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            left: calc((48px + 8px) * -1);
+            z-index: 2;
+        }
+
+        .pc-timeline-image-section_id {
+            width: 100%;
+            max-width: 90%;
+            border-radius: 0px;
+            border: 0px solid;
+            overflow: hidden;
+        }
+
+        .pc-timeline-image-section_id img,
+        .pc-timeline-image-section_id svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-timeline-image-section_id svg {
+            background-color: #AFAFAF;
+        }
+
+        .pc-timeline-top-section_id {
+            padding-bottom: 16px;
+        }
+
+        .pc-timeline-item-heading-section_id {
+            width: 100%;
+            text-align: left;
+        }
+
+        .pc-timeline-item-heading-section_id * {
+            margin: 0;
+            font-size: 20px;
+            color: #002397;
+            line-height: 130%;
+            text-transform: unset;
+        }
+
+        .pc-timeline-item-text-section_id {
+            width: 100%;
+            margin-top: 16px;
+            text-align: left;
+        }
+
+        .pc-timeline-item-text-section_id * {
+            margin: 0;
+            font-size: 16px;
+            color: #232323;
+            line-height: 170%;
+            text-transform: unset;
+        }
+
+        @media(min-width: 1024px) {
+
+            .pc-section-section_id {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+            }
+
+            .pc-section-section_id-settings {
+                padding: 0 5rem;
+                padding-top: 80px;
+                padding-bottom: 80px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+
+            .pc-timeline-heading-section_id {
+                text-align: center;
+            }
+
+            .pc-timeline-heading-section_id * {
+                font-size: 64px;
+            }
+
+            .pc-timeline-items-section_id {
+                max-width: 100%;
+                margin-top: 60px;
+            }
+
+            .pc-timeline-item-section_id:not(:first-child) .pc-timeline-top-section_id {
+                padding-top: 24px;
+            }
+
+            /* .pc-timeline-item-section_id:before {
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+        } */
+
+            .pc-timeline-item-section_id:nth-child(odd) .pc-timeline-content-inner-section_id:before {
+                left: -49px;
+            }
+
+            .pc-timeline-item-section_id:nth-child(even) .pc-timeline-content-inner-section_id:before {
+                right: -49px;
+                left: unset;
+            }
+
+            .pc-timeline-content-section_id {
+                width: 50%;
+                padding-left: 0px;
+                padding-right: 48px;
+            }
+
+            .pc-timeline-item-section_id:nth-child(odd) .pc-timeline-content-section_id {
+                padding-left: 48px;
+            }
+
+            .pc-timeline-item-heading-section_id:before {
+                width: 16px;
+                height: 16px;
+                top: -4px;
+                left: calc((48px + 8px) * -1);
+            }
+
+            .pc-timeline-item-section_id:nth-child(even) .pc-timeline-item-heading-section_id:before {
+                left: unset;
+                right: calc((48px + 8px) * -1);
+            }
+
+            .pc-timeline-image-section_id {
+                max-width: 70%;
+            }
+
+            .pc-timeline-top-section_id {
+                padding-bottom: 16px;
+            }
+
+            .pc-timeline-item-heading-section_id {
+                text-align: left;
+            }
+
+            .pc-timeline-item-heading-section_id * {
+                font-size: 44px;
+            }
+
+            .pc-timeline-item-section_id:nth-child(even) .pc-timeline-item-heading-section_id {
+                text-align: right;
+            }
+
+            .pc-timeline-item-text-section_id {
+                margin-top: 16px;
+                text-align: left;
+            }
+
+            .pc-timeline-item-text-section_id * {
+                font-size: 21px;
+            }
+
+            .pc-timeline-item-section_id:nth-child(even) .pc-timeline-item-text-section_id {
+                text-align: right;
+            }
+
+            .pc-timeline-item-section_id:nth-child(odd):not(:first-child) .pc-timeline-top-section_id:before {
+                left: -48px;
+            }
+
+            .pc-timeline-item-section_id:nth-child(even):not(:first-child) .pc-timeline-top-section_id:before {
+                left: unset;
+                right: -48px;
+            }
+        }
+
+
+        .pc-section-section_id-settings {
+            max-width: 120rem;
+        }
+
+
+        @media(min-width: 1024px) {
+            .pc-timeline-image-section_id {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+
+            .pc-timeline-item-section_id:nth-child(even) .pc-timeline-image-section_id {
+                margin-left: auto;
+                margin-right: 0px;
+            }
+        }
+
+
+        .pc-timeline-image-section_id {
+            aspect-ratio: auto;
+        }
+
+
+        @media(min-width: 1024px) {
+            .pc-timeline-image-section_id {
+                aspect-ratio: auto;
+            }
+        }
+    </style>
+
+
+    <div class="pc-section-section_id pc-timeline-section_id">
+        <div class="pc-section-section_id-settings">
+
+            <div class="pc-timeline-heading-section_id">
+                <h2>Our Story</h2>
+            </div>
+
+
+            <div class="pc-timeline-items-section_id">
+
+                <div class="pc-timeline-item-section_id">
+                    <div class="pc-timeline-content-section_id">
+
+                        <div class="pc-timeline-top-section_id">
+                            <div class="pc-timeline-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/pexels-anna-pou-8329296.jpg?v=1716499720"
+                                    alt="" loading="lazy">
+
+                            </div>
+                        </div>
+
+                        <div class="pc-timeline-content-inner-section_id">
+                            <div class="pc-timeline-item-heading-section_id">
+                                <h3><strong>2012</strong></h3>
+                            </div>
+
+                            <div class="pc-timeline-item-text-section_id">
+                                <p>Experimentation begins in a small kitchen. We meticulously craft delicious and
+                                    refreshing beverages, focusing on unique flavor combinations.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc-timeline-item-section_id">
+                    <div class="pc-timeline-content-section_id">
+
+                        <div class="pc-timeline-top-section_id">
+                            <div class="pc-timeline-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/pexels-mikhail-nilov-8920034.jpg?v=1716502700"
+                                    alt="" loading="lazy">
+
+                            </div>
+                        </div>
+
+                        <div class="pc-timeline-content-inner-section_id">
+                            <div class="pc-timeline-item-heading-section_id">
+                                <h3>2013</h3>
+                            </div>
+
+                            <div class="pc-timeline-item-text-section_id">
+                                <p>We take a leap of faith, offering our crafted beverages to a wider audience. We set
+                                    up a booth at a local food festival and receive an enthusiastic response.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc-timeline-item-section_id">
+                    <div class="pc-timeline-content-section_id">
+
+                        <div class="pc-timeline-top-section_id">
+                            <div class="pc-timeline-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/pexels-cottonbro-5532675.jpg?v=1716497037"
+                                    alt="" loading="lazy">
+
+                            </div>
+                        </div>
+
+                        <div class="pc-timeline-content-inner-section_id">
+                            <div class="pc-timeline-item-heading-section_id">
+                                <h3>2016</h3>
+                            </div>
+
+                            <div class="pc-timeline-item-text-section_id">
+                                <p>The demand for our beverages grows! We establish our first dedicated production
+                                    facility, a modern bottling plant.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc-timeline-item-section_id">
+                    <div class="pc-timeline-content-section_id">
+
+                        <div class="pc-timeline-top-section_id">
+                            <div class="pc-timeline-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/pexels-cottonbro-6591427.jpg?v=1716502733"
+                                    alt="" loading="lazy">
+
+                            </div>
+                        </div>
+
+                        <div class="pc-timeline-content-inner-section_id">
+                            <div class="pc-timeline-item-heading-section_id">
+                                <h3>2019</h3>
+                            </div>
+
+                            <div class="pc-timeline-item-text-section_id">
+                                <p>We recognize the importance of responsible practices. We implement using recycled
+                                    packaging.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc-timeline-item-section_id">
+                    <div class="pc-timeline-content-section_id">
+
+                        <div class="pc-timeline-top-section_id">
+                            <div class="pc-timeline-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/pexels-yankrukov-5480150.jpg?v=1716499532"
+                                    alt="" loading="lazy">
+
+                            </div>
+                        </div>
+
+                        <div class="pc-timeline-content-inner-section_id">
+                            <div class="pc-timeline-item-heading-section_id">
+                                <h3>2024</h3>
+                            </div>
+
+                            <div class="pc-timeline-item-text-section_id">
+                                <p>The journey continues! We remain dedicated to crafting delicious and refreshing
+                                    beverages, while exploring exciting new flavor profiles and brewing techniques.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

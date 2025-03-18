@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .pkm-pd-best-sellers {
+            padding: 1rem 0;
+            /* max-width: 1200px; */
+            margin: 0 auto;
+        }
+
+        .pkm-pd-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pkm-pd-section-header .pkm-pd-section-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .pkm-pd-section-header .pkm-pd-shop-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block;
+            position: relative;
+        }
+
+        .pkm-pd-section-header .pkm-pd-shop-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(1);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #232322;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+        }
+
+        .pkm-pd-section-header .pkm-pd-shop-link:hover::after {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        .pkm-pd-product-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+
+        .pkm-pd-product-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container {
+            position: relative;
+            aspect-ratio: 2/2.3;
+            overflow: hidden;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-sale-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #000;
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 12px;
+            text-transform: uppercase;
+            z-index: 2;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-sale-badge {
+            opacity: 0;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-product-image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-product-image-hover {
+            opacity: 1;
+        }
+
+        .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-product-image {
+            transform: scale(1.2);
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-info {
+            padding: 1rem 0;
+            text-transform: uppercase;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-title {
+            font-size: 12px;
+            color: #727070;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-category {
+            color: #232322;
+            font-size: 18px;
+            margin: 12px 0;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-category:hover {
+            color: #504d4d;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-price {
+            font-weight: 600;
+            font-size: 16px;
+            color: #232322;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-original-price {
+            margin-left: 5px;
+            color: #727070;
+            font-weight: 600;
+            text-decoration: line-through;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-add-to-cart {
+            position: absolute;
+            display: none;
+            width: 100%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2E2E2E;
+            color: #fff;
+            border: none;
+            padding: 20px 24px;
+            cursor: pointer;
+            display: inline-flex;
+            opacity: 0;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: opacity 0.4s ease;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-add-to-cart:hover {
+            background-color: #000;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-add-to-cart .pkm-pd-arrow {
+            margin-left: 8px;
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease;
+        }
+
+        .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-add-to-cart:hover .pkm-pd-arrow {
+            transform: rotate(0deg);
+        }
+
+        @media (min-width: 600px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 31.1em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 49.9%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 49.9%;
+            }
+
+            .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-product-image-hover {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
+            .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-add-to-cart {
+                /* bottom: 0; */
+                opacity: 1;
+            }
+        }
+
+
+
+        @media (min-width: 1024px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 31.1em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 33.33%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 66.66%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 28.5em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 33.33%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 66.66%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 23.5em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 33.33%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 66.66%;
+            }
+        }
+
+        @media (max-width: 915px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 20.6em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 33.33%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 66.66%;
+            }
+        }
+
+        @media (max-width: 855px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 19.4em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 33.33%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 66.66%;
+            }
+        }
+
+        @media (max-width: 825px) {
+            .pkm-pd-product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Lignes séparatrices verticales ajustées à la hauteur des images */
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                position: absolute;
+                /* top: 0; */
+                height: 18.5em;
+                /* Ajusté pour s'arrêter au-dessus des informations produit */
+                width: 1px;
+                background: #c2c1c1;
+                z-index: 1;
+            }
+
+            .pkm-pd-product-grid::before {
+                left: 33.33%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 66.66%;
+            }
+        }
+
+        @media (max-width: 775px) {
+            .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-sale-badge {
+                opacity: 0;
+            }
+
+            .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-add-to-cart {
+                /* bottom: 0; */
+                opacity: 1;
+            }
+
+            .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-product-image {
+                transform: none;
+            }
+
+            .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-product-image-hover {
+                display: none;
+            }
+
+            .pkm-pd-section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pkm-pd-product-grid {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 1rem;
+            }
+
+            .pkm-pd-product-grid::before,
+            .pkm-pd-product-grid::after {
+                content: '';
+                width: 0;
+            }
+
+            .pkm-pd-section-header .pkm-pd-section-title {
+                font-size: 24px;
+            }
+
+            .pkm-pd-section-header .pkm-pd-shop-link {
+                font-size: 14px;
+            }
+
+            .pkm-pd-section-header .pkm-pd-shop-link::after {
+                height: 1.5px;
+            }
+
+            .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-title {
+                font-size: 12px;
+            }
+
+            .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-category {
+                font-size: 17px;
+            }
+
+            .pkm-pd-product-card .pkm-pd-product-info .pkm-pd-product-price {
+                font-weight: 600;
+                font-size: 14px;
+                color: #232322;
+            }
+
+            .pkm-pd-product-card .pkm-pd-product-image-container .pkm-pd-add-to-cart {
+                padding: 18px 20px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="pkm-pd-best-sellers">
+        <div class="pkm-pd-section-header">
+            <h2 class="pkm-pd-section-title">Confort quotidien</h2>
+            <a href="#" class="pkm-pd-shop-link">Acheter les meilleures ventes</a>
+        </div>
+
+        <div class="pkm-pd-product-grid">
+            <!-- Product 1 -->
+            <div class="pkm-pd-product-card">
+                <div class="pkm-pd-product-image-container">
+                    <img src="https://image.freepik.com/free-photo/white-t-shirt-mockup_125540-743.jpg"
+                        alt="T-shirt Blanc" class="pkm-pd-product-image">
+                    <img src="https://image.freepik.com/free-photo/white-t-shirt-mockup_125540-744.jpg"
+                        alt="T-shirt Blanc Hover" class="pkm-pd-product-image-hover">
+                    <button class="pkm-pd-add-to-cart">Ajouter au Panier
+                        <svg class="pkm-pd-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="pkm-pd-product-info">
+                    <h3 class="pkm-pd-product-title">T-shirt Blanc</h3>
+                    <p class="pkm-pd-product-category">Mode Quotidienne</p>
+                    <p class="pkm-pd-product-price">$25.00</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="pkm-pd-product-card">
+                <div class="pkm-pd-product-image-container">
+                    <div class="pkm-pd-sale-badge">Sale</div>
+                    <img src="https://image.freepik.com/free-photo/blue-jeans_125540-745.jpg" alt="Jeans Bleu"
+                        class="pkm-pd-product-image">
+                    <img src="https://image.freepik.com/free-photo/blue-jeans_125540-746.jpg" alt="Jeans Bleu Hover"
+                        class="pkm-pd-product-image-hover">
+                    <button class="pkm-pd-add-to-cart">Ajouter au Panier
+                        <svg class="pkm-pd-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="pkm-pd-product-info">
+                    <h3 class="pkm-pd-product-title">Jeans Bleu</h3>
+                    <p class="pkm-pd-product-category">Mode Quotidienne</p>
+                    <p class="pkm-pd-product-price">$45.00 <span class="pkm-pd-original-price">$60.00</span></p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="pkm-pd-product-card">
+                <div class="pkm-pd-product-image-container">
+                    <img src="https://image.freepik.com/free-photo/black-hoodie-mockup_125540-747.jpg" alt="Hoodie Noir"
+                        class="pkm-pd-product-image">
+                    <img src="https://image.freepik.com/free-photo/black-hoodie-mockup_125540-748.jpg"
+                        alt="Hoodie Noir Hover" class="pkm-pd-product-image-hover">
+                    <button class="pkm-pd-add-to-cart">Ajouter au Panier
+                        <svg class="pkm-pd-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg></button>
+                </div>
+                <div class="pkm-pd-product-info">
+                    <h3 class="pkm-pd-product-title">Hoodie Noir</h3>
+                    <p class="pkm-pd-product-category">Mode Quotidienne</p>
+                    <p class="pkm-pd-product-price">$60.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add any interactive functionality here if needed
+        document.querySelectorAll('.pkm-pd-add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Add to cart logic here
+                console.log('Added to cart:', e.target.closest('.pkm-pd-product-card').querySelector('.pkm-pd-product-title').textContent);
+            });
+        });
+    </script>
+</body>
+
+</html>

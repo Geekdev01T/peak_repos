@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d4b4d;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8b8b8b;
+            margin-bottom: 40px;
+        }
+
+        .myths-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .myths-list {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Ligne verticale */
+        .myths-list::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 35px;
+            width: 2px;
+            height: calc(100% - 70px);
+            background-color: #4a7c7f;
+        }
+
+        .image-container {
+            flex: 1;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-out;
+        }
+
+        .myth-item {
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .myth-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            padding: 10px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .myth-header:hover {
+            background: #f0f0f0;
+        }
+
+        .myth-number {
+            width: 30px;
+            height: 30px;
+            background: white;
+            color: #4a7c7f;
+            border: 2px solid #4a7c7f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .myth-header.active .myth-number {
+            background: #4a7c7f;
+            color: white;
+        }
+
+        .myth-title {
+            color: #2d4b4d;
+            font-weight: bold;
+        }
+
+        .myth-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 10px 0 55px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .myth-content.active {
+            max-height: 200px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .image-slide {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .image-slide.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Myths and Truths About Resistance Bands</h1>
+        <p class="subtitle">Let's debunk some common myths</p>
+
+        <div class="myths-container">
+            <div class="myths-list">
+                <div class="myth-item">
+                    <div class="myth-header" onclick="toggleMyth(1)">
+                        <div class="myth-number">1</div>
+                        <div class="myth-title">Myth 1: Resistance bands are only for beginners</div>
+                    </div>
+                    <div class="myth-content" id="myth1">
+                        While resistance bands are often used by beginners due to their low-impact nature and ease of
+                        use, they can also be a valuable tool for experienced athletes. By adjusting the resistance
+                        level and incorporating more challenging exercises, you can create effective workouts for all
+                        fitness levels.
+                    </div>
+                </div>
+
+                <div class="myth-item">
+                    <div class="myth-header" onclick="toggleMyth(2)">
+                        <div class="myth-number">2</div>
+                        <div class="myth-title">Myth 2: Resistance bands are not as effective as weights</div>
+                    </div>
+                    <div class="myth-content" id="myth2">
+                        Research shows that resistance bands can provide similar strength gains to traditional weights.
+                        They offer constant tension throughout movements and can target muscles from various angles.
+                    </div>
+                </div>
+
+                <div class="myth-item">
+                    <div class="myth-header" onclick="toggleMyth(3)">
+                        <div class="myth-number">3</div>
+                        <div class="myth-title">Myth 3: Resistance bands are only good for upper body workouts</div>
+                    </div>
+                    <div class="myth-content" id="myth3">
+                        Resistance bands are versatile tools that can effectively target all major muscle groups,
+                        including legs, core, and full-body exercises.
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="/api/placeholder/600/400" alt="Beginner workout" id="image1" class="image-slide">
+                <img src="/api/placeholder/600/400" alt="Effective workout" id="image2" class="image-slide">
+                <img src="/api/placeholder/600/400" alt="Full body workout" id="image3" class="image-slide">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let activeMyth = null;
+        let activeHeader = null;
+        let activeImage = null;
+
+        function toggleMyth(mythNumber) {
+            const mythContent = document.getElementById(`myth${mythNumber}`);
+            const mythHeader = mythContent.previousElementSibling;
+            const mythImage = document.getElementById(`image${mythNumber}`);
+
+            // Gestion du header actif
+            if (activeHeader) {
+                activeHeader.classList.remove('active');
+            }
+
+            // Gestion du contenu actif
+            if (activeMyth && activeMyth !== mythContent) {
+                activeMyth.classList.remove('active');
+            }
+
+            // Gestion de l'image active
+            if (activeImage) {
+                activeImage.classList.remove('active');
+            }
+
+            // Toggle des éléments cliqués
+            mythContent.classList.toggle('active');
+            mythHeader.classList.toggle('active');
+            mythImage.classList.toggle('active');
+
+            // Mise à jour des éléments actifs
+            if (mythContent.classList.contains('active')) {
+                activeMyth = mythContent;
+                activeHeader = mythHeader;
+                activeImage = mythImage;
+            } else {
+                activeMyth = null;
+                activeHeader = null;
+                activeImage = null;
+            }
+        }
+
+        // Activer le premier mythe au chargement
+        window.onload = function () {
+            toggleMyth(1);
+        }
+    </script>
+</body>
+
+</html>

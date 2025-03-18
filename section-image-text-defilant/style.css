@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url(font/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url(font/Rubik-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.pk-mega-deal-section {
+    position: relative;
+    width:90%;
+    height: 90vh;
+    margin: 0 auto;
+    border-radius: 1px;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    background: #1a1a1a;
+    color: white;
+    overflow: hidden;
+}
+
+.pk-mega-deal-section .pk-content-wrapper {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.pk-mega-deal-section .pk-content-wrapper .pk-mega-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.pk-mega-deal-section .pk-content-wrapper .pk-mega-title {
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.pk-mega-deal-section .pk-content-wrapper .pk-mega-description {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+
+.pk-mega-deal-section .pk-content-wrapper .pk-shop-button {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    padding: 17px 28px;
+    margin: 0 auto;
+    background-color: #2E2E2E;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.pk-mega-deal-section .pk-content-wrapper .pk-shop-button:hover {
+    background-color: #000;
+}
+
+.pk-mega-deal-section .pk-content-wrapper .pk-shop-button .pk-arrow {
+    margin-left: 5px;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+.pk-mega-deal-section .pk-content-wrapper .pk-shop-button:hover .pk-arrow {
+    transform: rotate(0deg);
+}
+
+
+.pk-mega-deal-section .pk-scrolling-text-wrapper {
+    position: relative;
+    width: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #9120202f;
+    border-left: .5px solid #f2f2f263;
+    padding: 1em 2em;
+}
+
+.pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text {
+    width: 90%;
+    right: 1em;
+    position: absolute;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    white-space: nowrap;
+    animation: scrollVertical 20s linear infinite;
+    border-right: .5px solid rgba(242, 242, 242, 0.39);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    padding: 0em 1em;
+}
+
+.pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-textScroll {
+    display: inline-block;
+    padding: 2rem 0;
+    font-size: 48px;
+    /* rotate: 180deg; */
+}
+
+.pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-squareScroll {
+    font-size: 12px;
+}
+
+.pk-mega-deal-section .pk-image-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pk-mega-deal-section .pk-mega-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes scrollVertical {
+    0% {
+        transform: translateY(-10%);
+    }
+
+    100% {
+        transform: translateY(10%);
+    }
+}
+
+@keyframes scrollTextHorizontal {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@media (max-width: 990px) {
+    .pk-mega-deal-section {
+        width: 100%;
+        height: 800px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 1em;
+    }
+
+    .pk-mega-deal-section .pk-scrolling-text-wrapper {
+        overflow: hidden;
+        width: 100%;
+        padding: 10px 0;
+        position: relative;
+        padding-top: 2.4em;
+        padding-bottom: 1.5em;
+        border-top: .5px solid rgba(242, 242, 242, 0.39);
+    }
+
+    .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text {
+        width: 100%;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        writing-mode: horizontal-tb;
+        rotate: 180deg;
+        animation: scrollTextHorizontal 25s linear infinite;
+    }
+
+    .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-textScroll {
+        display: inline-block;
+        padding: 2rem 0;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: .8em;
+    }
+
+    .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-squareScroll {
+        font-size: 10px;
+        margin-left: .8em;
+    }
+
+    .pk-mega-deal-section .pk-image-wrapper {
+        position: relative;
+        height: 160%;
+    }
+}
+
+@media (max-width: 700px) {
+    .pk-mega-deal-section .pk-content-wrapper {
+        padding: 6rem 4rem 6rem 4rem;
+    }
+
+    .pk-mega-deal-section .pk-content-wrapper .pk-mega-title {
+        font-size: 30px;
+    }
+}

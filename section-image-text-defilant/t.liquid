@@ -1,0 +1,843 @@
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Oswald', sans-serif;
+  }
+
+
+  .pk-mega-deal-section {
+      position: relative;
+      width: {{section.settings.section_width}}%;
+      height: {{section.settings.section_height}}vh;
+      margin-top: {{section.settings.section_mt}}px;
+      margin-bottom: {{section.settings.section_mb}}px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      background: #1a1a1a;
+      color: white;
+      overflow: hidden;
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper {
+      padding: 8rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-mega-label {
+      font-size: {{ section.settings.heading_size }}px;
+      text-transform: uppercase;
+      color: {{ section.settings.heading_color }};
+      margin-top: {{ section.settings.heading_mt }}px;
+      margin-bottom: {{ section.settings.heading_mb }}px;
+      font-weight: {{ section.settings.heading_weight }};
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-mega-title {
+      font-size: {{ section.settings.sub_heading_size }}px;
+      font-weight: {{ section.settings.sub_heading_weight }};
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-top: {{ section.settings.sub_heading_mt }}px;
+      margin-bottom: {{ section.settings.sub_heading_mb }}px;
+      color:{{ section.settings.sub_heading_color }};
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-mega-description {
+      font-family: 'Rubik', sans-serif;
+      font-size: {{ section.settings.text_desc_size}}px;
+      color: {{ section.settings.text_desc_color}};
+      margin-top: {{ section.settings.text_desc_mt }}px;
+      margin-bottom: {{ section.settings.text_desc_mb }}px;
+      font-weight: {{ section.settings.text_desc_weight }};
+  }
+
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-shop-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-items: center;
+      padding: 17px {{section.settings.btn_pl}}px 17px {{section.settings.btn_pr}}px;
+      margin: 0 auto;
+      background-color: {{section.settings.btn_backg}};
+      color: {{section.settings.btn_text_color}};
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: {{section.settings.btn_text_weight}};
+      letter-spacing: 1px;
+      font-size: {{section.settings.btn_text_size}}px;
+      border: {{section.settings.btn_border_width}}px {{section.settings.btn_border_type}} {{section.settings.btn_border_color}};
+      transition: all 0.3s ease;
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-shop-button:hover {
+      background-color: #000;
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-shop-button .pk-arrow {
+      margin-left: 5px;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease;
+  }
+
+  .pk-mega-deal-section .pk-content-wrapper .pk-shop-button:hover .pk-arrow {
+      transform: rotate(0deg);
+  }
+
+
+  .pk-mega-deal-section .pk-scrolling-text-wrapper {
+      position: relative;
+      width: {{section.settings.scrolling_width}}px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      border-left: {{ section.settings.scrolling_border_width }}px {{section.settings.scrolling_border_type}} {{section.settings.scrolling_border_color}};
+      padding: 1em 2em;
+  }
+
+  .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text {
+      width: 90%;
+      right: 1em;
+      position: absolute;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      white-space: nowrap;
+      animation: scrollVertical 20s linear infinite;
+      border-right: {{ section.settings.scrolling_border_width }}px {{section.settings.scrolling_border_type}} {{section.settings.scrolling_border_color}};
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      padding: 0em 1em;
+  }
+
+  .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-textScroll {
+      display: inline-block;
+      padding: 2rem 0;
+      font-size: 48px;
+      rotate: 180deg;
+  }
+
+  .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-squareScroll {
+      font-size: 12px;
+  }
+
+  .pk-mega-deal-section .pk-image-wrapper {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+  }
+
+  .pk-mega-deal-section .pk-mega-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  @keyframes scrollVertical {
+      0% {
+          transform: translateY(-10%);
+      }
+
+      100% {
+          transform: translateY(10%);
+      }
+  }
+
+  @keyframes scrollTextHorizontal {
+      0% {
+          transform: translateX(-100%);
+      }
+
+      100% {
+          transform: translateX(100%);
+      }
+  }
+
+
+  @media (max-width: 990px) {
+      .pk-mega-deal-section {
+          width: 100%;
+          height: 750px;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          margin-bottom: 1em;
+      }
+
+      .pk-mega-deal-section .pk-scrolling-text-wrapper {
+          overflow: hidden;
+          width: 100%;
+          padding: 10px 0;
+          position: relative;
+          padding-top: 2.4em;
+          padding-bottom: 1.5em;
+          border-top: {{ section.settings.scrolling_border_width }}px {{section.settings.scrolling_border_type}} {{section.settings.scrolling_border_color}};
+      }
+
+      .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text {
+          width: 100%;
+          white-space: nowrap;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          writing-mode: horizontal-tb;
+          rotate: 180deg;
+          animation: scrollTextHorizontal 25s linear infinite;
+      }
+
+      .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-textScroll {
+          display: inline-block;
+          padding: 2rem 0;
+          font-size: 14px;
+          font-weight: 500;
+          margin-left: .8em;
+      }
+
+      .pk-mega-deal-section .pk-scrolling-text-wrapper .pk-scrolling-text .pk-squareScroll {
+          font-size: 10px;
+          margin-left: .8em;
+      }
+
+      .pk-mega-deal-section .pk-image-wrapper {
+          position: relative;
+          height: 100%;
+      }
+  }
+
+  @media (max-width: 700px) {
+      .pk-mega-deal-section .pk-content-wrapper {
+          padding: 6rem 4rem 6rem 4rem;
+      }
+
+      .pk-mega-deal-section .pk-content-wrapper .pk-mega-title {
+          font-size: 30px;
+      }
+  }
+</style>
+<section class="pk-mega-deal-section">
+  <div class="pk-content-wrapper">
+    <span class="pk-mega-label">{{ section.settings.heading_text }}</span>
+    <h1 class="pk-mega-title">{{ section.settings.sub_heading_text }}</h1>
+    <p class="pk-mega-description">
+      {{ section.settings.text_desc_text }}
+    </p>
+    {% if section.settings.btn_text != blank %}
+      <a href="#" class="pk-shop-button">
+        {{ section.settings.btn_text }}
+        <svg
+          class="pk-arrow"
+          width="{{ section.settings.btn_icon_width }}"
+          height="{{ section.settings.btn_icon_height }}"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="pk-scrolling-text-wrapper">
+    <div class="pk-scrolling-text" id="pk-scrollingText">
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+      <span class="pk-textScroll">{{ section.settings.scrolling_text }}</span>
+      <span class="pk-squareScroll">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path fill="currentColor" d="M3 3h18v18H3z" />
+        </svg>
+      </span>
+    </div>
+  </div>
+
+  <div class="pk-image-wrapper">
+    <img
+      src="{% if section.settings.image != blank %}{{ section.settings.image | img_url: 'master' }}{% else %}https://berlin-lifestyle.myshopify.com/cdn/shop/files/Rectangle21.jpg?v=1690369215&width=1500{% endif %}"
+      alt="Sports fashion"
+      class="pk-mega-image"
+    >
+  </div>
+</section>
+
+<script>
+  // document.addEventListener('DOMContentLoaded', () => {
+  //     const scrollText = document.getElementById('pk-scrollingText');
+  //     const clone = scrollText.cloneNode(true);
+  //     scrollText.parentNode.appendChild(clone);
+  // });
+</script>
+
+{% schema %}
+{
+  "name": "text scrolling image",
+  "settings": [
+
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "Mega deal"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "default":12,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Heading Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#888"
+    },
+    {
+      "type": "range",
+      "id": "heading_mt",
+      "label": "Heading Margin Top",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_mb",
+      "label": "Heading Margin Bottom",
+      "default":16,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_text",
+      "label": "Sub Heading Text",
+      "default": "Discount on 100+ items"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Sub Heading Size",
+      "default":56,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_weight",
+      "label": "Sub Heading Weight",
+      "default":800,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Sub Heading Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_mt",
+      "label": "Sub Heading Margin Top",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_mb",
+      "label": "Sub Heading Margin Bottom",
+      "default":24,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Text Description"
+    },
+    {
+      "type": "text",
+      "id": "text_desc_text",
+      "label": "Description Text",
+      "default": "Go ahead score big savings on our best-selling collection of causal outfits andsportswear."
+    },
+    {
+      "type": "range",
+      "id": "text_desc_size",
+      "label": "Text Description Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_desc_weight",
+      "label": "Text Description Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "text_desc_color",
+      "label": "Text Description Color",
+      "default": "#aaa"
+    },
+    {
+      "type": "range",
+      "id": "text_desc_mt",
+      "label": "Text Description Margin Top",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_desc_mb",
+      "label": "Text Description Margin Bottom",
+      "default":32,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Button",
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default":"Shop sale"
+    },
+    {
+      "type": "range",
+      "id": "btn_text_size",
+      "label": "Button Text Size",
+      "default":15,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_text_weight",
+      "label": "Button Text Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default":"#fff"
+    },
+    {
+      "type": "range",
+      "id": "btn_icon_width",
+      "label": "Button Icon Width",
+      "default":24,
+      "min": 20,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "btn_icon_height",
+      "label": "Button Icon Height",
+      "default":24,
+      "min": 20,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "btn_backg",
+      "label": "Button Background",
+      "default":"#2E2E2E"
+    },
+    {
+      "type": "select",
+      "id": "btn_border_type",
+      "label": "Button Border Type",
+      "default":"none",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "range",
+      "id": "btn_border_width",
+      "label": "Button Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Button Border Color",
+      "default":"transparent"
+    },
+    {
+      "type": "range",
+      "id": "btn_pl",
+      "label": "Button Padding Left",
+      "default":28,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_pr",
+      "label": "Button Padding Left",
+      "default":28,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Scrolling Text"
+    },
+    {
+      "type": "text",
+      "id": "scrolling_text",
+      "label": "Text",
+      "default":"Up to 70% off"
+    },
+    {
+      "type": "range",
+      "id": "scrolling_width",
+      "label": "Srolling Text Width",
+      "default":150,
+      "min": 100,
+      "max": 300,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "scrolling_border_type",
+      "label": "Scrolling Border Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "range",
+      "id": "scrolling_border_width",
+      "label": "Scrolling Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "scrolling_border_color",
+      "label": "Scrolling Border Color",
+      "default":"#b8b5b5"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+        "type": "header",
+        "content": "Section"
+    },
+    {
+        "type": "range",
+        "id": "section_width",
+        "label": "Section Width",
+        "default": 100,
+        "min": 60,
+        "max": 100,
+        "step": 1,
+        "unit": "%"
+    },
+    {
+        "type": "range",
+        "id": "section_height",
+        "label": "Section Height",
+        "default": 90,
+        "min": 60,
+        "max": 100,
+        "step": 1,
+        "unit": "vh"
+    },
+    {
+        "type": "range",
+        "id": "section_mt",
+        "label": "Section Margin Top",
+        "default": 32,
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "section_mb,
+        "label": "Section Margin Bottom",
+        "default": 32,
+        "min": 20,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "text scrolling image"
+    }
+  ]
+}
+{% endschema %}

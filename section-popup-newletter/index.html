@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Newletter - Popup</title>
+</head>
+
+<body>
+    <style>
+        .nlp-welcome-popup {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            width: 90%;
+            max-width: 300px;
+            cursor: pointer;
+        }
+
+        .nlp-welcome-popup.hidden {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nlp-welcome-popup .welcome-heading {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 12px 3px;
+            color: #232322;
+        }
+
+        /* Styles pour le popup principal (centré) */
+        .nlp-newsletter-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nlp-newsletter-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup {
+            position: fixed;
+            display: flex;
+            max-width: 950px;
+            height: 450px !important;
+            background: #fff;
+            gap: .9em;
+            width: 90%;
+            transform: translateY(20px);
+            opacity: 1;
+            transition: all 0.4s ease;
+        }
+
+
+        .nlp-newsletter-overlay.active .newsletter-popup {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-image {
+            width: 40%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content {
+            padding: 7em 4em;
+            width: 100%;
+            border-left: 1px solid gray;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            color: #232322;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-description {
+            font-size: 16px;
+            color: #454544;
+            margin-bottom: 25px;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form {
+            display: flex;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-input {
+            padding: 7px 18px;
+            background: #F8F8F8;
+            text-align: left;
+            font-size: 16px;
+            width: 100%;
+            border: 1px solid #d5d5d5;
+            outline: none;
+            height: 3.5rem;
+            transition: all .3s ease;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-input:hover {
+            border-color: #ebebeb;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-input:focus {
+            box-shadow: 0px 0px 3px 1px #7a7979;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-button {
+            width: 50%;
+            background: #2E2E2E;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 2px;
+            font-size: 15px;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-button .arrow {
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease;
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-button:hover .arrow {
+            transform: rotate(0deg);
+        }
+
+        .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-button:hover {
+            background: #000;
+        }
+
+        .nlp-close-button-n {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #232322;
+            transition: all .5s ease;
+        }
+
+        .nlp-close-button-p {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            color: #232322;
+            transition: all .5s ease;
+        }
+
+        .nlp-close-button-n:hover,
+        .nlp-close-button-p:hover {
+            transform: rotate(90deg);
+            color: rgb(145, 143, 143);
+        }
+
+        @media (max-width: 820px) {
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-content {
+                padding: 3em;
+                width: 100%;
+                border-left: 1px solid gray;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .nlp-newsletter-overlay .newsletter-popup {
+                width: 90%;
+                height: 550px !important;
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+            }
+
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-image {
+                height: 90%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-content {
+                bottom: 0;
+                padding: 2em;
+                width: 100%;
+                height: 40%;
+                max-height: 150px;
+                border: none;
+                background: #fff;
+            }
+
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form {
+                padding-bottom: 1em;
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-title {
+                font-size: 22.4px;
+            }
+
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-input {
+                padding: 18px;
+                outline: none;
+                border: 1px solid rgb(213, 213, 213);
+            }
+
+            .nlp-newsletter-overlay .newsletter-popup .newsletter-content .newsletter-form .newsletter-button {
+                width: 100%;
+                padding: 18px;
+                justify-content: center;
+            }
+
+
+        }
+
+        @media (max-width: 375px) {
+            .nlp-welcome-popup .welcome-heading {
+                font-size: 18px;
+                margin: 10px 2px;
+            }
+        }
+    </style>
+    <!-- Premier popup (coin inférieur gauche) -->
+    <div class="nlp-welcome-popup" id="welcomePopup" onclick="openSecondPopup()">
+        <h3 class="welcome-heading">WELCOME DISCOUNT OF 10%</h3>
+        <button class="nlp-close-button-n" onclick="closeWelcomePopup()">
+            <svg width="14" height="14" viewBox="0 0 14 14">
+                <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Popup principal (newsletter) -->
+    <div class="nlp-newsletter-overlay" id="newsletterOverlay">
+        <div class="newsletter-popup">
+            <img src="https://berlin-lifestyle.myshopify.com/cdn/shop/files/newsletter.jpg?v=1690375711&width=550"
+                alt="Newsletter promotion" class="newsletter-image">
+            <div class="newsletter-content">
+                <button class="nlp-close-button-p" onclick="closeNewsletterPopup()">
+                    <svg width="14" height="14" viewBox="0 0 14 14">
+                        <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+                <h2 class="newsletter-title">SIGN UP TO OUR NEWSLETTER & RECEIVE 10% OFF YOUR FIRST ORDER</h2>
+                <p class="newsletter-description">Get the latest updates, exclusive deals, and insider news.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="E-mail" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-button">
+                        SUBSCRIBE
+                        <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Afficher le premier popup après un délai
+        setTimeout(() => {
+            document.getElementById('welcomePopup').style.display = 'block';
+        }, 2000);
+
+        // Fermer le premier popup et ouvrir le second
+        function closeWelcomePopup() {
+            const welcomePopup = document.getElementById('welcomePopup');
+            welcomePopup.classList.add('hidden');
+
+            // Ouvrir le popup newsletter après un court délai
+            openSecondPopup();
+        }
+
+        //oubrir le second popup
+        function openSecondPopup() {
+            // Ouvrir le popup newsletter après un court délai
+            setTimeout(() => {
+                document.getElementById('newsletterOverlay').classList.add('active');
+            }, 300);
+        }
+
+        // Fermer le popup newsletter
+        function closeNewsletterPopup() {
+            document.getElementById('newsletterOverlay').classList.remove('active');
+        }
+
+        // Fermer le popup newsletter en cliquant en dehors
+        document.getElementById('newsletterOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'newsletterOverlay') {
+                closeNewsletterPopup();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1332 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign heading = section.settings.heading %}
+{% assign heading_size = section.settings.heading_size %}
+{% assign heading_size_mobile = section.settings.heading_size_mobile %}
+{% assign heading_weight = section.settings.heading_weight %}
+{% assign heading_color = section.settings.heading_color %}
+
+
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_border_color = section.settings.section_border_color %}
+{% assign section_bg1 = section.settings.section_bg1 %}
+{% assign section_bg2 = section.settings.section_bg2 %}
+
+<style>
+
+  .section-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+      background-image: linear-gradient(280deg, {{section_bg1}} 19%, {{section_bg2}} 83%);
+  }
+
+  .section-template--22738974605641__ss_product_ingredients_3_7R6P3T-settings {
+      margin: 0 auto;
+      padding-top: 54px;
+      padding-bottom: 54px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .product-heading-template--22738974605641__ss_product_ingredients_3_7R6P3T * {
+      margin: 0;
+      font-size: {{heading_size_mobile}}px;
+      color: {{heading_color}};
+      line-height: 130%;
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: {{heading_weight}};
+  }
+
+  .product-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+  }
+
+  .product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      margin: 0;
+      font-size: {{section.settings.tag_size_mobile}}px;
+      color: {{section.settings.tag_color}};
+      line-height: 100%;
+      padding: 8px 14px;
+      border: {{section.settings.tag_border_w}}px solid {{section.settings.tag_border_color}};
+      border-radius: {{section.settings.tag_radius}}px;
+      background-color: {{section.settings.tag_bg}};
+      font-weight: {{section.settings.tag_weight}};
+      text-transform: unset;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease 0s;
+  }
+
+  .product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T.active {
+      color: {{section.settings.tag_color_active}};
+      border: {{section.settings.tag_border_w}}px solid {{section.settings.tag_border_color_active}};
+      background-color: {{section.settings.tag_bg_active}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .product-cards-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+  }
+
+  .product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      display: none;
+      flex-direction: row;
+      align-items: start;
+      gap: 5px;
+      padding: 12px 12px;
+      border-radius: {{section.settings.card_radius}}px;
+      border: {{section.settings.card_border_w}}px solid {{section.settings.card_border_color}};
+      background-color: {{section.settings.card_bg}};
+  }
+
+  .product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T.active {
+      display: flex;
+  }
+
+  .product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      margin: 0;
+      font-size: {{section.settings.card_title_size_mobile}}px;
+      color: {{section.settings.card_title_color}};
+      line-height: 130%;
+      text-align: left;
+      word-break: break-word;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: {{section.settings.card_title_weight}};
+  }
+
+  .product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      margin-top: 16px;
+      text-align: left;
+  }
+
+  .product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T * {
+      margin: 0;
+      font-size: {{section.settings.card_desc_size_mobile}}px;
+      color: {{section.settings.card_desc_color}};
+      line-height: 150%;
+      word-break: break-word;
+      text-transform: unset;
+      text-decoration: none;
+  }
+
+  .product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 12px;
+      justify-content: start;
+      gap: 4px;
+  }
+
+  .product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      margin: 0;
+      width: 100%;
+      font-size: {{section.settings.card_tag_size_mobile}}px;
+      color: {{section.settings.card_tag_color}};
+      line-height: 100%;
+      padding: 4px 10px;
+      border: {{section.settings.card_tag_border_w}}px solid {{section.settings.card_tag_border_color}};
+      border-radius: {{section.settings.card_tag_radius}}px;
+      background-color: {{section.settings.card_tag_bg}};
+      font-weight: {{section.settings.card_tag_weight}};
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      transition: all 0.25s ease 0s;
+  }
+
+
+  .section-template--22738974605641__ss_product_ingredients_3_7R6P3T-settings {
+      max-width: 1200px;
+  }
+
+
+  .product-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+   .product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      margin-top: 0;
+  }
+
+    .product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+      flex-direction: row !important;
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 0rem;
+          margin-right: 0rem;
+          border-radius: 0px;
+      }
+
+      .section-template--22738974605641__ss_product_ingredients_3_7R6P3T-settings {
+          padding: 0 5rem;
+          padding-top: 72px;
+          padding-bottom: 72px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .product-heading-template--22738974605641__ss_product_ingredients_3_7R6P3T * {
+          font-size: {{heading_size}}px;
+          text-align: center;
+      }
+
+      .product-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          margin-top: 48px;
+          justify-content: center;
+          gap: 10px;
+          width: 70%;
+      }
+
+      .product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          font-size: {{section.settings.tag_size}}px;
+          padding: 8px 14px;
+      }
+
+      .product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T:hover {
+          color: {{section.settings.tag_color_hover}};
+          border: {{section.settings.tag_border_w}}px solid {{section.settings.tag_border_color_hover}};
+          background-color: {{section.settings.tag_bg_hover}};
+          transition: all 0.25s ease 0s;
+      }
+
+      .product-cards-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+          margin-top: 44px;
+      }
+
+      .product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          align-items: start;
+          padding: 22px 22px;
+      }
+
+      .product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          width: 100%;
+      }
+
+      .product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          font-size: {{section.settings.card_title_size}}px;
+          text-align: left;
+      }
+
+      .product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          margin-top: 16px;
+          text-align: left;
+      }
+
+      .product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T * {
+          font-size: {{section.settings.card_desc_size}}px;
+      }
+
+      .product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 12px;
+          justify-content: start;
+          align-items: start;
+          gap: 10px;
+      }
+
+      .product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          width: auto;
+          font-size: {{section.settings.card_tag_size}}px;
+          padding: 4px 10px;
+      }
+
+
+      .product-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+
+      .product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          margin-top: 12px;
+      }
+
+
+      .product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T {
+          flex-direction: column !important;
+      }
+  }
+</style>
+
+<div class="section-template--22738974605641__ss_product_ingredients_3_7R6P3T product-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+  <div class="section-template--22738974605641__ss_product_ingredients_3_7R6P3T-settings">
+    <div class="product-heading-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+      <h2>Ingredients chosen for their potential benefits:</h2>
+    </div>
+
+    <div class="product-body-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+      <div class="product-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Skin Barrier"
+        >
+          Skin Barrier
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option=" Hydration"
+        >
+          Hydration
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Protection"
+        >
+          Protection
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Anti-Aging"
+        >
+          Anti-Aging
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Soothing"
+        >
+          Soothing
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Antioxidant"
+        >
+          Antioxidant
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Brightening"
+        >
+          Brightening
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Firming"
+        >
+          Firming
+        </p>
+
+        <p
+          class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+          data-option="Calming"
+        >
+          Calming
+        </p>
+
+        {% for block in section.blocks %}
+            {% if block.type == 'tag' and block.settings.tag_name != blank %}
+                <p  class="product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+                data-option="{{block.settings.tag_name | handlelize}}">
+                    {{block.settings.tag_name}}
+                </p>
+            {% endif %}
+        {% endfor %}
+
+      </div>
+      <div class="product-cards-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Ceramides</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Shield skin from visible damage from environmental aggressors, and essential for keeping the skin
+                barrier healthy and functioning properly.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option=" Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Protection"
+            >
+              Protection
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Ectoin</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Binds the water molecules from its surroundings to form a protective barrier over your skin and stop
+                your skin's moisture from evaporating.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Soothing"
+            >
+              Soothing
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Glycoin</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Activates the renewal of older slowed skin cells and boosts new cell production, giving way to a more
+                youthful and radiant, less tired look.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Antioxidant"
+            >
+              Antioxidant
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Brightening"
+            >
+              Brightening
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Peptides</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Anticipate and prevent the loss of your skin’s firmness and bounce defying the appearance of wrinkles
+                and age-related change in texture.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Firming"
+            >
+              Firming
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Prebiotics</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Balance your skin’s microbiota alleviating acne, rosacea, eczema, or other conditions caused by a
+                bacterial imbalance
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Calming"
+            >
+              Calming
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Ceramides</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Shield skin from visible damage from environmental aggressors, and essential for keeping the skin
+                barrier healthy and functioning properly.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Protection"
+            >
+              Protection
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Peptides</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Anticipate and prevent the loss of your skin’s firmness and bounce defying the appearance of wrinkles
+                and age-related change in texture.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Firming"
+            >
+              Firming
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Prebiotics</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Balance your skin’s microbiota alleviating acne, rosacea, eczema, or other conditions caused by a
+                bacterial imbalance
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Calming"
+            >
+              Calming
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Peptides</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Anticipate and prevent the loss of your skin’s firmness and bounce defying the appearance of wrinkles
+                and age-related change in texture.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Firming"
+            >
+              Firming
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Ectoin</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Binds the water molecules from its surroundings to form a protective barrier over your skin and stop
+                your skin's moisture from evaporating.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Soothing"
+            >
+              Soothing
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+          <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">Glycoin</p>
+
+            <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+              <p>
+                Activates the renewal of older slowed skin cells and boosts new cell production, giving way to a more
+                youthful and radiant, less tired look.
+              </p>
+            </div>
+          </div>
+
+          <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Skin Barrier"
+            >
+              Skin Barrier
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Hydration"
+            >
+              Hydration
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Antioxidant"
+            >
+              Antioxidant
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Anti-Aging"
+            >
+              Anti-Aging
+            </p>
+
+            <p
+              class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+              data-option="Brightening"
+            >
+              Brightening
+            </p>
+          </div>
+        </div>
+
+        {% for block in section.blocks %}
+            {% if block.type == 'card' and block.settings.title != blank %}
+                <div class="product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T active">
+                    <div class="product-card-content-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+                        <p class="product-title-template--22738974605641__ss_product_ingredients_3_7R6P3T">{{block.settings.title}}</p>
+
+                        <div class="product-text-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+                            {{block.settings.desc}}
+                        </div>
+                    </div>
+
+                    {% for sub_block in section.blocks %}
+                        {% if sub_block.type == 'tag' %}
+                            <div class="product-card-tags-template--22738974605641__ss_product_ingredients_3_7R6P3T">
+                                <p class="product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T"
+                                data-option="{{sub_block.settings.tag_name | handlelize}}">
+                                    {{sub_block.settings.tag_name}} 
+                                </p>
+                            </div>
+                        {% endif  %}
+                    {% endfor  %}
+                </div>
+            {% endif  %}
+        {% endfor  %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initProductIngredients3() {
+      const ingredients = document.querySelectorAll('.product-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T');
+      const cards = document.querySelectorAll('.product-card-template--22738974605641__ss_product_ingredients_3_7R6P3T');
+
+      ingredients.forEach(ingredient => {
+          ingredient.addEventListener('click', () => {
+              const selectedOption = ingredient.dataset.option;
+
+              ingredient.classList.toggle('active');
+              const hasActiveIngredients = Array.from(ingredients).some(ing => ing.classList.contains('active'));
+
+              if (!hasActiveIngredients) {
+                  cards.forEach(card => card.classList.add('active'));
+                  return;
+              }
+
+              cards.forEach(card => {
+                  const cardIngredients = card.querySelectorAll('.product-card-tag-template--22738974605641__ss_product_ingredients_3_7R6P3T');
+                  const hasActiveIngredient = Array.from(cardIngredients).some(cardIngredient => {
+                      const option = cardIngredient.dataset.option;
+                      return Array.from(ingredients).some(ing => ing.dataset.option === option && ing.classList.contains('active'));
+                  });
+
+                  if (hasActiveIngredient) {
+                      card.classList.add('active');
+                  } else {
+                      card.classList.remove('active');
+                  }
+              });
+          });
+      });
+  }
+
+  document.addEventListener('DOMContentLoaded', initProductIngredients3);
+</script>
+
+{% schema %}
+{
+  "name": "PC-Product Ingredient #3",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "default":36,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Size",
+      "default":24,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Tags"
+    },
+    {
+      "type": "range",
+      "id": "tag_size",
+      "label": "Font Size",
+      "default":12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tag_size_mobile",
+      "label": "Mobile Font Size",
+      "default":13,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tag_weight",
+      "label": "Font Weight",
+      "default"400,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "tag_radius",
+      "label": "Border Radius",
+      "default":100,
+      "min": 0,
+      "max":120,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tag_border_w",
+      "label": "Border Width",
+      "default":2,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "tag_color",
+      "label": "Content Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tag_color_hover",
+      "label": "Content Color Hover",
+      "default":"#434446"
+    },
+    {
+      "type": "color",
+      "id": "tag_color_active",
+      "label": "Content Color Active",
+      "default":"#434446"
+    },
+    {
+      "type": "color",
+      "id": "tag_border_color",
+      "label": "Border Color",
+      "default":"#424346"
+    },
+    {
+      "type": "color",
+      "id": "tag_border_color_hover",
+      "label": "Border Color Hover",
+      "default":"#424346"
+    },
+    {
+      "type": "color",
+      "id": "tag_border_color_active",
+      "label": "Border Color Active",
+      "default":"#424346"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg",
+      "label": "Background Color",
+      "default":"#3f4042"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg_hover",
+      "label": "Background Color Hover",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg_active",
+      "label": "Background Color Active",
+      "default":"#ffffff"
+    },
+
+    {
+      "type": "header",
+      "content": "Card Tags"
+    },
+    {
+      "type": "range",
+      "id": "card_tag_size",
+      "label": "Font Size",
+      "default":12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_tag_size_mobile",
+      "label": "Mobile Font Size",
+      "default":11,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_tag_weight",
+      "label": "Font Weight",
+      "default"400,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "card_tag_radius",
+      "label": "Border Radius",
+      "default":100,
+      "min": 0,
+      "max":120,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_tag_border_w",
+      "label": "Border Width",
+      "default":2,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "card_tag_color",
+      "label": "Content Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_tag_border_color",
+      "label": "Border Color",
+      "default":"#747679"
+    },
+    {
+      "type": "color",
+      "id": "card_tag_bg",
+      "label": "Background Color",
+      "default":"#303133"
+    },
+    {
+      "type": "header",
+      "content": "Card Text Content"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Title Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Title Mobile Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_weight",
+      "label": "Title Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Title Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_desc_size",
+      "label": "Description Size",
+      "default":12,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_desc_size_mobile",
+      "label": "Description Mobile Size",
+      "default":12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "card_desc_color",
+      "label": "Description Color",
+      "default":"#ffffff"
+    },
+
+    {
+      "type": "header",
+      "content": "Card Block"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Border Radius",
+      "default": 6,
+      "min": 0,
+      "max":100,
+      "step":1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border Color",
+      "default":"#747679"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Linear Gradient Color1",
+      "id": "section_bg1",
+      "default":"#6b6d6e"
+    },
+    {
+      "type": "color",
+      "label": "Linear Gradient Color2",
+      "id": "section_bg2",
+      "default":"#96979c"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "tag",
+      "name": "Tag,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag_name",
+          "label": "Tag Name",
+        },
+        {
+          "type": "text",
+          "id": "title_card",
+          "label": "Title Card"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag_name",
+          "label": "Tag Name",
+        },
+        {
+          "type": "text",
+          "id": "title_card",
+          "label": "Title Card"
+        },
+        {
+          "type": "richtext",
+          "id": "desc_card",
+          "label": "Description Card"
+        },
+      ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "PC-Product Ingredient #3"
+    }
+  ]
+}
+{% endschema %}

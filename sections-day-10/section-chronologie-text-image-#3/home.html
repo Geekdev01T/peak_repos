@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        <style>
+
+            .pc-section-section_id .pc-section-section_id {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                overflow: hidden;
+            }
+
+            .pc-section-section_id .pc-section-section_id-settings {
+                margin: 0 auto;
+                padding-top: 39px;
+                padding-bottom: 39px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .pc-section-section_id .pc-steps-heading-wrapper-section_id {
+                width: 100%;
+            }
+
+            .pc-section-section_id .pc-steps-heading-section_id {
+                text-align: center;
+            }
+
+            .pc-section-section_id .pc-steps-heading-section_id * {
+                margin: 0;
+                font-size: 28px;
+                color: #284634;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+            }
+
+            .pc-section-section_id .pc-steps-subheading-section_id {
+                text-align: center;
+                margin-top: 16px;
+            }
+
+            .pc-section-section_id .pc-steps-subheading-section_id * {
+                margin: 0;
+                font-size: 16px;
+                color: #a6a690;
+                line-height: 150%;
+                text-transform: unset;
+                text-decoration: none;
+            }
+
+            .pc-section-section_id .pc-steps-body-section_id {
+                margin-top: 32px;
+                display: flex;
+                align-items: center;
+            }
+
+            .pc-section-section_id .pc-steps-wrapper-section_id {
+                flex: 1 1 auto;
+            }
+
+            .pc-section-section_id .pc-steps-step-section_id {
+                position: relative;
+            }
+
+            .pc-section-section_id .pc-steps-toggle-section_id {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                gap: 12px;
+            }
+
+            .pc-section-section_id .pc-steps-number-section_id {
+                min-width: 52px;
+                width: 52px;
+                height: 52px;
+                border-radius: 100%;
+                border: 2px solid #497e5a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #497e5a;
+                text-align: center;
+                font-size: 26px;
+                line-height: 100%;
+                text-transform: uppercase;
+            }
+
+            .pc-section-section_id .pc-steps-step-section_id.active .pc-steps-number-section_id {
+                background: #497e5a;
+                border: 2px solid #497e5a;
+                color: #ffffff;
+            }
+
+            .pc-section-section_id .pc-steps-question-section_id {
+                margin: 0px;
+                font-size: 20px;
+                color: #284634;
+                line-height: 150%;
+                text-transform: unset;
+                font-weight: 700;
+            }
+
+            .pc-section-section_id .pc-steps-answer-section_id {
+                transition: all 0.2s ease-in-out;
+                overflow: hidden;
+                margin-left: 26.0px;
+                border-left: 2px solid #497e5a;
+                padding-left: 38.0px;
+                margin-top: 6px;
+                padding-top: 16px !important;
+                padding-bottom: 34px;
+            }
+
+            .pc-section-section_id .pc-steps-answer-section_id * {
+                margin: 0px;
+                font-size: 16px;
+                color: #a6a690;
+                line-height: 160%;
+                text-transform: unset;
+            }
+
+            .pc-section-section_id .pc-steps-answer-section_id p {
+                min-height: 10px;
+            }
+
+            .pc-section-section_id .pc-steps-answer-section_id p:not(:first-child) {
+                margin-top: 10px;
+            }
+
+            .pc-section-section_id .pc-steps-height-cal-section_id {
+                visibility: hidden;
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-top: 16px;
+                padding-bottom: 34px;
+                margin-left: 26.0px;
+                padding-left: 38.0px;
+            }
+
+            .pc-section-section_id .pc-steps-height-cal-section_id * {
+                margin: 0px;
+                font-size: 16px;
+                color: #a6a690;
+                line-height: 160%;
+                text-transform: unset;
+            }
+
+            .pc-section-section_id .pc-steps-height-cal-section_id p {
+                min-height: 10px;
+            }
+
+            .pc-section-section_id .pc-steps-height-cal-section_id p:not(:first-child) {
+                margin-top: 10px;
+            }
+
+            .pc-section-section_id .pc-steps-image-mobile-section_id {
+                margin-top: 16px;
+                display: block;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            .pc-section-section_id .pc-steps-image-mobile-section_id img,
+            .pc-section-section_id .pc-steps-image-mobile-section_id svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .pc-section-section_id .pc-steps-image-desktop-section_id {
+                display: none;
+            }
+
+            .pc-section-section_id .pc-steps-image-mobile-section_id svg {
+                background: #AFAFAF;
+            }
+
+            @media(min-width: 1024px) {
+
+                .pc-section-section_id .pc-section-section_id {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 0rem;
+                    margin-right: 0rem;
+                    border-radius: 0px;
+                }
+
+                .pc-section-section_id .pc-section-section_id-settings {
+                    padding: 0 5rem;
+                    padding-top: 52px;
+                    padding-bottom: 52px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+
+                .pc-section-section_id .pc-steps-heading-wrapper-section_id {
+                    max-width: 60%;
+                }
+
+                .pc-section-section_id .pc-steps-heading-section_id {
+                    text-align: center;
+                }
+
+                .pc-section-section_id .pc-steps-heading-section_id * {
+                    font-size: 36px;
+                }
+
+                .pc-section-section_id .pc-steps-subheading-section_id {
+                    margin-top: 16px;
+                    text-align: center;
+                }
+
+                .pc-section-section_id .pc-steps-subheading-section_id * {
+                    font-size: 18px;
+                }
+
+                .pc-section-section_id .pc-steps-body-section_id {
+                    margin-top: 40px;
+                    gap: 48px;
+                }
+
+                .pc-section-section_id .pc-steps-number-section_id {
+                    min-width: 52px;
+                    width: 52px;
+                    height: 52px;
+                    font-size: 26px;
+                }
+
+                .pc-section-section_id .pc-steps-question-section_id {
+                    font-size: 24px;
+                }
+
+                .pc-section-section_id .pc-steps-answer-section_id {
+                    margin-left: 26.0px;
+                    padding-left: 38.0px;
+                }
+
+                .pc-section-section_id .pc-steps-answer-section_id * {
+                    font-size: 16px;
+                }
+
+                .pc-section-section_id .pc-steps-height-cal-section_id {
+                    margin-left: 26.0px;
+                    padding-left: 38.0px;
+                }
+
+                .pc-section-section_id .pc-steps-height-cal-section_id * {
+                    font-size: 16px;
+                }
+
+                .pc-section-section_id .pc-steps-image-desktop-section_id {
+                    display: none;
+                    flex-shrink: 0;
+                    width: 44%;
+                    overflow: hidden;
+                    border-radius: 10px;
+                }
+
+                .pc-section-section_id .pc-steps-image-desktop-section_id.active {
+                    display: block;
+                }
+
+                .pc-section-section_id .pc-steps-image-desktop-section_id img,
+                .pc-section-section_id .pc-steps-image-desktop-section_id svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .pc-section-section_id .pc-steps-image-desktop-section_id svg {
+                    background-color: #AFAFAF;
+                }
+
+                .pc-section-section_id .pc-steps-image-mobile-section_id {
+                    display: none;
+                }
+            }
+        
+            .pc-section-section_id .pc-section-section_id-settings {
+                max-width: 1200px;
+            }
+    
+            .pc-section-section_id .pc-steps-heading-section_id * {
+                font-family: Oswald, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+       
+            .pc-section-section_id .pc-steps-subheading-section_id * {
+                font-family: "Anonymous Pro", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+       
+            .pc-section-section_id .pc-steps-number-section_id {
+                font-family: Oswald, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+        
+            .pc-section-section_id .pc-steps-question-section_id {
+                font-family: Oswald, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+       
+            .pc-section-section_id .pc-steps-answer-section_id *,
+            .pc-section-section_id .pc-steps-height-cal-section_id * {
+                font-family: "Anonymous Pro", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+       
+            .pc-section-section_id .pc-steps-image-mobile-section_id {
+                aspect-ratio: 12/9;
+            }
+   
+            @media(min-width: 1024px) {
+                .pc-section-section_id .pc-steps-image-desktop-section_id {
+                    aspect-ratio: 12/9;
+                }
+            }
+   
+            .pc-section-section_id .pc-steps-heading-wrapper-section_id {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+
+        <div class="pc-section-section_id pc-steps-section_id"
+            style="background-color:#f6f6f4;">
+            <div class="pc-section-section_id-settings">
+                <div class="pc-steps-heading-wrapper-section_id">
+
+                    <div class="pc-steps-heading-section_id">
+                        <h2>Myths and Truths About Resistance Bands</h2>
+                    </div>
+
+
+                    <div class="pc-steps-subheading-section_id">
+                        <p>Let's debunk some common myths</p>
+                    </div>
+
+                </div>
+                <div class="pc-steps-body-section_id">
+                    <div class="pc-steps-wrapper-section_id">
+
+                        <div class="pc-steps-step-section_id active" id="step_9mifiP">
+                            <div class="pc-steps-toggle-section_id">
+                                <div class="pc-steps-number-section_id">1</div>
+                                <p class="pc-steps-question-section_id">Myth 1: Resistance
+                                    bands are only for beginners</p>
+                            </div>
+                            <div class="pc-steps-answer-section_id">
+                                <p>While resistance bands are often used by beginners due to their low-impact nature and
+                                    ease of use, they can also be a valuable tool for experienced athletes. By adjusting
+                                    the
+                                    resistance level and incorporating more challenging exercises, you can create
+                                    effective
+                                    workouts for all fitness levels.</p>
+                                <div class="pc-steps-image-mobile-section_id">
+
+                                    <img src="//section.store/cdn/shop/files/bruce-mars-oLStrTTMz2s-unsplash.jpg?v=1728028414"
+                                        alt="" loading="lazy">
+
+                                </div>
+                            </div>
+                            <div class="pc-steps-height-cal-section_id">
+                                <p>While resistance bands are often used by beginners due to their low-impact nature and
+                                    ease of use, they can also be a valuable tool for experienced athletes. By adjusting
+                                    the
+                                    resistance level and incorporating more challenging exercises, you can create
+                                    effective
+                                    workouts for all fitness levels.</p>
+                                <div class="pc-steps-image-mobile-section_id">
+
+                                    <img src="//section.store/cdn/shop/files/bruce-mars-oLStrTTMz2s-unsplash.jpg?v=1728028414"
+                                        alt="" loading="lazy">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pc-steps-step-section_id" id="step_kdTGje">
+                            <div class="pc-steps-toggle-section_id">
+                                <div class="pc-steps-number-section_id">2</div>
+                                <p class="pc-steps-question-section_id">Myth 2: Resistance
+                                    bands are not as effective as weights</p>
+                            </div>
+                            <div class="pc-steps-answer-section_id hide"
+                                style="height: 0px; padding-bottom: 0px; padding-top: 0px;">
+                                <p>Resistance bands can be just as effective as weights when used correctly. They
+                                    provide
+                                    constant tension throughout the entire range of motion, which can lead to increased
+                                    muscle activation and strength gains. Additionally, resistance bands can be used for
+                                    dynamic exercises that mimic real-world movements, which can improve functional
+                                    strength
+                                    and coordination.</p>
+                                <div class="pc-steps-image-mobile-section_id">
+
+                                    <img src="//section.store/cdn/shop/files/pexels-noemiji-16695681.jpg?v=1728029614"
+                                        alt="" loading="lazy">
+
+                                </div>
+                            </div>
+                            <div class="pc-steps-height-cal-section_id">
+                                <p>Resistance bands can be just as effective as weights when used correctly. They
+                                    provide
+                                    constant tension throughout the entire range of motion, which can lead to increased
+                                    muscle activation and strength gains. Additionally, resistance bands can be used for
+                                    dynamic exercises that mimic real-world movements, which can improve functional
+                                    strength
+                                    and coordination.</p>
+                                <div class="pc-steps-image-mobile-section_id">
+
+                                    <img src="//section.store/cdn/shop/files/pexels-noemiji-16695681.jpg?v=1728029614"
+                                        alt="" loading="lazy">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pc-steps-step-section_id" id="step_ewkpwt">
+                            <div class="pc-steps-toggle-section_id">
+                                <div class="pc-steps-number-section_id">3</div>
+                                <p class="pc-steps-question-section_id">Myth 3: Resistance
+                                    bands are only good for upper body workouts</p>
+                            </div>
+                            <div class="pc-steps-answer-section_id hide"
+                                style="height: 0px; padding-bottom: 0px; padding-top: 0px;">
+                                <p>While resistance bands are often used for upper body exercises, they can also be used
+                                    effectively for lower body workouts. Squats, lunges, and glute bridges are just a
+                                    few
+                                    examples of lower body exercises that can be performed with resistance bands.</p>
+                                <div class="pc-steps-image-mobile-section_id">
+
+                                    <img src="//section.store/cdn/shop/files/pexels-polina-tankilevitch-6516209.jpg?v=1728030012"
+                                        alt="" loading="lazy">
+
+                                </div>
+                            </div>
+                            <div class="pc-steps-height-cal-section_id">
+                                <p>While resistance bands are often used for upper body exercises, they can also be used
+                                    effectively for lower body workouts. Squats, lunges, and glute bridges are just a
+                                    few
+                                    examples of lower body exercises that can be performed with resistance bands.</p>
+                                <div class="pc-steps-image-mobile-section_id">
+
+                                    <img src="//section.store/cdn/shop/files/pexels-polina-tankilevitch-6516209.jpg?v=1728030012"
+                                        alt="" loading="lazy">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="pc-steps-image-desktop-section_id active"
+                        data-id="step_9mifiP">
+
+                        <img src="//section.store/cdn/shop/files/bruce-mars-oLStrTTMz2s-unsplash.jpg?v=1728028414"
+                            alt="" loading="lazy" "="">
+                                
+            </div>
+        
+            <div class=" pc-steps-image-desktop-section_id" data-id="step_kdTGje">
+
+                        <img src="//section.store/cdn/shop/files/pexels-noemiji-16695681.jpg?v=1728029614" alt=""
+                            loading="lazy" "="">
+                                
+            </div>
+        
+            <div class=" pc-steps-image-desktop-section_id" data-id="step_ewkpwt">
+
+                        <img src="//section.store/cdn/shop/files/pexels-polina-tankilevitch-6516209.jpg?v=1728030012"
+                            alt=""
+                            loading="lazy" "="">
+                                
+            </div>
+           
+        </div>
+      </div>
+    </div>
+    
+    <script>
+        function pcInitStep() {
+            const answerPaddingTop = 16;
+            const answerPaddingBottom = 34;
+            const autoClose = true;
+
+            const faqs = document.querySelectorAll('.pc-steps-step-section_id');
+            const buttons = document.querySelectorAll('.pc-steps-toggle-section_id');
+            const answers = document.querySelectorAll('.pc-steps-answer-section_id');
+            const answersHeightCalElements = document.querySelectorAll('.pc-steps-height-cal-section_id');
+            const images = document.querySelectorAll('.pc-steps-image-desktop-section_id');
+
+            let activeIndex = -1;
+
+            function calculateHeight(index) {
+                if (index < 0 || index >= answersHeightCalElements.length) return 0;
+                return answersHeightCalElements[index].scrollHeight;
+            }
+
+            function openAnswer(index) {
+                if (index < 0 || index >= answers.length) return;
+
+                if (autoClose) {
+                    answers.forEach((answer, i) => {
+                        if (i !== index && !answer.classList.contains('hide')) {
+                            closeAnswer(i);
+                        }
+                    });
+                }
+
+                const height = calculateHeight(index);
+
+                answers[index].style.height = '0px';
+                answers[index].style.paddingTop = '0px';
+                answers[index].style.paddingBottom = '0px';
+
+                answers[index].offsetHeight; // Force a reflow
+
+                answers[index].style.height = `${height}px`;
+                answers[index].style.paddingTop = `${answerPaddingTop}px`;
+                answers[index].style.paddingBottom = `${answerPaddingBottom}px`;
+
+                faqs[index].classList.add('active');
+                activateImage(faqs[index].id);
+                answers[index].classList.remove('hide');
+            }
+
+            function closeAnswer(index) {
+                if (index < 0 || index >= answers.length) return;
+
+                answers[index].style.height = '0px';
+                answers[index].style.paddingTop = '0px';
+                answers[index].style.paddingBottom = '0px';
+                faqs[index].classList.remove('active');
+
+                answers[index].addEventListener('transitionend', function handler() {
+                    answers[index].classList.add('hide');
+                    answers[index].removeEventListener('transitionend', handler);
+                }, { once: true });
+            }
+
+            function toggleAnswer(index) {
+                if (index < 0 || index >= answers.length) return;
+
+                if (answers[index].classList.contains('hide')) {
+                    openAnswer(index);
+                    activeIndex = index;
+                } else {
+                    closeAnswer(index);
+                    activeIndex = -1;
+                }
+            }
+
+            function activateImage(itemId) {
+                images.forEach((img) => img.classList.remove('active'));
+                const correspondingImage = document.querySelector(`.pc-steps-image-desktop-section_id[data-id="${itemId}"]`);
+                if (correspondingImage) {
+                    correspondingImage.classList.add('active');
+                }
+            }
+
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', () => toggleAnswer(index));
+            });
+
+            function recalculateHeights() {
+                answers.forEach((answer, index) => {
+                    if (!answer.classList.contains('hide')) {
+                        const height = calculateHeight(index);
+                        answer.style.height = `${height}px`;
+                    }
+                });
+            }
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(recalculateHeights, 250);
+            });
+
+            function initializeAnswers() {
+                const initialOpenCount = Number('1');
+                const stepsToOpen = autoClose ? Math.min(1, initialOpenCount) : initialOpenCount;
+                for (let i = 0; i < Math.min(stepsToOpen, answers.length); i++) {
+                    openAnswer(i);
+                    activeIndex = i;
+                }
+            }
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'childList' || mutation.type === 'subtree') {
+                        recalculateHeights();
+                    }
+                });
+            });
+
+            const sectionElement = document.querySelector('.pc-section-section_id');
+            if (sectionElement) {
+                observer.observe(sectionElement, { childList: true, subtree: true });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                initializeAnswers();
+                setTimeout(recalculateHeights, 100);
+            });
+
+            window.addEventListener('load', () => {
+                setTimeout(recalculateHeights, 100);
+            });
+        }
+
+        pcInitStep();
+
+    </script>
+
+</body>
+
+</html>

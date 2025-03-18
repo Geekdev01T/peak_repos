@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pc-new-countdown-banner-wrapper {
+            padding-top: var(--pt);
+            padding-bottom: var(--pb);
+        }
+
+        @media screen and (min-width: 750px) {
+            .pc-new-countdown-banner-wrapper {
+                padding-top: var(--pt-desktop);
+                padding-bottom: var(--pb-desktop);
+            }
+        }
+
+        .pc-new-countdown-banner {
+            position: relative;
+            height: var(--section-height-mobile);
+            overflow: hidden;
+        }
+
+        @media screen and (min-width: 750px) {
+            .pc-new-countdown-banner {
+                height: var(--section-height);
+            }
+        }
+
+        #pc-new-countdown-banner a {
+            padding: 10px 15px;
+        }
+
+        .pc-new-countdown-banner-content {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            line-height: 1.1;
+            padding: 16px 5px;
+        }
+
+        @media (min-width: 750px) {
+            .pc-new-countdown-banner-content {
+                gap: 3rem;
+            }
+        }
+
+        .pc-new-countdown-banner-heading {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        @media (min-width: 750px) {
+            .pc-new-countdown-banner-heading {
+                font-weight: 700;
+                font-size: 24px;
+            }
+        }
+
+        .pc-new-timer-div {
+            gap: 2rem;
+        }
+
+        .pc-new-countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 0px;
+        }
+
+        @media (min-width: 750px) {
+            .pc-new-countdown-timer {
+                gap: 0px;
+            }
+
+            .pc-new-timer-div {
+                gap: 3rem;
+            }
+        }
+
+        .pc-new-countdown-timer .time-block {
+            position: relative;
+            border-radius: 12px;
+            /*padding: 20px;*/
+            padding: 0 0.5rem;
+        }
+
+        @media (min-width: 750px) {
+            .pc-new-countdown-timer .time-block {
+                padding: 0 0.75rem;
+            }
+        }
+
+        .pc-new-countdown-timer .time-block__num,
+        .pc-new-countdown-timer .time-block__unit {
+            display: block;
+            text-align: center;
+        }
+
+        .pc-new-countdown-timer .time-block__num {
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .pc-new-countdown-timer .time-block__unit {
+            margin-top: 3px;
+            font-size: 9px;
+        }
+
+        @media (min-width: 750px) {
+            .pc-new-countdown-timer .time-block__unit {
+                font-size: 10px;
+            }
+
+            .pc-new-countdown-timer .time-block__num {
+                font-size: 20px;
+            }
+
+            .pc-new-countdown-timer .time-colon {
+                font-weight: 700;
+                font-size: 20px;
+            }
+        }
+
+        .pc-new-countdown-timer .time-divier {
+            position: relative;
+            width: 2px;
+            height: 40px;
+            background-color: var(--color);
+        }
+
+        .pc-new-countdown-timer .time-colon {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .pc-new-countdown-banner-button {
+            padding: 16px 12px;
+            text-decoration: none;
+        }
+
+        @media (min-width: 750px) {
+            .pc-new-countdown-banner-button {
+                padding: 16px 25px;
+            }
+        }
+
+        @media (min-width: 750px) {
+            #pc-new-close-button {
+                padding: 0 10px 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pc-new-countdown-banner">
+        <div>
+            <div style="--pt: 0px;--pt-desktop: px;--pb: 0px;--pb-desktop: px;background-color:#000000;position: relative; "
+                id="pc-new-countdown-banner-wrapper">
+                <div class="pc-new-countdown-banner page-width">
+                    <div>
+                        <div class="pc-new-countdown-banner-content">
+
+                            <div class="pc-new-countdown-banner-heading" style="color: #ffffff;">
+                                ☀️ Last Call Summer SALE! 70% OFF ☀️
+                            </div>
+
+                            <div class="pc-new-timer-div"
+                                style="display: flex; justify-content: center; align-items: center;">
+                                <div class="pc-new-countdown-timer" style="color: #ffffff;">
+                                    <div class="time-block">
+                                        <span class="time-block__num js-timer-days">166</span>
+                                        <span class="time-block__unit">Days</span>
+                                    </div>
+                                    <span class="time-colon">:</span>
+                                    <div class="time-block">
+                                        <span class="time-block__num js-timer-hours">15</span>
+                                        <span class="time-block__unit">Hrs</span>
+                                    </div>
+                                    <span class="time-colon">:</span>
+                                    <div class="time-block">
+                                        <span class="time-block__num js-timer-minutes">07</span>
+                                        <span class="time-block__unit">Mins</span>
+                                    </div>
+                                    <span class="time-colon">:</span>
+                                    <div class="time-block">
+                                        <span class="time-block__num js-timer-seconds">40</span>
+                                        <span class="time-block__unit">Secs</span>
+                                    </div>
+                                </div>
+
+
+                                <a href="" class="pc-new-countdown-banner-button"
+                                    style="color: #ffffff;background-color: #fa61b3;border-radius: 6px;font-size: 13px;font-weight:700;border: 0px #ffffff solid;">
+                                    SHOP NOW
+                                </a>
+
+                                <script type="text/javascript">
+
+                                    (function () {
+                                        function startTimer() {
+                                            const second = 1000,
+                                                minute = second * 60,
+                                                hour = minute * 60,
+                                                day = hour * 24,
+                                                wrapper = document.querySelector(
+                                                    '.pc-new-countdown-timer'
+                                                );
+
+                                            const targetDate = new Date(Date.UTC(
+                                                parseInt('2025', 10),
+                                                parseInt('05', 10) - 1,
+                                                parseInt('01', 10),
+                                                parseInt('00', 10),
+                                                parseInt('00', 10),
+                                                0
+                                            ));
+
+                                            const countDown = targetDate.getTime();
+                                            console.log('Announcement bar timer end date:', new Date(countDown).toISOString());
+
+                                            const interval = setInterval(function () {
+                                                let now = Date.now(),
+                                                    distance = countDown - now,
+                                                    days = Math.floor(distance / day),
+                                                    hours = Math.floor((distance % day) / hour),
+                                                    minutes = Math.floor((distance % hour) / minute),
+                                                    seconds = Math.floor((distance % minute) / second);
+
+                                                (wrapper.querySelector('.js-timer-days').innerText =
+                                                    (days < 10 ? '0' : '') + days),
+                                                    (wrapper.querySelector('.js-timer-hours').innerText = (
+                                                        '0' + hours
+                                                    ).slice(-2)
+                                                    ),
+                                                    (wrapper.querySelector('.js-timer-minutes').innerText = (
+                                                        '0' + minutes
+                                                    ).slice(-2)),
+                                                    (wrapper.querySelector('.js-timer-seconds').innerText = (
+                                                        '0' + seconds
+                                                    ).slice(-2));
+
+                                                if (distance < 0) {
+                                                    wrapper.querySelector('.js-timer-days').innerText = '00';
+                                                    wrapper.querySelector('.js-timer-hours').innerText = '00';
+                                                    wrapper.querySelector('.js-timer-minutes').innerText = '00';
+                                                    wrapper.querySelector('.js-timer-seconds').innerText = '00';
+
+                                                    clearInterval(interval);
+                                                }
+                                            }, second);
+
+                                            document.addEventListener('shopify:section:unload', function (event) {
+                                                if (event.detail.sectionId === 'pc-new-countdown-banner') clearInterval(interval);
+                                            });
+                                        }
+
+                                        startTimer();
+                                    })();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="position: absolute;top: 50%;right: 0;transform: translateY(-50%);padding: 0 5px 0 0;color: gray;cursor: pointer; z-index: 1000;"
+                    id="pc-new-close-button">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 256 285.798 375.202 405 285.798 256z">
+                        </path>
+                    </svg>
+                </div>
+                <script type="text/javascript">
+                    let btnClose = document.getElementById('pc-new-close-button');
+                    btnClose.addEventListener('click', function (e) {
+                        e.preventDefault()
+                        document.getElementById('pc-new-countdown-banner-wrapper').style.display = 'none';
+                    });
+                </script>
+
+            </div>
+        </div>
+        <div id="pc-new-countdown-default-target"></div>
+    </div>
+</body>
+
+</html>

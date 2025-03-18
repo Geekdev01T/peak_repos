@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Scroll Effect</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <style>
+        #pk-stickyImageCards--template--23601596236054__section_sticky_image_cards_nhpr7h {
+            padding-left: .8em;
+            padding-right: .8em;
+        }
+
+        :root {
+    --drawer-transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
+    --gutter: 90px;
+    --gutter-mobile: 20px;
+    --grid-gutter: 20px;
+    --grid-gutter-mobile: 35px;
+    --inner: 20px --text: #ffffff;
+    --black: #000000;
+}
+
+a {
+    text-decoration: none
+}
+
+.sticky-image-cards {
+    --padding: var(--gutter-mobile);
+    --mvh: calc(85vh - var(--padding) / 2);
+    --top: 0px;
+    --aside-width: 100%;
+    --content-width: 100%;
+    position: relative;
+    background:  #fff7f2;
+    color: var(--text);
+}
+
+.sticky{
+    position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards {
+        --aside-width: 50%;
+        --content-width: calc(100% - var(--aside-width));
+        --padding: var(--gutter)
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sticky-image-cards.checkpoint-1 .sticky-image-cards__wrapper:nth-child(0),
+    .sticky-image-cards.checkpoint-1 .sticky-image-cards__wrapper:nth-child(-1) {
+        opacity: 0
+    }
+
+    .sticky-image-cards.checkpoint-1 .sticky-image-cards__wrapper:nth-child(1) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-1 .sticky-image-cards__wrapper:nth-child(0) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-1 .sticky-image-cards__wrapper:nth-child(-1) .sticky-image-cards__inner:after {
+        border-radius: 0;
+        top: calc(0% - 4 * var(--gutter-mobile));
+        height: calc(100% + 5 * var(--gutter-mobile))
+    }
+
+    .sticky-image-cards .sticky-image-cards__wrapper:nth-child(1) {
+        z-index: 1
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sticky-image-cards.checkpoint-2 .sticky-image-cards__wrapper:nth-child(1),
+    .sticky-image-cards.checkpoint-2 .sticky-image-cards__wrapper:nth-child(0) {
+        opacity: 0
+    }
+
+    .sticky-image-cards.checkpoint-2 .sticky-image-cards__wrapper:nth-child(2) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-2 .sticky-image-cards__wrapper:nth-child(1) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-2 .sticky-image-cards__wrapper:nth-child(0) .sticky-image-cards__inner:after {
+        border-radius: 0;
+        top: calc(0% - 4 * var(--gutter-mobile));
+        height: calc(100% + 5 * var(--gutter-mobile))
+    }
+
+    .sticky-image-cards .sticky-image-cards__wrapper:nth-child(2) {
+        z-index: 2
+    }
+
+    .sticky-image-cards:has(.is-stuck-up:nth-child(2)) .is-stuck-up:nth-child(1),
+    .sticky-image-cards:has(.is-stuck-up:nth-child(2)) .has-passed-sticky:nth-child(1),
+    .sticky-image-cards:has(.is-stuck-up:nth-child(2)) .has-passed-sticky:nth-child(0) {
+        opacity: 0
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sticky-image-cards.checkpoint-3 .sticky-image-cards__wrapper:nth-child(2),
+    .sticky-image-cards.checkpoint-3 .sticky-image-cards__wrapper:nth-child(1) {
+        opacity: 0
+    }
+
+    .sticky-image-cards.checkpoint-3 .sticky-image-cards__wrapper:nth-child(3) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-3 .sticky-image-cards__wrapper:nth-child(2) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-3 .sticky-image-cards__wrapper:nth-child(1) .sticky-image-cards__inner:after {
+        border-radius: 0;
+        top: calc(0% - 4 * var(--gutter-mobile));
+        height: calc(100% + 5 * var(--gutter-mobile))
+    }
+
+    .sticky-image-cards .sticky-image-cards__wrapper:nth-child(3) {
+        z-index: 3
+    }
+
+    .sticky-image-cards:has(.is-stuck-up:nth-child(3)) .is-stuck-up:nth-child(2),
+    .sticky-image-cards:has(.is-stuck-up:nth-child(3)) .has-passed-sticky:nth-child(2),
+    .sticky-image-cards:has(.is-stuck-up:nth-child(3)) .has-passed-sticky:nth-child(1) {
+        opacity: 0
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sticky-image-cards.checkpoint-4 .sticky-image-cards__wrapper:nth-child(3),
+    .sticky-image-cards.checkpoint-4 .sticky-image-cards__wrapper:nth-child(2) {
+        opacity: 0
+    }
+
+    .sticky-image-cards.checkpoint-4 .sticky-image-cards__wrapper:nth-child(4) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-4 .sticky-image-cards__wrapper:nth-child(3) .sticky-image-cards__inner:after,
+    .sticky-image-cards.checkpoint-4 .sticky-image-cards__wrapper:nth-child(2) .sticky-image-cards__inner:after {
+        border-radius: 0;
+        top: calc(0% - 4 * var(--gutter-mobile));
+        height: calc(100% + 5 * var(--gutter-mobile))
+    }
+
+    .sticky-image-cards .sticky-image-cards__wrapper:nth-child(4) {
+        z-index: 4
+    }
+
+    .sticky-image-cards:has(.is-stuck-up:nth-child(4)) .is-stuck-up:nth-child(3),
+    .sticky-image-cards:has(.is-stuck-up:nth-child(4)) .has-passed-sticky:nth-child(3),
+    .sticky-image-cards:has(.is-stuck-up:nth-child(4)) .has-passed-sticky:nth-child(2) {
+        opacity: 0
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards .sticky-text {
+        display: flex;
+        align-items: flex-end;
+        min-height: var(--row-height, auto);
+        width: 100%
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards .sticky-image-cards__aside .sticky-text {
+        display: none
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards .sticky-text__inner {
+        padding: var(--padding) var(--padding) 0 0
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards .sticky-text:first-child .sticky-text__inner {
+        padding-top: 0
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sticky-image-cards .main-buttons__item {
+        margin-top: 8px
+    }
+}
+
+.sticky-image-cards.text-center .sticky-text {
+    justify-content: center
+}
+
+.sticky-image-cards.text-right .sticky-text {
+    justify-content: flex-end
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards.is-reversed .sticky-image-cards__body {
+        flex-direction: row-reverse
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards.is-reversed .sticky-text__inner {
+        padding: var(--padding) 0 0 var(--padding)
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards.is-reversed .sticky-text:first-child .sticky-text__inner {
+        padding-top: 0
+    }
+}
+
+.sticky-image-cards__body {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.sticky-image-cards__wrapper {
+    --item-width: calc((var(--wrapper-width) - var(--grid-gutter) * 3) / 4);
+    width: 100%
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards__wrapper {
+        position: sticky;
+        top: calc(var(--top) + var(--padding));
+        min-height: var(--row-height, auto)
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .sticky-image-cards__wrapper {
+        flex: 0 0 var(--item-width);
+        max-width: var(--item-width)
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards__holder {
+        position: sticky;
+        top: calc(var(--top) + var(--padding))
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .sticky-image-cards__inner {
+        display: flex;
+        flex-direction: column;
+        gap: var(--grid-gutter)
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .sticky-image-cards__content {
+        display: none
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards__content {
+        max-width: var(--content-width);
+        flex: 0 0 var(--content-width);
+        overflow: hidden
+    }
+}
+
+.sticky-image-cards__aside {
+    --spacing: var(--grid-gutter);
+    width: 100%
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards__aside {
+        position: relative;
+        max-width: var(--aside-width);
+        flex: 0 0 var(--aside-width)
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .sticky-image-cards__aside {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing)
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .sticky-image-cards__aside {
+        justify-content: center;
+        flex-wrap: nowrap
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sticky-image-cards__aside {
+        --spacing: calc(var(--gutter-mobile) * 2)
+    }
+}
+
+.sticky-image-cards__image>a {
+    display: block;
+    overflow: hidden;
+    text-decoration: none
+}
+
+@supports not (aspect-ratio: 16/9) {
+    .sticky-image-cards__image .image-wrapper {
+        padding-top: min(var(--mvh), var(--image-ratio-fallback-desktop))
+    }
+
+    @media only screen and (max-width: 1023px) {
+        .sticky-image-cards__image .image-wrapper {
+            padding-top: var(--image-ratio-fallback-mobile)
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards__image .image-wrapper {
+        max-height: var(--mvh);
+        width: 100%
+    }
+}
+
+.body--rounded-corners .sticky-image-cards__image {
+    border-radius: 34px;
+    contain: paint
+}
+
+@media only screen and (min-width: 1024px) {
+    .sticky-image-cards--image-fifty {
+        --aside-width: 50%
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sticky-image-cards--sticky {
+        contain: paint
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__aside {
+        gap: unset
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__wrapper {
+        position: sticky;
+        top: calc(var(--top) + var(--padding));
+        background:  #fff7f2;
+        transition: opacity .3s ease
+    }
+
+    .body--rounded-corners .sticky-image-cards--sticky .sticky-image-cards__inner:after,
+    .body--rounded-corners .sticky-image-cards--sticky .sticky-image-cards__wrapper {
+        border-radius: 34px 34px 0 0
+    }
+
+    .sticky-image-cards--sticky .sticky-text {
+        padding-bottom: calc(var(--gutter-mobile) * 2)
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__inner:after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: calc(100% + 2 * var(--gutter-mobile));
+        background:  #fff7f2;
+        pointer-events: none;
+        overflow: hidden
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__wrapper:last-of-type .sticky-text {
+        padding-bottom: 0
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__wrapper.spillover {
+        position: relative;
+        top: unset;
+        height: var(--item-height)
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__wrapper.spillover .sticky-image-cards__holder {
+        display: flex;
+        align-items: flex-start;
+        height: var(--item-double-height)
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__wrapper.spillover .sticky-image-cards__inner {
+        position: sticky;
+        bottom: 0
+    }
+
+    .sticky-image-cards--sticky .sticky-image-cards__wrapper.spillover.is-stuck-up:not(:last-child) .sticky-image-cards__holder {
+        align-items: flex-end
+    }
+}
+
+.sticky-image-cards-section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+.sticky-image-cards .subheading-text {
+    font-size: 14px !important;
+    font-weight: 200;
+    margin-bottom: .8emm;
+}
+
+.sticky-image-cards .lazy-image {
+    position: relative;
+    margin: 0;
+    overflow: hidden
+}
+
+
+.sticky-image-cards .background-size-cover,
+.sticky-image-cards .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background:  #fff7f2
+}
+
+.sticky-image-cards .background-size-cover img,
+.sticky-image-cards .video-background img,
+.sticky-image-cards .img-object-cover {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 100%
+}
+
+.sticky-image-cards .img-object-contain {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    min-height: 100%
+}
+
+.sticky-image-cards .image-fill {
+    position: relative;
+    overflow: hidden
+}
+
+.sticky-image-cards .aspect-ratio,
+.sticky-image-cards__image .image-wrapper {
+    --aspect-ratio-default: 1 / 1;
+    --fallback-ratio-default: 100%;
+    --image-ratio-desktop: calc(1 / var(--aspect-ratio-desktop, var(--aspect-ratio-default)));
+    --image-ratio-fallback-desktop: calc((100 * var(--aspect-ratio-desktop, var(--fallback-ratio-default))) * 1%);
+    --image-ratio-mobile: calc(1 / var(--aspect-ratio-mobile, var(--aspect-ratio-default)));
+    --image-ratio-fallback-mobile: calc((100 * var(--aspect-ratio-mobile, var(--fallback-ratio-default))) * 1%);
+    aspect-ratio: var(--image-ratio-desktop)
+}
+
+@supports not (aspect-ratio: 16/9) {
+
+    .sticky-image-cards .aspect-ratio,
+    .sticky-image-cards__image .image-wrapper {
+        padding-top: var(--image-ratio-fallback-desktop)
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sticky-image-cards .aspect-ratio,
+    .sticky-image-cards__image .image-wrapper {
+        aspect-ratio: var(--image-ratio-mobile)
+    }
+
+    @supports not (aspect-ratio: 16/9) {
+
+        .sticky-image-cards .aspect-ratio,
+        .sticky-image-cards__image .image-wrapper {
+            padding-top: var(--image-ratio-fallback-mobile)
+        }
+    }
+}
+
+.sticky-image-cards .h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0.8em 0;
+}
+
+.sticky-image-cards .btn {
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    line-height: var(--button-line-height);
+    border-radius: 8px;
+    border: 1px solid var(--btn-border);
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    box-shadow: none;
+    font-size: calc(1rem * var(--adjust-button));
+    text-align: center;
+    will-change: color, border, background;
+    transition: color .3s ease, border .3s ease, background 0s linear 0s;
+    z-index: 1;
+    -webkit-tap-highlight-color: initial
+}
+
+.sticky-image-cards .btn:before {
+    content: "";
+    position: absolute;
+    display: flex;
+    left: calc(1px * -1);
+    top: calc(1px * -1);
+    right: calc(1px * -1);
+    bottom: calc(1px * -1);
+    transform: scaleY(0);
+    transform-origin: top center;
+    will-change: transform;
+    z-index: -1;
+    opacity: .3;
+    transition: transform .3s ease;
+    background: var(--btn-bg-hover)
+}
+
+.sticky-image-cards .btn[disabled] {
+    cursor: default;
+    opacity: .65
+}
+
+.sticky-image-cards .btn[disabled]:before {
+    content: none;
+    transform: scaleY(0);
+}
+
+.sticky-image-cards .btn:hover {
+    transition: color .3s ease, border .3s ease, background 0s linear .3s;
+}
+
+.sticky-image-cards .btn:hover:before {
+    transform-origin: bottom center;
+    transform: none;
+}
+
+@media only screen and (min-width: 480px) {
+
+    .sticky-image-cards .btn {
+        min-width: 80%;
+    }
+
+    .sticky-image-cards .btn--medium {
+        min-width: 100px
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .sticky-image-cards .btn {
+        min-width: 180px;
+    }
+
+    .sticky-image-cards .btn--medium {
+        min-width: 150px
+    }
+}
+
+@media only screen and (max-width: 479px) {
+
+    .sticky-image-cards .btn {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .sticky-image-cards .btn--medium {
+        width: 80%
+    }
+}
+
+.sticky-image-cards .btn {
+    --btn-border: var(--text);
+    --btn-bg: var(--text);
+    --btn-text:  #fff7f2;
+    margin-top: 1em;
+    padding: .8em 2em;
+}
+
+
+.sticky-image-cards .btn--white.btn--text {
+    --btn-text: #ffffff;
+}
+
+.sticky-image-cards .btn--black {
+    --btn-border: var(--black);
+    --btn-bg: var(--black);
+    --btn-text: #ffffff;
+    --btn-bg-hover: rgba(255, 255, 255, 0.5);
+}
+
+.sticky-image-cards .btn--black.btn--text {
+    --btn-text: var(--black)
+}
+
+.sticky-image-cards .btn--ar:before {
+    content: none
+}
+
+.sticky-image-cards .btn--small {
+    --top-bottom-padding: 10px;
+    --left-right-padding: 18px;
+    min-width: 0
+}
+
+.sticky-image-cards .btn--medium {
+    --top-bottom-padding: 12px;
+    --left-right-padding: 20px
+}
+
+
+.sticky-image-cards .btn--solid {
+    border-width: 0
+}
+
+    </style>
+    <section id="pk-stickyImageCards--template--23601596236054__section_sticky_image_cards_nhpr7h"
+        class="sticky-image-cards sticky-image-cards-section-padding text-left sticky-image-cards--image-fifty sticky-image-cards--sticky text-dark img-in"
+        data-section-id="template--23601596236054__section_sticky_image_cards_nhpr7h"
+        data-section-type="sticky-image-cards" data-sticky-card-layout-mobile="sticky"
+        style="--aspect-ratio-desktop: 2; --aspect-ratio-mobile: 1;">
+        <div class="sticky-image-cards__body wrapper--full-padded" data-sticky-card-body="">
+            <div class="sticky-image-cards__content" data-sticky-card-content="">
+                <div class="sticky-text sticky-text--static"
+                    style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36); --row-height: 447px;"
+                    data-sticky-card-text="">
+                    <div class="sticky-text__inner">
+                        <div class="sticky-text__subheading subheading-text main-subheading"
+                            style="font-family:'SFMonoRegular'; font-size: 12px; font-weight: 100;letter-spacing: 3px;opacity: .8;">
+                            Everyday essentials
+                        </div>
+                        <div class="sticky-text__heading h2" style="font-family: 'Zurich Extended';">Designed to
+                            empower you to express your unique sense of
+                            style with confidence.</div>
+                        <div class="sticky-text__buttons main-buttons">
+                            <div class="sticky-text__button main-buttons__item">
+                                <a href="/collections/all" class="btn btn--solid btn--medium btn--black"
+                                    aria-label="Shop our collection">
+                                    Shop our collection
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky-text sticky-text--static"
+                    style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36); --row-height: 447px;"
+                    data-sticky-card-text="">
+                    <div class="sticky-text__inner">
+                        <div class="sticky-text__heading h2" style="font-family: 'Zurich Extended';">Discover
+                            timeless pieces and chic ensembles to elevate
+                            your
+                            world.</div>
+                        <div class="sticky-text__buttons main-buttons">
+                            <div class="sticky-text__button main-buttons__item">
+                                <a href="/collections/homepage" class="btn btn--solid btn--medium btn--black"
+                                    aria-label="Shop Bestsellers">
+                                    Shop Bestsellers
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky-text sticky-text--static"
+                    style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36); --row-height: 447px;"
+                    data-sticky-card-text="">
+                    <div class="sticky-text__inner">
+                        <div class="sticky-text__subheading subheading-text main-subheading"
+                            style="font-family:'SFMonoRegular'; font-size: 12px; font-weight: 100;letter-spacing: 3px;opacity: .8;">
+                            Summer 2024</div>
+                        <div class="sticky-text__heading h2" style="font-family: 'Zurich Extended';">Stand out
+                            wherever you go. Our latest lookbook has
+                            dropped
+                            and is ready to shop.</div>
+                        <div class="sticky-text__buttons main-buttons">
+                            <div class="sticky-text__button main-buttons__item">
+                                <a href="/pages/lookbook" class="btn btn--solid btn--medium btn--black"
+                                    aria-label="View lookbook">
+                                    View lookbook
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-image-cards__aside" data-sticky-card-aside="">
+
+
+                <div class="sticky-image-cards__wrapper spillover" data-sticky-card-wrapper="" data-index="0"
+                    style="--row-height: 447px; --item-height: 671px; --item-double-height: 1342px;">
+                    <div class="sticky-image-cards__holder" data-sticky-card-holder="">
+                        <div class="sticky-image-cards__inner" data-sticky-card-inner="">
+                            <div class="sticky-image-cards__image" data-sticky-card-image="">
+
+                                <div class="image-fill image-wrapper aspect-ratio" style=" ">
+                                    <figure class="lazy-image background-size-cover" style="">
+                                        <img src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?crop=center&amp;height=1200&amp;v=1718727423&amp;width=967"
+                                            alt="pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg"
+                                            width="967" height="1200" loading="lazy"
+                                            sizes="(min-width: 1024px) calc((100vw - 120px) * 0.5), (min-width: 768px) calc((100vw - 40px) / 4), calc(100vw - 40px)"
+                                            srcset="
+//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=180 180w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=240 240w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=300 300w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=360 360w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=400 400w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=460 460w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=540 540w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=560 560w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=590 590w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=606 606w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=630 630w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=670 670w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=720 720w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=738 738w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=770 770w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=814 814w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=900 900w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=967 967w"
+                                            class="" style="object-position:50.3216% 15.1495%;border-radius: 32px;">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="sticky-text sticky-text--static"
+                                style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36);"
+                                data-sticky-card-text="">
+                                <div class="sticky-text__inner">
+                                    <div class="sticky-text__subheading  main-subheading"
+                                        style="font-family:'SFMonoRegular'; font-weight: 200;letter-spacing: 3px;opacity: .8;">
+                                        Everyday
+                                        essentials</div>
+                                    <div class="sticky-text__heading h2" style="font-family: 'Zurich Extended';">
+                                        Designed to empower you to express your
+                                        unique
+                                        sense of style with confidence.</div>
+                                    <div class="sticky-text__buttons main-buttons">
+                                        <div class="sticky-text__button main-buttons__item">
+                                            <a href="/collections/all" class="btn btn--solid btn--medium btn--black"
+                                                aria-label="Shop our collection">
+                                                Shop our collection
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticky-image-cards__wrapper spillover" data-sticky-card-wrapper="" data-index="1"
+                    style="--row-height: 447px; --item-height: 641px; --item-double-height: 1282px;">
+                    <div class="sticky-image-cards__holder" data-sticky-card-holder="">
+                        <div class="sticky-image-cards__inner" data-sticky-card-inner="">
+                            <div class="sticky-image-cards__image" data-sticky-card-image="">
+
+                                <div class="image-fill image-wrapper aspect-ratio" style=" ">
+                                    <figure class="lazy-image background-size-cover" style="">
+                                        <img src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?crop=center&amp;height=2953&amp;v=1666894896&amp;width=2362"
+                                            alt="java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg"
+                                            width="2362" height="2953" loading="lazy"
+                                            sizes="(min-width: 1024px) calc((100vw - 120px) * 0.5), (min-width: 768px) calc((100vw - 40px) / 4), calc(100vw - 40px)"
+                                            srcset="
+//palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=180 180w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=240 240w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=300 300w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=360 360w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=400 400w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=460 460w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=540 540w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=560 560w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=590 590w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=606 606w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=630 630w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=670 670w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=720 720w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=738 738w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=770 770w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=814 814w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=900 900w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1024 1024w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1080 1080w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1296 1296w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1410 1410w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1512 1512w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1524 1524w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1728 1728w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1950 1950w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=2100 2100w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=2260 2260w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=2362 2362w"
+                                            class="" style="border-radius: 32px;">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="sticky-text sticky-text--static"
+                                style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36);"
+                                data-sticky-card-text="">
+                                <div class="sticky-text__inner">
+                                    <div class="sticky-text__heading h2">Discover timeless pieces and chic ensembles
+                                        to
+                                        elevate your world.</div>
+                                    <div class="sticky-text__buttons main-buttons">
+                                        <div class="sticky-text__button main-buttons__item">
+                                            <a href="/collections/homepage"
+                                                class="btn btn--solid btn--medium btn--black"
+                                                aria-label="Shop Bestsellers">
+                                                Shop Bestsellers
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticky-image-cards__wrapper spillover" data-sticky-card-wrapper="" data-index="2"
+                    style="--row-height: 447px; --item-height: 631px; --item-double-height: 1262px;">
+                    <div class="sticky-image-cards__holder" data-sticky-card-holder="">
+                        <div class="sticky-image-cards__inner" data-sticky-card-inner="">
+                            <div class="sticky-image-cards__image" data-sticky-card-image="">
+
+                                <div class="image-fill image-wrapper aspect-ratio" style=" ">
+                                    <figure class="lazy-image background-size-cover" style="">
+                                        <img src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?crop=center&amp;height=1200&amp;v=1718727842&amp;width=967"
+                                            alt="melodrama-top-ivory-tops-alohas-377206_1.jpg" width="967" height="1200"
+                                            loading="lazy"
+                                            sizes="(min-width: 1024px) calc((100vw - 120px) * 0.5), (min-width: 768px) calc((100vw - 40px) / 4), calc(100vw - 40px)"
+                                            srcset="
+//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=180 180w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=240 240w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=300 300w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=360 360w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=400 400w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=460 460w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=540 540w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=560 560w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=590 590w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=606 606w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=630 630w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=670 670w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=720 720w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=738 738w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=770 770w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=814 814w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=900 900w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=967 967w"
+                                            class="" style="object-position:87.0695% 2.8969%;border-radius: 32px;">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="sticky-text sticky-text--static"
+                                style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36);"
+                                data-sticky-card-text="">
+                                <div class="sticky-text__inner">
+                                    <div class="sticky-text__subheading subheading-text main-subheading"
+                                        style="font-family:'SFMonoRegular'; font-size: 12px; font-weight: 100;letter-spacing: 3px;opacity: .8;">
+                                        Summer 2024
+                                    </div>
+                                    <div class="sticky-text__heading h2">Stand out wherever you go. Our latest
+                                        lookbook
+                                        has dropped and is ready to shop.</div>
+                                    <div class="sticky-text__buttons main-buttons">
+                                        <div class="sticky-text__button main-buttons__item">
+                                            <a href="/pages/lookbook" class="btn btn--solid btn--medium btn--black"
+                                                aria-label="View lookbook">
+                                                View lookbook
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky-image-cards__height" data-sticky-vh=""></div>
+    </section>
+    <script>
+        const sections = document.querySelectorAll('.sticky-image-cards__inner');
+        const originalOffsets = [];
+
+        // Stocker les positions originales des sections
+        sections.forEach(section => {
+            originalOffsets.push(section.offsetTop);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+
+            sections.forEach((section, index) => {
+                const originalOffset = originalOffsets[index];
+                const previousSection = sections[index - 1];
+
+                if (scrollPosition >= originalOffset) {
+                    // Si c'est la première section ou si la section précédente est collée
+                    if (index === 0 || previousSection.classList.contains('sticky')) {
+                        section.classList.add('sticky');
+
+                        // Décaler la section vers le bas si une section précédente est collée
+                        if (index > 0) {
+                            section.style.top = `${index * 5}px`;
+                        }
+                    }
+                } else {
+                    section.classList.remove('sticky');
+                    section.style.top = '';
+                }
+            });
+
+            // Gérer le défilement vers le haut
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (scrollPosition < originalOffsets[i]) {
+                    section.classList.remove('sticky'); section.style.top = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

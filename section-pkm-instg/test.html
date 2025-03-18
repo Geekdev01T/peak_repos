@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .pkm-si-slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper {
+            display: inline-flex;
+            height: 410px;
+            animation: 40s slide infinite linear;
+        }
+
+        .pkm-si-slider-container:hover .pkm-si-slider-wrapper {
+            animation-play-state: paused;
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide {
+            width: 100%;
+            min-width: 460px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0);
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide:hover::before {
+            background: rgba(0, 0, 0, 0.22);
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide .pkm-si-slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            transition: bottom 0.3s ease;
+            z-index: 2;
+            opacity: 1;
+            text-align: left;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            .pkm-si-slider-container .pkm-si-slider-wrapper {
+            height: 480px;
+        }
+
+            .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide .pkm-si-slide-content {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide:hover .pkm-si-slide-content {
+                bottom: 10px;
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide {
+                width: 100%;
+            }
+
+            .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide::before {
+                background: rgba(0, 0, 0, 0.22);
+            }
+            .pkm-si-slider-container .pkm-si-slider-wrapper .pkm-si-slide:hover img {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pkm-si-slider-container">
+        <div class="pkm-si-slider-wrapper" id="pkm-si-slider">
+            <div class="pkm-si-slide">
+                <img src="https://image.freepik.com/free-photo/beautiful-scenery-mountain-landscape_181624-441.jpg"
+                    alt="Image 1">
+                <div class="pkm-si-slide-content">
+                    <h2 class="pkm-si-slide-title">Style Casual</h2>
+                    <p class="pkm-si-slide-description">Le confort au quotidien avec style</p>
+                </div>
+            </div>
+            <div class="pkm-si-slide">
+                <img src="https://image.freepik.com/free-photo/sunset-sea_181624-442.jpg" alt="Image 2">
+                <div class="pkm-si-slide-content">
+                    <h2 class="pkm-si-slide-title">Style Casual</h2>
+                    <p class="pkm-si-slide-description">Le confort au quotidien avec style</p>
+                </div>
+            </div>
+            <div class="pkm-si-slide">
+                <img src="https://image.freepik.com/free-photo/forest-pathway_181624-443.jpg" alt="Image 3">
+                <div class="pkm-si-slide-content">
+                    <h2 class="pkm-si-slide-title">Style Casual</h2>
+                    <p class="pkm-si-slide-description">Le confort au quotidien avec style</p>
+                </div>
+            </div>
+            <div class="pkm-si-slide">
+                <img src="https://image.freepik.com/free-photo/beautiful-beach_181624-444.jpg" alt="Image 4">
+                <div class="pkm-si-slide-content">
+                    <h2 class="pkm-si-slide-title">Style Casual</h2>
+                    <p class="pkm-si-slide-description">Le confort au quotidien avec style</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- </div> -->
+    <script>
+        const copy = document.querySelector(".pkm-si-slider-wrapper").cloneNode(true);
+        document.querySelector(".pkm-si-slider-container").appendChild(copy);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('pkm-si-slider');
+            const slides = document.querySelectorAll('.pkm-si-slide');
+
+            // Gestion du curseur personnalisé
+            slides.forEach((slide, index) => {
+                slide.addEventListener('mouseenter', () => {
+                    const nextSlide = slide.nextElementSibling;
+                    const prevSlide = slide.previousElementSibling;
+
+                    if (nextSlide) {
+                        nextSlide.style.cursor = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='white'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='12' fill='white'%3Enext%3C/text%3E%3C/svg%3E\"), auto";
+                    }
+                    if (prevSlide) {
+                        prevSlide.style.cursor = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='white'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='12' fill='white'%3Eprev%3C/text%3E%3C/svg%3E\"), auto";
+                    }
+
+                    // Si la slide est au milieu de l'écran, le curseur est normal
+                    const rect = slide.getBoundingClientRect();
+                    const middleX = window.innerWidth / 2;
+                    if (rect.left < middleX && rect.right > middleX) {
+                        slide.style.cursor = "pointer";
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

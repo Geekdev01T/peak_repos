@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Bottom Section */
+        .lorem-bottom-section {
+            display: flex;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .lorem-bottom-section .lorem-bottom-left {
+            width: 100%;
+            background: #f0e6e6;
+            padding: 50px;
+            /* border-radius: 8px; */
+        }
+
+        .lorem-bottom-section .lorem-bottom-right {
+            width: 100%;
+            background: #f1f0f077;
+        }
+
+        .lorem-bottom-section .lorem-section-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .lorem-bottom-section .lorem-section-title .lorem-italic {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .lorem-bottom-section .lorem-section-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .lorem-bottom-section .lorem-discover-btn {
+            display: inline-block;
+            padding: 10px 40px;
+            border: 1px solid #333;
+            font-size: 16px;
+            /* border-radius: 4px; */
+            text-decoration: none;
+            color: #535353;
+            transition: all 0.3s ease;
+        }
+
+        .lorem-bottom-section .lorem-discover-btn:hover {
+            background: #535353;
+            color: #fff;
+        }
+
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .lorem-bottom-section {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 0;
+            }
+
+            .lorem-bottom-section .lorem-bottom-left {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .lorem-bottom-section .lorem-bottom-right {
+                padding: 20px;
+                height: 100%;
+                min-height: 350px;
+            }
+
+            .lorem-bottom-section .lorem-section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .lorem-bottom-section {
+                padding: 10px;
+            }
+
+            .lorem-bottom-section .lorem-bottom-left {
+                padding: 5px;
+            }
+
+            .lorem-bottom-section .lorem-section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bottom Section -->
+        <div class="lorem-bottom-section">
+            <div class="lorem-bottom-left">
+                <h2 class="lorem-section-title">Lorem ipsum <em class="lorem-italic">Dolors</em></h2>
+                <p class="lorem-section-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy
+                    eirmod tempor invidunt ut
+                    labore
+                    et dolore magna aliquyam erat, sed diam voluptia. At vero eos et accusam et justo duo dolores et ea
+                    rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+                <p class="lorem-section-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                    sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptia. At vero eos et
+                </p>
+                <a href="#" class="lorem-discover-btn">Découvrir</a>
+            </div>
+            <div class="lorem-bottom-right">
+                
+            </div>
+        </div>
+</body>
+
+</html>

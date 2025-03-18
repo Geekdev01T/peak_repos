@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        .pc-section-section_id {
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-section-section_id-settings {
+            margin: 0 auto;
+            padding-top: 27px;
+            padding-bottom: 54px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .pc-section-section_id .pc-testimonials-heading-section_id {
+            text-align: center;
+        }
+
+        .pc-section-section_id .pc-testimonials-heading-section_id * {
+            margin: 0;
+            font-size: 32px;
+            color: #000000;
+            line-height: 130%;
+            text-transform: unset;
+            text-decoration: none;
+        }
+
+        .pc-section-section_id .pc-testimonials-slider-section_id {
+            margin-top: 32px;
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+            margin-left: -1.5rem !important;
+            margin-right: -1.5rem !important;
+        }
+
+        .pc-section-section_id .pc-testimonials-wrapper-section_id {
+            align-items: stretch !important;
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-section_id {
+            border-radius: 12px;
+            overflow: hidden;
+            height: auto !important;
+            box-sizing: border-box !important
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-text-section_id {
+            padding: 32px 16px !important;
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-image-section_id {
+            aspect-ratio: 9.6/13;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-text-section_id {
+            margin: 0;
+            font-size: 24px;
+            line-height: 130%;
+            text-transform: unset;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .pc-section-section_id .pc-testimonials-review-text-section_id {
+            margin-top: 16px;
+        }
+
+        .pc-section-section_id .pc-testimonials-review-text-section_id * {
+            margin: 0;
+            font-size: 14px;
+            line-height: 170%;
+            text-transform: unset;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-image-section_id {
+            position: relative;
+            margin-top: 16px;
+            width: 52px;
+            height: 52px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 50%;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-image-section_id img,
+        .pc-section-section_id .pc-testimonials-author-image-section_id svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-image-section_id svg {
+            background: #AFAFAF;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-section_id {
+            margin: 0;
+            margin-top: 12px;
+            font-size: 11px;
+            line-height: 150%;
+            text-transform: unset;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .pc-section-section_id .pc-testimonials-info-text-section_id * {
+            margin: 0;
+            font-size: 22px;
+            line-height: 150%;
+            text-transform: unset;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .pc-section-section_id .pc-testimonials-info-subtext-section_id {
+            margin-top: 10px;
+        }
+
+        .pc-section-section_id .pc-testimonials-info-subtext-section_id * {
+            margin: 0;
+            font-size: 14px;
+            line-height: 170%;
+            text-transform: unset;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .pc-section-section_id .pc-testimonials-buttons-section_id {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            width: 100%;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id {
+            display: flex;
+            width: 48px;
+            height: 48px;
+            border: 0px;
+            border: 0px solid #c7c7c7;
+            border-radius: 100px;
+            background: transparent;
+            background: #f8f7f3;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            -webkit-appearance: none;
+            /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,.15); */
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id  .pc-animate-icon,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id  .pc-animate-icon {
+            pointer-events: none;
+            place-items: center;
+            display: grid;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id  .pc-animate-icon:before,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id  .pc-animate-icon:before {
+            content: "";
+            grid-area: 1 / -1;
+            transition: all .2s ease;
+            width: 10px;
+            height: 10px;
+            transform: rotate(calc(1 * 45deg));
+            box-sizing: border-box;
+            border-style: solid;
+            border: 0px;
+            border-right: 2px solid currentColor;
+            border-top: 2px solid currentColor;
+            position: relative;
+            left: -1px;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id .pc-animate-icon:before {
+            left: unset;
+            right: -1px;
+            border-right: 0px;
+            border-top: 0px;
+            border-bottom: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id  .pc-animate-icon:after,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id  .pc-animate-icon:after {
+            content: "";
+            grid-area: 1 / -1;
+            transition: all .2s ease;
+            width: 9.7px;
+            height: 1.6px;
+            transform-origin: center;
+            opacity: 0;
+            background: currentColor;
+            transform: scaleX(.5);
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id span,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id span {
+            color: #7b7b7b;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id.swiper-button-disabled,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id.swiper-button-disabled {
+            opacity: 0.5;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id.swiper-button-lock,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id.swiper-button-lock {
+            opacity: 0;
+        }
+
+        @media(min-width: 1024px) {
+
+            .pc-section-section_id .pc-section-section_id {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+            }
+
+            .pc-section-section_id .pc-section-section_id-settings {
+                padding: 0 5rem;
+                padding-top: 36px;
+                padding-bottom: 72px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+
+            .pc-section-section_id .pc-testimonials-heading-section_id {
+                text-align: center;
+            }
+
+            .pc-section-section_id .pc-testimonials-heading-section_id * {
+                font-size: 40px;
+            }
+
+            .pc-section-section_id .pc-testimonials-slider-section_id {
+                margin-top: 40px;
+                padding-left: 0rem !important;
+                padding-right: 0rem !important;
+                margin-left: 0rem !important;
+                margin-right: 0rem !important;
+            }
+
+            .pc-section-section_id .pc-testimonials-slide-text-section_id {
+                padding: 32px 16px !important;
+            }
+
+            .pc-section-section_id .pc-testimonials-image-text-section_id {
+                font-size: 30px;
+            }
+
+            .pc-section-section_id .pc-testimonials-review-text-section_id {
+                margin-top: 16px;
+            }
+
+            .pc-section-section_id .pc-testimonials-review-text-section_id * {
+                font-size: 14px;
+            }
+
+            .pc-section-section_id .pc-testimonials-info-text-section_id * {
+                font-size: 22px;
+            }
+
+            .pc-section-section_id .pc-testimonials-info-subtext-section_id {
+                margin-top: 10px;
+            }
+
+            .pc-section-section_id .pc-testimonials-info-subtext-section_id * {
+                font-size: 14px;
+            }
+
+            .pc-section-section_id .pc-testimonials-author-section_id {
+                margin-top: 12px;
+                font-size: 11px;
+            }
+
+            .pc-section-section_id .pc-testimonials-author-image-section_id {
+                margin-top: 16px;
+                width: 52px;
+                height: 52px;
+            }
+
+            .pc-section-section_id .pc-testimonials-buttons-section_id {
+                margin-top: 32px;
+                gap: 32px;
+            }
+
+            .pc-section-section_id .pc-testimonials-btn-prev-section_id,
+            .pc-section-section_id .pc-testimonials-btn-next-section_id {
+                width: 48px;
+                height: 48px;
+                transition: all 0.25s ease 0s;
+            }
+
+            .pc-section-section_id .pc-testimonials-btn-prev-section_id .pc-animate-icon:before,
+            .pc-section-section_id .pc-testimonials-btn-next-section_id .pc-animate-icon:before {
+                width: 10px;
+                height: 10px;
+            }
+
+            .pc-section-section_id .pc-testimonials-btn-prev-section_id .pc-animate-icon:after,
+            .pc-section-section_id .pc-testimonials-btn-next-section_id .pc-animate-icon:after {
+                width: 9.7px;
+            }
+        }
+
+
+        .pc-section-section_id .pc-testimonials-heading-section_id * {
+            font-family: "ITC Stepp", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-image-text-section_id {
+            font-family: "ITC Stepp", serif;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-review-text-section_id * {
+            font-family: "Harmonia Sans", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-author-section_id {
+            font-family: "Harmonia Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-info-text-section_id * {
+            font-family: "ITC Stepp", serif;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-info-subtext-section_id * {
+            font-family: "Harmonia Sans", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-slider-section_id {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-section_id {
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 0 10px #0000001a;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-section-section_id .pc-testimonials-slider-section_id {
+                padding-left: 5px !important;
+                padding-right: 5px !important;
+            }
+        }
+
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id:hover,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id:hover {
+            transition: all 0.3s ease 0s;
+            border: 0px solid #c7c7c7;
+            background: #eeece1;
+        }
+
+        .pc-section-section_id .pc-testimonials-btn-prev-section_id:hover .pc-animate-icon,
+        .pc-section-section_id .pc-testimonials-btn-next-section_id:hover .pc-animate-icon {
+            color: #7b7b7b;
+        }
+ 
+        .pc-section-section_id .pc-testimonials-buttons-section_id {
+            display: flex;
+        }
+  
+  
+        @media(min-width: 1024px) {
+            .pc-section-section_id .pc-testimonials-buttons-section_id {
+                display: none;
+            }
+        }
+   
+        .pc-section-section_id .pc-testimonials-image-image_B {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-image_B:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-image_B img,
+        .pc-section-section_id .pc-testimonials-image-image_B svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-image_B svg {
+            background-color: #AFAFAF;
+        }
+
+        .pc-section-section_id .pc-testimonials-text-image_B {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            color: #ffffff;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-slide-review_ {
+            background-color: #f8f7f3;
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-content-review_ {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .pc-section-section_id .pc-testimonials-stars-review_ {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            flex-wrap: wrap;
+            max-width: fit-content;
+        }
+
+        .pc-section-section_id .pc-testimonials-stars-review_ svg,
+        .pc-section-section_id .pc-testimonials-stars-review_ img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+        }
+
+        .pc-section-section_id .pc-testimonials-text-review_ * {
+            color: #000000;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-image-review_ {
+            border-color: #b7b491;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-review_ {
+            color: #87877c;
+        }
+
+        @media (min-width: 1024px) {
+
+            .pc-section-section_id .pc-testimonials-stars-review_ svg,
+            .pc-section-section_id .pc-testimonials-stars-review_ img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+
+        .pc-section-section_id .pc-testimonials-slide-text_U {
+            background-color: #f8f7f3;
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-content-text_U {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .pc-section-section_id .pc-testimonials-text-text_U * {
+            color: #000000;
+        }
+
+        .pc-section-section_id .pc-testimonials-subtext-text_U * {
+            color: #000000;
+        }
+
+        .pc-section-section_id .pc-testimonials-logo-text_U {
+            margin-top: 18px;
+            position: relative;
+            width: 42%;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-testimonials-logo-text_U img,
+        .pc-section-section_id .pc-testimonials-logo-text_U svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-section-section_id .pc-testimonials-logo-text_U svg {
+            background: #AFAFAF;
+        }
+
+        @media(min-width: 1024px) {
+
+            .pc-section-section_id .pc-testimonials-logo-text_U {
+                margin-top: 18px;
+                width: 42%;
+            }
+        }
+
+
+        .pc-section-section_id .pc-testimonials-image-image_U {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-image_U:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-image_U img,
+        .pc-section-section_id .pc-testimonials-image-image_U svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-section-section_id .pc-testimonials-image-image_U svg {
+            background-color: #AFAFAF;
+        }
+
+        .pc-section-section_id .pc-testimonials-text-image_U {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            color: #ffffff;
+        }
+
+
+        .pc-section-section_id .pc-testimonials-slide-review_i {
+            background-color: #f8f7f3;
+        }
+
+        .pc-section-section_id .pc-testimonials-slide-content-review_i {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .pc-section-section_id .pc-testimonials-stars-review_i {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            flex-wrap: wrap;
+            max-width: fit-content;
+        }
+
+        .pc-section-section_id .pc-testimonials-stars-review_i svg,
+        .pc-section-section_id .pc-testimonials-stars-review_i img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+        }
+
+        .pc-section-section_id .pc-testimonials-text-review_i * {
+            color: #000000;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-image-review_i {
+            border-color: #b7b491;
+        }
+
+        .pc-section-section_id .pc-testimonials-author-review_i {
+            color: #87877c;
+        }
+
+        @media (min-width: 1024px) {
+
+            .pc-section-section_id .pc-testimonials-stars-review_i svg,
+            .pc-section-section_id .pc-testimonials-stars-review_i img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+
+        .pc-section-section_id .pc-testimonials-slider-section_id.preview .swiper-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .pc-section-section_id .pc-testimonials-slider-section_id.preview .pc-section-section_id .pc-testimonials-slide-section_id {
+            width: 100%;
+        }
+
+        .pc-section-section_id .pc-testimonials-slider-section_id.preview .pc-section-section_id .pc-testimonials-slide-section_id:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-section-section_id .pc-testimonials-slider-section_id.preview .pc-section-section_id .pc-testimonials-slide-section_id:not(:first-child) {
+                margin-left: 20px;
+            }
+
+            .pc-section-section_id .pc-testimonials-slider-section_id.preview .pc-section-section_id .pc-testimonials-slide-section_id {
+                width: calc(100% / 5 - (20px));
+            }
+        }
+    </style>
+
+    <div class="pc-section-section_id pc-testimonials-section_id">
+        <div class="pc-section-section_id-settings">
+
+            <div class="pc-testimonials-heading-section_id">
+                <h2>Join 100.000+ Happy Customers Worldwide</h2>
+            </div>
+
+            <div
+                class="pc-testimonials-slider-section_id swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="pc-testimonials-wrapper-section_id swiper-wrapper" id="swiper-wrapper-e16789b7c959b7e0">
+
+
+                    <div class="pc-testimonials-slide-section_id pc-testimonials-slide-image-section_id swiper-slide">
+                        <div class="pc-testimonials-image-image_B">
+
+                            <img src="//section.store/cdn/shop/files/pexels-majesticaljasmin-5411883.jpg?v=1716553126"
+                                alt="">
+
+                        </div>
+                        <p class="pc-testimonials-text-image_B pc-testimonials-image-text-section_id">
+                            Over 2 Million Jewelry Pieces Sold</p>
+                    </div>
+
+
+
+
+                    <div class="pc-testimonials-slide-section_id pc-testimonials-slide-review_ pc-testimonials-slide-text-section_id swiper-slide">
+                        <div class="pc-testimonials-slide-content-review_">
+
+                            <div class="pc-testimonials-stars-review_">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+
+                            </div>
+
+
+                            <div class="pc-testimonials-text-review_ pc-testimonials-review-text-section_id">
+                                <p>"I love the unique designs offered by this brand. They're not your typical pieces of
+                                    jewelry, and they're sure to turn heads."</p>
+                            </div>
+
+                            <div
+                                class="pc-testimonials-author-image-review_ pc-testimonials-author-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/pexels-zahra-talebizadeh-423932604-20820147.jpg?v=1727968403"
+                                    alt="">
+
+                            </div>
+
+                            <p class="pc-testimonials-author-review_ pc-testimonials-author-section_id">
+                                Jane S. –&nbsp;Verified Buyer</p>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="pc-testimonials-slide-section_id pc-testimonials-slide-text_U pc-testimonials-slide-text-section_id swiper-slide"
+                        >
+                        <div class="pc-testimonials-slide-content-text_U">
+
+                            <div class="pc-testimonials-text-text_U pc-testimonials-info-text-section_id">
+                                <p>Their pieces are the perfect choice.</p>
+                            </div>
+
+
+                            <div class="pc-testimonials-subtext-text_U pc-testimonials-info-subtext-section_id">
+                                <p>"Their timeless designs and impeccable quality make them a must-have for any
+                                    discerning jewelry enthusiast."</p>
+                            </div>
+
+                            <div class="pc-testimonials-logo-text_U">
+
+                                <img src="//section.store/cdn/shop/files/Forbes_logo_black_1.png?v=1677306416" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="pc-testimonials-slide-section_id pc-testimonials-slide-image-section_id swiper-slide"
+                        >
+                        <div class="pc-testimonials-image-image_U">
+
+                            <img src="//section.store/cdn/shop/files/pexels-n-voitkevich-4773095.jpg?v=1716560858"
+                                alt="">
+
+                        </div>
+                        <p class="pc-testimonials-text-image_U pc-testimonials-image-text-section_id">
+                            Free Shipping Worldwide</p>
+                    </div>
+
+
+
+
+                    <div class="pc-testimonials-slide-section_id pc-testimonials-slide-review_i  pc-testimonials-slide-text-section_id swiper-slide"
+                        >
+                        <div class="pc-testimonials-slide-content-review_i">
+
+                            <div class="pc-testimonials-stars-review_i">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19"
+                                    fill="none">
+
+                                    <path
+                                        d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                        fill="#b7b491"></path>
+                                </svg>
+
+                            </div>
+
+
+                            <div class="pc-testimonials-text-review_i pc-testimonials-review-text-section_id">
+                                <p>"The jewelry arrived beautifully packaged in a gift box. It was perfect for giving as
+                                    a gift or keeping for myself."</p>
+                            </div>
+
+                            <div
+                                class="pc-testimonials-author-image-review_i pc-testimonials-author-image-section_id">
+
+                                <img src="//section.store/cdn/shop/files/tani-olorunyomi-ItSmhwPDaVU-unsplash.jpg?v=1728062180"
+                                    alt="">
+
+                            </div>
+
+                            <p class="pc-testimonials-author-review_i pc-testimonials-author-section_id">
+                                Nicki A. –&nbsp;Verified Buyer</p>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+            <div class="pc-testimonials-buttons-section_id">
+                <button class="pc-testimonials-btn-prev-section_id swiper-button-disabled" disabled="" tabindex="-1"
+                    aria-label="Previous slide" aria-controls="swiper-wrapper-e16789b7c959b7e0" aria-disabled="true">
+                    <span class="pc-animate-icon"></span>
+                </button>
+                <button class="pc-testimonials-btn-next-section_id" tabindex="0" aria-label="Next slide"
+                    aria-controls="swiper-wrapper-e16789b7c959b7e0" aria-disabled="false">
+                    <span class="pc-animate-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        function initTestimonials19() {
+            document.querySelector('.pc-testimonials-slider-section_id').classList.remove('preview');
+            const slider = new Swiper(".pc-testimonials-slider-section_id", {
+                speed: 500,
+                navigation: {
+                    nextEl: '.pc-testimonials-btn-next-section_id',
+                    prevEl: '.pc-testimonials-btn-prev-section_id',
+                },
+                breakpoints: {
+                    320: {
+                        spaceBetween: 20,
+                        slidesPerView: 1.3,
+                    },
+                    768: {
+                        spaceBetween: 20,
+                        slidesPerView: 3,
+                    },
+                    1024: {
+                        spaceBetween: 20,
+                        slidesPerView: 5,
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initTestimonials19);
+
+    </script>
+
+</body>
+
+</html>

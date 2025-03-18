@@ -1,0 +1,2053 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+ <style>
+                .section-ss-header-4 {
+                    max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+                    margin: 0 auto;
+                    margin-top: {{section_mt}}px;
+                    margin-bottom: {{section_mb}}px;
+                    border-radius: {{section_radius}}px;
+                    {% if full_border %} border: {{section_border_w}}px solid {{section_border_color}}; {% endif %}
+                    background-color:{{section_bg}};
+                    transition: all 0.6s ease 0s;
+                    background: #fff !important;
+                }
+    
+                .section-ss-header-4-settings {
+                    margin: 0 auto;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                }
+    
+                .header-ss-header-4.onscroll {
+                    background-color: rgba(0, 0, 0, 0);
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.scroll {
+                    transform: translateY(-150%);
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.scroll.active {
+                    transform: translateY(0);
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.open {
+                    background-color: {{section.settings.section_bg_open}} !important;
+                    transition: all 0.6s ease 0s;
+                }
+    
+                .header-body-ss-header-4 {
+                    display: grid;
+                    align-items: center;
+                    margin-top: 10px;
+                    padding: 0px 0px;
+                    border: 0px solid #000000;
+                    border-radius: 4px;
+                    gap: 10px;
+                    background-color: #ffffff;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.open .header-body-ss-header-4 {
+                    background-color: {{section.settings.section_bg_open}};
+                    transition: all 0.25s ease;
+                }
+    
+                .header-menu-list-ss-header-4 {
+                    padding: 0px;
+                    margin: 0px;
+                    display: none;
+                    align-items: center;
+                    gap: 0px;
+                    flex-wrap: wrap;
+                    list-style: none;
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-list-ss-header-4 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                }
+    
+                .header-menu-item-ss-header-4 {
+                    line-height: 100%;
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    padding-bottom: 0;
+                }
+    
+                .header-menu-link-ss-header-4 {
+                    margin: 0;
+                    font-size:{{section.settings.list_title_size}}px;
+                    color: {{section.settings.list_title_color}};
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: {{section.settings.list_title_weight}};
+                    transition: all 0.25s ease;
+                    position: relative;
+                    z-index: 3;
+                }
+    
+                .header-menu-item-main-ss-header-4>.header-menu-link-ss-header-4 {
+                    display: block;
+                    padding: 10px 16px;
+                    background-color: {{section.settings.list_title_bg}};
+                    border-radius: {{section.settings.list_title_radius}}px;
+                }
+    
+                .header-menu-item-main-ss-header-4.active>.header-menu-link-ss-header-4 {
+                    background-color: {{section.settings.list_title_bg_active}};
+                }
+    
+                .header-ss-header-4.open .header-menu-item-main-ss-header-4:not(.active) .header-menu-link-ss-header-4 {
+                    background-color: transparent;
+                    color: {{section.settings.link_color}};
+                }
+    
+                .header-ss-header-4.open .header-menu-mobile-inner-ss-header-4 .header-menu-link-ss-header-4 {
+                    color: {{section.settings.link_color}};
+                }
+    
+                .header-submenu-ss-header-4 .header-menu-link-ss-header-4 {
+                    color: {{section.settings.link_color}} !important;
+                    font-weight: {{section.settings.link_weight}};
+                }
+    
+                .header-submenu-ss-header-4 .header-menu-link-ss-header-4:hover {
+                    color: {{section.settings.link_color_hover}} !important;
+                }
+    
+                .header-menu-item-parent-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    max-width: fit-content;
+                    flex-basis: 0;
+                }
+    
+                .header-menu-item-icon-ss-header-4 {
+                    display: block;
+                    flex: 0 0 8px;
+                    width: 8px;
+                    transition: all 0.25s ease 0s;
+                    color: {{section.settings.mobile_list_title_color}};
+                }
+    
+                .header-menu-item-icon-ss-header-4 svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+                .header-submenu-ss-header-4 {
+                    position: absolute;
+                    z-index: 3;
+                    top: calc(100% - 20px);
+                    left: 0;
+                    width: 100%;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.25s ease 0s;
+                    list-style: none;
+                    margin: 0px;
+                }
+    
+                .header-submenu-bg-ss-header-4 {
+                    display: block !important;
+                    height: 20px;
+                    pointer-events: none;
+                }
+    
+                .header-submenu-inner-ss-header-4 {
+                    background-color: {{section.settings.section_bg_open}};
+                    border-bottom: 0px solid #000000;
+                }
+    
+                .header-submenu-ss-header-4 .section-ss-header-4-settings {
+                    padding-top: 40px;
+                }
+    
+                .header-menu-item-parent-ss-header-4.active .header-submenu-ss-header-4 {
+                    opacity: 1;
+                    pointer-events: all;
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-menu-burder-wrapper-ss-header-4 {
+                    position: relative;
+                    cursor: pointer;
+                }
+    
+                .header-menu-burder-wrapper-ss-header-4:after {
+                    content: '';
+                    position: absolute;
+                    top: -6px;
+                    left: 10px;
+                    width: 18px;
+                    height: 100%;
+                    z-index: 2;
+                    min-height: 14px;
+                }
+    
+                .header-menu-burder-ss-header-4 {
+                    position: relative;
+                    z-index: 1;
+                    margin-left: 10px;
+                    display: block;
+                    width: 18px;
+                    position: relative;
+                    z-index: 3;
+                    transition: all 0.25s ease;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: 0px;
+                    box-shadow: none;
+                }
+    
+                .header-menu-burger-icon-ss-header-4 {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -1px;
+                    width: 100%;
+                    height: 1.5px;
+                    background: #1f171f;
+                    transition: transform .4s ease;
+                }
+    
+                .header-ss-header-4.open .header-menu-burger-icon-ss-header-4 {
+                    transform: rotate(45deg);
+                    transition-delay: .22s;
+                    background: #ffffff;
+                }
+    
+                .header-menu-burger-icon-ss-header-4::before,
+                .header-menu-burger-icon-ss-header-4::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 1.5px;
+                    background-color: inherit;
+                    background: #1f171f;
+                }
+    
+                .header-menu-burger-icon-ss-header-4::before {
+                    top: -6px;
+                    transition: top .25s ease .27s, opacity .25s ease, width .25s ease;
+                }
+    
+                .header-ss-header-4.open .header-menu-burger-icon-ss-header-4::before {
+                    top: 0;
+                    opacity: 0;
+                    width: 100%;
+                    transition: top .2s ease, opacity .2s ease .22s, width .1s ease;
+                    background: {{section.settings.mobile_list_title_color}};
+                }
+    
+                .header-menu-burger-icon-ss-header-4::after {
+                    bottom: -6px;
+                    transition: bottom .25s ease .27s, transform .25s ease, width .25s ease;
+                }
+    
+                .header-ss-header-4.open .header-menu-burger-icon-ss-header-4::after {
+                    bottom: 0;
+                    transform: rotate(-90deg);
+                    width: 100%;
+                    transition: bottom .2s ease, transform .2s ease .22s, width .1s ease;
+                    background: {{section.settings.mobile_list_title_color}} !important;
+                }
+    
+                .header-logo-ss-header-4 {
+                    width: 100%;
+                    max-width: 120px;
+                    text-align: center;
+                    position: relative;
+                    z-index: 3;
+                }
+    
+                .header-logo-image-ss-header-4 img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: {{section.settings.logo_img_radius}}px;
+                    border: {{section.settings.logo_img_border_w}}px solid {{section.settings.logo_img_border_color}};
+                }
+
+                .header-logo-image-ss-header-4 .img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: {{section.settings.logo_img_radius}}px;
+                    border: {{section.settings.logo_img_border_w}}px solid {{section.settings.logo_img_border_color}};
+                }
+    
+                .header-logo-image-desktop-ss-header-4 {
+                    display: none;
+                }
+    
+                .header-logo-text-ss-header-4 {
+                    margin: 0;
+                    font-size: 18px;
+                    color: #1f171f;
+                    line-height: 100%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: 700;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-ss-header-4.open .header-logo-text-ss-header-4 {
+                    transition: all 0.25s ease;
+                    color: #ffffff;
+                }
+    
+                .header-ss-header-4 .header-logo-first-ss-header-4 {
+                    display: block !important;
+                }
+    
+                .header-ss-header-4 .header-logo-second-ss-header-4 {
+                    display: none !important;
+                }
+    
+                .header-ss-header-4.open .header-logo-second-ss-header-4 {
+                    display: block !important;
+                }
+    
+                .header-ss-header-4.open .header-logo-first-ss-header-4 {
+                    display: none !important;
+                }
+    
+                .header-right-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 16px;
+                    flex-wrap: wrap;
+                    position: relative;
+                    z-index: 3;
+                }
+    
+                .header-search-text-ss-header-4,
+                .header-account-text-ss-header-4 {
+                    display: none;
+                    margin: 0;
+                    color: {{section.settings.icon_text_color}};
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-ss-header-4.open .header-search-text-ss-header-4,
+                .header-ss-header-4.open .header-account-text-ss-header-4 {
+                    color: {{section.settings.icon_text_color}};
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-text-ss-header-4 {
+                    display: none;
+                    margin: 0;
+                    font-size: {{section.settings.badge_size}}px;
+                    color: {{section.settings.badge_color}};
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-ss-header-4 .cart-count-bubble span {
+                    margin: 0;
+                    font-size: {{section.settings.badge_size}}px;
+                    color: {{section.settings.badge_color}};
+                    line-height: 100%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-search-icon-ss-header-4,
+                .header-account-icon-ss-header-4,
+                .header-cart-icon-ss-header-4 {
+                    display: block;
+                    width: {{section.settings.icon_w}}px;
+                }
+    
+                .header-search-icon-ss-header-4 svg,
+                .header-account-icon-ss-header-4 svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+                .header-cart-icon-ss-header-4 svg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+                .header-search-icon-ss-header-4 svg path,
+                .header-account-icon-ss-header-4 svg path {
+                    stroke: {{section.settings.icon_color}};
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-icon-ss-header-4 svg path {
+                    stroke: {{section.settings.icon_color}};
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-ss-header-4.open .header-search-icon-ss-header-4 svg path,
+                .header-ss-header-4.open .header-account-icon-ss-header-4 svg path {
+                    stroke: {{section.settings.icon_color_open}};
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-ss-header-4.open .header-cart-icon-ss-header-4 svg path {
+                    stroke: {{section.settings.badge_color}};
+                    transition: all .25s ease 0s;
+                }
+    
+                .header-cart-ss-header-4,
+                .header-account-ss-header-4 {
+                    text-decoration: none;
+                }
+    
+                .header-search-ss-header-4 {
+                    padding: 0px;
+                    margin: 0px;
+                    background-color: transparent;
+                    border: 0px;
+                    box-shadow: none;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+    
+                .header-cart-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    position: relative;
+                    background-color: {{section.settings.badge_bg}};
+                    padding: 10px 10px;
+                    border: {{section.settings.badge_border_w}}px solid {{section.settings.badge_border_color}};
+                    border-radius: {{section.settings.badge_radius}}px;
+                }
+    
+                .header-cart-ss-header-4 .cart-count-bubble {
+                    position: absolute;
+                    left: 52%;
+                    top: 45%;
+                    transform: translateX(-50%);
+                    padding: 0px;
+                    background-color: transparent;
+                    border: 0px;
+                    margin: 0px;
+                    width: fit-content;
+                    height: fit-content;
+                }
+    
+                .header-menu-mobile-ss-header-4 {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100dvh;
+                    overflow-y: auto;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    transform: translateY(-130%);
+                    transition: all 0.25s ease 0s;
+                    z-index: 99;
+                }
+    
+                .header-ss-header-4.open .header-menu-mobile-ss-header-4 {
+                    transform: translateY(0%);
+                }
+    
+                .header-menu-mobile-inner-ss-header-4 {
+                    background-color: {{section.settings.mobile_link_bg}};
+                    max-width: 100%;
+                    height: 100%;
+                    padding: 20px;
+                    position: relative;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+    
+                .header-mobile-menu-item-parent-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-item-ss-header-4 {
+                    max-width: 100%;
+                    width: 100%;
+                    justify-content: space-between;
+                    position: static;
+                    padding: 12px 0px;
+                    border-bottom: {{section.settings.mobile_link_border_w}}px solid {{section.settings.mobile_link_border_color}};
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-item-ss-header-4:first-child {
+                    border-top: {{section.settings.mobile_link_border_w}}px solid {{section.settings.mobile_link_border_color}};
+                }
+    
+                .header-menu-mobile-ss-header-4 .header-menu-item-icon-ss-header-4 {
+                    flex: 0 0 18px;
+                    width: 18px;
+                    transform: rotate(-90deg);
+                }
+    
+                .header-menu-mobile-submenu-ss-header-4 {
+                    position: absolute;
+                    background-color: #1f171f;
+                    z-index: 4;
+                    padding: 20px;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    transform: translateX(110%);
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-mobile-menu-item-parent-ss-header-4.active>.header-menu-mobile-submenu-ss-header-4 {
+                    transform: translateX(0%);
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-menu-mobile-submenu-heading-ss-header-4 {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%;
+                    background-color: transparent;
+                    border: 0px;
+                    border-top: {{section.settings.mobile_link_border_w}}px solid {{section.settings.mobile_link_border_color}};
+                    padding: 0px;
+                    padding: 10px 0px;
+                    box-shadow: none;
+                    font-size: {{section.settings.mobile_list_title_size}}px;
+                    color: {{section.settings.mobile_list_title_color}};
+                    line-height: 130%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: {{section.settings.mobile_list_title_weight}};
+                }
+    
+                .header-menu-mobile-submenu-heading-ss-header-4 .header-menu-item-icon-ss-header-4 {
+                    transform: rotate(90deg);
+                }
+    
+                .header-mobile-submenu-list-ss-header-4 {
+                    margin: 0px;
+                    margin-top: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0px;
+                    padding: 0px;
+                    list-style: none;
+                }
+    
+                .header-logo-desktop-ss-header-4 {
+                    display: none;
+                }
+    
+                .header-submenu-inner-ss-header-4 .section-ss-header-4-settings {
+                    display: grid;
+                    gap: 16px;
+                }
+    
+                .header-submenu-menu-ss-header-4 {
+                    display: flex;
+                    gap: 16px;
+                    flex-wrap: wrap;
+                }
+    
+                .header-submenu-menu-ss-header-4 .header-menu-list-ss-header-4 {
+                    display: flex;
+                    align-items: stretch;
+                    gap: 16px;
+                }
+    
+                .header-submenu-menu-ss-header-4>.header-menu-list-ss-header-4 .header-menu-item-with-submenu-ss-header-4>.header-menu-link-ss-header-4:first-child {
+                    display: block;
+                    max-width: fit-content;
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                }
+    
+                .header-submenu-menu-ss-header-4 .header-menu-list-ss-header-4 .header-menu-list-ss-header-4 {
+                    margin-top: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+    
+                .header-submenu-menu-ss-header-4>.header-menu-list-ss-header-4>.header-menu-item-ss-header-4:not(:last-child) {
+                    border-right: {{section.settings.link_right_border_w}}px solid {{section.settings.link_right_border_color}};
+                }
+                
+    
+                .header-body-ss-header-4 {
+                    grid-template-columns: 1fr 120px 1fr;
+                }
+                
+                
+                .header-submenu-menu-ss-header-4>.header-menu-list-ss-header-4 .header-menu-item-ss-header-4:not(:last-child) {
+                    padding-right: 16px;
+                }
+          
+                
+                .header-right-ss-header-4 .header-search-ss-header-4 {
+                    display: none;
+                }
+    
+            
+                
+                .header-right-ss-header-4 .header-account-ss-header-4 {
+                    display: none;
+                }
+
+                .header-announcement-ss-header-4 {
+                    background-color: {{section.settings.heading_bg}};
+                    padding: 6px 10px;
+                    border: {{section.settings.heading_border_w}}px solid {{section.settings.heading_border_color}};
+                    border-radius: {{section.settings.heading_radius}}px;
+                    text-align: center;
+                }
+    
+                .header-announcement-ss-header-4 * {
+                    margin: 0;
+                    font-size: {{section.settings.heading_size_mobile}}px;
+                    color:{{section.settings.heading_color}};
+                    line-height: 150%;
+                    text-transform: unset;
+                    text-decoration: none;
+                    font-weight: {{section.settings.heading_weight}};
+                }
+
+                 @media(min-width: 1024px) {
+                    .section-ss-header-4-settings {
+                        padding: 0 5rem;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        padding-left: 4rem;
+                        padding-right: 4rem;
+                    }
+    
+                    .header-body-ss-header-4 {
+                        display: grid;
+                        padding: 0px 0px;
+                        margin-top: 10px;
+                        gap: 32px;
+                    }
+    
+                    .header-menu-burder-ss-header-4 {
+                        display: none;
+                    }
+    
+                    .header-menu-list-ss-header-4 {
+                        display: flex;
+                        gap: 4px;
+                    }
+    
+                    .header-menu-link-ss-header-4 {
+                        font-size: 13px;
+                        transition: all 0.25s ease;
+                    }
+    
+                    .header-menu-item-ss-header-4.active>.header-menu-link-ss-header-4 {
+                        transition: all 0.25s ease;
+                        color: #1f171f;
+                    }
+    
+                    .header-submenu-ss-header-4 .header-menu-item-parent-ss-header-4 {
+                        max-width: 100%;
+                    }
+    
+                    .header-submenu-ss-header-4 .header-menu-item-ss-header-4::after {
+                        display: none;
+                    }
+    
+                    .header-menu-item-parent-ss-header-4.active>.header-menu-item-icon-ss-header-4 {
+                        transform: rotate(180deg);
+                        transition: all 0.25s ease 0s;
+                    }
+    
+                    .header-logo-ss-header-4 {
+                        max-width: 130px;
+                    }
+    
+                    .header-logo-image-desktop-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-logo-image-mobile-ss-header-4 {
+                        display: none;
+                    }
+    
+                    .header-logo-text-ss-header-4 {
+                        font-size: 20px;
+                        transition: all 0.25s ease;
+                    }
+    
+                    .header-logo-text-ss-header-4:hover {
+                        transition: all 0.25s ease;
+                        color: #a5a2a5;
+                    }
+    
+                    .header-right-ss-header-4 {
+                        gap: 16px;
+                        order: 3;
+                    }
+    
+                    .header-search-text-ss-header-4,
+                    .header-account-text-ss-header-4 {
+                        display: inline;
+                        font-size: {{section.settings.icon_text_size}}px;
+                    }
+    
+                    .header-search-text-ss-header-4:hover,
+                    .header-account-text-ss-header-4:hover {
+                        transition: all .25s ease 0s;
+                        color: {{section.settings.icon_text_color}} !important;
+                    }
+    
+                    .header-cart-text-ss-header-4 {
+                        display: inline;
+                    }
+    
+                    .header-cart-ss-header-4:hover .header-cart-text-ss-header-4 {
+                        transition: all .25s ease 0s;
+                        color: {{section.settings.badge_color_hover}} !important;
+                    }
+    
+                    .header-search-icon-ss-header-4,
+                    .header-account-icon-ss-header-4,
+                    .header-cart-icon-ss-header-4 {
+                        display: none;
+                        width: {{section.settings.icon_w}}px;
+                    }
+    
+                    .header-search-icon-ss-header-4:hover svg path,
+                    .header-account-icon-ss-header-4:hover svg path {
+                        stroke: {{section.settings.icon_color_hover}};
+                        transition: all .25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4:hover .header-cart-icon-ss-header-4 svg path {
+                        stroke: {{section.settings.badge_color_hover}};
+                        transition: all .25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4 {
+                        padding: 10px 16px;
+                        transition: all 0.25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4:hover {
+                        background-color: {{section.settings.badge_bg_hover}};
+                        border-color: {{section.settings.badge_border_color_hover}};
+                        transition: all 0.25s ease 0s;
+                    }
+    
+                    .header-cart-ss-header-4 .cart-count-bubble span {
+                        font-size: {{section.settings.badge_size}}px;
+                        line-height: 130%;
+                        position: relative;
+                    }
+    
+                    .header-cart-ss-header-4 .cart-count-bubble {
+                        position: static;
+                        transform: translateX(0);
+                    }
+    
+                    .header-cart-ss-header-4:hover .cart-count-bubble span {
+                        transition: all .25s ease 0s;
+                        color: {{section.settings.badge_color}};
+                    }
+    
+                    .header-menu-mobile-ss-header-4 {
+                        display: none;
+                    }
+    
+                    .header-logo-desktop-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-logo-mobile-ss-header-4 {
+                        display: none;
+                    }
+    
+                }
+            
+
+                @media(min-width: 1024px) {
+    
+                    .header-body-ss-header-4 {
+                        grid-template-columns: 1fr 130px 1fr;
+                    }
+    
+                    .header-menu-ss-header-4 {
+                        order: 1;
+                    }
+    
+                    .header-logo-ss-header-4 {
+                        order: 2;
+                        text-align: center;
+                    }
+         
+                    
+                    .header-search-icon-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-search-text-ss-header-4 {
+                        display: none;
+                    }
+              
+                    
+                    .header-account-icon-ss-header-4 {
+                        display: block;
+                    }
+    
+                    .header-account-text-ss-header-4 {
+                        display: none;
+                    }
+                
+                    
+                    .header-right-ss-header-4 .header-search-ss-header-4 {
+                        display: block;
+                    }
+            
+
+                    .header-right-ss-header-4 .header-account-ss-header-4 {
+                        display: block;
+                    }
+               
+                    
+    
+                    .header-announcement-ss-header-4 {
+                        padding: 6px 16px;
+                        text-align: center;
+                    }
+    
+                    .header-announcement-ss-header-4 * {
+                        font-size: {{section.settings.heading_size}}px;
+                    }
+                }
+            </style>
+    
+    
+            <div class="section-ss-header-4 header-ss-header-4 scroll fixed top active onscroll">
+                <div class="section-ss-header-4-settings">
+    
+    
+                    <div class="header-announcement-ss-header-4">
+                        <p>{{section.settings.heading}}</p>
+                    </div>
+    
+    
+                    <div class="header-body-ss-header-4">
+                        <div class="header-menu-ss-header-4">
+    
+                            <div class="header-menu-burder-wrapper-ss-header-4">
+                                <button class="header-menu-burder-ss-header-4">
+                                    <span class="header-menu-burger-icon-ss-header-4"></span>
+                                </button>
+                            </div>
+                            <ul class="header-menu-list-ss-header-4">
+    
+    
+    
+    
+                                <li
+                                    class="header-menu-item-ss-header-4 header-menu-item-main-ss-header-4 header-menu-item-parent-ss-header-4">
+                                    <p class="header-menu-link-ss-header-4">
+                                        Women
+                                    </p>
+    
+    
+                                    <div class="header-submenu-ss-header-4">
+                                        <div class="header-submenu-bg-ss-header-4"></div>
+                                        <div class="header-submenu-inner-ss-header-4">
+                                            <div class="section-ss-header-4-settings"
+                                                style="grid-template-columns: 1fr 1fr;">
+                                                <div class="header-submenu-menu-ss-header-4">
+    
+                                                    <ul class="header-menu-list-ss-header-4">
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Gifts</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Gift
+                                                                        Guide</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Categories</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#"
+                                                                        class="header-menu-link-ss-header-4">Clothing</a>
+                                                                </li>
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Trending</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Best
+                                                                        Sellers</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                    </ul>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </li>
+    
+    
+    
+                                <li
+                                    class="header-menu-item-ss-header-4 header-menu-item-main-ss-header-4 header-menu-item-parent-ss-header-4">
+                                    <p class="header-menu-link-ss-header-4">
+                                        Men
+                                    </p>
+    
+    
+                                    <div class="header-submenu-ss-header-4">
+                                        <div class="header-submenu-bg-ss-header-4"></div>
+                                        <div class="header-submenu-inner-ss-header-4">
+                                            <div class="section-ss-header-4-settings"
+                                                style="grid-template-columns: 1fr 1fr;">
+                                                <div class="header-submenu-menu-ss-header-4">
+    
+                                                    <ul class="header-menu-list-ss-header-4">
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Gifts</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Gift
+                                                                        Guide</a>
+                                                                </li>
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Categories</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#"
+                                                                        class="header-menu-link-ss-header-4">Clothing</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                        <li
+                                                            class="header-menu-item-ss-header-4 header-menu-item-with-submenu-ss-header-4">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Trending</a>
+    
+    
+                                                            <ul class="header-menu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Best
+                                                                        Sellers</a>
+                                                                </li>
+    
+                                                            </ul>
+    
+                                                        </li>
+    
+                                                    </ul>
+    
+                                                </div>
+    
+    
+    
+                                                <div class="header-submenu-collections-ss-header-4">
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </li>
+    
+    
+    
+                                <li
+                                    class="header-menu-item-ss-header-4 header-menu-item-main-ss-header-4 header-menu-item-parent-ss-header-4">
+                                    <p class="header-menu-link-ss-header-4">
+                                        About
+                                    </p>
+    
+    
+                                    <div class="header-submenu-ss-header-4" style="top: calc(100% - 21.3333px);">
+                                        <div class="header-submenu-bg-ss-header-4" style="height: 21.3333px;"></div>
+                                        <div class="header-submenu-inner-ss-header-4">
+                                            <div class="section-ss-header-4-settings" style="grid-template-columns: 1fr ;">
+                                                <div class="header-submenu-menu-ss-header-4">
+    
+                                                    <ul class="header-menu-list-ss-header-4">
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="https://section.store/pages/timeline-2"
+                                                                class="header-menu-link-ss-header-4">About</a>
+    
+    
+                                                        </li>
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="https://section.store/pages/form-builder"
+                                                                class="header-menu-link-ss-header-4">Contact</a>
+    
+    
+                                                        </li>
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="https://section.store/pages/faq-10"
+                                                                class="header-menu-link-ss-header-4">FAQ</a>
+    
+    
+                                                        </li>
+    
+                                                        <li class="header-menu-item-ss-header-4 ">
+                                                            <a href="#" class="header-menu-link-ss-header-4">Freebies</a>
+    
+    
+                                                        </li>
+    
+                                                    </ul>
+    
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </li>
+    
+    
+                            </ul>
+    
+                            <div class="header-menu-mobile-ss-header-4">
+                                <div class="header-menu-mobile-inner-ss-header-4">
+                                    <ul class="header-menu-list-ss-header-4">
+    
+                                        <li class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                            <a href="#" class="header-menu-link-ss-header-4">Shop</a>
+    
+                                            <span class="header-menu-item-icon-ss-header-4">
+                                                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 448 512">
+                                                    <path fill="currentColor"
+                                                        d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                        class=""></path>
+                                                </svg>
+                                            </span>
+                                            <div class="header-menu-mobile-submenu-ss-header-4">
+                                                <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                    <span class="header-menu-item-icon-ss-header-4">
+                                                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                class=""></path>
+                                                        </svg>
+                                                    </span>
+                                                    Shop
+                                                </button>
+                                                <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="/collections/new-arrivals"
+                                                            class="header-menu-link-ss-header-4">New Arrivals</a>
+    
+                                                    </li>
+    
+                                                    <li
+                                                        class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Best Sellers</a>
+    
+                                                        <span class="header-menu-item-icon-ss-header-4">
+                                                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 448 512">
+                                                                <path fill="currentColor"
+                                                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                    class=""></path>
+                                                            </svg>
+                                                        </span>
+                                                        <div class="header-menu-mobile-submenu-ss-header-4">
+                                                            <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                                <span class="header-menu-item-icon-ss-header-4">
+                                                                    <svg fill="currentColor"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 448 512">
+                                                                        <path fill="currentColor"
+                                                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                            class=""></path>
+                                                                    </svg>
+                                                                </span>
+                                                                Best Sellers
+                                                            </button>
+                                                            <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="#" class="header-menu-link-ss-header-4">Shop
+                                                                        All</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/backpacks"
+                                                                        class="header-menu-link-ss-header-4">Backpacks</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/cardigans"
+                                                                        class="header-menu-link-ss-header-4">Cardigans</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/pullovers"
+                                                                        class="header-menu-link-ss-header-4">Pullovers</a>
+                                                                </li>
+    
+                                                            </ul>
+                                                        </div>
+    
+                                                    </li>
+    
+                                                    <li
+                                                        class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Shop by Price</a>
+    
+                                                        <span class="header-menu-item-icon-ss-header-4">
+                                                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 448 512">
+                                                                <path fill="currentColor"
+                                                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                    class=""></path>
+                                                            </svg>
+                                                        </span>
+                                                        <div class="header-menu-mobile-submenu-ss-header-4">
+                                                            <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                                <span class="header-menu-item-icon-ss-header-4">
+                                                                    <svg fill="currentColor"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 448 512">
+                                                                        <path fill="currentColor"
+                                                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                            class=""></path>
+                                                                    </svg>
+                                                                </span>
+                                                                Shop by Price
+                                                            </button>
+                                                            <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/under-50"
+                                                                        class="header-menu-link-ss-header-4">Under $50</a>
+                                                                </li>
+    
+                                                                <li class="header-menu-item-ss-header-4">
+                                                                    <a href="/collections/50"
+                                                                        class="header-menu-link-ss-header-4">Over $50</a>
+                                                                </li>
+    
+                                                            </ul>
+                                                        </div>
+    
+                                                    </li>
+    
+                                                </ul>
+                                            </div>
+    
+                                        </li>
+    
+                                        <li class="header-menu-item-ss-header-4 header-mobile-menu-item-parent-ss-header-4">
+                                            <a href="#" class="header-menu-link-ss-header-4">About</a>
+    
+                                            <span class="header-menu-item-icon-ss-header-4">
+                                                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 448 512">
+                                                    <path fill="currentColor"
+                                                        d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                        class=""></path>
+                                                </svg>
+                                            </span>
+                                            <div class="header-menu-mobile-submenu-ss-header-4">
+                                                <button class="header-menu-mobile-submenu-heading-ss-header-4">
+                                                    <span class="header-menu-item-icon-ss-header-4">
+                                                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                                class=""></path>
+                                                        </svg>
+                                                    </span>
+                                                    About
+                                                </button>
+                                                <ul class="header-mobile-submenu-list-ss-header-4">
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Our Story</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Mission</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Sustainability</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Locations</a>
+    
+                                                    </li>
+    
+                                                    <li class="header-menu-item-ss-header-4 ">
+                                                        <a href="#" class="header-menu-link-ss-header-4">Contact</a>
+    
+                                                    </li>
+    
+                                                </ul>
+                                            </div>
+    
+                                        </li>
+    
+    
+                                        <li class="header-menu-item-ss-header-4">
+                                            <a href="/search" class="header-menu-link-ss-header-4">Search</a>
+                                        </li>
+    
+    
+                                        <li class="header-menu-item-ss-header-4">
+                                            <a href="/account" class="header-menu-link-ss-header-4">Login</a>
+                                        </li>
+    
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="header-logo-ss-header-4">
+    
+                            <a href="{{section.settings.logo_link}}" class="header-logo-image-ss-header-4 ">
+                                 {% if section.settings.logo_img != blank %}
+                                    <img src="{{section.settings.logo_img | img_url:'master'}}" alt="Image Logo"
+                                        class="header-logo-first-ss-header-4">
+                                {% else %}
+                                    <div class="img header-logo-first-ss-header-4">
+                                    {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                                    </div>
+                                {% endif %}
+
+                                {% if section.settings.logo_img != blank %}
+                                    <img src="{{section.settings.logo_img | img_url:'master'}}" alt="Image Logo"
+                                        class="header-logo-second-ss-header-4">
+                                {% else %}
+                                    <div class="img header-logo-second-ss-header-4">
+                                    {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                                    </div>
+                                {% endif %}
+                            </a>
+    
+    
+                        </div>
+    
+                        <div class="header-right-ss-header-4">
+    
+                            <a href="{{section.settings.search_link}}" class="header-search-ss-header-4">
+                                <span class="header-search-icon-ss-header-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16"
+                                        width="16">
+                                        <path
+                                            d="M0.9375 5.7125a4.7749999999999995 4.7749999999999995 0 1 0 9.549999999999999 0 4.7749999999999995 4.7749999999999995 0 1 0 -9.549999999999999 0"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="m14.0625 14.0625 -5.06875 -5.06875" fill="none" stroke="#000000"
+                                            stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </span>
+                                <span class="header-search-text-ss-header-4">{{section.settings.search_text}}</span>
+                            </a>
+    
+    
+                            <a href="{{section.settings.account_link}}"
+                                class="header-account-ss-header-4">
+                                <span class="header-account-icon-ss-header-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16"
+                                        width="16">
+                                        <path
+                                            d="M3.9187499999999997 4.53125a3.5812500000000003 3.5812500000000003 0 1 0 7.1625000000000005 0 3.5812500000000003 3.5812500000000003 0 1 0 -7.1625000000000005 0"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path
+                                            d="m0.9375 14.675 0.23125 -1.28125A6.4375 6.4375 0 0 1 7.5 8.125a6.4375 6.4375 0 0 1 6.331250000000001 5.28125l0.23125 1.28125"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </span>
+                                <span class="header-account-text-ss-header-4">{{section.settings.account_text}}</span>
+                            </a><a href="{{section.settings.bagde_link}}" class="header-cart-ss-header-4">
+                                <span class="header-cart-icon-ss-header-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 16 16" height="16"
+                                        width="16">
+                                        <path d="M2.6,5h10.7v7.8c0,1-.8,1.8-1.8,1.8h-7.2c-1,0-1.8-.8-1.8-1.8h0v-7.8Z"
+                                            fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+                                        <path d="M5,5.3v-.9c0-1.6,1.3-3,3-3,1.6,0,3,1.3,3,3v.9" fill="none" stroke="#000000"
+                                            stroke-miterlimit="10" stroke-width="1"></path>
+                                    </svg>
+                                </span>
+                                <span class="header-cart-text-ss-header-4">Bag:</span>
+                                <div class="cart-count-bubble"><span aria-hidden="true">{{section.settings.bagde_count}}</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <script>
+                function initHeader4() {
+                    let header = document.querySelector('.header-ss-header-4');
+                    let menuMobile = document.querySelector('.header-menu-mobile-ss-header-4');
+                    let logo = document.querySelector('.header-logo-ss-header-4 img');
+                    let subMenus = document.querySelectorAll('.header-submenu-ss-header-4');
+
+                    let mobileSubMenu = document.querySelectorAll('.header-menu-mobile-submenu-ss-header-4');
+                    let parentItems = document.querySelectorAll('.header-menu-item-main-ss-header-4.header-menu-item-parent-ss-header-4');
+                    if (header) {
+                        if (window.scrollY > 0) {
+                            header.classList.add('onscroll');
+                        } else {
+                            header.classList.add('top');
+                        }
+
+                        let lastScrollTop = window.scrollY;
+
+                        document.addEventListener('scroll', () => {
+
+                            if (parentItems) {
+                                parentItems.forEach(el => el.classList.remove('active'));
+                            }
+
+                            header.classList.remove('open');
+
+                            const currentScrollTop = window.scrollY;
+                            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+                            if (currentScrollTop === 0) {
+                                header.classList.add('top');
+                            }
+
+                            if (currentScrollTop <= 0) {
+                                header.classList.add('active');
+                                header.classList.remove('onscroll');
+                                return;
+                            }
+
+                            if (currentScrollTop >= maxScroll) {
+                                header.classList.remove('active');
+                                return;
+                            }
+
+                            if (currentScrollTop !== lastScrollTop) {
+                                if (header.classList.contains('scroll')) {
+                                    if (currentScrollTop > lastScrollTop) {
+                                        header.classList.remove('active');
+                                    } else {
+                                        header.classList.add('active');
+                                    }
+                                }
+
+                                // if (header.classList.contains('transparent')) {
+                                //     if (currentScrollTop === 0) {
+                                //         header.classList.remove('onscroll');
+                                //         header.classList.add('top');
+                                //     } else {
+                                //         header.classList.add('onscroll');
+                                //         header.classList.remove('top');
+                                //     }
+                                // }
+
+                                lastScrollTop = currentScrollTop;
+                            }
+                        });
+
+                        let burger_icon = header.querySelector('.header-menu-burder-wrapper-ss-header-4');
+                        if (burger_icon) {
+                            burger_icon.addEventListener('click', () => {
+                                header.classList.toggle('open');
+                                if (header.classList.contains('open')) {
+                                    document.body.style.overflow = 'hidden';
+                                } else {
+                                    if (mobileMenuItem) {
+                                        mobileMenuItem.forEach(el => {
+                                            el.classList.remove('active');
+                                        })
+                                    }
+                                    document.body.style.overflow = '';
+                                }
+                            })
+                        }
+
+                        document.addEventListener('click', (e) => {
+                            if (e.target == menuMobile) {
+                                document.body.style.overflow = '';
+                                header.classList.remove('open');
+                                if (mobileMenuItem) {
+                                    mobileMenuItem.forEach(el => {
+                                        el.classList.remove('active');
+                                    })
+                                }
+                            }
+                        });
+
+                        if (parentItems) {
+                            parentItems.forEach(el => {
+                                document.addEventListener('click', (event) => {
+                                    if (!el.contains(event.target) && !el.classList.contains('active')) {
+                                        return;
+                                    }
+
+                                    if (!el.contains(event.target) && el.classList.contains('active')) {
+                                        el.classList.remove('active');
+                                    }
+
+                                    if (!el.contains(event.target)) {
+                                        header.classList.remove('open');
+                                    }
+                                });
+
+                                el.addEventListener('mouseenter', () => {
+                                    el.classList.add('active');
+                                    header.classList.add('onscroll');
+                                    header.classList.add('open');
+                                });
+
+                                el.addEventListener('mouseleave', () => {
+                                    el.classList.remove('active');
+                                    header.classList.remove('open');
+                                });
+                            });
+                        }
+
+                        if (mobileSubMenu) {
+                            mobileSubMenu.forEach(el => {
+                                let parentItem = el.closest('.header-mobile-menu-item-parent-ss-header-4');
+                                let heading = el.querySelector('.header-menu-mobile-submenu-heading-ss-header-4');
+
+                                if (parentItem) {
+                                    parentItem.addEventListener('click', () => {
+                                        parentItem.classList.add('active');
+                                    });
+                                }
+
+                                if (heading) {
+                                    heading.addEventListener('click', (event) => {
+                                        event.stopPropagation();
+                                        parentItem.classList.remove('active');
+                                    });
+                                }
+                            });
+                        }
+
+                        if (logo) {
+                            const logoHeight = logo.offsetHeight;
+                            const halfLogoHeight = logoHeight / 1.5;
+
+                            if (subMenus) {
+                                subMenus.forEach(el => {
+                                    el.style.top = `calc(100% - ${halfLogoHeight}px)`;
+                                    let paddingDiv = el.querySelector('.header-submenu-bg-ss-header-4');
+                                    if (paddingDiv) {
+                                        paddingDiv.style.height = `${halfLogoHeight}px`;
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', initHeader4);
+
+                
+            </script>
+
+            
+{% schema %}
+{
+  "name": "PC - Header #4",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Annoucement"
+    },
+    {
+        "type":"text",
+        "id":"heading",
+        "label":"Announcement Text",
+        "default":"Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Font Size",
+      "default":12,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Font Size",
+      "default":12,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "heading_color",
+      "default":"#1f171f"
+    },
+    {
+      "type": "range",
+      "id": "heading_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "heading_border_color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "heading_bg",
+      "default":"#fff"
+    },
+    {
+        "type":"header",
+        "content":"List Title"
+    },
+    {
+      "type": "range",
+      "id": "list_title_size",
+      "label": "Font Size",
+      "default": 24,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "list_title_weight",
+      "label": "Font Weight",
+      "default": 400,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "list_title_color",
+      "label": "Color",
+      "default":"#1f171f"
+    },
+    {
+      "type": "range",
+      "id": "list_title_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "list_title_bg",
+      "label": "Background Color",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "id": "list_title_bg_active",
+      "label": "Background Color Active",
+      "default":"#fff"
+    },
+    {
+        "type":"header",
+        "content":"Link"
+    },
+    {
+      "type": "range",
+      "id": "link_weight",
+      "label": "Font Weight",
+      "default": 400,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color_hover",
+      "label": "Color Hover",
+      "default":"#a5a2a5"
+    },
+    {
+      "type": "range",
+      "id": "link_right_border_w",
+      "label": "Right Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "link_right_border_color",
+      "label": "Right Border Color",
+      "default":"#413a41"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Link Title"
+    },
+     {
+      "type": "range",
+      "id": "mobile_list_title_size",
+      "label": "Font Size",
+      "default": 24,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_list_title_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "mobile_list_title_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Link Block"
+    },
+    {
+      "type": "range",
+      "id": "mobile_link_border_w",
+      "label": "Right Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "mobile_link_border_color",
+      "label": "Right Border Color",
+      "default":"#413a41"
+    },
+    {
+      "type": "color",
+      "id": "mobile_link_bg",
+      "label": "Background Color",
+      "default":"#000"
+    },
+    {
+      "type": "header",
+      "content": "Logo Image"
+    },
+    {
+        "type":"image_picker",
+        "id":"logo_img",
+        "label":"Image"
+    },
+    {
+        "type":"url",
+        "id":"logo_link",
+        "label":"Link"
+    },
+    {
+      "type": "range",
+      "id": "logo_img_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "logo_img_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "logo_img_border_color",
+      "label": "Border Color",
+      "default":"#413a41"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+        "type":"text",
+        "id":"search_text",
+        "label":"Search Text",
+        "default":"Search"
+    },
+    {
+        "type":"url",
+        "id":"logo_link",
+        "label":"Link"
+    },
+    {
+        "type":"url",
+        "id":"account_link",
+        "label":"Account Link"
+    },
+    {
+        "type":"text",
+        "id":"account_text",
+        "label":"Account Text",
+        "default":"Account"
+    },
+    {
+      "type": "range",
+      "id": "icon_text_size",
+      "label": "Text Font Size",
+      "default":13,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "icon_text_color",
+      "label": "Text Color",
+      "default":"#fff"
+    },
+    {
+      "type": "range",
+      "id": "icon_w",
+      "label": "Icon Width",
+      "default":20,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color_hover",
+      "label": "Hover Icon Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color_open",
+      "label": "Open Icon Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+        "type":"url",
+        "id":"bagde_link",
+        "label":"Badge Link"
+    },
+    {
+        "type":"number",
+        "id":"bagde_count",
+        "label":"Badge Count",
+        "default":0
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Text Font Size",
+      "default":12,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Text Color",
+      "default":"#1f171f"
+    },
+    {
+      "type": "color",
+      "id": "badge_color_hover",
+      "label": "Text Color Hover",
+      "default":"#1f171f"
+    },
+    {
+      "type": "range",
+      "id": "badge_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color_hover",
+      "label": "Border Color Hover",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Background Color",
+      "default":"#e4fb02"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_hover",
+      "label": "Background Color Hover",
+      "default":"#e4fb02"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "label": "Open Background Color",
+      "id": "section_bg_open",
+      "default":"#1f171f"
+    }
+
+  ],
+    "blocks": [],
+  "presets": [
+    {
+      "name": "PC - Header #4",
+      "blocks":[
+      ]
+    }
+  ]
+}
+{% endschema %}

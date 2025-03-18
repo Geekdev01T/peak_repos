@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        .pc-sv-product-carousel {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .pc-sv-product-carousel .swiper {
+            width: 100%;
+            padding-bottom: 40px;
+        }
+
+        .pc-sv-product-carousel .swiper .swiper-slide {
+            text-decoration: none;
+        }
+
+        .pc-sv-product-carousel .pc-sv-product-slide {
+            position: relative;
+            width: 130px;
+            cursor: pointer;
+        }
+
+        .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-image {
+            width: 100%;
+            height: 130px;
+            border-radius: 50%;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+
+        .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-name {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: .01em;
+            color: #333;
+            transition: all .2s;
+        }
+
+        .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-name:hover {
+            color: #444444;
+        }
+
+        .pc-sv-product-carousel .pc-sv-hover-name {
+            position: fixed;
+            padding: 5px 10px;
+            background: rgb(255, 253, 253);
+            color: rgba(0, 0, 0, 0.8);
+            /* border-radius: 4px; */
+
+            text-decoration: none;
+            border: 1px solid #000;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .pc-sv-product-carousel .pc-sv-product-slide {
+                width: 130px;
+            }
+
+            .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-image {
+                height: 130px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pc-sv-product-carousel .pc-sv-product-slide {
+                width: 110px;
+            }
+
+            .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-image {
+                height: 110px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pc-sv-product-carousel .pc-sv-product-slide {
+                width: 80px;
+            }
+
+            .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-image {
+                height: 80px;
+            }
+
+            .pc-sv-product-carousel .pc-sv-product-slide .pc-sv-product-name {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pc-sv-product-carousel">
+        <div class="swiper pc-sv-swiper-carousel">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Best Sellers">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg"
+                            alt="Best Sellers" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Best Sellers</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Collabs">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="
+                            Collabs" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Collabs</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Sling">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg"
+                            alt="Sling" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Sling</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Sport Canteen">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="
+                            Sport Canteen" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Sport Canteen</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Straw Cups">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg"
+                            alt="Straw Cups" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Straw Cups</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Go Cup XL">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg"
+                            alt="Go Cup XL" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Go Cup XL</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Coffee">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="
+                            Coffee" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Coffee</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Coolers & Bags">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg"
+                            alt="Coolers & Bags" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Coolers & Bags</div>
+                    </div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="pc-sv-product-slide" data-name="Coffee">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="
+                            Coffee" class="pc-sv-product-image">
+                        <div class="pc-sv-product-name">Coffee</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="pc-sv-hover-name"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.pc-sv-swiper-carousel', {
+            slidesPerView: 2.8,
+            spaceBetween: 15,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 3.8,
+                },
+                480: {
+                    slidesPerView: 4,
+                },
+                600: {
+                    slidesPerView: 5,
+                },
+                768: {
+                    slidesPerView: 5,
+                },
+                1024: {
+                    slidesPerView: 8.5,
+                }
+            }
+        });
+
+        // Hover effect
+        const hoverName = document.querySelector('.pc-sv-hover-name');
+        const productSlides = document.querySelectorAll('.pc-sv-product-slide');
+
+        productSlides.forEach(slide => {
+            let initialPosition = null;
+            let hoverTimeout = null;
+
+            const showHoverName = (e) => {
+                const name = slide.getAttribute('data-name');
+                hoverName.textContent = name;
+                hoverName.style.display = 'block';
+
+                // Capture initial cursor position on enter
+                initialPosition = {
+                    x: e.pageX + 12,
+                    y: e.pageY + 20
+                };
+
+                // Ensure the hover name stays within viewport
+                const rightEdge = window.innerWidth - hoverName.offsetWidth - 10;
+                const topEdge = 10;
+
+                hoverName.style.left = `${Math.min(initialPosition.x, rightEdge)}px`;
+                hoverName.style.top = `${Math.max(initialPosition.y, topEdge)}px`;
+            };
+
+            const moveHoverName = (e) => {
+                if (initialPosition) {
+                    // Keep using initial position from mouseenter
+                    hoverName.style.left = `${initialPosition.x}px`;
+                    hoverName.style.top = `${initialPosition.y}px`;
+                }
+            };
+
+            const handleMouseEnter = (e) => {
+                hoverTimeout = setTimeout(() => showHoverName(e), 500);
+            };
+
+            const handleMouseLeave = () => {
+                clearTimeout(hoverTimeout);
+                hoverName.style.display = 'none';
+            };
+
+            slide.querySelector('.pc-sv-product-image').addEventListener('mouseenter', handleMouseEnter);
+            slide.querySelector('.pc-sv-product-name').addEventListener('mouseenter', handleMouseEnter);
+
+            slide.querySelector('.pc-sv-product-image').addEventListener('mousemove', moveHoverName);
+            slide.querySelector('.pc-sv-product-name').addEventListener('mousemove', moveHoverName);
+
+            slide.querySelector('.pc-sv-product-image').addEventListener('mouseleave', handleMouseLeave);
+            slide.querySelector('.pc-sv-product-name').addEventListener('mouseleave', handleMouseLeave);
+        });
+
+    </script>
+</body>
+
+</html>

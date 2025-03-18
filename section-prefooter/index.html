@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <title>Prefooter</title>
+</head>
+
+<body>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(23 23 23);
+        }
+
+        .services-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 60px 30px;
+            background: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .services-container .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .services-container .services-grid .service-card {
+            padding: 0px 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            position: relative;
+        }
+
+        .services-container .services-grid .service-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background-color: #e5e5e5;
+        }
+
+        .services-container .services-grid .service-card .service-card-right {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .services-container .service-card .service-icon {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        .services-container .service-card .service-card-right .service-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #171717;
+            margin-bottom: 5px;
+
+        }
+
+        .services-container .service-card .service-card-right .service-description {
+            font-size: 14px;
+            color: #171717;
+            line-height: 1.4;
+            margin-top: -.4em;
+        }
+
+        .services-container .swiper {
+            display: none;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .services-container .swiper-slide {
+            width: 100%;
+        }
+
+        .services-container .swiper-pagination {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        /* Style des bullets inactifs */
+        .services-container .swiper-pagination-bullet {
+            width: 5px;
+            height: 5px;
+            background: #000;
+            opacity: 1;
+            margin: 0 !important;
+            border-radius: 3px;
+        }
+
+        /* Style du bullet actif */
+        .services-container .swiper-pagination-bullet-active {
+            transform: scale(2);
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 50%;
+        }
+
+        /* Pour éviter le changement brusque de taille */
+        .services-container .swiper-pagination-bullet {
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 1075px) {
+            .services-container {
+                padding: 40px 20px;
+            }
+
+            .services-container .services-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .services-container .service-card {
+                padding: 0px 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+                position: relative;
+            }
+
+            .services-container .service-card:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: -10px;
+            }
+
+            .services-container .service-card .service-card-right {
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 1015px) {
+            .services-container .services-grid {
+                display: none;
+            }
+
+            .services-container .swiper {
+                display: block;
+            }
+
+            .services-container .service-card {
+                margin: 0;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="services-container">
+            <!-- Desktop Grid View -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0z" />
+                    </svg>
+                    <div class="service-card-right">
+                        <h3 class="service-title">Customer service</h3>
+                        <p class="service-description">It's not actually free we just price it into the products.</p>
+                    </div>
+
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 3.6v16.8a.6.6 0 0 1-.6.6H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h16.8a.6.6 0 0 1 .6.6z M3.8 8h16.4M7 3v5M17 3v5" />
+                    </svg>
+                    <div class="service-card-right">
+                        <h3 class="service-title">Fast Free Shipping</h3>
+                        <p class="service-description">Get free shipping on orders of $150 or more</p>
+                    </div>
+
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <div class="service-card-right">
+                        <h3 class="service-title">Refer a friend</h3>
+                        <p class="service-description">Refer a friend and get 15% off each other.</p>
+                    </div>
+
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <div class="service-card-right">
+                        <h3 class="service-title">Secure payment</h3>
+                        <p class="service-description">Your payment information is processed securely</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Swiper View -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides will be cloned from desktop cards by JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Clone desktop cards for swiper
+                const desktopCards = document.querySelectorAll('.services-grid .service-card');
+                const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+                desktopCards.forEach(card => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    slide.appendChild(card.cloneNode(true));
+                    swiperWrapper.appendChild(slide);
+                });
+
+                // Initialize Swiper
+                const swiper = new Swiper('.swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    loop: false,
+                    grabCursor: true
+                });
+            });
+        </script>
+    </body>
+
+</html>

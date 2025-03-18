@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .section-section_id {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            overflow: hidden;
+            border-radius: 0px;
+        }
+
+        #shopify-section-section_id {
+            padding: 0;
+            max-width: none;
+            width: 100%;
+        }
+
+        #shopify-section-section_id img {
+            height: 100%;
+        }
+
+        .section-section_id-padding {
+            margin: 0 auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            position: relative;
+            height: 100%;
+        }
+
+        .pc-ab-banner-section_id {
+            height: 600px;
+        }
+
+        .pc-ab-banner-button-wrapper-section_id {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .section-section_id .pc-ab-banner-image-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            overflow: hidden;
+            border-radius: 0px;
+        }
+
+        .section-section_id .pc-ab-banner-image-wrapper--active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .section-section_id .pc-ab-banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .section-section_id .pc-ab-banner-image--desktop {
+            display: none;
+        }
+
+        .pc-ab-banner-content-section_id {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            line-height: 1;
+        }
+
+        .pc-ab-banner-title-section_id {
+            text-align: left;
+        }
+
+        .pc-ab-banner-title-section_id * {
+            margin: 0;
+            font-size: 48px;
+            color: #fff;
+            line-height: 130%;
+            text-transform: unset;
+        }
+
+        .pc-ab-banner-subtitle-section_id {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .pc-ab-banner-subtitle-section_id * {
+            margin: 0;
+            font-size: 16px;
+            color: #fff;
+            line-height: 130%;
+            text-transform: unset;
+        }
+
+        .pc-ab-banner-button-section_id {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: fit-content;
+            font-size: 16px;
+            color: #000000;
+            line-height: 120%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 0px;
+            background-color: #FFFFFF;
+            border: 0px solid #FFFFFF;
+            transition: all 0.25s ease 0s;
+            position: relative;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .pc-ab-banner-button-section_id:hover {
+            background-color: #000000;
+            border: 0px solid #000000;
+            color: #FFFFFF;
+            transition: all 0.25s ease 0s;
+        }
+
+        .pc-ab-banner-button-second-section_id {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: fit-content;
+            font-size: 16px;
+            color: #000000;
+            line-height: 120%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 0px;
+            background-color: #FFFFFF;
+            border: 0px solid #000000;
+            transition: all 0.25s ease 0s;
+            position: relative;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .pc-ab-banner-button-second-section_id:hover {
+            background-color: #000000;
+            border: 0px solid #000000;
+            color: #FFFFFF;
+            transition: all 0.25s ease 0s;
+        }
+
+        @media screen and (min-width: 750px) {
+
+            .section-section_id {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+            }
+
+            .section-section_id-padding {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+
+            .pc-ab-banner-section_id {
+                height: 600px;
+            }
+
+            .section-section_id .pc-ab-banner-image-wrapper {
+                border-radius: 0px;
+            }
+
+            .section-section_id .pc-ab-banner-image--desktop {
+                display: block;
+            }
+
+            .section-section_id .pc-ab-banner-image--mobile {
+                display: none;
+            }
+
+            .pc-ab-banner-content-section_id {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                ;
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+
+            .pc-ab-banner-button-wrapper-section_id {
+                margin-top: 20px;
+                gap: 20px;
+            }
+
+            .pc-ab-banner-title-section_id * {
+                margin: 0;
+                font-size: 80px;
+            }
+
+            .pc-ab-banner-subtitle-section_id {
+                margin-top: 20px;
+            }
+
+            .pc-ab-banner-subtitle-section_id * {
+                margin: 0;
+                font-size: 16px;
+            }
+
+            .pc-ab-banner-button-section_id {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+
+            .pc-ab-banner-button-second-section_id {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+        }
+
+
+
+
+        /* STYLE FOR ANIMATION */
+        .pc-sticker-section_id {
+            position: relative;
+        }
+
+
+        .pc-sticker-stamp-sticker_WLLzwB {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 5%;
+            top: -580px;
+            transform: translateX(-10%);
+            width: 100px;
+            height: 100px;
+            pointer-events: none;
+        }
+
+        .pc-sticker-stamp-inner-sticker_WLLzwB {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 0px solid #000000;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .pc-sticker-stamp-inner-sticker_WLLzwB img,
+        .pc-sticker-stamp-inner-sticker_WLLzwB svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_WLLzwB {
+                width: 160px;
+                height: 160px;
+                left: 10%;
+                top: -510px;
+                transform: translateX(-10%);
+            }
+
+        }
+
+
+        @keyframes pcStickerAnimationsticker_WLLzwB {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_WLLzwB {
+            animation: pcStickerAnimationsticker_WLLzwB 4s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_ecyTm3 {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 91%;
+            top: -480px;
+            transform: translateX(-90%);
+            width: 140px;
+            height: 140px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_ecyTm3 {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 0px solid #000000;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .pc-sticker-stamp-inner-sticker_ecyTm3 img,
+        .pc-sticker-stamp-inner-sticker_ecyTm3 svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_ecyTm3 {
+                width: 200px;
+                height: 200px;
+                left: 90%;
+                top: -550px;
+                transform: translateX(-90%);
+            }
+
+        }
+
+        @keyframes pcStickerAnimationsticker_ecyTm3 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_ecyTm3 {
+            animation: pcStickerAnimationsticker_ecyTm3 2s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_iRnigp {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 85%;
+            top: -630px;
+            transform: translateX(-80%);
+            width: 140px;
+            height: 140px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_iRnigp {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 0%;
+            border: 0px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_iRnigp img,
+        .pc-sticker-stamp-inner-sticker_iRnigp svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_iRnigp {
+                width: 200px;
+                height: 200px;
+                left: 60%;
+                top: -540px;
+                transform: translateX(-60%);
+            }
+
+        }
+
+
+        @keyframes pcStickerAnimationsticker_iRnigp {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.075);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_iRnigp {
+            animation: pcStickerAnimationsticker_iRnigp 4s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_UACxWG {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 15%;
+            top: -175px;
+            transform: translateX(-15%);
+            width:110px;
+            height:110px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_UACxWG {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 0px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_UACxWG img,
+        .pc-sticker-stamp-inner-sticker_UACxWG svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_UACxWG {
+                width: 170px;
+                height: 170px;
+                left: 35%;
+                top: -590px;
+                transform: translateX(-35%);
+            }
+
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_UACxWG {
+            animation: stickerAnimationsticker_UACxWG 4s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_EeDiVa {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 85%;
+            top: -300px;
+            transform: translateX(-85%);
+            width: 120px;
+            height: 120px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_EeDiVa {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 0px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_EeDiVa img,
+        .pc-sticker-stamp-inner-sticker_EeDiVa svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_EeDiVa {
+                width: 170px;
+                height: 170px;
+                left: 5%;
+                top: -190px;
+                transform: translateX(-5%);
+            }
+
+        }
+
+
+        @keyframes pcStickerAnimationsticker_EeDiVa {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .pc-sticker-stamp-inner-sticker_EeDiVa {
+            animation: pcStickerAnimationsticker_EeDiVa 4s linear infinite;
+        }
+
+        .pc-sticker-stamp-sticker_n9fqNH {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 15%;
+            top: -390px;
+            transform: translateX(-15%);
+            width: 110px;
+            height: 110px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_n9fqNH {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 0%;
+            border: 0px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_n9fqNH img,
+        .pc-sticker-stamp-inner-sticker_n9fqNH svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_n9fqNH {
+                width: 170px;
+                height: 170px;
+                left: 30%;
+                top: -290px;
+                transform: translateX(-30%);
+            }
+
+        }
+
+        .pc-sticker-stamp-inner-sticker_n9fqNH {
+            animation: stickerAnimationsticker_n9fqNH 4s linear infinite;
+        }
+
+        .pc-sticker-stamp-sticker_9XaKDp {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: -120px;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_9XaKDp {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 0px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_9XaKDp img,
+        .pc-sticker-stamp-inner-sticker_9XaKDp svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_9XaKDp {
+                width: 240px;
+                height: 240px;
+                left: 90%;
+                top: -290px;
+                transform: translateX(-90%);
+            }
+
+        }
+
+        @keyframes pcStickerAnimationsticker_9XaKDp {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-10px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(10px);
+            }
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_9XaKDp {
+            animation: pcStickerAnimationsticker_9XaKDp 4s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_9XaKDp {
+            display: none !important;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_9XaKDp {
+                display: block !important;
+            }
+        }
+
+
+        .pc-sticker-stamp-sticker_abcUCN {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 55%;
+            top: -140px;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 110px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_abcUCN {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 0px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_abcUCN img,
+        .pc-sticker-stamp-inner-sticker_abcUCN svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_abcUCN {
+                width: 170px;
+                height: 170px;
+                left: 50%;
+                top: -200px;
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+        @keyframes pcStickerAnimationsticker_abcUCN {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_abcUCN {
+            animation: pcStickerAnimationsticker_abcUCN 4s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_Y4Ep7n {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: -120px;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+        }
+
+        .pc-sticker-stamp-inner-sticker_Y4Ep7n {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 0%;
+            border: 1px solid #000000;
+        }
+
+        .pc-sticker-stamp-inner-sticker_Y4Ep7n img,
+        .pc-sticker-stamp-inner-sticker_Y4Ep7n svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_Y4Ep7n {
+                width: 130px;
+                height: 130px;
+                left: 65%;
+                top: -350px;
+                transform: translateX(-65%);
+            }
+
+        }
+
+
+        @keyframes pcStickerAnimationsticker_Y4Ep7n {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .pc-sticker-stamp-inner-sticker_Y4Ep7n {
+            animation: pcStickerAnimationsticker_Y4Ep7n 4s linear infinite;
+        }
+
+
+        .pc-sticker-stamp-sticker_Y4Ep7n {
+            display: none !important;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sticker-stamp-sticker_Y4Ep7n {
+                display: block !important;
+            }
+        }
+    </style>
+
+
+
+    <div class="pc-container-animations-blocks">
+        <div style="background-color:#535353;"
+            class="section-section_id pc-ab-banner-section_id">
+            <div class="section-section_id-padding">
+        
+                <div class="pc-ab-banner-image-wrapper pc-ab-banner-image-wrapper--active" data-ab-banner-image="0">
+        
+                    <img class="pc-ab-banner-image" src="//section.store/cdn/shop/files/Hero_8_Scrolling_1_500x.png?v=1710728666" alt="">
+        
+                </div>
+        
+                <div class="pc-ab-banner-content-section_id">
+        
+        
+                    <div class="pc-ab-banner-button-wrapper-section_id">
+        
+                        <a href="/collections/all" class="pc-ab-banner-button-section_id">
+                            Shop Now
+                        </a>
+        
+        
+                        <a href="/collections/all"
+                            class="pc-ab-banner-button-second-section_id">
+                            Shop Now
+                        </a>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pc-sticker-section_id">
+        
+            <div class="pc-sticker-stamp-sticker_WLLzwB">
+                <div class="pc-sticker-stamp-inner-sticker_WLLzwB">
+        
+                    <img src="//section.store/cdn/shop/files/Red_Blue_Yellow_Only_Good_Vibes_Smiley_Circle_Sticker.png?v=1710378907"
+                        alt="" loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_ecyTm3">
+                <div class="pc-sticker-stamp-inner-sticker_ecyTm3">
+        
+                    <img src="//section.store/cdn/shop/files/coconut.png?v=1710469736" alt="" loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_iRnigp">
+                <div class="pc-sticker-stamp-inner-sticker_iRnigp">
+        
+                    <img src="//section.store/cdn/shop/files/Group_3.png?v=1710471052" alt="" loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_UACxWG">
+                <div class="pc-sticker-stamp-inner-sticker_UACxWG">
+        
+                    <img src="//section.store/cdn/shop/files/Album_Art_Graphics_Set_v1_1-12.png?v=1710728815" alt=""
+                        loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_EeDiVa">
+                <div class="pc-sticker-stamp-inner-sticker_EeDiVa">
+        
+                    <img src="//section.store/cdn/shop/files/Album_Art_Graphics_Set_v1_1-9.png?v=1710728916" alt=""
+                        loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_n9fqNH">
+                <div class="pc-sticker-stamp-inner-sticker_n9fqNH">
+        
+                    <img src="//section.store/cdn/shop/files/Album_Art_Graphics_Set_v1_1-1.png?v=1710728953" alt=""
+                        loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_9XaKDp">
+                <div class="pc-sticker-stamp-inner-sticker_9XaKDp">
+        
+                    <img src="//section.store/cdn/shop/files/nike_1.png?v=1689341631" alt="" loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_abcUCN">
+                <div class="pc-sticker-stamp-inner-sticker_abcUCN">
+        
+                    <img src="//section.store/cdn/shop/files/flash.png?v=1710231433" alt="" loading="lazy">
+        
+                </div>
+            </div>
+        
+            <div class="pc-sticker-stamp-sticker_Y4Ep7n">
+                <div class="pc-sticker-stamp-inner-sticker_Y4Ep7n">
+        
+                    <img src="//section.store/cdn/shop/files/Yellow_and_White_Illustrated_Smiley_Thank_You_For_Order_Circle_Sticker_1.png?v=1710825867"
+                        alt="" loading="lazy">
+        
+                </div>
+            </div>
+        
+        </div>
+        
+        <script>
+            (function () {
+                function setActiveBannerImage(index) {
+                    var banner = document.querySelector('.pc-ab-banner-section_id');
+                    var images = banner.querySelectorAll('.pc-ab-banner-image-wrapper');
+                    var activeImage = banner.querySelector(
+                        '.pc-ab-banner-image-wrapper--active'
+                    );
+                    var activeIndex = Array.prototype.indexOf.call(images, activeImage);
+                    var newActiveImage = images[index];
+
+                    if (activeIndex === index) {
+                        return;
+                    }
+
+                    activeImage.classList.remove('pc-ab-banner-image-wrapper--active');
+                    newActiveImage.classList.add('pc-ab-banner-image-wrapper--active');
+                }
+
+                var index = 0;
+                var interval;
+                function Init() {
+                    // for every 5s, switch to next image:
+                    var size = 1;
+                    if (size <= 1) return;
+                    interval = setInterval(function () {
+                        index = (index + 1) % size;
+                        setActiveBannerImage(index);
+                    }, 5000);
+
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    Init();
+                });
+
+            })();
+        </script>
+        
+        <script>
+            function initStampSticker2() {
+
+                if (document.querySelector('.pc-sticker-stamp-inner-sticker_UACxWG')) {
+                    window.addEventListener('scroll', function () {
+                        var scrollY = window.scrollY / 6;
+                        document.querySelector('.pc-sticker-stamp-inner-sticker_UACxWG').style.transform = 'rotate(' + scrollY + 'deg)';
+                    });
+                }
+
+
+
+
+
+                if (document.querySelector('.pc-sticker-stamp-inner-sticker_n9fqNH')) {
+                    window.addEventListener('scroll', function () {
+                        var scrollY = window.scrollY / 4;
+                        document.querySelector('.pc-sticker-stamp-inner-sticker_n9fqNH').style.transform = 'translateY(' + (scrollY * -1) + 'px)';
+                    });
+                }
+
+            }
+
+            document.addEventListener('DOMContentLoaded', initStampSticker2);
+        </script>
+    </div>
+</body>
+
+</html>

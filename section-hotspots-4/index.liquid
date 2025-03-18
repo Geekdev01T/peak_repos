@@ -1,0 +1,876 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<style>
+  .section-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      max-width: {% if section.settings.full_width %} 100% {% else %} 1200px {% endif %};
+      {% if section.settings.full_border %}
+        border: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+      {% endif %}
+      background-color: {{section.settings.section_bg}};
+      border-radius: {{section.settings.section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section.settings.section_mt}}px !important;
+      margin-bottom: {{section.settings.section_mb}}px !important;
+  }
+
+  .section-template--20940255002953__ss_hotspots_4_wNxrK8-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .hotspots-body-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+      align-items: center;
+  }
+
+  .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      border-radius: {{section.settings.image_radius}}px;
+      border: {{section.settings.image_border_w}}px solid {{section.settings.image_border_color}};
+      position: relative;
+      order: 1;
+  }
+
+  .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8>img,
+  .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8>svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+  }
+
+  .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8>svg {
+      background-color: #DDDDDD;
+  }
+
+  .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      z-index: 1;
+  }
+
+  .hotspots-hotspot-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      position: absolute;
+      z-index: 2;
+  }
+
+  .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      width: {{section.settings.number_w_mobile}}px;
+      height: {{section.settings.number_h_mobile}}px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: {{section.settings.number_radius}}%;
+      border: {{section.settings.number_border_w}}px solid {{section.settings.number_border_color}};
+      background-color: {{section.settings.number_bg}};
+      cursor: pointer;
+      transition: all 0.25s ease 0s;
+  }
+
+  .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8:hover {
+      border: {{section.settings.number_border_w}}px solid {{section.settings.number_border_color_hover}};
+      background-color: {{section.settings.number_bg_hover}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8.active {
+      border: {{section.settings.number_border_w}}px solid {{section.settings.number_border_color_active}};
+      background-color: {{section.settings.number_bg_active}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8 span {
+      margin: 0;
+      font-size: {{section.settings.number_size_mobile}}px;
+      color: {{section.settings.number_color}};
+      line-height: 100%;
+      text-transform: unset;
+      transition: all 0.25s ease 0s;
+  }
+
+  .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8:hover span {
+      color: {{section.settings.number_hover}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8.active span {
+      color: {{section.settings.number_active}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .hotspots-content-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      order: 2;
+  }
+
+  .hotspots-content-inner-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      width: 100%;
+      margin: 0px auto;
+  }
+
+  .hotspots-desktop-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      display: none;
+  }
+
+  .hotspots-heading-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      text-align: center;
+  }
+
+  .hotspots-heading-template--20940255002953__ss_hotspots_4_wNxrK8 * {
+      margin: 0;
+      font-size: {{section.settings.title_size_mobile}}px;
+      color: {{section.settings.title_color}};
+      line-height: 130%;
+      text-transform: unset;
+  }
+
+  .hotspots-item-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      display: none;
+  }
+
+  .hotspots-item-template--20940255002953__ss_hotspots_4_wNxrK8.active {
+      display: block;
+  }
+
+  .hotspots-text-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      margin-top: 12px;
+      text-align: center;
+  }
+
+  .hotspots-text-template--20940255002953__ss_hotspots_4_wNxrK8 * {
+      margin: 0;
+      font-size: {{section.settings.desc_size_mobile}}px;
+      color: {{section.settings.desc_color}};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .hotspots-circles-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+  }
+
+
+  .section-template--20940255002953__ss_hotspots_4_wNxrK8-settings {
+      max-width: 130rem;
+  }
+
+
+  .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8 {
+      aspect-ratio: 12/10;
+  }
+
+   .hotspots-hotspot-hotspot_fhgp3h {
+      left: 22%;
+      top: 45%;
+      transform: translate(-22%, -45%);
+  }
+   .hotspots-hotspot-hotspot_Yqrb4p {
+      left: 32%;
+      top: 54%;
+      transform: translate(-32%, -54%);
+  }
+   .hotspots-hotspot-hotspot_z7yr3E {
+      left: 52%;
+      top: 69%;
+      transform: translate(-52%, -69%);
+  }
+    .hotspots-hotspot-hotspot_w9Th6E {
+      left: 70%;
+      top: 40%;
+      transform: translate(-70%, -40%);
+  }
+            .hotspots-hotspot-hotspot_hrEjJX {
+      left: 85%;
+      top: 21%;
+      transform: translate(-85%, -21%);
+  }
+
+    {% for block in section.blocks %}
+        {% if block.settings.title != blank %}
+            .hotspots-hotspot-hotspot_{{block.settings.title | ha}}-{{forloop.index}}{
+                left: {{block.settings.m_left}}%;
+                top: {{block.settings.m_top}}%;
+                transform: translate(-50%, -20%);
+            }
+        {% endif %}
+    {% endfor %}
+
+
+  @media(min-width: 1024px) {
+      .section-template--20940255002953__ss_hotspots_4_wNxrK8-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .hotspots-body-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          margin-top: 0px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+      }
+
+      .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          order: 1;
+      }
+
+      .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          width: {{section.settings.number_w_mobile}}px;
+          height: {{section.settings.number_h_mobile}}px;
+      }
+
+      .hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8 span {
+          font-size: {{section.settings.number_size}}px;
+      }
+
+      .hotspots-content-inner-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          max-width: 550px;
+      }
+
+      .hotspots-content-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          order: 2;
+      }
+
+      .hotspots-desktop-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          display: block;
+      }
+
+      .hotspots-mobile-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          display: none;
+      }
+
+      .hotspots-heading-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          text-align: center;
+      }
+
+      .hotspots-heading-template--20940255002953__ss_hotspots_4_wNxrK8 * {
+          font-size: {{section.settings.title_size}}px;
+      }
+
+      .hotspots-text-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          margin-top: 14px;
+          text-align: center;
+      }
+
+      .hotspots-text-template--20940255002953__ss_hotspots_4_wNxrK8 * {
+          font-size: {{section.settings.desc_size}}px;
+      }
+
+      .hotspots-circles-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          margin-top: 40px;
+          justify-content: center;
+      }
+
+
+      .hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8 {
+          aspect-ratio: 12/10;
+      }
+
+
+      .hotspots-hotspot-hotspot_fhgp3h {
+          left: 22%;
+          top: 45%;
+          transform: translate(-22%, -45%);
+      }
+
+
+      .hotspots-hotspot-hotspot_Yqrb4p {
+          left: 32%;
+          top: 54%;
+          transform: translate(-32%, -54%);
+      }
+
+
+      .hotspots-hotspot-hotspot_z7yr3E {
+          left: 52%;
+          top: 69%;
+          transform: translate(-52%, -69%);
+      }
+
+
+      .hotspots-hotspot-hotspot_w9Th6E {
+          left: 70%;
+          top: 40%;
+          transform: translate(-70%, -40%);
+      }
+
+
+      .hotspots-hotspot-hotspot_hrEjJX {
+          left: 85%;
+          top: 21%;
+          transform: translate(-85%, -21%);
+      }
+
+      {% for block in section.blocks %}
+        {% if block.settings.title != blank %}
+            .hotspots-hotspot-hotspot_{{block.settings.title | ha}}-{{forloop.index}}{
+                left: {{block.settings.w_left}}%;
+                top: {{block.settings.w_top}}%;
+                transform: translate(-50%, -20%);
+            }
+        {% endif %}
+      {% endfor %}
+  }
+</style>
+
+<div class="section-template--20940255002953__ss_hotspots_4_wNxrK8 hotspots-template--20940255002953__ss_hotspots_4_wNxrK8">
+  <div class="section-template--20940255002953__ss_hotspots_4_wNxrK8-settings">
+    <div class="hotspots-body-template--20940255002953__ss_hotspots_4_wNxrK8">
+      <div class="hotspots-image-template--20940255002953__ss_hotspots_4_wNxrK8">
+        {% if section.settings.image != blank %}
+          <img
+            src="{{ section.settings.image | img_url:'master' }}"
+            alt="Image"
+            lazy="loading"
+          >
+        {% else %}
+          <div class="img">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+          </div>
+        {% endif %}
+
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank %}
+            <div
+              class="hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8 hotspots-hotspot-template--20940255002953__ss_hotspots_4_wNxrK8 hotspots-hotspot-hotspot_{{block.settings.title | handleize}}-{{forloop.index}} {% if forloop.index == 1 %}active{% endif %}"
+              data-id="hotspot_{{block.settings.title | handleize }}-{{forloop.index}}"
+            >
+              <span>{{ forloop.index }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="hotspots-content-template--20940255002953__ss_hotspots_4_wNxrK8">
+        <div class="hotspots-content-inner-template--20940255002953__ss_hotspots_4_wNxrK8">
+          <div class="hotspots-items-template--20940255002953__ss_hotspots_4_wNxrK8">
+            {% for block in section.blocks %}
+              <div
+                class="hotspots-item-template--20940255002953__ss_hotspots_4_wNxrK8 {% if forloop.index == 1 %}active{% endif %}"
+                id="hotspot_{{block.settings.title | handleize}}-{{forloop.index}}"
+              >
+                <div class="hotspots-heading-template--20940255002953__ss_hotspots_4_wNxrK8">
+                  <p>
+                    <strong>{{ block.settings.title }}</strong>
+                  </p>
+                </div>
+
+                <div class="hotspots-text-template--20940255002953__ss_hotspots_4_wNxrK8">
+                  {{ block.settings.desc }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="hotspots-circles-template--20940255002953__ss_hotspots_4_wNxrK8">
+            {% for block in section.blocks %}
+              {% if block.settings.title != blank %}
+                <div
+                  class="hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8 {% if forloop.index == 1 %}active{% endif %}"
+                  data-id="hotspot_{{block.settings.title | handleize}}-{{forloop.index}}"
+                >
+                  <span>{{ forloop.index }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initHotspots4() {
+      if (document.querySelectorAll('.hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8')) {
+          let circles = document.querySelectorAll('.hotspots-circle-template--20940255002953__ss_hotspots_4_wNxrK8');
+          let texts = document.querySelectorAll('.hotspots-item-template--20940255002953__ss_hotspots_4_wNxrK8');
+
+          circles.forEach(el => {
+              el.addEventListener('click', () => {
+                  let dataId = el.getAttribute('data-id');
+
+                  circles.forEach(element => {
+                      let dataElementId = element.getAttribute('data-id');
+
+                      if (dataId != dataElementId) {
+                          element.classList.remove('active');
+                      } else {
+                          element.classList.add('active');
+                      }
+                  })
+
+                  if (texts) {
+                      texts.forEach(element => {
+
+                          if (element.id != dataId) {
+                              element.classList.remove('active');
+                          } else {
+                              element.classList.add('active');
+                          }
+
+                      })
+                  }
+              })
+          })
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', initHotspots4);
+</script>
+
+{% schema %}
+{
+  "name": "PC Section Hotspots 4",
+  "settings": [
+    {
+       "type": "header",
+       "content": "This section is a property of PeakConversion",
+       "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+        "type":"header",
+        "content":"Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Border Radius",
+      "default": 12,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "range",
+      "id": "image_border_w",
+      "label": "Border Width",
+      "default": 1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type":"color",
+      "id":"image_border_color",
+      "label":"Border Color",
+      "default":"#000"
+    },
+     {
+        "type":"header",
+        "content":"Hotspots Number"
+    },
+    {
+      "type": "range",
+      "id": "number_w",
+      "label": "Width",
+      "default": 36,
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_h",
+      "label": "Height",
+      "default": 36,
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_w_mobile",
+      "label": "Mobile Width",
+      "default": 32,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_h_mobile",
+      "label": "Mobile Height",
+      "default": 32,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Font Size",
+      "default": 16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "number_radius",
+      "label": "Border Radius",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "number_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "number_color_hover",
+      "label": "Hover Color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "number_color_active",
+      "label": "Active Color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "number_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "number_border_color_hover",
+      "label": "Border Color Hover",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "number_border_color_active",
+      "label": "Border Color Active",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "number_bg",
+      "label": "Background Color",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "id": "number_bg_hover",
+      "label": "Background Color Hover",
+      "default":"#ffcf9f"
+    },
+    {
+      "type": "color",
+      "id": "number_bg_active",
+      "label": "Background Color Active",
+      "default":"#ffcf9f"
+    },
+    {
+      "type": "header",
+      "content": "Hotspots Text Content"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Font Size",
+      "default": 48,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title Mobile Font Size",
+      "default": 28,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default":"#000000"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Description Font Size",
+      "default": 24,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_size_mobile",
+      "label": "Description Mobile Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default":"#000000"
+    },
+     {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enabled Full Width",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_border",
+      "label": "Enabled Border",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "section_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+
+  ],
+  "blocks": [
+    {
+      "type": "hotspost",
+      "name": "Hotspost",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "desc",
+          "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Web Position"
+        },
+        {
+          "type": "range",
+          "id": "w_top",
+          "label": "Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "w_left",
+          "label": "Left",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "header",
+          "content": "Mobile Position"
+        },
+        {
+          "type": "range",
+          "id": "m_top",
+          "label": "Top",
+          "default": 40,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "m_left",
+          "label": "Left",
+          "default": 40,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC Section Hotspots 4",
+      "blocks": [
+        {
+          "type": "hotspost",
+          "settings":
+            {
+              "title":"Lorem Ipsum",
+              "desc":"<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>",
+              "w_top": 45,
+              "w_left": 55,
+              "m_top": 35,
+              "m_left": 45
+            },
+        },
+        {
+          "type": "hotspost",
+          "settings":
+            {
+              "title":"Lorem Dolor",
+              "desc":"<p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>",
+              "w_top": 60,
+              "w_left": 30,
+              "m_top": 50,
+              "m_left": 35
+            },
+        },
+        {
+          "type": "hotspost",
+          "settings":
+            {
+              "title":"Lorem Alnet",
+              "desc":"<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>",
+              "w_top": 25,
+              "w_left": 75,
+              "m_top": 45,
+              "m_left": 60
+            },
+        },
+        {
+          "type": "hotspost",
+          "settings":
+            {
+              "title":"Dolor Ipsum",
+              "desc":"<p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>"
+            }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .section-template--22666249142601__ss_hero_20_3QWBdX {
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-radius: 0px;
+            overflow: hidden;
+            position: relative;
+            background-color: #555555;
+        }
+
+        .section-template--22666249142601__ss_hero_20_3QWBdX-settings {
+            margin: 0 auto;
+            padding-top: 27px;
+            padding-bottom: 27px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .hero-bg-template--22666249142601__ss_hero_20_3QWBdX {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg-image-template--22666249142601__ss_hero_20_3QWBdX img,
+        .hero-bg-image-template--22666249142601__ss_hero_20_3QWBdX svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-bg-image-template--22666249142601__ss_hero_20_3QWBdX svg {
+            background-color: #AFAFAF;
+        }
+
+        .hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX {
+            height: 100%;
+            position: relative;
+        }
+
+        .hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX video,
+        .hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-body-template--22666249142601__ss_hero_20_3QWBdX {
+            position: relative;
+            height: 90%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .section-template--22666249142601__ss_hero_20_3QWBdX-settings {
+            height: 100%;
+        }
+
+        .hero-template--22666249142601__ss_hero_20_3QWBdX {
+            height: 95vh;
+        }
+
+        .hero-bg-image-template--22666249142601__ss_hero_20_3QWBdX,
+        .hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX {
+            height: 95vh;
+        }
+
+
+        .hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+
+        .hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX .circle-text {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 50%;
+            animation: rotation 10s linear infinite;
+            /* Ajout de l'animation */
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .circle-text span {
+            position: absolute;
+            width: 20px;
+            /* Ajustez la largeur selon vos besoins */
+            height: 20px;
+            /* Ajustez la hauteur selon vos besoins */
+            transform-origin: 50% 100%;
+        }
+
+
+        .hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX span {
+            margin: 0;
+            font-size: 28px;
+            color: #b6c9c7;
+            line-height: 100%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+
+        .hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX span {
+            font-family: "ITC Galliard", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        * .hero-top-right-content-template--22666249142601__ss_hero_20_3QWBdX {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 40%;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .hero-top-right-title-template--22666249142601__ss_hero_20_3QWBdX {
+            margin: 0;
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 170%;
+            text-align: right;
+            width: 100%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .hero-top-right-price-template--22666249142601__ss_hero_20_3QWBdX {
+            margin: 0;
+            font-size: 28px;
+            color: #ffffff;
+            line-height: 130%;
+            text-align: right;
+            width: 100%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: fit-content;
+            gap: 10px;
+            width: 100%;
+            margin: 0;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #ffffff;
+            line-height: 100%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 0px;
+            transition: all 0.25s ease 0s;
+            background-color: transparent;
+            border: 0px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .hero-button-inner-template--22666249142601__ss_hero_20_3QWBdX {
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX:hover {
+            color: #b6c9c7;
+            transition: all 0.25s ease 0s;
+        }
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX svg path {
+            fill: #ffffff;
+            transition: all 0.25s ease 0s;
+        }
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX:hover svg path {
+            fill: #b6c9c7;
+            transition: all 0.25s ease 0s;
+        }
+
+
+
+        .hero-top-right-price-template--22666249142601__ss_hero_20_3QWBdX {
+            font-family: "ITC Galliard", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX {
+            font-family: Montserrat, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX {
+            
+            border: 1px solid #ffffff;
+        }
+
+        .hero-button-template--22666249142601__ss_hero_20_3QWBdX:hover {
+            
+            border: 1px solid #b6c9c7;
+        }
+
+
+        .hero-top-right-content-template--22666249142601__ss_hero_20_3QWBdX {
+            display: flex;
+        }
+
+        .hero-top-left-content-template--22666249142601__ss_hero_20_3QWBdX {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 60%;
+        }
+
+        .hero-heading-template--22666249142601__ss_hero_20_3QWBdX {
+            text-align: left;
+        }
+
+        .hero-heading-template--22666249142601__ss_hero_20_3QWBdX * {
+            margin: 0;
+            font-size: 20px;
+            color: #b6c9c7;
+            line-height: 130%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .hero-top-text-template--22666249142601__ss_hero_20_3QWBdX {
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .hero-top-text-template--22666249142601__ss_hero_20_3QWBdX * {
+            margin: 0;
+            font-size: 13px;
+            color: #ffffff;
+            line-height: 150%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .hero-heading-template--22666249142601__ss_hero_20_3QWBdX * {
+            font-family: "ITC Galliard", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .hero-top-left-content-template--22666249142601__ss_hero_20_3QWBdX {
+            display: block;
+        }
+
+        .hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-width: 80%;
+            text-align: left;
+        }
+
+        .hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX * {
+            margin: 0;
+            font-size: 13px;
+            color: #ffffff;
+            line-height: 150%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+
+        .hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX {
+            display: block;
+        }
+
+
+        .hero-bottom-right-text-template--22666249142601__ss_hero_20_3QWBdX {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 50%;
+            text-align: right;
+        }
+
+        .hero-bottom-right-text-template--22666249142601__ss_hero_20_3QWBdX * {
+            margin: 0;
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 150%;
+            text-transform: unset;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        @media(min-width: 1024px) {
+            .section-template--22666249142601__ss_hero_20_3QWBdX-settings {
+                padding: 0 5rem;
+                padding-top: 36px;
+                padding-bottom: 36px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+     
+            
+            .section-template--22666249142601__ss_hero_20_3QWBdX-settings {
+                height: 100%;
+            }
+
+            .hero-template--22666249142601__ss_hero_20_3QWBdX {
+                height: 95vh;
+            }
+
+            .hero-bg-image-template--22666249142601__ss_hero_20_3QWBdX,
+            .hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX {
+                height: 95vh;
+            }
+        
+            
+            .hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX {
+                width: 500px;
+                height: 650px;
+            }
+
+            .hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX span {
+                font-size: 56px;
+            }
+        
+            
+            .hero-top-right-content-template--22666249142601__ss_hero_20_3QWBdX {
+                display: flex;
+                max-width: 30%;
+                align-items: end;
+            }
+
+            .hero-top-right-title-template--22666249142601__ss_hero_20_3QWBdX {
+                font-size: 24px;
+                text-align: right;
+            }
+
+            .hero-top-right-price-template--22666249142601__ss_hero_20_3QWBdX {
+                font-size: 28px;
+                text-align: right;
+            }
+
+            .hero-button-template--22666249142601__ss_hero_20_3QWBdX {
+                margin-top: 16px;
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+       
+            
+            .hero-top-right-content-template--22666249142601__ss_hero_20_3QWBdX {
+                display: flex;
+            }
+       
+            
+            .hero-top-left-content-template--22666249142601__ss_hero_20_3QWBdX {
+                display: block;
+                max-width: 30%;
+            }
+
+            .hero-heading-template--22666249142601__ss_hero_20_3QWBdX {
+                text-align: left;
+            }
+
+            .hero-heading-template--22666249142601__ss_hero_20_3QWBdX * {
+                font-size: 40px;
+
+            }
+
+            .hero-top-text-template--22666249142601__ss_hero_20_3QWBdX {
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            .hero-top-text-template--22666249142601__ss_hero_20_3QWBdX * {
+                font-size: 16px;
+            }
+   
+            
+            .hero-top-left-content-template--22666249142601__ss_hero_20_3QWBdX {
+                display: block;
+            }
+    
+            
+            .hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX {
+                display: block;
+                max-width: 30%;
+                text-align: left;
+            }
+
+            .hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX * {
+                font-size: 16px;
+            }
+        
+            
+            .hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX {
+                display: block;
+            }
+        
+            
+
+            .hero-bottom-right-text-template--22666249142601__ss_hero_20_3QWBdX {
+                display: block;
+                max-width: 30%;
+            }
+
+            .hero-bottom-right-text-template--22666249142601__ss_hero_20_3QWBdX * {
+                font-size: 16px;
+                text-align: right;
+            }
+        }
+    </style>
+
+
+    <div class="section-template--22666249142601__ss_hero_20_3QWBdX hero-template--22666249142601__ss_hero_20_3QWBdX">
+        <div class="section-template--22666249142601__ss_hero_20_3QWBdX-settings">
+
+            <div class="hero-bg-template--22666249142601__ss_hero_20_3QWBdX">
+
+                <div class="hero-bg-video-template--22666249142601__ss_hero_20_3QWBdX">
+
+
+
+                    <video
+                        src="//section.store/cdn/shop/videos/c/vp/71d5f38a7722427f930c84c58a84631f/71d5f38a7722427f930c84c58a84631f.HD-720p-3.0Mbps-32109560.mp4?v=0"
+                        muted="" autoplay="" playsinline="" preload="none" loop="" __idm_id__="1433601"></video>
+
+                </div>
+
+            </div>
+
+            <div class="hero-body-template--22666249142601__ss_hero_20_3QWBdX">
+
+                <div class="hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX"
+                    id="hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX" data-mobile-radius="100"
+                    data-tablet-radius="150" data-desktop-radius="190">
+                    <div class="circle-text" id="circle-text"> <!-- Le texte sera ajouté ici par JavaScript --> </div>
+                </div>
+
+                <div class="hero-top-right-content-template--22666249142601__ss_hero_20_3QWBdX">
+
+
+                    <p class="hero-top-right-price-template--22666249142601__ss_hero_20_3QWBdX">$199.00</p>
+
+
+                    <a href="/products/beige-stripes-beni-bed"
+                        class="hero-button-template--22666249142601__ss_hero_20_3QWBdX">
+                        <p class="hero-button-inner-template--22666249142601__ss_hero_20_3QWBdX">
+                            SHOP NOW
+
+                        </p>
+                    </a>
+
+                </div>
+
+
+
+
+                <div class="hero-top-left-content-template--22666249142601__ss_hero_20_3QWBdX">
+
+                    <div class="hero-heading-template--22666249142601__ss_hero_20_3QWBdX">
+                        <h2>Welcome to BENI</h2>
+                    </div>
+
+
+                    <div class="hero-top-text-template--22666249142601__ss_hero_20_3QWBdX">
+                        <p>We make roll-up beds to elevate everyday life. Crafted for longevity. Designed for timeless
+                            appeal. Inspired by playful comfort.</p>
+                    </div>
+                  
+
+                </div>
+
+
+
+
+
+                <div class="hero-bottom-left-text-template--22666249142601__ss_hero_20_3QWBdX">
+                    <p>The <strong>BENI BED </strong>is a pillowy, roll-up bed made from 100% organic cotton and
+                        recycled water bottles.</p>
+                </div>
+
+
+
+
+
+
+                <div class="hero-bottom-right-text-template--22666249142601__ss_hero_20_3QWBdX">
+                    <p>Its dreamy texture and feel makes for the perfect sleeping experience.</p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const text = "New Collection New Collectionn ";
+        const container = document.getElementById('circle-text');
+        const heroContainer = document.getElementById('hero-oval-container-template--22666249142601__ss_hero_20_3QWBdX');
+
+        function getRadius() {
+            const width = window.innerWidth;
+            if (width <= 768) {
+                return heroContainer.getAttribute('data-mobile-radius');
+            } else if (width <= 1024) {
+                return heroContainer.getAttribute('data-tablet-radius');
+            } else {
+                return heroContainer.getAttribute('data-desktop-radius');
+            }
+        }
+
+        function createCircleText() {
+            container.innerHTML = ''; // Clear previous content
+            const radius = getRadius();
+            const circumference = 2 * Math.PI * radius;
+            const angleStep = 360 / text.length;
+
+            // container.style.width = `${circumference}px`;
+            //container.style.height = `${circumference}px`;
+
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.textContent = text[i];
+                const angle = angleStep * i;
+                span.style.transform = `rotate(${angle}deg) translateY(-${radius}px)`;
+                container.appendChild(span);
+            }
+        }
+
+        window.addEventListener('resize', createCircleText);
+        createCircleText(); // Initial call
+    </script>
+
+</body>
+
+</html>

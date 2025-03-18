@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <style>
+            
+            .section-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                background-color:#ffffff;
+                overflow: hidden;
+            }
+    
+            .section-template--21451704762697__ss_video_grid_4_3RV6Lm-settings {
+                margin: 0 auto;
+                padding-top: 27px;
+                padding-bottom: 27px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .video-heading-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                width: 100%;
+                text-align: center;
+            }
+    
+            .video-heading-template--21451704762697__ss_video_grid_4_3RV6Lm * {
+                margin: 0;
+                font-size: 22px;
+                color: #000000;
+                line-height: 130%;
+                text-transform: unset;
+            }
+    
+            .video-subheading-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                width: 100%;
+                margin-top: 16px;
+                text-align: center;
+                padding: 0px 0px;
+            }
+    
+            .video-subheading-template--21451704762697__ss_video_grid_4_3RV6Lm * {
+                margin: 0;
+                font-size: 16px;
+                color: #000000;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .video-text-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                width: 100%;
+                margin-top: 40px;
+                text-align: center;
+                padding: 0px 0px;
+            }
+    
+            .video-text-template--21451704762697__ss_video_grid_4_3RV6Lm * {
+                margin: 0;
+                font-size: 16px;
+                color: #000000;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .video-slider-wrapper-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                margin-top: 48px;
+            }
+    
+            .video-slider-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                overflow: visible !important;
+            }
+    
+            .video-grid-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                display: none;
+            }
+    
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                border-radius: 16px;
+                overflow: hidden;
+                cursor: pointer;
+                position: relative;
+                z-index: 1;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                backdrop-filter: blur(5px);
+                background-color: #4f4f4f33;
+                border-radius: 8px;
+                padding: .625rem 1rem;
+            }
+    
+            .video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm span {
+                margin: 0px;
+                font-size: 12px;
+                line-height: 150%;
+                text-transform: none;
+                text-decoration: none;
+                color: #ffffff;
+            }
+    
+            .video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                width: 8px;
+                height: 8px;
+            }
+    
+            .video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm svg path {
+                fill: #ffffff;
+            }
+    
+            .video-hover-text-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                display: none;
+                position: fixed;
+                pointer-events: none;
+                z-index: 9999;
+                background: #ffffff;
+                margin: 0px;
+                font-size: 14px;
+                line-height: 150%;
+                text-transform: none;
+                text-decoration: none;
+                color: #000000;
+                padding: 10px;
+                border-radius: 100px;
+                font-weight: 700;
+            }
+    
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                position: relative;
+            }
+    
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm.swiper-slide {
+                transform: rotate(2.2deg) !important;
+            }
+    
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm iframe,
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm video {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                box-shadow: none;
+                border: 0px;
+                border-radius: 16px;
+            }
+    
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm:before {
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+            }
+    
+            .video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                overflow-y: scroll;
+                pointer-events: none;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+            }
+    
+            .video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm.active {
+                opacity: 1;
+                z-index: 100;
+                pointer-events: all;
+                transition: all 250ms ease-in 0s;
+            }
+    
+            .video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                position: relative;
+                width: 100%;
+                max-height: 96vh;
+                overflow: hidden;
+            }
+    
+            .video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm video,
+            .video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm iframe {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                box-shadow: none;
+                border: 0px;
+                border: 0px solid #000000;
+                border-radius: 16px;
+                max-height: 96vh;
+            }
+    
+            .video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm iframe {
+                min-height: 70vh;
+            }
+    
+            .video-modal-inner-video-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                position: relative;
+            }
+    
+            .video-close-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                box-shadow: none;
+                background-color: rgba(255, 255, 255, 0.5);
+                border: 0px;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+                z-index: 2;
+            }
+    
+            .video-close-template--21451704762697__ss_video_grid_4_3RV6Lm svg {
+                display: block;
+                width: 20px;
+                height: 20px;
+            }
+    
+            .video-close-template--21451704762697__ss_video_grid_4_3RV6Lm svg path {
+                fill: #000000;
+            }
+    
+            .portrait-video-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                max-width: 100%;
+                margin: 0px auto;
+            }
+    
+            .landspace-video-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                max-width: 100%;
+                margin: 0px auto;
+            }
+    
+            .video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background: #ffffff80;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                -webkit-appearance: none;
+                transition: all 0.25s ease 0s;
+                z-index: 2;
+            }
+    
+            .video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm svg {
+                height: 20px;
+                width: 20px;
+            }
+    
+            .video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm svg {
+                fill: #000000;
+            }
+    
+            .video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm .video-modal-unmute-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                display: none;
+            }
+    
+            .video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm.active .video-modal-unmute-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                display: block;
+            }
+    
+            .video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm.active .video-modal-mute-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                display: none;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .section-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 0rem;
+                    margin-right: 0rem;
+                    border-radius: 0px;
+                }
+    
+                .section-template--21451704762697__ss_video_grid_4_3RV6Lm-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 36px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .video-heading-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    text-align: center;
+                }
+    
+                .video-heading-template--21451704762697__ss_video_grid_4_3RV6Lm * {
+                    font-size: 48px;
+                }
+    
+                .video-subheading-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    margin-top: 16px;
+                    text-align: center;
+                }
+    
+                .video-subheading-template--21451704762697__ss_video_grid_4_3RV6Lm * {
+                    font-size: 16px;
+                }
+    
+                .video-text-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    margin-top: 68px;
+                    text-align: center;
+                }
+    
+                .video-text-template--21451704762697__ss_video_grid_4_3RV6Lm * {
+                    font-size: 16px;
+                }
+    
+                .video-slider-wrapper-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    display: none;
+                }
+    
+                .video-grid-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    margin-top: 72px;
+                    display: grid;
+                    gap: 0px;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+    
+                .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm:hover {
+                    z-index: 2;
+                }
+    
+                .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm:nth-child(odd) {
+                    transform: rotate(2.5deg) scale(1.1);
+                }
+    
+                .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm:nth-child(odd):hover {
+                    transform: rotate(-3.2deg) scale(1.2);
+                }
+    
+                .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm:nth-child(even) {
+                    transform: rotate(-3.2deg) scale(1.1);
+                }
+    
+                .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm:nth-child(even):hover {
+                    transform: rotate(2.5deg) scale(1.2);
+                }
+    
+                .video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    max-width: 70%;
+                }
+    
+                .portrait-video-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    max-width: 40%;
+                }
+    
+                .landspace-video-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    max-width: 80%;
+                }
+    
+                .video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    display: none;
+                }
+            }
+        
+            
+            .section-template--21451704762697__ss_video_grid_4_3RV6Lm-settings {
+                max-width: 120rem;
+            }
+        
+            
+            .video-hover-text-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                font-style: normal;
+            }
+        
+            
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                aspect-ratio: 9.6/12;
+            }
+       
+            
+            @media(min-width: 1024px) {
+                .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                    aspect-ratio: 9.6/12;
+                }
+            }
+       
+            
+            .video-item-template--21451704762697__ss_video_grid_4_3RV6Lm {
+                box-shadow: 0 25px 16px #0000000d, 0 10px 10px #0000001a, 0 3px 6px #0000001a;
+            }
+        </style>
+    
+    
+    
+    
+        <div class="section-template--21451704762697__ss_video_grid_4_3RV6Lm video-template--21451704762697__ss_video_grid_4_3RV6Lm">
+            <p class="video-hover-text-template--21451704762697__ss_video_grid_4_3RV6Lm">Watch</p>
+            <div class="section-template--21451704762697__ss_video_grid_4_3RV6Lm-settings">
+    
+                <div class="video-heading-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <h2>Check out real reviews</h2>
+                </div>
+    
+    
+    
+                <div class="video-subheading-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <p>Post and share original content with your community on social &amp; serve as a representation of our
+                        brand.</p>
+                </div>
+    
+    
+                <div class="video-slider-wrapper-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <div
+                        class="video-slider-template--21451704762697__ss_video_grid_4_3RV6Lm swiper">
+                        <div class="swiper-wrapper" id="swiper-wrapper-49557b9dabc4dc6a">
+    
+                            <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm swiper-slide">
+                                <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                                    <span>Watch</span>
+    
+                                    <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+    
+    
+    
+    
+                                <video
+                                    data-src="//section.store/cdn/shop/videos/c/vp/bd74c541a79e42c9861f402f7d487fea/bd74c541a79e42c9861f402f7d487fea.HD-720p-1.6Mbps-18393770.mp4?v=0"
+                                    muted="" autoplay="" playsinline="" preload="none" loop=""
+                                    class="lazy entered loaded exited" data-ll-status="loaded"
+                                    src="//section.store/cdn/shop/videos/c/vp/bd74c541a79e42c9861f402f7d487fea/bd74c541a79e42c9861f402f7d487fea.HD-720p-1.6Mbps-18393770.mp4?v=0"></video>
+    
+    
+    
+                            </div>
+    
+                            <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm swiper-slide"
+                                id="item_mWgGre" data-cursor="Watch" role="group" aria-label="2 / 4"
+                                style="width: 454px; margin-right: 6px;">
+                                <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                                    <span>Watch</span>
+    
+                                    <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+    
+    
+    
+    
+                                <video
+                                    data-src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"
+                                    muted="" playsinline="" preload="none" loop="" class="lazy entered loaded"
+                                    data-ll-status="loaded"
+                                    src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"></video>
+    
+    
+    
+                            </div>
+    
+                            <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm swiper-slide"
+                                id="item_XrmEcd" data-cursor="Watch" role="group" aria-label="3 / 4"
+                                style="width: 454px; margin-right: 6px;">
+                                <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                                    <span>Watch</span>
+    
+                                    <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+    
+    
+    
+    
+                                <video
+                                    data-src="//section.store/cdn/shop/videos/c/vp/3e5ad277d6034a8ea9d1bbc945a0c6a3/3e5ad277d6034a8ea9d1bbc945a0c6a3.HD-720p-1.6Mbps-18393662.mp4?v=0"
+                                    muted="" playsinline="" preload="none" loop="" class="lazy entered loaded"
+                                    data-ll-status="loaded"
+                                    src="//section.store/cdn/shop/videos/c/vp/3e5ad277d6034a8ea9d1bbc945a0c6a3/3e5ad277d6034a8ea9d1bbc945a0c6a3.HD-720p-1.6Mbps-18393662.mp4?v=0"></video>
+    
+    
+    
+                            </div>
+    
+                            <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm swiper-slide"
+                                id="item_w3XWWL" data-cursor="Watch" role="group" aria-label="4 / 4"
+                                style="width: 454px; margin-right: 6px;">
+                                <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                                    <span>Watch</span>
+    
+                                    <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+    
+    
+    
+    
+                                <video
+                                    data-src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"
+                                    muted="" playsinline="" preload="none" loop="" class="lazy entered loaded"
+                                    data-ll-status="loaded"
+                                    src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"></video>
+    
+    
+    
+                            </div>
+
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="video-grid-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                    <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm" id="item_aPUgwk"
+                        data-cursor="Watch">
+                        <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                            <span>Watch</span>
+    
+                            <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                        fill="white"></path>
+                                </svg>
+                            </div>
+                        </div>
+    
+    
+    
+    
+                        <video
+                            data-src="//section.store/cdn/shop/videos/c/vp/bd74c541a79e42c9861f402f7d487fea/bd74c541a79e42c9861f402f7d487fea.HD-720p-1.6Mbps-18393770.mp4?v=0"
+                            muted="" playsinline="" preload="none" loop="" class="lazy entered loaded exited"
+                            data-ll-status="loaded"
+                            src="//section.store/cdn/shop/videos/c/vp/bd74c541a79e42c9861f402f7d487fea/bd74c541a79e42c9861f402f7d487fea.HD-720p-1.6Mbps-18393770.mp4?v=0"></video>
+    
+    
+                    </div>
+    
+                    <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm" id="item_mWgGre"
+                        data-cursor="Watch">
+                        <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                            <span>Watch</span>
+    
+                            <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                        fill="white"></path>
+                                </svg>
+                            </div>
+                        </div>
+    
+    
+    
+    
+                        <video
+                            data-src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"
+                            muted="" playsinline="" preload="none" loop="" class="lazy entered loaded exited"
+                            data-ll-status="loaded"
+                            src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"></video>
+    
+    
+                    </div>
+    
+                    <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm" id="item_XrmEcd"
+                        data-cursor="Watch">
+                        <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                            <span>Watch</span>
+    
+                            <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                        fill="white"></path>
+                                </svg>
+                            </div>
+                        </div>
+    
+    
+    
+    
+                        <video
+                            data-src="//section.store/cdn/shop/videos/c/vp/3e5ad277d6034a8ea9d1bbc945a0c6a3/3e5ad277d6034a8ea9d1bbc945a0c6a3.HD-720p-1.6Mbps-18393662.mp4?v=0"
+                            muted="" playsinline="" preload="none" loop="" class="lazy entered loaded exited"
+                            data-ll-status="loaded"
+                            src="//section.store/cdn/shop/videos/c/vp/3e5ad277d6034a8ea9d1bbc945a0c6a3/3e5ad277d6034a8ea9d1bbc945a0c6a3.HD-720p-1.6Mbps-18393662.mp4?v=0"></video>
+    
+    
+                    </div>
+    
+                    <div class="video-item-template--21451704762697__ss_video_grid_4_3RV6Lm" id="item_w3XWWL"
+                        data-cursor="Watch">
+                        <div class="video-watch-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+                            <span>Watch</span>
+    
+                            <div class="video-icon-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                                <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                                        fill="white"></path>
+                                </svg>
+                            </div>
+                        </div>
+    
+    
+    
+    
+                        <video
+                            data-src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"
+                            muted="" playsinline="" preload="none" loop="" class="lazy entered loaded exited"
+                            data-ll-status="loaded"
+                            src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"></video>
+    
+    
+                    </div>
+    
+                </div>
+    
+    
+                <div class="video-text-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <p>Get involved with upcoming campaigns and receive a curated package full of our most-loved products.</p>
+                </div>
+    
+            </div>
+        </div>
+    
+    
+        <div class="video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm" data-id="item_aPUgwk">
+            <div class="video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+    
+    
+    
+    
+                <div
+                    class="video-modal-inner-video-template--21451704762697__ss_video_grid_4_3RV6Lm portrait-video-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <button class="video-close-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.0002 10.586L4.70718 3.29297L3.29297 4.70718L10.586 12.0002L3.29297 19.2933L4.70718 20.7075L12.0002 13.4145L19.2933 20.7075L20.7075 19.2933L13.4145 12.0002L20.7075 4.70723L19.2933 3.29302L12.0002 10.586Z"
+                                fill="white"></path>
+                        </svg>
+                    </button>
+                    <div class="video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg class="video-modal-mute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                            </path>
+                        </svg>
+                        <svg class="video-modal-unmute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                            </path>
+                        </svg>
+                    </div>
+                    <video
+                        data-src="//section.store/cdn/shop/videos/c/vp/bd74c541a79e42c9861f402f7d487fea/bd74c541a79e42c9861f402f7d487fea.HD-720p-1.6Mbps-18393770.mp4?v=0"
+                        muted="" playsinline="" preload="none" loop="" class="lazy entered loaded" data-ll-status="loaded"
+                        src="//section.store/cdn/shop/videos/c/vp/bd74c541a79e42c9861f402f7d487fea/bd74c541a79e42c9861f402f7d487fea.HD-720p-1.6Mbps-18393770.mp4?v=0"
+                        __idm_id__="8193"></video>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm" data-id="item_mWgGre">
+            <div class="video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+    
+    
+    
+    
+                <div
+                    class="video-modal-inner-video-template--21451704762697__ss_video_grid_4_3RV6Lm portrait-video-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <button class="video-close-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.0002 10.586L4.70718 3.29297L3.29297 4.70718L10.586 12.0002L3.29297 19.2933L4.70718 20.7075L12.0002 13.4145L19.2933 20.7075L20.7075 19.2933L13.4145 12.0002L20.7075 4.70723L19.2933 3.29302L12.0002 10.586Z"
+                                fill="white"></path>
+                        </svg>
+                    </button>
+                    <div class="video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg class="video-modal-mute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                            </path>
+                        </svg>
+                        <svg class="video-modal-unmute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                            </path>
+                        </svg>
+                    </div>
+                    <video
+                        data-src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"
+                        muted="" playsinline="" preload="none" loop="" class="lazy entered loaded" data-ll-status="loaded"
+                        src="//section.store/cdn/shop/videos/c/vp/14d4babb9a1a43728b4c5ff7dc1bf515/14d4babb9a1a43728b4c5ff7dc1bf515.HD-720p-1.6Mbps-18393820.mp4?v=0"
+                        __idm_id__="8195"></video>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm" data-id="item_XrmEcd">
+            <div class="video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+    
+    
+    
+    
+                <div
+                    class="video-modal-inner-video-template--21451704762697__ss_video_grid_4_3RV6Lm portrait-video-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <button class="video-close-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.0002 10.586L4.70718 3.29297L3.29297 4.70718L10.586 12.0002L3.29297 19.2933L4.70718 20.7075L12.0002 13.4145L19.2933 20.7075L20.7075 19.2933L13.4145 12.0002L20.7075 4.70723L19.2933 3.29302L12.0002 10.586Z"
+                                fill="white"></path>
+                        </svg>
+                    </button>
+                    <div class="video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg class="video-modal-mute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                            </path>
+                        </svg>
+                        <svg class="video-modal-unmute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                            </path>
+                        </svg>
+                    </div>
+                    <video
+                        data-src="//section.store/cdn/shop/videos/c/vp/3e5ad277d6034a8ea9d1bbc945a0c6a3/3e5ad277d6034a8ea9d1bbc945a0c6a3.HD-720p-1.6Mbps-18393662.mp4?v=0"
+                        muted="" playsinline="" preload="none" loop="" class="lazy entered loaded" data-ll-status="loaded"
+                        src="//section.store/cdn/shop/videos/c/vp/3e5ad277d6034a8ea9d1bbc945a0c6a3/3e5ad277d6034a8ea9d1bbc945a0c6a3.HD-720p-1.6Mbps-18393662.mp4?v=0"
+                        __idm_id__="8194"></video>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm" data-id="item_w3XWWL">
+            <div class="video-modal-inner-template--21451704762697__ss_video_grid_4_3RV6Lm">
+    
+    
+    
+    
+    
+                <div
+                    class="video-modal-inner-video-template--21451704762697__ss_video_grid_4_3RV6Lm portrait-video-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                    <button class="video-close-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.0002 10.586L4.70718 3.29297L3.29297 4.70718L10.586 12.0002L3.29297 19.2933L4.70718 20.7075L12.0002 13.4145L19.2933 20.7075L20.7075 19.2933L13.4145 12.0002L20.7075 4.70723L19.2933 3.29302L12.0002 10.586Z"
+                                fill="white"></path>
+                        </svg>
+                    </button>
+                    <div class="video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm">
+                        <svg class="video-modal-mute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                            </path>
+                        </svg>
+                        <svg class="video-modal-unmute-template--21451704762697__ss_video_grid_4_3RV6Lm" viewBox="0 0 24 24"
+                            width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                            </path>
+                        </svg>
+                    </div>
+                    <video
+                        data-src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"
+                        muted="" playsinline="" preload="none" loop="" class="lazy entered loaded" data-ll-status="loaded"
+                        src="//section.store/cdn/shop/videos/c/vp/c65d1a9d9be44d01b526c62cff8a1b93/c65d1a9d9be44d01b526c62cff8a1b93.HD-720p-1.6Mbps-18393748.mp4?v=0"
+                        __idm_id__="8196"></video>
+                </div>
+    
+            </div>
+        </div>
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+    
+        <script>
+            function loadSwiper(callback) {
+                if (window.Swiper) {
+                    callback();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+                    script.onload = callback;
+                    document.head.appendChild(script);
+                }
+            }
+
+            function initVideoGrid4() {
+
+                var lazyLoadInstance = new LazyLoad();
+
+                window.addEventListener(
+                    "LazyLoad::Initialized",
+                    function (event) {
+                        window.lazyLoadInstance = event.detail.instance;
+                    },
+                    false
+                );
+
+                const slider = new Swiper(`.video-slider-template--21451704762697__ss_video_grid_4_3RV6Lm`, {
+                    speed: 300,
+                    spaceBetween: 20,
+                    breakpoints: {
+                        320: {
+                            centeredSlides: true,
+                            loop: false,
+                            spaceBetween: 8,
+                            slidesPerView: 1.5
+                        },
+                        768: {
+                            centeredSlides: false,
+                            loop: false,
+                            spaceBetween: 8,
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            centeredSlides: false,
+                            loop: false,
+                            spaceBetween: 0,
+                            slidesPerView: 4
+                        }
+                    },
+                    on: {
+                        slideChange: function () {
+                            const slides = this.slides;
+
+                            for (let i = 0; i < slides.length; i++) {
+                                let video = slides[i].querySelector('video');
+                                let frame = slides[i].querySelector('iframe');
+                                let src;
+                                let src1;
+                                let src2;
+                                if (frame) {
+                                    src1 = frame.getAttribute('data-src1');
+                                    src2 = frame.getAttribute('data-src2');
+                                }
+
+                                if (i === this.activeIndex) {
+                                    if (video) {
+                                        video.play();
+                                        video.muted = true;
+                                    }
+
+                                    if (frame) {
+                                        frame.src = src2;
+                                    }
+
+                                } else {
+                                    if (video) {
+                                        video.pause();
+                                    }
+
+                                    if (frame) {
+                                        frame.src = src1;
+                                    }
+                                }
+                            }
+                        },
+                    },
+                });
+
+                let videoGrid = document.querySelector(`.video-grid-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+                if (videoGrid) {
+                    let items = videoGrid.querySelectorAll(`.video-item-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+                    if (items) {
+                        items.forEach(el => {
+
+
+                            el.addEventListener("mouseover", function (event) {
+                                var floatingText = document.querySelector(`.video-hover-text-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+                                if (floatingText) {
+                                    let text = el.getAttribute("data-cursor");
+                                    if (text) {
+                                        floatingText.innerText = text;
+                                        floatingText.style.display = "block";
+                                    }
+                                }
+
+                                el.addEventListener("mousemove", function (event) {
+                                    if (floatingText) {
+                                        floatingText.style.left = event.clientX + 10 + "px";
+                                        floatingText.style.top = event.clientY + 10 + "px";
+                                    }
+                                });
+
+                                el.addEventListener("mouseout", function (event) {
+                                    if (floatingText) {
+                                        floatingText.style.display = "none";
+                                    }
+                                });
+                            });
+
+                            let video = el.querySelector('video');
+                            let frame = el.querySelector('iframe');
+                            let src;
+                            let src1;
+                            let src2;
+                            if (frame) {
+                                src1 = frame.getAttribute('data-src1');
+                                src2 = frame.getAttribute('data-src2');
+                            }
+                            el.addEventListener('mouseover', () => {
+                                if (video) {
+                                    video.play();
+                                    video.muted = true;
+                                }
+
+                                if (frame) {
+                                    frame.src = src2;
+                                }
+                            });
+                            el.addEventListener('mouseleave', () => {
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (frame) {
+                                    frame.src = src1;
+                                }
+                            });
+                        })
+                    }
+                }
+
+                let btns = document.querySelectorAll(`.video-item-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+                let modals = document.querySelectorAll(`.video-modal-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+
+                if (btns) {
+                    btns.forEach(el => {
+                        el.addEventListener('click', () => {
+                            if (modals) {
+                                modals.forEach(element => {
+                                    let btn = element.querySelector(`.video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+                                    let dataId = element.getAttribute('data-id');
+                                    let video = element.querySelector('video');
+                                    let frame = element.querySelector('iframe');
+                                    if (el.id == dataId) {
+                                        element.classList.add('active');
+                                        document.body.style.overflow = 'hidden';
+
+                                        if (video) {
+                                            setTimeout(() => {
+                                                video.play();
+                                                video.muted = false;
+                                                if (btn) {
+                                                    btn.classList.add('active');
+                                                }
+                                            }, 300);
+                                        }
+
+                                        if (frame) {
+                                            let dataSrc = frame.getAttribute('data-src');
+                                            setTimeout(() => {
+                                                frame.src = dataSrc;
+                                                if (btn) {
+                                                    btn.classList.add('active');
+                                                }
+                                            }, 300);
+                                        }
+                                    }
+                                })
+                            }
+                        })
+                    })
+                }
+
+                if (modals) {
+                    modals.forEach(el => {
+                        let video = el.querySelector('video');
+                        let frame = el.querySelector('iframe');
+                        let close = el.querySelector(`.video-close-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+                        let btn = el.querySelector(`.video-modal-action-template--21451704762697__ss_video_grid_4_3RV6Lm`);
+
+                        let dataSrc;
+                        if (frame) {
+                            let dataSrc = frame.getAttribute('data-src');
+                        }
+
+                        if (btn) {
+                            btn.addEventListener('click', () => {
+                                btn.classList.toggle('active');
+                                if (btn.classList.contains('active')) {
+                                    if (frame) {
+                                        frame.src = dataSrc;
+                                    }
+                                    if (video) {
+                                        video.muted = false;
+                                        video.setAttribute("mute", "false");
+                                    }
+                                } else {
+                                    if (frame) {
+                                        frame.src += "&mute=1";
+                                    }
+                                    if (video) {
+                                        video.muted = true;
+                                        video.setAttribute("mute", "true");
+                                    }
+                                }
+                            })
+                        }
+
+                        if (close) {
+                            close.addEventListener('click', () => {
+                                document.body.style.overflow = '';
+                                el.classList.remove('active');
+
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (btn) {
+                                    btn.classList.remove('active');
+                                }
+
+                                if (frame) {
+                                    let dataSrc2 = frame.getAttribute('data-src2');
+                                    frame.src = dataSrc2;
+                                }
+                            });
+                        }
+
+                        document.addEventListener('click', (e) => {
+                            if (e.target == el) {
+                                document.body.style.overflow = '';
+                                el.classList.remove('active');
+
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (frame) {
+                                    let dataSrc2 = frame.getAttribute('data-src2');
+                                    frame.src = dataSrc2;
+                                }
+                            }
+                        });
+                    })
+                }
+            }
+
+           
+            
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadSwiper(() => initVideoGrid4()));
+            } else {
+                loadSwiper(() => initVideoGrid4());
+            }
+
+        </script>
+    
+</body>
+</html>

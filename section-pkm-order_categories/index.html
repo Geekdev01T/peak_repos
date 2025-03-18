@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .pkm-od-category-panels {
+            width: 1200px;
+            height: 90vh;
+            margin: 0 auto;
+            display: flex;
+            min-height: 600px;
+        }
+
+        .pkm-od-category-panels .pkm-od-panel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            transition: flex 0.5s ease;
+        }
+
+        .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-title {
+            position: absolute;
+            left: 50%;
+            top: 49%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 38px;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-align: left;
+            z-index: 2;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .pkm-od-category-panels {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .pkm-od-category-panels .pkm-od-panel {
+                height: 80vh;
+                min-height: 300px;
+            }
+
+            .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            .pkm-od-category-panels .pkm-od-panel {
+                height: 30vh;
+                min-height: 400px;
+            }
+
+            .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .pkm-od-category-panels .pkm-od-panel .pkm-od-panel-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="pkm-od-category-panels">
+        <!-- Nouveautés Panel -->
+        <div class="pkm-od-panel">
+            <img src="https://image.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture_1258-28312.jpg"
+                alt="Nouveautés" class="pkm-od-panel-image">
+            <h2 class="pkm-od-panel-title">Nouveautés</h2>
+            <a href="#nouveautes" class="pkm-od-panel-link" aria-label="Voir les Nouveautés"></a>
+        </div>
+
+        <!-- Meilleures Ventes Panel -->
+        <div class="pkm-od-panel">
+            <img src="https://image.freepik.com/free-photo/abstract-background-texture_1258-30471.jpg"
+                alt="Meilleures Ventes" class="pkm-od-panel-image">
+            <h2 class="pkm-od-panel-title">Meilleures Ventes</h2>
+            <a href="google.com" target="_blank" class="pkm-od-panel-link" aria-label="Voir les Meilleures Ventes"></a>
+        </div>
+    </section>
+
+</body>
+
+</html>

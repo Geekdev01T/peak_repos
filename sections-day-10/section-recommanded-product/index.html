@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+    
+            .pc-section-section_id {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+    
+            .pc-section-section_id .pc-section-section_id-settings {
+                margin: 0 auto;
+                padding-top: 27px;
+                padding-bottom: 45px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .pc-section-section_id .pc-collection-heading-section_id {
+                text-align: left;
+            }
+    
+            .pc-collection-heading-section_id * {
+                margin: 0;
+                font-size: 36px;
+                color: #040404;
+                line-height: 130%;
+                text-transform: unset;
+            }
+    
+            .pc-collection-tabs-titles-section_id {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: start;
+                gap: 12px;
+                margin-top: 20px;
+            }
+    
+            .pc-collection-tabs-title-section_id {
+                margin: 0;
+                font-size: 13px;
+                color: #3565e0;
+                line-height: 100%;
+                text-transform: unset;
+                padding: 12px 24px;
+                border-radius: 6px;
+                border: 2px solid #e0e3ee;
+                background-color: transparent;
+                transition: all 0.25s ease 0s;
+                cursor: pointer;
+                font-weight: 700;
+            }
+    
+            .pc-collection-tabs-title-section_id:hover {
+                transition: all 0.25s ease 0s;
+                border: 2px solid #3565e0;
+                color: #3565e0;
+            }
+    
+            .pc-collection-tabs-title-section_id.active {
+                transition: all 0.25s ease 0s;
+                border: 2px solid #3565e0;
+                color: #3565e0;
+            }
+    
+            .pc-collection-tabs-section_id {
+                margin-top: 18px;
+            }
+    
+            .pc-collection-tab-section_id {
+                display: none;
+            }
+    
+            .pc-collection-tab-section_id.active {
+                display: grid;
+            }
+    
+            .pc-collection-tab-section_id {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 12px;
+            }
+    
+            .pc-collection-product-section_id {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                padding: 16px 16px;
+                border-radius: 6px;
+                border: 0px solid #000000;
+                background-color: #ffffff;
+                text-decoration: none;
+            }
+    
+            .pc-collection-product-section_id:not(.pc-collection-product-mobile-section_id) {
+                display: none;
+            }
+    
+            .pc-collection-image-section_id {
+                flex: 0 0 60px;
+                aspect-ratio: 1/1;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+    
+            .pc-collection-image-section_id img,
+            .pc-collection-image-section_id svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+    
+            .pc-collection-image-section_id svg {
+                background-color: #DADADA;
+            }
+    
+            .pc-collection-sku-section_id {
+                margin: 0;
+                font-size: 10px;
+                color: #040404;
+                line-height: 150%;
+                text-transform: uppercase;
+            }
+    
+            .pc-collection-subtitle-section_id {
+                margin: 0;
+                margin-top: 0px;
+                font-size: 10px;
+                color: #757371;
+                line-height: 130%;
+                text-transform: uppercase;
+            }
+    
+            .pc-collection-title-section_id {
+                margin: 0;
+                margin-top: 0px;
+                font-size: 14px;
+                color: #040404;
+                line-height: 130%;
+                text-transform: unset;
+                font-weight: 700;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .pc-collection-product-section_id:hover .pc-collection-title-section_id {
+                color: #3565e0;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .pc-collection-price-section_id {
+                margin: 0;
+                margin-left: auto;
+                font-size: 14px;
+                color: #040404;
+                line-height: 130%;
+                text-transform: unset;
+                font-weight: 700;
+            }
+    
+            @media(min-width: 768px) {
+                .pc-collection-tab-section_id {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .pc-section-section_id {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+    
+                .pc-section-section_id-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 60px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .pc-collection-heading-section_id {
+                    text-align: left;
+                }
+    
+                .pc-collection-heading-section_id * {
+                    font-size: 27.0px;
+                }
+    
+                .pc-collection-tabs-titles-section_id {
+                    justify-content: start;
+                    gap: 12px;
+                    margin-top: 30px;
+                }
+    
+                .pc-collection-tabs-title-section_id {
+                    font-size: 13px;
+                    padding: 12px 24px;
+                }
+    
+                .pc-collection-tabs-section_id {
+                    margin-top: 24px;
+                }
+    
+                .pc-collection-tab-section_id {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 12px;
+                }
+    
+                .pc-collection-product-section_id {
+                    padding: 16px 16px;
+                }
+    
+                .pc-collection-product-section_id:not(.pc-collection-product-mobile-section_id) {
+                    display: flex;
+                }
+    
+                .pc-collection-image-section_id {
+                    flex: 0 0 60px;
+                }
+    
+                .pc-collection-sku-section_id {
+                    font-size: 10px;
+                }
+    
+                .pc-collection-subtitle-section_id {
+                    margin-top: 0px;
+                    font-size: 10px;
+                }
+    
+                .pc-collection-title-section_id {
+                    margin-top: 0px;
+                    font-size: 14px;
+                }
+    
+                .pc-collection-price-section_id {
+                    font-size: 14px;
+                }
+            }
+    
+            @media(min-width: 1200px) {
+                .pc-collection-tab-section_id {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+    
+            @media(min-width: 1440px) {
+                .pc-collection-tab-section_id {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        
+        
+            .pc-section-section_id-settings {
+                max-width: 160rem;
+            }
+        </style>
+    
+    
+    
+        <div class="pc-section-section_id pc-collection-section_id"
+            style="background-color:#f7f7f7; background-image: ;">
+            <div class="pc-section-section_id-settings">
+    
+                <div class="pc-collection-heading-section_id">
+                    <h2>Recommended for You</h2>
+                </div>
+    
+                <div class="pc-collection-tabs-titles-section_id">
+    
+    
+    
+                    <button class="pc-collection-tabs-title-section_id"
+                        id="tab_8PnQeG">
+    
+                        Accessories
+    
+                    </button>
+    
+    
+    
+                    <button class="pc-collection-tabs-title-section_id active"
+                        id="tab_Fzc4jc">
+    
+                        Under $50
+    
+                    </button>
+    
+    
+    
+                    <button class="pc-collection-tabs-title-section_id"
+                        id="tab_rwFp3e">
+    
+                        Over $50
+    
+                    </button>
+    
+    
+    
+                    <button class="pc-collection-tabs-title-section_id"
+                        id="tab_tM4wGy">
+    
+                        Cardigans
+    
+                    </button>
+    
+    
+    
+                    <button class="pc-collection-tabs-title-section_id"
+                        id="tab_EMAG6m">
+    
+                        Mugs
+    
+                    </button>
+    
+    
+    
+                    <button class="pc-collection-tabs-title-section_id"
+                        id="tab_rmTjY8">
+    
+                        All
+    
+                    </button>
+    
+    
+                </div>
+                <div class="pc-collection-tabs-section_id">
+    
+    
+    
+    
+                    <div class="pc-collection-tab-section_id"
+                        data-id="tab_8PnQeG">
+    
+    
+    
+                        <a href="/products/5-panel-hat"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/5-panel-hat_4ee20a27-8d5a-490e-a2fc-1f9c3beb7bf5.jpg?v=1663855324"
+                                    alt="5 Panel Camp Cap" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">5
+                                    Panel Camp Cap</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$48.00</p>
+                        </a>
+    
+                        <a href="/products/harriet-chambray"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/HarrietChambray_Longsleeves_25493de2-c72b-49a0-b319-d9d4117fae8e.jpg?v=1663855309"
+                                    alt="Harriet Chambray" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Harriet Chambray</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$98.00</p>
+                        </a>
+    
+                        <a href="/products/organic-bandana"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-74_ea84bd7a-7c69-4e8c-a41b-042d6c764874.png?v=1720685341"
+                                    alt="Organic Bandana" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic Bandana</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$9.00</p>
+                        </a>
+    
+                        <a href="/products/whitney-pullover"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/WhitneyPullover_Full_58e7b8d6-b939-4701-9e1d-9d853dff60ed.jpg?v=1663855301"
+                                    alt="Whitney Pullover" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Whitney Pullover</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$138.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/the-scout-skincare-kit"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/skin-care_c18143d5-6378-46aa-b0d7-526aee3bc776.jpg?v=1663855288"
+                                    alt="The Scout Skincare Kit" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Ursa Major</p>
+    
+                                <p class="pc-collection-title-section_id">The
+                                    Scout Skincare Kit</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$36.00</p>
+                        </a>
+    
+                        <a href="/products/the-field-report-vol-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/fieldreport_vol2_front_437c4459-042c-4b07-8018-f092a5eb83ac.jpg?v=1663855360"
+                                    alt="The Field Report Vol. 2" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">The
+                                    Field Report Vol. 2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/scout-backpack"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/scout-backpack_a035275d-8975-4a05-8456-5e1ec35f020f.jpg?v=1663855341"
+                                    alt="Scout Backpack" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">Scout
+                                    Backpack</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$128.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/redwing-iron-ranger"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/boot.jpg?v=1663855349"
+                                    alt="Red Wing Iron Ranger Boot" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">Red
+                                    Wing</p>
+    
+                                <p class="pc-collection-title-section_id">Red
+                                    Wing Iron Ranger Boot</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$310.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/pennsylvania-field-notes"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/PA1_5b8b54ac-f422-4e1a-a275-a13a9735203f.jpg?v=1663855294"
+                                    alt="Pennsylvania Notebooks" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Field Notes</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Pennsylvania Notebooks</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$10.00</p>
+                        </a>
+    
+                        <a href="/products/mud-scrub-soap"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/soap.jpg?v=1663855296" alt="Mud Scrub Soap"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Bush Smarts</p>
+    
+                                <p class="pc-collection-title-section_id">Mud
+                                    Scrub Soap</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$15.00</p>
+                        </a>
+    
+                        <a href="/products/lunar-cirque"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/lunarcirque_gunmetal.jpg?v=1663855321"
+                                    alt="Moon Cycle" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">Moon
+                                    Cycle</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$36.00</p>
+                        </a>
+    
+                        <a href="/products/snow-peak-mola-headlamp"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/snowpeak_headlamp_458e50f4-a354-423e-ad48-a83c47878792.jpg?v=1663855355"
+                                    alt="Mola Headlamp" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Snow Peak</p>
+    
+                                <p class="pc-collection-title-section_id">Mola
+                                    Headlamp</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$45.00</p>
+                        </a>
+    
+    
+    
+                    </div>
+    
+    
+    
+                    <div class="pc-collection-tab-section_id active"
+                        data-id="tab_Fzc4jc">
+    
+    
+    
+                        <a href="/products/wide-bundle"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/Graphicforsection.png?v=1706563342"
+                                    alt="Wide bundle" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Wide
+                                    bundle</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$39.00</p>
+                        </a>
+    
+                        <a href="/products/product-coupon-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product coupon #2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/two-timers"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Two
+                                    timers</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/product-countdown-timer-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product countdown timer #2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/payment-icons"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Payment icons</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/product-upsell-5"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product upsell #5</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/product-bundles"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/pexels-ron-lach-8131585_b86452af-95e8-4b58-982f-2be8fc843c23.jpg?v=1726163007"
+                                    alt="Save Up To 60% Today + 4 FREE Gifts" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Save
+                                    Up To 60% Today + 4 FREE Gifts</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$35.00</p>
+                        </a>
+    
+                        <a href="/products/tonic"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/pexels-ron-lach-8131585_b86452af-95e8-4b58-982f-2be8fc843c23.jpg?v=1726163007"
+                                    alt="Tonic" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Tonic
+                                </p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$35.00</p>
+                        </a>
+    
+                        <a href="/products/face-mask"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/face-mask.jpg?v=1726215758" alt="Face Mask"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Face
+                                    Mask</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/hand-cream"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/hand-cream.jpg?v=1726216497" alt="Hand Cream"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Hand
+                                    Cream</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/free-shipping"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/shipping.jpg?v=1726241590" alt="Free shipping"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Free
+                                    shipping</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+                        <a href="/products/digital-book"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/book.jpg?v=1726245428" alt="Digital book"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Digital book</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$0.00</p>
+                        </a>
+    
+    
+    
+                    </div>
+    
+    
+    
+                    <div class="pc-collection-tab-section_id"
+                        data-id="tab_rwFp3e">
+    
+    
+    
+                        <a href="/products/bundle-box-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Bundle
+                                    box #2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$99.00</p>
+                        </a>
+    
+                        <a href="/products/box-test"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Box
+                                    test</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$99.00</p>
+                        </a>
+    
+                        <a href="/products/shoppable-product-videos"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/20041_cypress00002.jpg?v=1729256629"
+                                    alt="Organic Cropped Utility Pullover" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic Cropped Utility Pullover</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$148.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/bundle-box"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Bundle
+                                    Box</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$199.99
+                            </p>
+                        </a>
+    
+                        <a href="/products/5-panel-hat"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/5-panel-hat_4ee20a27-8d5a-490e-a2fc-1f9c3beb7bf5.jpg?v=1663855324"
+                                    alt="5 Panel Camp Cap" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">5
+                                    Panel Camp Cap</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$48.00</p>
+                        </a>
+    
+                        <a href="/products/product-reviews-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product reviews 2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-toggles"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product toggles</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/chambray-summer-dress"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/w-summersundress-chambray-216-161-22524_1.jpg?v=1725283369"
+                                    alt="Chambray Summer Dress" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Chambray Summer Dress</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$108.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/size-guide-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Size
+                                    guide #2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-videos-4"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Videos #4</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-videos-3"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Videos #3</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-tabs-4"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Tabs #4</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+    
+    
+                    </div>
+    
+    
+    
+                    <div class="pc-collection-tab-section_id"
+                        data-id="tab_tM4wGy">
+    
+    
+    
+                        <a href="/products/gertrude-cardigan"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/gertrude_charcoal.jpg?v=1663855304"
+                                    alt="Gertrude Cardigan" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Gertrude Cardigan</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$108.00
+                            </p>
+                        </a>
+    
+    
+    
+                    </div>
+    
+    
+    
+                    <div class="pc-collection-tab-section_id"
+                        data-id="tab_EMAG6m">
+    
+    
+    
+                        <a href="/products/stoneware-travel-mug"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/Ceramics-1.jpg?v=1720626810"
+                                    alt="Stoneware Travel Mug" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Stoneware Travel Mug</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$42.00</p>
+                        </a>
+    
+                        <a href="/products/16-oz-stoneware-mug"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-79.jpg?v=1720466058"
+                                    alt="16 oz. Stoneware Mug" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">16 oz.
+                                    Stoneware Mug</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$32.00</p>
+                        </a>
+    
+                        <a href="/products/snow-peak-titanium-single-wall-cup"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/mug.jpg?v=1663855357" alt="Double Wall Mug"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Snow Peak</p>
+    
+                                <p class="pc-collection-title-section_id">Double
+                                    Wall Mug</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$24.00</p>
+                        </a>
+    
+    
+    
+                    </div>
+    
+    
+    
+                    <div class="pc-collection-tab-section_id"
+                        data-id="tab_rmTjY8">
+    
+    
+    
+                        <a href="/products/wide-bundle"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/Graphicforsection.png?v=1706563342"
+                                    alt="Wide bundle" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Wide
+                                    bundle</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$39.00</p>
+                        </a>
+    
+                        <a href="/products/bundle-box-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Bundle
+                                    box #2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$99.00</p>
+                        </a>
+    
+                        <a href="/products/box-test"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Box
+                                    test</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$99.00</p>
+                        </a>
+    
+                        <a href="/products/shoppable-product-videos"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/20041_cypress00002.jpg?v=1729256629"
+                                    alt="Organic Cropped Utility Pullover" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic Cropped Utility Pullover</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$148.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/bundle-box"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Bundle
+                                    Box</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$199.99
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-reviews-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product reviews 2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/tonic"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/pexels-ron-lach-8131585_b86452af-95e8-4b58-982f-2be8fc843c23.jpg?v=1726163007"
+                                    alt="Tonic" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Tonic
+                                </p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$35.00</p>
+                        </a>
+    
+                        <a href="/products/product-bundles"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/pexels-ron-lach-8131585_b86452af-95e8-4b58-982f-2be8fc843c23.jpg?v=1726163007"
+                                    alt="Save Up To 60% Today + 4 FREE Gifts" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Save
+                                    Up To 60% Today + 4 FREE Gifts</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$35.00</p>
+                        </a>
+    
+                        <a href="/products/product-toggles"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product toggles</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/chambray-summer-dress"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/w-summersundress-chambray-216-161-22524_1.jpg?v=1725283369"
+                                    alt="Chambray Summer Dress" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Chambray Summer Dress</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$108.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/size-guide-2"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Size
+                                    guide #2</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-videos-4"
+                            class="pc-collection-product-section_id pc-collection-product-mobile-section_id">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Videos #4</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-videos-3"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Videos #3</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-tabs-4"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Tabs #4</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/5oz-scout-citronella-candle-2-pack"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/710-003-50429_scoutcandle-small1_24780ab6-2d21-443d-b1c8-649f7a757e0a.webp?v=1723133103"
+                                    alt="5oz Scout Citronella Candle - 2 Pack" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">5oz
+                                    Scout Citronella Candle - 2 Pack</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$24.00</p>
+                        </a>
+    
+                        <a href="/products/trust-badges-6"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/WMNSBISONULTRALIGHT_BRICKRED_204-036-11424_1321.webp?v=1722976672"
+                                    alt="Trust Badges #6" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Trust
+                                    Badges #6</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/bison-zip-up-jacket"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/204-036-11425_WMNS_BISON_ULTRALIGHT_brickred_ccvvv6307.webp?v=1722976704"
+                                    alt="Bison Zip-Up Jacket" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">Bison
+                                    Zip-Up Jacket</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$128.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-features-bar"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Features Bar</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$100.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/recycled-wool-9l-sidekick"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-8_ce86e2b3-265d-4ecf-abab-ccf73e4c25df.jpg?v=1720696298"
+                                    alt="Recycled Wool 9L Sidekick" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Recycled Wool 9L Sidekick</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$98.00</p>
+                        </a>
+    
+                        <a href="/products/the-packable-tote-in-wood-thrush"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/S22_Accessories-91_504fc646-3b76-446f-96c5-3cc31f3ba3bf.png?v=1720687143"
+                                    alt="The Packable Tote in Wood Thrush" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">The
+                                    Packable Tote in Wood Thrush</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$15.00</p>
+                        </a>
+    
+                        <a href="/products/the-packable-tote-in-navy"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/814-027-13213_thepackabletote_navywave1_19486658-e535-497b-bd24-78144dd55e24.png?v=1720685868"
+                                    alt="The Packable Tote in Navy" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">The
+                                    Packable Tote in Navy</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$15.00</p>
+                        </a>
+    
+                        <a href="/products/organic-bandana"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-74_ea84bd7a-7c69-4e8c-a41b-042d6c764874.png?v=1720685341"
+                                    alt="Organic Bandana" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic Bandana</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$9.00</p>
+                        </a>
+    
+                        <a href="/products/trucker-hat"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/S22_Accessories-78_86b63d0c-7e2b-4c61-a24f-3fd6b801e37f.png?v=1720684718"
+                                    alt="Trucker Hat" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Trucker Hat</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$34.00</p>
+                        </a>
+    
+                        <a href="/products/organic-5-panel-hat"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/S22_Accessories-57.png?v=1720683868"
+                                    alt="Organic 5-Panel Hat" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic 5-Panel Hat</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$34.00</p>
+                        </a>
+    
+                        <a href="/products/ecoknit%E2%84%A2-stripe-scarf"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/Scarf-5.png?v=1720633373"
+                                    alt="EcoKnit™ Stripe Scarf" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    EcoKnit™ Stripe Scarf</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$68.00</p>
+                        </a>
+    
+                        <a href="/products/organic-trucker-hat"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/706-112-05313_HELLOSUNSHINE.webp?v=1720632252"
+                                    alt="Organic Trucker Hat" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic Trucker Hat</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$34.00</p>
+                        </a>
+    
+                        <a href="/products/stoneware-travel-mug"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/Ceramics-1.jpg?v=1720626810"
+                                    alt="Stoneware Travel Mug" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Stoneware Travel Mug</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$42.00</p>
+                        </a>
+    
+                        <a href="/products/revolution-9l-sidekick"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-1_2999b663-2243-4356-a426-d8b36434689e.jpg?v=1720471873"
+                                    alt="(R)evolution™ 9L Sidekick" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    (R)evolution™ 9L Sidekick</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$88.00</p>
+                        </a>
+    
+                        <a href="/products/16-oz-stoneware-mug"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/F22_Accessories-79.jpg?v=1720466058"
+                                    alt="16 oz. Stoneware Mug" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">16 oz.
+                                    Stoneware Mug</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$32.00</p>
+                        </a>
+    
+                        <a href="/products/trust-badges-5"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Trust
+                                    Badges #5</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$48.00</p>
+                        </a>
+    
+                        <a href="/products/bison-ultralight-vest"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/MENSULTRALIGHTVESTNIGHTSKY104-033-25025_9134.jpg?v=1718975472"
+                                    alt="Bison Ultralight Vest" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">Bison
+                                    Ultralight Vest</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$148.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/revolution%E2%84%A2-25l-convertible-carryall"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/814-175-34413.jpg?v=1718874666"
+                                    alt="(R)evolution™ 25L Convertible Carryall" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    (R)evolution™ 25L Convertible Carryall</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$118.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/scrolling-product-text"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Scrolling Product Text</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$20.00</p>
+                        </a>
+    
+                        <a href="/products/organic-double-cloth-button-down"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/201335_sand00002.jpg?v=1718609759"
+                                    alt="Organic Double Cloth Button Down" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Organic Double Cloth Button Down</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$98.00</p>
+                        </a>
+    
+                        <a href="/products/size-guide"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Size
+                                    Guide</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$20.00</p>
+                        </a>
+    
+                        <a href="/products/beige-stripes-beni-bed"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/1_c25398f8-a164-41bb-9a6a-7c4aaec2c814.webp?v=1717291625"
+                                    alt="Beige Stripes BENI BED" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Beige
+                                    Stripes BENI BED</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$199.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-tabs-3"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Product Tabs #3</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$20.00</p>
+                        </a>
+    
+                        <a href="/products/via-throw"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/1_85320dd3-52be-4d6b-8e0a-1c80c8cfa646.png?v=1708704465"
+                                    alt="VIA THROW RUG" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Naming This Later</p>
+    
+                                <p class="pc-collection-title-section_id">VIA
+                                    THROW RUG</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$185.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/daisy-throw"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/1_7b78f06d-c9e6-4bdc-ae55-1ee71b6321b2.png?v=1708704443"
+                                    alt="DAISY THROW" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Naming This Later</p>
+    
+                                <p class="pc-collection-title-section_id">DAISY
+                                    THROW RUG</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$125.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/jade-throw"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/1_01b0d1cc-5a12-4b14-b80a-f2ab1194bba7.png?v=1708704422"
+                                    alt="JADE THROW RUG" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Naming This Later</p>
+    
+                                <p class="pc-collection-title-section_id">JADE
+                                    THROW RUG</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$185.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/sunset-throw"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/1_b35da514-81eb-450f-8c17-c45f36c3121f.png?v=1708704400"
+                                    alt="SUNSET THROW - NAMING THIS LATER - NTL" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Naming This Later</p>
+    
+                                <p class="pc-collection-title-section_id">SUNSET
+                                    THROW RUG</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$125.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/fern-throw"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/1_3c5d488b-6aa6-4606-b553-9b55c216a183.png?v=1708703646"
+                                    alt="FERN THROW" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Naming This Later</p>
+    
+                                <p class="pc-collection-title-section_id">FERN
+                                    THROW</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$175.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/product-videos"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/files/DALL_E2024-01-1710.41.24-Aplainblackhoodieonalightgreybackgroundfeaturingawhite_S_logocenteredonthechestarea.Thehoodieshouldhavenootherlogosordesign.png?v=1705488097"
+                                    alt="Hoodie" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Section Store</p>
+    
+                                <p class="pc-collection-title-section_id">Hoodie
+                                </p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$200.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/whitney-pullover"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/WhitneyPullover_Full_58e7b8d6-b939-4701-9e1d-9d853dff60ed.jpg?v=1663855301"
+                                    alt="Whitney Pullover" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Whitney Pullover</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$138.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/the-scout-skincare-kit"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/skin-care_c18143d5-6378-46aa-b0d7-526aee3bc776.jpg?v=1663855288"
+                                    alt="The Scout Skincare Kit" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Ursa Major</p>
+    
+                                <p class="pc-collection-title-section_id">The
+                                    Scout Skincare Kit</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$36.00</p>
+                        </a>
+    
+                        <a href="/products/snow-peak-titanium-single-wall-cup"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/mug.jpg?v=1663855357" alt="Double Wall Mug"
+                                    loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Snow Peak</p>
+    
+                                <p class="pc-collection-title-section_id">Double
+                                    Wall Mug</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$24.00</p>
+                        </a>
+    
+                        <a href="/products/snow-peak-mola-headlamp"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/snowpeak_headlamp_458e50f4-a354-423e-ad48-a83c47878792.jpg?v=1663855355"
+                                    alt="Mola Headlamp" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Snow Peak</p>
+    
+                                <p class="pc-collection-title-section_id">Mola
+                                    Headlamp</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$45.00</p>
+                        </a>
+    
+                        <a href="/products/scout-backpack"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/scout-backpack_a035275d-8975-4a05-8456-5e1ec35f020f.jpg?v=1663855341"
+                                    alt="Scout Backpack" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    United By Blue</p>
+    
+                                <p class="pc-collection-title-section_id">Scout
+                                    Backpack</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$128.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/redwing-iron-ranger"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/boot.jpg?v=1663855349"
+                                    alt="Red Wing Iron Ranger Boot" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">Red
+                                    Wing</p>
+    
+                                <p class="pc-collection-title-section_id">Red
+                                    Wing Iron Ranger Boot</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$310.00
+                            </p>
+                        </a>
+    
+                        <a href="/products/pennsylvania-field-notes"
+                            class="pc-collection-product-section_id ">
+    
+                            <div class="pc-collection-image-section_id">
+                                <img src="//section.store/cdn/shop/products/PA1_5b8b54ac-f422-4e1a-a275-a13a9735203f.jpg?v=1663855294"
+                                    alt="Pennsylvania Notebooks" loading="lazy">
+                            </div>
+    
+                            <div class="pc-collection-info-section_id">
+    
+    
+                                <p class="pc-collection-subtitle-section_id">
+                                    Field Notes</p>
+    
+                                <p class="pc-collection-title-section_id">
+                                    Pennsylvania Notebooks</p>
+                            </div>
+                            <p class="pc-collection-price-section_id">$10.00</p>
+                        </a>
+    
+    
+    
+                    </div>
+    
+    
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function initFeaturedCollection4() {
+                if (document.querySelectorAll('.pc-collection-tabs-title-section_id')) {
+                    document.querySelectorAll('.pc-collection-tabs-title-section_id').forEach(el => {
+                        el.addEventListener('click', () => {
+                            document.querySelectorAll('.pc-collection-tabs-title-section_id').forEach(element => {
+                                element.classList.remove('active');
+                            })
+
+                            el.classList.add('active');
+
+                            if (document.querySelectorAll('.pc-collection-tab-section_id')) {
+                                document.querySelectorAll('.pc-collection-tab-section_id').forEach(element => {
+                                    let data_id = element.getAttribute('data-id');
+                                    element.classList.remove('active');
+                                    if (data_id == el.id) {
+                                        element.classList.add('active');
+                                    }
+                                })
+                            }
+
+                        })
+                    })
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', initFeaturedCollection4);
+
+        </script>
+    
+</body>
+</html>

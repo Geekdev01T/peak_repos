@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .section-template--22370650947913__ss_hero_16_8gPXD6 {
+            position: relative;
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        .section-template--22370650947913__ss_hero_16_8gPXD6-settings {
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            position: relative;
+            height: 100vh;
+            z-index: 10;
+        }
+
+        
+
+        .hero-image-template--22370650947913__ss_hero_16_8gPXD6 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .hero-image-template--22370650947913__ss_hero_16_8gPXD6::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #b6dfb866;
+            z-index: 0;
+        }
+
+        .hero-image-template--22370650947913__ss_hero_16_8gPXD6 img,
+        .hero-image-template--22370650947913__ss_hero_16_8gPXD6 svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-body-template--22370650947913__ss_hero_16_8gPXD6 {
+            height: 100%;
+            display: grid;
+            gap: 24px;
+        }
+
+        .hero-content-template--22370650947913__ss_hero_16_8gPXD6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            grid-area: content;
+        }
+
+        
+
+        .hero-image-desktop-template--22370650947913__ss_hero_16_8gPXD6 {
+            display: none !important;
+        }
+
+        @media(min-width: 1024px) {
+
+            .section-template--22370650947913__ss_hero_16_8gPXD6 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+            }
+
+            .section-template--22370650947913__ss_hero_16_8gPXD6-settings {
+                padding: 0 5rem;
+                padding-top: 100px;
+                padding-bottom: 100px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+                height: auto;
+            }
+
+            .hero-body-template--22370650947913__ss_hero_16_8gPXD6 {
+                gap: 52px;
+            }
+
+            .hero-content-template--22370650947913__ss_hero_16_8gPXD6 {
+                justify-content: center;
+                align-items: start;
+            }
+
+            .hero-image-mobile-template--22370650947913__ss_hero_16_8gPXD6 {
+                display: none !important;
+            }
+
+            .hero-image-desktop-template--22370650947913__ss_hero_16_8gPXD6 {
+                display: block !important;
+            }
+        }
+
+        .section-template--22370650947913__ss_hero_16_8gPXD6-settings {
+            max-width: 1200px;
+        }
+
+
+        .hero-template--22370650947913__ss_hero_16_8gPXD6 {
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+
+        @media (min-width: 1024px) {
+            .hero-template--22370650947913__ss_hero_16_8gPXD6 {
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+
+        .hero-body-template--22370650947913__ss_hero_16_8gPXD6 {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "image"
+                "content";
+            height: 100%;
+        }
+
+
+        @media (min-width: 1024px) {
+            .hero-body-template--22370650947913__ss_hero_16_8gPXD6 {
+                grid-template-columns: 1fr 40%;
+                grid-template-areas: "content image";
+            }
+        }
+
+
+        .hero-image-template--22370650947913__ss_hero_16_8gPXD6 {
+            aspect-ratio: auto;
+        }
+
+
+
+        .hero-review-review_RPMgbt {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .hero-review-text-review_RPMgbt * {
+            word-wrap: break-word;
+            margin: 0;
+            font-size: 12px;
+            color: #ffffff;
+            font-weight: 400;
+            line-height: 130%;
+            text-align: center;
+            text-transform: unset;
+        }
+
+        .hero-stars-review_RPMgbt {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            max-width: fit-content;
+        }
+
+        .hero-stars-review_RPMgbt svg,
+        .hero-stars-review_RPMgbt img {
+            display: block;
+            width: 14px;
+            height: 14px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-review-text-review_RPMgbt * {
+                font-size: 16px;
+            }
+
+            .hero-stars-review_RPMgbt svg,
+            .hero-stars-review_RPMgbt img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+
+
+        .hero-heading-heading_8E4KrG {
+            margin-top: 8px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-heading-heading_8E4KrG * {
+            margin: 0;
+            font-size: 26px;
+            color: #ffffff;
+            line-height: 130%;
+            text-transform: unset;
+            font-weight: 700;
+        }
+
+        @media(min-width: 1024px) {
+
+            .hero-heading-heading_8E4KrG {
+                margin-top: 8px;
+                text-align: left;
+            }
+
+            .hero-heading-heading_8E4KrG * {
+                font-size: 42px;
+            }
+        }
+
+
+        .hero-text-text_cppebz {
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .hero-text-text_cppebz * {
+            margin: 0;
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 170%;
+            text-transform: unset;
+        }
+
+        @media(min-width: 1024px) {
+
+            .hero-text-text_cppebz {
+                margin-top: 10px;
+                text-align: left;
+            }
+
+            .hero-text-text_cppebz * {
+                font-size: 22px;
+            }
+        }
+
+
+        .hero-button-button_cyVra9 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: fit-content;
+            gap: 10px;
+            width: 100%;
+            margin: 0;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 100%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            transition: all 0.3s ease 0s;
+            background-color: transparent;
+            border-radius: 100px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .hero-button-inner-button_cyVra9 {
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .hero-button-button_cyVra9:hover {
+            color: #ffffff;
+            transition: all 0.25s ease 0s;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-button-button_cyVra9 {
+                margin-top: 14px;
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+        }
+
+
+        .hero-button-button_cyVra9 {
+            transition: all 0.3s ease 0s;
+            background: #3732f4;
+            border: 1px solid #3732f4;
+        }
+
+        .hero-button-button_cyVra9:hover {
+            transition: all 0.3s ease 0s;
+            background: #3732f4;
+            border: 1px solid #3732f4;
+        }
+
+
+        .hero-features {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            gap: 1em;
+        }
+
+
+        .hero-feature-feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .hero-feature-text-feature {
+            margin: 0;
+            font-size: 13px;
+            color: #1a1a1a;
+            line-height: 100%;
+            text-transform: unset;
+        }
+
+        .hero-feature-icon-feature {
+            height: 16px;
+            width: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .hero-feature-icon-feature img,
+        .hero-feature-icon-feature svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: content;
+        }
+
+        .hero-feature-icon-feature svg path {
+            fill: #1a1a1a;
+        }
+
+        @media (min-width: 1024px) {
+
+            .hero-features {
+                margin-top: 28px;
+                gap: 2em;
+            }
+
+            .hero-feature-feature {
+                display: flex;
+                gap: 12px;
+            }
+
+            .hero-feature-icon-feature {
+                height: 20px;
+                width: 20px;
+            }
+
+            .hero-feature-text-feature {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+
+
+
+    <div class="section-template--22370650947913__ss_hero_16_8gPXD6 hero-template--22370650947913__ss_hero_16_8gPXD6"
+        style="background-color:#f9f9fa; background-image: ;">
+        <div class="section-template--22370650947913__ss_hero_16_8gPXD6-settings">
+            <div class="hero-image-template--22370650947913__ss_hero_16_8gPXD6">
+            
+                <img src="https://section.store/cdn/shop/files/ctrl-a-meal-replacement-baCwq7-mZrQ-unsplash.png?v=1718711742"
+                    alt="">
+            
+            
+            </div>
+            <div class="hero-body-template--22370650947913__ss_hero_16_8gPXD6">
+                <div class="hero-content-template--22370650947913__ss_hero_16_8gPXD6">
+
+
+                    <div class="hero-review-review_RPMgbt">
+
+                        <div class="hero-stars-review_RPMgbt">
+
+
+                            <svg width="" height="auto" viewBox="0 0 11 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.47717 9.97191C2.53651 9.77591 2.59214 9.59591 2.64407 9.41591C2.96304 8.35991 3.28573 7.29991 3.6047 6.24391C3.62325 6.17991 3.60841 6.15191 3.5639 6.11591C2.59585 5.36791 1.63151 4.61591 0.66717 3.86391C0.648625 3.85191 0.630079 3.83591 0.611534 3.81591C0.637497 3.79591 0.659751 3.80391 0.682005 3.80391C1.8763 3.80391 3.07431 3.80391 4.26861 3.80391C4.32796 3.80391 4.35021 3.78391 4.36876 3.72391C4.73595 2.51191 5.10314 1.29991 5.47033 0.0879062C5.47775 0.0639062 5.48517 0.0439063 5.4963 0.00390625C5.51484 0.0679063 5.52968 0.115906 5.54451 0.159906C5.90429 1.35191 6.26777 2.54391 6.62383 3.73591C6.64238 3.79191 6.66463 3.80791 6.72027 3.80791C7.91457 3.80791 9.11258 3.80791 10.3069 3.80791C10.3291 3.80791 10.3551 3.79991 10.3848 3.81991C8.76393 5.08391 7.14309 6.34791 5.52226 7.61191C5.52226 7.61191 5.52226 7.61991 5.52226 7.62391C5.57789 7.60791 5.63724 7.59591 5.69287 7.57991C6.31969 7.40791 6.94652 7.23991 7.57334 7.06391C7.61414 7.05191 7.62526 7.06391 7.63639 7.09991C7.92198 8.05191 8.20758 8.99991 8.49317 9.94791C8.49688 9.96391 8.50059 9.97591 8.50801 10.0039C8.36336 9.89191 8.22983 9.78791 8.09631 9.67991C7.24324 9.00791 6.39017 8.33991 5.5371 7.66391C5.4963 7.63191 5.47404 7.63991 5.43695 7.66391C4.4689 8.41591 3.50085 9.16791 2.53651 9.91991C2.51796 9.93191 2.49942 9.94791 2.46975 9.96791L2.47717 9.97191Z"
+                                    fill="#0DA558"></path>
+                            </svg>
+
+                            <svg width="" height="auto" viewBox="0 0 11 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.47717 9.97191C2.53651 9.77591 2.59214 9.59591 2.64407 9.41591C2.96304 8.35991 3.28573 7.29991 3.6047 6.24391C3.62325 6.17991 3.60841 6.15191 3.5639 6.11591C2.59585 5.36791 1.63151 4.61591 0.66717 3.86391C0.648625 3.85191 0.630079 3.83591 0.611534 3.81591C0.637497 3.79591 0.659751 3.80391 0.682005 3.80391C1.8763 3.80391 3.07431 3.80391 4.26861 3.80391C4.32796 3.80391 4.35021 3.78391 4.36876 3.72391C4.73595 2.51191 5.10314 1.29991 5.47033 0.0879062C5.47775 0.0639062 5.48517 0.0439063 5.4963 0.00390625C5.51484 0.0679063 5.52968 0.115906 5.54451 0.159906C5.90429 1.35191 6.26777 2.54391 6.62383 3.73591C6.64238 3.79191 6.66463 3.80791 6.72027 3.80791C7.91457 3.80791 9.11258 3.80791 10.3069 3.80791C10.3291 3.80791 10.3551 3.79991 10.3848 3.81991C8.76393 5.08391 7.14309 6.34791 5.52226 7.61191C5.52226 7.61191 5.52226 7.61991 5.52226 7.62391C5.57789 7.60791 5.63724 7.59591 5.69287 7.57991C6.31969 7.40791 6.94652 7.23991 7.57334 7.06391C7.61414 7.05191 7.62526 7.06391 7.63639 7.09991C7.92198 8.05191 8.20758 8.99991 8.49317 9.94791C8.49688 9.96391 8.50059 9.97591 8.50801 10.0039C8.36336 9.89191 8.22983 9.78791 8.09631 9.67991C7.24324 9.00791 6.39017 8.33991 5.5371 7.66391C5.4963 7.63191 5.47404 7.63991 5.43695 7.66391C4.4689 8.41591 3.50085 9.16791 2.53651 9.91991C2.51796 9.93191 2.49942 9.94791 2.46975 9.96791L2.47717 9.97191Z"
+                                    fill="#0DA558"></path>
+                            </svg>
+
+                            <svg width="" height="auto" viewBox="0 0 11 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.47717 9.97191C2.53651 9.77591 2.59214 9.59591 2.64407 9.41591C2.96304 8.35991 3.28573 7.29991 3.6047 6.24391C3.62325 6.17991 3.60841 6.15191 3.5639 6.11591C2.59585 5.36791 1.63151 4.61591 0.66717 3.86391C0.648625 3.85191 0.630079 3.83591 0.611534 3.81591C0.637497 3.79591 0.659751 3.80391 0.682005 3.80391C1.8763 3.80391 3.07431 3.80391 4.26861 3.80391C4.32796 3.80391 4.35021 3.78391 4.36876 3.72391C4.73595 2.51191 5.10314 1.29991 5.47033 0.0879062C5.47775 0.0639062 5.48517 0.0439063 5.4963 0.00390625C5.51484 0.0679063 5.52968 0.115906 5.54451 0.159906C5.90429 1.35191 6.26777 2.54391 6.62383 3.73591C6.64238 3.79191 6.66463 3.80791 6.72027 3.80791C7.91457 3.80791 9.11258 3.80791 10.3069 3.80791C10.3291 3.80791 10.3551 3.79991 10.3848 3.81991C8.76393 5.08391 7.14309 6.34791 5.52226 7.61191C5.52226 7.61191 5.52226 7.61991 5.52226 7.62391C5.57789 7.60791 5.63724 7.59591 5.69287 7.57991C6.31969 7.40791 6.94652 7.23991 7.57334 7.06391C7.61414 7.05191 7.62526 7.06391 7.63639 7.09991C7.92198 8.05191 8.20758 8.99991 8.49317 9.94791C8.49688 9.96391 8.50059 9.97591 8.50801 10.0039C8.36336 9.89191 8.22983 9.78791 8.09631 9.67991C7.24324 9.00791 6.39017 8.33991 5.5371 7.66391C5.4963 7.63191 5.47404 7.63991 5.43695 7.66391C4.4689 8.41591 3.50085 9.16791 2.53651 9.91991C2.51796 9.93191 2.49942 9.94791 2.46975 9.96791L2.47717 9.97191Z"
+                                    fill="#0DA558"></path>
+                            </svg>
+
+                            <svg width="" height="auto" viewBox="0 0 11 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.47717 9.97191C2.53651 9.77591 2.59214 9.59591 2.64407 9.41591C2.96304 8.35991 3.28573 7.29991 3.6047 6.24391C3.62325 6.17991 3.60841 6.15191 3.5639 6.11591C2.59585 5.36791 1.63151 4.61591 0.66717 3.86391C0.648625 3.85191 0.630079 3.83591 0.611534 3.81591C0.637497 3.79591 0.659751 3.80391 0.682005 3.80391C1.8763 3.80391 3.07431 3.80391 4.26861 3.80391C4.32796 3.80391 4.35021 3.78391 4.36876 3.72391C4.73595 2.51191 5.10314 1.29991 5.47033 0.0879062C5.47775 0.0639062 5.48517 0.0439063 5.4963 0.00390625C5.51484 0.0679063 5.52968 0.115906 5.54451 0.159906C5.90429 1.35191 6.26777 2.54391 6.62383 3.73591C6.64238 3.79191 6.66463 3.80791 6.72027 3.80791C7.91457 3.80791 9.11258 3.80791 10.3069 3.80791C10.3291 3.80791 10.3551 3.79991 10.3848 3.81991C8.76393 5.08391 7.14309 6.34791 5.52226 7.61191C5.52226 7.61191 5.52226 7.61991 5.52226 7.62391C5.57789 7.60791 5.63724 7.59591 5.69287 7.57991C6.31969 7.40791 6.94652 7.23991 7.57334 7.06391C7.61414 7.05191 7.62526 7.06391 7.63639 7.09991C7.92198 8.05191 8.20758 8.99991 8.49317 9.94791C8.49688 9.96391 8.50059 9.97591 8.50801 10.0039C8.36336 9.89191 8.22983 9.78791 8.09631 9.67991C7.24324 9.00791 6.39017 8.33991 5.5371 7.66391C5.4963 7.63191 5.47404 7.63991 5.43695 7.66391C4.4689 8.41591 3.50085 9.16791 2.53651 9.91991C2.51796 9.93191 2.49942 9.94791 2.46975 9.96791L2.47717 9.97191Z"
+                                    fill="#0DA558"></path>
+                            </svg>
+
+
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+
+                                <defs>
+                                    <linearGradient id="gradtemplate--22370650947913__ss_hero_16_8gPXD655">
+                                        <stop offset="0%" stop-color="#00b67a"></stop>
+                                        <stop offset="50%" stop-color="#00b67a"></stop>
+                                        <stop offset="50%" stop-color="#DDDDDD"></stop>
+                                        <stop offset="100%" stop-color="#DDDDDD"></stop>
+                                    </linearGradient>
+                                </defs>
+
+                                <rect width="32" height="32"
+                                    fill="url(#gradtemplate--22370650947913__ss_hero_16_8gPXD655)"></rect>
+                                <g clip-path="url(#clip0_25_4)">
+                                    <path
+                                        d="M9.20283 27L16.001 21.807L22.7972 27L20.2018 18.596L27 13.403H18.5984L16.001 5L13.4037 13.403H5L11.7982 18.596L9.20283 27Z"
+                                        fill="#ffffff"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_25_4">
+                                        <rect width="22" height="22" fill="#ffffff" transform="translate(5 5)"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+
+                        </div>
+
+
+                        <div class="hero-review-text-review_RPMgbt">
+                            <p>4.7/5 • 200 000 utilisateurs satisfaits</p>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="hero-heading-heading_8E4KrG">
+                        <h1>The Most Delicious Meal Replacement</h1>
+                    </div>
+
+
+
+
+
+
+                    <div class="hero-text-text_cppebz">
+                        <p>Wholesome meals and snacks that offer necessary energy and exceptional flavor</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="hero-button-button_cyVra9">
+                        <p class="hero-button-inner-button_cyVra9">
+                            SHOP NOW
+
+                        </p>
+                    </div>
+
+
+
+                    <div class="hero-features">
+                        <div class="hero-feature-feature">
+
+                            <div class="hero-feature-icon-feature">
+
+                                <img src="https://www.helloboku.com/cdn/shop/files/Check_element_1.png?v=1716213432&width=200"
+                                    alt="">
+
+                            </div>
+
+
+                            <p class="hero-feature-text-feature">Garantie 2 ans</p>
+
+                        </div>
+
+
+
+
+                        <div class="hero-feature-feature">
+
+                            <div class="hero-feature-icon-feature">
+
+                                <img src="//www.helloboku.com/cdn/shop/files/Check_element_1.png?v=1716213432&width=200"
+                                    alt="">
+
+                            </div>
+
+
+                            <p class="hero-feature-text-feature">30 jours d'essai 100% remboursés</p>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dynamic-btn {
+            position: relative;
+            padding: 12px 24px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #fff;
+            border-radius: 40px;
+            background: #ad0606;
+            border: 1px solid #000;
+            margin: 0 auto;
+            width: 30%;
+            cursor: pointer;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .dynamic-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #fff;
+            transform: scaleX(0);
+            transition: transform .5s ease;
+            z-index: -1;
+        }
+
+        .dynamic-btn:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="dynamic-btn">FIND US ON SOCIAL</button>
+
+    <script>
+        const btn = document.querySelector('.dynamic-btn');
+        let lastDirection = null;
+
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const horizontal = x / rect.width;
+            const vertical = y / rect.height;
+
+            const beforeStyle = document.createElement('style');
+            
+            if (Math.abs(0.5 - horizontal) > Math.abs(0.5 - vertical)) {
+                // Animation horizontale
+                const origin = horizontal > 0.5 ? 'right' : 'left';
+                lastDirection = {
+                    isHorizontal: true,
+                    value: origin
+                };
+                beforeStyle.textContent = `.dynamic-btn::before {
+                    transform-origin: ${origin} center;
+                    transform: scaleX(1);
+                }`;
+            } else {
+                // Animation verticale
+                const origin = vertical > 0.5 ? 'bottom' : 'top';
+                lastDirection = {
+                    isHorizontal: false,
+                    value: origin
+                };
+                beforeStyle.textContent = `.dynamic-btn::before {
+                    transform-origin: center ${origin};
+                    transform: scaleY(1);
+                }`;
+            }
+
+            const oldStyle = document.querySelector('#dynamic-btn-style');
+            if (oldStyle) oldStyle.remove();
+
+            beforeStyle.id = 'dynamic-btn-style';
+            document.head.appendChild(beforeStyle);
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            const beforeStyle = document.createElement('style');
+            
+            if (lastDirection) {
+                if (lastDirection.isHorizontal) {
+                    beforeStyle.textContent = `.dynamic-btn::before {
+                        transform-origin: ${lastDirection.value} center;
+                        transform: scaleX(0);
+                    }`;
+                } else {
+                    beforeStyle.textContent = `.dynamic-btn::before {
+                        transform-origin: center ${lastDirection.value};
+                        transform: scaleY(0);
+                    }`;
+                }
+            }
+
+            const oldStyle = document.querySelector('#dynamic-btn-style');
+            if (oldStyle) oldStyle.remove();
+
+            beforeStyle.id = 'dynamic-btn-style';
+            document.head.appendChild(beforeStyle);
+        });
+    </script>
+</body>
+
+</html>

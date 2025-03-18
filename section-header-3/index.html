@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+    
+            .section-ss-header-3 {
+                border-top: solid #000000 1px;
+                border-bottom: solid #000000 1px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                position: relative;
+                background-color:#ffffff;
+                
+            }
+    
+            .section-ss-header-3-settings {
+                margin: 0 auto;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.fixed {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: calc(100% - 0rem);
+                z-index: 999;
+            }
+    
+            .header-ss-header-3.onscroll {
+                background-color: #ffffff !important;
+                transition: all 0.25s ease;
+            }
+    
+            .header-ss-header-3.scroll {
+                transform: translateY(-150%);
+                transition: all 0.25s ease;
+            }
+    
+            .header-ss-header-3.scroll.active {
+                transform: translateY(0);
+                transition: all 0.25s ease;
+            }
+    
+            .header-ss-header-3.open {
+                background-color: #ffffff !important;
+                transition: all 0.25s ease;
+            }
+    
+            .header-body-ss-header-3 {
+                display: grid;
+                align-items: center;
+                gap: 12px;
+            }
+    
+            .header-menu-list-ss-header-3 {
+                padding: 0px;
+                margin: 0px;
+                display: none;
+                align-items: center;
+                gap: 0px;
+                flex-wrap: wrap;
+                list-style: none;
+            }
+    
+            .header-menu-mobile-ss-header-3 .header-menu-list-ss-header-3 {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+    
+            .header-menu-item-ss-header-3 {
+                line-height: 100%;
+                cursor: pointer;
+                box-sizing: border-box;
+                padding-bottom: 3px;
+            }
+    
+            .header-menu-link-ss-header-3 {
+                margin: 0;
+                font-size: 14px;
+                color: #181b1a;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                font-weight: 700;
+                transition: all 0.25s ease;
+                position: relative;
+                z-index: 3;
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.open.transparent .header-menu-link-ss-header-3 {
+                color: #181b1a;
+                transition: all 0.25s ease;
+            }
+    
+            .header-submenu-ss-header-3 .header-menu-link-ss-header-3 {
+                color: #181b1a !important;
+                font-weight: 400;
+            }
+    
+            .header-submenu-ss-header-3 .header-menu-item-ss-header-3:hover>.header-menu-link-ss-header-3 {
+                color: #181b1a !important;
+            }
+    
+            .header-submenu-ss-header-3 .header-menu-item-ss-header-3:hover>.header-menu-link-ss-header-3::after {
+                background-color: #191b18 !important;
+            }
+    
+            .header-menu-item-parent-ss-header-3 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                max-width: fit-content;
+                flex-basis: 0;
+            }
+    
+            .header-menu-item-icon-ss-header-3 {
+                display: block;
+                flex: 0 0 8px;
+                width: 8px;
+                transition: all 0.25s ease 0s;
+                color: #181b1a;
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3:not(.onscroll).transparent.open .header-menu-item-icon-ss-header-3 {
+                color: #4d04c4;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .header-menu-item-ss-header-3:hover .header-menu-item-icon-ss-header-3 {
+                color: #1b181a !important;
+                transition: all 0.25s ease 0s;
+            }
+    
+    
+    
+    
+    
+            .header-menu-item-icon-ss-header-3 svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .header-submenu-ss-header-3 {
+                position: absolute;
+                z-index: 3;
+                top: calc(100% - 40px);
+                left: 0;
+                width: 100%;
+                transform: translateY(30px);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.25s ease 0s;
+                list-style: none;
+                margin: 0px;
+            }
+    
+            .header-submenu-bg-ss-header-3 {
+                display: block !important;
+                height: 20px;
+                pointer-events: none;
+            }
+    
+            .header-submenu-inner-ss-header-3 {
+                background-color: #ffffff;
+                border-bottom: 1px solid #000000;
+            }
+    
+            .header-submenu-ss-header-3 .section-ss-header-3-settings {
+                padding-top: 40px;
+            }
+    
+            .header-menu-item-parent-ss-header-3.active .header-submenu-ss-header-3 {
+                transform: translateY(0px);
+                opacity: 1;
+                pointer-events: all;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .header-menu-burder-ss-header-3 {
+                display: block;
+                width: 20px;
+                height: 16px;
+                position: relative;
+                z-index: 3;
+                transition: all 0.25s ease;
+                cursor: pointer;
+                background-color: transparent;
+                border: 0px;
+                box-shadow: none;
+            }
+    
+            .header-menu-burger-icon-ss-header-3 {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -1px;
+                width: 100%;
+                height: 2px;
+                background: #181b1a;
+                transition: transform .4s ease;
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.open .header-menu-burger-icon-ss-header-3 {
+                transform: rotate(45deg);
+                transition-delay: .22s;
+                background: #181b1a !important;
+            }
+    
+            .header-menu-burger-icon-ss-header-3::before,
+            .header-menu-burger-icon-ss-header-3::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: inherit;
+                background: #191b18;
+            }
+    
+            .header-menu-burger-icon-ss-header-3::before {
+                top: -7px;
+                transition: top .25s ease .27s, opacity .25s ease, width .25s ease;
+            }
+    
+            .header-ss-header-3.open .header-menu-burger-icon-ss-header-3::before {
+                top: 0;
+                opacity: 0;
+                width: 100%;
+                transition: top .2s ease, opacity .2s ease .22s, width .1s ease;
+                background: #191b18;
+            }
+    
+            .header-menu-burger-icon-ss-header-3::after {
+                bottom: -7px;
+                transition: bottom .25s ease .27s, transform .25s ease, width .25s ease;
+            }
+    
+            .header-ss-header-3.open .header-menu-burger-icon-ss-header-3::after {
+                bottom: 0;
+                transform: rotate(-90deg);
+                width: 100%;
+                transition: bottom .2s ease, transform .2s ease .22s, width .1s ease;
+                background: #181b1a !important;
+            }
+    
+    
+    
+    
+    
+            .header-logo-ss-header-3 {
+                width: 100%;
+                max-width: 150px;
+                text-align: center;
+                position: relative;
+                z-index: 3;
+            }
+    
+            .header-logo-image-ss-header-3 img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .header-logo-image-desktop-ss-header-3 {
+                display: none;
+            }
+    
+            .header-logo-text-ss-header-3 {
+                margin: 0;
+                font-size: 20px;
+                color: #181b1a;
+                line-height: 100%;
+                text-transform: unset;
+                text-decoration: none;
+                font-weight: 700;
+                transition: all 0.25s ease;
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.open.transparent .header-logo-text-ss-header-3 {
+                color: #181b1a;
+                transition: all 0.25s ease;
+            }
+    
+            .header-ss-header-3 .header-logo-first-ss-header-3 {
+                display: block !important;
+            }
+    
+            .header-ss-header-3 .header-logo-second-ss-header-3 {
+                display: none !important;
+            }
+    
+            .header-ss-header-3:not(.onscroll).transparent .header-logo-first-ss-header-3 {
+                display: none !important;
+            }
+    
+            .header-ss-header-3.open.transparent .header-logo-first-ss-header-3 {
+                display: block !important;
+            }
+    
+            .header-ss-header-3:not(.onscroll).transparent .header-logo-second-ss-header-3 {
+                display: block !important;
+            }
+    
+            .header-ss-header-3.open.transparent .header-logo-second-ss-header-3 {
+                display: none !important;
+            }
+    
+            .header-right-ss-header-3 {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 16px;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 3;
+            }
+    
+            .header-search-text-ss-header-3,
+            .header-account-text-ss-header-3,
+            .header-cart-text-ss-header-3 {
+                display: none;
+                margin: 0;
+                color: #181b1a;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                font-weight: 700;
+                transition: all .7s cubic-bezier(.76, 0, .24, 1);
+            }
+    
+            .header-cart-ss-header-3 .cart-count-bubble span {
+                margin: 0;
+                font-size: 8.0px;
+                color: #181b1a;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                font-weight: 700;
+                transition: all .7s cubic-bezier(.76, 0, .24, 1);
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.open.transparent .header-search-text-ss-header-3,
+            .header-ss-header-3.open.transparent .header-account-text-ss-header-3,
+            .header-ss-header-3.open.transparent .header-cart-text-ss-header-3 {
+                color: #181b1a;
+                transition: all .7s cubic-bezier(.76, 0, .24, 1);
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.open.transparent .header-cart-ss-header-3 .cart-count-bubble span {
+                color: #181b1a;
+            }
+    
+            .header-search-icon-ss-header-3,
+            .header-account-icon-ss-header-3,
+            .header-cart-icon-ss-header-3 {
+                display: block;
+                width: 18px;
+            }
+    
+            .header-search-icon-ss-header-3 svg,
+            .header-account-icon-ss-header-3 svg,
+            .header-cart-icon-ss-header-3 svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .header-search-icon-ss-header-3 svg path,
+            .header-account-icon-ss-header-3 svg path,
+            .header-cart-icon-ss-header-3 svg path {
+                fill: #181b1a;
+                transition: all .7s cubic-bezier(.76, 0, .24, 1);
+            }
+    
+            .header-search-icon-ss-header-3:hover svg path,
+            .header-account-icon-ss-header-3:hover svg path,
+            .header-cart-icon-ss-header-3:hover svg path {
+                fill: #181b1a;
+                transition: all .7s cubic-bezier(.76, 0, .24, 1);
+            }
+    
+    
+    
+    
+    
+            .header-ss-header-3.open.transparent .header-search-icon-ss-header-3 svg path,
+            .header-ss-header-3.open.transparent .header-account-icon-ss-header-3 svg path,
+            .header-ss-header-3.open.transparent .header-cart-icon-ss-header-3 svg path {
+                fill: #181b1a;
+                transition: all .7s cubic-bezier(.76, 0, .24, 1);
+            }
+    
+            .header-cart-ss-header-3,
+            .header-account-ss-header-3 {
+                text-decoration: none;
+            }
+    
+            .header-search-ss-header-3 {
+                padding: 0px;
+                margin: 0px;
+                background-color: transparent;
+                border: 0px;
+                box-shadow: none;
+                cursor: pointer;
+                text-decoration: none;
+            }
+    
+            .header-cart-ss-header-3 {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                position: relative;
+            }
+    
+            .header-cart-ss-header-3 .cart-count-bubble {
+                position: absolute;
+                left: 60%;
+                top: -8px;
+                transform: translateX(-50%);
+                padding: 0px;
+                background-color: transparent;
+                border: 0px;
+                margin: 0px;
+                width: fit-content;
+                height: fit-content;
+            }
+    
+            .header-menu-mobile-ss-header-3 {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100dvh;
+                overflow-y: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+                transform: translateX(-120%);
+                transition: all 0.25s ease 0s;
+                z-index: 99;
+            }
+    
+            .header-ss-header-3.open .header-menu-mobile-ss-header-3 {
+                transform: translateX(0%);
+            }
+    
+            .header-menu-mobile-inner-ss-header-3 {
+                background-color: #ffffff;
+                max-width: 70%;
+                height: 100%;
+                padding: 20px;
+                position: relative;
+                overflow-x: hidden;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+    
+            .header-mobile-menu-item-parent-ss-header-3 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            .header-menu-mobile-ss-header-3 .header-menu-item-ss-header-3 {
+                max-width: 100%;
+                width: 100%;
+                justify-content: space-between;
+                position: static;
+                padding: 12px 0px;
+                border-bottom: 1px solid #efefef;
+            }
+    
+            .header-menu-mobile-ss-header-3 .header-menu-item-ss-header-3:first-child {
+                border-top: 1px solid #efefef;
+            }
+    
+            .header-menu-mobile-ss-header-3 .header-menu-item-icon-ss-header-3 {
+                flex: 0 0 8px;
+                width: 8px;
+                transform: rotate(-90deg);
+            }
+    
+            .header-menu-mobile-submenu-ss-header-3 {
+                position: absolute;
+                background-color: #ffffff;
+                z-index: 4;
+                padding: 20px;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                transform: translateX(110%);
+                transition: all 0.25s ease 0s;
+            }
+    
+            .header-mobile-menu-item-parent-ss-header-3.active>.header-menu-mobile-submenu-ss-header-3 {
+                transform: translateX(0%);
+                transition: all 0.25s ease 0s;
+            }
+    
+            .header-menu-mobile-submenu-heading-ss-header-3 {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+                background-color: transparent;
+                border: 0px;
+                border-top: 1px solid #efefef;
+                padding: 0px;
+                padding: 10px 0px;
+                box-shadow: none;
+                font-size: 14px;
+                color: #181b1a;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                font-weight: 700;
+            }
+    
+            .header-menu-mobile-submenu-heading-ss-header-3 .header-menu-item-icon-ss-header-3 {
+                transform: rotate(90deg);
+            }
+    
+            .header-mobile-submenu-list-ss-header-3 {
+                margin: 0px;
+                margin-top: 0px;
+                display: flex;
+                flex-direction: column;
+                gap: 0px;
+                padding: 0px;
+                list-style: none;
+            }
+    
+            .header-logo-desktop-ss-header-3 {
+                display: none;
+            }
+    
+            .header-menu-grid-ss-header-3 {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 32px;
+            }
+            .header-menu-card-title-ss-header-3 {
+                margin: 0px;
+                margin-top: 12px;
+                text-align: center;
+                font-size: 14px;
+                color: #181b1a;
+                line-height: 150%;
+                text-transform: unset;
+                text-decoration: none;
+            }
+    
+            .header-menu-button-wrapper-ss-header-3 {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+    
+            .header-menu-button-ss-header-3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+                max-width: fit-content;
+                margin: 0;
+                margin-top: 16px;
+                font-size: 14px;
+                color: #ffffff;
+                line-height: 100%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 12px 16px;
+                border-radius: 6px;
+                transition: all 0.25s ease 0s;
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+                font-weight: 700;
+            }
+    
+            .header-menu-button-inner-ss-header-3 {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+    
+            .header-menu-button-ss-header-3:hover {
+                color: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .header-menu-button-ss-header-3 svg {
+                width: 14px;
+                height: 14px;
+            }
+    
+            .header-menu-button-ss-header-3 svg path {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .header-menu-button-ss-header-3:hover svg path {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .section-ss-header-3 {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 0rem;
+                    margin-right: 0rem;
+                    border-radius: 0px;
+                }
+    
+                .section-ss-header-3-settings {
+                    padding: 0 5rem;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    padding-left: 4rem;
+                    padding-right: 4rem;
+                }
+    
+                .header-ss-header-3.transparent {
+                    width: calc(100% - 0rem);
+                }
+    
+                .header-ss-header-3.fixed {
+                    width: calc(100% - 0rem);
+                }
+    
+                .header-body-ss-header-3 {
+                    display: grid;
+                    gap: 32px;
+                }
+    
+                .header-menu-burder-ss-header-3 {
+                    display: none;
+                }
+    
+                .header-menu-list-ss-header-3 {
+                    display: flex;
+                    gap: 32px;
+                }
+    
+                .header-menu-link-ss-header-3 {
+                    font-size: 16px;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-menu-item-ss-header-3:hover>.header-menu-link-ss-header-3 {
+                    transition: all 0.25s ease;
+                    color: #1b1818;
+                }
+    
+                .header-menu-link-ss-header-3::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    width: 0px;
+                    height: 2px;
+                    background-color: #181b1a;
+                    transition: all 0.25s ease 0s;
+                }
+    
+    
+                .header-menu-item-ss-header-3:hover>.header-menu-link-ss-header-3::after {
+                    width: 100%;
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-submenu-ss-header-3 .header-menu-item-parent-ss-header-3 {
+                    max-width: 100%;
+                }
+    
+                .header-submenu-ss-header-3 .header-menu-item-ss-header-3::after {
+                    display: none;
+                }
+    
+    
+    
+    
+    
+                .header-menu-item-parent-ss-header-3.active>.header-menu-item-icon-ss-header-3 {
+                    transform: rotate(180deg);
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .header-logo-ss-header-3 {
+                    max-width: 180px;
+                }
+    
+                .header-logo-image-desktop-ss-header-3 {
+                    display: block;
+                }
+    
+                .header-logo-image-mobile-ss-header-3 {
+                    display: none;
+                }
+    
+                .header-logo-text-ss-header-3 {
+                    font-size: 24px;
+                    transition: all 0.25s ease;
+                }
+    
+                .header-logo-text-ss-header-3:hover {
+                    transition: all 0.25s ease;
+                    color: #181b1a;
+                }
+    
+    
+    
+    
+    
+                .header-right-ss-header-3 {
+                    gap: 32px;
+                    order: 3;
+                }
+    
+                .header-search-text-ss-header-3,
+                .header-account-text-ss-header-3,
+                .header-cart-text-ss-header-3 {
+                    display: inline;
+                    font-size: 16px;
+                }
+    
+                .header-search-text-ss-header-3:hover,
+                .header-account-text-ss-header-3:hover,
+                .header-cart-text-ss-header-3:hover {
+                    transition: all .7s cubic-bezier(.76, 0, .24, 1);
+                    color: #181b1a !important;
+                }
+    
+    
+    
+    
+    
+                .header-search-icon-ss-header-3,
+                .header-account-icon-ss-header-3,
+                .header-cart-icon-ss-header-3 {
+                    display: none;
+                    width: 20px;
+                }
+    
+                .header-search-icon-ss-header-3:hover svg path,
+                .header-account-icon-ss-header-3:hover svg path,
+                .header-cart-icon-ss-header-3:hover svg path {
+                    fill: #181b1a;
+                    transition: all .7s cubic-bezier(.76, 0, .24, 1);
+                }
+    
+    
+    
+    
+    
+                .header-cart-ss-header-3 .cart-count-bubble span {
+                    font-size: 16px;
+                    position: relative;
+                }
+    
+                .header-cart-ss-header-3 .cart-count-bubble {
+                    position: static;
+                    transform: translateX(0);
+                }
+    
+                .header-cart-ss-header-3 .cart-count-bubble span:before {
+                    content: '(';
+                }
+    
+                .header-cart-ss-header-3 .cart-count-bubble span:after {
+                    content: ')';
+                }
+    
+                .header-cart-ss-header-3:hover .cart-count-bubble span {
+                    transition: all .7s cubic-bezier(.76, 0, .24, 1);
+                    color: #181b1a;
+                }
+    
+    
+    
+    
+    
+                .header-menu-mobile-ss-header-3 {
+                    display: none;
+                }
+    
+                .header-logo-desktop-ss-header-3 {
+                    display: block;
+                }
+    
+                .header-logo-mobile-ss-header-3 {
+                    display: none;
+                }
+    
+            }
+     
+            
+            .section-ss-header-3 {
+                border-top: 0px;
+            }
+       
+            
+            .header-menu-button-ss-header-3 {
+                background-color: #181b1a;
+                border: 1px solid #181b1a;
+            }
+    
+            .header-menu-button-ss-header-3:hover {
+                background-color: #333333;
+                border: 1px solid #181b1a;
+            }
+      
+            
+            .header-body-ss-header-3 {
+                grid-template-columns: 1fr 150px 1fr;
+            }
+      
+            
+            @media(min-width: 1024px) {
+    
+                .header-body-ss-header-3 {
+                    grid-template-columns: 1fr 180px 1fr;
+                }
+    
+                .header-menu-ss-header-3 {
+                    order: 1;
+                }
+    
+                .header-logo-ss-header-3 {
+                    order: 2;
+                    text-align: center;
+                }
+            }
+       
+            
+            @media(min-width: 1024px) {
+                .header-account-icon-ss-header-3 {
+                    display: block;
+                }
+    
+                .header-account-text-ss-header-3 {
+                    display: none;
+                }
+            }
+      
+        </style>
+    
+    
+        <div class="section-ss-header-3 header-ss-header-3 transparent fixed top active">
+            <div class="section-ss-header-3-settings">
+                <div class="header-body-ss-header-3">
+                    <div class="header-menu-ss-header-3">
+    
+                        <button class="header-menu-burder-ss-header-3">
+                            <span class="header-menu-burger-icon-ss-header-3"></span>
+                        </button>
+                        <ul class="header-menu-list-ss-header-3">
+    
+                            <li class="header-menu-item-ss-header-3 header-menu-item-parent-ss-header-3">
+                                <p class="header-menu-link-ss-header-3">
+                                    Shop
+                                </p>
+    
+                                <span class="header-menu-item-icon-ss-header-3">
+                                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="currentColor"
+                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                            class=""></path>
+                                    </svg>
+                                </span>
+    
+                                <div class="header-submenu-ss-header-3">
+                                    <div class="header-submenu-bg-ss-header-3"></div>
+                                    <div class="header-submenu-inner-ss-header-3">
+                                        <div class="section-ss-header-3-settings">
+                                
+                                            <ul class="header-menu-list-ss-header-3">
+                                
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="https://section.store/pages/timeline-2" class="header-menu-link-ss-header-3">About</a>
+                                                </li>
+                                
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="https://section.store/pages/form-builder" class="header-menu-link-ss-header-3">Contact</a>
+                                                </li>
+                                
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="https://section.store/pages/faq-10" class="header-menu-link-ss-header-3">FAQ</a>
+                                                </li>
+                                
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="#" class="header-menu-link-ss-header-3">Freebies</a>
+                                                </li>
+                                
+                                            </ul>
+                                
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </li>
+    
+                            <li class="header-menu-item-ss-header-3 header-menu-item-parent-ss-header-3">
+                                <p class="header-menu-link-ss-header-3">
+                                    About
+                                </p>
+    
+                                <span class="header-menu-item-icon-ss-header-3">
+                                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="currentColor"
+                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                            class=""></path>
+                                    </svg>
+                                </span>
+    
+                                <div class="header-submenu-ss-header-3">
+                                    <div class="header-submenu-bg-ss-header-3"></div>
+                                    <div class="header-submenu-inner-ss-header-3">
+                                        <div class="section-ss-header-3-settings">
+    
+                                            <ul class="header-menu-list-ss-header-3">
+    
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="https://section.store/pages/timeline-2"
+                                                        class="header-menu-link-ss-header-3">About</a>
+                                                </li>
+    
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="https://section.store/pages/form-builder"
+                                                        class="header-menu-link-ss-header-3">Contact</a>
+                                                </li>
+    
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="https://section.store/pages/faq-10"
+                                                        class="header-menu-link-ss-header-3">FAQ</a>
+                                                </li>
+    
+                                                <li class="header-menu-item-ss-header-3">
+                                                    <a href="#" class="header-menu-link-ss-header-3">Freebies</a>
+                                                </li>
+    
+                                            </ul>
+    
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </li>
+    
+                            <li class="header-menu-item-ss-header-3 ">
+                                <a href="/pages/contact" class="header-menu-link-ss-header-3">
+                                    Contact
+                                </a>
+    
+                            </li>
+    
+                        </ul>
+    
+                        <div class="header-menu-mobile-ss-header-3">
+                            <div class="header-menu-mobile-inner-ss-header-3">
+                                <ul class="header-menu-list-ss-header-3">
+    
+                                    <li class="header-menu-item-ss-header-3 header-mobile-menu-item-parent-ss-header-3">
+                                        <a href="#" class="header-menu-link-ss-header-3">Shop</a>
+    
+                                        <span class="header-menu-item-icon-ss-header-3">
+                                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512">
+                                                <path fill="currentColor"
+                                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                    class=""></path>
+                                            </svg>
+                                        </span>
+                                        <div class="header-menu-mobile-submenu-ss-header-3">
+                                            <button class="header-menu-mobile-submenu-heading-ss-header-3">
+                                                <span class="header-menu-item-icon-ss-header-3">
+                                                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 448 512">
+                                                        <path fill="currentColor"
+                                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                            class=""></path>
+                                                    </svg>
+                                                </span>
+                                                Shop
+                                            </button>
+                                            <ul class="header-mobile-submenu-list-ss-header-3">
+    
+                                                <li class="header-menu-item-ss-header-3 ">
+                                                    <a href="/collections/new-arrivals"
+                                                        class="header-menu-link-ss-header-3">New Arrivals</a>
+    
+                                                </li>
+    
+                                                <li class="header-menu-item-ss-header-3 header-mobile-menu-item-parent-ss-header-3">
+                                                    <a href="#" class="header-menu-link-ss-header-3">Best Sellers</a>
+                                                </li>
+    
+                                                <li class="header-menu-item-ss-header-3 header-mobile-menu-item-parent-ss-header-3">
+                                                    <a href="#" class="header-menu-link-ss-header-3">Shop by Price</a>
+                                                </li>
+    
+                                            </ul>
+                                        </div>
+    
+                                    </li>
+    
+                                    <li class="header-menu-item-ss-header-3 header-mobile-menu-item-parent-ss-header-3">
+                                        <a href="#" class="header-menu-link-ss-header-3">About</a>
+    
+                                        <span class="header-menu-item-icon-ss-header-3">
+                                            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512">
+                                                <path fill="currentColor"
+                                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                    class=""></path>
+                                            </svg>
+                                        </span>
+                                        <div class="header-menu-mobile-submenu-ss-header-3">
+                                            <button class="header-menu-mobile-submenu-heading-ss-header-3">
+                                                <span class="header-menu-item-icon-ss-header-3">
+                                                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 448 512">
+                                                        <path fill="currentColor"
+                                                            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                                                            class=""></path>
+                                                    </svg>
+                                                </span>
+                                                About
+                                            </button>
+                                            <ul class="header-mobile-submenu-list-ss-header-3">
+    
+                                                <li class="header-menu-item-ss-header-3 ">
+                                                    <a href="#" class="header-menu-link-ss-header-3">Our Story</a>
+    
+                                                </li>
+    
+                                                <li class="header-menu-item-ss-header-3 ">
+                                                    <a href="#" class="header-menu-link-ss-header-3">Mission</a>
+    
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                    </li>
+    
+    
+    
+                                </ul>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <div class="header-logo-ss-header-3">
+    
+                        <a href="https://section.store"
+                            class="header-logo-image-ss-header-3 header-logo-desktop-ss-header-3">
+                            <img src="//section.store/cdn/shop/files/Logo_section_store_1.png?v=1705941203" alt=""
+                                class="header-logo-first-ss-header-3">
+    
+                            <img src="//section.store/cdn/shop/files/Logo_section_store_1_12e802d5-2161-4493-a4da-8c5b5e620682.png?v=1709682756"
+                                alt="" class="header-logo-second-ss-header-3">
+    
+                        </a>
+    
+                        <a href="https://section.store"
+                            class="header-logo-image-ss-header-3 header-logo-mobile-ss-header-3">
+                            <img src="//section.store/cdn/shop/files/Logo_section_store_1.png?v=1705941203" alt=""
+                                class="header-logo-first-ss-header-3">
+    
+                            <img src="//section.store/cdn/shop/files/Logo_section_store_1_12e802d5-2161-4493-a4da-8c5b5e620682.png?v=1709682756"
+                                alt="" class="header-logo-second-ss-header-3">
+    
+                        </a>
+    
+    
+                    </div>
+    
+                    <div class="header-right-ss-header-3">
+    
+                        <a href="/cart" class="header-cart-ss-header-3">
+                            <span class="header-cart-icon-ss-header-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 21.3 19.3"
+                                    style="enable-background:new 0 0 21.3 19.3;" xml:space="preserve">
+                                    <path class="st0"
+                                        d="M20.4,0.2c-0.5-0.1-1.1,0.2-1.2,0.7l-2.9,11.2h-7l-2.5-12H1.1c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h4.1l2.5,12  h10.2l3.3-12.8C21.3,0.8,20.9,0.3,20.4,0.2z M10.1,17.6c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5  C9.5,16.1,10.1,16.8,10.1,17.6z M16.6,19.1c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5c-0.8,0-1.5,0.7-1.5,1.5S15.8,19.1,16.6,19.1z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="header-cart-text-ss-header-3">Cart</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function initHeader3() {
+                let header = document.querySelector('.header-ss-header-3');
+                let menuMobile = document.querySelector('.header-menu-mobile-ss-header-3');
+
+                let mobileSubMenu = document.querySelectorAll('.header-menu-mobile-submenu-ss-header-3');
+                let parentItems = document.querySelectorAll('.header-menu-item-parent-ss-header-3');
+                if (header) {
+                    if (window.scrollY > 0) {
+                        header.classList.add('onscroll');
+                    } else {
+                        header.classList.add('top');
+                    }
+
+                    let lastScrollTop = window.scrollY;
+
+                    document.addEventListener('scroll', () => {
+
+                        if (parentItems) {
+                            parentItems.forEach(el => el.classList.remove('active'));
+                        }
+
+                        const currentScrollTop = window.scrollY;
+                        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+                        if (currentScrollTop === 0) {
+                            header.classList.add('top');
+                        }
+
+                        if (currentScrollTop <= 0) {
+                            header.classList.add('active');
+                            header.classList.remove('onscroll');
+                            return;
+                        }
+
+                        if (currentScrollTop >= maxScroll) {
+                            header.classList.remove('active');
+                            return;
+                        }
+
+                        if (currentScrollTop !== lastScrollTop) {
+                            if (header.classList.contains('scroll')) {
+                                if (currentScrollTop > lastScrollTop) {
+                                    header.classList.remove('active');
+                                } else {
+                                    header.classList.add('active');
+                                }
+                            }
+
+                            if (header.classList.contains('transparent')) {
+                                if (currentScrollTop === 0) {
+                                    header.classList.remove('onscroll');
+                                    header.classList.add('top');
+                                } else {
+                                    header.classList.add('onscroll');
+                                    header.classList.remove('top');
+                                }
+                            }
+
+                            lastScrollTop = currentScrollTop;
+                        }
+                    });
+
+                    let burger_icon = header.querySelector('.header-menu-burder-ss-header-3');
+                    if (burger_icon) {
+                        burger_icon.addEventListener('click', () => {
+                            header.classList.toggle('open');
+                            if (header.classList.contains('open')) {
+                                document.body.style.overflow = 'hidden';
+                            } else {
+                                document.body.style.overflow = '';
+                            }
+                        })
+                    }
+
+                    document.addEventListener('click', (e) => {
+                        if (e.target == menuMobile) {
+                            document.body.style.overflow = '';
+                            header.classList.remove('open');
+                        }
+                    });
+
+                    if (parentItems) {
+                        parentItems.forEach(el => {
+
+
+                            el.addEventListener('mouseenter', () => {
+                                el.classList.add('active');
+                                header.classList.add('onscroll');
+                            });
+
+                            el.addEventListener('mouseleave', () => {
+                                el.classList.remove('active');
+                            });
+
+
+
+                            document.addEventListener('click', (event) => {
+                                if (!el.contains(event.target) && !el.classList.contains('active')) {
+                                    return;
+                                }
+
+                                if (!el.contains(event.target) && el.classList.contains('active')) {
+                                    el.classList.remove('active');
+                                }
+                            });
+                        });
+                    }
+
+                    if (mobileSubMenu) {
+                        mobileSubMenu.forEach(el => {
+                            let parentItem = el.closest('.header-mobile-menu-item-parent-ss-header-3');
+                            let heading = el.querySelector('.header-menu-mobile-submenu-heading-ss-header-3');
+
+                            if (parentItem) {
+                                parentItem.addEventListener('click', () => {
+                                    parentItem.classList.add('active');
+                                });
+                            }
+
+                            if (heading) {
+                                heading.addEventListener('click', (event) => {
+                                    event.stopPropagation();
+                                    parentItem.classList.remove('active');
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', initHeader3);
+
+            if (Shopify.designMode) {
+                document.addEventListener('shopify:section:unload', initHeader3);
+                document.addEventListener('shopify:section:load', initHeader3);
+            }
+        </script>
+    
+    </div>
+</body>
+</html>
