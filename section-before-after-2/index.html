@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* Section principale */
+        .pc-sba2-section {
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-radius: 0px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .pc-sba2-section .pc-sba2-section-settings {
+            margin: 0 auto;
+            padding-top: 27px;
+            padding-bottom: 54px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            max-width: 1200px;
+        }
+
+        /* Heading */
+        .pc-sba2-section .pc-sba2-heading {
+            text-align: center;
+        }
+
+        .pc-sba2-section .pc-sba2-heading * {
+            margin: 0px;
+            font-size: 24px;
+            color: #000000;
+            line-height: 130%;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-weight: 700;
+        }
+
+        /* Tabs */
+        .pc-sba2-section .pc-sba2-tabs-wrapper {
+            max-width: 320px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+            border-radius: 100px;
+            border: 2px solid #000000;
+            height: 54px;
+        }
+
+        .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 0;
+            flex: 1;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-size: 14px;
+            line-height: 100%;
+            color: #000000;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: all 0.25s ease 0s;
+        }
+
+        .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-tab.active {
+            color: #ffffff;
+            transition: all 0.25s ease 0s;
+        }
+
+        .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-active-bg {
+            display: block !important;
+            position: absolute;
+            width: calc((100% / 2) + 4px);
+            height: 100%;
+            border-radius: 100px;
+            top: 0;
+            background: #000000;
+            z-index: 1;
+            margin-left: -2px;
+            transition: all 0.5s ease 0s;
+        }
+
+        /* Content */
+        .pc-sba2-section .pc-sba2-content {
+            display: none;
+            margin-top: 30px;
+            grid-template-columns: 1fr;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .pc-sba2-section .pc-sba2-content.active {
+            display: grid;
+        }
+
+        .pc-sba2-section .pc-sba2-content .pc-sba2-title {
+            margin: 0;
+            text-align: left;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-size: 24px;
+            line-height: 130%;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .pc-sba2-section .pc-sba2-content .pc-sba2-subtext {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .pc-sba2-section .pc-sba2-content .pc-sba2-subtext * {
+            margin: 0;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-size: 20px;
+            line-height: 130%;
+            color: #b3b3b3;
+        }
+
+        .pc-sba2-section .pc-sba2-content .pc-sba2-text {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .pc-sba2-section .pc-sba2-content .pc-sba2-text * {
+            margin: 0;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-size: 18px;
+            line-height: 150%;
+            color: #000000;
+        }
+
+        /* Button */
+        .pc-sba2-section .pc-sba2-button {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 7px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            position: relative;
+        }
+
+        .pc-sba2-section .pc-sba2-button::after {
+            content: '';
+            padding: 3px;
+            display: inline-block;
+            border: solid;
+            border-width: 0 2px 2px 0;
+            transform: rotate(-45deg) scale(100%) translateY(-50%);
+        }
+
+        .pc-sba2-section .pc-sba2-button::before {
+            content: '';
+            padding: 3px;
+            display: inline-block;
+            border: solid;
+            border-width: 0 2px 2px 0;
+            transform: rotate(135deg) scale(100%) translateX(-50%);
+        }
+
+        .pc-sba2-section .pc-sba2-button:before {
+            content: '';
+            height: calc(50% - 28px);
+            top: 50%;
+            left: 15%;
+            width: 3px;
+            color: #ffffff;
+            z-index: -1;
+            position: absolute;
+        }
+
+        .pc-sba2-section .pc-sba2-button:after {
+            content: '';
+            height: calc(50% - 28px);
+            top: 50%;
+            right: 15%;
+            width: 3px;
+            color: #ffffff;
+            z-index: -1;
+            position: absolute;
+        }
+
+        /* Image */
+        .pc-sba2-section .pc-sba2-image-relative {
+            position: relative;
+            height: 100%;
+            aspect-ratio: 12/9;
+        }
+
+        .pc-sba2-section .pc-sba2-image-relative img,
+        .pc-sba2-section .pc-sba2-image-relative svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-sba2-section .pc-sba2-image-relative svg {
+            background-color: #AFAFAF;
+        }
+
+        .pc-sba2-section .pc-sba2-image-wrapper {
+            position: relative;
+            border: 0px solid #000000;
+            border-radius: 0px;
+            --text-primary: 26 26 26;
+            --shadow: 0 5px 15px rgb(var(--text-primary) / 0.1);
+            filter: drop-shadow(var(--shadow));
+            user-select: none;
+            overflow: hidden;
+        }
+
+        .pc-sba2-section .pc-sba2-image-cursor {
+            height: 100%;
+            width: max-content;
+            touch-action: none;
+            --transform-logical-flip: 1;
+            transform: translate(calc(var(--transform-logical-flip) * -50% + var(--clip-path-offset, 0px)), -50%);
+            cursor: grab;
+            will-change: transform;
+            place-items: center;
+            display: grid;
+            position: relative;
+            top: 50%;
+            left: var(--before-after-initial-drag-position, 0px);
+        }
+
+        .pc-sba2-section .pc-sba2-image-cursor:before {
+            content: '';
+            height: calc(50% - 28px);
+            top: 0;
+            width: 2px;
+            background: #ffffff;
+            z-index: -1;
+            position: absolute;
+        }
+
+        .pc-sba2-section .pc-sba2-image-cursor:after {
+            content: '';
+            height: calc(50% - 28px);
+            bottom: 0;
+            width: 2px;
+            background: #ffffff;
+            z-index: -1;
+            position: absolute;
+        }
+
+        /* Badges */
+        .pc-sba2-section .pc-sba2-before-badge,
+        .pc-sba2-section .pc-sba2-after-badge {
+            position: absolute;
+            top: 10px;
+            padding: 10px 16px;
+            border-radius: 0px;
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: 0;
+            text-align: center;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-size: 14px;
+            line-height: 100%;
+            color: #ffffff;
+        }
+
+        .pc-sba2-section .pc-sba2-before-badge {
+            left: 10px;
+        }
+
+        .pc-sba2-section .pc-sba2-after-badge {
+            right: 10px;
+        }
+
+        /* Media text */
+        .pc-sba2-section .pc-sba2-media-text {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+        }
+
+        .pc-sba2-section .pc-sba2-media-text * {
+            margin: 0;
+            text-align: center;
+            text-transform: unset;
+            word-wrap: break-word;
+            font-size: 12px;
+            line-height: 150%;
+            color: #ffffff;
+        }
+
+        /* Layout */
+        .pc-sba2-section .pc-sba2-text-wrap {
+            order: 2;
+        }
+
+        .pc-sba2-section .pc-sba2-image-right {
+            order: 1;
+        }
+
+        @media(min-width: 1024px) {
+            .pc-sba2-section {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+            }
+
+            .pc-sba2-section .pc-sba2-section-settings {
+                padding: 0 5rem;
+                padding-top: 36px;
+                padding-bottom: 72px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+
+            .pc-sba2-section .pc-sba2-heading {
+                text-align: center;
+            }
+
+            .pc-sba2-section .pc-sba2-heading * {
+                font-size: 40px;
+            }
+
+            .pc-sba2-section .pc-sba2-tabs-wrapper {
+                max-width: 380px;
+                margin-top: 40px;
+            }
+
+            .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-tab {
+                font-size: 16px;
+            }
+
+            .pc-sba2-section .pc-sba2-content {
+                margin-top: 60px;
+                grid-template-columns: 0.5fr 1fr;
+                gap: 40px;
+            }
+
+            .pc-sba2-section .pc-sba2-content .pc-sba2-title {
+                text-align: left;
+                font-size: 40px;
+            }
+
+            .pc-sba2-section .pc-sba2-content .pc-sba2-subtext {
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            .pc-sba2-section .pc-sba2-content .pc-sba2-subtext * {
+                font-size: 30px;
+            }
+
+            .pc-sba2-section .pc-sba2-content .pc-sba2-text {
+                text-align: left;
+                margin-top: 50px;
+            }
+
+            .pc-sba2-section .pc-sba2-content .pc-sba2-text * {
+                font-size: 20px;
+            }
+
+            .pc-sba2-section .pc-sba2-button {
+                width: 56px;
+                height: 56px;
+            }
+
+            .pc-sba2-section .pc-sba2-button::after {
+                transform: rotate(-45deg) scale(100%) translateY(-50%);
+                height: calc(50% - 28px);
+            }
+
+            .pc-sba2-section .pc-sba2-button::before {
+                transform: rotate(135deg) scale(100%) translateX(-50%);
+                height: calc(50% - 28px);
+            }
+
+            .pc-sba2-section .pc-sba2-image-cursor:before {
+                height: calc(50% - 28px);
+            }
+
+            .pc-sba2-section .pc-sba2-image-cursor:after {
+                height: calc(50% - 28px);
+            }
+
+            .pc-sba2-section .pc-sba2-before-badge,
+            .pc-sba2-section .pc-sba2-after-badge {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+
+            .pc-sba2-section .pc-sba2-media-text {
+                width: 70%;
+            }
+
+            .pc-sba2-section .pc-sba2-media-text * {
+                font-size: 12px;
+            }
+
+            .pc-sba2-section .pc-sba2-content {
+                grid-template-columns: 0.5fr 1fr;
+            }
+
+            .pc-sba2-section .pc-sba2-text-wrap {
+                order: 1;
+            }
+
+            .pc-sba2-section .pc-sba2-image-right {
+                order: 2;
+            }
+
+            .pc-sba2-section .pc-sba2-image-relative {
+                aspect-ratio: 12/9;
+            }
+        }
+    </style>
+
+    <div class="pc-sba2-section pc-sba2-tabs">
+        <div class="pc-sba2-section-settings">
+
+            <div class="pc-sba2-heading">
+                <p>95% reduction in wrinkles in 8 weeks</p>
+            </div>
+
+            <div class="pc-sba2-tabs-wrapper">
+
+                <p class="pc-sba2-tab active" id="pc_tab_WrK1" style="color: rgb(255, 255, 255);">Weeks 1-8</p>
+
+                <p class="pc-sba2-tab " id="pc_tab_WrK2" style="color: rgb(0, 0, 0);">Weeks 8-12</p>
+
+                <div class="pc-sba2-active-bg" style="width: 188.75px; transform: translateX(1.25px);"></div>
+            </div>
+            <div class="pc-sba2-content-wrap">
+
+                <div class="pc-sba2-content active" data-id="pc_tab_WrK1">
+                    <div class="pc-sba2-text-wrap">
+
+                        <p class="pc-sba2-title">Weeks 1-8</p>
+
+                        <div class="pc-sba2-subtext">
+                            <p>Daily application</p>
+                        </div>
+
+                        <div class="pc-sba2-text">
+                            <p>See visible improvement in skin texture and wrinkle reduction in the first weeks.</p>
+                        </div>
+
+                    </div>
+                    <div class="pc-sba2-image-right">
+                        <div class="pc-sba2-image-wrapper"
+                            style="--before-after-initial-drag-position: 50%; --clip-path-offset: 23.75px;">
+
+                            <div class="pc-sba2-image-relative">
+
+                                <img src="https://img.freepik.com/photos-gratuite/fond-texture-noir-elegant_24972-2468.jpg"
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-first">
+
+                                <p class="pc-sba2-before-badge">
+                                    Before</p>
+                            </div>
+                            <div class="pc-sba2-image-relative"
+                                style="clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px))); position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+
+                                <img src="https://img.freepik.com/photos-gratuite/texture-mur-stuc-noir-relief-decoratif-abstrait-grunge-fond-couleur-rugueuse-grand-angle_1258-28311.jpg"
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-second">
+
+                                <p class="pc-sba2-after-badge">
+                                    Week 8</p>
+                            </div>
+
+                            <div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+                                <split-cursor class="pc-sba2-image-cursor">
+                                    <div class="pc-sba2-button">
+                                    </div>
+                                </split-cursor>
+                            </div>
+
+                            <div class="pc-sba2-media-text">
+                                <p>*Results may vary depending on skin type, age, lifestyle factors and consistency of
+                                    use.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc-sba2-content" data-id="pc_tab_WrK2">
+                    <div class="pc-sba2-text-wrap">
+
+                        <p class="pc-sba2-title">Weeks 8-12</p>
+                        <div class="pc-sba2-subtext">
+                            <p>Maintenance treatment</p>
+                        </div>
+
+                        <div class="pc-sba2-text">
+                            <p>Maximum results achieved with continued use, showing significant wrinkle reduction and
+                                skin rejuvenation.</p>
+                        </div>
+
+                    </div>
+                    <div class="pc-sba2-image-right">
+                        <div class="pc-sba2-image-wrapper"
+                            style="--before-after-initial-drag-position: 50%; --clip-path-offset: 0px;">
+
+                            <div class="pc-sba2-image-relative">
+
+                                <img src="https://img.freepik.com/photos-gratuite/texture-ardoise-noire_1194-6185.jpg"
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-first">
+
+                                <p class="pc-sba2-before-badge">
+                                    Week 8</p>
+                            </div>
+                            <div class="pc-sba2-image-relative"
+                                style="clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px))); position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+
+                                <img src="https://img.freepik.com/photos-gratuite/fond-texture-noir-elegant_24972-2468.jpg"
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-second">
+
+                                <p class="pc-sba2-after-badge">
+                                    Week 12</p>
+                            </div>
+
+                            <div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+                                <split-cursor class="pc-sba2-image-cursor">
+                                    <div class="pc-sba2-button">
+                                    </div>
+                                </split-cursor>
+                            </div>
+
+                            <div class="pc-sba2-media-text">
+                                <p>*Results may vary depending on skin type, age, lifestyle factors and consistency of
+                                    use.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initBefAftImg() {
+            const tabs = document.querySelectorAll('.pc-sba2-tab');
+            const tabsWrapper = document.querySelector('.pc-sba2-tabs-wrapper');
+            const activeBg = document.querySelector('.pc-sba2-active-bg');
+            const tabsContents = document.querySelectorAll('.pc-sba2-content');
+            const imageWrappers = document.querySelectorAll('.pc-sba2-image-wrapper');
+
+            let initialActiveTab = tabs[0];
+            initialActiveTab.classList.add('active');
+            initialActiveTab.style.color = '#ffffff';
+            setActiveBgPosition(initialActiveTab);
+
+            tabs.forEach(tab => {
+                tab.addEventListener('mouseenter', () => {
+                    tabs.forEach(e => {
+                        e.style.color = e.classList.contains('active') ? '#000000' : '';
+                    });
+                    tab.style.color = '#ffffff';
+                    setActiveBgPosition(tab);
+                });
+
+                tab.addEventListener('click', () => {
+                    tabs.forEach(e => {
+                        e.classList.remove('active');
+                        e.style.color = '#000000';
+                    });
+                    if (tabsContents) {
+                        tabsContents.forEach(content => {
+                            if (tab.id == content.getAttribute('data-id')) {
+                                tabsContents.forEach(text => {
+                                    text.classList.remove('active');
+                                });
+                                content.classList.add('active');
+                                tab.classList.add('active');
+                                tab.style.color = '#ffffff';
+                                initialActiveTab = tab;
+                                setActiveBgPosition(tab);
+                            }
+                        });
+                    }
+                });
+            });
+
+            tabsWrapper.addEventListener('mouseleave', () => {
+                tabs.forEach(e => e.style.color = '#000000');
+                if (initialActiveTab) {
+                    initialActiveTab.style.color = '#ffffff';
+                    setActiveBgPosition(initialActiveTab);
+                }
+            });
+
+            function setActiveBgPosition(tab) {
+                const tabRect = tab.getBoundingClientRect();
+                const wrapperRect = tabsWrapper.getBoundingClientRect();
+
+                const offset = tabRect.left - wrapperRect.left;
+                activeBg.style.width = `${tabRect.width}px`;
+                activeBg.style.transform = `translateX(${offset}px)`;
+            }
+
+            imageWrappers.forEach(imageWrapper => {
+                const cursor = imageWrapper.querySelector('.pc-sba2-image-cursor');
+
+                let xStart, xEnd, xDiff, originalOffset;
+                function dragStart(event) {
+                    xStart = event.clientX;
+                    originalOffset = imageWrapper.style
+                        .getPropertyValue('--clip-path-offset')
+                        .slice(0, -2);
+                    document.addEventListener('pointermove', dragMove);
+                    document.addEventListener('pointerup', dragEnd);
+                }
+
+                function dragMove(event) {
+                    xEnd = event.clientX;
+                    xDiff = xEnd - xStart;
+
+                    let result = xDiff + parseInt(originalOffset);
+                    let cursorOffsetPercent = parseFloat(getComputedStyle(imageWrapper).getPropertyValue('--before-after-initial-drag-position'));
+                    let containerWidth = imageWrapper.offsetWidth;
+                    let pixelsOffset = (cursorOffsetPercent / 100) * containerWidth;
+
+                    const negativeMax = -1 * (pixelsOffset);
+                    const positiveMax = imageWrapper.offsetWidth - pixelsOffset;
+                    if (result < negativeMax) {
+                        result = negativeMax;
+                    } else if (result > positiveMax) {
+                        result = positiveMax;
+                    }
+                    imageWrapper.style.setProperty(
+                        '--clip-path-offset',
+                        result + 'px'
+                    );
+                }
+
+                function dragEnd(event) {
+                    document.removeEventListener('pointermove', dragMove);
+                    document.removeEventListener('pointerup', dragEnd);
+                }
+
+                cursor.addEventListener('pointerdown', dragStart);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initBefAftImg);
+
+    </script>
+
+</body>
+
+</html>

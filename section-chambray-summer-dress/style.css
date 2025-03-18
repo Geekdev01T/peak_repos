@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-decoration: none;
+}
+
+.chambray-summer-dress-container {
+    position: relative;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.chambray-summer-dress-container .gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chambray-summer-dress-container .gallery .div-main-image {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.chambray-summer-dress-container .gallery .div-main-image .main-image {
+    width: 100%;
+    object-fit: cover;
+    border: .5px solid rgba(182, 179, 179, 0.34);
+}
+
+.chambray-summer-dress-container .gallery .div-main-image svg {
+    position: absolute;
+    display: none;
+    top: 10px;
+    left: 10px;
+    width: 27px;
+    height: 27px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid rgba(204, 200, 200, 0.753);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.chambray-summer-dress-container .gallery .sub-main-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.chambray-summer-dress-container .gallery .sub-main-image .div-detail-image {
+    width: 100%;
+    position: relative;
+}
+
+.chambray-summer-dress-container .gallery .sub-main-image .div-detail-image img {
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.chambray-summer-dress-container .gallery .sub-main-image .div-detail-image svg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 27px;
+    height: 27px;
+    padding: 5px;
+    border: 1px solid rgb(204, 200, 200);
+    border-radius: 50%;
+    background: #fff;
+    transition: all 0.4s ease;
+    display: none;
+    cursor: pointer;
+}
+
+.chambray-summer-dress-container .slider {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.chambray-summer-dress-container .slider .slider-contenair {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+.chambray-summer-dress-container .slider .slider-contenair .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.chambray-summer-dress-container .slider .slider-contenair .zoom-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.chambray-summer-dress-container .slider .slider-contenair .zoom-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.chambray-summer-dress-container .slider .slider-contenair .slide.active {
+    opacity: 1;
+}
+
+.chambray-summer-dress-container .slider .slider-contenair .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chambray-summer-dress-container .slider .slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chambray-summer-dress-container .slider .slider-nav .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.chambray-summer-dress-container .slider .slider-nav .nav-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.chambray-summer-dress-container .slider .slider-nav .nav-button:hover {
+    color: #000;
+}
+
+.chambray-summer-dress-container .slider .slider-nav .nav-button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.chambray-summer-dress-container .product-info {
+    width: 85%;
+}
+
+.chambray-summer-dress-container .product-info .brand p {
+    color: #12121288;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.chambray-summer-dress-container .product-info .brand h1 {
+    color: #121212;
+    font-size: 45px;
+    margin-bottom: 16px;
+}
+
+.chambray-summer-dress-container .product-info .brand div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+
+.chambray-summer-dress-container .product-info .brand div .price {
+    font-size: 18px;
+}
+
+.chambray-summer-dress-container .product-info .brand div p {
+    color: #12121288;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.chambray-summer-dress-container .size-selector {
+    margin: 24px 0;
+}
+
+
+.chambray-summer-dress-container .size-selector .option-label {
+    font-size: 16px;
+    font-weight: 200;
+    color: #666;
+}
+
+.chambray-summer-dress-container .size-selector .size-options {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.chambray-summer-dress-container .size-selector .size-options .size-button {
+    padding: 7px 18px;
+    border: 1px solid #12212183;
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: capitalize;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    color: #12212183;
+}
+
+.chambray-summer-dress-container .size-selector .size-options .size-button.active {
+    background: #000;
+    color: white;
+    font-weight: 300;
+    border-color: #000;
+}
+
+.chambray-summer-dress-container .product-info .quantity .option-label {
+    font-size: 16px;
+    font-weight: 200;
+    color: #666;
+}
+
+.chambray-summer-dress-container .product-info .quantity .quantity-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: fit-content;
+    margin: 16px 0;
+}
+
+.chambray-summer-dress-container .product-info .quantity .quantity-wrapper .quantity-btn {
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.chambray-summer-dress-container .product-info .quantity .quantity-wrapper .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+}
+
+.chambray-summer-dress-container .product-info .cart {
+    margin-top: 1.5em;
+}
+
+.chambray-summer-dress-container .product-info .cart p {
+    text-align: right;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: rgba(66, 65, 65, 0.753);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.chambray-summer-dress-container .product-info .cart p svg {
+    text-decoration: none;
+}
+
+.chambray-summer-dress-container .product-info .cart p:hover {
+    color: rgba(121, 118, 118, 0.61);
+}
+
+.chambray-summer-dress-container .product-info .cart .add-to-cart,
+.chambray-summer-dress-container .product-info .cart .buy-now {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 16px;
+    cursor: no-drop;
+    transition: background-color 0.3s ease;
+}
+
+.chambray-summer-dress-container .product-info .cart .buy-now {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chambray-summer-dress-container .product-info .cart .buy-now span {
+    font-weight: 600;
+    margin-left: -27.5px;
+}
+
+
+.chambray-summer-dress-container .product-info .cart .buy-now .pay {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.chambray-summer-dress-container .product-info .cart .buy-now svg {
+    margin-top: 5px;
+    margin-left: 3px;
+    color: white;
+}
+
+.chambray-summer-dress-container .product-info .cart .add-to-cart {
+    background: white;
+    color: rgba(66, 65, 65, 0.753);
+    border: 1px solid #000;
+}
+
+.chambray-summer-dress-container .product-info .cart .buy-now {
+    background: #0000006e;
+    color: white;
+}
+
+.chambray-summer-dress-container .product-info .more-options {
+    text-align: center;
+}
+
+.chambray-summer-dress-container .product-info .more-options a {
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.chambray-summer-dress-container .product-info .product-description {
+    margin: 25px 0;
+    font-size: 20px;
+    color: #666;
+}
+
+.chambray-summer-dress-container .product-info .product-description a {
+    color: #666;
+    border-bottom: 1px solid #000;
+}
+
+.chambray-summer-dress-container .product-info .product-description a:hover {
+    border-bottom: 2px solid #000;
+}
+
+.chambray-summer-dress-container .product-info .product-details {
+    border-top: 1px solid #eee;
+    margin-top: 24px;
+}
+
+.chambray-summer-dress-container .product-info .product-details .detail-button {
+    width: 100%;
+    padding: 16px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chambray-summer-dress-container .product-info .product-details .detail-button .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chambray-summer-dress-container .product-info .product-details .detail div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    gap: 10px;
+}
+
+.chambray-summer-dress-container .product-info .product-details .detail svg {
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+}
+
+.chambray-summer-dress-container .product-info .button-share {
+    width: 100%;
+    padding: 16px 0;
+    display: flex;
+    gap: 5px;
+    justify-content: start;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chambray-summer-dress-container .product-info .product-details .button-share svg {
+    width: 25px;
+    font-weight: bold;
+}
+
+.chambray-summer-dress-container .product-info .product-details .detail-content {
+    display: none;
+    padding: 16px 0;
+}
+
+.chambray-summer-dress-container .product-info .product-details .detail-content.active {
+    display: block;
+}
+
+.chambray-summer-dress-container .product-info .product-details .product-description {
+    color: #666;
+    line-height: 1.6;
+    margin: 24px 0;
+}
+
+.chambray-summer-dress-container .gallerie-image-cover {
+    position: absolute;
+    background: white;
+    width: 100%;
+    display: none;
+    z-index: 100;
+}
+
+.chambray-summer-dress-container .gallerie-image-cover .gallerie-image-content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1.3em;
+    cursor: zoom-out;
+}
+
+.chambray-summer-dress-container .gallerie-image-cover .gallerie-image-content img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.chambray-summer-dress-container .gallerie-image-cover svg {
+    position: fixed;
+    width: 38px;
+    right: 0;
+    padding: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.767);
+    color: rgba(128, 128, 128, 0.767);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 1.3em;
+    margin-right: 3em;
+    z-index: 110;
+}
+
+@media (max-width: 989px) {
+    .chambray-summer-dress-container .product-info {
+        width: 95%;
+    }
+
+    .chambray-summer-dress-container .gallery .sub-main-image {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .chambray-summer-dress-container .gallerie-image-cover svg {
+        margin-right: .5em;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .chambray-summer-dress-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .chambray-summer-dress-container .gallery {
+        display: none;
+    }
+
+
+    .chambray-summer-dress-container .slider {
+        display: block;
+    }
+
+    .chambray-summer-dress-container .product-info {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 570px) {
+
+    .chambray-summer-dress-container .product-info .product-details .detail div {
+        font-size: 20px;
+        gap: 10px;
+    }
+
+    .chambray-summer-dress-container .product-info .button-share {
+        width: 100%;
+        font-size: 20px;
+    }
+
+}

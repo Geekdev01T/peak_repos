@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <style>
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                overflow: hidden;
+                border-radius: 0px;
+                background-color:#35fc03;
+            }
+    
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9-padding {
+                margin: 0 auto;
+                padding-top: 0px;
+                padding-bottom: 39px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                position: relative;
+                height: 100%;
+            }
+    
+            .ab-banner-button-wrapper-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                margin-top: 15px;
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                width: 100%;
+            }
+    
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                overflow: hidden;
+                border-radius: 0px;
+            }
+    
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image-wrapper--active {
+                opacity: 0.9;
+                z-index: 1;
+            }
+    
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+    
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image--desktop {
+                display: none;
+            }
+    
+            .ab-banner-content-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                margin: 0 auto;
+                height: 100%;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+                padding-top: 0px;
+                padding-bottom: 39px;
+                padding-left: 3rem;
+                padding-right: 1.5rem;
+                line-height: 1;
+            }
+    
+            .ab-banner-title-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                text-align: left;
+            }
+    
+            .ab-banner-title-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 * {
+                margin: 0;
+                font-size: 48px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+                font-weight: 500;
+            }
+    
+            .ab-banner-subtitle-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                margin-top: 15px;
+                text-align: left;
+            }
+    
+            .ab-banner-subtitle-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 * {
+                margin: 0;
+                font-size: 16px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+            }
+    
+            .ab-banner-button-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: fit-content;
+                margin-bottom: 4rem !important;
+                font-size: 16px;
+                color: #000000;
+                line-height: 120%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 16px 32px;
+                border-radius: 0px;
+                background-color: #ffffff;
+                border: 0px solid #000000;
+                transition: all 0.25s ease 0s;
+                position: relative;
+                font-weight: 700;
+                z-index: 2;
+            }
+    
+            .ab-banner-button-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9:hover {
+                background-color: #000000;
+                border: 0px solid #000000;
+                color: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .ab-banner-button-second-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: fit-content;
+                margin-bottom: 4rem !important;
+                font-size: 16px;
+                color: #000000;
+                line-height: 120%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 16px 32px;
+                border-radius: 0px;
+                background-color: #ffffff;
+                border: 0px solid #000000;
+                transition: all 0.25s ease 0s;
+                position: relative;
+                font-weight: 700;
+                z-index: 2;
+            }
+    
+            .ab-banner-button-second-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9:hover {
+                background-color: #000000;
+                border: 0px solid #000000;
+                color: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+
+            
+      
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9-padding {
+                height: 100%;
+            }
+    
+            .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                height: 95vh;
+            }
+    
+            @media screen and (min-width: 750px) {
+    
+                .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9-padding {
+                    padding-top: 0px;
+                    padding-bottom: 52px;
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+    
+                .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image-wrapper {
+                    border-radius: 0px;
+                }
+    
+                .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image--desktop {
+                    display: block;
+                }
+    
+                .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 .ab-banner-image--mobile {
+                    display: none;
+                }
+    
+                .ab-banner-content-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                    padding-top: 0px;
+                    padding-bottom: 52px;
+                    padding-left: 6rem;
+                    padding-right: 3rem;
+                }
+    
+                .ab-banner-button-wrapper-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                    margin-top: 20px;
+                    margin-bottom: 1.5em;
+                    gap: 20px;
+                }
+    
+                .ab-banner-title-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 * {
+                    margin: 0;
+                    font-size: 80px;
+                }
+    
+                .ab-banner-subtitle-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                    margin-top: 20px;
+                }
+    
+                .ab-banner-subtitle-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 * {
+                    margin: 0;
+                    font-size: 16px;
+                }
+    
+                .ab-banner-button-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                    padding: 14px 28px;
+                    font-size: 16px;
+                }
+    
+                .ab-banner-button-second-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                    padding: 14px 28px;
+                    font-size: 16px;
+                }
+            }
+      
+    
+            @media(min-width: 1024px) {
+                .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9-padding {
+                    height: 100%;
+                }
+    
+                .section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 {
+                    height: 95vh;
+                }
+            }
+        </style>
+    
+        <div class="section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9 ab-banner-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+            <div class="section-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9-padding">
+    
+                <div class="ab-banner-image-wrapper ab-banner-image-wrapper--active" data-ab-banner-image="0">
+    
+    
+                    <img class="
+                  ab-banner-image
+                  
+                " src="//section.store/cdn/shop/files/pexels-cottonbro-studio-10679232_1_1_500x.png?v=1680144227"
+                alt="">
+    
+                </div>
+    
+                <div class="ab-banner-image-wrapper" data-ab-banner-image="1">
+                    <img class="
+                  ab-banner-image
+                  
+                " src="//section.store/cdn/shop/files/Screenshot_2023-05-16_at_14.41.10_500x.png?v=1684244482"
+                " alt="">
+                </div>
+
+                
+
+                <div class="ab-banner-content-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+    
+                    <div class="ab-banner-title-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+                        <p>Explore our linen collection</p>
+                    </div>
+    
+    
+                    <div class="ab-banner-subtitle-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+                        <p>Linen is a timeless and long-lasting material with an airy, cooling feel.</p>
+                    </div>
+    
+                    <div class="ab-banner-button-wrapper-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+    
+                        <a href="/collections/all"
+                            class="ab-banner-button-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+                            Shop Now
+                        </a>
+    
+    
+                        <a href="/collections/all"
+                            class="ab-banner-button-second-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9">
+                            Shop Now
+                        </a>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            (function () {
+                function setActiveBannerImage(index) {
+                    var banner = document.querySelector('.ab-banner-template--18937443254601__733a773e-4a36-4b73-8e77-7427ca53f3b9');
+                    var images = banner.querySelectorAll('.ab-banner-image-wrapper');
+                    var activeImage = banner.querySelector(
+                        '.ab-banner-image-wrapper--active'
+                    );
+                    var activeIndex = Array.prototype.indexOf.call(images, activeImage);
+                    var newActiveImage = images[index];
+
+                    if (activeIndex === index) {
+                        return;
+                    }
+
+                    activeImage.classList.remove('ab-banner-image-wrapper--active');
+                    newActiveImage.classList.add('ab-banner-image-wrapper--active');
+                }
+
+                var index = 0;
+                var interval;
+                function Init() {
+                    // for every 5s, switch to next image:
+                    var size = 2;
+                    if (size <= 1) return;
+                    interval = setInterval(function () {
+                        index = (index + 1) % size;
+                        setActiveBannerImage(index);
+                    }, 5000);
+
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    Init();
+                });
+
+            })();
+        </script>
+    </div>
+</body>
+</html>

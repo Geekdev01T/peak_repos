@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  
+        <style>
+
+            .section-section_id {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                border-radius: 30px;
+                margin-bottom: 0px;
+                background-color:#fc0707;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .section-section_id-settings {
+                margin: 0 auto;
+                /* padding-top: 27px;
+                padding-bottom: 27px; */
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
+
+            .hotspots-heading-section_id * {
+                margin: 0;
+                font-size: 30px;
+                color: #000000;
+                line-height: 150%;
+                text-transform: unset;
+                text-align: center;
+            }
+
+            .hotspots-body-section_id {
+                padding: 0px 0px;
+                border-radius: 0px;
+                border: 0px solid #000000;
+                background-color: #f3f3f3;
+            }
+
+            .hotspots-image-section_id {
+                border-radius: 0px;
+                border: 0px solid #000000 !important;
+                position: relative;
+            }
+
+            .hotspots-image-section_id>img,
+            .hotspots-image-section_id>svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0px;
+            }
+
+            .hotspots-item-section_id {
+                position: absolute;
+                cursor: pointer;
+            }
+
+            .hotspots-item-inner-section_id {
+                position: relative;
+                background-color: #000000;
+                border-radius: 28px;
+                border: 0px solid #ffffff;
+                padding: 8px 8px;
+                z-index: 1;
+            }
+
+            .hotspots-item-inner-section_id::before,
+            .hotspots-item-inner-section_id::after {
+                position: absolute;
+                z-index: -5;
+                top: 0px;
+                left: 0px;
+                background: #000000;
+                border-radius: inherit;
+                content: "";
+                width: 100%;
+                height: 100%;
+            }
+
+            .hotspots-item-inner-section_id::before {
+                z-index: -10;
+                animation-delay: 2s;
+            }
+
+            .hotspots-item-top-section_id {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .hotspots-item-top-section_id svg path {
+                fill: #ffffff;
+                stroke: #ffffff;
+            }
+
+            .hotspots-item-title-section_id {
+                margin: 0px;
+                font-size: 14px;
+                color: #ffffff;
+                line-height: 100%;
+                text-transform: unset;
+            }
+
+            .hotspots-item-image-section_id {
+                width: 30px;
+                border-radius: 16px;
+            }
+
+            .hotspots-item-image-section_id svg,
+            .hotspots-item-image-section_id img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+                background: red !important;
+            }
+
+            .hotspots-item-image-section_id svg {
+                background-color: #DDDDDD;
+            }
+
+            .hotspots-item-body-section_id {
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 130%;
+                min-width: 190px;
+                max-width: 90vw;
+                padding: 9px 9px;
+                border-radius: 0px;
+                border: 0px solid #000000;
+                background-color: #ffffff;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.25s ease 0s;
+            }
+
+            .hotspots-item-section_id:hover {
+                z-index: 1;
+            }
+
+            .hotspots-item-section_id:hover .hotspots-item-body-section_id {
+                opacity: 1;
+                pointer-events: all;
+                transition: all 0.25s ease 0s;
+            }
+
+            .hotspots-item-section_id.active {
+                z-index: 1;
+            }
+
+            .hotspots-item-section_id.active .hotspots-item-body-section_id {
+                opacity: 1;
+                pointer-events: all;
+                transition: all 0.25s ease 0s;
+            }
+
+            .hotspots-item-content-section_id {
+                margin-top: 6px;
+            }
+
+            .hotspots-item-content-section_id * {
+                margin: 0px;
+                font-size: 14px;
+                color: #000000;
+                line-height: 140%;
+                text-transform: unset;
+            }
+
+            .hotspots-item-video-section_id {
+                border-radius: 0px;
+            }
+
+            .hotspots-item-video-section_id iframe,
+            .hotspots-item-video-section_id video {
+                display: block;
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+                border: 0px;
+                object-fit: cover;
+                border-radius: 0px;
+            }
+
+            .hotspots-item-content-section_id.non-margin {
+                margin: 0px;
+            }
+
+            .hotspots-item-arrow-section_id {
+                display: block !important;
+                width: 10px;
+                height: 10px;
+                z-index: -1;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .hotspots-item-arrow-section_id:before {
+                content: "";
+                position: absolute;
+                top: -12px;
+                left: 0px;
+                transform: rotate(45deg);
+                width: 10px;
+                height: 10px;
+                background-color: #ffffff;
+            }
+
+            @media(min-width: 768px) {
+                .section-section_id-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 36px;
+                    padding-left: 0rem;
+                    padding-right: 0rem;
+                }
+
+                .hotspots-heading-section_id * {
+                    font-size: 40px;
+                    text-align: left;
+                }
+
+                .hotspots-body-section_id {
+                    padding: 0px 0px;
+                }
+
+                .hotspots-item-inner-section_id {
+                    padding: 10px 10px;
+                }
+
+                .hotspots-item-title-section_id {
+                    font-size: 14px;
+                }
+
+                .hotspots-item-image-section_id {
+                    width: 30px;
+                }
+
+                .hotspots-item-body-section_id {
+                    min-width: 300px;
+                    padding: 12px 12px;
+                }
+
+                .hotspots-item-content-section_id {
+                    margin-top: 8px;
+                }
+
+                .hotspots-item-content-section_id * {
+                    font-size: 14px;
+                }
+
+                .hotspots-item-content-section_id.non-margin {
+                    margin: 0px;
+                }
+
+                .hotspots-item-arrow-section_id:before {
+                    top: -17px;
+                }
+            }
+     
+            /* .hotspots-image-section_id {
+                aspect-ratio: 12/12;
+                border-radius: 30px;
+            } */
+       
+            @media(min-width: 1024px) {
+                /* .hotspots-image-section_id {
+                    aspect-ratio: 12/8;
+                } */
+
+                 .hotspots-item-section_id-hotspot-1 {
+                    left: 50%;
+                    top: 20%;
+                    transform: translate(-10%, -2%);
+                }
+
+                .hotspots-item-section_id-hotspot-2 {
+                    left: 72%;
+                    top: 66%;
+                    transform: translate(-72%, -66%);
+                }
+
+                .hotspots-item-17144b6f-005e-4295-9eca-f99f56e50b26 {
+                    left: 11%;
+                    top: 33%;
+                    transform: translate(-11%, -33%);
+                }
+
+                .hotspots-item-1ce0c4d4-8183-45e3-83e8-3fcea5233ed5 {
+                    left: 35%;
+                    top: 50%;
+                    transform: translate(-35%, -50%);
+                }
+            }
+   
+            .hotspots-item-section_id-hotspot-1 {
+                left: 50%;
+                top: 20%;
+                transform: translate(-50%, -20%);
+            }
+
+         
+            .hotspots-item-section_id-hotspot-2 {
+                left: 74%;
+                top: 60%;
+                transform: translate(-74%, -60%);
+            }
+       
+       
+            .hotspots-item-17144b6f-005e-4295-9eca-f99f56e50b26 {
+                left: 50%;
+                top: 48%;
+                transform: translate(-50%, -48%);
+            }
+
+    
+            .hotspots-item-1ce0c4d4-8183-45e3-83e8-3fcea5233ed5 {
+                left: 21%;
+                top: 60%;
+                transform: translate(-21%, -60%);
+            }
+
+       
+       
+            .hotspots-item-inner-section_id::before,
+            .hotspots-item-inner-section_id::after {
+                animation: 4s ease 0s infinite normal none running animation-wave;
+            }
+
+            @keyframes animation-wave {
+                100% {
+                    transform: scale(1.78);
+                    opacity: 0;
+                }
+            }
+        </style>
+
+
+        <div class="section-section_id hotspots-section_id">
+            <div class="section-section_id-settings ">
+
+                <div class="hotspots-body-section_id">
+                    <div class="hotspots-image-section_id">
+
+                        <img src="//section.store/cdn/shop/files/PRODUCT_WHITE_1_3024x_d9a11701-52c0-4f86-8c20-1087051519a5.webp?v=1696846409" alt="">
+
+                        <div class="hotspots-item-section_id hotspots-item-section_id-hotspot-1">
+                            <div class="hotspots-item-inner-section_id">
+                                <div class="hotspots-item-top-section_id">
+
+                                    <svg stroke-width="0" viewBox="0 0 448 512" class="hotspot-icon" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                        </path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div  class="hotspots-item-body-section_id">
+                                <div class="hotspots-item-arrow-section_id">
+                                </div>
+
+
+                                <div class="hotspots-item-content-section_id non-margin">
+                                    <p><strong>Bedframe</strong>: Sturdy, modern metal bedframe with sleek lines and
+                                        headboard.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hotspots-item-section_id hotspots-item-section_id-hotspot-2">
+                            <div class="hotspots-item-inner-section_id">
+                                <div class="hotspots-item-top-section_id">
+
+                                    <svg stroke-width="0" viewBox="0 0 448 512" class="hotspot-icon" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                        </path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="hotspots-item-body-section_id">
+                                <div class="hotspots-item-arrow-section_id">
+                                </div>
+
+
+                                <div  class="hotspots-item-content-section_id non-margin">
+                                    <p><strong>Bedside Table: </strong>Compact, elegant wooden table with storage drawer
+                                        and shelf.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hotspots-item-section_id hotspots-item-17144b6f-005e-4295-9eca-f99f56e50b26">
+                            <div class="hotspots-item-inner-section_id">
+                                <div class="hotspots-item-top-section_id">
+
+                                    <svg stroke-width="0" viewBox="0 0 448 512" class="hotspot-icon" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                        </path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="hotspots-item-body-section_id">
+                                <div class="hotspots-item-arrow-section_id">
+                                </div>
+
+
+                                <div class="hotspots-item-content-section_id non-margin">
+                                    <p><strong>Pillow Case</strong>: Soft, breathable cotton pillow case with decorative
+                                        trim.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hotspots-item-section_id hotspots-item-1ce0c4d4-8183-45e3-83e8-3fcea5233ed5">
+                            <div class="hotspots-item-inner-section_id">
+                                <div class="hotspots-item-top-section_id">
+
+                                    <svg stroke-width="0" viewBox="0 0 448 512" class="hotspot-icon" height="1em"
+                                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                        </path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="hotspots-item-body-section_id">
+                                <div class="hotspots-item-arrow-section_id">
+                                </div>
+
+                                <div class="hotspots-item-content-section_id non-margin">
+                                    <p><strong>Duvet Case</strong>: Luxurious, hypoallergenic duvet case with button
+                                        closure, patterned design.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function initHotspots() {
+                let items = document.querySelectorAll('.hotspots-item-section_id');
+                items.forEach(el => {
+                    if (window.innerWidth < 1024) {
+                        el.addEventListener('click', () => {
+                            items.forEach(element => {
+                                element.classList.remove('active');
+                            }).el.classList.toggle('active');
+                        })
+                    }
+                })
+            }
+
+            document.addEventListener('DOMContentLoaded', initHotspots);
+
+        </script>
+
+</body>
+
+</html>

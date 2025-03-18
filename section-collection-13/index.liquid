@@ -1,0 +1,1388 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_border_color = section.settings.section_border_color %}
+{% assign section_bg = section.settings.section_bg %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+  .section-pc-{{section.id}} {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      margin: 0 auto;
+      background-color: {{section_bg}} !important;
+      {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      border-radius: {{section_radius}}px;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .featured-body-pc-{{section.id}} {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+
+  .featured-image-slider-wrap-pc-{{section.id}} {
+      display: grid;
+      grid-area: image;
+      aspect-ratio: auto;
+  }
+
+  .featured-image-slider-pc-{{section.id}} {
+      position: relative;
+      height: 100% !important;
+      min-width: 0px !important;
+      width: 100% !important;
+      border: {{section.settings.prod_border_w}}px solid {{section.settings.left_img_border_color}} !important;
+      border-radius: {{section.settings.left_img_radius}}px !important;
+      overflow: hidden !important;
+  }
+
+  .featured-image-slide-pc-{{section.id}} {
+      position: relative !important;
+      box-sizing: border-box !important;
+  }
+
+  .featured-image-slide-pc-{{section.id}} img,
+  .featured-image-slide-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .featured-image-slide-pc-{{section.id}} .img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .featured-image-slide-pc-{{section.id}} svg {
+      background-color: #AFAFAF;
+  }
+
+  .featured-image-slide-tag-pc-{{section.id}} {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+      margin: 0;
+      font-size: {{ section.settings.tag_size_mobile }}px;
+      color: {{ section.settings.tag_color }};
+      line-height: 100%;
+      text-align: left;
+      text-transform: unset;
+      word-break: break-word;
+      font-weight: {{ section.settings.tag_weight }};
+  }
+
+  .featured-pagination-pc-{{section.id}} {
+      position: absolute !important;
+      z-index: 1;
+      bottom: 10px;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      margin: 0px auto !important;
+      width: 100% !important;
+      max-width: fit-content;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .featured-pagination-pc-{{section.id}} .swiper-pagination-bullet {
+      width: {{section.settings.pag_w_mobile}}px !important;
+      height: {{section.settings.pag_w_mobile}}px !important;
+      border: {{section.settings.pag_border_w}}px solid {{section.settings.pag_border_color}} !important;
+      background-color: {{section.settings.pag_bg}} !important;
+      opacity: 0.4 !important;
+      transition: all 0.25s ease 0s;
+  }
+
+  .featured-pagination-pc-{{section.id}} .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      transform: scale(1.3) !important;
+      opacity: 1 !important;
+      transition: all 0.25s ease 0s;
+  }
+
+  .featured-product-slider-wrap-pc-{{section.id}} {
+      display: grid;
+      grid-area: product;
+      aspect-ratio: auto;
+  }
+
+  .featured-product-slider-pc-{{section.id}} {
+      min-width: 0px !important;
+      width: 100% !important;
+      position: relative !important;
+      border: {{ section.settings.prod_border_w }}px solid {{ section.settings.prod_border_color }} !important;
+      border-radius: {{ section.settings.prod_radius }}px !important;
+      background-color: {{ section.settings.prod_bg }} !important;
+  }
+
+  .featured-product-slide-pc-{{section.id}} {
+      display: block !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+  }
+
+  .featured-product-slide-body-pc-{{section.id}} {
+      width: 100%;
+      padding: 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .featured-product-image-pc-{{section.id}} {
+      border-radius: {{ section.settings.prod_img_radius }}px;
+      border: {{ section.settings.prod_img_border_w }}px solid {{ section.settings.prod_img_border_color }};
+      overflow: hidden;
+      max-width: 60%;
+  }
+
+  .featured-product-image-pc-{{section.id}} img,
+  .featured-product-image-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .featured-product-image-pc-{{section.id}} .img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .featured-product-image-pc-{{section.id}} svg {
+      background-color: #AFAFAF;
+  }
+
+  .featured-product-slide-content-pc-{{section.id}} {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .featured-product-title-pc-{{section.id}} {
+      margin: 0;
+      max-width: 70%;
+      font-size: {{ section.settings.title_size_mobile }}px;
+      color: {{ section.settings.title_color }};
+      line-height: 150%;
+      text-transform: unset;
+      word-break: break-word;
+      font-weight: {{ section.settings.title_weight }};
+  }
+
+  .featured-product-details-pc-{{section.id}} {
+      margin-top: 4px;
+      max-width: 70%;
+  }
+
+  .featured-product-details-pc-{{section.id}} * {
+      margin: 0;
+      font-size: {{ section.settings.desc_size_mobile }}px;
+      color: {{ section.settings.desc_color }};
+      line-height: 150%;
+      text-transform: unset;
+      word-break: break-word;
+  }
+
+  .featured-product-button-pc-{{section.id}} {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border: {{ section.settings.btn_border_w }}px solid {{ section.settings.btn_border_color }};
+      border-radius: {{ section.settings.btn_radius }}px;
+      background: {{ section.settings.btn_bg }};
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      max-width: fit-content;
+      font-size: {{ section.settings.btn_size_mobile }}px;
+      color: {{ section.settings.btn_color }};
+      font-weight:{{section.settings.btn_weight}};
+      line-height: 100%;
+      text-transform: unset;
+      word-break: break-word;
+  }
+
+  .featured-product-button-pc-{{section.id}}:hover {
+      border: {{ section.settings.btn_border_w }}px solid {{ section.settings.btn_border_color_hover }};
+      background: {{ section.settings.btn_bg_hover }};
+  }
+
+  .featured-product-button-pc-{{section.id}}:hover {
+      color: {{ section.settings.btn_color_hover }};
+  }
+
+  .featured-product-count-pc-{{section.id}} {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      z-index: 2;
+  }
+
+  .featured-product-count-pc-{{section.id}} * {
+      margin: 0;
+      text-align: center;
+      font-size: {{ section.settings.count_size_mobile }}px;
+      color: {{ section.settings.count_color }};
+      line-height: 100%;
+      text-transform: unset;
+      word-break: break-word;
+      font-weight: {{ section.settings.count_weight }};
+  }
+
+  .featured-btn-prev-pc-{{section.id}},
+  .featured-btn-next-pc-{{section.id}} {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      flex-shrink: 0;
+      width: {{section.settings.nav_btn_w}}px;
+      height: {{section.settings.nav_btn_w}}px;
+      border: 0px;
+      border: {{section.settings.nav_btn_border_w}}px solid {{section.settings.nav_btn_border_color}};
+      border-radius: {{section.settings.nav_btn_radius}}px;
+      background: {{section.settings.nav_btn_bg}};
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,.15); */
+  }
+
+  .featured-btn-prev-pc-{{section.id}} {
+      left: 10px;
+  }
+
+  .featured-btn-next-pc-{{section.id}} {
+      right: 10px;
+  }
+
+  .featured-btn-prev-pc-{{section.id}} .animate-icon,
+  .featured-btn-next-pc-{{section.id}} .animate-icon {
+      pointer-events: none;
+      place-items: center;
+      display: grid;
+  }
+
+  .featured-btn-prev-pc-{{section.id}} .animate-icon:before,
+  .featured-btn-next-pc-{{section.id}} .animate-icon:before {
+      content: "";
+      grid-area: 1 / -1;
+      transition: all .2s ease;
+      width: 8px;
+      height: 8px;
+      transform: rotate(calc(1 * 45deg));
+      box-sizing: border-box;
+      border-style: solid;
+      border: 0px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      position: relative;
+      left: -1px;
+  }
+
+  .featured-btn-prev-pc-{{section.id}} .animate-icon:before {
+      left: unset;
+      right: -1px;
+      border-right: 0px;
+      border-top: 0px;
+      border-bottom: 2px solid currentColor;
+      border-left: 2px solid currentColor;
+  }
+
+  .featured-btn-prev-pc-{{section.id}} .animate-icon:after,
+  .featured-btn-next-pc-{{section.id}} .animate-icon:after {
+      content: "";
+      grid-area: 1 / -1;
+      transition: all .2s ease;
+      width: 7.7px;
+      height: 1.6px;
+      transform-origin: center;
+      opacity: 0;
+      background: currentColor;
+      transform: scaleX(.5);
+  }
+
+  .featured-btn-prev-pc-{{section.id}} span,
+  .featured-btn-next-pc-{{section.id}} span {
+      color: {{section.settings.nav_btn_color}};
+  }
+
+  .featured-btn-prev-pc-{{section.id}}.swiper-button-disabled,
+  .featured-btn-next-pc-{{section.id}}.swiper-button-disabled {
+      opacity: 0.5;
+  }
+
+  .featured-btn-prev-pc-{{section.id}}.swiper-button-lock,
+  .featured-btn-next-pc-{{section.id}}.swiper-button-lock {
+      opacity: 0;
+      pointer-events: none;
+  }
+
+
+  @media(min-width: 1024px) {
+
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .featured-body-pc-{{section.id}} {
+          grid-template-columns: 1fr 1fr;
+          gap: 36px;
+      }
+
+      .featured-image-slider-wrap-pc-{{section.id}} {
+          aspect-ratio: 1/1;
+      }
+
+      .featured-image-slide-tag-pc-{{section.id}} {
+          font-size: {{ section.settings.tag_size }}px;
+          text-align: left;
+      }
+
+      .featured-pagination-pc-{{section.id}} .swiper-pagination-bullet {
+          width: {{section.settings.pag_w}}px !important;
+          height: {{section.settings.pag_w}}px !important;
+      }
+
+      .featured-product-slider-wrap-pc-{{section.id}} {
+          aspect-ratio: 1/1;
+      }
+
+      .featured-product-slide-body-pc-{{section.id}} {
+          padding: 32px 32px !important;
+      }
+
+      .featured-product-slide-content-pc-{{section.id}} {
+          margin-top: 20px;
+      }
+
+      .featured-product-title-pc-{{section.id}} {
+          font-size: {{ section.settings.title_size }}px;
+      }
+
+      .featured-product-details-pc-{{section.id}} {
+          margin-top: 4px;
+      }
+
+      .featured-product-details-pc-{{section.id}} * {
+          font-size: {{ section.settings.desc_size }}px;
+      }
+
+      .featured-product-button-pc-{{section.id}} {
+          margin-top: 12px;
+          padding: 12px 16px;
+      }
+
+      .featured-product-button-pc-{{section.id}} {
+          font-size: {{ section.settings.btn_size }}px;
+      }
+
+      .featured-product-count-pc-{{section.id}} * {
+          font-size: {{ section.settings.count_size }}px;
+      }
+
+      .featured-btn-prev-pc-{{section.id}},
+      .featured-btn-next-pc-{{section.id}} {
+          width: {{section.settings.nav_btn_w}}px;
+          height: {{section.settings.nav_btn_w}}px;
+          transition: all 0.25s ease 0s;
+      }
+
+      .featured-btn-prev-pc-{{section.id}} .animate-icon:before,
+      .featured-btn-next-pc-{{section.id}} .animate-icon:before {
+          width: 10px;
+          height: 10px;
+      }
+
+      .featured-btn-prev-pc-{{section.id}} .animate-icon:after,
+      .featured-btn-next-pc-{{section.id}} .animate-icon:after {
+          width: 9.7px;
+      }
+
+      .featured-image-slide-pc-{{section.id}} {
+          aspect-ratio: auto !important;
+      }
+  }
+
+
+  .featured-body-pc-{{section.id}} {
+      grid-template-areas:
+          "product"
+          "image";
+  }
+
+
+  @media(min-width: 1024px) {
+      .featured-body-pc-{{section.id}} {
+          grid-template-areas: "image product";
+      }
+  }
+
+
+  .featured-image-slide-tag-pc-{{section.id}} {
+      left: 16px;
+      transform: translateX(0%);
+  }
+
+
+  @media(min-width: 1024px) {
+      .featured-image-slide-tag-pc-{{section.id}} {
+          left: 16px;
+          right: auto;
+          transform: translateX(0%);
+      }
+  }
+
+
+  .featured-pagination-pc-{{section.id}} {
+      display: flex !important;
+  }
+
+
+  @media(min-width: 1024px) {
+      .featured-pagination-pc-{{section.id}} {
+          display: flex !important;
+      }
+  }
+
+
+  .featured-btn-next-pc-{{section.id}}:hover .animate-icon:before {
+      transform: translate(calc(1 * 0.125rem)) rotate(calc(1 * 45deg));
+  }
+
+  .featured-btn-prev-pc-{{section.id}}:hover .animate-icon:before {
+      transform: translate(calc(-1 * 0.125rem)) rotate(calc(1 * 45deg));
+  }
+
+  .featured-btn-prev-pc-{{section.id}}:hover .animate-icon:after,
+  .featured-btn-next-pc-{{section.id}}:hover .animate-icon:after {
+      opacity: 1;
+      transform: scaleX(1);
+  }
+
+
+  .featured-btn-prev-pc-{{section.id}},
+  .featured-btn-next-pc-{{section.id}} {
+      display: none;
+  }
+
+
+  @media(min-width: 1024px) {
+
+      .featured-btn-prev-pc-{{section.id}},
+      .featured-btn-next-pc-{{section.id}} {
+          display: flex;
+      }
+  }
+
+
+  .featured-image-slide-pc-{{section.id}} {
+      aspect-ratio: 12/12;
+  }
+
+
+
+  .featured-product-image-pc-{{section.id}} {
+      aspect-ratio: 12/12;
+  }
+
+
+  @media(min-width: 1024px) {
+      .featured-product-image-pc-{{section.id}} {
+          aspect-ratio: 12/12;
+      }
+  }
+
+
+  @media(min-width: 1024px) {
+      .featured-product-slide-body-pc-{{section.id}} {
+          justify-content: space-between;
+      }
+  }
+</style>
+
+<div class="section-pc-{{section.id}} featured-pc-{{section.id}}">
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="featured-body-pc-{{section.id}}">
+      <div class="featured-image-slider-wrap-pc-{{section.id}}">
+        <div
+          class="featured-image-slider-pc-{{section.id}} swiper"
+        >
+          <div class="swiper-wrapper" id="swiper-wrapper-3856665a8550e7a9">
+            <div class="featured-image-slide-pc-{{section.id}} swiper-slide">
+              <img
+                src="//section.store/cdn/shop/files/COSMICEXCHANGEBANDANA_SMOKYOCHRE_713-168-35113_2368.jpg?v=1730737697"
+                alt="Organic Bandana"
+              >
+
+              <p class="featured-image-slide-tag-pc-{{section.id}}">new</p>
+            </div>
+
+            <div class="featured-image-slide-pc-{{section.id}} swiper-slide">
+              <img
+                src="//section.store/cdn/shop/files/a-thepackabletote-woodthrushdaisy-814-027-26413-0432.webp?v=1723620262"
+                alt="The Packable Tote in Wood Thrush"
+              >
+
+              <p class="featured-image-slide-tag-pc-{{section.id}}">new</p>
+            </div>
+
+            <div class="featured-image-slide-pc-{{section.id}} swiper-slide">
+              <img
+                src="//section.store/cdn/shop/files/a-thepackabletote-navywave-814-027-13213-2597.webp?v=1725268250"
+                alt="The Packable Tote in Navy"
+              >
+
+              <p class="featured-image-slide-tag-pc-{{section.id}}">best seller</p>
+            </div>
+
+            {% for product in section.settings.colllection.products %}
+              <div class="featured-image-slide-pc-{{section.id}} swiper-slide">
+                {% if product.featured_image != blank %}
+                  <img
+                    src="{{ product.featured_image | img_url:'master' }}"
+                    alt="{{ product.title }}"
+                  >
+                {% else %}
+                  <div class="img">
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                  </div>
+                {% endif %}
+
+                <p class="featured-image-slide-tag-pc-{{section.id}}">{{ product.tags.first }}</p>
+              </div>
+            {% endfor %}
+          </div>
+          <div
+            class="featured-pagination-pc-{{section.id}} swiper-pagination"
+          ></div>
+        </div>
+      </div>
+      <div class="featured-product-slider-wrap-pc-{{section.id}}">
+        <div class="featured-product-slider-pc-{{section.id}} swiper">
+          <div class="swiper-wrapper" id="swiper-wrapper-67d59f37c103f92f8">
+            <div
+              class="featured-product-slide-pc-{{section.id}} swiper-slide"
+              data-title="Organic Bandana"
+              data-id="9185408581961"
+            >
+              <div
+                class="featured-product-slide-body-pc-{{section.id}}"
+              >
+                <a
+                  href="/products/organic-bandana"
+                  class="featured-product-image-pc-{{section.id}}"
+                >
+                  <img
+                    src="//section.store/cdn/shop/files/F22_Accessories-74_ea84bd7a-7c69-4e8c-a41b-042d6c764874.png?v=1720685341"
+                    alt="Organic Bandana"
+                  >
+                </a>
+                <div
+                  class="featured-product-slide-content-pc-{{section.id}}"
+                >
+                  <p
+                    class="featured-product-title-pc-{{section.id}}"
+                  >
+                    Organic Bandana
+                  </p>
+
+                  <div
+                    class="featured-product-details-pc-{{section.id}}"
+                  >
+                    <p>100% organic cotton</p>
+                  </div>
+
+                  <a
+                    href="/products/organic-bandana"
+                    class="featured-product-button-pc-{{section.id}}"
+                    >SHOP NOW</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="featured-product-slide-pc-{{section.id}} swiper-slide"
+              data-title="The Packable Tote in Wood Thrush"
+              data-id="9185458225481"
+            >
+              <div
+                class="featured-product-slide-body-pc-{{section.id}}"
+              >
+                <a
+                  href="/products/the-packable-tote-in-wood-thrush"
+                  class="featured-product-image-pc-{{section.id}}"
+                >
+                  <img
+                    src="//section.store/cdn/shop/files/S22_Accessories-91_504fc646-3b76-446f-96c5-3cc31f3ba3bf.png?v=1720687143"
+                    alt="The Packable Tote in Wood Thrush"
+                  >
+                </a>
+                <div
+                  class="featured-product-slide-content-pc-{{section.id}}"
+                >
+                  <p
+                    class="featured-product-title-pc-{{section.id}}"
+                  >
+                    The Packable Tote in Wood Thrush
+                  </p>
+
+                  <div
+                    class="featured-product-details-pc-{{section.id}}"
+                  >
+                    <p>100% recycled polyester</p>
+                  </div>
+
+                  <a
+                    href="/products/the-packable-tote-in-wood-thrush"
+                    class="featured-product-button-pc-{{section.id}}"
+                    >SHOP NOW</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="featured-product-slide-pc-{{section.id}} swiper-slide"
+              data-title="The Packable Tote in Navy"
+              data-id="9185420214601"
+            >
+              <div
+                class="featured-product-slide-body-pc-{{section.id}}"
+              >
+                <a
+                  href="/products/the-packable-tote-in-navy"
+                  class="featured-product-image-pc-{{section.id}}"
+                >
+                  <img
+                    src="//section.store/cdn/shop/files/814-027-13213_thepackabletote_navywave1_19486658-e535-497b-bd24-78144dd55e24.png?v=1720685868"
+                    alt="The Packable Tote in Navy"
+                  >
+                </a>
+                <div
+                  class="featured-product-slide-content-pc-{{section.id}}"
+                >
+                  <p
+                    class="featured-product-title-pc-{{section.id}}"
+                  >
+                    The Packable Tote in Navy
+                  </p>
+
+                  <div
+                    class="featured-product-details-pc-{{section.id}}"
+                  >
+                    <p>100% recycled polyester</p>
+                  </div>
+
+                  <a
+                    href="/products/the-packable-tote-in-navy"
+                    class="featured-product-button-pc-{{section.id}}"
+                    >SHOP NOW</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            {% for product in section.settings.colllection.products %}
+              <div
+                class="featured-product-slide-pc-{{section.id}} swiper-slide"
+                data-title="The Packable Tote in Navy"
+                data-id="9185420214601"
+              >
+                <div class="featured-product-slide-body-pc-{{section.id}}">
+                  <a
+                    href="{{ product.url }}"
+                    class="featured-product-image-pc-{{section.id}}"
+                  >
+                    {% if product.images != blank %}
+                      <img
+                        src="{{ product.images.first | img_url:'master' }}"
+                        alt="{{ product.title }}"
+                      >
+                    {% else %}
+                      <div class="img">
+                        {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                      </div>
+                    {% endif %}
+                  </a>
+                  <div class="featured-product-slide-content-pc-{{section.id}}">
+                    <p class="featured-product-title-pc-{{section.id}}">
+                      {{ product.title }}
+                    </p>
+
+                    <div class="featured-product-details-pc-{{section.id}}">
+                      <p>{{ product.description }}</p>
+                    </div>
+
+                    {% if section.settings.btn_text != blank %}
+                      <a
+                        href="{{ product.url }}"
+                        class="featured-product-button-pc-{{section.id}}"
+                      >
+                        {{- section.settings.btn_text -}}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="featured-product-count-pc-{{section.id}}">
+            <span>3 / 3</span>
+          </div>
+          <button class="featured-btn-prev-pc-{{section.id}}">
+            <span class="animate-icon"></span>
+          </button>
+          <button class="featured-btn-next-pc-{{section.id}}">
+            <span class="animate-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+            function loadSwiper(callback) {
+                if (window.Swiper) {
+                    callback();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.js";
+                    script.onload = callback;
+                    document.head.appendChild(script);
+                }
+            }
+
+            function PcInitFeaturedCollection13() {
+                const productCountElement = document.querySelector(`.featured-product-count-pc-{{section.id}} span`);
+
+                const PcUpdateSlideCount = (current, total) => {
+                    if (productCountElement) {
+                        productCountElement.textContent = `${current} / ${total}`;
+                    }
+                };
+
+                const PcImageSlider = new Swiper(`.featured-image-slider-pc-{{section.id}}`, {
+                    speed: 800,
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    pagination: {
+                        el: `.featured-pagination-pc-{{section.id}}`,
+                        type: "bullets",
+                        clickable: true,
+                    },
+                });
+
+                const PcProductSlider = new Swiper(`.featured-product-slider-pc-{{section.id}}`, {
+                    speed: 800,
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    navigation: {
+                        nextEl: `.featured-btn-next-pc-{{section.id}}`,
+                        prevEl: `.featured-btn-prev-pc-{{section.id}}`,
+                    },
+                });
+
+                const totalSlides = PcImageSlider.slides.length;
+
+                PcImageSlider.on('slideChange', () => {
+                    const currentIndex = PcImageSlider.realIndex + 1;
+                    PcIcUpdateSlideCount(currentIndex, totalSlides);
+
+                    PcProductSlider.slideToLoop(PcImageSlider.realIndex);
+                });
+
+                PcProductSlider.on('slideChange', () => {
+                    const currentIndex = PcProductSlider.realIndex + 1;
+                    PcUpdateSlideCount(currentIndex, totalSlides);
+
+                    PcImageSlider.slideToLoop(PcProductSlider.realIndex);
+                });
+
+                const initialIndex = PcImageSlider.realIndex + 1;
+                PcUpdateSlideCount(initialIndex, totalSlides);
+
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        PcImageSlider.update();
+                        PcProductSlider.update();
+                    }, 250);
+                });
+            }
+
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadSwiper(() => PcInitFeaturedCollection13()));
+            } else {
+                loadSwiper(() => PcInitFeaturedCollection13());
+            }
+</script>
+
+{% schema %}
+{
+  "name": "PC - Collection #13",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Product Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label":"Collection"
+    },
+    {
+      "type": "header",
+      "content": "Tag"
+    },
+    {
+      "type": "range",
+      "id": "tag_size",
+      "label": "Size",
+      "default":40,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tag_size_mobile",
+      "label": "Mobile Size",
+      "default":32,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tag_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "tag_color",
+      "label": "Color",
+      "default":"#67645e"
+    },
+    {
+      "type": "header",
+      "content": "Image Slider"
+    },
+    {
+      "type": "range",
+      "id": "left_img_radius",
+      "label": "Border Radius",
+      "default":12,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "left_img_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "left_img_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Image Slider Pagination Bullet"
+    },
+    {
+      "type": "range",
+      "id": "pag_w",
+      "label": "Bullet Width",
+      "default":8,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_w_mobile",
+      "label": "Bullet Mobile Width",
+      "default":8,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "pag_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "pag_bg",
+      "label": "Background Color",
+      "default":"#fff"
+    },
+    {
+      "type": "header",
+      "content": "Product Slider Text Content"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Size",
+      "default":18,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title Mobile Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Title Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default":"#67645e"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Description Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_size_mobile",
+      "label": "Description Mobile Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default":"#67645e"
+    },
+    {
+      "type": "header",
+      "content": "Product Slider Button"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label":"Button text",
+      "default":"SHOP NOW"
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "label": "Font Size",
+      "default":14,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_size_mobile",
+      "label": "Mobile Font Size",
+      "default":14,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Border Radius",
+      "default":100,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Color",
+      "default":"#67645e"
+    },
+    {
+      "type": "color",
+      "id": "btn_color_hover",
+      "label": "Color Hover",
+      "default":"#67645e"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color_hover",
+      "label": "Border Color Hover",
+      "default":"#67645e"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Border Color",
+      "default":"#67645e"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_hover",
+      "label": "Background Color Hover",
+      "default":"transparent"
+    },
+    {
+      "type": "header",
+      "content": "Product Slider Count"
+    },
+    {
+      "type": "range",
+      "id": "count_size",
+      "label": "Font Size",
+      "default":40,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "count_size_mobile",
+      "label": "Mobile Font Size",
+      "default":32,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "count_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "count_color",
+      "label": "Color",
+      "default":"#67645e"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Button"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_w",
+      "label": "Width",
+      "default":48,
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_radius",
+      "label": "Border Radius",
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_color",
+      "label": "Color",
+      "default":"#747577"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_border_color",
+      "label": "Border Color",
+      "default":"#747577"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "header",
+      "content": "Product Slider Image"
+    },
+    {
+      "type": "range",
+      "id": "prod_img_radius",
+      "label": "Border Radius",
+      "default":12,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "prod_img_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "prod_img_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+     {
+      "type": "header",
+      "content": "Product Slider Block"
+    },
+    {
+      "type": "range",
+      "id": "prod_radius",
+      "label": "Border Radius",
+      "default":12,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "prod_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "prod_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "prod_bg",
+      "label": "Background Color",
+      "default":"#f1f0ed"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#fff"
+    }
+  ],
+  "presets": [
+     {
+       "name": "PC - Collection #13",
+     }
+  ]
+}
+{% endschema %}

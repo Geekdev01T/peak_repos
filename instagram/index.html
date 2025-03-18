@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            src: url(font/Montserrat-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pc-svi-video-features {
+            max-width: 650px;
+            width: 100%;
+            margin: 30px auto 0;
+            border: none;
+            position: relative;
+        }
+
+        .pc-svi-video-features .swiper::before,
+        .pc-svi-video-features .swiper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .pc-svi-video-features .swiper::before {
+            left: 0;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), white);
+        }
+
+        .pc-svi-video-features .swiper::after {
+            right: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), white);
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper {
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff4444;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .zoom .rays {
+            padding: 3.9em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .zoom .ray {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            border: 8px solid rgba(247, 80, 80, 0.562);
+            animation: rayPulse 3s ease-in-out infinite;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .zoom .ray:nth-child(2) {
+            animation-delay: -1s;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .zoom .ray:nth-child(3) {
+            animation-delay: -1.5s;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .zoom .ray:nth-child(4) {
+            animation-delay: -2s;
+        }
+
+        @keyframes rayPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: .8;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail .gradient-border {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            padding: 4px;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail .gradient-border .white-border {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            padding: .28em;
+            border-radius: 50%;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail::after {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 60px;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, .6);
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail video {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail svg {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .pc-svi-video-features .swiper-slide .pagination_ {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .pc-svi-video-features .swiper .pagination_ div[class^="swiper-button"]::after {
+            display: none;
+            opacity: 0;
+        }
+
+        .pc-svi-video-features .swiper .pagination_ div[class^="swiper-button"] {
+            width: 35px;
+            height: 35px;
+            background: #000;
+            margin-top: -32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: .5s ease-in-out all;
+        }
+
+        .pc-svi-video-features .swiper .pagination_ div[class^="swiper-button"]:hover {
+
+            background: #fff;
+
+        }
+
+        .pc-svi-video-features .swiper .pagination_ div[class^="swiper-button"] svg {
+            /* margin: 0 auto; */
+            margin-left: .5em;
+            width: 50%;
+            color: white;
+            transition: .5s ease-in-out all;
+        }
+
+        .pc-svi-video-features .swiper .pagination_ div[class^="swiper-button"] svg:hover {
+            color: black;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-title {
+            width: 70%;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pc-svi-video-features .story-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.185);
+            z-index: 10;
+            display: none;
+        }
+
+        .pc-svi-video-features .story-popup .story-content {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            height: 80%;
+            max-height: 710px;
+            margin: 50px auto;
+            border-radius: 25px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.83);
+        }
+
+        .pc-svi-video-features .story-popup .story-content .content-progress-bar {
+            position: absolute;
+            background: rgba(65, 64, 64, 0.849);
+            top: 10px;
+            left: 0;
+            right: 0;
+            transform: translateX(5%);
+            height: 2px;
+            width: 90%;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .progress-bar {
+            background: white;
+            height: 2px;
+            width: 0;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .nav-button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            border: none;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+
+        .pc-svi-video-features .story-popup .story-content .nav-button svg {
+            width: 25px;
+            color: #000;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+            left: 31.5%;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .nav-button.next {
+            right: 31.5%;
+        }
+
+        .pc-svi-video-features .story-popup .story-content #btn-pre:disabled {
+            opacity: 0.5;
+            cursor: no-drop;
+        }
+
+        .pc-svi-video-features .story-popup .story-content #btn-next:disabled {
+            opacity: 0.4;
+            cursor: no-drop;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .tools {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 1.6em;
+            right: 1em;
+            z-index: 10;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .tools svg {
+            width: 40px;
+            margin-bottom: 4px;
+            padding: 10px;
+            background: #000;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .story-video-content {
+            width: 100%;
+            height: 100% !important;
+        }
+
+        .pc-svi-video-features .story-popup .story-content .story-video-content video {
+            width: 100%;
+            border-radius: 25px;
+            z-index: 10;
+            object-fit: cover;
+        }
+
+        @media (max-width:1050px) {
+        
+            .pc-svi-video-features .story-popup .story-content {
+                background: transparent;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                position: fixed;
+                top: 30%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+                left: 25%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.next {
+                right: 25%;
+            }
+        }
+
+        @media (max-width:960px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                position: fixed;
+                top: 30%;
+                transform: translateY(-50%);
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+                left: 22%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.next {
+                right: 22%;
+            }
+        }
+
+        @media (max-width:870px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+                left: 18%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.next {
+                right: 18%;
+            }
+        }
+
+        @media (max-width:860px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 34%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media (max-width:795px) {
+
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 40%;
+                transform: translateY(-50%);
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+                left: 16%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.next {
+                right: 16%;
+            }
+        }
+
+        @media (max-width:750px) {
+            .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-title {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width:690px) {
+            .pc-svi-video-features .story-popup .story-content {
+                margin: 50px auto;
+            }
+
+            .swiper-slide .pagination_ {
+                display: none;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+                left: 11%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.next {
+                right: 11%;
+            }
+        }
+
+        @media (max-width:600px) {
+            .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .video-thumbnail {
+                width: 110px;
+                height: 110px;
+            }
+
+            .pc-svi-video-features .swiper .swiper-wrapper .swiper-slide .zoom .rays {
+                padding: 3.65em;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.prev {
+                left: 5%;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button.next {
+                right: 5%;
+            }
+        }
+        @media (max-width:540px) {
+
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 45%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media (max-width:480px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 38%;
+            }
+        }
+
+        @media (max-width:380px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 50%;
+            }
+        }
+
+        @media (max-width:360px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 41%;
+            }
+        }
+
+        @media (max-width:345px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 35%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="pc-svi-video-features">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="video-thumbnail zoom" data-index="0" onclick="openStory(0)">
+                        <div class="rays">
+                            <div class="ray"></div>
+                            <div class="ray"></div>
+                            <div class="ray"></div>
+                            <div class="ray"></div>
+                        </div>
+                        <div class="gradient-border">
+                            <div class="white-border">
+                                <video
+                                    src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
+                                    muted autoplay playsinline loop>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">Made in 🇦🇺</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-thumbnail" data-index="1" onclick="openStory(1)">
+                        <div class="gradient-border">
+                            <div class="white-border">
+                                <video
+                                    src="https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0"
+                                    muted autoplay playsinline loop>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">Sizing</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-thumbnail" data-index="2" onclick="openStory(2)">
+                        <div class="gradient-border">
+                            <div class="white-border">
+                                <video
+                                    src="https://section.store/cdn/shop/videos/c/vp/21cde963b6ef45d58fd201614d0cb238/21cde963b6ef45d58fd201614d0cb238.SD-480p-0.9Mbps-33343173.mp4?v=0"
+                                    muted autoplay playsinline loop>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">How to ✔️</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-thumbnail" data-index="4" onclick="openStory(3)">
+                        <div class="gradient-border">
+                            <div class="white-border">
+                                <video
+                                    src="https://section.store/cdn/shop/videos/c/vp/6c404e122c414631964df7d26c43fe71/6c404e122c414631964df7d26c43fe71.SD-480p-0.9Mbps-33343862.mp4?v=0"
+                                    muted autoplay playsinline loop>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">New in ✨</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video-thumbnail" data-index="4" onclick="openStory(4)">
+                        <div class="gradient-border">
+                            <div class="white-border">
+                                <img src="https://section.store/cdn/shop/files/pexels-shvets-production-8972333.jpg?v=1725278696"
+                                    alt="slide5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">Woaw! ✨</div>
+                </div>
+            </div>
+
+            <div class="pagination_">
+                <div class="swiper-button-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </div>
+                <div class="swiper-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-popup" id="story-popup">
+            <div class="story-content">
+                <div class="content-progress-bar">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <button class="nav-button prev" id="btn-pre" onclick="prevStory()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button class="nav-button next" id="btn-next" onclick="nextStory()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <div class="story-media" id="story-media">
+                    <div class="tools">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-out" onclick="closeStory()">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-pause" id="play-pause-btn"
+                            onclick="togglePlayPause()">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-son" id="volume-btn" onclick="toggleVolume()">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                        </svg>
+                    </div>
+
+                    <div class="story-video-content">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            slidesPerView: 2,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2
+                },
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 4
+                }
+            },
+            on: {
+                init: function () {
+                    updateButtonsVisibility(this);
+                },
+                slideChange: function () {
+                    updateButtonsVisibility(this);
+                }
+            }
+        });
+
+        function updateButtonsVisibility(swiper) {
+            const prevBtn = document.querySelector('.swiper-button-prev');
+            const nextBtn = document.querySelector('.swiper-button-next');
+
+            if (swiper.isBeginning) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+
+            if (swiper.isEnd) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'block';
+            }
+        }
+
+        let currentIndex = 0;
+        let isMuted = false;
+        let currentVideo = null;
+        let progressBar;
+        let progressInterval;
+
+        let stories = [
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0',
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/21cde963b6ef45d58fd201614d0cb238/21cde963b6ef45d58fd201614d0cb238.SD-480p-0.9Mbps-33343173.mp4?v=0',
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/6c404e122c414631964df7d26c43fe71/6c404e122c414631964df7d26c43fe71.SD-480p-0.9Mbps-33343862.mp4?v=0',
+            },
+            {
+                type: 'video',
+                content: '//section.store/cdn/shop/videos/c/vp/96fc518d0bcb42f29f159a035a1e3c6d/96fc518d0bcb42f29f159a035a1e3c6d.HD-1080p-2.5Mbps-33344044.mp4?v=0',
+            }
+        ];
+
+        function openStory(index) {
+            document.getElementById('story-popup').style.display = 'block';
+            currentIndex = index;
+            loadStory();
+        }
+
+        function closeStory() {
+            document.getElementById('story-popup').style.display = 'none';
+            const mediaContainer = document.querySelector('.story-video-content');
+            mediaContainer.innerHTML = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('story-popup');
+            const content = popup.querySelector('.story-content');
+
+            popup.addEventListener('click', (event) => {
+                if (event.target === popup) {
+                    closeStory();
+                }
+            });
+
+            content.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+
+        function loadStory() {
+            const story = stories[currentIndex];
+            const mediaContainer = document.querySelector('.story-video-content');
+            mediaContainer.innerHTML = '';
+
+            let video = document.createElement('video');
+            video.src = story.content;
+            video.autoplay = true;
+            video.controls = false;
+            mediaContainer.appendChild(video);
+            currentVideo = video;
+            currentVideo.muted = isMuted;
+
+            startProgressBar(video);
+            updateNavigationButtons();
+
+            document.getElementById('play-pause-btn').innerHTML = isPlaying
+                ? `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-pause" onclick="videoPaused()">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                    </svg>
+                `
+                : `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-play">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                    </svg>
+                `;
+        }
+
+        function startProgressBar(video) {
+            progressBar = document.getElementById('progress-bar');
+
+            video.addEventListener("timeupdate", () => {
+                let progress = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = progress + '%';
+                if (progress >= 100) {
+                    if (currentIndex < stories.length - 1) {
+                        nextStory();
+                    }
+                }
+            });
+        }
+
+        function prevStory() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadStory();
+            }
+        }
+
+        function nextStory() {
+            if (currentIndex < stories.length - 1) {
+                currentIndex++;
+                loadStory();
+            }
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('btn-pre');
+            const nextBtn = document.getElementById('btn-next');
+
+            if (currentIndex === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+            }
+
+            if (currentIndex === stories.length - 1) {
+                nextBtn.disabled = true;
+            } else {
+                nextBtn.disabled = false;
+            }
+        }
+
+        function togglePlayPause() {
+            if (currentVideo) {
+                if (currentVideo.paused) {
+                    currentVideo.play();
+                    document.getElementById('play-pause-btn').innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-pause" onclick="videoPaused()">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                    </svg>
+                `;
+                    isPlaying = true;
+                } else {
+                    currentVideo.pause();
+                    document.getElementById('play-pause-btn').innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-play">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                    </svg>
+                `;
+                    isPlaying = false;
+                }
+            }
+        }
+
+        function toggleVolume() {
+            if (currentVideo) {
+                isMuted = !isMuted;
+                currentVideo.muted = isMuted;
+                document.getElementById('volume-btn').innerHTML = isMuted
+                    ?
+                    `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke = "currentColor" class="size-6 tools-btn-muted" >
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                        </svg >
+                    `
+                    :
+                    `w
+                    < svg xmlns = "http://www.w3.org/2000/svg" fill = "none" viewBox = "0 0 24 24" stroke - width="1.5"
+                stroke = "currentColor" class="size-6 tools-btn-son" >
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                        </svg >
+                `;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

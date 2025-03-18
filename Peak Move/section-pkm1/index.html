@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.css">
+    <style>
+        .pkm1-section-slider {
+            padding: 40px 0;
+            background: #fff;
+        }
+
+        .pkm1-section-slider .pkm1-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .pkm1-section-slider .pkm1-container .pkm1-section-header {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pkm1-section-slider .pkm1-container .pkm1-section-header .pkm1-section-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper {
+            width: 100%;
+            height: auto;
+            padding-bottom: 50px;
+            /* Espace pour la scrollbar */
+            position: relative;
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper .swiper-slide {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper .swiper-slide:hover {
+            transform: scale(1.02);
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper .swiper-slide .pkm1-slide-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper .swiper-slide .pkm1-slide-content {
+            /* position: absolute; */
+            margin-top: 30px;
+            /* left: 20px; */
+            font-weight: 600;
+            color: black;
+            z-index: 2;
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper .swiper-slide .pkm1-slide-content .pkm1-slide-title {
+            font-size: 25px;
+            font-weight: 500;
+            margin: 0 0 5px 0;
+            text-align: left;
+        }
+
+        /* Navigation et Scrollbar */
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-prev,
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-next {
+            position: static;
+            width: 45px;
+            height: 45px;
+            margin: 0;
+            background: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-prev::after,
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-next::after {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-prev:hover,
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-next:hover {
+            background: #e5e5e5;
+        }
+
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-prev:focus,
+        .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container .swiper-button-next:focus {
+            outline: none;
+            border: 2px solid blue;
+        }
+
+        /* Style de la Scrollbar */
+        .pkm1-section-slider .pkm1-container .swiper .swiper-scrollbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            /* background: #f5f5f5; */
+            border-radius: 2px;
+            /* height: 15px; */
+            background: #ccc;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .pkm1-section-slider .pkm1-container:hover .swiper-scrollbar {
+            opacity: 1;
+        }
+
+        .pkm1-section-slider .pkm1-container .swiper .swiper-scrollbar .swiper-scrollbar-drag {
+            height: 100%;
+            background: #3a3a3a;
+            border-radius: 2px;
+            cursor: grab;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pkm1-section-slider .pkm1-container .swiper .swiper-slide .pkm1-slide-image {
+                height: 400px;
+            }
+
+            .pkm1-section-slider .pkm1-container .pkm1-section-header .pkm1-section-title {
+                font-size: 20px;
+            }
+
+            .pkm1-section-slider .pkm1-container .swiper .swiper-slide .pkm1-slide-content .pkm1-slide-title {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pkm1-section-slider .pkm1-container .swiper .swiper-slide .pkm1-slide-image {
+                height: 300px;
+            }
+
+            .pkm1-section-slider .pkm1-container .pkm1-nav-and-scroll-container {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="pkm1-section-slider">
+        <div class="pkm1-container">
+            <div class="pkm1-section-header">
+                <h2 class="pkm1-section-title">Actuellement</h2>
+                <div class="pkm1-nav-and-scroll-container">
+                    <div class="swiper-button-prev" tabindex="0"></div>
+                    <div class="swiper-button-next" tabindex="0"></div>
+                    <style>
+
+                    </style>
+                </div>
+            </div>
+
+            <div class="swiper">
+
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="https://image.freepik.com/free-photo/athletic-man-wearing-sportswear_23-2148884567.jpg"
+                            alt="Survêtement de sport" class="pkm1-slide-image">
+                        <div class="pkm1-slide-content">
+                            <h3 class="pkm1-slide-title">Survêtement de sport</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="https://image.freepik.com/free-photo/football-boots_23-2148884568.jpg"
+                            alt="Chaussures de football" class="pkm1-slide-image">
+                        <div class="pkm1-slide-content">
+                            <h3 class="pkm1-slide-title">Chaussures de football</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="https://image.freepik.com/free-photo/winter-clothing_23-2148884569.jpg"
+                            alt="Vêtements d'hiver" class="pkm1-slide-image">
+                        <div class="pkm1-slide-content">
+                            <h3 class="pkm1-slide-title">Vêtements d'hiver</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <img src="https://image.freepik.com/free-photo/fashion-collection_23-2148884570.jpg"
+                            alt="Collection de mode" class="pkm1-slide-image">
+                        <div class="pkm1-slide-content">
+                            <h3 class="pkm1-slide-title">Collection de mode</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+            loop: false,
+            speed: 600,
+            grabCursor: true,
+
+            // Navigation
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+                // dragSize: 100
+            },
+
+            // Responsive breakpoints
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

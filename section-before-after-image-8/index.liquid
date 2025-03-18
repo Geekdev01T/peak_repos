@@ -1,0 +1,1288 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<style>
+  .section-template--22540709527881__before_after_image_8_JKqk6D {
+      border-top: solid #334fb4 0px;
+      border-bottom: solid #334fb4 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 0rem;
+      margin-right: 0rem;
+      border-radius: 0px;
+      overflow: hidden;
+      background-color: #f9f9f9;
+  }
+
+  .section-template--22540709527881__before_after_image_8_JKqk6D-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .before-after-heading-template--22540709527881__before_after_image_8_JKqk6D {
+      text-align: center;
+  }
+
+  .before-after-heading-template--22540709527881__before_after_image_8_JKqk6D * {
+      margin: 0px;
+      font-size: {{section.settings.heading_size_mobile}}px;
+      color: {{section.settings.heading_color}};
+      line-height: 130%;
+      text-transform: unset;
+      word-wrap: break-word;
+      font-weight: {{section.settings.heading_weight}};
+  }
+
+  .before-after-text-template--22540709527881__before_after_image_8_JKqk6D {
+      text-align: center;
+      margin-top: 12px;
+  }
+
+  .before-after-text-template--22540709527881__before_after_image_8_JKqk6D * {
+      margin: 0;
+      font-size: {{ section.settings.sub_heading_size_mobile }}px;
+      line-height: 130%;
+      color: {{ section.settings.sub_heading_color }};
+      text-transform: unset;
+      word-wrap: break-word;
+  }
+
+  .before-after-body-template--22540709527881__before_after_image_8_JKqk6D {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      margin-top: 32px;
+      gap: 24px;
+  }
+
+  .before-after-features-template--22540709527881__before_after_image_8_JKqk6D {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+  }
+
+  .before-after-feature-content-template--22540709527881__before_after_image_8_JKqk6D {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+  }
+
+  .before-after-percent-template--22540709527881__before_after_image_8_JKqk6D {
+      margin: 0;
+      width: 100%;
+      font-size: {{section.settings.percent_size_mobile}}px;
+      line-height: 130%;
+      color: {{section.settings.percent_color}};
+      text-align: center;
+      text-transform: unset;
+      word-wrap: break-word;
+      font-weight: {{section.settings.percent_weight}};
+  }
+
+  .before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D {
+      width: 100%;
+      text-align: center;
+  }
+
+  .before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D * {
+      margin: 0;
+      font-size: {{section.settings.text_size_mobile}}px;
+      line-height: 150%;
+      color: {{section.settings.text_color}};
+      text-transform: unset;
+      word-wrap: break-word;
+  }
+
+  .before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D {
+      display: block !important;
+      position: relative;
+      z-index: 1;
+      height: {{section.settings.progress_h}}px;
+      border-radius: {{section.settings.progress_radius}}px;
+      background-color: {{section.settings.progress_bg}};
+      border:{{section.settings.progress_border_w}}px solid {{section.settings.progress_border_color}};
+      width: 100%;
+      margin-top: 16px;
+      overflow: hidden;
+  }
+
+  .before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: var(--after-width, 0);
+      background-color: {{section.settings.progress_color}};
+      transition: all 0.5s linear 0s;
+      z-index: 2;
+  }
+
+  .before-after-button-template--22540709527881__before_after_image_8_JKqk6D {
+      width: {{section.settings.btn_w_mobile}}px;
+      height: {{section.settings.btn_h_mobile}}px;
+      border-radius: {{section.settings.btn_radius}}%;
+      border: {{section.settings.btn_border_w}}px solid {{section.settings.btn_border_color}};
+      backdrop-filter: blur({{section.settings.btn_filter}}px);
+      -webkit-backdrop-filter: blur({{section.settings.btn_filter}}px);
+      box-shadow: {{section.settings.btn_shadow_color}}59 0px 0px 7px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      position: relative;
+  }
+
+  .before-after-button-template--22540709527881__before_after_image_8_JKqk6D::after {
+      content: '';
+      padding: 3px;
+      display: inline-block;
+      border: solid;
+      border-width: 0 2px 2px 0;
+      transform: rotate(-45deg) scale(100%) translateY(-50%);
+  }
+
+  .before-after-button-template--22540709527881__before_after_image_8_JKqk6D::before {
+      content: '';
+      padding: 3px;
+      display: inline-block;
+      border: solid;
+      border-width: 0 2px 2px 0;
+      transform: rotate(135deg) scale(100%) translateX(-50%);
+  }
+
+  .before-after-button-template--22540709527881__before_after_image_8_JKqk6D:before {
+      content: '';
+      height: calc(50% - 25px);
+      top: 50%;
+      left: 15%;
+      width: {{section.settings.btn_size}}px;
+      color: {{section.settings.btn_color}};
+      z-index: -1;
+      position: absolute;
+  }
+
+  .before-after-button-template--22540709527881__before_after_image_8_JKqk6D:after {
+      content: '';
+      height: calc(50% - 25px);
+      top: 50%;
+      right: 15%;
+      width: {{section.settings.btn_size}}px;
+      color: {{section.settings.btn_color}};
+      z-index: -1;
+      position: absolute;
+  }
+
+  .before-after-images-template--22540709527881__before_after_image_8_JKqk6D {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 8px;
+  }
+
+  .before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D {
+      position: relative;
+      height: 100%;
+  }
+
+  .before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D img,
+  .before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .before-after-image-first-template--22540709527881__before_after_image_8_JKqk6D {
+      display: none;
+  }
+
+  .before-after-image-second-template--22540709527881__before_after_image_8_JKqk6D {
+      display: none;
+  }
+
+  .before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D svg {
+      background-color: #AFAFAF;
+  }
+
+  .before-after-image-wrapper-template--22540709527881__before_after_image_8_JKqk6D {
+      display: none;
+  }
+
+  .before-after-image-wrapper-template--22540709527881__before_after_image_8_JKqk6D.active {
+      display: block;
+  }
+
+  .before-after-image-inner-template--22540709527881__before_after_image_8_JKqk6D {
+      position: relative;
+      border: {{section.settings.bef_aft_border_w}}px solid {{section.settings.bef_aft_border_color}};
+      border-radius: {{section.settings.bef_aft_radius}}px;
+      filter: drop-shadow(var(--shadow));
+      user-select: none;
+      overflow: hidden;
+  }
+
+  .before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D {
+      height: 100%;
+      width: max-content;
+      touch-action: none;
+      --transform-logical-flip: 1;
+      transform: translate(calc(var(--transform-logical-flip) * -50% + var(--clip-path-offset, 0px)), -50%);
+      cursor: grab;
+      will-change: transform;
+      place-items: center;
+      display: grid;
+      position: relative;
+      top: 50%;
+      left: var(--before-after-initial-drag-position, 0px);
+  }
+
+  .before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D:before {
+      content: '';
+      height: calc(50% - 25px);
+      top: 0;
+      width: {{section.settings.line_w}}px;
+      background: {{section.settings.line_bg}};
+      z-index: -1;
+      position: absolute;
+  }
+
+  .before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D:after {
+      content: '';
+      height: calc(50% - 25px);
+      bottom: 0;
+      width: {{section.settings.line_w}}px;
+      background: {{section.settings.line_bg}};
+      z-index: -1;
+      position: absolute;
+  }
+
+  .before-after-badge-template--22540709527881__before_after_image_8_JKqk6D {
+      position: absolute;
+      top: 10px;
+      padding: 8px 16px;
+      border-radius: {{section.settings.badge_radius}}px;
+      background-color: {{section.settings.badge_bg}}66;
+      margin: 0;
+      text-align: center;
+      text-transform: unset;
+      word-wrap: break-word;
+      font-size: {{section.settings.badge_size_mobile}}px;
+      line-height: 130%;
+      color: {{section.settings.badge_color}};
+      border:{{section.settings.badge_border_w}}px solid {{section.settings.badge_border_color}};
+  }
+
+  .before-after-before-badge-template--22540709527881__before_after_image_8_JKqk6D {
+      left: 10px;
+  }
+
+  .before-after-after-badge-template--22540709527881__before_after_image_8_JKqk6D {
+      right: 10px;
+  }
+
+  .before-after-image-toggles-template--22540709527881__before_after_image_8_JKqk6D {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 8px;
+  }
+
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D {
+      position: relative;
+      border: 0px solid #334fb4;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+  }
+
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D img,
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D svg {
+      background-color: #AFAFAF;
+  }
+
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: rgba(243, 243, 243, 0.5);
+      opacity: 1;
+      transition: all 0.25s ease 0s;
+  }
+
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D.active:before {
+      opacity: 0;
+      transition: all 0.25s ease 0s;
+  }
+
+
+  .before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D {
+      aspect-ratio: 12/12;
+  }
+
+  .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D {
+      aspect-ratio: 12/12;
+  }
+
+
+
+  @media(min-width: 1024px) {
+
+      .section-template--22540709527881__before_after_image_8_JKqk6D {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 0rem;
+          margin-right: 0rem;
+          border-radius: 0px;
+      }
+
+      .section-template--22540709527881__before_after_image_8_JKqk6D-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .before-after-heading-template--22540709527881__before_after_image_8_JKqk6D {
+          text-align: center;
+      }
+
+      .before-after-heading-template--22540709527881__before_after_image_8_JKqk6D * {
+          font-size: {{section.settings.heading_size}}px;
+      }
+
+      .before-after-text-template--22540709527881__before_after_image_8_JKqk6D {
+          text-align: center;
+          margin-top: 16px;
+      }
+
+      .before-after-text-template--22540709527881__before_after_image_8_JKqk6D * {
+          font-size: {{ section.settings.sub_heading_size }}px;
+      }
+
+      .before-after-body-template--22540709527881__before_after_image_8_JKqk6D {
+          grid-template-columns: 0.5fr 1fr;
+          margin-top: 50px;
+          gap: 40px;
+      }
+
+      .before-after-features-template--22540709527881__before_after_image_8_JKqk6D {
+          gap: 36px;
+      }
+
+      .before-after-feature-content-template--22540709527881__before_after_image_8_JKqk6D {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+      }
+
+      .before-after-percent-template--22540709527881__before_after_image_8_JKqk6D {
+          font-size: {{section.settings.percent_size}}px;
+          text-align: center;
+      }
+
+      .before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D {
+          text-align: center;
+          margin-top: 12px;
+      }
+
+      .before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D * {
+          font-size: {{section.settings.text_size}}px;
+      }
+
+      .before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D {
+          margin-top: 20px;
+      }
+
+      .before-after-images-template--22540709527881__before_after_image_8_JKqk6D {
+          grid-template-columns: 1fr 0.5fr;
+          gap: 8px;
+      }
+
+      .before-after-image-first-template--22540709527881__before_after_image_8_JKqk6D {
+          display: block;
+      }
+
+      .before-after-image-mobile-template--22540709527881__before_after_image_8_JKqk6D {
+          display: none;
+      }
+
+      .before-after-image-second-template--22540709527881__before_after_image_8_JKqk6D {
+          display: block;
+      }
+
+      .before-after-image-mobile-second-template--22540709527881__before_after_image_8_JKqk6D {
+          display: none;
+      }
+
+      .before-after-button-template--22540709527881__before_after_image_8_JKqk6D {
+          width: {{section.settings.btn_w}}px;
+          height: {{section.settings.btn_h}}px;
+      }
+
+      .before-after-button-template--22540709527881__before_after_image_8_JKqk6D::after {
+          transform: rotate(-45deg) scale(100%) translateY(-50%);
+          height: calc(50% - 25px);
+      }
+
+      .before-after-button-template--22540709527881__before_after_image_8_JKqk6D::before {
+          transform: rotate(135deg) scale(100%) translateX(-50%);
+          height: calc(50% - 25px);
+      }
+
+      .before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D:before {
+          height: calc(50% - 25px);
+      }
+
+      .before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D:after {
+          height: calc(50% - 25px);
+      }
+
+      .before-after-badge-template--22540709527881__before_after_image_8_JKqk6D {
+          padding: 8px 16px;
+          font-size: {{section.settings.badge_size}}px;
+      }
+
+      .before-after-image-toggles-template--22540709527881__before_after_image_8_JKqk6D {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 8px;
+      }
+
+
+      .before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D {
+          aspect-ratio: 12/12;
+      }
+
+
+      .before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D {
+          aspect-ratio: 12/12;
+      }
+  }
+</style>
+
+<div
+  class="section-template--22540709527881__before_after_image_8_JKqk6D before-after-template--22540709527881__before_after_image_8_JKqk6D"
+>
+  <div class="section-template--22540709527881__before_after_image_8_JKqk6D-settings">
+    <div class="before-after-heading-template--22540709527881__before_after_image_8_JKqk6D">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="before-after-text-template--22540709527881__before_after_image_8_JKqk6D">
+      {{ section.settings.sub_heading }}
+    </div>
+
+    <div class="before-after-body-template--22540709527881__before_after_image_8_JKqk6D">
+      <div class="before-after-features-template--22540709527881__before_after_image_8_JKqk6D">
+        <div
+          class="before-after-feature-template--22540709527881__before_after_image_8_JKqk6D"
+          data-section-id="template--22540709527881__before_after_image_8_JKqk6D"
+          data-animated="true"
+        >
+          <div class="before-after-feature-content-template--22540709527881__before_after_image_8_JKqk6D">
+            <div
+              class="before-after-percent-template--22540709527881__before_after_image_8_JKqk6D"
+              data-percent="97"
+            >
+              97%
+            </div>
+
+            <div
+              class="before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D"
+            >
+              <p>Skin was brighter and plumper</p>
+            </div>
+          </div>
+          <div
+            class="before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D"
+            data-percent="97"
+            style="--after-width: 97%;"
+          ></div>
+        </div>
+
+        <div
+          class="before-after-feature-template--22540709527881__before_after_image_8_JKqk6D"
+          data-section-id="template--22540709527881__before_after_image_8_JKqk6D"
+          data-animated="true"
+        >
+          <div class="before-after-feature-content-template--22540709527881__before_after_image_8_JKqk6D">
+            <div
+              class="before-after-percent-template--22540709527881__before_after_image_8_JKqk6D"
+              data-percent="96"
+            >
+              96%
+            </div>
+
+            <div
+              class="before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D"
+            >
+              <p>Skin felt firmer</p>
+            </div>
+          </div>
+          <div
+            class="before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D"
+            data-percent="96"
+            style="--after-width: 96%;"
+          ></div>
+        </div>
+
+        <div
+          class="before-after-feature-template--22540709527881__before_after_image_8_JKqk6D"
+          data-section-id="template--22540709527881__before_after_image_8_JKqk6D"
+          data-animated="true"
+        >
+          <div class="before-after-feature-content-template--22540709527881__before_after_image_8_JKqk6D">
+            <div
+              class="before-after-percent-template--22540709527881__before_after_image_8_JKqk6D"
+              data-percent="92"
+            >
+              92%
+            </div>
+
+            <div
+              class="before-after-feature-text-template--22540709527881__before_after_image_8_JKqk6D"
+            >
+              <p>Reduction of acne breakouts</p>
+            </div>
+          </div>
+          <div
+            class="before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D"
+            data-percent="92"
+            style="--after-width: 92%;"
+          ></div>
+        </div>
+      </div>
+      <div class="before-after-images-template--22540709527881__before_after_image_8_JKqk6D">
+        <div
+          class="before-after-image-wrapper-template--22540709527881__before_after_image_8_JKqk6D active"
+          data-id="image_86c6Lc"
+        >
+          <div
+            class="before-after-image-inner-template--22540709527881__before_after_image_8_JKqk6D"
+            style="--before-after-initial-drag-position: 50%; --clip-path-offset: -2.75px;"
+          >
+            <div
+              class="before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D"
+              style=" position: relative;"
+            >
+              <img
+                src="//section.store/cdn/shop/files/before-icons8-team-y2T5hT7pWx4-unsplash.jpg?v=1730895685"
+                alt=""
+                draggable="false"
+                class="before-after-image-template--22540709527881__before_after_image_8_JKqk6D "
+              >
+
+              <p
+                class="before-after-badge-template--22540709527881__before_after_image_8_JKqk6D before-after-before-badge-template--22540709527881__before_after_image_8_JKqk6D"
+              >
+                Before
+              </p>
+            </div>
+            <div
+              class="before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D"
+              style="clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px))); position: absolute; top: 0; bottom: 0; left: 0; right: 0;"
+            >
+              <img
+                src="//section.store/cdn/shop/files/after-icons8-team-y2T5hT7pWx4-unsplash.jpg?v=1730895683"
+                alt=""
+                draggable="false"
+                class="before-after-image-template--22540709527881__before_after_image_8_JKqk6D "
+              >
+
+              <p
+                class="before-after-badge-template--22540709527881__before_after_image_8_JKqk6D before-after-after-badge-template--22540709527881__before_after_image_8_JKqk6D"
+              >
+                After
+              </p>
+            </div>
+
+            <div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+              <split-cursor
+                class="before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D"
+              >
+                <div
+                  class="before-after-button-template--22540709527881__before_after_image_8_JKqk6D"
+                ></div>
+              </split-cursor>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="before-after-image-wrapper-template--22540709527881__before_after_image_8_JKqk6D"
+          data-id="image_DfXrtM"
+        >
+          <div
+            class="before-after-image-inner-template--22540709527881__before_after_image_8_JKqk6D"
+            style="--before-after-initial-drag-position: 50%; --clip-path-offset: 175px;"
+          >
+            <div
+              class="before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D"
+              style=" position: relative;"
+            >
+              <img
+                src="//section.store/cdn/shop/files/before-frank-flores-8IWjJCcHNR4-unsplash.jpg?v=1730917277"
+                alt=""
+                draggable="false"
+                class="before-after-image-template--22540709527881__before_after_image_8_JKqk6D "
+              >
+
+              <p
+                class="before-after-badge-template--22540709527881__before_after_image_8_JKqk6D before-after-before-badge-template--22540709527881__before_after_image_8_JKqk6D"
+              >
+                Before
+              </p>
+            </div>
+            <div
+              class="before-after-image-relative-template--22540709527881__before_after_image_8_JKqk6D"
+              style="clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px))); position: absolute; top: 0; bottom: 0; left: 0; right: 0;"
+            >
+              <img
+                src="//section.store/cdn/shop/files/after-frank-flores-8IWjJCcHNR4-unsplash.jpg?v=1730917284"
+                alt=""
+                draggable="false"
+                class="before-after-image-template--22540709527881__before_after_image_8_JKqk6D "
+              >
+
+              <p
+                class="before-after-badge-template--22540709527881__before_after_image_8_JKqk6D before-after-after-badge-template--22540709527881__before_after_image_8_JKqk6D"
+              >
+                After
+              </p>
+            </div>
+
+            <div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+              <split-cursor
+                class="before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D"
+              >
+                <div
+                  class="before-after-button-template--22540709527881__before_after_image_8_JKqk6D"
+                ></div>
+              </split-cursor>
+            </div>
+          </div>
+        </div>
+
+        <div class="before-after-image-toggles-template--22540709527881__before_after_image_8_JKqk6D">
+          <div
+            class="before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D active"
+            id="image_86c6Lc"
+          >
+            <img
+              src="//section.store/cdn/shop/files/before-icons8-team-y2T5hT7pWx4-unsplash.jpg?v=1730895685"
+              alt=""
+            >
+          </div>
+
+          <div
+            class="before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D"
+            id="image_DfXrtM"
+          >
+            <img
+              src="//section.store/cdn/shop/files/before-frank-flores-8IWjJCcHNR4-unsplash.jpg?v=1730917277"
+              alt=""
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+        function animatePercentages(feature) {
+            //   const sectionId = feature.getAttribute('data-section-id');
+            const percentElement = feature.querySelector(`.before-after-percent-template--22540709527881__before_after_image_8_JKqk6D`);
+            const progressBar = feature.querySelector(`.before-after-progress-bar-template--22540709527881__before_after_image_8_JKqk6D`);
+
+            if (!percentElement || !progressBar) return;
+
+            const duration = 2250;
+            const targetPercent = parseInt(percentElement.getAttribute('data-percent'));
+            let startTime = null;
+
+            function animate(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                const currentValue = Math.floor(targetPercent * progress);
+
+                percentElement.textContent = `${currentValue}%`;
+
+                const exactProgress = targetPercent * progress;
+                progressBar.style.setProperty('--after-width', `${exactProgress}%`);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    percentElement.textContent = `${targetPercent}%`;
+                    progressBar.style.setProperty('--after-width', `${targetPercent}%`);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function initBeforeAfterImage8() {
+
+            const toggles = document.querySelectorAll(`.before-after-image-toggle-template--22540709527881__before_after_image_8_JKqk6D`);
+            const images = document.querySelectorAll(`.before-after-image-wrapper-template--22540709527881__before_after_image_8_JKqk6D`);
+            const imageWrappers = document.querySelectorAll(`.before-after-image-inner-template--22540709527881__before_after_image_8_JKqk6D`);
+
+            imageWrappers.forEach(imageWrapper => {
+                const cursor = imageWrapper.querySelector(`.before-after-image-cursor-template--22540709527881__before_after_image_8_JKqk6D`);
+                let xStart, xEnd, xDiff, originalOffset;
+
+                function dragStart(event) {
+                    xStart = event.clientX;
+                    originalOffset = imageWrapper.style
+                        .getPropertyValue('--clip-path-offset')
+                        .slice(0, -2);
+                    document.addEventListener('pointermove', dragMove);
+                    document.addEventListener('pointerup', dragEnd);
+                }
+
+                function dragMove(event) {
+                    xEnd = event.clientX;
+                    xDiff = xEnd - xStart;
+                    let result = xDiff + parseInt(originalOffset);
+                    let cursorOffsetPercent = parseFloat(getComputedStyle(imageWrapper).getPropertyValue('--before-after-initial-drag-position'));
+                    let containerWidth = imageWrapper.offsetWidth;
+                    let pixelsOffset = (cursorOffsetPercent / 100) * containerWidth;
+                    const negativeMax = -1 * (pixelsOffset);
+                    const positiveMax = imageWrapper.offsetWidth - pixelsOffset;
+
+                    if (result < negativeMax) {
+                        result = negativeMax;
+                    } else if (result > positiveMax) {
+                        result = positiveMax;
+                    }
+                    imageWrapper.style.setProperty('--clip-path-offset', result + 'px');
+                }
+
+                function dragEnd(event) {
+                    document.removeEventListener('pointermove', dragMove);
+                    document.removeEventListener('pointerup', dragEnd);
+                }
+
+                cursor.addEventListener('pointerdown', dragStart);
+            });
+
+            if (toggles) {
+                toggles.forEach(toggle => {
+                    toggle.addEventListener('click', () => {
+                        toggles.forEach(toggle => toggle.classList.remove('active'));
+                        if (images) {
+                            images.forEach(image => image.classList.remove('active'));
+                            images.forEach(image => {
+                                if (toggle.id == image.getAttribute('data-id')) {
+                                    image.classList.add('active');
+                                    toggle.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+
+            const features = document.querySelectorAll(`.before-after-feature-template--22540709527881__before_after_image_8_JKqk6D`);
+
+            features.forEach(feature => {
+                // feature.setAttribute('data-section-id', sectionId);
+
+                if (!feature.hasAttribute('data-animated')) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animatePercentages(feature);
+                                feature.setAttribute('data-animated', 'true');
+                                observer.disconnect();
+                            }
+                        });
+                    }, {
+                        threshold: 0.2,
+                        rootMargin: '0px'
+                    });
+
+                    observer.observe(feature);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initBeforeAfterImage8);
+</script>
+
+{% schema %}
+{
+  "name": "PC Section B/A image 8",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem Ipsum Dolor"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "default":40,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Size",
+      "default":30,
+      "min": 10,
+      "max":60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default":"#334fb4"
+    },
+    {
+      "type": "header",
+      "content": "Sub Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_heading",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, libero!</p>"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Size",
+      "default":18,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size_mobile",
+      "label": "Mobile Size",
+      "default":12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Color",
+      "default":"#5c5c5c"
+    },
+    {
+      "type": "header",
+      "content": "Progess Bar Block"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Size",
+      "default":18,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size_mobile",
+      "label": "Mobile Size",
+      "default":12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Color",
+      "default":"#5c5c5c"
+    },
+    {
+      "type": "range",
+      "id": "percent_size",
+      "label": "Percent Font Size",
+      "default":60,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "percent_size_mobile",
+      "label": "Percent Mobile Font Size",
+      "default":52,
+      "min": 10,
+      "max":80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "percent_weight",
+      "label": "Percent Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "percent_color",
+      "label": "Percent Color",
+      "default":"#334fb4"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Font Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Text Mobile Font Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default":"#5c5c5c"
+    },
+    {
+      "type": "range",
+      "id": "progress_h",
+      "label": "Progress Bar Height",
+      "default":6,
+      "min": 1,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "progress_radius",
+      "label": "Progress Bar Border Radius",
+      "default":100,
+      "min": 0,
+      "max":150,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "progress_border_w",
+      "label": "Progress Bar Border Width",
+      "default":0,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "progress_bg",
+      "label": "Progress Bar Background Color",
+      "default":"#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "progress_color",
+      "label": "Progress Bar Content Color",
+      "default":"#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "progress_border_color",
+      "label": "Progress Bar Border Color",
+      "default":"#000"
+    },
+    {
+      "type": "header",
+      "content": "Before/After Badge"
+    },
+     {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Badge Font Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Badge Mobile Font Size",
+      "default":12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_radius",
+      "label": "Badge Border Radius",
+      "default":100,
+      "min": 0,
+      "max":150,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_w",
+      "label": "Badge Border Width",
+      "default":0,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Badge Background Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Badge Border Color",
+      "default":"#000"
+    },
+     {
+      "type": "header",
+      "content": "Before/After Button"
+    },
+    {
+      "type": "range",
+      "id": "btn_w",
+      "label": "Width",
+      "default":50,
+      "min": 10,
+      "max":100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_h",
+      "label": "Height",
+      "default":50,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_w_mobile",
+      "label": "Mobile Width",
+      "default":50,
+      "min": 10,
+      "max":100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_h_mobile",
+      "label": "Mobile Height",
+      "default":50,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "label": "Content Size",
+      "default":3,
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Border Radius",
+      "default":50,
+      "min": 0,
+      "max":100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "btn_border_w",
+      "label": "Border Width",
+      "default":2,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_filter",
+      "label": "Filter degree",
+      "default":7,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Content Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Border Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "btn_shadow_color",
+      "label": "Shadow Color",
+      "default":"#000"
+    },
+     {
+      "type": "header",
+      "content": "Before/After Block"
+    },
+    {
+      "type": "range",
+      "id": "bef_aft_radius",
+      "label": "Border Radius",
+      "default":16,
+      "min": 0,
+      "max":100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bef_aft_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bef_aft_border_color",
+      "label": "Border Color",
+      "default":"#334fb4"
+    },
+    {
+      "type": "range",
+      "id": "line_w",
+      "label": "Line Width",
+      "default":2,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "line_bg",
+      "label": "Line Background Color",
+      "default":"#ffffff"
+    },
+  ],
+  "presets": [
+    {
+      "name": "PC Section B/A image 8"
+    }
+  ]
+}
+{% endschema %}

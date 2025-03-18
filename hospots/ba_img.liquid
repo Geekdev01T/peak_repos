@@ -1,0 +1,1358 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign heading = section.settings.heading %}
+{% assign heading_size = section.settings.heading_size %}
+{% assign heading_size_mobile = section.settings.heading_size_mobile %}
+{% assign heading_weight = section.settings.heading_weight %}
+{% assign heading_color = section.settings.heading_color %}
+
+{% assign sub_heading = section.settings.sub_heading %}
+{% assign sub_heading_size = section.settings.sub_heading_size %}
+{% assign sub_heading_size_mobile = section.settings.sub_heading_size_mobile %}
+{% assign sub_heading_weight = section.settings.sub_heading_weight %}
+{% assign sub_heading_color = section.settings.sub_heading_color %}
+
+{% assign badge_size = section.settings.badge_size %}
+{% assign badge_size_mobile = section.settings.badge_size_mobile %}
+{% assign badge_weight = section.settings.badge_weight %}
+{% assign badge_border_r = section.settings.badge_border_r %}
+{% assign badge_border_w = section.settings.badge_border_w %}
+{% assign badge_bg = section.settings.badge_bg %}
+{% assign badge_color = section.settings.badge_color %}
+{% assign badge_border_color = section.settings.badge_border_color %}
+
+{% assign slide_title_size = section.settings.slide_title_size %}
+{% assign slide_title_size_mobile = section.settings.slide_title_size_mobile %}
+{% assign slide_title_color = section.settings.slide_title_color %}
+{% assign slide_desc_size = section.settings.slide_desc_size %}
+{% assign slide_desc_size_mobile = section.settings.slide_desc_size_mobile %}
+{% assign slide_desc_color = section.settings.slide_desc_color %}
+{% assign slide_name_size = section.settings.slide_name_size %}
+{% assign slide_name_size_mobile = section.settings.slide_name_size_mobile %}
+{% assign slide_name_color = section.settings.slide_name_color %}
+{% assign slide_link_size = section.settings.slide_link_size %}
+{% assign slide_link_size_mobile = section.settings.slide_link_size_mobile %}
+{% assign slide_link_weight = section.settings.slide_link_weight %}
+{% assign slide_link_color = section.settings.slide_link_color %}
+{% assign slide_web_align = section.settings.slide_web_align %}
+{% assign slide_mobile_align = section.settings.slide_mobile_align %}
+
+{% assign image_radius = section.settings.image_radius %}
+{% assign image_border_w = section.settings.image_border_w %}
+{% assign image_border_color = section.settings.image_border_color %}
+
+{% assign bottom_title_size = section.settings.bottom_title_size %}
+{% assign bottom_title_size_mobile = section.settings.bottom_title_size_mobile %}
+{% assign bottom_title_color = section.settings.bottom_title_color %}
+{% assign bottom_desc_size = section.settings.bottom_desc_size %}
+{% assign bottom_desc_size_mobile = section.settings.bottom_desc_size_mobile %}
+{% assign bottom_desc_color = section.settings.bottom_desc_color %}
+
+{% assign btn_w = section.settings.btn_w %}
+{% assign btn_h = section.settings.btn_h %}
+{% assign btn_icon_w = section.settings.btn_icon_w %}
+{% assign btn_icon_w_mobile = section.settings.btn_icon_w_mobile %}
+{% assign btn_radius = section.settings.btn_radius %}
+{% assign btn_border_w = section.settings.btn_border_w %}
+{% assign btn_color = section.settings.btn_color %}
+{% assign btn_color_hover = section.settings.btn_color_hover %}
+{% assign btn_bg = section.settings.btn_bg %}
+{% assign btn_border_color = section.settings.btn_border_color %}
+{% assign btn_border_color_hover = section.settings.btn_border_color_hover %}
+
+{% assign pag_bullet_w = section.settings.pag_bullet_w %}
+{% assign pag_bullet_h = section.settings.pag_bullet_h %}
+{% assign pag_bullet_border_w = section.settings.pag_bullet_border_w %}
+{% assign pag_border_w = section.settings.pag_border_w %}
+{% assign pag_bullet_bg = section.settings.pag_bullet_bg %}
+{% assign pag_bullet_bg_active = section.settings.pag_bullet_bg_active %}
+{% assign pag_bullet_border_color = section.settings.pag_bullet_border_color %}
+{% assign pag_border_color = section.settings.pag_border_color %}
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_bg = section.settings.section_bg %}
+{% assign section_border_color = section.settings.section_border_color %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+  .section-{{section.id}}_before_after_image {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      margin: 0 auto;
+      margin-top: {{section_mt}}px;
+      margin-bottom: {{section_mb}}px;
+      border-radius: {{section_radius}}px;
+      {% if full_border %} border: {{section_border_w}}px solid {{section_border_color}}; {% endif %}
+      background-color:{{section_bg}};
+  }
+
+  .section-{{section.id}}_before_after_image-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .before-after-heading-{{section.id}}_before_after_image {
+      text-align: center;
+  }
+
+  .before-after-heading-{{section.id}}_before_after_image * {
+      margin: 0;
+      font-size: {{heading_size_mobile}}px;
+      color: {{heading_color}};
+      font-weight:{{heading_weight}};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .before-after-subheading-{{section.id}}_before_after_image {
+      margin-top: 9px;
+      text-align: center;
+  }
+
+  .before-after-subheading-{{section.id}}_before_after_image * {
+      margin: 0;
+      font-size: {{sub_heading_size_mobile}}px;
+      color: {{sub_heading_color}};
+      font-weight:{{sub_heading_weight}};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .before-after-slider-wrapper-{{section.id}}_before_after_image {
+      margin-top: 20px;
+      position: relative;
+  }
+
+  .before-after-slide-{{section.id}}_before_after_image {
+      display: grid !important;
+      grid-template-columns: repeat(1, 1fr);
+      align-items: center !important;
+      gap: 25px;
+  }
+
+  .before-after-images-{{section.id}}_before_after_image {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+  }
+
+  .before-after-image-{{section.id}}_before_after_image {
+      border-radius: {{image_radius}}px;
+      border: {{image_border_w}}px solid {{image_border_color}};
+      overflow: hidden;
+      position: relative;
+  }
+
+  .before-after-image-{{section.id}}_before_after_image .img,
+  .before-after-image-{{section.id}}_before_after_image svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .before-after-image-{{section.id}}_before_after_image svg {
+      background-color: #DADADA;
+  }
+
+  .before-after-info-{{section.id}}_before_after_image {
+      padding: 0px 0px;
+  }
+
+  .before-after-badge-{{section.id}}_before_after_image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4px 16px;
+      border-radius: {{badge_border_r}}px;
+      border: {{badge_border_w}}px solid {{badge_border_color}};
+      margin: 0;
+      font-size: {{badge_size_mobile}}px;
+      color: {{badge_color}};
+      line-height: 100%;
+      text-transform: unset;
+      font-weight: {{badge_weight}};
+      position: absolute;
+      top: 10px;
+      background-color: {{badge_bg}};
+  }
+
+  .before-after-first-{{section.id}}_before_after_image .before-after-badge-{{section.id}}_before_after_image {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .before-after-second-{{section.id}}_before_after_image .before-after-badge-{{section.id}}_before_after_image {
+      right: 50%;
+      transform: translateX(50%);
+  }
+
+  .before-after-customer-{{section.id}}_before_after_image {
+      margin: 0;
+      display: block;
+      width: 100%;
+      font-size: {{slide_title_size_mobile}}px;
+      color: {{slide_title_color}};
+      line-height: 100%;
+      text-transform: unset;
+      text-align: {{slide_mobile_align}};
+  }
+
+  .before-after-text-{{section.id}}_before_after_image {
+      text-align: {{slide_mobile_align}};
+      margin-top: 6px;
+  }
+
+  .before-after-text-{{section.id}}_before_after_image * {
+      margin: 0;
+      font-size: {{slide_desc_size_mobile}}px;
+      color: {{slide_desc_color}};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .before-after-product-{{section.id}}_before_after_image {
+      margin: 0;
+      margin-top: 30px;
+      display: block;
+      width: 100%;
+      font-size: {{slide_name_size_mobile}}px;
+      color: {{slide_name_color}};
+      line-height: 100%;
+      text-transform: unset;
+      text-align: {{slide_mobile_align}};
+  }
+
+  .before-after-link-{{section.id}}_before_after_image {
+      margin: 0;
+      margin-top: 5px;
+      display: block;
+      width: 100%;
+      font-size: {{slide_link_size_mobile}}px;
+      color: {{slide_link_color}};
+      line-height: 100%;
+      text-transform: unset;
+      text-align: {{slide_mobile_align}};
+      text-decoration: none;
+      font-weight: {{slide_link_weight}};
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image,
+  .before-after-btn-next-{{section.id}}_before_after_image {
+      position: absolute;
+      z-index: 2;
+      top: 10%;
+      width: {{btn_w}}px;
+      height: {{btn_h}}px;
+      border: {{btn_border_w}}px solid {{btn_border_color}};
+      border-radius: {{btn_radius}}%;
+      background: {{btn_bg}};
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      padding: 0px;
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image {
+      left: 0px !important;
+  }
+
+  .before-after-btn-next-{{section.id}}_before_after_image {
+      right: 0px !important;
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image svg,
+  .before-after-btn-next-{{section.id}}_before_after_image svg {
+      height: {{btn_icon_w_mobile}}px;
+      flex: 0 0 50px;
+  }
+
+  .before-after-btn-next-{{section.id}}_before_after_image svg {
+      transform: rotate(180deg);
+      margin-left: 2px;
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image svg {
+      margin-left: -2px;
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image svg path,
+  .before-after-btn-next-{{section.id}}_before_after_image svg path {
+      fill: {{btn_color}};
+      transition: all 0.3s ease 0s;
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image:hover,
+  .before-after-btn-next-{{section.id}}_before_after_image:hover {
+      transition: all 0.3s ease 0s;
+      border: {{btn_border_w}}px solid {{btn_border_color_hover}};
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image:hover svg path,
+  .before-after-btn-next-{{section.id}}_before_after_image:hover svg path {
+      fill: {{btn_color_hover}};
+      transition: all 0.3s ease 0s;
+  }
+
+  .before-after-btn-prev-{{section.id}}_before_after_image.swiper-button-disabled,
+  .before-after-btn-next-{{section.id}}_before_after_image.swiper-button-disabled {
+      opacity: 0.3;
+  }
+
+  .before-after-pagination-{{section.id}}_before_after_image {
+      padding: 25px 0px;
+      position: static !important;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      border-bottom: {{pag_border_w}}px solid {{pag_border_color}};
+  }
+
+  .before-after-pagination-{{section.id}}_before_after_image .swiper-pagination-bullet {
+      width: {{pag_bullet_w}}px;
+      height: {{pag_bullet_h}}px;
+      border: {{pag_bullet_border_w}}px solid {{pag_bullet_border_color}};
+      background-color: {{pag_bullet_bg}};
+      opacity: 0.6;
+  }
+
+  .before-after-pagination-{{section.id}}_before_after_image .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      opacity: 1;
+      background-color: {{pag_bullet_bg_active}};
+  }
+
+  .before-after-bottom-{{section.id}}_before_after_image {
+      padding-top: 21px;
+  }
+
+  .before-after-bottom-item-{{section.id}}_before_after_image {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+  }
+
+  .before-after-bottom-item-{{section.id}}_before_after_image.active {
+      display: flex;
+  }
+
+  .before-after-bottom-title-{{section.id}}_before_after_image {
+      margin: 0;
+      font-size: {{bottom_title_size_mobile}}px;
+      color: {{bottom_title_color}};
+      line-height: 100%;
+      text-transform: unset;
+  }
+
+  .before-after-bottom-text-{{section.id}}_before_after_image * {
+      margin: 0;
+      font-size: {{bottom_desc_size_mobile}}px;
+      color: {{bottom_desc_color}};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .section-{{section.id}}_before_after_image-settings {
+      max-width: 140rem;
+  }
+
+  .before-after-image-{{section.id}}_before_after_image {
+      aspect-ratio: 12/12;
+  }
+
+
+  .before-after-btn-prev-{{section.id}}_before_after_image,
+  .before-after-btn-next-{{section.id}}_before_after_image {
+      display: none;
+  }
+
+  .before-after-pagination-{{section.id}}_before_after_image {
+      display: flex !important;
+  }
+
+   @media(min-width: 768px) {
+      .before-after-info-{{section.id}}_before_after_image {
+          padding: 0px 40px;
+      }
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-{{section.id}}_before_after_image-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .before-after-heading-{{section.id}}_before_after_image {
+          padding: 0px !important;
+          text-align: center;
+      }
+
+      .before-after-heading-{{section.id}}_before_after_image * {
+          font-size: {{heading_size}}px;
+      }
+
+      .before-after-subheading-{{section.id}}_before_after_image {
+          padding: 0px !important;
+          margin-top: 12px;
+          text-align: center;
+      }
+
+      .before-after-subheading-{{section.id}}_before_after_image * {
+          font-size: {{ sub_heading_size }}px;
+      }
+
+      .before-after-slider-wrapper-{{section.id}}_before_after_image {
+          margin-top: 54px;
+          padding: 0px 50px;
+      }
+
+      .before-after-slide-{{section.id}}_before_after_image {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0px;
+      }
+
+      .before-after-images-{{section.id}}_before_after_image {
+          gap: px;
+      }
+
+      .before-after-badge-{{section.id}}_before_after_image {
+          padding: 10px 30px;
+          font-size: {{badge_size}}px;
+      }
+
+      .before-after-first-{{section.id}}_before_after_image .before-after-badge-{{section.id}}_before_after_image {
+          left: 15px;
+          transform: translateX(0);
+      }
+
+      .before-after-second-{{section.id}}_before_after_image .before-after-badge-{{section.id}}_before_after_image {
+          right: 15px;
+          transform: translateX(0);
+      }
+
+      .before-after-info-{{section.id}}_before_after_image {
+          padding: 0px 80px;
+      }
+
+      .before-after-customer-{{section.id}}_before_after_image {
+          font-size: {{slide_title_size}}px;
+          text-align: {{slide_web_align}};
+      }
+
+      .before-after-text-{{section.id}}_before_after_image {
+          margin-top: 8px;
+          text-align: {{slide_web_align}};
+      }
+
+      .before-after-text-{{section.id}}_before_after_image * {
+          font-size: {{slide_desc_size}}px;
+      }
+
+      .before-after-product-{{section.id}}_before_after_image {
+          margin-top: 40px;
+          font-size: {{slide_name_size}}px;
+          text-align: {{slide_web_align}};
+      }
+
+      .before-after-link-{{section.id}}_before_after_image {
+          margin-top: 6px;
+          font-size: {{slide_link_size}}px;
+          text-align: {{slide_web_align}};
+      }
+
+      .before-after-btn-prev-{{section.id}}_before_after_image,
+      .before-after-btn-next-{{section.id}}_before_after_image {
+          width: {{btn_w}}px;
+          height: {{btn_h}}px;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+
+      .before-after-btn-prev-{{section.id}}_before_after_image {
+          left: -25.0px !important;
+          transform: translate(13px, -50%);
+      }
+
+      .before-after-btn-next-{{section.id}}_before_after_image {
+          right: -25.0px !important;
+          transform: translate(-13px, -50%);
+      }
+
+      .before-after-btn-prev-{{section.id}}_before_after_image svg,
+      .before-after-btn-next-{{section.id}}_before_after_image svg {
+          height: {{btn_icon_w}}px;
+          flex: 0 0 50px;
+      }
+
+      .before-after-pagination-{{section.id}}_before_after_image .swiper-pagination-bullet {
+          width: 15px;
+          height: 15px;
+      }
+
+      .before-after-bottom-{{section.id}}_before_after_image {
+          padding-top: 28px;
+      }
+
+      .before-after-bottom-item-{{section.id}}_before_after_image {
+          justify-content: center;
+      }
+
+      .before-after-bottom-title-{{section.id}}_before_after_image {
+          font-size: {{bottom_title_size}}px;
+      }
+
+      .before-after-bottom-text-{{section.id}}_before_after_image * {
+          font-size: {{bottom_desc_size}}px;
+      }
+
+      .before-after-image-{{section.id}}_before_after_image {
+          aspect-ratio: 12/12;
+      }
+
+      .before-after-btn-prev-{{section.id}}_before_after_image,
+      .before-after-btn-next-{{section.id}}_before_after_image {
+          display: flex;
+      }
+
+      .before-after-pagination-{{section.id}}_before_after_image {
+          display: flex !important;
+      }
+
+      .before-after-bottom-{{section.id}}_before_after_image {
+          padding-left: 50px;
+          padding-right: 50px;
+      }
+
+      .before-after-slider-wrapper-{{section.id}}_before_after_image {
+          padding: 0px 50px;
+      }
+  }
+</style>
+
+<div class="section-{{section.id}}_before_after_image before-after-{{section.id}}_before_after_image">
+  <div class="section-{{section.id}}_before_after_image-settings">
+    <div class="before-after-heading-{{section.id}}_before_after_image">
+      <h2>{{ heading }}</h2>
+    </div>
+
+    <div class="before-after-subheading-{{section.id}}_before_after_image">
+      <p>{{ sub_heading }}</p>
+    </div>
+
+    <div class="before-after-slider-wrapper-{{section.id}}_before_after_image">
+      <div class="before-after-slider-{{section.id}}_before_after_image swiper">
+        <div class="swiper-wrapper" id="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="before-after-slide-{{section.id}}_before_after_image swiper-slide">
+              <div class="before-after-images-{{section.id}}_before_after_image">
+                <div class="before-after-second-{{section.id}}_before_after_image before-after-image-{{section.id}}_before_after_image">
+                  {% if block.settings.before_image != blank %}
+                    <img
+                      src="{{ block.settings.before_image | img_url: 'master' }}"
+                      class="img"
+                      alt="Before Image"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="img">
+                      {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                    </div>
+                  {% endif %}
+                  <div class="before-after-badge-{{section.id}}_before_after_image">BEFORE</div>
+                </div>
+
+                <div class="before-after-second-{{section.id}}_before_after_image before-after-image-{{section.id}}_before_after_image">
+                  {% if block.settings.after_image != blank %}
+                    <img
+                      src="{{ block.settings.after_image | img_url: 'master' }}"
+                      class="img"
+                      alt="After Image"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="img">
+                      {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                    </div>
+                  {% endif %}
+                  <div class="before-after-badge-{{section.id}}_before_after_image">AFTER</div>
+                </div>
+              </div>
+              <div class="before-after-info-{{section.id}}_before_after_image">
+                <p class="before-after-customer-{{section.id}}_before_after_image">
+                  {{ block.settings.customer_name }}
+                </p>
+                <div class="before-after-text-{{section.id}}_before_after_image">
+                  {{ block.settings.customer_testimonial }}
+                </div>
+                <p class="before-after-product-{{section.id}}_before_after_image">
+                  {{ block.settings.customer_name }} uses:
+                </p>
+                <a href="{{ block.settings.link_url }}" class="before-after-link-{{section.id}}_before_after_image">
+                  {{ block.settings.product_name }}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="before-after-pagination-{{section.id}}_before_after_image swiper-pagination "></div>
+      </div>
+      <button class="before-after-btn-prev-{{section.id}}_before_after_image">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g>
+              <path
+                  d="M14,17a1,1,0,0,1-.707-.293l-4-4a1,1,0,0,1,0-1.414l4-4a1,1,0,1,1,1.414,1.414L11.414,12l3.293,3.293A1,1,0,0,1,14,17Z">
+              </path>
+          </g>
+        </svg>
+      </button>
+      <button class="before-after-btn-next-{{section.id}}_before_after_image">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g>
+              <path
+                  d="M14,17a1,1,0,0,1-.707-.293l-4-4a1,1,0,0,1,0-1.414l4-4a1,1,0,1,1,1.414,1.414L11.414,12l3.293,3.293A1,1,0,0,1,14,17Z">
+              </path>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <div class="before-after-bottom-{{section.id}}_before_after_image">
+      {% for block in section.blocks %}
+        <div class="before-after-bottom-item-{{section.id}}_before_after_image">
+          <p class="before-after-bottom-title-{{section.id}}_before_after_image">{{ block.settings.bottom_title }}</p>
+          <div class="before-after-bottom-text-{{section.id}}_before_after_image">
+            {{ block.settings.bottom_desc }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function initScrollingProducts() {
+      const slider = new Swiper(".before-after-slider-{{section.id}}_before_after_image", {
+          speed: 300,
+          loop: true,
+          simulateTouch: false,
+          autoHeight: true,
+          effect: "fade",
+          fadeEffect: { crossFade: true },
+          navigation: {
+              nextEl: '.before-after-btn-next-{{section.id}}_before_after_image',
+              prevEl: '.before-after-btn-prev-{{section.id}}_before_after_image',
+          },
+          pagination: {
+              el: '.before-after-pagination-{{section.id}}_before_after_image',
+              type: 'bullets',
+              clickable: true,
+          },
+      });
+      slider.on('slideChange', () => {
+          if (document.querySelectorAll('.before-after-bottom-item-{{section.id}}_before_after_image')) {
+              document.querySelectorAll('.before-after-bottom-item-{{section.id}}_before_after_image').forEach((el, index) => {
+                  var activeSlideIndex = slider.realIndex;
+                  el.classList.remove('active');
+                  if (index == activeSlideIndex) {
+                      el.classList.add('active');
+                  }
+              })
+          }
+      });
+  }
+
+  document.addEventListener('DOMContentLoaded', initScrollingProducts);
+</script>
+
+{% schema %}
+{
+  "name": "Before After Image",
+  "settings": [
+    {
+    "type": "header",
+    "content": "This section is a property of PeakConversion",
+    "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+  },
+    {
+        "type":"header",
+        "content":"Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text Content",
+      "default": "Vintage collection"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Font Size",
+      "default": 12,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 12,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default":"#573c2a"
+    },
+    {
+        "type":"header",
+        "content":"Sub-Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Text Content",
+      "default": "New arrivals"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Font Size",
+      "default": 32,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 26,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_weight",
+      "label": "Font Weight",
+      "default": 400,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Color",
+      "default":"#111010"
+    },
+    {
+        "type":"header",
+        "content":"Badge"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Font Size",
+      "default": 12,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 10,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "badge_border_r",
+      "label": "Border Radius",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_w",
+      "label": "Border Width",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Backround Color",
+      "default":"#F7F0E5"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Color",
+      "default":"#603C2A"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Border Color",
+      "default":"#111010"
+    },
+    {
+        "type":"header",
+        "content":"Slide Text Content"
+    },
+    {
+      "type": "range",
+      "id": "slide_title_size",
+      "label": "Title Font Size",
+      "default": 32,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_title_size_mobile",
+      "label": "Title Mobile Font Size",
+      "default": 20,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slide_title_color",
+      "label": "Title Color",
+      "default":"#111010"
+    },
+    {
+      "type": "range",
+      "id": "slide_desc_size",
+      "label": "Description Font Size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_desc_size_mobile",
+      "label": "Description Mobile Font Size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slide_desc_color",
+      "label": "Description Color",
+      "default":"#2e2e2e"
+    },
+    {
+      "type": "range",
+      "id": "slide_name_size",
+      "label": "Name Font Size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_name_size_mobile",
+      "label": "Name Mobile Font Size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slide_name_color",
+      "label": "Name Color",
+      "default":"#2e2e2e"
+    },
+    {
+      "type": "range",
+      "id": "slide_link_size",
+      "label": "Link Font Size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_link_size_mobile",
+      "label": "Link Mobile Font Size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_link_weight",
+      "label": "Link Mobile Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "slide_link_color",
+      "label": "Link Color",
+      "default":"#573c2a"
+    },
+    {
+      "type": "text_alignment",
+      "id": "slide_web_align",
+      "label": "Web Text Alignment",
+      "default":"left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "slide_mobile_align",
+      "label": "Mobile Text Alignment",
+      "default":"center"
+    },
+    {
+        "type":"header",
+        "content":"Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Border Radius",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "range",
+      "id": "image_border_w",
+      "label": "Border Width",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type":"color",
+      "id":"image_border_color",
+      "label":"Border Color",
+      "default":"#000"
+    },
+    {
+        "type":"header",
+        "content":"Bottom Text Content"
+    },
+    {
+      "type": "range",
+      "id": "bottom_title_size",
+      "label": "Title Font Size",
+      "default": 30,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bottom_title_size_mobile",
+      "label": "Title Mobile Font Size",
+      "default": 30,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bottom_title_color",
+      "label": "Title Color",
+      "default":"#573c2a"
+    },
+    {
+      "type": "range",
+      "id": "bottom_desc_size",
+      "label": "Description Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bottom_desc_size_mobile",
+      "label": "Description Mobile Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bottom_desc_color",
+      "label": "Description Color",
+      "default":"#2f1b13"
+    },
+    {
+        "type":"header",
+        "content":"Navigation Buttons"
+    },
+    {
+      "type": "range",
+      "id": "btn_w",
+      "label": "Width",
+      "default": 50,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_h",
+      "label": "Height",
+      "default": 50,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_icon_w",
+      "label": "Icon Width",
+      "default": 50,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_icon_w_mobile",
+      "label": "Mobile Icon Width",
+      "default": 50,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Border Radius",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "btn_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Color",
+      "default":"#573c2a"
+    },
+    {
+      "type": "color",
+      "id": "btn_color_hover",
+      "label": "Color Hover",
+      "default":"#573c2a"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Border Color",
+      "default":"#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color_hover",
+      "label": "Border Color Hover",
+      "default":"#FFFFFF"
+    },
+    {
+        "type":"header",
+        "content":"Pagination"
+    },
+    {
+      "type": "range",
+      "id": "pag_bullet_w",
+      "label": "Bullet Width",
+      "default": 15,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_bullet_h",
+      "label": "Bullet Height",
+      "default": 15,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_bullet_border_w",
+      "label": "Bullet Border Width",
+      "default": 2,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_border_w",
+      "label": "Border Bottom Width",
+      "default": 2,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "pag_bullet_bg",
+      "label": "Bullet Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "pag_bullet_bg_active",
+      "label": "Bullet Active Background Color",
+      "default":"#573c2a"
+    },
+    {
+      "type": "color",
+      "id": "pag_bullet_border_color",
+      "label": "Bullet Border Color",
+      "default":"#573c2a"
+    },
+    {
+      "type": "color",
+      "id": "pag_border_color",
+      "label": "Border Color",
+      "default":"#cec7c3"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enabled Full Width",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_border",
+      "label": "Enabled Border",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background Color",
+      "default":"#F5EFE6"
+    },
+    {
+      "type": "color",
+      "id": "section_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+  ],
+   "blocks": [
+    {
+      "type": "slide",
+      "name": "Before & After Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After Image"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name"
+        },
+        {
+          "type": "richtext",
+          "id": "customer_testimonial",
+          "label": "Customer Testimonial"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name",
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "bottom_title",
+          "label": "Bottom Title"
+        },
+        {
+          "type": "richtext",
+          "id": "bottom_desc",
+          "label": "Bottom Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before After Image"
+    }
+  ]
+}
+{% endschema %}

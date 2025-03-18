@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Our Collections</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .pc-scs-container {
+            width: 100%;
+            margin: 0 auto;
+            background: #f3f1f1;
+            padding-top: 20px;
+            margin: 20px 0;
+        }
+
+        .pc-scs-container h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            font-family: serif;
+        }
+
+        .pc-scs-carousels-wrapper {
+            position: relative;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track {
+            display: flex;
+            width: fit-content;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track.pc-scs-top {
+            animation: scrollLeft 40s linear infinite;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track.pc-scs-bottom {
+            animation: scrollRight 40s linear infinite;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item {
+            position: relative;
+            margin: 0 2px;
+            transition: filter 0.2s ease, transform 0.2s ease;
+            width: 315px;
+            height: 315px;
+            cursor: pointer;
+        }
+
+        .pc-scs-carousels-wrapper:hover .pc-scs-carousel-item img {
+            filter: blur(4px);
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-item:hover img {
+            filter: blur(0) !important;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item .pc-scs-carousel-item-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item .pc-scs-carousel-item-content .pc-scs-carousel-item-title {
+            color: white;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 0.5rem));
+            }
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(calc(-50% - 0.5rem));
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc-scs-container h1 {
+                font-size: 2rem;
+            }
+
+            .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item {
+                width: 250px;
+                height: 250px;
+            }
+
+            .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item .pc-scs-carousel-item-content .pc-scs-carousel-item-title {
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .pc-scs-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item {
+                width: 200px;
+                height: 200px;
+            }
+
+            .pc-scs-carousels-wrapper .pc-scs-carousel-section .pc-scs-carousel-track .pc-scs-carousel-item .pc-scs-carousel-item-content .pc-scs-carousel-item-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pc-scs-container">
+        <h1>Shop Our Collections</h1>
+
+        <div class="pc-scs-carousels-wrapper">
+            <!-- Top Carousel -->
+            <div class="pc-scs-carousel-section">
+                <div class="pc-scs-carousel-track pc-scs-top">
+                    <!-- Original Images -->
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-blanche_23-2149088823.jpg" alt="Edit">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Edit</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-bleue_23-2149088809.jpg" alt="The Latest Drops">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">The Latest Drops</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-rouge_23-2149088815.jpg" alt="New Arrivals">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">New Arrivals</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-noire_23-2149088819.jpg" alt="The Premium Edit">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">The Premium Edit</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-verte_23-2149088825.jpg" alt="The Latest Drops">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">The Latest Drops</h3>
+                        </div>
+                    </a>
+
+                    <!-- Cloned Images for Infinite Scroll -->
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-blanche_23-2149088823.jpg" alt="Edit">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Edit</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-bleue_23-2149088809.jpg" alt="The Latest Drops">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">The Latest Drops</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-rouge_23-2149088815.jpg" alt="New Arrivals">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">New Arrivals</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-noire_23-2149088819.jpg" alt="The Premium Edit">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">The Premium Edit</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/femme-portant-robe-longue-verte_23-2149088825.jpg" alt="The Latest Drops">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">The Latest Drops</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Carousel -->
+            <div class="pc-scs-carousel-section">
+                <div class="pc-scs-carousel-track pc-scs-bottom">
+                    <!-- Original Images -->
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/bijoux-or-pierres-precieuses_144627-33654.jpg" alt="Jewels">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Jewels</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/coffrets-cadeaux-roses-ruban_23-2148879378.jpg" alt="Gift Giving">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Gift Giving</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/accessoires-mode-femme_1203-8305.jpg" alt="Accessories">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Accessories</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/bijoux-or-pierres-precieuses_144627-33654.jpg" alt="Jewels">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Jewels</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/coffrets-cadeaux-roses-ruban_23-2148879378.jpg" alt="Gift Giving">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Gift Giving</h3>
+                        </div>
+                    </a>
+
+                    <!-- Cloned Images for Infinite Scroll -->
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/bijoux-or-pierres-precieuses_144627-33654.jpg" alt="Jewels">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Jewels</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/coffrets-cadeaux-roses-ruban_23-2148879378.jpg" alt="Gift Giving">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Gift Giving</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/accessoires-mode-femme_1203-8305.jpg" alt="Accessories">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Accessories</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/bijoux-or-pierres-precieuses_144627-33654.jpg" alt="Jewels">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Jewels</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="pc-scs-carousel-item">
+                        <img src="https://img.freepik.com/photos-gratuite/coffrets-cadeaux-roses-ruban_23-2148879378.jpg" alt="Gift Giving">
+                        <div class="pc-scs-carousel-item-content">
+                            <h3 class="pc-scs-carousel-item-title">Gift Giving</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

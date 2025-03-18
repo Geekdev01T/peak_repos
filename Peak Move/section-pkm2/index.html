@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.css">
+        <style>
+            .pkm2-dresses-section {
+                padding: 60px 20px;
+                max-width: 1400px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .pkm2-dresses-section .pkm2-section-title {
+                text-align: center;
+                font-size: 28px;
+                margin-bottom: 40px;
+                font-weight: 500;
+                color: #333;
+            }
+
+            .pkm2-dresses-section .swiper {
+                width: 100%;
+                padding: 10px 0 40px;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card {
+                position: relative;
+                cursor: pointer;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-image-container {
+                position: relative;
+                padding-bottom: 133%;
+                /* Ratio 3:4 */
+                overflow: hidden;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-image-container .pkm2-product-image,
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-image-container .pkm2-product-image-hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.3s ease;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-image-container .pkm2-product-image-hover {
+                opacity: 0;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card:hover .pkm2-product-image-container .pkm2-product-image-hover {
+                opacity: 1;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info {
+                margin-top: 2px;
+                padding: 1px 0;
+                text-align: center;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-title {
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: #494949;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price {
+                font-size: 16px;
+                color: #261D09;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price .pkm2-sale-price {
+                color: #CA1818;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price .pkm2-original-price {
+                text-decoration: line-through;
+                color: #666;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-view-more-btn {
+                position: absolute;
+                width: 90%;
+                bottom: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #333;
+                text-align: center;
+                color: white;
+                padding: 14px 24px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                opacity: 0;
+                text-transform: uppercase;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card:hover .pkm2-view-more-btn {
+                bottom: 16px;
+                opacity: 1;
+            }
+
+            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-sale-tag {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background: #000;
+                color: white;
+                padding: 4px 8px;
+                font-size: 12px;
+                z-index: 2;
+            }
+
+            /* Navigation buttons */
+            .pkm2-dresses-section .swiper-button-prev,
+            .pkm2-dresses-section .swiper-button-next {
+                opacity: 0;
+                transition: opacity 0.3s ease, background 0.3s ease;
+                color: #ffffff;
+                background: #444444;
+                display: none;
+                width: 45px;
+                height: 45px;
+                text-align: center;
+            }
+
+            .pkm2-dresses-section .swiper-button-prev:hover,
+            .pkm2-dresses-section .swiper-button-next:hover {
+                background: #474747;
+            }
+
+            .pkm2-dresses-section .pkm2-nav-button:disabled {
+                opacity: 0.5;
+                cursor: auto;
+            }
+
+            .pkm2-dresses-section .swiper-button-prev:after,
+            .pkm2-dresses-section .swiper-button-next:after {
+                font-size: 16px;
+
+            }
+
+            .pkm2-dresses-section:hover .swiper-button-prev,
+            .pkm2-dresses-section:hover .swiper-button-next {
+                opacity: 1;
+                display: flex;
+            }
+
+            .swiper-button-prev:hover .swiper-button-prev::after,
+            .swiper-button-next:hover .swiper-button-next::after {
+                animation: shinojutsu 0.75s cubic-bezier(0.01, 0.56, 1, 1);
+            }
+
+
+            @keyframes shinojutsu {
+                100% {
+                    left: -200%;
+                }
+            }
+
+            .pkm2-dresses-section .swiper-scrollbar {
+                display: none;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .pkm2-dresses-section {
+                    padding: 40px 15px;
+                }
+
+                .pkm2-dresses-section .pkm2-section-title {
+                    font-size: 24px;
+                    margin-bottom: 30px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-title {
+                    font-size: 15px;
+                }
+
+                .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price {
+                    font-size: 17px;
+                }
+
+                .pkm2-dresses-section .swiper-button-prev,
+                .pkm2-dresses-section .swiper-button-next {
+                    display: none !important;
+                }
+
+                .pkm2-dresses-section .swiper-scrollbar {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background: #f5f5f5;
+                    border-radius: 2px;
+                    height: 5px;
+                    background: #ccc;
+                    transition: opacity 0.3s;
+                }
+
+                .pkm2-dresses-section .swiper-scrollbar .swiper-scrollbar-drag {
+                    height: 100%;
+                    background: #111111;
+                    border-radius: 2px;
+                }
+
+                .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-view-more-btn {
+                    bottom: 14px;
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="pkm2-dresses-section">
+            <h2 class="pkm2-section-title">Robes</h2>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <div class="pkm2-sale-tag">SOLDES</div>
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884567.jpg"
+                                    alt="Robe Maxi Ceinturée" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884575.jpg"
+                                    alt="Hover Robe Maxi Ceinturée" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Maxi Ceinturée</h3>
+                                <div class="pkm2-product-price">
+                                    <span class="pkm2-original-price">$150.00</span>
+                                    <span class="pkm2-sale-price">$129.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884568.jpg"
+                                    alt="Robe Mi-longue Bicolore" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884576.jpg"
+                                    alt="Hover Robe Mi-longue Bicolore" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Mi-longue Bicolore</h3>
+                                <div class="pkm2-product-price">
+                                    <span>$99.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884569.jpg"
+                                    alt="Robe à Bretelles" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884577.jpg"
+                                    alt="Hover Robe à Bretelles" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe à Bretelles</h3>
+                                <div class="pkm2-product-price">
+                                    <span>$119.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <div class="pkm2-sale-tag">SOLDES</div>
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884570.jpg"
+                                    alt="Robe Ligne A à Manches Longues" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884578.jpg"
+                                    alt="Hover Robe Ligne A à Manches Longues" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Ligne A à Manches Longues</h3>
+                                <div class="pkm2-product-price">
+                                    <span class="pkm2-original-price">$139.00</span>
+                                    <span class="pkm2-sale-price">$119.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <div class="pkm2-sale-tag">SOLDES</div>
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884571.jpg"
+                                    alt="Robe Ligne A à Manches Longues" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884579.jpg"
+                                    alt="Hover Robe Ligne A à Manches Longues" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Ligne A à Manches Longues</h3>
+                                <div class="pkm2-product-price">
+                                    <span class="pkm2-sale-price">$119.00</span>
+                                    <span class="pkm2-original-price">$139.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <div class="pkm2-sale-tag">SOLDES</div>
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884572.jpg"
+                                    alt="Robe Ligne A à Manches Longues" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884580.jpg"
+                                    alt="Hover Robe Ligne A à Manches Longues" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Ligne A à Manches Longues</h3>
+                                <div class="pkm2-product-price">
+                                    <span class="pkm2-sale-price">$119.00</span>
+                                    <span class="pkm2-original-price">$139.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <div class="pkm2-sale-tag">SOLDES</div>
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884573.jpg"
+                                    alt="Robe Ligne A à Manches Longues" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884581.jpg"
+                                    alt="Hover Robe Ligne A à Manches Longues" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Ligne A à Manches Longues</h3>
+                                <div class="pkm2-product-price">
+                                    <span class="pkm2-sale-price">$119.00</span>
+                                    <span class="pkm2-original-price">$139.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide">
+                        <div class="pkm2-product-card">
+                            <div class="pkm2-product-image-container">
+                                <div class="pkm2-sale-tag">SOLDES</div>
+                                <img src="https://image.freepik.com/free-photo/elegant-woman-wearing-dress_23-2148884574.jpg"
+                                    alt="Robe Ligne A à Manches Longues" class="pkm2-product-image">
+                                <img src="https://image.freepik.com/free-photo/beautiful-woman-wearing-dress_23-2148884582.jpg"
+                                    alt="Hover Robe Ligne A à Manches Longues" class="pkm2-product-image-hover">
+                                <button class="pkm2-view-more-btn">Voir plus</button>
+                            </div>
+                            <div class="pkm2-product-info">
+                                <h3 class="pkm2-product-title">Robe Ligne A à Manches Longues</h3>
+                                <div class="pkm2-product-price">
+                                    <span class="pkm2-sale-price">$119.00</span>
+                                    <span class="pkm2-original-price">$139.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev pkm2-nav-button"></div>
+                <div class="swiper-button-next pkm2-nav-button"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.1.0/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+                loop: false,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true,
+                    // dragSize: 100
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    968: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    }
+                }
+            });
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>

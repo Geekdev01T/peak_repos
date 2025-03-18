@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <style>
+    
+            .section-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                overflow: hidden;
+                background-color:#ffffff;
+            }
+    
+            .section-template--22708612792649__ss_featured_collection_13_qn34p3-settings {
+                margin: 0 auto;
+                padding-top: 27px;
+                padding-bottom: 27px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .featured-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+    
+            .featured-image-slider-wrap-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: grid;
+                grid-area: image;
+                aspect-ratio: auto;
+            }
+    
+            .featured-image-slider-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                position: relative;
+                height: 100% !important;
+                min-width: 0px !important;
+                width: 100% !important;
+                border: 0px solid #000000 !important;
+                border-radius: 12px !important;
+                overflow: hidden !important;
+            }
+    
+            .featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                position: relative !important;
+                box-sizing: border-box !important;
+            }
+    
+            .featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 img,
+            .featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 svg {
+                background-color: #AFAFAF;
+            }
+    
+            .featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                z-index: 1;
+                margin: 0;
+                font-size: 32px;
+                color: #67645e;
+                line-height: 100%;
+                text-align: left;
+                text-transform: unset;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                position: absolute !important;
+                z-index: 1;
+                bottom: 10px;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                margin: 0px auto !important;
+                width: 100% !important;
+                max-width: fit-content;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            .featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 .swiper-pagination-bullet {
+                width: 8px !important;
+                height: 8px !important;
+                border: 0px !important;
+                background-color: #ffffff !important;
+                opacity: 0.4 !important;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                transform: scale(1.3) !important;
+                opacity: 1 !important;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-product-slider-wrap-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: grid;
+                grid-area: product;
+                aspect-ratio: auto;
+            }
+    
+            .featured-product-slider-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                min-width: 0px !important;
+                width: 100% !important;
+                position: relative !important;
+                border: 0px solid #000000 !important;
+                border-radius: 12px !important;
+                background-color: #f1f0ed !important;
+            }
+    
+            .featured-product-slide-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: block !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+            }
+    
+            .featured-product-slide-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                width: 100%;
+                padding: 24px 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                border-radius: 12px;
+                border: 0px solid #000000;
+                overflow: hidden;
+                max-width: 60%;
+            }
+    
+            .featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3 img,
+            .featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3 svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3 svg {
+                background-color: #AFAFAF;
+            }
+    
+            .featured-product-slide-content-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                margin-top: 16px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+    
+            .featured-product-title-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                margin: 0;
+                max-width: 70%;
+                font-size: 14px;
+                color: #67645e;
+                line-height: 150%;
+                text-transform: unset;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                margin-top: 4px;
+                max-width: 70%;
+            }
+    
+            .featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3 * {
+                margin: 0;
+                font-size: 14px;
+                color: #67645e;
+                line-height: 150%;
+                text-transform: unset;
+                word-break: break-word;
+            }
+    
+            .featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                margin-top: 12px;
+                padding: 12px 16px;
+                border: 1px solid #67645e;
+                border-radius: 100px;
+                background: transparent;
+                cursor: pointer;
+                display: block;
+                text-decoration: none;
+                max-width: fit-content;
+                font-size: 14px;
+                color: #67645e;
+                line-height: 100%;
+                text-transform: unset;
+                word-break: break-word;
+            }
+    
+            .featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3:hover {
+                border: 1px solid #67645e;
+                background: transparent;
+            }
+    
+            .featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3:hover {
+                color: #67645e;
+            }
+    
+            .featured-product-count-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                z-index: 2;
+            }
+    
+            .featured-product-count-template--22708612792649__ss_featured_collection_13_qn34p3 * {
+                margin: 0;
+                text-align: center;
+                font-size: 32px;
+                color: #67645e;
+                line-height: 100%;
+                text-transform: unset;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: flex;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+                flex-shrink: 0;
+                width: 38px;
+                height: 38px;
+                border: 0px;
+                border: 1px solid #747577;
+                border-radius: 100px;
+                background: transparent;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                -webkit-appearance: none;
+                /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,.15); */
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                left: 10px;
+            }
+    
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                right: 10px;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon {
+                pointer-events: none;
+                place-items: center;
+                display: grid;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:before,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:before {
+                content: "";
+                grid-area: 1 / -1;
+                transition: all .2s ease;
+                width: 8px;
+                height: 8px;
+                transform: rotate(calc(1 * 45deg));
+                box-sizing: border-box;
+                border-style: solid;
+                border: 0px;
+                border-right: 2px solid currentColor;
+                border-top: 2px solid currentColor;
+                position: relative;
+                left: -1px;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:before {
+                left: unset;
+                right: -1px;
+                border-right: 0px;
+                border-top: 0px;
+                border-bottom: 2px solid currentColor;
+                border-left: 2px solid currentColor;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:after,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:after {
+                content: "";
+                grid-area: 1 / -1;
+                transition: all .2s ease;
+                width: 7.7px;
+                height: 1.6px;
+                transform-origin: center;
+                opacity: 0;
+                background: currentColor;
+                transform: scaleX(.5);
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 span,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 span {
+                color: #747577;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3.swiper-button-disabled,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3.swiper-button-disabled {
+                opacity: 0.5;
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3.swiper-button-lock,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3.swiper-button-lock {
+                opacity: 0;
+                pointer-events: none;
+            }
+    
+    
+            @media(min-width: 1024px) {
+    
+                .section-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 0rem;
+                    margin-right: 0rem;
+                    border-radius: 0px;
+                }
+    
+                .section-template--22708612792649__ss_featured_collection_13_qn34p3-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 36px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .featured-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 36px;
+                }
+    
+                .featured-image-slider-wrap-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    aspect-ratio: 1/1;
+                }
+    
+                .featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    font-size: 40px;
+                    text-align: left;
+                }
+    
+                .featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 .swiper-pagination-bullet {
+                    width: 8px !important;
+                    height: 8px !important;
+                }
+    
+                .featured-product-slider-wrap-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    aspect-ratio: 1/1;
+                }
+    
+                .featured-product-slide-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    padding: 32px 32px !important;
+                }
+    
+                .featured-product-slide-content-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    margin-top: 20px;
+                }
+    
+                .featured-product-title-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    font-size: 18px;
+                }
+    
+                .featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    margin-top: 4px;
+                }
+    
+                .featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3 * {
+                    font-size: 16px;
+                }
+    
+                .featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    margin-top: 12px;
+                    padding: 12px 16px;
+                }
+    
+                .featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    font-size: 14px;
+                }
+    
+                .featured-product-count-template--22708612792649__ss_featured_collection_13_qn34p3 * {
+                    font-size: 40px;
+                }
+    
+                .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3,
+                .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    width: 48px;
+                    height: 48px;
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:before,
+                .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:before {
+                    width: 10px;
+                    height: 10px;
+                }
+    
+                .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:after,
+                .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 .animate-icon:after {
+                    width: 9.7px;
+                }
+    
+                .featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    aspect-ratio: auto !important;
+                }
+            }
+     
+            
+            .featured-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                grid-template-areas:
+                    "product"
+                    "image";
+            }
+        
+            
+            @media(min-width: 1024px) {
+                .featured-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    grid-template-areas: "image product";
+                }
+            }
+      
+            
+            .featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                left: 16px;
+                transform: translateX(0%);
+            }
+        
+            
+            @media(min-width: 1024px) {
+                .featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    left: 16px;
+                    right: auto;
+                    transform: translateX(0%);
+                }
+            }
+     
+            
+            .featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: flex !important;
+            }
+       
+            
+            @media(min-width: 1024px) {
+                .featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    display: flex !important;
+                }
+            }
+      
+            
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3:hover .animate-icon:before {
+                transform: translate(calc(1 * 0.125rem)) rotate(calc(1 * 45deg));
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3:hover .animate-icon:before {
+                transform: translate(calc(-1 * 0.125rem)) rotate(calc(1 * 45deg));
+            }
+    
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3:hover .animate-icon:after,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3:hover .animate-icon:after {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+       
+            
+            .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3,
+            .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                display: none;
+            }
+       
+            
+            @media(min-width: 1024px) {
+    
+                .featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3,
+                .featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    display: flex;
+                }
+            }
+        
+            
+            .featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                aspect-ratio: 12/12;
+            }
+        
+            
+
+            .featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                aspect-ratio: 12/12;
+            }
+       
+            
+            @media(min-width: 1024px) {
+                .featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    aspect-ratio: 12/12;
+                }
+            }
+        
+            
+            @media(min-width: 1024px) {
+                .featured-product-slide-body-template--22708612792649__ss_featured_collection_13_qn34p3 {
+                    justify-content: space-between;
+                }
+            }
+        </style>
+    
+    
+        <div class="section-template--22708612792649__ss_featured_collection_13_qn34p3 featured-template--22708612792649__ss_featured_collection_13_qn34p3">
+            <div class="section-template--22708612792649__ss_featured_collection_13_qn34p3-settings">
+                <div class="featured-body-template--22708612792649__ss_featured_collection_13_qn34p3">
+                    <div class="featured-image-slider-wrap-template--22708612792649__ss_featured_collection_13_qn34p3">
+                        <div
+                            class="featured-image-slider-template--22708612792649__ss_featured_collection_13_qn34p3 swiper">
+                            <div class="swiper-wrapper" id="swiper-wrapper-3856665a8550e7a9">
+                                <div class="featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-slide">
+    
+                                    <img src="//section.store/cdn/shop/files/COSMICEXCHANGEBANDANA_SMOKYOCHRE_713-168-35113_2368.jpg?v=1730737697"
+                                        alt="Organic Bandana">
+    
+                                    <p class="featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                        new</p>
+    
+                                </div>
+    
+                                <div class="featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-slide">
+    
+                                    <img src="//section.store/cdn/shop/files/a-thepackabletote-woodthrushdaisy-814-027-26413-0432.webp?v=1723620262"
+                                        alt="The Packable Tote in Wood Thrush">
+    
+                                    <p class="featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                        new</p>
+    
+                                </div>
+    
+                                <div class="featured-image-slide-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-slide">
+
+                                    <img src="//section.store/cdn/shop/files/a-thepackabletote-navywave-814-027-13213-2597.webp?v=1725268250"
+                                        alt="The Packable Tote in Navy">
+    
+                                    <p class="featured-image-slide-tag-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                        best seller</p>
+    
+                                </div>
+                            </div>
+                            <div class="featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-pagination">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-product-slider-wrap-template--22708612792649__ss_featured_collection_13_qn34p3">
+                        <div class="featured-product-slider-template--22708612792649__ss_featured_collection_13_qn34p3 swiper">
+                            <div class="swiper-wrapper" id="swiper-wrapper-67d59f37c103f92f8">
+                                <div class="featured-product-slide-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-slide"
+                                    data-title="Organic Bandana" data-id="9185408581961">
+                                    <div
+                                        class="featured-product-slide-body-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                        <a href="/products/organic-bandana"
+                                            class="featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3">
+    
+                                            <img src="//section.store/cdn/shop/files/F22_Accessories-74_ea84bd7a-7c69-4e8c-a41b-042d6c764874.png?v=1720685341"
+                                                alt="Organic Bandana">
+    
+                                        </a>
+                                        <div
+                                            class="featured-product-slide-content-template--22708612792649__ss_featured_collection_13_qn34p3">
+    
+                                            <p
+                                                class="featured-product-title-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                                Organic Bandana</p>
+    
+    
+                                            <div
+                                                class="featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                                <p>100% organic cotton</p>
+                                            </div>
+    
+    
+                                            <a href="/products/organic-bandana"
+                                                class="featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3">SHOP
+                                                NOW</a>
+    
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="featured-product-slide-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-slide"
+                                    data-title="The Packable Tote in Wood Thrush" data-id="9185458225481">
+                                    <div
+                                        class="featured-product-slide-body-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                        <a href="/products/the-packable-tote-in-wood-thrush"
+                                            class="featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3">
+    
+                                            <img src="//section.store/cdn/shop/files/S22_Accessories-91_504fc646-3b76-446f-96c5-3cc31f3ba3bf.png?v=1720687143"
+                                                alt="The Packable Tote in Wood Thrush">
+    
+                                        </a>
+                                        <div
+                                            class="featured-product-slide-content-template--22708612792649__ss_featured_collection_13_qn34p3">
+    
+                                            <p
+                                                class="featured-product-title-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                                The Packable Tote in Wood Thrush</p>
+    
+    
+                                            <div
+                                                class="featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                                <p>100% recycled polyester</p>
+                                            </div>
+    
+    
+                                            <a href="/products/the-packable-tote-in-wood-thrush"
+                                                class="featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3">SHOP
+                                                NOW</a>
+    
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="featured-product-slide-template--22708612792649__ss_featured_collection_13_qn34p3 swiper-slide"
+                                    data-title="The Packable Tote in Navy" data-id="9185420214601">
+                                    <div
+                                        class="featured-product-slide-body-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                        <a href="/products/the-packable-tote-in-navy"
+                                            class="featured-product-image-template--22708612792649__ss_featured_collection_13_qn34p3">
+    
+                                            <img src="//section.store/cdn/shop/files/814-027-13213_thepackabletote_navywave1_19486658-e535-497b-bd24-78144dd55e24.png?v=1720685868"
+                                                alt="The Packable Tote in Navy">
+    
+                                        </a>
+                                        <div
+                                            class="featured-product-slide-content-template--22708612792649__ss_featured_collection_13_qn34p3">
+    
+                                            <p
+                                                class="featured-product-title-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                                The Packable Tote in Navy</p>
+    
+    
+                                            <div
+                                                class="featured-product-details-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                                <p>100% recycled polyester</p>
+                                            </div>
+    
+    
+                                            <a href="/products/the-packable-tote-in-navy"
+                                                class="featured-product-button-template--22708612792649__ss_featured_collection_13_qn34p3">SHOP
+                                                NOW</a>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="featured-product-count-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                <span>3 / 3</span></div>
+                            <button class="featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                <span class="animate-icon"></span>
+                            </button>
+                            <button class="featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3">
+                                <span class="animate-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function loadSwiper(callback) {
+                if (window.Swiper) {
+                    callback();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.js";
+                    script.onload = callback;
+                    document.head.appendChild(script);
+                }
+            }
+
+            function initFeaturedCollection13() {
+                const productCountElement = document.querySelector(`.featured-product-count-template--22708612792649__ss_featured_collection_13_qn34p3 span`);
+
+                const updateSlideCount = (current, total) => {
+                    if (productCountElement) {
+                        productCountElement.textContent = `${current} / ${total}`;
+                    }
+                };
+
+                const imageSlider = new Swiper(`.featured-image-slider-template--22708612792649__ss_featured_collection_13_qn34p3`, {
+                    speed: 800,
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    pagination: {
+                        el: `.featured-pagination-template--22708612792649__ss_featured_collection_13_qn34p3`,
+                        type: "bullets",
+                        clickable: true,
+                    },
+                });
+
+                const productSlider = new Swiper(`.featured-product-slider-template--22708612792649__ss_featured_collection_13_qn34p3`, {
+                    speed: 800,
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    navigation: {
+                        nextEl: `.featured-btn-next-template--22708612792649__ss_featured_collection_13_qn34p3`,
+                        prevEl: `.featured-btn-prev-template--22708612792649__ss_featured_collection_13_qn34p3`,
+                    },
+                });
+
+                const totalSlides = imageSlider.slides.length - 2;
+
+                imageSlider.on('slideChange', () => {
+                    const currentIndex = imageSlider.realIndex + 1;
+                    updateSlideCount(currentIndex, totalSlides);
+
+                    productSlider.slideToLoop(imageSlider.realIndex);
+                });
+
+                productSlider.on('slideChange', () => {
+                    const currentIndex = productSlider.realIndex + 1;
+                    updateSlideCount(currentIndex, totalSlides);
+
+                    imageSlider.slideToLoop(productSlider.realIndex);
+                });
+
+                const initialIndex = imageSlider.realIndex + 1;
+                updateSlideCount(initialIndex, totalSlides);
+
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        imageSlider.update();
+                        productSlider.update();
+                    }, 250);
+                });
+            }
+
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadSwiper(() => initFeaturedCollection13()));
+            } else {
+                loadSwiper(() => initFeaturedCollection13());
+            }
+
+        </script>
+    
+    
+    
+    </div>
+</body>
+</html>

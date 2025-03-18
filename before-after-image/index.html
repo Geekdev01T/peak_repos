@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <style>
+    
+            .section-section_id_before_after_image {
+                max-width: 100%;
+                margin: 0 auto;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                border-radius: 0px;
+                border: 0px solid #000;
+                background-color:#F5EFE6;
+            }
+    
+            .section-section_id_before_after_image-settings {
+                margin: 0 auto;
+                padding-top: 27px;
+                padding-bottom: 27px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .before-after-heading-section_id_before_after_image {
+                text-align: center;
+            }
+    
+            .before-after-heading-section_id_before_after_image * {
+                margin: 0;
+                font-size: 12px;
+                color: #573c2a;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .before-after-subheading-section_id_before_after_image {
+                margin-top: 9px;
+                text-align: center;
+            }
+    
+            .before-after-subheading-section_id_before_after_image * {
+                margin: 0;
+                font-size: 26px;
+                color: #111010;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .before-after-slider-wrapper-section_id_before_after_image {
+                margin-top: 20px;
+                position: relative;
+            }
+    
+            .before-after-slide-section_id_before_after_image {
+                display: grid !important;
+                grid-template-columns: repeat(1, 1fr);
+                align-items: center !important;
+                gap: 25px;
+            }
+    
+            .before-after-images-section_id_before_after_image {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+    
+            .before-after-image-section_id_before_after_image {
+                border-radius: 0px;
+                border: 0px solid #111010;
+                overflow: hidden;
+                position: relative;
+            }
+    
+            .before-after-image-section_id_before_after_image img,
+            .before-after-image-section_id_before_after_image svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .before-after-image-section_id_before_after_image svg {
+                background-color: #DADADA;
+            }
+    
+            .before-after-info-section_id_before_after_image {
+                padding: 0px 0px;
+            }
+    
+            .before-after-badge-section_id_before_after_image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 4px 16px;
+                border-radius: 0px;
+                border: 0px solid #111010;
+                margin: 0;
+                font-size: 10px;
+                color: #603C2A;
+                line-height: 100%;
+                text-transform: unset;
+                font-weight: 700;
+                position: absolute;
+                top: 10px;
+                background-color: #F7F0E5;
+            }
+    
+            .before-after-first-section_id_before_after_image .before-after-badge-section_id_before_after_image {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    
+            .before-after-second-section_id_before_after_image .before-after-badge-section_id_before_after_image {
+                right: 50%;
+                transform: translateX(50%);
+            }
+    
+            .before-after-customer-section_id_before_after_image {
+                margin: 0;
+                display: block;
+                width: 100%;
+                font-size: 20px;
+                color: #111010;
+                line-height: 100%;
+                text-transform: unset;
+                text-align: center;
+            }
+    
+            .before-after-text-section_id_before_after_image {
+                text-align: center;
+                margin-top: 6px;
+            }
+    
+            .before-after-text-section_id_before_after_image * {
+                margin: 0;
+                font-size: 14px;
+                color: #2e2e2e;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .before-after-product-section_id_before_after_image {
+                margin: 0;
+                margin-top: 30px;
+                display: block;
+                width: 100%;
+                font-size: 14px;
+                color: #2e2e2e;
+                line-height: 100%;
+                text-transform: unset;
+                text-align: center;
+            }
+    
+            .before-after-link-section_id_before_after_image {
+                margin: 0;
+                margin-top: 5px;
+                display: block;
+                width: 100%;
+                font-size: 14px;
+                color: #573c2a;
+                line-height: 100%;
+                text-transform: unset;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 700;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image,
+            .before-after-btn-next-section_id_before_after_image {
+                position: absolute;
+                z-index: 2;
+                top: 10%;
+                width: 50px;
+                height: 50px;
+                border: 0px solid #FFFFFF;
+                border-radius: 50%;
+                background: transparent;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                -webkit-appearance: none;
+                padding: 0px;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image {
+                left: 0px !important;
+            }
+    
+            .before-after-btn-next-section_id_before_after_image {
+                right: 0px !important;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image svg,
+            .before-after-btn-next-section_id_before_after_image svg {
+                height: 50px;
+                flex: 0 0 50px;
+            }
+    
+            .before-after-btn-next-section_id_before_after_image svg {
+                transform: rotate(180deg);
+                margin-left: 2px;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image svg {
+                margin-left: -2px;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image svg path,
+            .before-after-btn-next-section_id_before_after_image svg path {
+                fill: #573c2a;
+                transition: all 0.3s ease 0s;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image:hover,
+            .before-after-btn-next-section_id_before_after_image:hover {
+                transition: all 0.3s ease 0s;
+                border: 0px solid #FFFFFF;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image:hover svg path,
+            .before-after-btn-next-section_id_before_after_image:hover svg path {
+                fill: #573c2a;
+                transition: all 0.3s ease 0s;
+            }
+    
+            .before-after-btn-prev-section_id_before_after_image.swiper-button-disabled,
+            .before-after-btn-next-section_id_before_after_image.swiper-button-disabled {
+                opacity: 0.3;
+            }
+    
+            .before-after-pagination-section_id_before_after_image {
+                padding: 25px 0px;
+                position: static !important;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 2px solid #cec7c3;
+            }
+    
+            .before-after-pagination-section_id_before_after_image .swiper-pagination-bullet {
+                width: 15px;
+                height: 15px;
+                border: 2px solid #573c2a;
+                background-color: transparent;
+                opacity: 0.6;
+            }
+    
+            .before-after-pagination-section_id_before_after_image .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                opacity: 1;
+                background-color: #573c2a
+            }
+    
+            .before-after-bottom-section_id_before_after_image {
+                padding-top: 21px;
+            }
+    
+            .before-after-bottom-item-section_id_before_after_image {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+            }
+    
+            .before-after-bottom-item-section_id_before_after_image.active {
+                display: flex;
+            }
+    
+            .before-after-bottom-title-section_id_before_after_image {
+                margin: 0;
+                font-size: 30px;
+                color: #573c2a;
+                line-height: 100%;
+                text-transform: unset;
+            }
+    
+            .before-after-bottom-text-section_id_before_after_image * {
+                margin: 0;
+                font-size: 14px;
+                color: #2f1b13;
+                line-height: 150%;
+                text-transform: unset;
+            }
+      
+            .section-section_id_before_after_image-settings {
+                max-width: 140rem;
+            }
+
+            .before-after-image-section_id_before_after_image {
+                aspect-ratio: 12/12;
+            }
+     
+       
+            .before-after-btn-prev-section_id_before_after_image,
+            .before-after-btn-next-section_id_before_after_image {
+                display: none;
+            }
+       
+            .before-after-pagination-section_id_before_after_image {
+                display: flex !important;
+            }
+      
+             @media(min-width: 768px) {
+                .before-after-info-section_id_before_after_image {
+                    padding: 0px 40px;
+                }
+            }
+    
+            @media(min-width: 1024px) {
+
+                .section-section_id_before_after_image-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 36px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .before-after-heading-section_id_before_after_image {
+                    padding: 0px !important;
+                    text-align: center;
+                }
+    
+                .before-after-heading-section_id_before_after_image * {
+                    font-size: 12px;
+                }
+    
+                .before-after-subheading-section_id_before_after_image {
+                    padding: 0px !important;
+                    margin-top: 12px;
+                    text-align: center;
+                }
+    
+                .before-after-subheading-section_id_before_after_image * {
+                    font-size: 32px;
+                }
+    
+                .before-after-slider-wrapper-section_id_before_after_image {
+                    margin-top: 54px;
+                    padding: 0px 50px;
+                }
+    
+                .before-after-slide-section_id_before_after_image {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0px;
+                }
+    
+                .before-after-images-section_id_before_after_image {
+                    gap: px;
+                }
+    
+                .before-after-badge-section_id_before_after_image {
+                    padding: 10px 30px;
+                    font-size: 12px;
+                }
+    
+                .before-after-first-section_id_before_after_image .before-after-badge-section_id_before_after_image {
+                    left: 15px;
+                    transform: translateX(0);
+                }
+    
+                .before-after-second-section_id_before_after_image .before-after-badge-section_id_before_after_image {
+                    right: 15px;
+                    transform: translateX(0);
+                }
+    
+                .before-after-info-section_id_before_after_image {
+                    padding: 0px 80px;
+                }
+    
+                .before-after-customer-section_id_before_after_image {
+                    font-size: 32px;
+                    text-align: left;
+                }
+    
+                .before-after-text-section_id_before_after_image {
+                    margin-top: 8px;
+                    text-align: left;
+                }
+    
+                .before-after-text-section_id_before_after_image * {
+                    font-size: 14px;
+                }
+    
+                .before-after-product-section_id_before_after_image {
+                    margin-top: 40px;
+                    font-size: 14px;
+                    text-align: left;
+                }
+    
+                .before-after-link-section_id_before_after_image {
+                    margin-top: 6px;
+                    font-size: 14px;
+                    text-align: left;
+                }
+    
+                .before-after-btn-prev-section_id_before_after_image,
+                .before-after-btn-next-section_id_before_after_image {
+                    width: 50px;
+                    height: 50px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+    
+                .before-after-btn-prev-section_id_before_after_image {
+                    left: -25.0px !important;
+                    transform: translate(13px, -50%);
+                }
+    
+                .before-after-btn-next-section_id_before_after_image {
+                    right: -25.0px !important;
+                    transform: translate(-13px, -50%);
+                }
+    
+                .before-after-btn-prev-section_id_before_after_image svg,
+                .before-after-btn-next-section_id_before_after_image svg {
+                    height: 50px;
+                    flex: 0 0 50px;
+                }
+    
+                .before-after-pagination-section_id_before_after_image .swiper-pagination-bullet {
+                    width: 15px;
+                    height: 15px;
+                }
+    
+                .before-after-bottom-section_id_before_after_image {
+                    padding-top: 28px;
+                }
+    
+                .before-after-bottom-item-section_id_before_after_image {
+                    justify-content: center;
+                }
+    
+                .before-after-bottom-title-section_id_before_after_image {
+                    font-size: 30px;
+                }
+    
+                .before-after-bottom-text-section_id_before_after_image * {
+                    font-size: 14px;
+                }
+
+                .before-after-image-section_id_before_after_image {
+                    aspect-ratio: 12/12;
+                }
+
+                .before-after-btn-prev-section_id_before_after_image,
+                .before-after-btn-next-section_id_before_after_image {
+                    display: flex;
+                }
+
+                .before-after-pagination-section_id_before_after_image {
+                    display: flex !important;
+                }
+            
+                .before-after-bottom-section_id_before_after_image {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+    
+                .before-after-slider-wrapper-section_id_before_after_image {
+                    padding: 0px 50px;
+                }
+            }
+           
+        </style>
+    
+    
+        <div class="section-section_id_before_after_image before-after-section_id_before_after_image">
+            <div class="section-section_id_before_after_image-settings">
+    
+                <div class="before-after-heading-section_id_before_after_image">
+                    <h2>SEEING IS BELIEVING</h2>
+                </div>
+    
+    
+                <div class="before-after-subheading-section_id_before_after_image">
+                    <p>Real People. Real Results</p>
+                </div>
+    
+    
+                <div class="before-after-slider-wrapper-section_id_before_after_image">
+                    <div  class="before-after-slider-section_id_before_after_image swiper">
+                        <div class="swiper-wrapper" id="swiper-wrapper-05da74af5dcc9298">
+    
+                            <div class="before-after-slide-section_id_before_after_image swiper-slide">
+                                <div class="before-after-images-section_id_before_after_image">
+                                    <div class="before-after-first-section_id_before_after_image before-after-image-section_id_before_after_image">
+    
+                                        <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.24.17_39c1b7ae-be13-4e4f-a6c5-4b4a3bdb45d1.png?v=1698283571"
+                                            alt="" loading="lazy">
+                                        <div class="before-after-badge-section_id_before_after_image"> BEFORE</div>
+                                    </div>
+
+                                    <div class="before-after-second-section_id_before_after_image before-after-image-section_id_before_after_image">
+    
+                                        <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.24.22_c31c2b2c-ee84-4313-acb1-3314bad63bab.png?v=1698283579"
+                                            alt="" loading="lazy">
+    
+                                        <div class="before-after-badge-section_id_before_after_image"> AFTER</div>
+    
+                                    </div>
+                                </div>
+                                <div class="before-after-info-section_id_before_after_image">
+    
+                                    <p class="before-after-customer-section_id_before_after_image"> Bent R.</p>
+    
+                                    <div class="before-after-text-section_id_before_after_image">
+                                        <p>“Before discovering HairRevivePro, my hair was thinning dramatically, leaving me
+                                            worried every time I brushed it. Clumps of hair on my pillow were a daily
+                                            distress. Fast forward three months with HairRevivePro, and the change is
+                                            remarkable. My hair is now denser, stronger, and my confidence is restored.
+                                            Thank you, HairRevivePro, for giving me back my hair's vitality!”</p>
+                                    </div>
+    
+                                    <p class="before-after-product-section_id_before_after_image">Bent R uses:</p>
+    
+                                    <a href="/products/camp-stool" class="before-after-link-section_id_before_after_image">Camp Stool</a>
+    
+                                </div>
+                            </div>
+
+                            <div class="before-after-slide-section_id_before_after_image swiper-slide">
+                                <div class="before-after-images-section_id_before_after_image">
+                                    <div
+                                        class="before-after-first-section_id_before_after_image before-after-image-section_id_before_after_image">
+                            
+                                        <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.24.17_39c1b7ae-be13-4e4f-a6c5-4b4a3bdb45d1.png?v=1698283571"
+                                            alt="" loading="lazy">
+                                        <div class="before-after-badge-section_id_before_after_image"> BEFORE</div>
+                                    </div>
+                            
+                                    <div
+                                        class="before-after-second-section_id_before_after_image before-after-image-section_id_before_after_image">
+                            
+                                        <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.24.22_c31c2b2c-ee84-4313-acb1-3314bad63bab.png?v=1698283579"
+                                            alt="" loading="lazy">
+                            
+                                        <div class="before-after-badge-section_id_before_after_image"> AFTER</div>
+                            
+                                    </div>
+                                </div>
+                                <div class="before-after-info-section_id_before_after_image">
+                            
+                                    <p class="before-after-customer-section_id_before_after_image"> Bent R.</p>
+                            
+                                    <div class="before-after-text-section_id_before_after_image">
+                                        <p>“Before discovering HairRevivePro, my hair was thinning dramatically, leaving me
+                                            worried every time I brushed it. Clumps of hair on my pillow were a daily
+                                            distress. Fast forward three months with HairRevivePro, and the change is
+                                            remarkable. My hair is now denser, stronger, and my confidence is restored.
+                                            Thank you, HairRevivePro, for giving me back my hair's vitality!”</p>
+                                    </div>
+                            
+                                    <p class="before-after-product-section_id_before_after_image">Bent R uses:</p>
+                            
+                                    <a href="/products/camp-stool" class="before-after-link-section_id_before_after_image">Camp Stool</a>
+                            
+                                </div>
+                            </div>
+
+                            <div class="before-after-slide-section_id_before_after_image swiper-slide">
+                                <div class="before-after-images-section_id_before_after_image">
+                                    <div
+                                        class="before-after-first-section_id_before_after_image before-after-image-section_id_before_after_image">
+                            
+                                        <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.24.17_39c1b7ae-be13-4e4f-a6c5-4b4a3bdb45d1.png?v=1698283571"
+                                            alt="" loading="lazy">
+                                        <div class="before-after-badge-section_id_before_after_image"> BEFORE</div>
+                                    </div>
+                            
+                                    <div
+                                        class="before-after-second-section_id_before_after_image before-after-image-section_id_before_after_image">
+                            
+                                        <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.24.22_c31c2b2c-ee84-4313-acb1-3314bad63bab.png?v=1698283579"
+                                            alt="" loading="lazy">
+                            
+                                        <div class="before-after-badge-section_id_before_after_image"> AFTER</div>
+                            
+                                    </div>
+                                </div>
+                                <div class="before-after-info-section_id_before_after_image">
+                            
+                                    <p class="before-after-customer-section_id_before_after_image"> Bent R.</p>
+                            
+                                    <div class="before-after-text-section_id_before_after_image">
+                                        <p>“Before discovering HairRevivePro, my hair was thinning dramatically, leaving me
+                                            worried every time I brushed it. Clumps of hair on my pillow were a daily
+                                            distress. Fast forward three months with HairRevivePro, and the change is
+                                            remarkable. My hair is now denser, stronger, and my confidence is restored.
+                                            Thank you, HairRevivePro, for giving me back my hair's vitality!”</p>
+                                    </div>
+                            
+                                    <p class="before-after-product-section_id_before_after_image">Bent R uses:</p>
+                            
+                                    <a href="/products/camp-stool" class="before-after-link-section_id_before_after_image">Camp Stool</a>
+                            
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="before-after-pagination-section_id_before_after_image swiper-pagination"> </div>
+                    </div>
+                    <button class="before-after-btn-prev-section_id_before_after_image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g>
+                                <path
+                                    d="M14,17a1,1,0,0,1-.707-.293l-4-4a1,1,0,0,1,0-1.414l4-4a1,1,0,1,1,1.414,1.414L11.414,12l3.293,3.293A1,1,0,0,1,14,17Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="before-after-btn-next-section_id_before_after_image">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g>
+                                <path
+                                    d="M14,17a1,1,0,0,1-.707-.293l-4-4a1,1,0,0,1,0-1.414l4-4a1,1,0,1,1,1.414,1.414L11.414,12l3.293,3.293A1,1,0,0,1,14,17Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="before-after-bottom-section_id_before_after_image">
+    
+                    <div class="before-after-bottom-item-section_id_before_after_image">
+                        <p class="before-after-bottom-title-section_id_before_after_image">91% </p>
+                        <div class="before-after-bottom-text-section_id_before_after_image">
+                            <p><strong>said hair looked healthier and saw an improvement in growth with
+                                    HairRevivePro.*</strong><br>Results from a double-blind, in-vivo clinical trial
+                                involving 40 subjects, 21-62 years old, over 150 days. </p>
+                        </div>
+                    </div>
+
+                    <div class="before-after-bottom-item-section_id_before_after_image">
+                        <p class="before-after-bottom-title-section_id_before_after_image">91% </p>
+                        <div class="before-after-bottom-text-section_id_before_after_image">
+                            <p><strong>said hair looked healthier and saw an improvement in growth with
+                                    HairRevivePro.*</strong><br>Results from a double-blind, in-vivo clinical trial
+                                involving 40 subjects, 21-62 years old, over 150 days. </p>
+                        </div>
+                    </div>
+
+                    <div class="before-after-bottom-item-section_id_before_after_image">
+                        <p class="before-after-bottom-title-section_id_before_after_image">91% </p>
+                        <div class="before-after-bottom-text-section_id_before_after_image">
+                            <p><strong>said hair looked healthier and saw an improvement in growth with
+                                    HairRevivePro.*</strong><br>Results from a double-blind, in-vivo clinical trial
+                                involving 40 subjects, 21-62 years old, over 150 days. </p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+        <script>
+            function initScrollingProducts() {
+                const slider = new Swiper(".before-after-slider-section_id_before_after_image", {
+                    speed: 300,
+                    loop: true,
+                    simulateTouch: false,
+                    autoHeight: true,
+                    effect: "fade",
+                    fadeEffect: { crossFade: true },
+                    navigation: {
+                        nextEl: '.before-after-btn-next-section_id_before_after_image',
+                        prevEl: '.before-after-btn-prev-section_id_before_after_image',
+                    },
+                    pagination: {
+                        el: '.before-after-pagination-section_id_before_after_image',
+                        type: 'bullets',
+                        clickable: true,
+                    },
+                });
+                slider.on('slideChange', () => {
+                    if (document.querySelectorAll('.before-after-bottom-item-section_id_before_after_image')) {
+                        document.querySelectorAll('.before-after-bottom-item-section_id_before_after_image').forEach((el, index) => {
+                            var activeSlideIndex = slider.realIndex;
+                            el.classList.remove('active');
+                            if (index == activeSlideIndex) {
+                                el.classList.add('active');
+                            }
+                        })
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', initScrollingProducts);
+        </script>
+ 
+</body>
+</html>

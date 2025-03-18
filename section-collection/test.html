@@ -1,0 +1,993 @@
+<style>
+    .peakconvertion-section- {
+            {
+            section.id
+        }
+    }
+
+    -padding {
+        max-width: var(--max-width);
+        margin: var(--mt) auto var(--mb) auto;
+        padding: 0 1.5rem;
+        padding-top: var(--pt);
+        padding-bottom: var(--pb);
+        line-height: 1;
+    }
+
+    .peakconvertion-overflow-container- {
+            {
+            section.id
+        }
+    }
+
+        {
+        margin: 0 -5%;
+        padding: 0;
+        position: relative;
+    }
+
+    .peakconvertion-tab-container- {
+            {
+            section.id
+        }
+    }
+
+        {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: var(--gap-mobile);
+        justify-content: flex-start;
+        padding: 0 5%;
+        padding-bottom: 8px;
+        /* for scrollbar offset */
+    }
+
+    .peakconvertion-tab- {
+            {
+            section.id
+        }
+    }
+
+        {
+        cursor: pointer;
+        text-align: center;
+        font-size: var(--font-size-mobile);
+        white-space: nowrap;
+        color: var(--inactive-color);
+    }
+
+    @media (min-width: 750px) {
+        .peakconvertion-tab- {
+                {
+                section.id
+            }
+        }
+
+            {
+            font-size: var(--font-size);
+        }
+    }
+
+    .peakconvertion-tab--active- {
+            {
+            section.id
+        }
+    }
+
+        {
+        cursor: default;
+        color: var(--active-color);
+        border-bottom: 1px solid currentColor;
+    }
+
+    .peakconvertion-tab-content- {
+            {
+            section.id
+        }
+    }
+
+        {
+        display: none;
+    }
+
+    .peakconvertion-tab-content--active- {
+            {
+            section.id
+        }
+    }
+
+        {
+        display: block;
+    }
+
+    .peakconvertion-tab-content-grid- {
+            {
+            section.id
+        }
+    }
+
+        {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(var(--mobile-product-row-count), minmax(0, 1fr));
+    }
+
+    .peakconvertion-tab-content-grid--desktop-only- {
+            {
+            section.id
+        }
+    }
+
+        {
+        display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+        .peakconvertion-tab-content-grid--desktop-only- {
+                {
+                section.id
+            }
+        }
+
+            {
+            display: grid;
+        }
+
+        .peakconvertion-tab-content-grid- {
+                {
+                section.id
+            }
+        }
+
+            {
+            grid-template-columns: repeat(var(--desktop-product-row-count), minmax(0, 1fr));
+        }
+    }
+
+    .peakconvertion-product-image-wrapper- {
+            {
+            section.id
+        }
+    }
+
+        {
+        border-radius: 0px;
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+        overflow: hidden;
+    }
+
+    .peakconvertion-product-image- {
+            {
+            section.id
+        }
+    }
+
+    ,
+    .peakconvertion-product-hover-image- {
+            {
+            section.id
+        }
+    }
+
+        {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .peakconvertion-product-hover-image- {
+            {
+            section.id
+        }
+    }
+
+        {
+        object-fit: cover;
+    }
+
+    .peakconvertion-product-hover-image- {
+            {
+            section.id
+        }
+    }
+
+        {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .peakconvertion-product-image-wrapper- {
+            {
+            section.id
+        }
+    }
+
+    :hover .peakconvertion-product-hover-image- {
+            {
+            section.id
+        }
+    }
+
+        {
+        opacity: 1;
+    }
+
+    .peakconvertion-product-title- {
+            {
+            section.id
+        }
+    }
+
+        {
+        display: block;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        font-size: var(--product-title-size);
+        color: var(--product-title-color);
+        line-height: 1.3;
+    }
+
+    .peakconvertion-price- {
+            {
+            section.id
+        }
+    }
+
+        {
+        font-size: 14px;
+    }
+
+    .peakconvertion-compare-at-price- {
+            {
+            section.id
+        }
+    }
+
+        {
+        text-decoration: line-through;
+        font-size: 14px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+
+    .peakconvertion-price-has-compare-at-price- {
+            {
+            section.id
+        }
+    }
+
+        {}
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+        {
+        pointer-events: all;
+        height: var(--button-height, 48px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--button-width);
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        font-size: var(--button-font-size);
+        text-align: center;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        border: var(--border);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+    :hover {
+        background-color: var(--button-bg-hover);
+        color: var(--button-color-hover);
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+        {
+        pointer-events: all;
+        height: var(--button-height, 48px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--button-width);
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        font-size: var(--button-font-size);
+        text-align: center;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        border: var(--border);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+    :hover {
+        background-color: var(--button-bg-hover);
+        color: var(--button-color-hover);
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+        {
+        pointer-events: all;
+        height: var(--button-height, 48px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--button-width);
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        font-size: var(--button-font-size);
+        text-align: center;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        border: var(--border);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+    :hover {
+        background-color: var(--button-bg-hover);
+        color: var(--button-color-hover);
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+        {
+        pointer-events: all;
+        height: var(--button-height, 48px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--button-width);
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        font-size: var(--button-font-size);
+        text-align: center;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        border: var(--border);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .peakconvertion-ug-collections-cta-button- {
+            {
+            section.id
+        }
+    }
+
+    :hover {
+        background-color: var(--button-bg-hover);
+        color: var(--button-color-hover);
+    }
+
+    @media screen and (min-width: 750px) {
+        .swiper.peakconvertion-mobile-swiper- {
+                {
+                section.id
+            }
+        }
+
+            {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 750px) {
+        .peakconvertion-overflow-container- {
+                {
+                section.id
+            }
+        }
+
+            {
+            margin: 0;
+        }
+
+        .peakconvertion-tab-container- {
+                {
+                section.id
+            }
+        }
+
+            {
+            gap: var(--gap);
+            justify-content: var(--justify-content);
+        }
+    }
+
+
+    @media screen and (min-width: 750px) {
+        .peakconvertion-section- {
+                {
+                section.id
+            }
+        }
+
+        -padding {
+            padding: 0 5rem;
+            padding-top: var(--pt-desktop);
+            padding-bottom: var(--pb-desktop);
+        }
+    }
+</style>
+
+<div style="
+    background-color:#ffffff;
+    --max-width: 120rem;
+    --mt: 0px;
+    --mb: 0px;
+    --pt: 27px;
+    --pt-desktop: 36px;
+    --pb: 27px;
+    --pb-desktop: 36px;
+
+    --product-title-size: 14px;
+    --product-title-color: #212121;
+  ">
+    <div class="peakconvertion-section-{{section.id}}-padding">
+        <div class="peakconvertion-overflow-container-{{section.id}}">
+            <div class="peakconvertion-tab-container-{{section.id}}" style="
+              --justify-content: center;
+
+          margin-bottom: 50px;
+          --gap: 40px;
+          --gap-mobile: 36px;
+        ">
+                <div class="
+            peakconvertion-tab-{{section.id}}
+
+            peakconvertion-tab--active-{{section.id}}
+          " style="
+            --inactive-color: #7e7e7e;
+            --active-color: #000000;
+            --font-size: 18px;
+            --font-size-mobile: 16px;
+            padding-bottom: 8px;
+          ">
+                    Best Sellers
+                </div>
+
+                <div class="                    peakconvertion-tab-{{section.id}}" style="
+            --inactive-color: #7e7e7e;
+            --active-color: #000000;
+            --font-size: 18px;
+            --font-size-mobile: 16px;
+            padding-bottom: 8px;
+          ">
+                    New Arrivals
+                </div>
+
+                <div class="                    peakconvertion-tab-{{section.id}}" style="
+            --inactive-color: #7e7e7e;
+            --active-color: #000000;
+            --font-size: 18px;
+            --font-size-mobile: 16px;
+            padding-bottom: 8px;
+          ">
+                    Backpacks
+                </div>
+
+                <div class="                    peakconvertion-tab-{{section.id}}" style="
+            --inactive-color: #7e7e7e;
+            --active-color: #000000;
+            --font-size: 18px;
+            --font-size-mobile: 16px;
+            padding-bottom: 8px;
+          ">
+                    Objects
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="
+          peakconvertion-tab-content-{{section.id}}
+
+          peakconvertion-tab-content--active-{{section.id}}
+        ">
+                <div class="    peakconvertion-tab-content-grid-{{section.id}}"
+                    style="--desktop-product-row-count: 4;--mobile-product-row-count: 2;">
+                    {% for product in section.settings.collection.products %}
+                    <div class="swiper-slide">
+                        <a href="{{ product.url }}" class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}"
+                                loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/WhitneyPullover_Neck.jpg?v=166385530"
+                                alt="Whitney Pullover | Handmade in Nepal | United By Blue" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}" href="{{ product.url }}">
+                                {{ product.title }}
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                    {{ product.price | money }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <a href="{{ section.settings.collection.url }}"
+                    class="peakconvertion-ug-collections-cta-button-{{section.id}}" style="
+            margin: 48px auto 0;
+            --button-height: 48px;
+            --button-width: 200px;
+            --button-color: #000000;
+            --button-bg: #ffd879;
+            --button-color-hover: #000000;
+            --button-bg-hover: #ffcb4e;
+            --button-font-size: 13.6px;
+            --button-font-size-desktop: 16px;
+            --border-radius: 4px;
+            --border: 1px  solid;
+          ">
+                    Shop All Best Sellers
+                </a>
+            </div>
+
+            <div class="                peakconvertion-tab-content-{{section.id}}">
+                <div
+                    class="swiper peakconvertion-mobile-swiper-{{section.id}} peakconvertion-swiper-initialized swiper-horizontal">
+                    <div class="swiper-wrapper" id="swiper-wrapper-481d939dbaad6e82" aria-live="polite"
+                        style="transition-duration: 0ms;">
+                        {% for product in section.settings.collection.products %}
+                        <div class="swiper-slide">
+                            <a href="/products/wide-bundle" class="peakconvertion-product-image-wrapper-{{section.id}}"
+                                style="padding-top: 100%!important;">
+                                <img class="peakconvertion-product-image-{{section.id}}"
+                                    src="//section.store/cdn/shop/files/Graphicforsection.png?v=1706563342"
+                                    alt="Wide bundle" loading="lazy">
+
+                                <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                    src="//section.store/cdn/shop/files/6488820fb9abcec69cc77731_gif-preview2.gif?v=1706563342"
+                                    alt="Wide bundle" loading="lazy">
+                            </a>
+
+                            <div>
+                                <a class="peakconvertion-product-title-{{section.id}}" href="/products/wide-bundle">
+                                    Wide bundle
+                                </a>
+                                <div style="font-size: 14px;">
+                                    <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                        $39.00
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+
+                <div class="
+                peakconvertion-tab-content-grid-{{section.id}}
+
+            peakconvertion-tab-content-grid--desktop-only-{{section.id}}
+          " style="--desktop-product-row-count: 4;--mobile-product-row-count: 1;">
+                    {% for product in section.settings.collection_new_arrival.products %}
+                    <div class="swiper-slide">
+                        <a href="{{ product.url }}" class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}"
+                                loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/6488820fb9abcec69cc77731_gif-preview2.gif?v=1706563342"
+                                alt="Wide bundle" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}" href="{{ product.url }}">
+                                {{ product.title }}
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                    {{ product.price | money }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <a href="{{ section.settings.collection_new_arrival.url }}"
+                    class="peakconvertion-ug-collections-cta-button-{{section.id}}" style="
+            margin: 48px auto 0;
+            --button-height: 48px;
+            --button-width: 200px;
+            --button-color: #000000;
+            --button-bg: #ffd879;
+            --button-color-hover: #000000;
+            --button-bg-hover: #ffcb4e;
+            --button-font-size: 13.6px;
+            --button-font-size-desktop: 16px;
+            --border-radius: 4px;
+            --border: 1px  solid;
+          ">
+                    Shop All New Arrivals
+                </a>
+            </div>
+
+            <div class="                peakconvertion-tab-content-{{section.id}}">
+                <div class="    peakconvertion-tab-content-grid-{{section.id}}"
+                    style="--desktop-product-row-count: 4;--mobile-product-row-count: 1;">
+                    <div class="swiper-slide">
+                        <a href="/products/recycled-wool-9l-sidekick"
+                            class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/F22_Accessories-8_ce86e2b3-265d-4ecf-abab-ccf73e4c25df.jpg?v=1720696298"
+                                alt="Recycled Wool 9L Sidekick" loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/F22_Accessories-13_ec9e4ebf-3660-43aa-a53e-e29e09897cec.webp?v=1723546911"
+                                alt="Recycled Wool 9L Sidekick" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}"
+                                href="/products/recycled-wool-9l-sidekick">
+                                Recycled Wool 9L Sidekick
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                    $98.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/products/revolution-9l-sidekick"
+                            class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/F22_Accessories-1_2999b663-2243-4356-a426-d8b36434689e.jpg?v=1720471873"
+                                alt="(R)evolution™ 9L Sidekick" loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/814-055-navy.jpg?v=1720471872"
+                                alt="(R)evolution™ 9L Sidekick" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}"
+                                href="/products/revolution-9l-sidekick">
+                                (R)evolution™ 9L Sidekick
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                    $88.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/products/revolution%E2%84%A2-25l-convertible-carryall"
+                            class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/814-175-34413.jpg?v=1718874666"
+                                alt="(R)evolution™ 25L Convertible Carryall" loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/files/814-175-34413_1.jpg?v=1718874818"
+                                alt="(R)evolution™ 25L Convertible Carryall" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}"
+                                href="/products/revolution%E2%84%A2-25l-convertible-carryall">
+                                (R)evolution™ 25L Convertible Carryall
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                    $118.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/products/hudderton-backpack"
+                            class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/product_lifestyle-28.jpg?v=1687265380"
+                                alt="Hudderton Backpack" loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/hudderton-backpack_dc8afb13-448b-49d9-a042-5a163a97de8f.jpg?v=1687265380"
+                                alt="Hudderton Backpack" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}" href="/products/hudderton-backpack">
+                                Hudderton Backpack
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-compare-at-price-{{section.id}}" style="color: #212121;">
+                                    $125.00
+                                </span>
+                                <span class="peakconvertion-price-{{section.id}}" style="color:#ff3451;">
+                                    $98.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/products/scout-backpack" class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/scout-backpack_a035275d-8975-4a05-8456-5e1ec35f020f.jpg?v=1663855341"
+                                alt="Scout Backpack" loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/Scout_Moss_Snap.jpg?v=1663855341"
+                                alt="Scout Backpack" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}" href="/products/scout-backpack">
+                                Scout Backpack
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-price-{{section.id}}" style="color: #212121;">
+                                    $128.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/products/derby-tier-backpack"
+                            class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/derbytier_nutmeg_810294de-9152-4bf7-b5e0-b88fc94a1ff8.jpg?v=1663855313"
+                                alt="Derby Tier Backpack" loading="lazy">
+
+                            <img class="peakconvertion-product-hover-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/derbytier_moss_drawstring.jpg?v=1663855313"
+                                alt="Derby Tier Backpack" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}" href="/products/derby-tier-backpack">
+                                Derby Tier Backpack
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-compare-at-price-{{section.id}}" style="color: #212121;">
+                                    $165.00
+                                </span>
+                                <span class="peakconvertion-price-{{section.id}}" style="color:#ff3451;">
+                                    $148.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/collections/all" class="peakconvertion-ug-collections-cta-button-{{section.id}}" style="
+            margin: 48px auto 0;
+            --button-height: 48px;
+            --button-width: 200px;
+            --button-color: #000000;
+            --button-bg: #ffd879;
+            --button-color-hover: #000000;
+            --button-bg-hover: #ffcb4e;
+            --button-font-size: 13.6px;
+            --button-font-size-desktop: 16px;
+            --border-radius: 4px;
+            --border: 1px  solid;
+          ">
+                    Shop Mugs
+                </a>
+            </div>
+
+            <div class="                peakconvertion-tab-content-{{section.id}}">
+                <div class="swiper peakconvertion-mobile-swiper-{{section.id}} swiper-initialized swiper-horizontal">
+                    <div class="swiper-wrapper" id="swiper-wrapper-76c85e7ba42cca46" aria-live="polite"
+                        style="transition-duration: 0ms;">
+                        <div class="swiper-slide">
+                            <a href="/products/the-scout-skincare-kit"
+                                class="peakconvertion-product-image-wrapper-{{section.id}}"
+                                style="padding-top: 100%!important;">
+                                <img class="peakconvertion-product-image-{{section.id}}"
+                                    src="//section.store/cdn/shop/products/skin-care_c18143d5-6378-46aa-b0d7-526aee3bc776.jpg?v=1663855288"
+                                    alt="The Scout Skincare Kit" loading="lazy">
+                            </a>
+
+                            <div>
+                                <a class="peakconvertion-product-title-{{section.id}}"
+                                    href="/products/the-scout-skincare-kit">
+                                    The Scout Skincare Kit
+                                </a>
+                                <div style="font-size: 14px;">
+                                    <span class="peakconvertion-compare-at-price-{{section.id}}"
+                                        style="color: #212121;">
+                                        $50.00
+                                    </span>
+                                    <span class="peakconvertion-price-{{section.id}}" style="color:#ff3451;">
+                                        $36.00
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+
+                <div class="
+                peakconvertion-tab-content-grid-{{section.id}}
+
+            peakconvertion-tab-content-grid--desktop-only-{{section.id}}
+          " style="--desktop-product-row-count: 4;--mobile-product-row-count: 1;">
+                    <div class="swiper-slide">
+                        <a href="/products/the-scout-skincare-kit"
+                            class="peakconvertion-product-image-wrapper-{{section.id}}"
+                            style="padding-top: 100%!important;">
+                            <img class="peakconvertion-product-image-{{section.id}}"
+                                src="//section.store/cdn/shop/products/skin-care_c18143d5-6378-46aa-b0d7-526aee3bc776.jpg?v=1663855288"
+                                alt="The Scout Skincare Kit" loading="lazy">
+                        </a>
+
+                        <div>
+                            <a class="peakconvertion-product-title-{{section.id}}"
+                                href="/products/the-scout-skincare-kit">
+                                The Scout Skincare Kit
+                            </a>
+                            <div style="font-size: 14px;">
+                                <span class="peakconvertion-compare-at-price-{{section.id}}" style="color: #212121;">
+                                    $50.00
+                                </span>
+                                <span class="peakconvertion-price-{{section.id}}" style="color:#ff3451;">
+                                    $36.00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/collections/all" class="peakconvertion-ug-collections-cta-button-{{section.id}}" style="
+            margin: 48px auto 0;
+            --button-height: 48px;
+            --button-width: 200px;
+            --button-color: #000000;
+            --button-bg: #ffd879;
+            --button-color-hover: #000000;
+            --button-bg-hover: #ffcb4e;
+            --button-font-size: 13.6px;
+            --button-font-size-desktop: 16px;
+            --border-radius: 4px;
+            --border: 1px  solid;
+          ">
+                    Shop Objects
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+<script defer="" src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+    (function () {
+        function sectionSetup() {
+            // get all tab elements using .tab-{{section.id}}
+            const tabs = document.querySelectorAll('.peakconvertion-tab-{{section.id}}');
+            const tabActiveClass = 'peakconvertion-tab--active-{{section.id}}';
+            // get all tab content using .tab-content-{{section.id}}
+            const tabContents = document.querySelectorAll(
+                '.peakconvertion-tab-content-{{section.id}}'
+            );
+            const tabContentActiveClass = 'peakconvertion-tab-content--active-{{section.id}}';
+
+            // listen for click event on each tab
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    // remove active class from all tabs
+                    tabs.forEach((tab) => {
+                        tab.classList.remove(tabActiveClass);
+                    });
+                    // add active class to clicked tab
+                    tab.classList.add(tabActiveClass);
+
+                    // remove active class from all tab contents
+                    tabContents.forEach((tabContent) => {
+                        tabContent.classList.remove(tabContentActiveClass);
+                    });
+                    // add active class to corresponding tab content
+                    tabContents[index].classList.add(tabContentActiveClass);
+                });
+            });
+
+            // Mobile swiper init:
+            new Swiper('.peakconvertion-mobile-swiper-{{section.id}}', {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+                //pagination: {
+                //  el: '.swiper-pagination',
+                //  clickable: true,
+                //},
+            });
+        }
+
+        //sectionSetup();
+        document.addEventListener('DOMContentLoaded', sectionSetup);
+    })();
+</script>
+
+{% schema %}
+{
+"name": "Collection Produit",
+"settings": [
+{
+"type": "collection_list",
+"id": "collection",
+"label": "Collection"
+},
+{
+"type": "collection_list",
+"id": "collection_new_arrival",
+"label": "Collection For New Arrival"
+}
+],
+"presets": [
+{
+"name": "Collection Produit"
+}
+]
+}
+{% endschema %}

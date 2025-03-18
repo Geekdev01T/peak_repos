@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+</head>
+
+<body>
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            src: url(font/Montserrat-Regular.ttf);
+        }
+
+        .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-wrapper {
+            padding-top: 2em;
+            font-family: 'Montserrat', sans-serif;
+            padding-bottom: 2em;
+
+        }
+
+        @media screen and (min-width: 750px) {
+            .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-wrapper {
+                padding-top: var(--pt-desktop);
+                padding-bottom: var(--pb-desktop);
+            }
+        }
+
+        .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c {
+            position: relative;
+            height: var(--section-height-mobile);
+            overflow: hidden;
+        }
+
+        @media screen and (min-width: 750px) {
+            .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c {
+                height: var(--section-height);
+            }
+        }
+
+        .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c .peakconversion-countdown-banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c .peakconversion-countdown-banner-image--desktop {
+            display: none;
+        }
+
+        @media screen and (min-width: 750px) {
+            .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c .peakconversion-countdown-banner-image--desktop {
+                display: block;
+            }
+
+            .peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c .peakconversion-countdown-banner-image--mobile {
+                display: none;
+            }
+        }
+
+        .peakconversion-countdown-banner-content-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .peakconversion-countdown-banner-heading-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-0 {}
+
+        .peakconversion-countdown-banner-heading-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-0 p {
+            margin: 0 10px;
+        }
+
+        .peakconversion-countdown-banner-button-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-1 {
+            padding: 9px 25px;
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 750px) {
+            .peakconversion-countdown-banner-button-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-1 {
+                padding: 11px 25px;
+            }
+        }
+
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin: 5px 10px;
+        }
+
+        @media (min-width: 750px) {
+            .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 {
+                gap: 20px;
+            }
+        }
+
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-block {
+            position: relative;
+            border-radius: 12px;
+            /*padding: 20px;*/
+            padding: 0 1rem;
+        }
+
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-block__num,
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-block__unit {
+            display: block;
+            text-align: center;
+        }
+
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-block__num {
+            font-size: 25px;
+            line-height: 1;
+        }
+
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-block__unit {
+            text-transform: uppercase;
+            margin-top: 6px;
+            font-size: 10px;
+        }
+
+        @media (min-width: 750px) {
+            .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-block__unit {
+                font-size: 12px;
+            }
+        }
+
+        .peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 .peakconversion-time-divier {
+            position: relative;
+            width: 1px;
+            height: 40px;
+            background-color: var(--color);
+        }
+
+        .peakconversion-countdown-timer-completed-text-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2 {
+            display: none;
+        }
+    </style>
+    <div class="peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-wrapper"
+        style="
+        --pt: 39px;
+        --pt-desktop: 52px;
+        --pb: 39px;
+        --pb-desktop: 52px;
+        background-color:#ffffff;
+        margin: 0 auto;
+        width: 100%;
+      ">
+        <div class="
+          peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c
+           page-width 
+        " style="
+          --section-height: 600px;
+          --section-height-mobile: 500px;
+        ">
+            <div style="
+            height: 100%; width: 100%; position: relative; overflow: hidden;
+             border-radius: 15px; 
+          ">
+
+
+
+                <img class="
+                peakconversion-countdown-banner-image
+                
+                  peakconversion-countdown-banner-image--desktop
+                
+              " src="//section.store/cdn/shop/files/high-fashion-model-in-red_500x.jpg?v=1684748546" srcset="
+                //section.store/cdn/shop/files/high-fashion-model-in-red_500x.jpg?v=1684748546 500w,
+                //section.store/cdn/shop/files/high-fashion-model-in-red_800x.jpg?v=1684748546 800w,
+                //section.store/cdn/shop/files/high-fashion-model-in-red_1200x.jpg?v=1684748546 1200w,
+                //section.store/cdn/shop/files/high-fashion-model-in-red_1600x.jpg?v=1684748546 1600w,
+                //section.store/cdn/shop/files/high-fashion-model-in-red_2000x.jpg?v=1684748546 2000w,
+                //section.store/cdn/shop/files/high-fashion-model-in-red.jpg?v=1684748546 2400w
+              " alt="" loading="lazy">
+
+
+                <img class="peakconversion-countdown-banner-image peakconversion-countdown-banner-image--mobile"
+                    src="//section.store/cdn/shop/files/fashion-model-in-red-suit_500x.jpg?v=1684747380" srcset="
+                  //section.store/cdn/shop/files/fashion-model-in-red-suit_500x.jpg?v=1684747380 500w,
+                  //section.store/cdn/shop/files/fashion-model-in-red-suit_800x.jpg?v=1684747380 800w,
+                  //section.store/cdn/shop/files/fashion-model-in-red-suit_1200x.jpg?v=1684747380 1200w,
+                  //section.store/cdn/shop/files/fashion-model-in-red-suit_1600x.jpg?v=1684747380 1600w,
+                  //section.store/cdn/shop/files/fashion-model-in-red-suit_2000x.jpg?v=1684747380 2000w,
+                  //section.store/cdn/shop/files/fashion-model-in-red-suit.jpg?v=1684747380 2400w
+                " alt="" loading="lazy">
+
+                <div
+                    class="peakconversion-countdown-banner-content-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c">
+
+                    <div style="
+                opacity: 0.3;
+                background-color: #000000;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                display: block;
+              "></div>
+
+                    <div class="peakconversion-countdown-banner-heading-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-0"
+                        style="
+                        font-size: 30px;
+                        color: #ffffff;
+                      ">
+                        <p><strong>50% off all suits and accessories</strong></p>
+                    </div>
+
+                    <a href=""
+                        class="peakconversion-countdown-banner-button-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-1"
+                        style="
+                      color: #000000;
+                      background-color: #ffffff;
+                      border-radius: 50px;
+                      font-size: 18px;
+                      border: 0px #ffffff solid;
+                      margin: 5px 10px;
+                    ">
+                        View Discounted Items
+                    </a>
+
+                    <div class="peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2"
+                        style="
+                      color: #ffffff;
+                      --color: #ffffff;
+                    ">
+                        <div class="peakconversion-time-block">
+                            <span class="peakconversion-time-block__num peakconversion-js-timer-days">441</span>
+                            <span class="peakconversion-time-block__unit">Days</span>
+                        </div>
+
+                        <span class="peakconversion-time-divier"></span>
+                        <div class="peakconversion-time-block">
+                            <span class="peakconversion-time-block__num peakconversion-js-timer-hours">12</span>
+                            <span class="peakconversion-time-block__unit">Hours</span>
+                        </div>
+
+                        <span class="peakconversion-time-divier"></span>
+                        <div class="peakconversion-time-block">
+                            <span class="peakconversion-time-block__num peakconversion-js-timer-minutes">5</span>
+                            <span class="peakconversion-time-block__unit">Minutes</span>
+                        </div>
+
+                        <span class="peakconversion-time-divier"></span>
+                        <div class="peakconversion-time-block">
+                            <span class="peakconversion-time-block__num peakconversion-js-timer-seconds">18</span>
+                            <span class="peakconversion-time-block__unit">Seconds</span>
+                        </div>
+                    </div>
+                    <div
+                        class="peakconversion-countdown-timer-completed-text-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2">
+
+                    </div>
+
+                    <script type="text/javascript">
+                        (function () {
+
+                            function startTimer() {
+                                const second = 1000,
+                                    minute = second * 60,
+                                    hour = minute * 60,
+                                    day = hour * 24,
+                                    wrapper = document.querySelector(
+                                        '.peakconversion-countdown-timer-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-1684746960fabb856f-2'
+                                    ),
+                                    countDown = new Date('2025-01-01T00:00:00Z').getTime();
+
+                                console.log('start timer, end date:' + countDown)
+                                const interval = setInterval(function () {
+                                    let now = new Date().getTime(),
+                                        distance = countDown - now,
+                                        days = Math.floor(distance / day),
+                                        hours = Math.floor((distance % day) / hour),
+                                        minutes = Math.floor((distance % hour) / minute),
+                                        seconds = Math.floor((distance % minute) / second);
+
+                                    (wrapper.querySelector('.peakconversion-js-timer-days').innerText = (
+                                        days
+                                    )),
+                                        (wrapper.querySelector('.peakconversion-js-timer-hours').innerText = (
+                                            hours
+                                        )),
+                                        (wrapper.querySelector('.peakconversion-js-timer-minutes').innerText = (
+                                            minutes
+                                        )),
+                                        (wrapper.querySelector('.peakconversion-js-timer-seconds').innerText = (
+                                            seconds
+                                        ));
+
+                                    if (distance < 0) {
+                                        wrapper.querySelector('.peakconversion-js-timer-days').innerText = '00';
+                                        wrapper.querySelector('.peakconversion-js-timer-hours').innerText = '00';
+                                        wrapper.querySelector('.peakconversion-js-timer-minutes').innerText = '00';
+                                        wrapper.querySelector('.peakconversion-js-timer-seconds').innerText = '00';
+
+                                        document.querySelector(
+                                            '.peakconversion-countdown-banner-template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c-wrapper'
+                                        ).style.display = 'none';
+
+                                        clearInterval(interval);
+                                    }
+
+                                }, second);
+                                document.addEventListener('peakconversion-countdown-timer-section:unload', function (event) {
+                                    if (event.detail.sectionId === 'template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c') clearInterval(interval);
+                                });
+                            }
+                            startTimer()
+                            if (window.Shopify && Shopify.designMode) {
+                                document.addEventListener('peakconversion-countdown-timer-section:load', function (event) {
+                                    if (event.detail.sectionId === 'template--18988039799113__aad2a81e-3c45-48ee-b169-6790fc6fa48c') {
+                                        startTimer();
+                                    }
+                                });
+                            }
+                        })();
+                    </script>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

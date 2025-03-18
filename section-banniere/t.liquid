@@ -1,0 +1,781 @@
+{%- liquid
+  # Section settings
+  assign section_width = section.settings.section_enabled_width
+  assign section_radius = section.settings.section_radius
+  assign section_mt = section.settings.section_mt 
+  assign section_mb = section.settings.section_mb
+  assign enabled_border = section.settings.enabled_border
+  assign section_border_width = section.settings.section_border_width
+  assign section_border_color = section.settings.section_border_color
+  assign section_backg = section.settings.section_backg
+  assign alignment = section.settings.alignment
+
+  # Heading settings
+  assign heading_size = section.settings.heading_size
+  assign heading_mobile_size = section.settings.heading_mobile_size
+  assign heading_weight = section.settings.heading_weight
+  assign heading_color = section.settings.heading_color
+
+  # Description settings  
+  assign desc_size = section.settings.desc_size
+  assign desc_mobile_size = section.settings.desc_mobile_size
+  assign desc_color = section.settings.desc_color
+
+  # Button settings
+  assign btn_text_size = section.settings.btn_text_size
+  assign btn_text_mobile_size = section.settings.btn_text_mobile_size
+  assign btn_text_weight = section.settings.btn_text_weight
+  assign btn_align = section.settings.btn_align
+  assign btn_text_color = section.settings.btn_text_color
+  assign btn_icon_width = section.settings.btn_icon_width
+  assign btn_icon_height = section.settings.btn_icon_height
+  assign btn_backg = section.settings.btn_backg
+  assign btn_backg_hover = section.settings.btn_backg_hover
+  assign btn_border_type = section.settings.btn_border_type
+  assign btn_border_width = section.settings.btn_border_width
+  assign btn_border_color = section.settings.btn_border_color
+  assign btn_radius = section.settings.btn_radius
+
+  # Navigation settings
+  assign nav_width = section.settings.nav_width
+  assign nav_height = section.settings.nav_height
+  assign nav_backg = section.settings.nav_backg
+  assign nav_color = section.settings.nav_color
+-%}
+
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+<style>
+       .ban-hero-section {
+        position: relative;
+        width: {% if section_width %} 100% {% else %} 95% {% endif %};
+        height: 80vh;
+        margin: 0 auto;
+        border-radius: {{section_radius}}px;
+        margin-top: {{section_mt}}px;
+        margin-bottom: {{section_mb}}px;
+        {% if enabled_border %}border: {{section_border_width}}px solid {{section_border_color}};{% endif %}
+        background-color: {{section_backg}};
+        overflow: hidden;
+    }
+
+    .ban-hero-section .ban-hero-slider {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide {
+        position: relative;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-slide-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(.8);
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        z-index: 2;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content {
+      text-align: {{alignment}};
+      padding: 0 20px;
+  }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-slide-title {
+        font-size: {{heading_size}}px;
+        font-weight: {{heading_weight}};
+        color: {{heading_color}};
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-slide-subtitle {
+        font-size: {{desc_size}}px;
+        font-family: 'Rubik', sans-serif;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        color: {{desc_color}};
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-cta-button {
+        display: inline-flex;
+        align-items: {{btn_align}};
+        padding: 17px 28px;
+        background-color: {{btn_backg}};
+        color: {{btn_text_color}};
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: {{btn_text_weight}};
+        letter-spacing: 1px;
+        border: {{btn_border_width}}px {{btn_border_type}} {{btn_border_color}};
+        border-radius: {{btn_radius}}px;
+        font-size: {{btn_text_size}}px;
+        transition: all 0.3s ease;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-cta-button:hover {
+        background-color: {{btn_backg_hover}};
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-cta-button .arrow {
+        margin-left: 5px;
+        transform: rotate(-45deg);
+        transition: transform 0.3s ease;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-cta-button:hover .arrow {
+        transform: rotate(0deg);
+    }
+
+    .ban-hero-section .ban-hero-slider .nav-buttons {
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .ban-hero-section:hover .nav-buttons {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .ban-hero-section .ban-hero-slider .nav-buttons .nav-button {
+        position: absolute;
+        width: {{nav_width}}px;
+        height: {{nav_height}}px;
+        color: {{nav_color}};
+        background: {{nav_backg}};
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease;
+    }
+
+    .ban-hero-section .ban-hero-slider .nav-buttons .nav-prev {
+        left: 18px;
+    }
+
+    .ban-hero-section .ban-hero-slider .nav-buttons .nav-prev:hover {
+        left: 13px;
+    }
+
+    .ban-hero-section .ban-hero-slider .nav-buttons .nav-next {
+        right: 18px;
+    }
+
+    .ban-hero-section .ban-hero-slider .nav-buttons .nav-next:hover {
+        right: 13px;
+    }
+
+    .ban-hero-section .ban-hero-slider .swiper-pagination {
+        position: absolute;
+        bottom: 3em !important;
+        /* Override la position par défaut */
+    }
+
+    /* Variante avec effet de progression */
+    .ban-hero-section .ban-hero-slider .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+        /* Override l'opacité par défaut */
+        transition: all 0.3s ease;
+    }
+
+    /* Style au survol des bullets */
+    .ban-hero-section .ban-hero-slider .swiper-pagination-bullet:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        transform: scale(1.4);
+    }
+
+    /* Style du bullet actif */
+    .ban-hero-section .ban-hero-slider .swiper-pagination-bullet-active {
+        background-color: #ffffff;
+        /* Bullet actif en blanc */
+    }
+
+    @media (max-width:750px) {
+        .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-slide-title {
+            font-size: 30px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons {
+            opacity: 1;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .nav-button {
+            width: 28px;
+            height: 28px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .ban-hero-section .ban-hero-slider .nav-buttons .nav-prev {
+            left: 15px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .ban-hero-section .ban-hero-slider .nav-buttons .nav-prev:hover {
+            left: 11px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .ban-hero-section .ban-hero-slider .nav-buttons .nav-next {
+            right: 15px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .ban-hero-section .ban-hero-slider .nav-buttons .nav-next:hover {
+            right: 11px;
+        }
+    }
+
+    @media (max-width:560px) {
+      .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-slide-title {
+        font-size: {{heading_mobile_size}}px;
+    }
+      .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-slide-subtitle {
+        font-size: {{desc_mobile_size}}px;
+    }
+      .ban-hero-section .ban-hero-slider .swiper-slide .ban-content-wrapper .ban-slide-content .ban-cta-button {
+        font-size: {{btn_text_mobile_size}}px;
+    }
+        .ban-hero-section .ban-hero-slider .nav-buttons .nav-button {
+            width: 24px;
+            height: 24px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .nav-prev {
+            left: 6px;
+        }
+
+        .ban-hero-section .ban-hero-slider .nav-buttons .nav-next {
+            right: 6px;
+        }
+
+    }
+</style>
+
+<section class="ban-hero-section">
+  <div class="swiper ban-hero-slider">
+    <div class="swiper-wrapper">
+      {% for slide in section.blocks %}
+        <div class="swiper-slide">
+          {% if slide.settings.image != blank %}
+            <img
+              src="{{ slide.settings.image | img_url:'master'}}"
+              class="ban-slide-image"
+              alt="{{ slide.settings.heading }}"
+            >
+          {% else %}
+            <div class="ban-slide-image">
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder_svg' }}
+            </div>
+          {% endif %}
+          <div class="ban-content-wrapper">
+            <div class="ban-slide-content">
+              <h1 class="ban-slide-title">
+                {{ slide.settings.heading }}
+              </h1>
+              <p class="ban-slide-subtitle">{{ slide.settings.description }}</p>
+              {% if slide.settings.btn_text != blank %}
+                <a href="{{ slide.settings.btn_link }}" class="ban-cta-button">
+                  {{ slide.settings.btn_text }}
+                  <svg
+                    class="arrow"
+                    width="{{btn_icon_width}}"
+                    height="{{btn_icon_height}}"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      <!-- Additional slides here -->
+    </div>
+
+    <div class="nav-buttons">
+      <button class="nav-button nav-prev">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        </svg>
+      </button>
+      <button class="nav-button nav-next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </button>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+<script>
+   new Swiper('.ban-hero-slider', {
+      slidesPerView: 1,
+      speed: 1000,
+      loop: true,
+      autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+      },
+      navigation: {
+          prevEl: '.nav-prev',
+          nextEl: '.nav-next',
+      },
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+  });
+</script>
+{% schema %}
+{
+  "name": "Banniere",
+  "settings": [
+      {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+      },
+      {
+        "type": "header",
+        "content": "Heading",
+      },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "default":24,
+      "min": 5,
+      "max": 56,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_mobile_size",
+      "label": "Heading Mobile Size",
+      "default":30,
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Heading Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Description Size",
+      "default":16,
+      "min": 5,
+      "max": 56,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_mobile_size",
+      "label": "Description Mobile Size",
+      "default":14,
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default": "#EBEBEB"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+     {
+      "type": "range",
+      "id": "btn_text_size",
+      "label": "Text Size",
+      "default":15,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "range",
+      "id": "btn_text_mobile_size",
+      "label": "Mobile Text Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_text_weight",
+      "label": "Text Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "text_alignment",
+      "id": "btn_align",
+      "label": "Text Alignement",
+      "default":"center"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Text Color",
+      "default":"#fff"
+    },
+    {
+      "type": "range",
+      "id": "btn_icon_width",
+      "label": "Icon Width",
+      "default":24,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "btn_icon_height",
+      "label": "Icon Height",
+      "default":24,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "btn_backg",
+      "label": "Background",
+      "default":"#2E2E2E"
+    },
+    {
+      "type": "color",
+      "id": "btn_backg_hover",
+      "label": "Background Hover",
+      "default":"#000"
+    },
+    {
+      "type": "select",
+      "id": "btn_border_type",
+      "label": "Button Border Type",
+      "default":"none",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "range",
+      "id": "btn_border_width",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Border Color",
+      "default":"transparent"
+    },
+    {
+        "type": "range",
+        "id": "btn_radius",
+        "label": "Border Radius",
+        "default":0,
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Buttons"
+    },
+    {
+      "type": "range",
+      "id": "nav_width",
+      "label": "Width",
+      "default":33,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nav_height",
+      "label": "Height",
+      "default":33,
+      "min": 10,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "nav_backg",
+      "label": "Background",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "nav_color",
+      "label": "Color",
+      "default":"#fff"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+        "type": "checkbox",
+        "id": "section_enabled_width",
+        "label": "Enabled Full Width",
+        "default": false
+    },
+    {
+      "type": "color",
+      "id": "section_backg",
+      "label": "Section Background",
+      "default":"#1a1a1a"
+    },
+    {
+      "type": "checkbox",
+      "id": "enabled_border",
+      "label": "Enabled Border",
+      "default":false,
+    },
+    {
+        "type": "range",
+        "id": "section_border_width",
+        "label": "Border Width",
+        "default": 1,
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "section_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+    {
+        "type": "range",
+        "id": "section_radius",
+        "label": "Border Radius",
+        "default":0,
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+        "type": "range",
+        "id": "section_mt",
+        "label": "Margin Top",
+        "default": 60,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "section_mb",
+        "label": "Margin Bottom",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide_ban",
+      "name": "Slide Banniere",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Text Button"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label":"Button Link"
+        }
+      ]
+
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banniere",
+      "blocks": [
+        {
+          "type": "slide_ban",
+          "settings": {
+            "heading": "Apparel Crafted to Match Your Rhythm of Life",
+            "description": "<p>Unearth the beauty of the ordinary and elevate your daily routine.</p>",
+            "btn_text": "show all"
+          }
+        },
+        {
+          "type": "slide_ban",
+          "settings": {
+            "heading": "Celebrate Individuality with <br> Unique Outfits ",
+            "description": "<p>Make a statement and find your edge with our sport and casual wear.</p>",
+            "btn_text": "show all"
+          }
+        },
+        {
+          "type": "slide_ban",
+          "settings": {
+            "heading": "Live The Moment In Our Cozy Clothing Range",
+            "description": "<p>Experience the superior fit and exceptional quality of our apparel.</p>",
+            "btn_text": "show all"
+          }
+        },
+        {
+          "type": "slide_ban",
+          "settings": {
+            "heading": "Apparel Crafted to Match Your Rhythm of Life",
+            "description": "<p>Set the pace and turn heads with our cutting-edge ensembles that bring chic and comfort.</p>",
+            "btn_text": "show all"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

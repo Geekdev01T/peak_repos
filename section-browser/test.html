@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="letter-container">
+                    <span class="letter">C</span>
+                    <span class="letter">o</span>
+                    <span class="letter">l</span>
+                    <span class="letter">l</span>
+                    <span class="letter">e</span>
+                    <span class="letter">c</span>
+                    <span class="letter">t</span>
+                    <span class="letter">i</span>
+                    <span class="letter">o</span>
+                    <span class="letter">n</span>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="letter-container">
+                    <span class="letter">n</span>
+                    <span class="letter">e</span>
+                    <span class="letter">w</span>
+                    <span class="letter">c</span>
+                    <span class="letter">o</span>
+                    <span class="letter">l</span>
+                    <span class="letter">o</span>
+                    <span class="letter">r</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>const swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+        });
+
+        const letters = document.querySelectorAll('.letter');
+            const letterContainer = document.querySelector('.letter-container');
+
+            letters.forEach((letter, index) => {
+                letter.style.transform = `rotate(${index * 36}deg) translateY(-50%)`;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .pmk3-slider-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            height: 600px;
+        }
+
+        .pmk3-slider-container .pmk3-slide-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .pmk3-slide-buttons .pmk3-left_img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pmk3-slide-buttons .pmk3-left_img .pmk3-btn_block {
+            position: absolute;
+            display: flex;
+            width: 90%;
+            height: 90%;
+            left: 50%;
+            right: 50%;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .pmk3-slide-buttons .pmk3-slide-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 2px 20px #a19f9f;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pmk3-slide-buttons .pmk3-slide-button.pmk3-first {
+            position: absolute;
+            top: 5em;
+            left: 12em;
+        }
+
+        .pmk3-slide-buttons .pmk3-slide-button.pmk3-second {
+            position: absolute;
+            bottom: 8em;
+            right: 12em;
+        }
+
+        .pmk3-slide-buttons .pmk3-slide-button:hover {
+            transform: scale(1.5);
+        }
+
+        .pmk3-slide-buttons .pmk3-slide-button.pmk3-active {
+            transform: scale(1.5);
+        }
+
+        .pmk3-slide-buttons .pmk3-slide-button span {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .pmk3-swiper_block {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            border-left: 1px solid rgba(204, 204, 204, 0.5);
+        }
+
+        .pmk3-swiper_block .swiper {
+            width: 60%;
+            height: 95%;
+            position: relative;
+
+        }
+
+        .pmk3-swiper_block .swiper .swiper-slide {
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .pmk3-product-image {
+            width: 100%;
+            height: 90%;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .pmk3-navigation-buttons {
+            position: absolute;
+            top: 35%;
+            left: 10%;
+            display: flex;
+            gap: .8rem;
+            width: 80%;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .pmk3-navigation-buttons .pmk3-nav-button {
+            display: none;
+            width: 35px;
+            height: 35px;
+            margin-top: .2em;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pmk3-navigation-buttons .pmk3-nav-button svg {
+            width: 25px;
+            height: 25px;
+            color: rgb(12, 12, 12);
+        }
+
+        .pmk3-navigation-buttons .pmk3-nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .pmk3-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .pmk3-product-image .pmk3-hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .pmk3-product-image:hover .pmk3-hover-image {
+            opacity: 1;
+        }
+
+        .pmk3-product-details {
+            width: 100%;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .pmk3-product-details .pmk3-product-title {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .pmk3-product-details .pmk3-product-price {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .pmk3-product-details .pmk3-product-description {
+            font-size: 16px;
+            color: #292828;
+        }
+
+        @media (max-width: 768px) {
+            .pmk3-slider-container {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+                gap: 5px;
+            }
+
+            .pmk3-slide-buttons {
+                flex-direction: row;
+                margin-bottom: 20px;
+            }
+
+            .pmk3-swiper_block .swiper .swiper-slide {
+                flex-direction: column;
+            }
+
+            .pmk3-product-image,
+            .pmk3-product-details {
+                width: 100%;
+            }
+
+            .pmk3-swiper_block {
+                width: 100%;
+                border-left: none;
+                padding-top: 2em;
+                border-top: 1px solid rgba(204, 204, 204, 0.5);
+            }
+
+            .pmk3-swiper_block .swiper {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .pmk3-navigation-buttons {
+                position: absolute;
+                top: 35%;
+                left: 5%;
+                width: 90%;
+            }
+
+            .pmk3-navigation-buttons .pmk3-nav-button {
+                background: rgba(255, 255, 255, 0.411);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pmk3-slider-container">
+        <div class="pmk3-slide-buttons">
+            <img src="https://image.freepik.com/free-photo/woman-wearing-elegant-summer-dress_23-2148770124.jpg"
+                alt="Robe d'été élégante" class="pmk3-left_img" />
+            <div class="pmk3-btn_block">
+                <button class="pmk3-slide-button pmk3-first pmk3-active"><span>+</span></button>
+                <button class="pmk3-slide-button pmk3-second"><span>+</span></button>
+            </div>
+        </div>
+
+        <div class="pmk3-swiper_block">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="pmk3-product-image">
+                            <img src="https://image.freepik.com/free-photo/stylish-woman-summer-outfit-isolated-posing-fashion-trend-isolated_285396-472.jpg"
+                                alt="Robe d'été" />
+                            <img class="pmk3-hover-image"
+                                src="https://image.freepik.com/free-photo/portrait-young-stylish-girl-model-casual-summer-clothes_158538-5453.jpg"
+                                alt="Robe d'été vue alternative" />
+                        </div>
+                        <div class="pmk3-product-details">
+                            <p class="pmk3-product-title">ROBE D'ÉTÉ FLEURIE</p>
+                            <h2 class="pmk3-product-description">It is one of the best article</h2>
+                            <p class="pmk3-product-price">89,99 €</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="pmk3-product-image">
+                            <img src="https://image.freepik.com/free-photo/woman-wearing-brown-coat-beige-pants_23-2148770106.jpg"
+                                alt="Ensemble hiver" />
+                            <img class="pmk3-hover-image"
+                                src="https://image.freepik.com/free-photo/woman-beige-coat-winter-fashion_23-2148770098.jpg"
+                                alt="Ensemble hiver vue alternative" />
+                        </div>
+                        <div class="pmk3-product-details">
+                            <p class="pmk3-product-title">ENSEMBLE HIVER CHIC</p>
+                            <h2 class="pmk3-product-description">It is one of the best article</h2>
+                            <p class="pmk3-product-price">149,99 €</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"
+                    style="--swiper-theme-color: #000000; --swiper-pagination-bullet-inactive-color: #999999; --swiper-pagination-bullet-inactive-opacity: 0.5;">
+                </div>
+            </div>
+            <div class="pmk3-navigation-buttons">
+                <button class="pmk3-nav-button pmk3-prev-button" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                </button>
+                <button class="pmk3-nav-button pmk3-next-button" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            centeredSlides: true,
+            spaceBetween: 0,
+            speed: 1000,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            loop: true,
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.pmk3-next-button',
+                prevEl: '.pmk3-prev-button'
+            }
+        });
+
+        const buttons = document.querySelectorAll('.pmk3-slide-button');
+        const totalSlides = swiper.slides.length - 2;
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const realIndex = index % totalSlides;
+                swiper.slideToLoop(realIndex);
+            });
+        });
+
+        swiper.on('slideChange', () => {
+            buttons.forEach(button => button.classList.remove('pmk3-active'));
+            const activeIndex = swiper.realIndex % buttons.length;
+            buttons[activeIndex].classList.add('pmk3-active');
+        });
+    </script>
+</body>
+
+</html>

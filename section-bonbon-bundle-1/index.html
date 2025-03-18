@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .pc-section-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf-padding {
+            max-width: 120rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            padding-top: 36px;
+            padding-bottom: 75px;
+        }
+
+        .pc-banner-svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .pc-banner-svg--tablet,
+        .pc-banner-svg--desktop {
+            display: none;
+        }
+
+        .pc-banner-heading {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 106%;
+            color: #432a64;
+            margin: 0;
+        }
+
+        .pc-banner-subheading {
+            font-size: 18px;
+            line-height: 140%;
+            color: #432a64;
+            margin-bottom: 2rem;
+        }
+
+
+        .pc-banner-cta {
+            width: 291px;
+            height: 78px;
+            background: #432a54;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 45px;
+            border: 1px solid #000;
+            text-decoration: none;
+        }
+
+        .pc-banner-image {
+            width: 100%;
+            border: 3px solid #000;
+            border-radius: 8px;
+            height: auto;
+            padding: 42px 0;
+        }
+
+        .pc-banner-image--desktop {
+            display: none;
+        }
+
+        .pc-banner-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pc-banner-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf {
+            background: var(--mobile-bg);
+            background-size: cover;
+            background-position: bottom;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgb(0, 0, 0) !important;
+            border: 3px solid #000;
+            border-radius: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 750px) {
+            .pc-section-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf-padding {
+                padding: 0 5rem;
+                padding-top: 48px;
+                padding-bottom: 100px;
+            }
+
+            .pc-banner-svg--mobile {
+                display: none;
+            }
+
+            .pc-banner-svg--tablet {
+                display: block;
+                top: 0;
+                bottom: unset;
+            }
+
+            .pc-banner-svg--tablet {
+                display: none;
+            }
+
+            .pc-banner-svg--desktop {
+                display: block;
+            }
+
+
+            .pc-banner-heading {
+                font-size: 64px;
+            }
+
+            .pc-banner-subheading {
+                font-size: 24px;
+                margin-bottom: 1.5rem;
+            }
+
+            .pc-banner-image--mobile-and-tablet {
+                display: none;
+            }
+
+            .pc-banner-image--desktop {
+                display: block;
+            }
+
+            .pc-banner-content {
+                text-align: left;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .pc-banner-desktop-flex {
+                display: grid;
+                grid-template-columns: 50% auto;
+            }
+
+            .pc-banner-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf {
+                background: var(--desktop-bg);
+                background-size: cover;
+                background-position: bottom;
+            }
+        }
+    </style>
+
+    <div class="pc-banner-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf">
+
+        <template id="pc-banner-bg-mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="390" height="667" viewBox="0 0 390 667" fill="none">
+                <g clip-path="url(#clip0_1_290)">
+                    <path
+                        d="M227.253 665.562C105.765 671.909 2.62593 645.287 -33.7578 631.182V-49.8032H507.246C551.011 169.699 612.283 609.232 507.246 611.348C375.949 613.993 379.113 657.629 227.253 665.562Z"
+                        fill="#f7eaf9" stroke="#f7eaf9"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1_290">
+                        <rect width="390" height="667" fill="white"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </template>
+        <template id="pc-banner-bg-desktop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1512" height="589" viewBox="0 0 1512 589" fill="none">
+                <g clip-path="url(#clip0_1_275)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1545 0H-25V147H-10V487.137L-42 487.137L-66 555.439H-12C99.3333 529.606 398.8 491.34 706 544.931C1090 611.919 1342 594.844 1534 544.931V487.137V147H1545V0Z"
+                        fill="#f7eaf9"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1_275">
+                        <rect width="1512" height="589" fill="white"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+        </template>
+        <script>
+            (function () {
+                // use #banner-bg-mobile if screen width is less than 750px
+                // use #banner-bg-desktop if screen width is greater than 750px
+                var banner = document.querySelector('.pc-banner-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf');
+                var bannerBgMobile = document.querySelector('#pc-banner-bg-mobile').content.cloneNode(true);
+                var bannerBgDesktop = document.querySelector('#pc-banner-bg-desktop').content.cloneNode(true);
+
+                var serializer = new XMLSerializer();
+                var bannerBgMobileString = serializer.serializeToString(bannerBgMobile);
+                var bannerBgDesktopString = serializer.serializeToString(bannerBgDesktop);
+
+                var encodedBannerBgMobile = encodeURIComponent(bannerBgMobileString);
+                var encodedBannerBgDesktop = encodeURIComponent(bannerBgDesktopString);
+
+                // set --mobile-bg and --desktop-bg css variables
+                banner.style.setProperty('--mobile-bg', 'url("data:image/svg+xml,' + encodedBannerBgMobile + '")');
+                banner.style.setProperty('--desktop-bg', 'url("data:image/svg+xml,' + encodedBannerBgDesktop + '")');
+            })()
+        </script>
+
+        <div class="pc-section-template--16878979842297__e5bbd00d-094d-4b26-8e73-b9f6789a8fbf-padding pc-banner-desktop-flex">
+            <div class="pc-banner-content">
+                <h1 class="pc-banner-heading">BUBBLE TEA TIME YAY!</h1>
+                <img class="pc-banner-image pc-banner-image--mobile-and-tablet"
+                    src="//section.store/cdn/shop/files/daniel_section.store_repackage_the_same_product_59bbd9a0-877b-46b8-9317-4be8567e7f04_1__prev_ui_500x.png?v=1698070058"
+                    alt="">
+                <div class="pc-banner-subheading">Get that bubbly feeling going with our fantastic bubble tea!</div>
+                <a class="pc-banner-cta" href="">SHOP NOW</a>
+            </div>
+            <img class="pc-banner-image pc-banner-image--desktop"
+                src="//section.store/cdn/shop/files/daniel_section.store_repackage_the_same_product_59bbd9a0-877b-46b8-9317-4be8567e7f04_1__prev_ui_500x.png?v=1698070058"
+                alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>

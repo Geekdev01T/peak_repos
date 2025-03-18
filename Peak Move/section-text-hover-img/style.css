@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url(font/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(font/Poppins-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    line-height: 1.6;
+}
+
+.pk-clothing-range {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    margin-top: 2em;
+    overflow: hidden;
+}
+
+.pk-clothing-range .pk-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s;
+}
+
+.pk-clothing-range .pk-background-image:empty {
+    display: block;
+}
+
+.pk-clothing-range .pk-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.pk-clothing-range .pk-content .pk-content-head {
+    font-size: 12px;
+    color: #f8f8f8;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pk-clothing-range .pk-content .pk-categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1em;
+    width: 100%;
+}
+
+.pk-clothing-range .pk-content .pk-categories .pk-category {
+    color: #c5c1c1;
+    cursor: pointer;
+    transition: color 0.8s ease;
+    font-weight: bold;
+    font-size: 56px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.pk-clothing-range .pk-content .pk-categories .pk-category:hover {
+    color: #FFFFFF;
+}
+
+.pk-clothing-range .pk-content .pk-categories .pk-category.active {
+    color: #FFFFFF;
+}
+
+@media (max-width: 1075px) {
+
+    .pk-clothing-range {
+        height: 70vh;
+        margin-top: 6em;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories {
+        gap: .4em;
+        margin-top: .5em;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .pk-clothing-range {
+        height: 60vh;
+        margin-top: 6em;
+
+    }
+
+    .pk-clothing-range .pk-content .pk-categories {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
+        font-size: 30px;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: 1.5em;
+    }
+}
+
+@media (max-width: 611px) {
+
+    .pk-clothing-range {
+        height: 60vh;
+        margin-top: 6em;
+
+    }
+
+    .pk-clothing-range .pk-content .pk-categories {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
+        font-size: 30px;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: .5em;
+    }
+}
+
+@media (max-width: 581px) {
+
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: .3em;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: .5em;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .pk-clothing-range .pk-content .pk-categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: 22%;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: 28%;
+    }
+}
+
+@media (max-width: 475px) {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: 16%;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: 24%;
+    }
+}
+
+@media (max-width: 415px) {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: 11%;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: 19%;
+    }
+}
+
+@media (max-width: 375px) {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: 1em;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: 1.5em;
+    }
+}
+
+@media (max-width: 340px) {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: .5em;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: 1.3em;
+    }
+}
+
+@media (max-width: 300px) {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
+        margin-left: .1em;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
+        margin-left: .5em;
+    }
+}

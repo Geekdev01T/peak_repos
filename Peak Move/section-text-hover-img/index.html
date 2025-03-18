@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Clothing Range</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+
+<body>
+
+    <style>
+        @font-face {
+            font-family: 'Oswald';
+            src: url(font/Oswald-VariableFont_wght.ttf);
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url(font/Poppins-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .pk-clothing-range {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            height: 90vh;
+            margin-top: 2em;
+            overflow: hidden;
+        }
+
+        .pk-clothing-range .pk-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .pk-clothing-range .pk-background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease-in-out;
+        }
+
+        .pk-clothing-range .pk-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .pk-clothing-range .pk-content .pk-content-head {
+            font-size: 12px;
+            color: #F8F8F899;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            transition: all 1s ease;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 1em;
+            width: 100%;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-category {
+            color: #bbb7b7;
+            cursor: pointer;
+            transition: all 1s ease;
+            font-weight: bold;
+            font-size: 56px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-category:hover {
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-category.active {
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 1075px) {
+            .pk-clothing-range {
+                height: 70vh;
+                margin-top: 6em;
+            }
+
+            .pk-clothing-range .pk-content .pk-categories {
+                gap: .4em;
+                margin-top: .5em;
+            }
+
+            .pk-clothing-range .pk-content .pk-categories .pk-category {
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .pk-clothing-range {
+                height: 60vh;
+                margin-top: 6em;
+            }
+
+            .pk-clothing-range .pk-content .pk-categories {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .pk-clothing-range .pk-content .pk-categories .pk-category {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 611px) {
+            .pk-clothing-range {
+                height: 60vh;
+                margin-top: 6em;
+            }
+
+            .pk-clothing-range .pk-content .pk-categories {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .pk-clothing-range .pk-content .pk-categories .pk-category {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .pk-clothing-range .pk-content .pk-categories {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <section class="pk-clothing-range">
+        <div class="pk-background-image">
+            <img src="" alt="Background Image">
+        </div>
+        <div class="pk-content">
+            <p class="pk-content-head">Collection</p>
+            <div class="pk-categories">
+                <h1 class="pk-category"
+                    data-image="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero1-2.5x-min.webp?v=1686901151&width=1500">
+                    Summer Collection</h1>
+                <h1 class="pk-category pk-middle"
+                    data-image="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero2-2.5x-min.webp?v=1686901154&width=1500">
+                    Autumn Styles</h1>
+                <h1 class="pk-category pk-last"
+                    data-image="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero3-2.5x-min.webp?v=1686901156&width=1500">
+                    Winter Fashion</h1>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const backgroundContainer = document.querySelector('.pk-background-image');
+        const backgroundImage = backgroundContainer.querySelector('img');
+        const categories = document.querySelectorAll('.pk-category');
+        let activeCategory = null;
+
+        function changeBackground(imageSrc) {
+            backgroundContainer.style.opacity = '0';
+            setTimeout(() => {
+                backgroundImage.src = imageSrc;
+                backgroundContainer.style.opacity = '1';
+            }, 200);
+        }
+
+        function setActiveCategory(category) {
+            if (activeCategory) {
+                activeCategory.classList.remove('active');
+            }
+            category.classList.add('active');
+            activeCategory = category;
+        }
+
+        categories.forEach(category => {
+            category.addEventListener('mouseenter', () => {
+                const imageSrc = category.getAttribute('data-image');
+                changeBackground(imageSrc);
+                setActiveCategory(category);
+            });
+        });
+
+        // Set initial background
+        changeBackground(categories[0].getAttribute('data-image'));
+        setActiveCategory(categories[0]);
+    </script>
+</body>
+
+</html>

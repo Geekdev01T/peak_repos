@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Before/After Comparison</title>
+</head>
+
+<body>
+    <div class="pk-container">
+
+        <div class="pk-header">
+            <h1>Before / After Image #5</h1>
+            <h2>Explore our collections</h2>
+            <p>Uncover the best in quality and style</p>
+        </div>
+
+        <div class="pk-comparison-section">
+            <div class="pk-features pk-features-left">
+                <div class="pk-feature">
+                    <img src="https://section.store/cdn/shop/files/paint_1.svg?v=1723114926" alt="Discover Style"
+                        class="pk-feature-icon">
+                    <h3 class="pk-feature-title">Discover Style</h3>
+                    <p class="pk-feature-description">Find the perfect pieces to match your unique aesthetic.</p>
+                </div>
+
+                <div class="pk-feature">
+                    <img src="https://section.store/cdn/shop/files/paint.svg?v=1723114944" alt="Customizable"
+                        class="pk-feature-icon">
+                    <h3 class="pk-feature-title">Customizable</h3>
+                    <p class="pk-feature-description">Make your furniture truly yours with our customization options.</p>
+                </div>
+            </div>
+
+            <div class="pk-image-compare">
+                <div class="pk-img-container pk-img-left">
+                    <img src="https://section.store/cdn/shop/files/pexels-jose-miguel-nivar-201204374-16372721.jpg?v=1719958195"
+                        alt="Image gauche" class="pk-comparison-image">
+                </div>
+                <div class="pk-img-container pk-img-right">
+                    <img src="https://section.store/cdn/shop/files/pexels-jose-miguel-nivar-201204374-17488644.jpg?v=1719958171"
+                        alt="Image droite" class="pk-comparison-image">
+                </div>
+                <!-- <div class="divider"></div> -->
+                <div class="pk-slider pk-slider-handle">
+                    <div class="pk-slider-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+
+                    </div>
+
+                </div>
+                <!-- </div> -->
+            </div>
+
+            <div class="pk-features pk-features-right">
+                <div class="pk-feature">
+                    <img src="https://section.store/cdn/shop/files/table.svg?v=1723114963" alt="Room Inspiration"
+                        class="pk-feature-icon">
+                    <h3 class="pk-feature-title">Room Inspiration</h3>
+                    <p class="pk-feature-description">Explore our room inspiration section for curated looks and styling
+                        tips.
+                    </p>
+                </div>
+
+                <div class="pk-feature">
+                    <img src="https://section.store/cdn/shop/files/globe.svg?v=1723114980" alt="Eco-Friendly"
+                        class="pk-feature-icon">
+                    <h3 class="pk-feature-title">Eco-Friendly</h3>
+                    <p class="pk-feature-description">Make a conscious choice with our eco-friendly furniture collection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+            const slider = document.querySelector('.pk-slider');
+                const imgRight = document.querySelector('.pk-img-right');
+                const comparisonWrapper = document.querySelector('.pk-image-compare');
+
+                let isSliding = false;
+
+                    // Fonction qui ajuste le masque pour l'image droite
+                    const updatePositions = (xPosition) => {
+                        const containerRect = comparisonWrapper.getBoundingClientRect();
+                        const sliderPosition = Math.max(0, Math.min(xPosition - containerRect.left, containerRect.width));
+                        const maskWidth = (sliderPosition / containerRect.width) * 100;
+
+                        imgRight.style.clipPath = `inset(0 ${100 - maskWidth}% 0 0)`;
+                        slider.style.left = `${maskWidth}%`;
+                        // divider.style.left = `${maskWidth}%`;
+                    };
+
+                    slider.addEventListener('mousedown', () => {
+                        isSliding = true;
+                    });
+
+                    document.addEventListener('mousemove', (e) => {
+                        if (isSliding) {
+                            updatePositions(e.clientX);
+                        }
+                    });
+
+                    document.addEventListener('mouseup', () => {
+                        isSliding = false;
+                    });
+
+                // Événements tactiles
+                // Gestion de l'événement de glissement tactile (pour mobile)
+                    slider.addEventListener('touchstart', () => {
+                        isSliding = true;
+                    });
+
+                    document.addEventListener('touchmove', (e) => {
+                        if (isSliding) {
+                            const touch = e.touches[0];
+                            updatePositions(touch.clientX);
+                        }
+                    });
+
+                    document.addEventListener('touchend', () => {
+                        isSliding = false;
+                    });
+
+    </script>
+</body>
+
+</html>

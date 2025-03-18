@@ -1,0 +1,488 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+<style>
+  #LT-pc-{{section.id}} {
+      max-width: {% if section.settings.full_width %} 100% {% else %} 1200px {% endif %};
+      {% if section.settings.full_border_LR %}
+        border-left: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+        border-right: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+      {% endif %}
+      {% if section.settings.full_border_TB %}
+        border-top: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+        border-bottom: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+      {% endif %}
+      /* background-color: {{section.settings.section_bg}}; */
+      border-radius: {{section.settings.section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section.settings.section_mt}}px !important;
+      margin-bottom: {{section.settings.section_mb}}px !important;
+      padding-top: 20px;
+      padding-bottom: 0px;
+  }
+
+  #LT-pc-{{section.id}} .luna-slider-slider>.swiper-wrapper {
+      opacity: 0;
+      transition: linear;
+      margin-bottom: 30px;
+  }
+
+  #LT-pc-{{section.id}} .image-item-wrapper {
+      position: relative;
+  }
+
+  #LT-pc-{{section.id}} .item {
+      min-height: 100px !important;
+  }
+
+  #LT-pc-{{section.id}} h2,
+  #LT-pc-{{section.id}} p {
+      color: #000000;
+      text-align: center;
+  }
+
+  #LT-pc-{{section.id}} h2 {
+      font-size: 40px;
+      margin: 0 0 30px 0;
+  }
+
+  #LT-pc-{{section.id}} p {
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 0;
+      line-height: 1.2;
+  }
+
+  #LT-pc-{{section.id}} .luna-templates__button-container {
+      margin: 30px 0;
+      text-align: center;
+  }
+
+  #LT-pc-{{section.id}} .luna-templates__button {
+      padding: 0.5rem 2rem;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      color: #000000;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+  }
+
+  #LT-pc-{{section.id}} .luna-templates__button:hover {
+      background-color: #000000;
+      border: 1px solid #000000;
+      color: #ffffff;
+      transition: background-color 0.3s;
+  }
+
+  #LT-pc-{{section.id}} .LT__btn-rounded {
+      border-radius: 5px;
+  }
+
+  #LT-pc-{{section.id}} .LT__btn-pill {
+      border-radius: 50px;
+  }
+
+  #LT-pc-{{section.id}} .LT__btn-oval {
+      padding: 20px 40px;
+      border-radius: 50%;
+  }
+
+  .luna-templates-marquee-images .image-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .luna-slider-slider:not(.swiper-initialized) .luna-templates-marquee-images .image-item {
+      flex: 1 1;
+  }
+
+  .luna-slider-item {
+      padding-top: 0px !important;
+  }
+
+  .luna-templates-marquee-images .image-item img,
+  .luna-templates__image-marquee .image-item p {
+      margin: auto;
+      max-width: 90%;
+      border-radius:{{section.settings.image_radius}};
+      border:{{section.settings.image_border_w}}px solid {{section.settings.image_border_color}};
+  }
+
+  .luna-templates-marquee-images .image-item .img {
+      margin: auto;
+      max-width: 90%;
+      border-radius:{{section.settings.image_radius}};
+      border:{{section.settings.image_border_w}}px solid {{section.settings.image_border_color}};
+  }
+
+  .luna-templates__image-marquee a {
+      text-decoration: none;
+  }
+
+  .luna-templates-marquee-images .image-item img,
+  .luna-templates-marquee-images .image-item svg {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      opacity: 1;
+      left: 0;
+  }
+
+  .luna-templates-marquee-images .image-item:has(.hoverImage):hover .mainImage,
+  .luna-templates-marquee-images .image-item .hoverImage {
+      opacity: 0;
+  }
+
+  .luna-templates-marquee-images .image-item:hover .hoverImage {
+      opacity: 1;
+  }
+
+  @media only screen and (max-width: 749px) {
+      #LT-pc-{{section.id}} {
+          padding-top: 10px;
+          padding-bottom: 0px;
+      }
+
+      #LT-pc-{{section.id}} h2 {
+          font-size: 30px;
+      }
+
+      #LT-pc-{{section.id}} .luna-templates__button {
+          font-size: 14px;
+      }
+
+      #LT-pc-{{section.id}} .image-item-wrapper {
+          padding-bottom: 100%;
+      }
+
+      .luna-templates-marquee-images .image-item img {
+          width: 100%;
+      }
+  }
+</style>
+<template id="slider-pc-{{section.id}}">
+  <div class="luna-slider-slider swiper">
+    <div class="luna-templates-marquee-images swiper-wrapper">
+      <div class="image-item item luna-slider-item swiper-slide">
+        <div class="image-item-wrapper" style="padding-bottom: 38.66666666666667%">
+          <img
+            src="//lunatemplates.co/cdn/shop/files/Luna_Templates_Message_4.jpg?v=1682548739&amp;width=1000"
+            alt="Luna Templates testimonial screenshot"
+            srcset="//lunatemplates.co/cdn/shop/files/Luna_Templates_Message_4.jpg?v=1682548739&amp;width=352 352w, //lunatemplates.co/cdn/shop/files/Luna_Templates_Message_4.jpg?v=1682548739&amp;width=832 832w, //lunatemplates.co/cdn/shop/files/Luna_Templates_Message_4.jpg?v=1682548739&amp;width=1000 1000w"
+            width="100"
+            height="387"
+            class="mainImage"
+          >
+        </div>
+      </div>
+      {% comment %}
+        {% for block in section.blocks %}
+          <div class="image-item item luna-slider-item swiper-slide">
+            <div class="image-item-wrapper" style="padding-bottom: 38.66666666666667%">
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | img_url:'master' }}"
+                  alt="Image_{{ forloop.index }}"
+                  class="mainImage"
+                >
+              {% else %}
+                <div class="img">
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' | class: 'mainImage' }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endcomment %}
+    </div>
+  </div>
+</template>
+<section
+  id="LT-pc-{{section.id}}"
+  class="LT__section luna-templates__image-marquee "
+>
+  <div class="wrapper"></div>
+  <div id="slider-container-pc-{{section.id}}">
+    <div class="luna-slider-slider swiper">
+      <div class="luna-templates-marquee-images swiper-wrapper" id="swiper-wrapper-7a1045d910b1bbd914">
+        <div class="image-item item luna-slider-item swiper-slide">
+          <div class="image-item-wrapper" style="padding-bottom: 38.66666666666667%">
+            <img
+              src="https://section.store/cdn/shop/files/pexels-cottonbro-9836622.jpg?v=1729122705"
+              alt="Luna Templates testimonial screenshot"
+              class="mainImage"
+            >
+          </div>
+        </div>
+        {% comment %}
+          {% for block in section.blocks %}
+            <div class="image-item item luna-slider-item swiper-slide">
+              <div class="image-item-wrapper" style="padding-bottom: 38.66666666666667%">
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | img_url:'master' }}"
+                    alt="Image_{{ forloop.index }}"
+                    class="mainImage"
+                  >
+                {% else %}
+                  <div class="img">
+                    {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' | class: 'mainImage' }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
+  <div
+    class="luna-marquee-slider-helper"
+    style="display: none;"
+    data-desc="{{ section.settings.desk }}"
+    data-tablet="{{ section.settings.tablet }}"
+    data-mobile="{{ section.settings.mobile }}"
+    data-speed="{{ section.settings.speed }}"
+  ></div>
+</section>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  (function () {
+      var sectionId = "pc-{{section.id}}";
+      function marqueeLunaSlider(sectId) {
+          const template = document.getElementById('slider-pc-{{section.id}}');
+          const sliderContainer = document.getElementById('slider-container-pc-{{section.id}}');
+          const templateContent = template.content.cloneNode(true); sliderContainer.innerHTML = "";
+          sliderContainer.appendChild(templateContent); let sectionIdSelector = '#LT--' + sectId;
+          sliderSelector = document.querySelector(sectionIdSelector + ' .luna-slider-slider'),
+              sectionSelector = document.querySelector(sectionIdSelector),
+              sliderInfo = document.querySelector(sectionIdSelector + ' .luna-marquee-slider-helper'),
+              descSlides = +sliderInfo.getAttribute('data-desc'),
+              tabletSlides = +sliderInfo.getAttribute('data-tablet'),
+              mobileSlides = +sliderInfo.getAttribute('data-mobile'),
+              sliderSpeed = +sliderInfo.getAttribute('data-speed');
+          let Swipes = new Swiper(sliderSelector,
+              {
+                  speed: sliderSpeed,
+                  autoplay:
+                  {
+                      disableOnInteraction: false,
+                      delay: 0
+                  },
+                  on:
+                  {
+                      init: function () {
+                          document.querySelector(sectionIdSelector + ' .swiper-wrapper').style.opacity = 1;
+                      },
+                  },
+                  centeredSlides: true,
+                  freeMode: true,
+                  loop: true,
+                  loopedSlides: 7,
+                  slidesPerView: mobileSlides,
+                  spaceBetween: 10,
+                  breakpoints:
+                  {
+                      750:
+                      {
+                          slidesPerView: tabletSlides
+                      },
+                      1250:
+                      {
+                          slidesPerView: descSlides
+                      }
+                  }
+              });
+      }
+      marqueeLunaSlider(sectionId);
+      window.addEventListener("resize", function (event) {
+          marqueeLunaSlider(sectionId);
+      });
+
+  }());
+</script>
+
+{% schema %}
+{
+  "name": "PC - Browse",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "image_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+     {
+      "type": "header",
+      "content": "Slide Per View"
+    },
+    {
+      "type": "range",
+      "id": "desk",
+      "label": "Desktop",
+      "default":4,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "tablet",
+      "label": "Tablet",
+      "default":4,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "mobile",
+      "label": "Mobile",
+      "default":1,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "label": "Speed",
+      "default":10000
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border_LR",
+      "label":"Enabled Left&Right Border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border_TB",
+      "label":"Enabled Top&Bottom Border",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "broswe_image",
+      "name": "Browse Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Browse"
+    }
+  ]
+}
+{% endschema %}

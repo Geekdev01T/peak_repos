@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style >
+ .section-section_id {
+                background-color:#050400;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                border: 0px solid white;
+                border-radius: 0px;
+                max-width: 1200px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+    
+            .section-section_id-settings {
+                margin: 0 auto;
+                padding-top: 45px;
+                padding-bottom: 45px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .feature-body-section_id {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+    
+            .feature-items-section_id {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 16px;
+            }
+    
+            .feature-item-section_id {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 24px 24px;
+                border-radius: 3px;
+                /* border: 1px solid white !important; */
+                overflow: hidden;
+                transition: all 0.25s ease 0s;
+                text-decoration: none;
+                position: relative;
+                z-index: 0
+            }
+
+            .feature-item-section_id {
+                border: none;
+            }
+    
+            .feature-item-section_id:hover .feature-item-image-section_id {
+                opacity: 1;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-item-top-section_id {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                gap: 15px;
+                z-index: 2;
+            }
+    
+            .feature-item-title-section_id {
+                margin: 0;
+                width: 100%;
+                font-size: 20px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .feature-item-top-section_id svg {
+                flex-shrink: 0;
+                width: 28px;
+                height: 28px;
+            }
+    
+            .feature-item-top-section_id svg path {
+                fill: #ffffff;
+            }
+    
+            .feature-item-text-section_id {
+                margin-top: 32px;
+            }
+    
+            .feature-item-text-section_id * {
+                margin: 0;
+                font-size: 14px;
+                color: #ffffff;
+                text-align: right;
+                line-height: 150%;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+            }
+    
+            .feature-item-button-section_id {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                /* width: 100%; */
+                margin-top: 40px;
+                font-size: 13px;
+                color: #050400;
+                line-height: 100%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 14px 24px;
+                border-radius: 2px;
+                transition: all 0.25s ease 0s;
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+                font-weight: 700;
+            }
+    
+            .feature-item-button-inner-section_id {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+    
+            .feature-item-button-section_id:hover {
+                color: #050400;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-item-button-section_id svg {
+                width: 14px;
+                height: 14px;
+            }
+    
+            .feature-item-button-section_id svg path {
+                fill: #050400;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-item-button-section_id:hover svg path {
+                fill: #050400;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-item-image-section_id {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-item-image-section_id:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+    
+            .feature-item-image-section_id img,
+            .feature-item-image-section_id svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .feature-item-image-section_id svg {
+                background-color: #AFAFAF;
+            }
+
+            .feature-content-section_id {
+                order: 1;
+            }
+    
+            .feature-items-section_id {
+                order: 2;
+            }
+   
+            .feature-item-button-section_id {
+                background-color: #ffca43;
+            }
+    
+            .feature-item-button-section_id:hover {
+                transition: all 0.25s ease 0s;
+                background-color: #ffdf4c;
+            }
+ 
+            .feature-subheading-sub_heading * {
+                margin: 0;
+                font-size: 13px;
+                color: #b4b4b2;
+                line-height: 130%;
+                text-align: left;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .feature-heading-heading {
+                margin-top: 12px;
+            }
+    
+            .feature-heading-heading * {
+                margin: 0;
+                font-size: 26px;
+                color: #ffffff;
+                line-height: 130%;
+                text-align: left;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .feature-text-text {
+                margin-top: 28px;
+            }
+    
+            .feature-text-text * {
+                margin: 0;
+                font-size: 14px;
+                color: #ffffff;
+                line-height: 150%;
+                text-align: left;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+            }
+
+            .feature-item-feature:hover {
+                border: none;
+                border-top: 1px solid #ffca43 !important;
+            }
+ 
+
+            .feature-item-feature_bnt {
+                background-color: #050400;
+                border: 1px solid #373633;
+            }
+    
+            .feature-item-feature_bnt:hover {
+                border: 1px solid #ffffff;
+            }
+
+            .feature-item-title-feature {
+                text-align: left;
+            }
+
+             @media(min-width: 1024px) {
+    
+                .section-section_id-settings {
+                    padding: 0 5rem;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .feature-body-section_id {
+                    gap: 100px;
+                    align-items: start;
+                }
+    
+                .feature-items-section_id {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 4px;
+                }
+    
+                .feature-item-section_id {
+                    padding: 40px 40px;
+                }
+    
+                .feature-item-title-section_id {
+                    font-size: 24px;
+                }
+    
+                .feature-item-top-section_id svg {
+                    width: 30px;
+                    height: 30px;
+                }
+    
+                .feature-item-text-section_id {
+                    margin-top: 32px;
+                }
+    
+                .feature-item-text-section_id * {
+                    font-size: 15px;
+                }
+    
+                .feature-item-button-section_id {
+                    margin-top: 40px;
+                    padding: 14px 24px;
+                    font-size: 13px;
+                }
+            
+
+                .feature-content-section_id {
+                    order: 1;
+                }
+    
+                .feature-items-section_id {
+                    order: 2;
+                }
+    
+                .feature-body-section_id {
+                    grid-template-columns: calc(40% - 50px) calc(60% - 50px);
+                }
+            
+                .feature-subheading-sub_heading * {
+                    font-size: 13px;
+                }
+            
+                .feature-heading-heading {
+                    margin-top: 8px;
+                }
+    
+                .feature-heading-heading * {
+                    font-size: 36px;
+                }
+          
+                .feature-text-text {
+                    margin-top: 40px;
+                }
+    
+                .feature-text-text * {
+                    font-size: 15px;
+                }
+            }
+
+    </style>
+
+    <div class="section-section_id feature-section_id" >
+            <div class="section-section_id-settings">
+                <div class="feature-body-section_id">
+                    <div class="feature-content-section_id">
+        
+                        <div class="feature-subheading-sub_heading">
+                            <p>New arrivals</p>
+                        </div>
+        
+        
+                        <div class="feature-heading-heading">
+                            <p>Vintage collection</p>
+                        </div>
+        
+                        <div class="feature-text-text">
+                            <p>Crafted from a durable aluminum frame and genuine leather or wood, it enhances any workspace.
+                            </p>
+                        </div>
+        
+                    </div>
+                    <div class="feature-items-section_id">
+        
+                        <a href="/pages/404-2"
+                            class="feature-item-section_id feature-item-feature" style="background-color: #171612; border: 0px solid #000;">
+        
+                            <div class="feature-item-top-section_id">
+                                <p
+                                    class="feature-item-title-section_id feature-item-title-feature">
+                                    Retro Classic</p>
+        
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"
+                                    fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+                                    <mask id="mask0_2623_6211" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                        width="32" height="32">
+                                        <rect width="32" height="32" fill="#D9D9D9"></rect>
+                                    </mask>
+                                    <g mask="url(#mask0_2623_6211)">
+                                        <path
+                                            d="M21.5667 17.3334H5.33333V14.6667H21.5667L14.1 7.20004L16 5.33337L26.6667 16L16 26.6667L14.1 24.8L21.5667 17.3334Z"
+                                            fill="white"></path>
+                                    </g>
+                                </svg>
+        
+                            </div>
+        
+        
+                            <div class="feature-item-text-section_id">
+                                <p>Inspired by retro typewriters, this product combines classic design with modern
+                                    functionality.</p>
+                            </div>
+        
+        
+                            <div
+                                class="feature-item-image-section_id">
+                                <img src="//section.store/cdn/shop/files/alexandru-acea-MFGLA-zfb8c-unsplash.jpg?v=1731077160"
+                                    alt="">
+                            </div>
+        
+                        </a>
+
+                        <a href="/pages/404-2" class="feature-item-section_id feature-item-feature"
+                            style="background-color: #171612; border: 0px solid #000;">
+                        
+                            <div class="feature-item-top-section_id">
+                                <p class="feature-item-title-section_id feature-item-title-feature">
+                                    Retro Classic</p>
+                        
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="none"
+                                    preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+                                    <mask id="mask0_2623_6211" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32"
+                                        height="32">
+                                        <rect width="32" height="32" fill="#D9D9D9"></rect>
+                                    </mask>
+                                    <g mask="url(#mask0_2623_6211)">
+                                        <path
+                                            d="M21.5667 17.3334H5.33333V14.6667H21.5667L14.1 7.20004L16 5.33337L26.6667 16L16 26.6667L14.1 24.8L21.5667 17.3334Z"
+                                            fill="white"></path>
+                                    </g>
+                                </svg>
+                        
+                            </div>
+                        
+                        
+                            <div class="feature-item-text-section_id">
+                                <p>Inspired by retro typewriters, this product combines classic design with modern
+                                    functionality.</p>
+                            </div>
+                        
+                        
+                            <div class="feature-item-image-section_id">
+                                <img src="//section.store/cdn/shop/files/alexandru-acea-MFGLA-zfb8c-unsplash.jpg?v=1731077160" alt="">
+                            </div>
+                        
+                        </a>
+
+                        <a href="/pages/404-2" class="feature-item-section_id feature-item-feature"
+                            style="background-color: #171612; border: 0px solid #000;">
+                        
+                            <div class="feature-item-top-section_id">
+                                <p class="feature-item-title-section_id feature-item-title-feature">
+                                    Retro Classic</p>
+                        
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="none"
+                                    preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+                                    <mask id="mask0_2623_6211" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32"
+                                        height="32">
+                                        <rect width="32" height="32" fill="#D9D9D9"></rect>
+                                    </mask>
+                                    <g mask="url(#mask0_2623_6211)">
+                                        <path
+                                            d="M21.5667 17.3334H5.33333V14.6667H21.5667L14.1 7.20004L16 5.33337L26.6667 16L16 26.6667L14.1 24.8L21.5667 17.3334Z"
+                                            fill="white"></path>
+                                    </g>
+                                </svg>
+                        
+                            </div>
+                        
+                        
+                            <div class="feature-item-text-section_id">
+                                <p>Inspired by retro typewriters, this product combines classic design with modern
+                                    functionality.</p>
+                            </div>
+                        
+                        
+                            <div class="feature-item-image-section_id">
+                                <img src="//section.store/cdn/shop/files/alexandru-acea-MFGLA-zfb8c-unsplash.jpg?v=1731077160" alt="">
+                            </div>
+                        
+                        </a>
+                        <div class="feature-item-section_id feature-item-feature_bnt">
+        
+                            <div class="feature-item-top-section_id">
+                                <p class="feature-item-title-section_id feature-item-title-feature">
+                                    Do you need advice?</p>
+        
+                            </div>
+        
+                            <a href="/pages/404-2" class="feature-item-button-section_id">
+                                <p class="feature-item-button-inner-section_id">
+                                    Get help
+        
+                                </p>
+                            </a>
+        
+        
+                        </div>
+        
+        
+                    </div>
+                </div>
+            </div>
+    </div>
+        
+        
+</body>    
+</html>

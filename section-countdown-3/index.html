@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+  .section-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    border-top: solid #000000 0px;
+    border-bottom: solid #000000 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .section-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2-settings {
+    margin: 0 auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  .countdown-body-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0px;
+  }
+
+  .countdown-content-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 24px;
+    border-radius: 0px;
+    border: 0px solid #000000;
+    background-color: #fcf8f5;
+    box-sizing: border-box;
+  }
+
+  .countdown-subheading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    text-align: center;
+  }
+
+  .countdown-subheading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 * {
+    margin: 0px;
+    font-size: 14px;
+    color: #000000;
+    line-height: 130%;
+    text-transform: unset;
+  }
+
+  .countdown-heading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    margin-top: 6px;
+    text-align: center;
+  }
+
+  .countdown-heading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 * {
+    margin: 0px;
+    font-size: 30px;
+    color: #000000;
+    line-height: 130%;
+    text-transform: unset;
+  }
+
+  .countdown-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 9px;
+    text-align: center;
+  }
+
+  .countdown-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 * {
+    margin: 0px;
+    font-size: 16px;
+    color: #000000;
+    line-height: 150%;
+    text-transform: unset;
+  }
+
+  .countdown-button-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    margin: 0;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 100%;
+    text-align: center;
+    text-transform: unset;
+    text-decoration: none;
+    padding: 16px 26px;
+    border-radius: 0px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    transition: all 0.25s ease 0s;
+    position: relative;
+    font-weight: 700;
+    z-index: 2;
+  }
+
+  .countdown-button-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2:hover {
+    color: #ffffff;
+    border: 1px solid #000000;
+    background-color: #000000;
+    transition: all 0.25s ease 0s;
+  }
+
+  .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    border: 0px solid #000000;
+    border-radius: 0px;
+    overflow: hidden;
+  }
+
+  .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 img,
+  .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 svg {
+    background-color: #DDDDDD;
+  }
+
+  .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0px;
+  }
+
+  .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #cac6c4;
+    background-color: ;
+  }
+
+  .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block__num {
+    margin: 0px;
+    font-size: 20px;
+    color: #000000;
+    line-height: 130%;
+    text-transform: unset;
+  }
+
+  .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block__unit {
+    margin: 0px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #000000;
+    line-height: 130%;
+    text-transform: unset;
+  }
+  
+
+    .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+     aspect-ratio: 12/12; 
+    }
+ 
+    
+    .countdown-content-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      order: 2;
+    }
+    .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      order: 1;
+    }
+
+       
+    .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block:not(:first-child) {
+      border-left: 0px;
+    }
+
+      @media(min-width: 1024px) {
+    .section-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2-settings {
+      padding: 0 5rem;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+
+    .countdown-body-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0px;
+    }
+
+    .countdown-content-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      align-items: center;
+      justify-content: center;
+      padding: 24px 24px;
+    }
+
+    .countdown-subheading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      text-align: center;
+    }
+
+    .countdown-subheading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 * {
+      font-size: 14px;
+    }
+
+    .countdown-heading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .countdown-heading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 * {
+      font-size: 34px;
+    }
+
+    .countdown-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      max-width: 74%;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .countdown-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 * {
+      font-size: 16px;
+    }
+
+    .countdown-button-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      margin-top: 16px;
+      padding: 16px 26px;
+      font-size: 14px;
+    }
+
+    .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+      margin-top: 24px;
+      gap: 0px;
+    }
+
+    .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block {
+      padding: 12px 24px;
+    }
+
+    .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block__unit {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block__num {
+      font-size: 34px;
+    }
+    
+  
+    
+      .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+       aspect-ratio: 12/12; 
+      }
+  
+      
+     .countdown-content-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+        order: 1;
+      }
+      .countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+        order: 2;
+      } 
+    
+      
+     .countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 .time-block:not(:first-child) {
+        border-left: 0px;
+      } 
+    }
+  </style>
+
+
+<div class="section-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 countdown-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2" style="background-color:#fcf8f5; background-image: ;">
+    <div class="section-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2-settings">
+
+      <div class="countdown-body-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2">
+        <div class="countdown-content-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2">
+
+          
+            <div class="countdown-subheading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2"><p>SALE NOW ON</p></div>
+          
+
+          
+            <div class="countdown-heading-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2"><h2>Countdown to saving!</h2></div>
+          
+
+          
+            <div class="countdown-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2"><p>Your gateway to extraordinary deals is ticking away! Don't miss out - seize the moment and unlock exclusive discounts before the countdown hits zero.</p></div>
+          
+
+          <div class="countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2">
+
+            <div class="time-block">
+              <span class="time-block__num js-timer-days">14</span>
+              <span class="time-block__unit">Days</span>
+            </div>
+            <div class="time-block">
+              <span class="time-block__num js-timer-hours">10</span>
+              <span class="time-block__unit">Hours</span>
+            </div>
+            <div class="time-block">
+              <span class="time-block__num js-timer-minutes">43</span>
+              <span class="time-block__unit">Minutes</span>
+            </div>
+            <div class="time-block">
+              <span class="time-block__num js-timer-seconds">46</span>
+              <span class="time-block__unit">Seconds</span>
+            </div>
+          </div>
+
+          <style>
+            .countdown-timer-completed-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2 {
+              display: none;
+            }
+          </style>
+          <div class="countdown-timer-completed-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2">
+            
+          </div>
+
+          
+            <a href="" class="countdown-button-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2">SHOP NOW</a>
+          
+          
+        </div>
+
+        
+          <div class="countdown-image-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2">
+            
+              <img src="//section.store/cdn/shop/files/Screenshot_2023-12-29_at_10.00.18.png?v=1703815299" alt="" lazy="loading">
+            
+          </div>
+        
+      </div>
+      
+    </div>
+</div>
+
+<script type="text/javascript">
+  (function () {
+
+    function startTimer() {
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24,
+        wrapper = document.querySelector(
+          '.countdown-timer-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2'
+        ),
+        countDown = new Date('2025-01-01T00:00:00Z').getTime();
+
+      console.log('start timer, end date:' + countDown)
+      const interval = setInterval(function () {
+        let now = new Date().getTime(),
+          distance = countDown - now,
+          days = Math.floor(distance / day),
+          hours = Math.floor((distance % day) / hour),
+          minutes = Math.floor((distance % hour) / minute),
+          seconds = Math.floor((distance % minute) / second);
+
+        (wrapper.querySelector('.js-timer-days').innerText = (
+          days
+        )),
+          (wrapper.querySelector('.js-timer-hours').innerText = (
+            hours
+          )),
+          (wrapper.querySelector('.js-timer-minutes').innerText = (
+            minutes
+          )),
+          (wrapper.querySelector('.js-timer-seconds').innerText = (
+            seconds
+          ));
+
+        if (distance < 0) {
+          wrapper.querySelector('.js-timer-days').innerText = '00';
+          wrapper.querySelector('.js-timer-hours').innerText = '00';
+          wrapper.querySelector('.js-timer-minutes').innerText = '00';
+          wrapper.querySelector('.js-timer-seconds').innerText = '00';
+          
+          document.querySelector(
+            '.countdown-timer-completed-text-template--20497617977673__c20bb28b-5d71-4901-a1f4-010fa641f7e2'
+          ).style.display = 'block';
+
+          clearInterval(interval);
+        }
+
+      }, second);
+    }
+    startTimer()
+  })();
+</script>
+
+</div>
+</body>
+</html>

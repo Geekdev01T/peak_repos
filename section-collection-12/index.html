@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+
+        .section-template--22624145670473__ss_collection_12_Afy8Qy {
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            border-radius: 0px;
+            background-color:#fbf9f4;
+            overflow: hidden;
+        }
+
+        .section-template--22624145670473__ss_collection_12_Afy8Qy-settings {
+            margin: 0 auto;
+            padding-top: 27px;
+            padding-bottom: 27px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .collection-body-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: grid;
+            gap: 12px;
+        }
+
+        .collection-slider-wrapper-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: grid;
+            position: relative !important;
+        }
+
+        .collection-slider-template--22624145670473__ss_collection_12_Afy8Qy {
+            grid-area: images;
+            min-width: 0px !important;
+            width: 100% !important;
+            height: 100%;
+            position: relative !important;
+            border: 0px solid #000000 !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+        }
+
+        .collection-slide-template--22624145670473__ss_collection_12_Afy8Qy {
+            position: relative !important;
+            box-sizing: border-box !important;
+        }
+
+        .collection-image-template--22624145670473__ss_collection_12_Afy8Qy {
+            width: 100%;
+            height: 100%;
+        }
+
+        .collection-image-template--22624145670473__ss_collection_12_Afy8Qy img,
+        .collection-image-template--22624145670473__ss_collection_12_Afy8Qy svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collection-image-template--22624145670473__ss_collection_12_Afy8Qy svg {
+            background-color: #AFAFAF;
+        }
+
+        .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy {
+            background-color: #fbf9f4;
+            border-radius: 100%;
+            position: absolute;
+            z-index: 1;
+            cursor: pointer;
+            height: 26px;
+            width: 26px;
+        }
+
+        .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-animation: pulsetemplate22624145670473__ss_collection_12_Afy8Qy 2s ease-in-out infinite;
+            animation: pulsetemplate22624145670473__ss_collection_12_Afy8Qy 2s ease-in-out infinite;
+            border: 2px solid #fbf9f4;
+            border-radius: 50%;
+            box-sizing: border-box;
+            transform: translate3d(-50%, -50%, 0);
+            transition: opacity 0.25s linear;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        @keyframes pulsetemplate22624145670473__ss_collection_12_Afy8Qy {
+            0% {
+                transform: translate3d(-50%, -50%, 0) scale(1);
+            }
+
+            100% {
+                transform: translate3d(-50%, -50%, 0) scale(1.5);
+            }
+        }
+
+        .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy.active {
+            background-color: transparent;
+        }
+
+        .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy.active::after {
+            transition: opacity 0.25s linear;
+            opacity: 0;
+            animation: none;
+        }
+
+        .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: none;
+            background-color: #fbf9f4;
+            border-radius: 12px;
+            border: 0px solid #000000;
+            width: 150px;
+            padding: 14px 14px;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy.active .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: flex;
+            -webkit-animation: opacitytemplate22624145670473__ss_collection_12_Afy8Qy 0.5s linear;
+            animation: opacitytemplate22624145670473__ss_collection_12_Afy8Qy 0.5s linear;
+        }
+
+        @keyframes opacitytemplate22624145670473__ss_collection_12_Afy8Qy {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .collection-hotspot-text-template--22624145670473__ss_collection_12_Afy8Qy {
+            text-align: left;
+            margin: 0;
+            font-size: 14px;
+            color: #4d4d4d;
+            line-height: 130%;
+            text-transform: unset;
+            word-break: break-word;
+        }
+
+        .collection-hotspot-title-template--22624145670473__ss_collection_12_Afy8Qy {
+            margin: 0;
+            margin-top: 0px;
+            font-size: 14px;
+            color: #121212;
+            line-height: 150%;
+            text-align: left;
+            text-transform: unset;
+            word-break: break-word;
+            font-weight: 700;
+        }
+
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: fit-content;
+            margin: 0;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #121212;
+            line-height: 100%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 8px 24px;
+            border-radius: 12px;
+            transition: all 0.25s ease 0s;
+            background-color: transparent;
+            border: 0px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .collection-hotspot-button-inner-template--22624145670473__ss_collection_12_Afy8Qy {
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy:hover {
+            color: #fbf9f4;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy svg path {
+            fill: #121212;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy:hover svg path {
+            fill: #fbf9f4;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy {
+            position: absolute !important;
+            bottom: 24px !important;
+            left: 50% !important;
+            z-index: 2;
+            transform: translateX(-60%) !important;
+            margin: 0px auto !important;
+            width: 100% !important;
+            gap: 2em;
+            max-width: fit-content;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy .swiper-pagination-bullet {
+            width: 14px !important;
+            height: 14px !important;
+            border-radius: 50px;
+            border: 0px !important;
+            background-color: #fbf9f4 !important;
+            opacity: 0.4 !important;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-collections-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 12px;
+            grid-area: collections;
+        }
+
+        .collection-collection-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 12px;
+            padding: 32px 20px;
+            border: 1px solid;
+        }
+
+        .collection-text-template--22624145670473__ss_collection_12_Afy8Qy {
+            text-align: left;
+        }
+
+        .collection-text-template--22624145670473__ss_collection_12_Afy8Qy * {
+            margin: 0;
+            font-size: 14px;
+            color: #4d4d4d;
+            line-height: 130%;
+            text-transform: unset;
+            word-break: break-word;
+        }
+
+        .collection-title-template--22624145670473__ss_collection_12_Afy8Qy {
+            margin: 0 0 8px 0;
+            margin-top: 4px;
+            font-size: 18px;
+            color: #121212;
+            line-height: 130%;
+            text-align: left;
+            text-transform: unset;
+            word-break: break-word;
+            font-weight: 700;
+        }
+
+        .collection-collection-bottom-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: flex;
+            align-items: end;
+            gap: 20px;
+        }
+
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: fit-content;
+            margin: 0;
+            margin-top: px;
+            font-size: 14px;
+            color: #121212;
+            line-height: 100%;
+            text-align: center;
+            text-transform: unset;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 100px;
+            transition: all 0.25s ease 0s;
+            background-color: transparent;
+            border: 0px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .collection-button-inner-template--22624145670473__ss_collection_12_Afy8Qy {
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy:hover {
+            color: #fbf9f4;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy svg path {
+            fill: #121212;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy:hover svg path {
+            fill: #fbf9f4;
+            transition: all 0.25s ease 0s;
+        }
+
+        .collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy {
+            border-radius: 12px;
+            border: 0px solid #000000;
+            overflow: hidden;
+        }
+
+        .collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy img,
+        .collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy svg {
+            background-color: #AFAFAF;
+        }
+
+        
+        .section-template--22624145670473__ss_collection_12_Afy8Qy-settings {
+            max-width: 1200px;
+        }
+  
+        
+        .collection-body-template--22624145670473__ss_collection_12_Afy8Qy {
+            grid-template-areas:
+                "images"
+                "collections";
+        }
+
+        
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy {
+            transition: all 0.25s ease 0s;
+            background-color: #fbf9f4;
+            border: 2px solid #121212;
+        }
+
+        .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy:hover {
+            transition: all 0.25s ease 0s;
+            background-color: #121212;
+            border: 2px solid #121212;
+        }
+ 
+        
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy {
+            transition: all 0.25s ease 0s;
+            background-color: #fbf9f4;
+        }
+
+        .collection-button-template--22624145670473__ss_collection_12_Afy8Qy:hover {
+            transition: all 0.25s ease 0s;
+            background-color: #121212;
+        }
+   
+        
+        .collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy {
+            aspect-ratio: 9.6/11;
+        }
+
+        
+        .collection-hotspot-image_nxRDqk {
+            left: 60%;
+            top: 40%;
+            transform: translate(-60%, -40%);
+        }
+
+        .collection-hotspot-image_nxRDqk .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+            transform: translate(0, 0);
+        }
+        
+        
+        .collection-hotspot-image_NYTAFf {
+            left: 50%;
+            top: 62%;
+            transform: translate(-50%, -62%);
+        }
+
+        .collection-hotspot-image_NYTAFf .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+            transform: translate(0, 0);
+        }
+
+        
+        .collection-hotspot-image_VGeFig {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .collection-hotspot-image_VGeFig .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+            transform: translate(0, 0);
+        }
+
+        .collection-collection-collection_pUnEbM {
+            background-color: #fae09a;
+        }
+  
+        
+        .collection-collection-collection_LmRaEz {
+            background-color: #c9d5c9;
+        }
+ 
+        
+        .collection-slider-template--22624145670473__ss_collection_12_Afy8Qy.preview .swiper-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .collection-slider-template--22624145670473__ss_collection_12_Afy8Qy.preview .collection-slide-template--22624145670473__ss_collection_12_Afy8Qy {
+            width: 100%;
+        }
+
+        .collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy {
+            display: flex !important;
+        }
+  
+        
+
+        @media(min-width: 1024px) {
+            .section-template--22624145670473__ss_collection_12_Afy8Qy-settings {
+                padding: 0 5rem;
+                padding-top: 36px;
+                padding-bottom: 36px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+
+            .collection-body-template--22624145670473__ss_collection_12_Afy8Qy {
+                gap: 12px;
+            }
+
+            .collection-slider-wrapper-template--22624145670473__ss_collection_12_Afy8Qy {
+                display: block;
+            }
+
+            .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy {
+                height: 26px;
+                width: 26px;
+            }
+
+            .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy:hover {
+                background-color: transparent;
+            }
+
+            .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy:hover::after {
+                transition: opacity 0.25s linear;
+                opacity: 0;
+            }
+
+            .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+                align-items: start;
+                width: 180px;
+                padding: 14px 14px;
+            }
+
+            .collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy:hover .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+                display: flex;
+                -webkit-animation: opacitytemplate22624145670473__ss_collection_12_Afy8Qy 0.5s linear;
+                animation: opacitytemplate22624145670473__ss_collection_12_Afy8Qy 0.5s linear;
+            }
+
+            .collection-hotspot-text-template--22624145670473__ss_collection_12_Afy8Qy {
+                text-align: left;
+                font-size: 14px;
+            }
+
+            .collection-hotspot-title-template--22624145670473__ss_collection_12_Afy8Qy {
+                margin-top: 0px;
+                font-size: 20px;
+                text-align: left;
+            }
+
+            .collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy {
+                margin-top: 24px;
+                padding: 8px 24px;
+                font-size: 14px;
+            }
+
+            .collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy .swiper-pagination-bullet {
+                width: 8px !important;
+                height: 8px !important;
+            }
+
+            .collection-collections-template--22624145670473__ss_collection_12_Afy8Qy {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 12px;
+            }
+
+            .collection-collection-template--22624145670473__ss_collection_12_Afy8Qy {
+                padding: 32px 20px;
+            }
+
+            .collection-text-template--22624145670473__ss_collection_12_Afy8Qy {
+                text-align: left;
+            }
+
+            .collection-text-template--22624145670473__ss_collection_12_Afy8Qy * {
+                font-size: 14px;
+            }
+
+            .collection-title-template--22624145670473__ss_collection_12_Afy8Qy {
+                margin-top: 4px;
+                font-size: 24px;
+                text-align: left;
+            }
+
+            .collection-button-template--22624145670473__ss_collection_12_Afy8Qy {
+                margin-top: px;
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        
+            
+            .collection-body-template--22624145670473__ss_collection_12_Afy8Qy {
+                grid-template-areas: "images collections";
+                grid-template-columns: calc(70% - 6.0px) calc(30% - 6.0px);
+            }
+        
+            
+            .collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy {
+                display: flex !important;
+            }
+        
+            
+            .collection-collection-bottom-template--22624145670473__ss_collection_12_Afy8Qy {
+                flex-direction: row;
+            }
+       
+            
+            .collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy {
+                aspect-ratio: 9.6/11;
+            }
+      
+            
+            .collection-hotspot-image_nxRDqk {
+                left: 60%;
+                top: 40%;
+                transform: translate(-60%, -40%);
+            }
+
+            .collection-hotspot-image_nxRDqk .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+                transform: translate(0, 0);
+            }
+       
+            
+            .collection-hotspot-image_NYTAFf {
+                left: 50%;
+                top: 62%;
+                transform: translate(-50%, -62%);
+            }
+
+            .collection-hotspot-image_NYTAFf .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+                transform: translate(0, 0);
+            }
+        
+            
+            .collection-hotspot-image_VGeFig {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .collection-hotspot-image_VGeFig .collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy {
+                transform: translate(0, 0);
+            }
+       
+            
+            .collection-slider-template--22624145670473__ss_collection_12_Afy8Qy.preview .collection-slide-template--22624145670473__ss_collection_12_Afy8Qy {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div class="section-template--22624145670473__ss_collection_12_Afy8Qy collection-template--22624145670473__ss_collection_12_Afy8Qy" id="collection-template--22624145670473__ss_collection_12_Afy8Qy">
+        <div class="section-template--22624145670473__ss_collection_12_Afy8Qy-settings">
+            <div class="collection-body-template--22624145670473__ss_collection_12_Afy8Qy">
+                <div class="collection-slider-wrapper-template--22624145670473__ss_collection_12_Afy8Qy">
+                    <div
+                        class="collection-slider-template--22624145670473__ss_collection_12_Afy8Qy swiper">
+                        <div class="swiper-wrapper" id="swiper-wrapper-1d918b1835d67e9b">
+
+
+                            <div class="collection-slide-template--22624145670473__ss_collection_12_Afy8Qy swiper-slide"
+                                role="group" aria-label="1 / 3" style="width: 644px;">
+                                <div class="collection-image-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                    <img src="//section.store/cdn/shop/products/4_87ce220e-8931-4a1a-91fa-5337c072430c.png?v=1708704400"
+                                        alt="SUNSET THROW - NAMING THIS LATER - NTL">
+
+                                </div>
+                                <div
+                                    class="collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy collection-hotspot-image_nxRDqk">
+                                    <div
+                                        class="collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                        <p
+                                            class="collection-hotspot-text-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            NTL</p>
+
+
+                                        <p
+                                            class="collection-hotspot-title-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            Sunset Orange blanket</p>
+
+
+                                        <a href="/products/sunset-throw"
+                                            class="collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            <p
+                                                class="collection-button-inner-template--22624145670473__ss_collection_12_Afy8Qy">
+                                                Shop
+
+                                            </p>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="collection-slide-template--22624145670473__ss_collection_12_Afy8Qy swiper-slide">
+                                <div class="collection-image-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                    <img src="//section.store/cdn/shop/products/3_2a699509-9839-48c3-b4c4-f9a1c03d5341.png?v=1708704443"
+                                        alt="DAISY THROW">
+
+                                </div>
+                                <div
+                                    class="collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy collection-hotspot-image_NYTAFf">
+                                    <div
+                                        class="collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                        <p
+                                            class="collection-hotspot-text-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            NTL</p>
+
+
+                                        <p
+                                            class="collection-hotspot-title-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            Daisy blanket</p>
+
+
+                                        <a href="/products/daisy-throw"
+                                            class="collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            <p
+                                                class="collection-button-inner-template--22624145670473__ss_collection_12_Afy8Qy">
+                                                Shop
+
+                                            </p>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="collection-slide-template--22624145670473__ss_collection_12_Afy8Qy swiper-slide">
+                                <div class="collection-image-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                    <img src="//section.store/cdn/shop/products/6_257d9191-fee7-4def-bdb1-47c220e1c8c2.png?v=1708704422"
+                                        alt="">
+
+                                </div>
+                                <div
+                                    class="collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy collection-hotspot-image_VGeFig">
+                                    <div
+                                        class="collection-hotspot-content-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                        <p
+                                            class="collection-hotspot-text-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            NTL</p>
+
+
+                                        <p
+                                            class="collection-hotspot-title-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            Jade blanket</p>
+
+
+                                        <a href="/products/jade-throw"
+                                            class="collection-hotspot-button-template--22624145670473__ss_collection_12_Afy8Qy">
+                                            <p
+                                                class="collection-button-inner-template--22624145670473__ss_collection_12_Afy8Qy">
+                                                Shop
+
+                                            </p>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                    <div class="collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy swiper-pagination"></div>
+                </div>
+
+                <div class="collection-collections-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                    <div
+                        class="collection-collection-template--22624145670473__ss_collection_12_Afy8Qy collection-collection-collection_pUnEbM">
+                        <div class="collection-collection-top-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                            <div class="collection-text-template--22624145670473__ss_collection_12_Afy8Qy">
+                                <p>just in</p>
+                            </div>
+
+
+                            <h3 class="collection-title-template--22624145670473__ss_collection_12_Afy8Qy">New
+                                Collection</h3>
+
+                        </div>
+                        <div class="collection-collection-bottom-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                            <div class="collection-button-template--22624145670473__ss_collection_12_Afy8Qy">
+                                <p class="collection-button-inner-template--22624145670473__ss_collection_12_Afy8Qy">
+                                    Shop
+
+                                </p>
+                            </div>
+
+                            <div class="collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                <img src="//section.store/cdn/shop/files/9_768db333-8dc8-4f35-8415-cbe235e8e6c3.webp?v=1732023129"
+                                    alt="">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="collection-collection-template--22624145670473__ss_collection_12_Afy8Qy collection-collection-collection_LmRaEz" style="background: red;">
+                        <div class="collection-collection-top-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                            <div class="collection-text-template--22624145670473__ss_collection_12_Afy8Qy">
+                                <p>most wanted</p>
+                            </div>
+
+
+                            <h3 class="collection-title-template--22624145670473__ss_collection_12_Afy8Qy">
+                                Best Sellers
+                            </h3>
+
+                        </div>
+                        <div class="collection-collection-bottom-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                            <div class="collection-button-template--22624145670473__ss_collection_12_Afy8Qy">
+                                <p class="collection-button-inner-template--22624145670473__ss_collection_12_Afy8Qy">
+                                    Shop
+                                </p>
+                            </div>
+
+                            <div class="collection-collection-image-template--22624145670473__ss_collection_12_Afy8Qy">
+
+                                <img src="//section.store/cdn/shop/files/7_abbafce6-77cd-498e-9455-fbf0871673fe.webp?v=1732022808"
+                                    alt="">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadSwiper(callback) {
+            if (window.Swiper) {
+                callback();
+            } else {
+                const script = document.createElement('script');
+                script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+                script.onload = callback;
+                document.head.appendChild(script);
+            }
+        }
+
+        function initCollection12() {
+
+            const pagination = document.querySelector(`.collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy`);
+            const hotspots = document.querySelectorAll(`.collection-hotspot-template--22624145670473__ss_collection_12_Afy8Qy`);
+
+            document.querySelector(`.collection-slider-template--22624145670473__ss_collection_12_Afy8Qy`).classList.remove('preview');
+            const slider = new Swiper(`.collection-slider-template--22624145670473__ss_collection_12_Afy8Qy`, {
+                speed: 300,
+                slidesPerView: 1,
+
+                autoplay: {
+                    delay: 8000,
+                },
+
+                pagination: {
+                    el: `.collection-pagination-template--22624145670473__ss_collection_12_Afy8Qy`,
+                    type: "bullets",
+                    clickable: true
+                },
+                on: {
+                    slideChange: () => {
+                        if (pagination) {
+                            pagination.style.zIndex = "2";
+                        }
+
+                        hotspots.forEach(hotspot => hotspot.classList.remove('active'));
+                    }
+                }
+            });
+
+            if (hotspots) {
+                hotspots.forEach(hotspot => {
+                    hotspot.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        hotspots.forEach(e => {
+                            e.classList.remove('active')
+                        })
+                        if (hotspot) {
+                            hotspot.classList.add('active')
+                        }
+
+                        if (pagination) {
+                            pagination.style.zIndex = "0";
+                        }
+                    })
+                })
+
+                document.addEventListener('click', () => {
+                    hotspots.forEach(hotspot => hotspot.classList.remove('active'));
+                    if (pagination) {
+                        pagination.style.zIndex = "2";
+                    }
+                });
+            }
+        }
+
+        function initializeAllCollection12Sections() {
+            loadSwiper(() => initCollection12());
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeAllCollection12Sections);
+        } else {
+            initializeAllCollection12Sections();
+        }
+
+    </script>
+</body>
+</html>

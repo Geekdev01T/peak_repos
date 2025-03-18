@@ -1,0 +1,975 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign sub_heading = section.settings.sub_heading %}
+{% assign sub_heading_size = section.settings.sub_heading_size %}
+{% assign sub_heading_size_mobile = section.settings.sub_heading_size_mobile %}
+{% assign sub_heading_weight = section.settings.sub_heading_weight %}
+{% assign sub_heading_color = section.settings.sub_heading_color %}
+
+{% assign heading = section.settings.heading %}
+{% assign heading_size = section.settings.heading_size %}
+{% assign heading_size_mobile = section.settings.heading_size_mobile %}
+{% assign heading_weight = section.settings.heading_weight %}
+{% assign heading_color = section.settings.heading_color %}
+
+{% assign desc_text = section.settings.desc_text %}
+{% assign desc_size = section.settings.desc_size %}
+{% assign desc_size_mobile = section.settings.desc_size_mobile %}
+{% assign desc_color = section.settings.desc_color %}
+
+{% assign card_heading_size = section.settings.card_heading_size %}
+{% assign card_heading_size_mobile = section.settings.card_heading_size_mobile %}
+{% assign card_heading_weight = section.settings.card_heading_weight %}
+{% assign card_heading_color = section.settings.card_heading_color %}
+{% assign card_desc_size = section.settings.card_desc_size %}
+{% assign card_desc_size_mobile = section.settings.card_desc_size_mobile %}
+{% assign card_desc_color = section.settings.card_desc_color %}
+{% assign card_align = section.settings.card_align %}
+{% assign card_radius = section.settings.card_radius %}
+{% assign card_border_w = section.settings.card_border_w %}
+{% assign card_border_color = section.settings.card_border_color %}
+{% assign card_btn_question = section.settings.card_btn_question %}
+
+{% assign btn_text = section.settings.btn_text %}
+{% assign btn_link = section.settings.btn_link %}
+{% assign btn_size = section.settings.btn_size %}
+{% assign btn_weight = section.settings.btn_weight %}
+{% assign btn_radius = section.settings.btn_radius %}
+{% assign btn_card_border_w = section.settings.btn_card_border_w %}
+{% assign btn_border_w = section.settings.btn_border_w %}
+{% assign btn_color = section.settings.btn_color %}
+{% assign btn_bg = section.settings.btn_bg %}
+{% assign btn_bg_hover = section.settings.btn_bg_hover %}
+{% assign btn_border_color = section.settings.btn_border_color %}
+{% assign card_bg = section.settings.card_bg %}
+{% assign btn_card_border_color = section.settings.btn_card_border_color %}
+{% assign btn_card_border_color_hover = section.settings.btn_card_border_color_hover %}
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign section_align = section.settings.section_align %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_bg = section.settings.section_bg %}
+{% assign section_border_color = section.settings.section_border_color %}
+
+<style>
+  .section-{{section.id}} {
+      background-color:{{section_bg}};
+      margin-top: {{section_mt}}px  !important;
+      margin-bottom: {{section_mb}}px  !important;
+      border: {{section_border_w}}px solid {{section_border_color}};
+      {% if full_border %} border-radius: {{section_radius}}px; {% endif %}
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      margin: 0 auto;
+      overflow: hidden;
+  }
+
+  .section-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 45px;
+      padding-bottom: 45px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .feature-body-{{section.id}} {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+  }
+
+  .feature-items-{{section.id}} {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+  }
+
+  .feature-item-{{section.id}} {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 24px;
+      border-radius: {{card_radius}}px;
+      overflow: hidden;
+      transition: all 0.25s ease 0s;
+      text-decoration: none;
+      position: relative;
+      z-index: 0
+  }
+
+  .feature-item-{{section.id}}:hover .feature-item-image-{{section.id}} {
+      opacity: 1;
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-item-top-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      gap: 15px;
+      z-index: 2;
+  }
+
+  .feature-item-title-{{section.id}} {
+      margin: 0;
+      width: 100%;
+      font-size: {{card_heading_size_mobile}}px;
+      color: {{card_heading_color}};
+      line-height: 130%;
+      text-transform: unset;
+      text-decoration: none;
+      word-break: break-word;
+      font-weight: {{card_heading_weight}};
+  }
+
+  .feature-item-top-{{section.id}} svg {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+  }
+
+  .feature-item-top-{{section.id}} svg path {
+      fill: #ffffff;
+  }
+
+  .feature-item-text-{{section.id}} {
+      margin-top: 32px;
+  }
+
+  .feature-item-text-{{section.id}} * {
+      margin: 0;
+      font-size: {{card_desc_size_mobile}}px;
+      color: {{card_desc_color}};
+      text-align: {{card_align}};
+      line-height: 150%;
+      text-transform: unset;
+      text-decoration: none;
+      word-break: break-word;
+  }
+
+  .feature-item-button-{{section.id}} {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      /* width: 100%; */
+      margin-top: 40px;
+      font-size: {{btn_size}}px;
+      color: {{btn_color}};
+      line-height: 100%;
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: {{btn_radius}}px;
+      transition: all 0.25s ease 0s;
+      background-color: transparent;
+      border: {{btn_border_w}}px solid {{btn_border_color}};
+      cursor: pointer;
+      font-weight: {{btn_weight}};
+  }
+
+  .feature-item-button-inner-{{section.id}} {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .feature-item-button-{{section.id}}:hover {
+      color: {{btn_color}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-item-button-{{section.id}} svg {
+      width: 14px;
+      height: 14px;
+  }
+
+  .feature-item-button-{{section.id}} svg path {
+      fill: {{btn_color}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-item-button-{{section.id}}:hover svg path {
+      fill: {{btn_color}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-item-image-{{section.id}} {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-item-image-{{section.id}}:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-item-image-{{section.id}} img,
+  .feature-item-image-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-item-image-{{section.id}} svg {
+      background-color: #AFAFAF;
+  }
+
+  .feature-content-{{section.id}} {
+      order: 1;
+  }
+
+  .feature-items-{{section.id}} {
+      order: 2;
+  }
+
+  .feature-item-button-{{section.id}} {
+      background-color: {{btn_bg}};
+  }
+
+  .feature-item-button-{{section.id}}:hover {
+      transition: all 0.25s ease 0s;
+      background-color: {{btn_bg_hover}};
+  }
+
+  .feature-subheading-sub_heading * {
+      margin: 0;
+      font-size: {{sub_heading_size_mobile}}px;
+      color: {{sub_heading_color}};
+      line-height: 130%;
+      text-align: {{section_align}};
+      text-transform: unset;
+      text-decoration: none;
+      word-break: break-word;
+      font-weight: {{sub_heading_weight}};
+  }
+
+  .feature-heading-heading {
+      margin-top: 12px;
+  }
+
+  .feature-heading-heading * {
+      margin: 0;
+      font-size: {{heading_size_mobile}}px;
+      color: {{heading_color}};
+      line-height: 130%;
+      text-align: {{section_align}};
+      text-transform: unset;
+      text-decoration: none;
+      word-break: break-word;
+      font-weight: {{heading_weight}};
+  }
+
+  .feature-text-text {
+      margin-top: 28px;
+  }
+
+  .feature-text-text * {
+      margin: 0;
+      font-size: {{desc_size_mobile}}px;
+      color: {{desc_color}};
+      line-height: 150%;
+      text-align: {{section_align}};
+      text-transform: unset;
+      text-decoration: none;
+      word-break: break-word;
+  }
+
+  .feature-item-feature:hover {
+      border: none;
+      border-top: {{card_border_w}}px solid {{card_border_color}} !important;
+  }
+
+
+  .feature-item-feature_btn {
+      background-color: {{card_bg}};
+      border: {{btn_card_border_w}}px solid {{btn_card_border_color}};
+  }
+
+  .feature-item-feature_btn:hover {
+      border: {{btn_card_border_w}}px solid {{btn_card_border_color_hover}};
+  }
+
+  .feature-item-title-feature {
+      text-align: {{card_align}};
+  }
+
+   @media(min-width: 1024px) {
+
+      .section-{-settings {
+          padding: 0 5rem;
+          padding-top: 50px;
+          padding-bottom: 50px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .feature-body-{{section.id}} {
+          gap: 100px;
+          align-items: start;
+      }
+
+      .feature-items-{{section.id}} {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 4px;
+      }
+
+      .feature-item-{{section.id}} {
+          padding: 40px 40px;
+      }
+
+      .feature-item-title-{{section.id}} {
+          font-size: {{card_heading_size}}px;
+      }
+
+      .feature-item-top-{{section.id}} svg {
+          width: 30px;
+          height: 30px;
+      }
+
+      .feature-item-text-{{section.id}} {
+          margin-top: 32px;
+      }
+
+      .feature-item-text-{{section.id}} * {
+          font-size: {{card_desc_size}}px;
+      }
+
+      .feature-item-button-{{section.id}} {
+          margin-top: 40px;
+          padding: 14px 24px;
+          font-size: {{btn_size}}px;
+      }
+
+
+      .feature-content-{{section.id}} {
+          order: 1;
+      }
+
+      .feature-items-{{section.id}} {
+          order: 2;
+      }
+
+      .feature-body-{{section.id}} {
+          grid-template-columns: calc(40% - 50px) calc(60% - 50px);
+      }
+
+      .feature-subheading-sub_heading * {
+          font-size: {{sub_heading_size}}px;
+      }
+
+      .feature-heading-heading {
+          margin-top: 8px;
+      }
+
+      .feature-heading-heading * {
+          font-size: {{heading_size}}px;
+      }
+
+      .feature-text-text {
+          margin-top: 40px;
+      }
+
+      .feature-text-text * {
+          font-size: {{desc_size}}px;
+      }
+  }
+</style>
+
+<div class="section-{{section.id}} feature-{{section.id}}">
+  <div class="section-{{section.id}}-settings">
+    <div class="feature-body-{{section.id}}">
+      <div class="feature-content-{{section.id}}">
+        <div class="feature-subheading-sub_heading">
+          <p>{{ sub_heading }}</p>
+        </div>
+
+        <div class="feature-heading-heading">
+          <p>{{ heading }}</p>
+        </div>
+
+        <div class="feature-text-text">
+          {{ desc_text }}
+        </div>
+      </div>
+      <div class="feature-items-{{section.id}}">
+        {% for block in section.blocks %}
+          <a
+            href="{{ block.settings.link }}"
+            class="feature-item-{{section.id}} feature-item-feature"
+            style="background-color: {{ block.settings.card_bg }}; {% if block.settings.full_card_border %} border: {{ block.settings.border_w }}px solid {{ block.settings.border_card_color }};{% endif %}"
+          >
+            <div class="feature-item-top-{{section.id}}">
+              <p class="feature-item-title-{{section.id}} feature-item-title-feature">{{ block.settings.title }}</p>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 32 32"
+                fill="none"
+                preserveAspectRatio="xMidYMid meet"
+                aria-hidden="true"
+                role="img"
+              >
+                <mask id="mask0_2623_6211" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32"
+                    height="32">
+                    <rect width="32" height="32" fill="#D9D9D9"></rect>
+                </mask>
+                <g mask="url(#mask0_2623_6211)">
+                    <path
+                        d="M21.5667 17.3334H5.33333V14.6667H21.5667L14.1 7.20004L16 5.33337L26.6667 16L16 26.6667L14.1 24.8L21.5667 17.3334Z"
+                        fill="white"></path>
+                </g>
+              </svg>
+            </div>
+
+            <div class="feature-item-text-{{section.id}}">
+              {{ block.settings.desc }}
+            </div>
+
+            {% if block.settings.image != blank %}
+              <div class="feature-item-image-{{section.id}}">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
+              </div>
+            {% else %}
+              <div class="feature-item-image-{{section.id}}">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+              </div>
+            {% endif %}
+          </a>
+        {% endfor %}
+        <div class="feature-item-{{section.id}} feature-item-feature_btn">
+          <div class="feature-item-top-{{section.id}}">
+            <p class="feature-item-title-{{section.id}} feature-item-title-feature">
+              {{ card_btn_question }}
+            </p>
+          </div>
+
+          {% if btn_text != blank %}
+            <a href="{{ btn_link }}" class="feature-item-button-{{section.id}}">
+              <p class="feature-item-button-inner-{{section.id}}">{{ btn_text }}</p>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section Features Card",
+    "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+        "type":"header",
+        "content":"Sub-Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Text Content",
+      "default": "New arrivals"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Font Size",
+      "default": 13,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 13,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Color",
+      "default":"#b4b4b2"
+    },
+    {
+        "type":"header",
+        "content":"Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text Content",
+      "default": "Vintage collection"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Font Size",
+      "default": 36,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 26,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+        "type":"header",
+        "content":"Description"
+    },
+    {
+      "type": "richtext",
+      "id": "desc_text",
+      "label": "Text Content",
+      "default": "<p>Crafted from a durable aluminum frame and genuine leather or wood, it enhances any workspace. </p>"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Font Size",
+      "default": 15,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+        "type":"header",
+        "content":"Heading Card"
+    },
+     {
+      "type": "range",
+      "id": "card_heading_size",
+      "label": "Font Size",
+      "default": 24,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_heading_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+        "type":"header",
+        "content":"Description Card"
+    },
+     {
+      "type": "range",
+      "id": "card_desc_size",
+      "label": "Font Size",
+      "default": 15,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_desc_size_mobile",
+      "label": "Mobile Font Size",
+      "default": 14,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "card_desc_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+        "type":"header",
+        "content":"Card"
+    },
+    {
+      "type": "text_alignment",
+      "id": "card_align",
+      "label": "Text Alignment",
+      "default":"left"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Border Radius",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_border_w",
+      "label": "Hover Border Width",
+      "default": 1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Hover Border Color",
+      "default": "#ffca43"
+    },
+    {
+       "type": "header",
+       "content": "Card Button"
+    },
+    {
+      "type": "text",
+      "id": "card_btn_question",
+      "label": "Question",
+      "default":"Do you need advice?"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default":" Get help"
+    },
+    {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Link"
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "label": "Font Size",
+      "default": 13,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_weight",
+      "label": "Font Weight",
+      "default": 700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Border Radius",
+      "default": 2,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_card_border_w",
+      "label": "Card Border Width",
+      "default": 1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_border_w",
+      "label": "Button Border Width",
+      "default": 0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color",
+      "default":"#050400"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Button Background Color",
+      "default":"#ffca43"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_hover",
+      "label": "Button Hover Background Color",
+      "default":"#ffdf4c"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Button Border Color",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background Color",
+      "default":"#050400"
+    },
+    {
+      "type": "color",
+      "id": "btn_card_border_color",
+      "label": "Card Border Color",
+      "default":"#373633"
+    },
+    {
+      "type": "color",
+      "id": "btn_card_border_color_hover",
+      "label": "Card Hover Border Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enabled Full Width",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "text_alignment",
+      "id": "section_align",
+      "label": "Text Alignment",
+      "default":"left"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_border",
+      "label": "Enabled Border",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background Color",
+      "default":"#050400"
+    },
+    {
+      "type": "color",
+      "id": "section_border_color",
+      "label": "Border Color",
+      "default":"#fff"
+    }
+],
+    "blocks": [
+      {
+        "type": "card",
+        "name":"Card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "desc",
+            "label": "Description"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "checkbox",
+            "id": "full_card_border",
+            "label": "Enabled Border",
+            "default":false
+          },
+          {
+            "type": "range",
+            "id": "border_w",
+            "label": "Border Width",
+            "default":0,
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "border_card_color",
+            "label": "Border Color",
+            "default":"#fff"
+          },
+          {
+            "type": "color",
+            "id": "card_bg",
+            "label": "Background Color",
+            "default":"#171612"
+          },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Features Card"
+      }
+    ]
+  }
+{% endschema %}

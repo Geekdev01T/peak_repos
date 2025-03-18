@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Banniere Slides</title>
+</head>
+<style>
+    
+</style>
+
+<body>
+    <section class="ban-hero-section">
+        <div class="swiper ban-hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero1-2.5x-min.webp?v=1686901151&width=1500"
+                        class="ban-slide-image" alt="Cozy clothing">
+                    <div class="ban-content-wrapper">
+                        <div class="ban-slide-content">
+                            <h1 class="ban-slide-title">Apparel Crafted to Match Your <br> Rhythm of Life</h1>
+                            <p class="ban-slide-subtitle">Unearth the beauty of the ordinary and elevate your daily routine.
+                            </p>
+                            <a href="#" class="ban-cta-button">
+                                Shop All
+                                <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero2-2.5x-min.webp?v=1686901154&width=1500"
+                        class="ban-slide-image" alt="Cozy clothing">
+                    <div class="ban-content-wrapper">
+                        <div class="ban-slide-content">
+                            <h1 class="ban-slide-title">Celebrate Individuality with <br> Unique Outfits </h1>
+                            <p class="ban-slide-subtitle">Make a statement and find your edge with our sport and casual wear.</p>
+                            <a href="#" class="ban-cta-button">
+                                Shop All
+                                <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero3-2.5x-min.webp?v=1686901156&width=1500"
+                        class="ban-slide-image" alt="Cozy clothing">
+                    <div class="ban-content-wrapper">
+                        <div class="ban-slide-content">
+                            <h1 class="ban-slide-title">Live The Moment In Our Cozy <br> Clothing Range</h1>
+                            <p class="ban-slide-subtitle">Experience the superior fit and exceptional quality of our apparel.</p>
+                            <a href="#" class="ban-cta-button">
+                                Shop All
+                                <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://berlin-lifestyle.myshopify.com/cdn/shop/files/Rectangle221.jpg?v=1690368690&width=1500"
+                        class="ban-slide-image" alt="Cozy clothing">
+                    <div class="ban-content-wrapper">
+                        <div class="ban-slide-content">
+                            <h1 class="ban-slide-title">Embrace Simplicity With Timeless <br> Casual Wear</h1>
+                            <p class="ban-slide-subtitle">Set the pace and turn heads with our cutting-edge ensembles that bring chic and comfort.</p>
+                            <a href="#" class="ban-cta-button">
+                                Shop All
+                                <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional slides here -->
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-button nav-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                </button>
+                <button class="nav-button nav-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.ban-hero-slider', {
+            slidesPerView: 1,
+            speed: 1000,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                prevEl: '.nav-prev',
+                nextEl: '.nav-next',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+    </script>
+</body>
+
+</html>
