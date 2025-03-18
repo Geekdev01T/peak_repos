@@ -1,0 +1,162 @@
+{% schema %}
+{
+    "name": "Footer Section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "footer_heading",
+            "label": "Footer Heading",
+            "default": "Section Store"
+        },
+        {
+            "type": "image_picker",
+            "id": "footer_logo",
+            "label": "Footer Logo"
+        },
+        {
+            "type": "text",
+            "id": "newsletter_heading",
+            "label": "Newsletter Heading",
+            "default": "Newsletter Sign-Up"
+        },
+        {
+            "type": "url",
+            "id": "instagram_link",
+            "label": "Instagram Link",
+            "default": "#"
+        },
+        {
+            "type": "url",
+            "id": "site_credits_link",
+            "label": "Site Credits Link",
+            "default": "#"
+        },
+        {
+            "type": "url",
+            "id": "shipping_returns_link",
+            "label": "Shipping and Returns Link",
+            "default": "#"
+        },
+        {
+            "type": "url",
+            "id": "customer_support_link",
+            "label": "Customer Support Link",
+            "default": "/pages/contact-form-2"
+        }
+    ]
+}
+{% endschema %}
+
+{% style %}
+/* Add any additional CSS modifications here */
+{% endstyle %}
+
+{% block %}
+<div class="section-template--22748146794825__ss_footer_11_8TUqgV footer-template--22748146794825__ss_footer_11_8TUqgV">
+    <div class="section-template--22748146794825__ss_footer_11_8TUqgV-settings">
+        <div class="footer-top-template--22748146794825__ss_footer_11_8TUqgV">
+            <div class="footer-top-row-template--22748146794825__ss_footer_11_8TUqgV footer-top-row-desktop-template--22748146794825__ss_footer_11_8TUqgV">
+                <div class="footer-business-info-template--22748146794825__ss_footer_11_8TUqgV footer-business-info-business_information_HQ37tU">
+                    <div class="footer-business-info-content-template--22748146794825__ss_footer_11_8TUqgV">
+                        <h3 class="footer-business-name-business_information_HQ37tU footer-business-name-template--22748146794825__ss_footer_11_8TUqgV">
+                            {{ settings.footer_heading }}
+                        </h3>
+                        <div class="footer-business-icon-business_information_HQ37tU">
+                            <img src="{{ settings.footer_logo | img_url: '100x' }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-menu-wrapper-template--22748146794825__ss_footer_11_8TUqgV">
+                    <div class="footer-menu-body-template--22748146794825__ss_footer_11_8TUqgV">
+                        <p class="footer-menu-heading-template--22748146794825__ss_footer_11_8TUqgV">Shop</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-top-row-template--22748146794825__ss_footer_11_8TUqgV footer-top-row-mobile-template--22748146794825__ss_footer_11_8TUqgV">
+                <div class="footer-business-info-template--22748146794825__ss_footer_11_8TUqgV footer-business-info-business_information_HQ37tU">
+                    <div class="footer-business-info-content-template--22748146794825__ss_footer_11_8TUqgV">
+                        <h3 class="footer-business-name-business_information_HQ37tU footer-business-name-template--22748146794825__ss_footer_11_8TUqgV">
+                            {{ settings.footer_heading }}
+                        </h3>
+                        <div class="footer-business-icon-business_information_HQ37tU">
+                            <img src="{{ settings.footer_logo | img_url: '100x' }}" alt="">
+                        </div>
+                    </div>
+                    <div class="footer-business-text-body-template--22748146794825__ss_footer_11_8TUqgV">
+                        <div class="footer-business-text-business_information_HQ37tU">
+                            <p>You have <a href="{{ settings.customer_support_link }}" title="Contact form #2">support team</a>. Your satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-menu-wrapper-template--22748146794825__ss_footer_11_8TUqgV">
+                    <div class="footer-menu-body-template--22748146794825__ss_footer_11_8TUqgV">
+                        <p class="footer-menu-heading-template--22748146794825__ss_footer_11_8TUqgV">Shop</p>
+                        <ul class="footer-menu-list-template--22748146794825__ss_footer_11_8TUqgV">
+                            <li class="footer-menu-item-template--22748146794825__ss_footer_11_8TUqgV">
+                                <a href="#" class="footer-menu-link-template--22748146794825__ss_footer_11_8TUqgV">Gifts</a>
+                            </li>
+                            <li class="footer-menu-item-template--22748146794825__ss_footer_11_8TUqgV">
+                                <a href="#" class="footer-menu-link-template--22748146794825__ss_footer_11_8TUqgV">Categories</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter-template--22748146794825__ss_footer_11_8TUqgV">
+                <form method="post" action="" id="contact_form" class="footer-newsletter-form" data-pers value="customer">
+                    <input type="hidden" name="utf8" value="✓">
+                    <div class="footer-newsletter-row-template--22748146794825__ss_footer_11_8TUqgV">
+                        <div class="footer-newsletter-heading-template--22748146794825__ss_footer_11_8TUqgV">
+                            <h2>{{ settings.newsletter_heading }}</h2>
+                        </div>
+                        <input id="NewsletterForm--template--22748146794825__ss_footer_11_8TUqgV" type="email" name="contact[email]" class="footer-newsletter-input-template--22748146794825__ss_footer_11_8TUqgV" value="" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Enter your email" required="">
+                        <button type="submit" class="footer-newsletter-submit-template--22748146794825__ss_footer_11_8TUqgV" name="commit">
+                            Subscribe
+                        </button>
+                    </div>
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                </form>
+            </div>
+            <div class="footer-socials-body-template--22748146794825__ss_footer_11_8TUqgV">
+                <ul class="footer-socials-list-template--22748146794825__ss_footer_11_8TUqgV">
+                    <li class="footer-socials-item-template--22748146794825__ss_footer_11_8TUqgV">
+                        <a href="{{ settings.instagram_link }}" class="footer-socials-link-template--22748146794825__ss_footer_11_8TUqgV">
+                            <div class="footer-social-box-template--22748146794825__ss_footer_11_8TUqgV"></div>
+                            Instagram
+                        </a>
+                    </li>
+                </ul>
+                <a href="{{ settings.site_credits_link }}" class="footer-social-button-template--22748146794825__ss_footer_11_8TUqgV">
+                    Site Credits
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom-template--22748146794825__ss_footer_11_8TUqgV">
+            <a href="https://section.store" class="footer-logo-template--22748146794825__ss_footer_11_8TUqgV">
+                <div class="footer-logo-text-template--22748146794825__ss_footer_11_8TUqgV">
+                    <h2>{{ settings.footer_heading }}</h2>
+                </div>
+            </a>
+            <ul class="footer-privacy-menu-list-template--22748146794825__ss_footer_11_8TUqgV">
+                <li class="footer-privacy-menu-item-template--22748146794825__ss_footer_11_8TUqgV">
+                    <a href="{{ settings.shipping_returns_link }}" class="footer-privacy-menu-link-template--22748146794825__ss_footer_11_8TUqgV">Shipping and Returns</a>
+                </li>
+            </ul>
+            <div class="footer-payment-body-template--22748146794825__ss_footer_11_8TUqgV">
+                <h3 class="footer-payment-heading-template--22748146794825__ss_footer_11_8TUqgV">Section Store accepts:</h3>
+                <ul class="footer-payments-template--22748146794825__ss_footer_11_8TUqgV">
+                    <li class="footer-payment-template--22748146794825__ss_footer_11_8TUqgV">
+                        logo1
+                    </li>
+                    <li class="footer-payment-template--22748146794825__ss_footer_11_8TUqgV">
+                        logo2
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copy-text-template--22748146794825__ss_footer_11_8TUqgV">
+                <p>Section Store: <a href="{{ settings.customer_support_link }}" title="Contact form #2">customer support</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

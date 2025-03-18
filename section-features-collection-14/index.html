@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <style>
+            .section-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                border-top: solid #da9dff 0px;
+                border-bottom: solid #da9dff 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                overflow: hidden;
+                background-color:#ffffff;
+            }
+    
+            .section-template--22736103145801__ss_featured_collection_14_PpxWXJ-settings {
+                margin: 0 auto;
+                padding-top: 27px;
+                padding-bottom: 27px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .featured-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                text-align: center;
+                margin-top: 8px;
+            }
+    
+            .featured-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                margin: 0;
+                font-size: 32px;
+                color: #121212;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .featured-sub-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                text-align: center;
+            }
+    
+            .featured-sub-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                margin: 0;
+                font-size: 18px;
+                color: #121212;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                word-break: break-word;
+                font-weight: 700;
+            }
+    
+            .featured-slider-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: relative !important;
+                margin-top: 0px !important;
+    
+                padding-top: calc(30px + 14px) !important;
+    
+                margin-left: -1.5rem !important;
+                margin-right: -1.5rem !important;
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+                padding-bottom: 50px !important;
+            }
+    
+            .featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                overflow: visible !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+                /* border: 2px solid;
+                border-radius: 12px;
+                background: red; */
+            }
+    
+    
+            .featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: relative;
+                height: 100%;
+            }
+    
+            .featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ img,
+            .featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border: 0px solid #121212;
+                border-radius: 0px;
+            }
+    
+            .featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ svg {
+                background-color: #AFAFAF;
+            }
+    
+            .featured-badge-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 4px 8px;
+                background-color: #da9dff;
+                border: 0px solid #121212;
+                border-radius: 4px;
+                margin: 0;
+                font-size: 12px;
+                color: #121212;
+                word-break: break-word;
+                line-height: 130%;
+                overflow: hidden;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                opacity: 0;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ.swiper-slide-active .featured-badge-template--22736103145801__ss_featured_collection_14_PpxWXJ,
+            .featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ.swiper-slide-active .featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ,
+            .featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ.swiper-slide-active .featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                opacity: 1;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+                max-width: fit-content;
+                margin: 0;
+                font-size: 14px;
+                color: #da9dff;
+                line-height: 100%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 14px 32px;
+                border-radius: 100px;
+                transition: all 0.25s ease 0s;
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+                font-weight: 700;
+            }
+    
+            .featured-button-mobile-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: relative;
+                top: unset;
+                left: unset;
+                transform: none;
+                display: block;
+                margin-top: 16px;
+            }
+    
+            .featured-button-desktop-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: absolute;
+                top: 95%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+            }
+    
+            .featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+    
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover {
+                color: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ svg {
+                width: 14px;
+                height: 14px;
+                border: none;
+                background-color: transparent;
+            }
+    
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ svg path {
+                fill: #da9dff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover svg path {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-product-content-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                margin: 0;
+                opacity: 0;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 14px;
+                color: #121212;
+                line-height: 150%;
+                text-transform: unset;
+                word-break: break-word;
+                transition: all 0.25s ease 0s;
+                font-weight: 700;
+            }
+    
+            .featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                opacity: 0;
+                margin-top: 6px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                justify-content: center;
+            }
+    
+            .featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                margin: 0;
+                text-align: center;
+                font-size: 14px;
+                color: #121212;
+                line-height: 130%;
+                text-transform: unset;
+                word-break: break-word;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .featured-product-compare-price-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                text-decoration: line-through;
+                color: #aaaebb;
+            }
+    
+            .featured-dots-body-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                display: none;
+                transition: all 0.5s ease 0s;
+                pointer-events: none;
+                opacity: 1;
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: absolute;
+                width: 8%;
+                top: 38%;
+                height: 45px;
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:first-child {
+                left: 23%;
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:last-child {
+                right: 23%;
+            }
+    
+            .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                position: absolute;
+                display: block !important;
+                border-radius: 100%;
+                background-color: #fce4ff;
+                border: 2px solid;
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:first-child .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ:nth-child(1) {
+                left: 0;
+                bottom: 0;
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:first-child .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ:nth-child(2) {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%)
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:first-child .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ:nth-child(3) {
+                right: 0;
+                top: 0;
+            }
+    
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:last-child .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ:nth-child(1) {
+                left: 0;
+                top: 0;
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:last-child .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ:nth-child(2) {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%)
+            }
+    
+            .featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ:last-child .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ:nth-child(3) {
+                right: 0;
+                bottom: 0;
+            }
+    
+            .featured-buttons-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-top: 20px;
+                justify-content: center;
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                display: flex;
+                width: 48px;
+                height: 48px;
+                border: 0px;
+                border: 1px solid #c7c7c7;
+                border-radius: 100px;
+                background: transparent;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                -webkit-appearance: none;
+                /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,.15); */
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon {
+                pointer-events: none;
+                place-items: center;
+                display: grid;
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:before,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:before {
+                content: "";
+                grid-area: 1 / -1;
+                transition: all .2s ease;
+                width: 9px;
+                height: 9px;
+                transform: rotate(calc(1 * 45deg));
+                box-sizing: border-box;
+                border-style: solid;
+                border: 0px;
+                border-right: 2px solid currentColor;
+                border-top: 2px solid currentColor;
+                position: relative;
+                left: -1px;
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:before {
+                left: unset;
+                right: -1px;
+                border-right: 0px;
+                border-top: 0px;
+                border-bottom: 2px solid currentColor;
+                border-left: 2px solid currentColor;
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:after,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:after {
+                content: "";
+                grid-area: 1 / -1;
+                transition: all .2s ease;
+                width: 8.7px;
+                height: 1.6px;
+                transform-origin: center;
+                opacity: 0;
+                background: currentColor;
+                transform: scaleX(.5);
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ span,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ span {
+                color: #2c2b2b;
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ.swiper-button-disabled,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ.swiper-button-disabled {
+                opacity: 0.5;
+            }
+
+            .featured-sub-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                font-family: Montserrat, sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+               .featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                aspect-ratio: 12/12;
+            }
+
+             
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                background-color: #ffffff;
+                border: 1px solid #da9dff;
+            }
+    
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover {
+                background-color: #da9dff;
+                border: 1px solid #da9dff;
+            }
+
+            
+            .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover {
+                transition: all 0.3s ease 0s;
+                border: 1px solid #c7c7c7;
+            }
+    
+            .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover .animate-icon,
+            .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover .animate-icon {
+                color: #da9dff;
+            }
+
+             .featured-buttons-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                display: flex;
+            }
+
+    
+            @media(min-width: 1024px) {
+    
+                .section-template--22736103145801__ss_featured_collection_14_PpxWXJ-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 36px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .featured-sub-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    text-align: center;
+                }
+    
+                .featured-sub-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                    font-size: 20px;
+                }
+    
+                .featured-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    text-align: center;
+                    margin-top: 12px;
+                }
+    
+                .featured-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                    font-size: 42px;
+                }
+    
+                .featured-slider-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    margin-top: 24px !important;
+                    padding: 0 70px !important;
+    
+                    padding-top: calc(30px + 16px) !important;
+    
+                    margin-left: -5rem !important;
+                    margin-right: -5rem !important;
+                    padding-left: 5rem !important;
+                    padding-right: 5rem !important;
+                    padding-bottom: 200px !important;
+                }
+    
+                .featured-badge-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    padding: 8px 8px;
+                    font-size: 12px;
+                }
+    
+                .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    opacity: 0;
+                    padding: 14px 32px;
+                    font-size: 16px;
+                    margin: 0px !important;
+                }
+    
+                .featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ:hover .featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    opacity: 1;
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .featured-button-mobile-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    display: none;
+                }
+    
+                .featured-button-desktop-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    display: block;
+                }
+    
+                .feature-product-content-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    align-items: center;
+                }
+    
+                .featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    text-align: center;
+                    margin-top: 36px;
+                    font-size: 18px;
+                }
+    
+                .featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    margin-top: 8px;
+                    justify-content: center;
+                }
+    
+                .featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ * {
+                    text-align: center;
+                    font-size: 16px;
+                }
+    
+                .featured-dots-body-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    display: block;
+                }
+    
+                .featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    width: 20px;
+                    height: 20px;
+                }
+    
+                .featured-buttons-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    width: 80%;
+                    position: absolute;
+                    bottom: 10%;
+                    left: 10%;
+                    justify-content: center;
+                }
+    
+                .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ,
+                .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    width: 56px;
+                    height: 56px;
+                    transition: all 0.25s ease 0s;
+                }
+    
+                .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:before,
+                .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:before {
+                    width: 11px;
+                    height: 11px;
+                }
+    
+                .featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:after,
+                .featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ .animate-icon:after {
+                    width: 10.7px;
+                }
+           
+                .featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    aspect-ratio: 12/12;
+                }
+          
+                .featured-buttons-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    display: flex;
+                }
+            }
+    
+            @media(min-width: 1920px) {
+                .featured-slider-template--22736103145801__ss_featured_collection_14_PpxWXJ {
+                    padding-bottom: 300px !important;
+                }
+            }
+            
+        </style>
+    
+        <div class="section-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-template--22736103145801__ss_featured_collection_14_PpxWXJ" 
+            id="section-featured-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+            <div class="section-template--22736103145801__ss_featured_collection_14_PpxWXJ-settings">
+    
+                <div class="featured-sub-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                    <p>Most wanted</p>
+                </div>
+    
+    
+                <div class="featured-heading-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                    <h2>Accessories</h2>
+                </div>
+    
+                <div class="featured-body-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                    <div class="featured-slider-template--22736103145801__ss_featured_collection_14_PpxWXJ swiper">
+                        <div class="swiper-wrapper" id="swiper-wrapper-e335e42c82f2691b">
+
+                            <div class="featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ swiper-slide">
+    
+                                <p class="featured-badge-template--22736103145801__ss_featured_collection_14_PpxWXJ">NEW</p>
+    
+                                <div class="featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+    
+                                    <img src="//section.store/cdn/shop/files/814-027-13213_thepackabletote_navywave1_19486658-e535-497b-bd24-78144dd55e24.png?v=1720685868"
+                                        alt="The Packable Tote in Navy" loading="lazy">
+    
+    
+                                    <a href="#" class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-desktop-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                            Shop now
+    
+                                            <svg width="192" height="192" viewBox="0 0 192 192" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                    fill="black"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                    fill="black"></path>
+                                                <path
+                                                    d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                    fill="black"></path>
+                                            </svg>
+    
+                                        </p>
+                                    </a>
+    
+                                </div>
+                                <p class="featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    The Packable Tote in Navy</p>
+    
+                                <div class="featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+    
+                                    <p class="featured-product-regular-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+    
+                                        $15.00 - $20.00
+    
+                                    </p>
+    
+                                </div>
+    
+    
+                                <a href="#" class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-mobile-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        Shop now
+    
+                                        <svg width="192" height="192" viewBox="0 0 192 192" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                fill="black"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                fill="black"></path>
+                                            <path
+                                                d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                fill="black"></path>
+                                        </svg>
+    
+                                    </p>
+                                </a>
+    
+                            </div>
+                            <div class="featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ swiper-slide">
+    
+                                <div class="featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+    
+                                    <img src="//section.store/cdn/shop/files/S22_Accessories-78_86b63d0c-7e2b-4c61-a24f-3fd6b801e37f.png?v=1720684718"
+                                        alt="Trucker Hat" loading="lazy">
+    
+    
+                                    <a href="#" class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-desktop-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                            Shop now
+    
+                                            <svg width="192" height="192" viewBox="0 0 192 192" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                    fill="black"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                    fill="black"></path>
+                                                <path
+                                                    d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                    fill="black"></path>
+                                            </svg>
+    
+                                        </p>
+                                    </a>
+    
+                                </div>
+                                <p class="featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    Trucker Hat</p>
+    
+                                <div class="featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+    
+                                    <p class="featured-product-compare-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        $50.00</p>
+    
+                                    <p class="featured-product-regular-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+    
+                                        $34.00
+    
+                                    </p>
+    
+                                </div>
+    
+    
+                                <a href="#" class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-mobile-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    <p
+                                        class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        Shop now
+    
+                                        <svg width="192" height="192" viewBox="0 0 192 192" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                fill="black"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                fill="black"></path>
+                                            <path
+                                                d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                fill="black"></path>
+                                        </svg>
+    
+                                    </p>
+                                </a>
+    
+                            </div>
+                            <div class="featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ swiper-slide">
+                            
+                                <p class="featured-badge-template--22736103145801__ss_featured_collection_14_PpxWXJ">NEW</p>
+                            
+                                <div class="featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                    <img src="//section.store/cdn/shop/files/814-027-13213_thepackabletote_navywave1_19486658-e535-497b-bd24-78144dd55e24.png?v=1720685868"
+                                        alt="The Packable Tote in Navy" loading="lazy">
+                           
+                                    <a href="#"
+                                        class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-desktop-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                            Shop now
+                            
+                                            <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                    fill="black"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                    fill="black"></path>
+                                                <path
+                                                    d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                    fill="black"></path>
+                                            </svg>
+                            
+                                        </p>
+                                    </a>
+                            
+                                </div>
+                                <p class="featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    The Packable Tote in Navy
+                                </p>
+                            
+                                <div class="featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                            
+                                    <p class="featured-product-regular-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                            
+                                        $15.00 - $20.00
+                            
+                                    </p>
+                            
+                                </div>
+                            
+                            
+                                <a href="#" class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-mobile-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        Shop now
+                            
+                                        <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                fill="black"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                fill="black"></path>
+                                            <path
+                                                d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                fill="black"></path>
+                                        </svg>
+                            
+                                    </p>
+                                </a>
+                            
+                            </div>
+                            <div class="featured-slide-template--22736103145801__ss_featured_collection_14_PpxWXJ swiper-slide">
+                            
+                                <div class="featured-product-image-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                            
+                                    <img src="//section.store/cdn/shop/files/S22_Accessories-78_86b63d0c-7e2b-4c61-a24f-3fd6b801e37f.png?v=1720684718"
+                                        alt="Trucker Hat" loading="lazy">
+                            
+                            
+                                    <a href="#"
+                                        class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-desktop-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                            Shop now
+                            
+                                            <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                    fill="black"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                    fill="black"></path>
+                                                <path
+                                                    d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                    fill="black"></path>
+                                            </svg>
+                            
+                                        </p>
+                                    </a>
+                            
+                                </div>
+                                <p class="featured-product-title-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    Trucker Hat</p>
+                            
+                                <div class="featured-product-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                            
+                                    <p class="featured-product-compare-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        $50.00</p>
+                            
+                                    <p class="featured-product-regular-price-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                            
+                                        $34.00
+                            
+                                    </p>
+                            
+                                </div>
+                            
+                            
+                                <a href="#" class="featured-button-template--22736103145801__ss_featured_collection_14_PpxWXJ featured-button-mobile-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                    <p class="featured-button-inner-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                        Shop now
+                            
+                                        <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z"
+                                                fill="black"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11"
+                                                fill="black"></path>
+                                            <path
+                                                d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z"
+                                                fill="black"></path>
+                                        </svg>
+                            
+                                    </p>
+                                </a>
+                            
+                            </div>
+                        </div>
+                        <div class="featured-dots-body-template--22736103145801__ss_featured_collection_14_PpxWXJ" >
+                            <div class="featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                <div class="featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ"></div>
+                                <div class="featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ"></div>
+                                <div class="featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ"></div>
+                            </div>
+                            <div class="featured-dots-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                <div class="featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ"></div>
+                                <div class="featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ"></div>
+                                <div class="featured-dot-template--22736103145801__ss_featured_collection_14_PpxWXJ"></div>
+                            </div>
+                        </div>
+                        <div class="featured-buttons-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                            <button class="featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                <span class="animate-icon"></span>
+                            </button>
+                            <button class="featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ">
+                                <span class="animate-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            function initFeaturedCollection14() {
+                const slider = new Swiper('.featured-slider-template--22736103145801__ss_featured_collection_14_PpxWXJ ', {
+                    speed: 300,
+                    loop: true,
+                    centeredSlides: true,
+                    slidesPerView: 2.2,
+                    spaceBetween: 150,
+                    effect: "creative",
+                    creativeEffect: {
+                        perspective: true,
+                        limitProgress: 3,
+                        prev: {
+                            translate: ['-100%', '13%', -100],
+                            rotate: [0, 0, -30],
+                            scale: 0.8,
+                            origin: "bottom",
+                        },
+                        next: {
+                            translate: ['100%', '13%', -100],
+                            rotate: [0, 0, 30],
+                            scale: 0.8,
+                            origin: "bottom",
+                        },
+                    },
+                    navigation: {
+                        nextEl: '.featured-btn-next-template--22736103145801__ss_featured_collection_14_PpxWXJ ',
+                        prevEl: '.featured-btn-prev-template--22736103145801__ss_featured_collection_14_PpxWXJ ',
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        728: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        1024: {
+                            slidesPerView: 2.2,
+                            spaceBetween: 150,
+                        }
+                    }
+                });
+
+                const dotsBody = document.querySelector('.featured-dots-body-template--22736103145801__ss_featured_collection_14_PpxWXJ');
+
+                slider.on('slideChangeTransitionStart', () => {
+                    if (dotsBody) {
+                        dotsBody.style.opacity = 0;
+                    }
+                });
+
+                slider.on('slideChangeTransitionEnd', () => {
+                    if (dotsBody) {
+                        dotsBody.style.opacity = 1;
+                    }
+                });
+
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initFeaturedCollection14);
+            }
+
+        </script>
+    
+</body>
+</html>

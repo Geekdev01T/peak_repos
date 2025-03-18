@@ -1,0 +1,1141 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<style>
+  .section-template--22031113060681__ss_feature_21_WNKGcL {
+      max-width: {% if section.settings.full_width %} 100% {% else %} 1200px {% endif %};
+      {% if section.settings.full_border %}
+        border: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+      {% endif %}
+      background-color: {{section.settings.section_bg}};
+      border-radius: {{section.settings.section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section.settings.section_mt}}px !important;
+      margin-bottom: {{section.settings.section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-template--22031113060681__ss_feature_21_WNKGcL-settings {
+      margin: 0 auto;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .feature-body-template--22031113060681__ss_feature_21_WNKGcL {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0px;
+  }
+
+  .feature-content-template--22031113060681__ss_feature_21_WNKGcL {
+      padding: 24px 0px;
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+  }
+
+  .feature-toggles-template--22031113060681__ss_feature_21_WNKGcL {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 14px;
+      padding-bottom: 10px;
+      position: relative;
+      border-bottom: {{section.settings.toggle_menu_border_w}}px solid {{section.settings.toggle_menu_border_color}};
+  }
+
+  .feature-toggles-template--22031113060681__ss_feature_21_WNKGcL::-webkit-scrollbar {
+      display: none;
+  }
+
+  .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL {
+      margin: 0px;
+      font-size: {{section.settings.toggle_menu_size_mobile}}px;
+      color: {{section.settings.toggle_menu_color}};
+      line-height: 130%;
+      text-transform: unset;
+      position: relative;
+      background-color: {{section.settings.toggle_menu_bg}};
+      border: 0px;
+      box-shadow: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0px;
+      height: {{section.settings.toggle_menu_active_h}}px;
+      background-color: {{section.settings.toggle_menu_active_color}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL.active::after {
+      width: {{section.settings.toggle_menu_active_w}}%;
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-tab-template--22031113060681__ss_feature_21_WNKGcL {
+      display: none;
+  }
+
+  .feature-tab-template--22031113060681__ss_feature_21_WNKGcL.active {
+      display: block;
+  }
+
+  .feature-items-template--22031113060681__ss_feature_21_WNKGcL {
+      display: grid;
+      margin-top: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  }
+
+  .feature-item-template--22031113060681__ss_feature_21_WNKGcL {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+  }
+
+  .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL {
+      width: 32px;
+      flex-shrink: 0;
+      border:{{section.settings.feat_img_border_w}}px solid {{section.settings.feat_img_border_color}};
+      border-radius:{{section.settings.feat_img_radius}}px;
+  }
+
+  .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL img,
+  .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL svg path {
+      fill: #000000;
+  }
+
+  .feature-item-content-template--22031113060681__ss_feature_21_WNKGcL {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+  }
+
+  .feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL {
+      margin: 0px;
+      font-size: {{section.settings.title_size_mobile}}px;
+      color: {{section.settings.title_color}};
+      line-height: 130%;
+      text-transform: unset;
+      transition: all 0.25s ease 0s;
+      word-break: break-word;
+  }
+
+  .feature-item-text-template--22031113060681__ss_feature_21_WNKGcL {
+      margin: 0px;
+      margin-top: 12px;
+      font-size: {{section.settings.desc_size_mobile}}px;
+      color: {{section.settings.desc_color}};
+      line-height: 150%;
+      text-transform: unset;
+      transition: all 0.25s ease 0s;
+      word-break: break-word;
+  }
+
+  .feature-images-template--22031113060681__ss_feature_21_WNKGcL {
+      position: relative;
+      order: 1;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+  }
+
+  .feature-images-template--22031113060681__ss_feature_21_WNKGcL::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(to top, {{section.settings.img_shadow_hover}}, transparent);
+      z-index: 2;
+  }
+
+  .feature-image-template--22031113060681__ss_feature_21_WNKGcL {
+      display: none;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      height: 100%;
+  }
+
+  .feature-image-template--22031113060681__ss_feature_21_WNKGcL.active {
+      display: block;
+  }
+
+  .feature-image-template--22031113060681__ss_feature_21_WNKGcL img,
+  .feature-image-template--22031113060681__ss_feature_21_WNKGcL svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-image-template--22031113060681__ss_feature_21_WNKGcL>svg {
+      background-color: #AFAFAF;
+  }
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+      position: absolute;
+      top: 36px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: calc(100% - 20px);
+      margin: 0;
+      font-size: {{section.settings.btn_size_mobile}}px;
+      color: {{section.settings.btn_color}};
+      line-height: 100%;
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: {{section.settings.btn_radius}}px;
+      transition: all 0.25s ease 0s;
+      background-color: {{section.settings.btn_bg}};
+      border: {{section.settings.btn_border_w}}px solid {{section.settings.btn_border_color}};
+      cursor: pointer;
+      font-weight: {{section.settings.btn_weight}};
+      z-index: 2;
+  }
+
+  .feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL:hover {
+      color:{{section.settings.btn_color_hover}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL svg {
+      width: 14px;
+      height: 14px;
+  }
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL svg path {
+      fill: {{section.settings.btn_color}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL:hover svg path {
+      fill: {{section.settings.btn_color_hover}};
+      transition: all 0.25s ease 0s;
+  }
+
+
+  .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL {
+      font-weight: {{section.settings.toggle_menu_weight}};
+      font-style: normal;
+  }
+
+
+  .feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL {
+      font-weight: {{section.settings.title_weight}};
+      font-style: italic;
+  }
+
+
+  .feature-item-text-template--22031113060681__ss_feature_21_WNKGcL {
+      font-weight: {{section.settings.desc_weight}};
+      font-style: normal;
+  }
+
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+      font-style: normal;
+  }
+
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+      background-color: {{section.settings.btn_bg}};
+  }
+
+  .feature-button-template--22031113060681__ss_feature_21_WNKGcL:hover {
+      background-color: {{section.settings.btn_bg_hover}};
+  }
+
+     @media(min-width: 1024px) {
+
+      .section-template--22031113060681__ss_feature_21_WNKGcL-settings {
+          padding: 0 5rem;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .feature-body-template--22031113060681__ss_feature_21_WNKGcL {
+          grid-template-columns: 2fr 1fr;
+          gap: 40px;
+      }
+
+      .feature-content-template--22031113060681__ss_feature_21_WNKGcL {
+          padding: 76px 0px;
+          order: 1;
+      }
+
+      .feature-toggles-template--22031113060681__ss_feature_21_WNKGcL {
+          gap: 58px;
+      }
+
+      .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL {
+          font-size: {{section.settings.toggle_menu_size}}px;
+      }
+
+      .feature-item-template--22031113060681__ss_feature_21_WNKGcL {
+          gap: 20px;
+          flex-direction: row;
+          align-items: center;
+      }
+
+      .feature-items-template--22031113060681__ss_feature_21_WNKGcL {
+          grid-template-columns: repeat(2, 1fr);
+          margin-top: 80px;
+          gap: 40px;
+      }
+
+      .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL {
+          width: 46px;
+      }
+
+      .feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL {
+          font-size: {{section.settings.title_size}}px;
+      }
+
+      .feature-item-text-template--22031113060681__ss_feature_21_WNKGcL {
+          margin-top: 12px;
+          font-size: {{section.settings.desc_size}}px;
+      }
+
+      .feature-images-template--22031113060681__ss_feature_21_WNKGcL {
+          order: 2;
+          margin-left: 0;
+          margin-right: 0;
+      }
+
+      .feature-images-template--22031113060681__ss_feature_21_WNKGcL::before {
+          bottom: unset;
+          top: 0;
+          width: 30%;
+          height: 100%;
+          background: linear-gradient(to left, transparent, {{section.settings.img_shadow_hover}} 70%);
+      }
+
+      .feature-image-template--22031113060681__ss_feature_21_WNKGcL {
+          margin-right: -5rem;
+      }
+
+      .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+          padding: 12px 16px;
+          font-size: {{section.settings.btn_size}}px;
+          left: calc(30% + 10px);
+          width: calc(100% - 30% - 20px);
+      }
+  }
+</style>
+
+<div class="section-template--22031113060681__ss_feature_21_WNKGcL feature-template--22031113060681__ss_feature_21_WNKGcL">
+  <div class="section-template--22031113060681__ss_feature_21_WNKGcL-settings">
+    <div class="feature-body-template--22031113060681__ss_feature_21_WNKGcL">
+      <div class="feature-content-template--22031113060681__ss_feature_21_WNKGcL">
+        <div class="feature-toggles-template--22031113060681__ss_feature_21_WNKGcL">
+          <button
+            class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL active"
+            id="tab_iTBGb6"
+          >
+            Humidifiers
+          </button>
+
+          <button
+            class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL "
+            id="tab_RYziye"
+          >
+            Essential Oils
+          </button>
+
+          <button
+            class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL "
+            id="tab_dHUGLA"
+          >
+            Diffuser Bundles
+          </button>
+        </div>
+
+        <div class="feature-tabs-template--22031113060681__ss_feature_21_WNKGcL">
+          <div class="feature-tab-template--22031113060681__ss_feature_21_WNKGcL active" data-id="tab_iTBGb6">
+            <div class="feature-items-template--22031113060681__ss_feature_21_WNKGcL">
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/sound-waves.svg?v=1725127752"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Ultrasonic</p>
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Measures the humidity level and uses high-frequency vibrations to create a fine mist.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/sound-waves_1.svg?v=1725128095"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Quiet Operation</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Quiet and energy-efficient, perfect for bedrooms and living rooms.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/moon.svg?v=1725127790"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Better Sleep</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Promote restful sleep by reducing nasal congestion and dryness.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/fern.svg?v=1725127969"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Healthy Houseplants</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Create a favorable environment for your houseplants to thrive.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-tab-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_RYziye">
+            <div class="feature-items-template--22031113060681__ss_feature_21_WNKGcL">
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/rosemary.svg?v=1725112873"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Rosemary</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Improves memory, concentration, and mental clarity. Can also help relieve headaches.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/flower-petals.svg?v=1725126709"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Rose</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Reduces stress, anxiety, and insomnia. Can also help soothe skin irritations and promote relaxation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/thyme.svg?v=1725125968"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Thyme</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Promotes relaxation, reduces stress, and can help balance emotions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/sage.svg?v=1725126291"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Sage</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Promotes relaxation, reduces anxiety, and can help balance hormones.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-tab-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_dHUGLA">
+            <div class="feature-items-template--22031113060681__ss_feature_21_WNKGcL">
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/flower-petals.svg?v=1725126709"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Enhanced Relaxation</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    The combination of humidified air and calming essential oils can create a relaxing atmosphere.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/sound-waves.svg?v=1725127752"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">Natural Home Remedy</p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Can be used as a complementary therapy to support overall health and well-being.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/wind.svg?v=1725128664"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                    Improved Air Quality
+                  </p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Can help reduce the levels of dust and allergens in the air.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+                <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+                  <img
+                    src="//section.store/cdn/shop/files/rosemary.svg?v=1725112873"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+                  <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                    Enhanced Concentration
+                  </p>
+
+                  <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                    Certain essential oils, such as peppermint and rosemary, can boost cognitive function.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-images-template--22031113060681__ss_feature_21_WNKGcL">
+        <div
+          class="feature-image-template--22031113060681__ss_feature_21_WNKGcL active"
+          data-id="tab_iTBGb6"
+        >
+          <a href="" class="feature-button-template--22031113060681__ss_feature_21_WNKGcL">
+            <p class="feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL">Learn Humidifiers</p>
+          </a>
+
+          <img
+            src="//section.store/cdn/shop/files/pexels-cottonbro-7408629.jpg?v=1725109944"
+            alt=""
+            loading="lazy"
+          >
+        </div>
+
+        <div class="feature-image-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_RYziye">
+          <a href="/pages/404-2" class="feature-button-template--22031113060681__ss_feature_21_WNKGcL">
+            <p class="feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL">Shop Essential Oils</p>
+          </a>
+
+          <img
+            src="//section.store/cdn/shop/files/pexels-doterra-international-llc-2204678-5380001.jpg?v=1725110364"
+            alt=""
+            loading="lazy"
+          >
+        </div>
+
+        <div class="feature-image-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_dHUGLA">
+          <a
+            href="/pages/builder-bundle-2"
+            class="feature-button-template--22031113060681__ss_feature_21_WNKGcL"
+          >
+            <p class="feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL">Shop Bundles</p>
+          </a>
+
+          <img
+            src="//section.store/cdn/shop/files/pexels-doterra-international-llc-2204678-6563887.jpg?v=1725110331"
+            alt=""
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initFeature21() {
+
+      let toggles = document.querySelectorAll('.feature-toggle-template--22031113060681__ss_feature_21_WNKGcL');
+      let tabs = document.querySelectorAll('.feature-tab-template--22031113060681__ss_feature_21_WNKGcL');
+      let images = document.querySelectorAll('.feature-image-template--22031113060681__ss_feature_21_WNKGcL');
+
+      if (toggles) {
+          toggles.forEach(el => {
+              el.addEventListener('click', () => {
+                  toggles.forEach(element => {
+                      element.classList.remove('active');
+                  })
+                  el.classList.add('active');
+
+                  if (tabs) {
+                      tabs.forEach(element => {
+                          let dataId = element.getAttribute('data-id');
+
+                          if (el.id == dataId) {
+                              element.classList.add('active');
+                          } else {
+                              element.classList.remove('active');
+                          }
+                      })
+                  }
+
+                  if (images) {
+                      images.forEach(element => {
+                          let dataId = element.getAttribute('data-id');
+
+                          if (el.id == dataId) {
+                              element.classList.add('active');
+                          } else {
+                              element.classList.remove('active');
+                          }
+                      })
+                  }
+              })
+          })
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', initFeature21);
+</script>
+
+{% schema %}
+{
+  "name": "PC Section Feature 21",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+     {
+      "type": "header",
+      "content": "Toggle Menu"
+    },
+    {
+      "type": "range",
+      "id": "toggle_menu_size",
+      "label": "Size",
+      "default":20,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "toggle_menu_size_mobile",
+      "label": "Mobile Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "toggle_menu_weight",
+      "label": "Font Weight",
+      "default":400,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "toggle_menu_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "toggle_menu_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "range",
+      "id": "toggle_menu_active_w",
+      "label": "Active Effect Width",
+      "default":100,
+      "min": 10,
+      "max":100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "toggle_menu_active_h",
+      "label": "Active Effect Height",
+      "default":2,
+      "min": 1,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "toggle_menu_active_color",
+      "label": "Active Effect Color",
+      "default":"#000000"
+    },
+    {
+      "type": "range",
+      "id": "toggle_menu_border_w",
+      "label": "Border Bottom Width",
+      "default":1,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "toggle_menu_border_color",
+      "label": "Border Bottom Color",
+      "default":"#000000"
+    },
+     {
+      "type": "header",
+      "content": "Feature Item Text Content"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Font Size",
+      "default":21,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title Mobile Font Size",
+      "default":16,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Title Font Weight",
+      "default":400,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default":"#000000"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Description Font Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_size_mobile",
+      "label": "Description Mobile Font Size",
+      "default":13,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_weight",
+      "label": "Description Font Weight",
+      "default":300,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Feature Image Image"
+    },
+    {
+      "type": "range",
+      "id": "feat_img_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max":100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "feat_img_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "feat_img_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+     {
+      "type": "header",
+      "content": "Feature Button"
+    },
+    {
+      "type": "range",
+        "id": "btn_size",
+        "label": "Font Size",
+        "default":14,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_size_mobile",
+        "label": "Mobile Font Size",
+        "default":14,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_weight",
+        "label": "Font Weight",
+        "default":700,
+        "min": 100,
+        "max": 900,
+        "step": 100
+      },
+      {
+        "type": "range",
+        "id": "btn_radius",
+        "label": "Border Radius",
+        "default":0,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_border_w",
+        "label": "Border Width",
+        "default":0,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "btn_color",
+        "label": "Color",
+        "default":"#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "btn_color_hover",
+        "label": "Color Hover",
+        "default":"#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "btn_border_color",
+        "label": "Border Color",
+        "default":"#000000"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg",
+        "label": "Background Color",
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_hover",
+        "label": "Background Color Hover",
+        "default":"#232323"
+      },
+     {
+        "type": "header",
+        "content": "Image Shadow"
+      },
+      {
+        "type": "color",
+        "id": "img_shadow_hover",
+        "label": "Color",
+        "default":"#faf9f7"
+      },
+      {
+        "type": "header",
+        "content": "Section"
+      },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#faf9f7"
+    }
+  ],
+  "blocks":[
+    {
+        "type":"feature_block",
+        "name":"Feature Block",
+        "settings":[
+            {
+                "type":"text",
+                "id":"title",
+                "label":"Feature Title"
+            },
+            {
+                "type":"text",
+                "id":"btn_text",
+                "label":"Button Text"
+            },
+            {
+                "type":"url",
+                "id":"btn_link",
+                "label":"Button Link"
+            },
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"Image"
+            },
+        ]
+    },
+    {
+        "type":"feature_item_block",
+        "name":"Feature Item Block",
+        "settings":[
+            {
+                "type":"text",
+                "id":"title",
+                "label":"Feature Title"
+            },
+            {
+                "type":"text",
+                "id":"item_title",
+                "label":"Item Title"
+            },
+            {
+                "type":"richtext",
+                "id":"item_desc",
+                "label":"Item Description"
+            },
+            {
+                "type":"image_picker",
+                "id":"item_image",
+                "label":"Item Image"
+            },
+        ]
+    },
+  ]
+  "presets": [
+    {
+      "name": "PC Section Feature 21"
+    }
+  ]
+}
+{% endschema %}

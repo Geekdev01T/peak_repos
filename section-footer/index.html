@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #272727;
+            color: white;
+        }
+
+        .footer-container-top {
+            width: 100%;
+            padding: 50px 20px;
+            background: rgb(23 23 23);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .footer-container-top .footer-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            position: relative;
+        }
+
+        .footer-container-top .footer-content .left-section {
+            display: flex;
+            flex-direction: row;
+            gap: 8rem;
+            width: 100%;
+            padding-right: 5em;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left {
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up {
+            display: flex;
+            flex-direction: row;
+            gap: 6em;
+        }
+
+        .footer-container-top .footer-content .left-section .logo {
+            font-size: 3rem;
+            color: #fff;
+            text-decoration: none;
+            margin-top: -.5em;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head .nav-section-text {
+            font-size: 24px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head .nav-section-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        /* 
+        .nav-section h2:hover::after {
+            width: 100%;
+        } */
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: all .5s ease;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links a {
+            color: #dbdada;
+            font-size: 17px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.4s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links a:hover {
+            color: white;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .contact-info {
+            margin-top: 1rem;
+            font-size: 23px;
+            font-weight: 400;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            position: relative;
+            width: fit-content;
+        }
+
+        .footer-container-top .footer-content .left-section .left-section-left .contact-info a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(1);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transform-origin: bottom left;
+            transition: transform 0.5s ease-out;
+        }
+
+
+        .footer-container-top .footer-content .left-section .left-section-left .contact-info a:hover::after {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        .footer-container-top .footer-content .right-section {
+            width: 100%;
+            border-left: .5px solid #e5e5e554;
+            padding-left: 2.5em;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block {
+            width: 90%;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .newsletter-text-content {
+            font-size: 36px;
+            font-weight: bolder;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content {
+            width: 100%;
+            position: relative;
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: .8em;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group {
+            width: 100%;
+            position: relative;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group input {
+            width: 100%;
+            padding: .5rem;
+            background: #1e1e1e;
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 15px;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group input:focus {
+            outline: none;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group label {
+            font-size: 16px;
+            position: absolute;
+            font-weight: 500;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            color: #888;
+            pointer-events: none;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group input:focus+label,
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group input:not(:placeholder-shown)+label {
+            top: -0.1em;
+            left: .8em;
+            font-size: 12px;
+            font-weight: 500;
+            color: #888;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group .submit-btn {
+            position: absolute;
+            right: 0.3rem;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* transform: translateY(-50%); */
+            margin-top: -1.45em;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content .input-group .submit-btn .submit-btn-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* .submit-btn:hover {
+            transform: translateY(-50%) translateX(5px);
+        } */
+
+        .footer-container-top .footer-content .right-section .newsletter .horizontal-social {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 2em;
+            margin-top: 6em;
+            transition: transform 0.4s;
+        }
+
+        .footer-container-top .footer-content .right-section .newsletter .horizontal-social .horizontal-social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: transform 0.4s;
+        }
+
+        /* .horizontal-social a:hover {
+            transform: translateY(-5px);
+        } */
+
+        @media (max-width: 1075px) {
+            .footer-container-top .footer-content {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .footer-container-top .footer-content .left-section {
+                display: flex;
+                flex-direction: row;
+                gap: 4rem;
+                padding: .5em;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .footer-container-top .footer-content .right-section {
+                border-top: .5px solid #e5e5e554;
+                border-left: none;
+                padding-top: 3em;
+                padding-left: 0;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .newsletter-block {
+                width: 100%;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content {
+                width: 80%;
+                margin-top: 2em;
+                border-radius: 12px;
+                padding: .6em;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .contact-info {
+                margin-top: 0rem;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .horizontal-social {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                margin-top: 9em;
+            }
+
+        }
+
+        @media (max-width: 815px) {
+            .footer-container-top {
+                padding: 2rem .5rem;
+            }
+
+            .footer-container-top .footer-content .left-section {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: .5em;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left {
+                gap: 1.5em;
+                display: flex;
+                flex-direction: column;
+            }
+
+
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up {
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                gap: 1px;
+                border: 1px solid #e5e5e554;
+                border-radius: 12px;
+                margin-top: 1em;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section:first-child {
+                border-bottom: 1px solid #e5e5e554;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head {
+                padding: 1em;
+                width: 100%;
+                margin-bottom: 0;
+                cursor: pointer;
+                transition: all .4s ease;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head .nav-section-icon {
+                display: block;
+                transition: all .4s ease;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head .nav-section-text {
+                font-size: 16px;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-section-head .nav-section-icon.active {
+                transform: rotate(180deg);
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links a {
+                font-size: 14px;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links {
+                padding: 1em;
+                display: none;
+                transition: all .4s ease;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .left-section-left-up .nav-section .nav-links.active {
+                display: flex;
+            }
+
+            .footer-container-top .footer-content .left-section .left-section-left .contact-info {
+                font-size: 20px;
+            }
+
+            .footer-container-top .footer-content .right-section {
+                border-top: .5px solid #e5e5e554;
+                border-left: none;
+                padding-top: 3em;
+                padding-left: 0;
+                float: left;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter {
+                width: 100%;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .newsletter-block .input-content {
+                width: 100%;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .newsletter-block .newsletter-text-content {
+                font-size: 20px;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .horizontal-social {
+                margin-top: 2em;
+                width: 80%;
+            }
+        }
+
+        @media (max-width:650px) {
+            .footer-container-top .footer-content .right-section .newsletter {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                gap: 1em;
+            }
+
+            .footer-container-top .footer-content .right-section .newsletter .horizontal-social {
+                margin-top: 2em;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin-left: -20%;
+            }
+        }
+
+
+
+
+        .footer-container-bottom {
+            width: 100%;
+            background: #000;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-container-bottom .localization {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            gap: 1em;
+        }
+
+        .footer-container-bottom .localization .grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #797676;
+            padding: .6em .8em;
+            border-radius: 20px;
+            gap: 8px;
+            color: #fff;
+            cursor: pointer;
+            background: red;
+        }
+
+        .footer-container-bottom .localization .grid .localization__item{
+            padding: .2em;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            position: relative;
+        }
+
+        .footer-container-bottom .localization .grid .localization__item:focus .localization__item::after{
+            position: absolute;
+            background: blue;
+        }
+
+        .footer-container-bottom .localization .grid .localization__item option{
+            
+            color: #727070;
+        }
+
+        .footer-container-bottom .localization .grid svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        .footer-container-bottom .payment-icons{
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            list-style: none;
+        }
+
+        /* .footer-container-bottom .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+} */
+
+        .language-select,
+        .currency-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        /* .payment-methods {
+  display: flex;
+  gap: 8px;
+} */
+
+        /* .payment-methods img {
+  height: 20px;
+  width: auto;
+} */
+
+        /* @media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-left {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .language-select,
+  .currency-select {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .payment-methods {
+    justify-content: center;
+  }
+} */
+    </style>
+</head>
+
+<body>
+
+    <footer class="footer-container">
+        <div class="footer-container-top">
+            <div class="footer-content">
+                <div class="left-section">
+                    <a href="#" class="logo">Logo</a>
+                    <div class="left-section-left">
+                        <div class="left-section-left-up">
+                            <div class="nav-section">
+                                <div class="nav-section-head first">
+                                    <h2 class="nav-section-text">Collections</h2>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6 nav-section-icon">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </div>
+                                <ul class="nav-links">
+                                    <li><a href="#">Headphones</a></li>
+                                    <li><a href="#">Earphones</a></li>
+                                    <li><a href="#">Speakers</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="nav-section">
+                                <div class="nav-section-head second">
+                                    <h2 class="nav-section-text">Information</h2>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6 nav-section-icon">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </div>
+                                <ul class="nav-links">
+                                    <li><a href="#">Our Story</a></li>
+                                    <li><a href="#">Our Journal</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:+21987654321">+21 (0) 987 6543 21</a>
+                            <a href="mailto:hello@domain.com">hello@domain.com</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-section">
+                    <div class="newsletter">
+                        <div class="newsletter-block">
+                            <h2 class="newsletter-text-content">Stay in the loop with our weekly newsletter</h2>
+                            <div class="input-content">
+                                <div class="input-group">
+                                    <input type="email" id="email" placeholder=" " required>
+                                    <label for="email">Enter your email</label>
+                                    <button class="submit-btn" type="submit" aria-label="Submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6 submit-btn-icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="horizontal-social">
+                            <a href="#" class="horizontal-social-link" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M17.99 1.596a28 28 0 0 0-3.037-.156C11.59 1.44 9.5 3.582 9.5 7.03v2.341H6.675a.5.5 0 0 0-.5.5v3.85a.5.5 0 0 0 .5.5H9.5v7.72a.5.5 0 0 0 .5.5h3.978a.5.5 0 0 0 .5-.5v-7.72h2.816a.5.5 0 0 0 .496-.435l.497-3.85a.5.5 0 0 0-.496-.565h-3.313V7.412c0-.97.195-1.375 1.408-1.375h2.039a.5.5 0 0 0 .5-.5V2.092a.5.5 0 0 0-.435-.496m-.565 3.44l-1.54.001c-2.157 0-2.407 1.356-2.407 2.375v2.46a.5.5 0 0 0 .499.5h3.246l-.369 2.85h-2.876a.5.5 0 0 0-.5.5v7.718H10.5v-7.718a.5.5 0 0 0-.5-.5H7.176v-2.85H10a.5.5 0 0 0 .5-.5V7.03c0-2.874 1.665-4.59 4.453-4.59c1.009 0 1.92.055 2.472.103z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="horizontal-social-link" aria-label="Twitter">𝕏</a>
+                            <a href="#" class="horizontal-social-link" aria-label="Instagram"
+                                style="margin-top: .25em;">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+
+                            </a>
+                            <a href="#" class="horizontal-social-link" aria-label="YouTube" style="margin-top: .3em;">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-container-bottom">
+            <div class="rte credits text-center">©&nbsp;2024&nbsp;Concept Theme Tech.&nbsp;<a target="_blank"
+                    rel="nofollow"
+                    href="#">Powered
+                    by PeakConversion</a>
+            </div>
+            <div class="localization">
+                <div class="grid gap-2">
+                    <svg class="icon icon-language icon-xs stroke-1 absolute pointer-events-none" viewBox="0 0 18 18"
+                        stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.46661 13.6167L3.44161 13.025C3.53831 12.9654 3.61815 12.882 3.67358 12.7829C3.729 12.6837 3.75816 12.572 3.75828 12.4584L3.77495 9.45005C3.77628 9.32533 3.81392 9.20371 3.88328 9.10005L5.53328 6.50838C5.58279 6.43181 5.64731 6.36607 5.72293 6.31512C5.79855 6.26416 5.88371 6.22906 5.97327 6.21193C6.06283 6.1948 6.15493 6.19599 6.24402 6.21543C6.33311 6.23487 6.41733 6.27216 6.49161 6.32505L8.12495 7.50838C8.26587 7.60663 8.4374 7.65099 8.60828 7.63338L11.2333 7.27505C11.3925 7.25312 11.538 7.17296 11.6416 7.05005L13.4916 4.91672C13.6013 4.78667 13.6579 4.62 13.6499 4.45005L13.5583 2.42505">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13.925 15.3083L13.025 14.4083C12.9418 14.3251 12.8384 14.2648 12.725 14.2333L10.9334 13.7666C10.776 13.7235 10.6399 13.6243 10.5508 13.4876C10.4617 13.3509 10.4259 13.1863 10.45 13.025L10.6417 11.675C10.6607 11.5614 10.7081 11.4545 10.7795 11.3642C10.8509 11.2739 10.944 11.203 11.05 11.1583L13.5834 10.1C13.701 10.0509 13.8303 10.0366 13.9558 10.0587C14.0814 10.0809 14.1979 10.1386 14.2917 10.225L16.3667 12.125">
+                        </path>
+                    </svg>
+                    <select class="localization__item cursor-pointer leading-tight w-full" name="locale_code"
+                        id="LocalizationLanguageFormFooter" style="--width: 43.953125px;">
+                        <option value="en" selected="en">English</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <div class="grid gap-2">
+                            <svg
+                            class="icon icon-currency icon-xs stroke-1 absolute pointer-events-none" viewBox="0 0 16 16"
+                            stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M0.666687 2.66675V5.33341C0.666687 6.43808 2.45735 7.33341 4.66669 7.33341C6.87602 7.33341 8.66669 6.43808 8.66669 5.33341V2.66675">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M0.666687 5.3335V8.00016C0.666687 9.10483 2.45735 10.0002 4.66669 10.0002C5.69135 10.0002 6.62535 9.80683 7.33335 9.49016">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M0.666687 8V10.6667C0.666687 11.7713 2.45735 12.6667 4.66669 12.6667C5.69135 12.6667 6.62602 12.474 7.33335 12.1573">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4.66669 4.66675C6.87583 4.66675 8.66669 3.77132 8.66669 2.66675C8.66669 1.56218 6.87583 0.666748 4.66669 0.666748C2.45755 0.666748 0.666687 1.56218 0.666687 2.66675C0.666687 3.77132 2.45755 4.66675 4.66669 4.66675Z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M7.33337 8V10.6667C7.33337 11.7713 9.12404 12.6667 11.3334 12.6667C13.5427 12.6667 15.3334 11.7713 15.3334 10.6667V8">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M7.33337 10.6667V13.3334C7.33337 14.4381 9.12404 15.3334 11.3334 15.3334C13.5427 15.3334 15.3334 14.4381 15.3334 13.3334V10.6667">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M11.3334 10C13.5425 10 15.3334 9.10457 15.3334 8C15.3334 6.89543 13.5425 6 11.3334 6C9.12424 6 7.33337 6.89543 7.33337 8C7.33337 9.10457 9.12424 10 11.3334 10Z">
+                            </path>
+                        </svg>
+                        <select class="localization__item cursor-pointer leading-tight w-full" name="country_code"
+                            id="LocalizationCountryFormFooter" style="--width: 111.265625px;">
+                            <option value="AF">Afghanistan (AFN ؋)
+                            </option>
+                            <option value="AX">Åland Islands (EUR €)
+                            </option>
+                            <option value="AL">Albania (ALL L)
+                            </option>
+                            <option value="DZ">Algeria (DZD د.ج)
+                            </option>
+                            <option value="AD">Andorra (EUR €)
+                            </option>
+                        </select>
+                </div>
+            </div>
+            <ul class="payment-icons">
+                <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                        aria-labelledby="pi-visa">
+                        <title id="pi-visa">Visa</title>
+                        <path opacity=".07"
+                            d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                        </path>
+                        <path fill="#fff"
+                            d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <path
+                            d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z"
+                            fill="#142688"></path>
+                    </svg></li>
+                <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                        aria-labelledby="pi-master">
+                        <title id="pi-master">Mastercard</title>
+                        <path opacity=".07"
+                            d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                        </path>
+                        <path fill="#fff"
+                            d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <circle fill="#EB001B" cx="15" cy="12" r="7"></circle>
+                        <circle fill="#F79E1B" cx="23" cy="12" r="7"></circle>
+                        <path fill="#FF5F00"
+                            d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z">
+                        </path>
+                    </svg></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pi-american_express"
+                        viewBox="0 0 38 24" width="38" height="24">
+                        <title id="pi-american_express">American Express</title>
+                        <path fill="#000"
+                            d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z"
+                            opacity=".07"></path>
+                        <path fill="#006FCF"
+                            d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z"></path>
+                        <path fill="#FFF"
+                            d="M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z">
+                        </path>
+                        <path fill="#006FCF"
+                            d="M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z">
+                        </path>
+                        <path fill="#006FCF"
+                            d="m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z">
+                        </path>
+                        <path fill="#FFF"
+                            d="M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z">
+                        </path>
+                        <path fill="#006FCF"
+                            d="m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z">
+                        </path>
+                        <path fill="#006FCF"
+                            d="M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z">
+                        </path>
+                    </svg>
+                </li>
+                <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img"
+                        aria-labelledby="pi-paypal">
+                        <title id="pi-paypal">PayPal</title>
+                        <path opacity=".07"
+                            d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                        </path>
+                        <path fill="#fff"
+                            d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <path fill="#003087"
+                            d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4H17l.4-3.4 1.8-2.2 4.7-2.1z">
+                        </path>
+                        <path fill="#3086C8"
+                            d="M23.9 8.3l-.2.2c-.5 2.8-2.2 3.8-4.6 3.8H18c-.3 0-.5.2-.6.5l-.6 3.9-.2 1c0 .2.1.4.3.4H19c.3 0 .5-.2.5-.4v-.1l.4-2.4v-.1c0-.2.3-.4.5-.4h.3c2.1 0 3.7-.8 4.1-3.2.2-1 .1-1.8-.4-2.4-.1-.5-.3-.7-.5-.8z">
+                        </path>
+                        <path fill="#012169"
+                            d="M23.3 8.1c-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.3-.1-.7-.1-1.1-.1h-3c-.1 0-.2 0-.2.1-.2.1-.3.2-.3.4l-.7 4.4v.1c0-.3.3-.5.6-.5h1.3c2.5 0 4.1-1 4.6-3.8v-.2c-.1-.1-.3-.2-.5-.2h-.1z">
+                        </path>
+                    </svg></li>
+                <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                        aria-labelledby="pi-diners_club">
+                        <title id="pi-diners_club">Diners Club</title>
+                        <path opacity=".07"
+                            d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                        </path>
+                        <path fill="#fff"
+                            d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <path
+                            d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z"
+                            fill="#3086C8"></path>
+                    </svg></li>
+                <li><svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title id="pi-discover">Discover</title>
+                        <path fill="#000" opacity=".07"
+                            d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z">
+                        </path>
+                        <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32z"
+                            fill="#fff"></path>
+                        <path
+                            d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z"
+                            fill="#231F20"></path>
+                        <path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z"
+                            fill="url(#pi-paint0_linear)"></path>
+                        <path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z"
+                            fill="url(#pi-paint1_linear)"></path>
+                        <path
+                            d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z"
+                            fill="#231F20"></path>
+                        <path
+                            d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z"
+                            fill="#231F20"></path>
+                        <path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z"
+                            fill="#F48120"></path>
+                        <defs>
+                            <linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F89F20"></stop>
+                                <stop offset=".25" stop-color="#F79A20"></stop>
+                                <stop offset=".533" stop-color="#F68D20"></stop>
+                                <stop offset=".62" stop-color="#F58720"></stop>
+                                <stop offset=".723" stop-color="#F48120"></stop>
+                                <stop offset="1" stop-color="#F37521"></stop>
+                            </linearGradient>
+                            <linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F58720"></stop>
+                                <stop offset=".359" stop-color="#E16F27"></stop>
+                                <stop offset=".703" stop-color="#D4602C"></stop>
+                                <stop offset=".982" stop-color="#D05B2E"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg></li>
+            </ul>
+        </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du label flottant
+        const emailInput = document.getElementById('email');
+        const emailLabel = document.querySelector('.input-group label');
+
+        emailInput.addEventListener('focus', () => {
+            emailLabel.classList.add('active');
+        });
+
+        emailInput.addEventListener('blur', () => {
+            if (!emailInput.value) {
+                emailLabel.classList.remove('active');
+            }
+        });
+
+        let nav_btns = document.querySelectorAll('.nav-section-head');
+        let nav_links = document.querySelectorAll('.nav-links');
+        let nav_icons = document.querySelectorAll('.nav-section-icon');
+
+        nav_btns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+
+                nav_icons[index].classList.toggle('active');
+                nav_links[index].classList.toggle('active');
+            })
+        }
+        )
+
+        const icons = document.querySelectorAll('.horizontal-social-link');
+        const button = document.querySelector('.submit-btn');
+
+        icons.forEach(icon => {
+            icon.addEventListener('mousemove', (e) => {
+                const rect = icon.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                icon.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            button.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0, 0%)';
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <style>
+            .section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                background-color:#FFFFFF;
+                margin-bottom: 0px;
+            }
+    
+            .section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e-settings {
+                margin: 0 auto;
+                padding-top: 12px;
+                padding-bottom: 33px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .feature-wrapper-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 20px;
+                background-color: #FFFFFF;
+                border: 0px solid #000000;
+                border-radius: 16px;
+                padding: 0px 0px;
+            }
+    
+            .feature-wrapper-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__content-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__title {
+                margin: 0px;
+                font-size: 18px;
+                color: #000000;
+                line-height: 130%;
+                text-transform: unset;
+                font-weight: bold;
+                position: relative;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__title::after {
+                content: '';
+                position: absolute;
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAB40lEQVR4nO3aP24TQRxH8Te2RLHiSmlCBQJK7kKx1sgn4Bq0QUoHDVdCLtIMTSYKihOvnd3Z+aH3adw4Gun7MrbzByRJkiRJkiRJkiRJkiRJkiRJkiRJkiJKrQ/MOQ+llO+llG/7/f5n6/OPGcfxarvdfgW+5Jz/tDx70/KwnPMA3AAfU0o3u93uXcvzjxnH8Wqz2dyWUt4Dtznnty3Pb3YD6villMejH0opn9e6CXV84GH0lNJv4EOrm9AkwDPjV6tEODZ+1TLC4gFOjF81jfDS+FWrCIsGmDh+1STClPGrFhGavgmfMCz9xnzO+K308hL02CI34dzx/4uXoGrtCL2OD+t/DH3JLBF6Hh8a/yTcOkLv48NKv4qgQYQI48MKAWD5CFHGh5UCwHIRIo0PKwaA+SNEGx9WDgDzRYg4PnQQAF4fIer40EkAuDxCKeUu6vjQUQB4+GvZD+B64pcc7h+Hic//lVL6lHM+nH5qG10FgItuwiS9fedX3QWA+SP0Oj50GgDmi9Dz+NBxAHh9hN7Hh84DwOURIowPAQLA+RGijA9BAsD0CJHGh0AB4HSEaONDsADwfISI40PAAPA0QtTxIWgA+Of/TN8QdPzwcs7DfQhJkiRJkiRJkiRJkiRJkiTBX266nC6Z5woGAAAAAElFTkSuQmCC');
+                width: 20px;
+                height: 20px;
+                background-repeat: repeat;
+                background-size: contain;
+                right: 0;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box.active .box__title::after {
+                transform: rotate(180deg);
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__description {
+                margin: 0px;
+                margin-top: 6px;
+                font-size: 14px;
+                color: #000000;
+                line-height: 130%;
+                text-transform: unset;
+                padding-bottom: 10px;
+                display: none;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box.active .box__description {
+                display: block;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .wrapper-box {
+                display: flex;
+                flex: 0 0 100%;
+                flex-direction: column;
+                gap: 20px;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__content-wrapper {
+                padding: 10px;
+                padding-left: 0px;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box {
+                display: flex;
+                align-items: center;
+                gap: 21px;
+                position: relative;
+                padding: 0px 0px;
+                border: 1px solid #E5E5E5;
+                border-radius: 16px;
+                background-color: #FFFFFF;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box.active {
+                min-height: 104px;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 18px 18px;
+                border-radius: 16px;
+                border: 0px solid #E5E5E5;
+                background-color: #F7F7F7;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image img,
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image svg {
+                width: 34px;
+                height: 34px;
+                display: block;
+                object-fit: cover;
+            }
+    
+            .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image svg path {
+                fill: #000000;
+            }
+    
+            @media(min-width: 768px) {
+    
+                .section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+    
+                .section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e-settings {
+                    padding: 0 5rem;
+                    padding-top: 16px;
+                    padding-bottom: 44px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .feature-wrapper-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e {
+                    gap: 20px;
+                    padding: 0px 0px;
+                }
+    
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .wrapper-box {
+                    flex: 0 0 calc(50% - 10.0px);
+                    gap: 20px;
+                }
+    
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box {
+                    padding: 0px 0px;
+                    gap: 28px;
+                }
+    
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__title {
+                    font-size: 16px;
+                }
+    
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__description {
+                    margin-top: 8px;
+                    font-size: 14px;
+                }
+    
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image {
+                    padding: 18px 18px;
+                }
+    
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image img,
+                .feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e .box__image svg {
+                    width: 34px;
+                    height: 34px;
+                }
+            }
+       
+            
+            .section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e-settings {
+                max-width: 120rem;
+            }
+        </style>
+
+    
+        <div class="section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e feature-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e">
+            <div class="section-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e-settings">
+                <div class="feature-wrapper-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e">
+                    <div class="wrapper-box">
+                        <div class="box box-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e">
+    
+                            <div class="box__image">
+    
+                                <svg class="icon icon--medium icon--type-truck" stroke-width="1" aria-hidden="true"
+                                    focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.64 6.92L9.5 5.12V4a.5.5 0 00-.5-.5H1a.5.5 0 00-.5.5v8.5c0 .28.22.5.5.5h1.27a2.1 2.1 0 004.06 0h3.94a2.1 2.1 0 004.06 0h1.17a.5.5 0 00.5-.5V7.4a.5.5 0 00-.36-.48zM4.3 13.6a1.1 1.1 0 110-2.2 1.1 1.1 0 010 2.2zM6.33 12a2.1 2.1 0 00-4.06 0H1.5V4.5h7V12H6.33zm5.97 1.6a1.1 1.1 0 110-2.2 1.1 1.1 0 010 2.2zM15 12h-.67a2.1 2.1 0 00-4.06 0H9.5V6.17l5.5 1.6V12z">
+                                    </path>
+                                </svg>
+    
+    
+                            </div>
+    
+                            <div class="box__content-wrapper">
+                                <div class="box__title">Free Shipping</div>
+                                <div class="box__description">Order today, receive tomorrow</div>
+                            </div>
+                        </div>
+                        <div class="box box-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e">
+    
+                            <div class="box__image">
+    
+                                <svg class="icon icon--medium icon--type-price_tag" stroke-width="1" aria-hidden="true"
+                                    focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.59 1.34a1 1 0 01.7-.29h5.66a1 1 0 011 1v5.66a1 1 0 01-.3.7L7.6 15.5a1 1 0 01-1.42 0L.52 9.83a1 1 0 010-1.42l7.07-7.07zm6.36 6.37l-7.07 7.07-5.66-5.66L8.3 2.05h5.66v5.66z"
+                                        fill-rule="evenodd"></path>
+                                    <path
+                                        d="M9.7 6.3a1 1 0 101.42-1.42 1 1 0 00-1.41 1.41zM9 7a2 2 0 102.83-2.83A2 2 0 009 7z"
+                                        fill-rule="evenodd"></path>
+                                </svg>
+    
+    
+                            </div>
+    
+                            <div class="box__content-wrapper">
+                                <div class="box__title">Price-match guarantee</div>
+                                <div class="box__description">Safe money when ordering with us</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-box">
+                        <div class="box box-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e">
+    
+                            <div class="box__image">
+    
+                                <svg class="icon icon--medium icon--type-return" stroke-width="1" aria-hidden="true"
+                                    focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M9 .5a.5.5 0 000 1h1a4.5 4.5 0 110 9H2.2l3.15-3.15a.5.5 0 10-.7-.7l-4 4a.5.5 0 000 .7l4 4a.5.5 0 00.7-.7L2.21 11.5H10a5.5 5.5 0 100-11H9z">
+                                    </path>
+                                </svg>
+    
+    
+                            </div>
+    
+                            <div class="box__content-wrapper">
+                                <div class="box__title">Hassle-free exchange</div>
+                                <div class="box__description">Receive a slip for exchanges</div>
+                            </div>
+                        </div>
+                        <div class="box box-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e">
+    
+                            <div class="box__image">
+    
+                                <svg class="icon icon--medium icon--type-star" stroke-width="1" aria-hidden="true"
+                                    focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1c.21 0 .4.13.47.33l1.62 4.54 4.92.1a.5.5 0 01.29.9l-3.92 2.9 1.42 4.58a.5.5 0 01-.75.56L8 12.17 3.95 14.9a.5.5 0 01-.75-.56l1.42-4.58L.7 6.87a.5.5 0 01.29-.9l4.92-.1 1.62-4.54A.5.5 0 018 1zm0 2L6.74 6.52a.5.5 0 01-.46.33l-3.8.08L5.5 9.17a.5.5 0 01.18.55l-1.1 3.56 3.14-2.13a.5.5 0 01.56 0l3.15 2.13-1.1-3.56a.5.5 0 01.17-.55l3.02-2.23-3.8-.08a.5.5 0 01-.46-.33L8 2.99z">
+                                    </path>
+                                </svg>
+    
+    
+                            </div>
+    
+                            <div class="box__content-wrapper">
+                                <div class="box__title">5.0 Google Reviews</div>
+                                <div class="box__description">Customer satisfaction #1 priority</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function initFeature5() {
+                const faqItem = document.querySelectorAll('.box-template--20240865001801__164c1a85-19dc-4af7-8b50-1c88ea13bd4e');
+                for (item of faqItem) {
+                    item.addEventListener('click', function () {
+                        if (this.classList.contains('active')) {
+                            this.classList.remove('active');
+                        } else {
+                            for (el of faqItem) {
+                                el.classList.remove('active');
+                            }
+                            this.classList.add('active');
+                        }
+                    })
+                }
+            }
+            document.addEventListener('DOMContentLoaded', initFeature5);
+
+           
+        </script>
+    
+</body>
+</html>

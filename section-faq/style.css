@@ -1,0 +1,165 @@
+   @font-face {
+       font-family: 'Montserrat';
+       src: url(font/Montserrat-Regular.ttf);
+   }
+
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Montserrat', sans-serif;
+   }
+
+   .container-faq {
+       width: 100%;
+       margin: 0 auto;
+       padding: 2rem 0;
+   }
+
+   .container-faq h1 {
+       font-size: 50px;
+       font-weight: bold;
+       margin-bottom: 2rem;
+       color: #121212;
+       text-align: center;
+   }
+
+   .container-faq .content-faq {
+       padding: 2em;
+       padding-bottom: 3.5em;
+       background: rgba(252, 241, 241, 0.218);
+        border-bottom: 1px solid #f2f2f2;
+   }
+
+   .container-faq .content-faq .header {
+       text-align: center;
+   }
+
+
+   .container-faq .content-faq .header p {
+       margin-top: .3em;
+       font-size: 13px;
+       font-weight: 200;
+       color: #1F2D54;
+   }
+
+   .container-faq .content-faq .header h2 {
+       margin-top: .5em;
+       font-size: 42px;
+       color: #1F2D54;
+       font-weight: 900;
+   }
+
+   .container-faq .content-faq .content-wrapper {
+       display: grid;
+       grid-template-columns: repeat(2, 2fr);
+       margin-top: 1.5em;
+       padding: 0 2em;
+       padding-right: 6em;
+   }
+
+   .container-faq .content-faq .content-wrapper .product-image {
+       width: 100%;
+       max-width: 500px;
+       margin: 0 auto;
+       display: block;
+   }
+
+   .container-faq .content-faq .content-wrapper .tabs-container {
+       display: flex;
+       flex-direction: column;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab {
+       border-top: 1px solid #f2f2f2;
+       overflow: hidden;
+   }
+
+   .container-faq .content-faq .content-wrapper .last-tab {
+       border-bottom: 1px solid #f2f2f2;
+       overflow: hidden;
+   }
+
+
+   .container-faq .content-faq .content-wrapper .tab .tab-header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 1.2rem 1rem;
+       background: rgba(252, 241, 241, 0.218);
+       color: #1F2D54;
+       width: 100%;
+       border: none;
+       cursor: pointer;
+       text-align: left;
+       font-weight: lighter;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab .tab-header span {
+       font-size: 20px;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab-header .tab-icon img {
+       width: 40px;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab-header .tab-icon svg {
+       width: 40px;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab-icon {
+       display: flex;
+       align-items: center;
+       gap: 2rem;
+   }
+
+   .container-faq .content-faq .content-wrapper svg {
+       width: 17px;
+       height: auto;
+       transition: transform 0.3s ease;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab.active .chevron {
+       transform: rotate(180deg);
+   }
+
+   .container-faq .content-faq .content-wrapper .tab-content {
+       max-height: 0;
+       background: rgba(252, 241, 241, 0.218);
+       overflow: hidden;
+       transition: all .3s ease;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab-content p {
+       font-size: 15px;
+       color: #1F2D54;
+       line-height: 25px;
+   }
+
+   .container-faq .content-faq .content-wrapper .tab.active .tab-content {
+       max-height: fit-content;
+       padding: 1rem;
+   }
+
+   @media (max-width: 760px) {
+
+       .container-faq .content-faq {
+           padding: 1.4em .1em;
+       }
+
+       .container-faq .content-faq .content-wrapper {
+           display: grid;
+           grid-template-columns: repeat(1, 2fr);
+           padding: 0 1em;
+       }
+
+       .container-faq .content-faq .content-wrapper .tab .tab-header span {
+           font-size: 18px;
+       }
+   }
+
+   @media (max-width: 500px) {
+       .container-faq .content-faq .content-wrapper {
+           padding: 0 .5em;
+       }
+   }

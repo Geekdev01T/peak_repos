@@ -1,0 +1,82 @@
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "business_name",
+      "label": "Business Name"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact Link"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Newsletter Button Text"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram Link"
+    },
+    {
+      "type": "url",
+      "id": "site_credits_link",
+      "label": "Site Credits Link"
+    },
+    {
+      "type": "url",
+      "id": "footer_logo_link",
+      "label": "Footer Logo Link"
+    },
+    {
+      "type": "text",
+      "id": "payment_heading",
+      "label": "Payment Heading"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_heading",
+          "label": "Menu Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Menu Links"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}
+
+{% render 'footer', section: section %}

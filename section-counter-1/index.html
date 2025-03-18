@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+        <style>
+    
+            .section-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color:#f3f3f3;
+            }
+    
+            .section-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245-settings {
+                max-width: 120rem;
+               margin: 0 auto;
+                padding-top: 72px;
+                padding-bottom: 75px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .counter-heading-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                margin: 0;
+                font-size: 40px;
+                color: #000000;
+                line-height: 130%;
+                text-transform: unset;
+                text-align: center;
+            }
+    
+            .counter-text-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                margin: 0;
+                margin-top: 24px;
+                font-size: 20px;
+                color: #000000;
+                line-height: 150%;
+                text-transform: unset;
+                text-align: center;
+            }
+    
+            .counter-btn-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: fit-content;
+                margin: 0;
+                margin-top: 12px;
+                font-size: 18px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 12px 30px;
+                border-radius: 100px;
+                border: 0px solid #000000;
+                background-color: #000000;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .counter-btn-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245:hover {
+                color: #ffffff;
+                border: 0px solid #000000;
+                background-color: #000000;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                margin-top: 24px;
+            }
+    
+            .counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 .tick-flip-panel {
+                background-color: #333232;
+                color: #ffffff;
+            }
+    
+            .tick .tick-credits {
+                display: none !important;
+            }
+    
+            .tick-char {
+                width: 1.5em;
+            }
+    
+            .tick-text-inline {
+                display: inline-block;
+                text-align: center;
+                min-width: 1em;
+            }
+    
+            .tick-flip {
+                border-radius: 6px !important;
+            }
+    
+            .preview-counter-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 10px;
+            }
+    
+            .preview-counter-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245.hide-preview {
+                display: none;
+            }
+    
+            .preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                flex: 1 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                aspect-ratio: 1/1;
+                background-color: #333232;
+                color: #ffffff;
+                border-radius: 6px !important;
+                font-size: 20px;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .section-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+    
+                .section-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245-settings {
+                    padding: 0 5rem;
+                    padding-top: 96px;
+                    padding-bottom: 100px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .counter-heading-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                    font-size: 56px;
+                }
+    
+                .counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                    margin-top: 32px;
+                }
+    
+                .counter-text-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                    margin-top: 32px;
+                    font-size: 22px;
+                }
+    
+                .counter-btn-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                    margin-top: 16px;
+                    padding: 16px 40px;
+                    font-size: 20px;
+                }
+    
+                .tick-flip {
+                    border-radius: 16px !important;
+                }
+    
+                .preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                    font-size: 70px;
+                    border-radius: 16px !important;
+                }
+            }
+      
+            
+            .counter-btn-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                margin-left: auto;
+                margin-right: auto;
+            }
+      :
+
+            .counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 {
+                font-family: Montserrat, sans-serif;
+                font-weight: 800;
+                font-style: normal;
+            }
+    
+            @media(min-width: 1024px) {
+                .tick-flip-panel-text-wrapper {
+                    margin-top: 5px;
+                }
+            }
+        </style>
+    
+    
+        <div class="section-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 counter-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">
+            <div class="section-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245-settings">
+    
+                <h2 class="counter-heading-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">Get ready...</h2>
+    
+                <div class="tick counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245"
+                    data-did-init="handleTickInittemplate20041155379529__a1bc9933e61c4c0e8dafa26d3d46c245"
+                    data-state="initialised">
+    
+                    <div data-repeat="true" data-layout="horizontal fit"
+                        data-transform="upper -> split -> delay(random, 100, 150)" style="font-size: 82.7253px;">
+    
+                        <span class="tick-char tick-flip">
+                            <span class="tick-flip-card">
+                                <span class="tick-flip-panel-front tick-flip-front tick-flip-panel">
+                                    <span class="tick-flip-panel-front-text">
+                                        <span class="tick-flip-panel-text-wrapper">5</span>
+                                    </span>
+                                    <span class="tick-flip-panel-front-shadow"></span>
+                                </span>
+                                <span class="tick-flip-panel-back tick-flip-back tick-flip-panel"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style="z-index: 13;"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-169.433deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">6</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.117406;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-349.433deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">5</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.117406;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 0;"></span></span></span><span
+                                class="tick-flip-card" style="z-index: 12;"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-169.939deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">7</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.111787;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-349.939deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">6</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.111787;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999798;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 11;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-178.601deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">8</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.0155465;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-358.601deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">7</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.0155465;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999825;"></span></span></span><span class="tick-flip-card"
+                                style=""><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">9</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">8</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 1;"></span></span></span><span
+                                class="tick-flip-spacer">5</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow"
+                                style="opacity: 0.183378; transform: scaleY(0.183378);"></span></span><span data-view="flip"
+                            data-transform="ascii -> arrive -> round -> char(^[A-Za-z]*$)" class="tick-char tick-flip"><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">0</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style="z-index: 13;"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-164.584deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">1</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.171292;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-344.584deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">0</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.171292;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 0;"></span></span></span><span
+                                class="tick-flip-card" style="z-index: 12;"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-171.201deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">2</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.0977681;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-351.201deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">1</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.0977681;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999372;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 11;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-176.043deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">3</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.0439717;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-356.043deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">2</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.0439717;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999883;"></span></span></span><span class="tick-flip-card"
+                                style=""><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">4</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">3</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999989;"></span></span></span><span
+                                class="tick-flip-spacer">0</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow"
+                                style="opacity: 0.265829; transform: scaleY(0.265829);"></span></span><span data-view="flip"
+                            data-transform="ascii -> arrive -> round -> char(^[A-Za-z]*$)" class="tick-char tick-flip"><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">%</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style=""><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper"> </span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">%</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 0;"></span></span></span><span
+                                class="tick-flip-spacer">%</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow" style="opacity: 0; transform: scaleY(0);"></span></span><span
+                            data-view="flip" data-transform="ascii -> arrive -> round -> char(^[A-Za-z]*$)"
+                            class="tick-char tick-flip"><span class="tick-flip-card"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">D</span></span><span
+                                        class="tick-flip-panel-front-shadow"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">E</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">D</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-4.94142deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">F</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.0549047;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-184.941deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">E</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 1.9451;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-21.3547deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">G</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.237274;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-201.355deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">F</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 1.76273;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-49.9853deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">H</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.555392;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-229.985deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">G</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 1.44461;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style="z-index: 19;"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-101.453deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">I</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.872749;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-281.453deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">H</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.872749;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.623157;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 18;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-158.171deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">J</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.242539;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-338.171deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">I</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.242539;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.916904;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 17;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-159.971deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">K</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.222539;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-339.971deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">J</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.222539;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.998217;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 16;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-161.771deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">L</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.202539;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-341.771deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">K</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.202539;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.998622;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 15;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-163.571deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">M</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.182539;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-343.571deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">L</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.182539;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.998961;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 14;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-165.371deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">N</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.162539;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-345.371deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">M</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.162539;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.99924;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 13;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-167.171deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">O</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.142539;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-347.171deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">N</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.142539;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999463;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 12;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-171.96deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">P</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.0893388;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-351.96deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">O</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.0893388;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999638;"></span></span></span><span class="tick-flip-card"
+                                style="z-index: 11;"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-173.164deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">Q</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0.0759568;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-353.164deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">P</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.0759568;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999911;"></span></span></span><span class="tick-flip-card"
+                                style=""><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">R</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">Q</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow"
+                                        style="opacity: 0.999945;"></span></span></span><span
+                                class="tick-flip-spacer">D</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow"
+                                style="opacity: 0.980089; transform: scaleY(0.980089);"></span></span><span data-view="flip"
+                            data-transform="ascii -> arrive -> round -> char(^[A-Za-z]*$)" class="tick-char tick-flip"><span
+                                class="tick-flip-card"><span class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">O</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style=""><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">A</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">O</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 0;"></span></span></span><span
+                                class="tick-flip-spacer">O</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow" style="opacity: 0; transform: scaleY(0);"></span></span><span
+                            data-view="flip" data-transform="ascii -> arrive -> round -> char(^[A-Za-z]*$)"
+                            class="tick-char tick-flip"><span class="tick-flip-card"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">F</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style=""><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">G</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">F</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 0;"></span></span></span><span
+                                class="tick-flip-spacer">F</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow" style="opacity: 0; transform: scaleY(0);"></span></span><span
+                            data-view="flip" data-transform="ascii -> arrive -> round -> char(^[A-Za-z]*$)"
+                            class="tick-char tick-flip"><span class="tick-flip-card"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(0deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">F</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper"></span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 2;"></span><span
+                                        class="tick-flip-panel-back-shadow"></span></span></span><span
+                                class="tick-flip-card" style="z-index: 10;"><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-179.685deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">E</span></span><span
+                                        class="tick-flip-panel-front-shadow"
+                                        style="opacity: 0.00350515;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-359.685deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">F</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0.00350515;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 0;"></span></span></span><span
+                                class="tick-flip-card" style=""><span
+                                    class="tick-flip-panel-front tick-flip-front tick-flip-panel"
+                                    style="transform: rotateX(-180deg);"><span class="tick-flip-panel-front-text"><span
+                                            class="tick-flip-panel-text-wrapper">'</span></span><span
+                                        class="tick-flip-panel-front-shadow" style="opacity: 0;"></span></span><span
+                                    class="tick-flip-panel-back tick-flip-back tick-flip-panel"
+                                    style="transform: rotateX(-360deg);"><span class="tick-flip-panel-back-text"><span
+                                            class="tick-flip-panel-text-wrapper">E</span></span><span
+                                        class="tick-flip-panel-back-highlight" style="opacity: 0;"></span><span
+                                        class="tick-flip-panel-back-shadow" style="opacity: 1;"></span></span></span><span
+                                class="tick-flip-spacer">F</span><span
+                                class="tick-flip-shadow-top tick-flip-shadow tick-flip-front"></span><span
+                                class="tick-flip-shadow-bottom tick-flip-shadow tick-flip-back"></span><span
+                                class="tick-flip-card-shadow"
+                                style="opacity: 0.00550586; transform: scaleY(0.00550586);"></span></span>
+    
+                    </div>
+    
+                    <a class="tick-credits" href="https://pqina.nl/?ref=credits" target="_blank"
+                        rel="noopener noreferrer nofollow">Powered by PQINA</a>
+                </div>
+                <div class="preview-counter-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245 hide-preview">
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">C</div>
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">O</div>
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">U</div>
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">N</div>
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">T</div>
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">E</div>
+                    <div class="preview-counter-char-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">R</div>
+                </div>
+    
+                <p class="counter-text-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">Gear up for the
+                    busiest season of the year with the flip-flap, put-your-business-on-the-map centerpiece.</p>
+    
+    
+                <a href="" class="counter-btn-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245">Shop now</a>
+    
+            </div>
+        </div>
+    
+        <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+    
+    
+    
+    
+        <script>
+            function handleTickInittemplate20041155379529__a1bc9933e61c4c0e8dafa26d3d46c245() {
+
+                var rotation = [
+                    'BF SALE', '50% OFF', '31 OCT '
+                ];
+
+                // current rotation index (we start at the first word)
+                var index = 0;
+
+                document.querySelector('.counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245').helper.interval(function () {
+
+                    document.querySelector('.counter-tick-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245').value = rotation[index];
+
+                    index = index < rotation.length - 1 ? index + 1 : 0;
+
+                }, 3700);
+
+            }
+
+            function initCounter() {
+                document.querySelector('.preview-counter-template--20041155379529__a1bc9933-e61c-4c0e-8daf-a26d3d46c245').classList.add('hide-preview');
+                handleTickInittemplate20041155379529__a1bc9933e61c4c0e8dafa26d3d46c245();
+            }
+
+            document.addEventListener('DOMContentLoaded', initCounter);
+
+        </script>
+    
+</body>
+</html>

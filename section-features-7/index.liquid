@@ -1,0 +1,736 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+<style>
+  .section-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      max-width: {% if section.settings.full_width %} 100% {% else %} 1200px {% endif %};
+      {% if section.settings.full_border %}
+        border: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+      {% endif %}
+      background-color: {{section.settings.section_bg}};
+      border-radius: {{section.settings.section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section.settings.section_mt}}px !important;
+      margin-bottom: {{section.settings.section_mb}}px !important;
+  }
+
+  .section-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .feature-heading-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      margin: 0;
+      font-size: 30px;
+      color: #000000;
+      line-height: 130%;
+      text-transform: unset;
+      text-align: center;
+  }
+
+  .feature-items-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      margin-top: 27px;
+      padding: 0px 0px;
+      border-radius: 0px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      background-color: #ffffff;
+  }
+
+  .feature-slider-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      margin-top: 27px;
+      padding: 0px 0px;
+      border-radius: 0px;
+      background-color: #ffffff;
+      padding-bottom: 40px;
+  }
+
+  .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      width: 100%;
+      max-width: 65%;
+      border-radius: {{section.settings.img_radius}}px;
+      border:{{section.settings.img_border_w}}px solid {{section.settings.img_border_color}}
+      margin: 0 auto;
+      aspect-ratio: 1/1;
+      position: relative;
+  }
+
+  .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be img,
+  .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      margin: 0 auto;
+  }
+
+  .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be .img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      margin: 0 auto;
+  }
+
+  .feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      margin-top: 18px;
+      text-align: center;
+  }
+
+  .feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be>* {
+      margin: 0px;
+      font-size: {{section.settings.title_size_mobile}}px;
+      color: {{section.settings.title_color}};
+      font-weight:{{section.settings.title_weight}};
+      line-height: 130%;
+      text-transform: unset;
+  }
+
+  .feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      margin-top: 9px;
+      text-align: center;
+  }
+
+  .feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be>* {
+      margin: 0px;
+      font-size: {{section.settings.desc_size_mobile}}px;
+      color: {{section.settings.desc_color}};
+      line-height: 130%;
+      text-transform: unset;
+      opacity: 0.8;
+  }
+
+  .feature-pagination-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      margin-top: 20px;
+      display: flex !important;
+      justify-content: center;
+      position: static !important;
+      opacity: 1 !important;
+      pointer-events: all !important;
+  }
+
+  .feature-pagination-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be .swiper-pagination-bullet {
+      background-color: {{section.settings.pag_bg}} !important;
+      width: {{section.settings.pag_w}}px !important;
+      height: {{section.settings.pag_h}}px !important;
+      border:{{section.settings.pag_border_w}}px solid {{section.settings.pag_border_color}};
+  }
+
+  .feature-pagination-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be .swiper-pagination-bullet:not(:first-child) {
+      margin-left: 8px;
+  }
+
+  .feature-pagination-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be .swiper-pagination-bullet-active {
+      width: {{section.settings.pag_w_active}}px !important;
+      border-radius: {{section.settings.pag_radius}}px !important;
+  }
+
+   .section-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be-settings {
+      max-width: 130rem;
+  }
+
+
+  .feature-items-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+      display: none !important;
+  }
+
+      .feature-image-5e8d06cc-89d4-418f-8719-6a757560833b svg path {
+      fill: #dd2525;
+  }
+
+  @media(min-width: 1024px) {
+      .section-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .feature-heading-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          font-size: 34px;
+      }
+
+      .feature-items-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          margin-top: 36px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          padding: 0px 0px;
+      }
+
+      .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          max-width: 65%;
+          margin:0 auto;
+      }
+
+      .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be img,
+      .feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be svg {
+          width: 50%;
+      }
+
+      .feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          margin-top: 24px;
+      }
+
+      .feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be>* {
+          font-size: {{section.settings.title_size}}px;
+      }
+
+      .feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          margin-top: 12px;
+      }
+
+      .feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be>* {
+          font-size: {{section.settings.desc_size}}px;
+      }
+  }
+
+  @media(min-width: 768px) {
+      .feature-slider-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          display: none !important;
+      }
+
+      .feature-items-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be {
+          display: grid !important;
+      }
+  }
+</style>
+
+<div class="section-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+  <div class="section-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be-settings ">
+    <div class="feature-items-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+      <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+        <div
+          class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+          style="background-color: #a6dfa9"
+        >
+          <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+        </div>
+
+        <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <h3>Vegan</h3>
+        </div>
+
+        <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <p>Our entire Chella menu is completely vegan</p>
+        </div>
+      </div>
+
+      <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+        <div
+          class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+          style="background-color: #a6dfa9"
+        >
+          <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+        </div>
+
+        <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <h3>Vegan</h3>
+        </div>
+
+        <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <p>Our entire Chella menu is completely vegan</p>
+        </div>
+      </div>
+
+      <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+        <div
+          class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+          style="background-color: #a6dfa9"
+        >
+          <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+        </div>
+
+        <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <h3>Vegan</h3>
+        </div>
+
+        <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <p>Our entire Chella menu is completely vegan</p>
+        </div>
+      </div>
+
+      <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+        <div
+          class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+          style="background-color: #a6dfa9"
+        >
+          <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+        </div>
+
+        <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <h3>Vegan</h3>
+        </div>
+
+        <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+          <p>Our entire Chella menu is completely vegan</p>
+        </div>
+      </div>
+
+      {% for block in section.blocks %}
+        <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+          <div
+            class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+            style="background-color: {{ block.settings.bg }}"
+          >
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url:'master' }}" alt="">
+            {% else %}
+              <div class="img">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <h3>{{ block.settings.title }}</h3>
+          </div>
+
+          <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <p>{{ block.settings.desc }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="feature-slider-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper">
+      <div class="swiper-wrapper" id="swiper-wrapper-0c0274fa3c0eb10f7">
+        <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+          <div
+            class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+            style="background-color: #a6dfa9"
+          >
+            <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+          </div>
+
+          <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <h3>Vegan</h3>
+          </div>
+
+          <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <p>Our entire Chella menu is completely vegan</p>
+          </div>
+        </div>
+
+        <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+          <div
+            class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+            style="background-color: #a6dfa9"
+          >
+            <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+          </div>
+
+          <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <h3>Vegan</h3>
+          </div>
+
+          <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <p>Our entire Chella menu is completely vegan</p>
+          </div>
+        </div>
+
+        <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+          <div
+            class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+            style="background-color: #a6dfa9"
+          >
+            <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+          </div>
+
+          <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <h3>Vegan</h3>
+          </div>
+
+          <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <p>Our entire Chella menu is completely vegan</p>
+          </div>
+        </div>
+
+        <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+          <div
+            class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+            style="background-color: #a6dfa9"
+          >
+            <img src="//section.store/cdn/shop/files/vegan.svg?v=1697177586" alt="">
+          </div>
+
+          <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <h3>Vegan</h3>
+          </div>
+
+          <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+            <p>Our entire Chella menu is completely vegan</p>
+          </div>
+        </div>
+
+        {% for block in section.blocks %}
+          <div class="feature-item-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-slide">
+            <div
+              class="feature-image-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be feature-image-5e8d06cc-89d4-418f-8719-6a757560833b"
+              style="background-color: {{ block.settings.bg }}"
+            >
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url:'master' }}" alt="">
+              {% else %}
+                <div class="img">
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="feature-title-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+              <h3>{{ block.settings.title }}</h3>
+            </div>
+
+            <div class="feature-text-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be">
+              <p>{{ block.settings.desc }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div
+        class="feature-pagination-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be swiper-pagination"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+<script>
+  function initFeature7() {
+      const slider = new Swiper('.feature-slider-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be', {
+          speed: 300,
+          spaceBetween: 20,
+          slidesPerView: 2.4,
+          pagination: {
+              el: '.feature-pagination-template--19908494459209__3f2f4899-9028-41a7-a4ca-8f3dfbf2b1be',
+              type: 'bullets'
+          }
+      })
+  }
+
+  document.addEventListener('DOMContentLoaded', initFeature7);
+</script>
+
+{% schema %}
+{
+  "name": "PC Section Feature 7",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Size",
+      "default":22,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Mobile Size",
+      "default":18,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Font Weight",
+      "default":600,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default":"#603526"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desc_size_mobile",
+      "label": "Mobile Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Color",
+      "default":"#603526"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "range",
+      "id": "img_radius",
+      "label": "Border Radius",
+      "default":100,
+      "min": 0,
+      "max":150,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "img_border_w",
+      "label": "Border Width",
+      "default":100,
+      "min": 0,
+      "max":150,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "img_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+    {
+      "type": "header",
+      "content": "pagination"
+    },
+    {
+      "type": "range",
+      "id": "pag_w",
+      "label": "Width",
+      "default":9,
+      "min": 1,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_h",
+      "label": "Height",
+      "default":9,
+      "min": 1,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_w_active",
+      "label": "Active Width",
+      "default":30,
+      "min": 1,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_radius",
+      "label": "Border Radius",
+      "default":7,
+      "min": 1,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pag_border_w",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max":20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "pag_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "id": "pag_bg",
+      "label": "Background Color",
+      "default":"#603526"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#334fb4"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name":"Feature Slide",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "desc",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "bg",
+          "label": "Background Color",
+          "default":"#fff"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC Section Feature 7",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "image":"",
+            "title":"Lorem Ipsum",
+            "desc":"<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, accusantium.</p>",
+            "bg":"#008000"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "image":"",
+            "title":"Lorem Ipsum",
+            "desc":"<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, accusantium.</p>"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "image":"",
+            "title":"Lorem Ipsum",
+            "desc":"<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, accusantium.</p>",
+            "bg":"#008000"
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

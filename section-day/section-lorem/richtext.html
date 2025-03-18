@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Header Section */
+        .richt-richtext {
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .richt-richtext .richt-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .richt-richtext .richt-title .richt-italic {
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .richt-richtext .richt-description {
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 480px) {
+            .richt-richtext {
+                padding: 10px;
+            }
+
+            .richt-richtext .richt-title {
+                font-size: 28px;
+            }
+
+            .richt-richtext .richt-description {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="richt-richtext">
+        <h1 class="richt-title">Lorem <em class="richt-italic">ipsum</em></h1>
+        <p class="richt-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptia. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit</p>
+    </div>
+</body>
+
+</html>

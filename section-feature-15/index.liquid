@@ -1,0 +1,1148 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_border_color = section.settings.section_border_color %}
+{% assign section_bg = section.settings.section_bg %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+  .section-template--21494267248969__ss_feature_15_tnnCDT {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      background-color: {{section_bg}};
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-template--21494267248969__ss_feature_15_tnnCDT-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+  }
+
+  .feature-heading-template--21494267248969__ss_feature_15_tnnCDT {
+      text-align: center;
+  }
+
+  .feature-heading-template--21494267248969__ss_feature_15_tnnCDT * {
+      margin: 0px;
+      font-size: {{section.settings.heading_size_mobile}}px;
+      color: {{section.settings.heading_color}};
+      line-height: 130%;
+      text-transform: unset;
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-thumbs-slider-template--21494267248969__ss_feature_15_tnnCDT {
+      margin-top: 24px !important;
+      border-radius: {{ section.settings.thumbs_radius }}px;
+      border: {{ section.settings.thumbs_border_w }}px solid {{ section.settings.thumbs_border_color }};
+      overflow: hidden !important;
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT {
+      width: calc(100% / 4) !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+      margin: 0;
+      background-color: {{ section.settings.thumbs_bg }};
+      text-decoration: none;
+      padding: 10px 14px !important;
+      transition: all 0.25s ease 0s;
+      box-sizing: border-box !important;
+      position: relative;
+      cursor: pointer;
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT:hover {
+      transition: all 0.25s ease 0s;
+      background-color: {{ section.settings.thumbs_bg_hover }};
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT.swiper-slide-thumb-active {
+      transition: all 0.25s ease 0s;
+      color: {{ section.settings.thumbs_text_color_active }};
+      background-color: {{ section.settings.thumbs_bg_active }};
+  }
+
+  .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT {
+      flex: 0 0 {{section.settings.thumbs_image_w_mobile}}px;
+  }
+
+  .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT img,
+  .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT .img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT svg path {
+      transition: all 0.25s ease 0s;
+      fill: {{ section.settings.thumbs_text_color }};
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT:hover .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT svg path {
+      transition: all 0.25s ease 0s;
+      fill: {{ section.settings.thumbs_text_color_hover }};
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT.swiper-slide-thumb-active .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT svg path {
+      transition: all 0.25s ease 0s;
+      fill: {{ section.settings.thumbs_text_color_active }};
+  }
+
+  .feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT {
+      display: none;
+      margin: 0px;
+      font-size: {{ section.settings.thumbs_text_size }}px;
+      color: {{ section.settings.thumbs_text_color }};
+      line-height: 100%;
+      text-transform: unset;
+      font-weight: {{ section.settings.thumbs_text_weight }};
+      transition: all 0.25s ease 0s;
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT:hover .feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT {
+      transition: all 0.25s ease 0s;
+      color: {{ section.settings.thumbs_text_color_hover }};
+  }
+
+  .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT.swiper-slide-thumb-active .feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT {
+      transition: all 0.25s ease 0s;
+      color: {{ section.settings.thumbs_text_color_active }};
+  }
+
+  .feature-slider-wrapper-template--21494267248969__ss_feature_15_tnnCDT {
+      margin-top: 40px;
+      position: relative;
+  }
+
+  .feature-slide-template--21494267248969__ss_feature_15_tnnCDT {
+      box-sizing: border-box !important;
+  }
+
+  .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT {
+      margin-top: 20px;
+      border-radius: {{ section.settings.img_radius }}px;
+      border: {{ section.settings.img_border_w }}px solid {{ section.settings.img_border_color }};
+      overflow: hidden;
+      position: relative;
+  }
+
+  .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT img,
+  .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT .img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT svg {
+      background-color: #AFAFAF;
+  }
+
+  .feature-subheading-template--21494267248969__ss_feature_15_tnnCDT {
+      margin: 0px;
+      width: 100%;
+      text-align: center;
+      font-size: {{ section.settings.slide_sub_heading_size_mobile}}px;
+      color: {{ section.settings.slide_sub_heading_color}};
+      line-height: 130%;
+      text-transform: unset;
+      font-weight: {{ section.settings.slide_sub_heading_weight}};
+  }
+
+  .feature-text-template--21494267248969__ss_feature_15_tnnCDT {
+      margin-top: 16px;
+      text-align: center;
+  }
+
+  .feature-text-template--21494267248969__ss_feature_15_tnnCDT * {
+      margin: 0px;
+      font-size: {{section.settings.slide_desc_size_mobile}}px;
+      color: {{section.settings.slide_desc_color}};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .feature-text-template--21494267248969__ss_feature_15_tnnCDT li:not(:first-child) {
+      margin-top: 10px;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT {
+      position: absolute;
+      z-index: 2;
+      top: 35%;
+      transform: translateY(-50%);
+      width: {{section.settings.nav_btn_w_mobile}}px;
+      height: {{section.settings.nav_btn_w_mobile}}px;
+      border: 0px;
+      border: {{section.settings.nav_btn_border_w}}px solid {{section.settings.nav_btn_border_color}};
+      border-radius: {{section.settings.nav_btn_radius}}%;
+      background: {{section.settings.nav_btn_bg}};
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      box-shadow: 0px 0px 10px 0px {{section.settings.nav_btn_shadow_color}}26;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT {
+      left: 10px !important;
+  }
+
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT {
+      right: 10px !important;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT .animate-icon,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT .animate-icon {
+      pointer-events: none;
+      place-items: center;
+      display: grid;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:before,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:before {
+      content: "";
+      grid-area: 1 / -1;
+      transition: all .2s ease-in-out;
+      width: 8px;
+      height: 8px;
+      transform: rotate(calc(1 * 45deg));
+      box-sizing: border-box;
+      border-style: solid;
+      border: 0px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      position: relative;
+      left: -1px;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:before {
+      left: unset;
+      right: -1px;
+      border-right: 0px;
+      border-top: 0px;
+      border-bottom: 2px solid currentColor;
+      border-left: 2px solid currentColor;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:after,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:after {
+      content: "";
+      grid-area: 1 / -1;
+      transition: all .2s ease-in-out;
+      width: 7.7px;
+      height: 1.6px;
+      transform-origin: center;
+      opacity: 0;
+      background: currentColor;
+      transform: scaleX(.5);
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT span,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT span {
+      color: {{section.settings.nav_btn_color}};
+      transition: all 0.3s ease 0s;
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT.swiper-button-disabled,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT.swiper-button-disabled {
+      opacity: 0;
+  }
+
+  .feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT {
+      display: none !important;
+  }
+
+  @media(min-width: 1024px) {
+    
+      .section-template--21494267248969__ss_feature_15_tnnCDT-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 9rem;
+          padding-right: 9rem;
+      }
+
+      .feature-heading-template--21494267248969__ss_feature_15_tnnCDT {
+          text-align: left;
+      }
+
+      .feature-heading-template--21494267248969__ss_feature_15_tnnCDT * {
+          font-size: {{section.settings.heading_size}}px;
+      }
+
+      .feature-thumbs-slider-template--21494267248969__ss_feature_15_tnnCDT {
+          margin-top: 0px !important;
+      }
+
+
+      .feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT {
+          padding: 10px 16px !important;
+      }
+
+      .feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT {
+          flex: 0 0 {{section.settings.thumbs_image_w}}px;
+      }
+
+      .feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT {
+          display: block;
+      }
+
+      .feature-slider-wrapper-template--21494267248969__ss_feature_15_tnnCDT {
+          margin-top: 40px;
+      }
+
+      .feature-slide-template--21494267248969__ss_feature_15_tnnCDT {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          gap: 60px;
+      }
+
+      .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT {
+          margin-top: 0px;
+      }
+
+      .feature-subheading-template--21494267248969__ss_feature_15_tnnCDT {
+          margin-top: 20px;
+          text-align: left;
+          font-size: {{ section.settings.slide_sub_heading_size}}px;
+      }
+
+      .feature-text-template--21494267248969__ss_feature_15_tnnCDT {
+          margin-top: 16px;
+          text-align: left;
+      }
+
+      .feature-text-template--21494267248969__ss_feature_15_tnnCDT * {
+          font-size: {{section.settings.slide_desc_size}}px;
+      }
+
+      .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT,
+      .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT {
+          width: {{section.settings.nav_btn_w}}px;
+          height: {{section.settings.nav_btn_w}}px;
+          transition: all 0.25s ease 0s;
+          top: 50%;
+      }
+
+      .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT.swiper-button-disabled,
+      .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT.swiper-button-disabled {
+          opacity: 0 !important;
+      }
+
+      .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT {
+          left: -8rem !important;
+      }
+
+      .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT {
+          right: -8rem !important;
+      }
+
+      .feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT {
+          display: none !important;
+      }
+
+      .feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT {
+          display: block !important;
+      }
+
+      .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:before,
+      .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:before {
+          width: 8px;
+          height: 8px;
+      }
+
+      .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:after,
+      .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT .animate-icon:after {
+          width: 7.7px;
+      }
+  }
+
+
+  .section-template--21494267248969__ss_feature_15_tnnCDT-settings {
+      max-width: 120rem;
+  }
+
+
+  .feature-heading-template--21494267248969__ss_feature_15_tnnCDT * {
+      font-family: Helvetica, sans-serif;
+      font-weight: {{section.settings.heading_weight}};
+      font-style: normal;
+  }
+
+
+  .feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT {
+      font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+      font-weight: {{ section.settings.thumbs_text_weight }};
+      font-style: normal;
+  }
+
+
+  .feature-subheading-template--21494267248969__ss_feature_15_tnnCDT {
+      font-family: Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: normal;
+  }
+
+
+  .feature-text-template--21494267248969__ss_feature_15_tnnCDT * {
+      font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+
+
+  .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT {
+      aspect-ratio: 12/10;
+  }
+
+
+  @media(min-width: 1024px) {
+      .feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT {
+          aspect-ratio: 12/10;
+      }
+
+  }
+
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT {
+      display: flex;
+  }
+
+
+  @media(min-width: 1024px) {
+
+      .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT,
+      .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT {
+          display: flex;
+      }
+  }
+
+
+  @media(min-width: 1024px) {
+      .feature-content-template--21494267248969__ss_feature_15_tnnCDT {
+          order: 1;
+      }
+
+      .feature-image-template--21494267248969__ss_feature_15_tnnCDT {
+          order: 2;
+      }
+  }
+
+
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT:hover .animate-icon:before {
+      transform: translate(calc(1 * 0.125rem)) rotate(calc(1 * 45deg));
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT:hover .animate-icon:before {
+      transform: translate(calc(-1 * 0.125rem)) rotate(calc(1 * 45deg));
+  }
+
+  .feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT:hover .animate-icon:after,
+  .feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT:hover .animate-icon:after {
+      opacity: 1;
+      transform: scaleX(1);
+  }
+</style>
+
+<div class="section-template--21494267248969__ss_feature_15_tnnCDT feature-template--21494267248969__ss_feature_15_tnnCDT">
+  <div class="section-template--21494267248969__ss_feature_15_tnnCDT-settings">
+    <div
+      class="feature-heading-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+    >
+      <h2>{{section.settings.heading}}</h2>
+    </div>
+
+    <div
+      class="feature-thumbs-slider-template--21494267248969__ss_feature_15_tnnCDT swiper"
+    >
+      <div class="swiper-wrapper" id="swiper-wrapper-c5e357950b638108c">
+        <div class="feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT swiper-slide">
+          <div class="feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT">
+            <img
+              src="//section.store/cdn/shop/files/014-feather.svg?v=1717500407"
+              alt=""
+              loading="lazy"
+            >
+          </div>
+
+          <p class="feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT">Soft as a cloud</p>
+        </div>
+
+        <div class="feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT swiper-slide">
+          <div class="feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT">
+            <img src="//section.store/cdn/shop/files/019-Cotton.svg?v=1717500667" alt="" loading="lazy">
+          </div>
+
+          <p class="feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT">Optimal Support</p>
+        </div>
+
+        <div class="feature-thumbs-slide-template--21494267248969__ss_feature_15_tnnCDT swiper-slide">
+          <div class="feature-thumbs-icon-template--21494267248969__ss_feature_15_tnnCDT">
+            <img
+              src="//section.store/cdn/shop/files/034-label_tag.svg?v=1717500470"
+              alt=""
+              loading="lazy"
+            >
+          </div>
+
+          <p class="feature-thumbs-text-template--21494267248969__ss_feature_15_tnnCDT">Sustainability</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-slider-wrapper-template--21494267248969__ss_feature_15_tnnCDT">
+      <div
+        class="feature-slider-template--21494267248969__ss_feature_15_tnnCDT swiper"
+      >
+        <div class="swiper-wrapper" id="swiper-wrapper-7f0a9e2c626bc367" aria-live="polite">
+          <div class="feature-slide-template--21494267248969__ss_feature_15_tnnCDT swiper-slide">
+            <div class="feature-content-template--21494267248969__ss_feature_15_tnnCDT">
+              <div
+                class="feature-heading-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <h2>{{section.settings.heading}}</h2>
+              </div>
+
+              <p
+                class="feature-subheading-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                Soft as a cloud
+              </p>
+
+              <div
+                class="feature-text-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <p>
+                  The BENI BED is a pillowy, roll-up bed that you can take anywhere. Sun-drenched beach days, starlit
+                  camping trips, picnics in the park, or movie nights at home - the possibilities are endless.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-image-template--21494267248969__ss_feature_15_tnnCDT">
+              <p
+                class="feature-subheading-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                Soft as a cloud
+              </p>
+
+              <div class="feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT">
+                <img
+                  src="//section.store/cdn/shop/files/3_b91fe32d-0896-472b-90da-79453cab56fb.webp?v=1716311156"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+
+              <div
+                class="feature-text-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <p>
+                  The BENI BED is a pillowy, roll-up bed that you can take anywhere. Sun-drenched beach days, starlit
+                  camping trips, picnics in the park, or movie nights at home - the possibilities are endless.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-slide-template--21494267248969__ss_feature_15_tnnCDT swiper-slide ">
+            <div class="feature-content-template--21494267248969__ss_feature_15_tnnCDT">
+              <div
+                class="feature-heading-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <h2>{{section.settings.heading}}</h2>
+              </div>
+
+              <p
+                class="feature-subheading-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                Optimal Support
+              </p>
+
+              <div
+                class="feature-text-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <p>
+                  The BENI BED measures 190cm x 90cm and weighs 6.5kg. Once rolled, it fits in a large boot of a car. If
+                  placed in the backseat, it will take up 1 seat.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-image-template--21494267248969__ss_feature_15_tnnCDT">
+              <p
+                class="feature-subheading-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                Optimal Support
+              </p>
+
+              <div class="feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT">
+                <img
+                  src="//section.store/cdn/shop/files/Untitled_design_29.webp?v=1716311155"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+
+              <div
+                class="feature-text-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <p>
+                  The BENI BED measures 190cm x 90cm and weighs 6.5kg. Once rolled, it fits in a large boot of a car. If
+                  placed in the backseat, it will take up 1 seat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="feature-slide-template--21494267248969__ss_feature_15_tnnCDT swiper-slide">
+            <div class="feature-content-template--21494267248969__ss_feature_15_tnnCDT">
+              <div
+                class="feature-heading-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <h2>{{section.settings.heading}}</h2>
+              </div>
+
+              <p
+                class="feature-subheading-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                Sustainability
+              </p>
+
+              <div
+                class="feature-text-template--21494267248969__ss_feature_15_tnnCDT feature-element-desktop-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <p>
+                  The covers are machine washable, made from regenerative Good Earth Cotton. The inners are filled with
+                  soft fluff made from recycled plastic water bottles.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-image-template--21494267248969__ss_feature_15_tnnCDT">
+              <p
+                class="feature-subheading-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                Sustainability
+              </p>
+
+              <div class="feature-image-inner-template--21494267248969__ss_feature_15_tnnCDT">
+                <img
+                  src="//section.store/cdn/shop/files/BrownBENI.webp?v=1716311156"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+
+              <div
+                class="feature-text-template--21494267248969__ss_feature_15_tnnCDT feature-element-mobile-template--21494267248969__ss_feature_15_tnnCDT"
+              >
+                <p>
+                  The covers are machine washable, made from regenerative Good Earth Cotton. The inners are filled with
+                  soft fluff made from recycled plastic water bottles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT">
+        <span class="animate-icon"></span>
+      </button>
+      <button class="feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT">
+        <span class="animate-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function initFeature15() {
+
+      const thumbsSwiper = new Swiper('.feature-thumbs-slider-template--21494267248969__ss_feature_15_tnnCDT', {
+          slidesPerView: 'auto',
+          threshold: 2,
+          direction: 'horizontal',
+          watchSlidesProgress: true,
+          slideToClickedSlide: true
+      });
+
+      setTimeout(() => {
+          const mainSwiper = new Swiper('.feature-slider-template--21494267248969__ss_feature_15_tnnCDT', {
+              speed: 300,
+              spaceBetween: 20,
+              effect: 'fade',
+              fadeEffect: {
+                  crossFade: true
+              },
+              loop: true,
+              autoHeight: true,
+              watchOverflow: true,
+              navigation: {
+                  nextEl: '.feature-btn-next-template--21494267248969__ss_feature_15_tnnCDT',
+                  prevEl: '.feature-btn-prev-template--21494267248969__ss_feature_15_tnnCDT'
+              },
+              thumbs: {
+                  swiper: thumbsSwiper
+              }
+          });
+
+          const thumbSlides = document.querySelectorAll('.feature-thumbs-slider-template--21494267248969__ss_feature_15_tnnCDT .swiper-slide');
+          thumbSlides.forEach((slide, index) => {
+              slide.addEventListener('click', () => {
+                  mainSwiper.slideTo(index);
+              });
+          });
+      }, 100);
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFeature15);
+  } else {
+      initFeature15();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "PC - Feature #15",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit."
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "default":52,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Size",
+      "default":30,
+      "min": 10,
+      "max":60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default":"#262425"
+    },
+    {
+        "type": "header",
+        "content": "Thumbs Slider"
+    },
+    {
+      "type": "range",
+      "id": "thumbs_text_size",
+      "label": "Text Font Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "thumbs_text_weight",
+      "label": "Text Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "thumbs_text_color",
+      "label": "Text Color",
+      "default":"#262425"
+    },
+    {
+      "type": "color",
+      "id": "thumbs_text_color_hover",
+      "label": "Text Color Hover",
+      "default":"#262425"
+    },
+    {
+      "type": "color",
+      "id": "thumbs_text_color_active",
+      "label": "Text Color Active",
+      "default":"#262425"
+    },
+    {
+      "type": "range",
+      "id": "thumbs_image_w",
+      "label": "Image Width",
+      "default":24,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "thumbs_image_w_mobile",
+      "label": "Image Mobile Width",
+      "default":24,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "thumbs_radius",
+      "label": "Border Radius",
+      "default":6,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "thumbs_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "thumbs_border_color",
+      "default":"#dfdfdf"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "thumbs_bg",
+      "default":"#fff8ec"
+    },
+    {
+      "type": "color",
+      "label": "Background Color Hover",
+      "id": "thumbs_bg_hover",
+      "default":"#ede6db"
+    },
+    {
+      "type": "color",
+      "label": "Background Color Active",
+      "id": "thumbs_bg_active",
+      "default":"#ede6db"
+    },
+    {
+        "type": "header",
+        "content": "Slider Text Content"
+    },
+    {
+      "type": "range",
+      "id": "slide_sub_heading_size",
+      "label": "Sub Heading Font Size",
+      "default":32,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_sub_heading_size_mobile",
+      "label": "Sub Heading Mobile Font Size",
+      "default":24,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_sub_heading_weight",
+      "label": "Sub Heading Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "slide_sub_heading_color",
+      "label": "Sub Heading Color",
+      "default":"#262425"
+    },
+    {
+      "type": "range",
+      "id": "slide_desc_size",
+      "label": "Description Font Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slide_desc_size_mobile",
+      "label": "Description Mobile Font Size",
+      "default":14,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slide_desc_color",
+      "label": "Description Color",
+      "default":"#262425"
+    },
+    {
+        "type": "header",
+        "content": "Slider Image"
+    },
+    {
+      "type": "range",
+      "id": "img_radius",
+      "label": "Border Radius",
+      "default":12,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "img_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "img_border_color",
+      "label": "Border Color",
+      "default":"#000"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Button"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_w",
+      "label": "Width",
+      "default":48,
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_w_mobile",
+      "label": "Mobile Width",
+      "default":40,
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_radius",
+      "label": "Border Radius",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_color",
+      "label": "Color",
+      "default":"#262425"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_border_color",
+      "label": "Border Color",
+      "default":"#262425"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_bg",
+      "label": "Background Color",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "id": "nav_btn_shadow",
+      "label": "Shadow Color",
+      "default":"#000000"
+    },
+    {
+        "type": "header",
+        "content": "Section"
+     },
+     {
+        "type": "checkbox",
+        "id":"full_width",
+        "label":"Enabled Full Width",
+        "default": false
+     },
+     {
+        "type": "range",
+        "id": "section_mt",
+        "label": "Margin Top",
+        "default":20,
+        "min": 10,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "section_mb",
+        "label": "Margin Bottom",
+        "default":20,
+        "min": 10,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id":"full_border",
+        "label":"Enabled Border",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "section_radius",
+        "label": "Border Radius",
+        "default":0,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "section_border_w",
+        "label": "Border Width",
+        "default":1,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "label": "Border Color",
+        "id": "section_border_color",
+        "default":"#262425"
+      },
+      {
+        "type": "color",
+        "label": "Background Color",
+        "id": "section_bg",
+        "default":"#fff8ec"
+      },
+  ],
+  "presets": [
+    {
+      "name": "PC - Feature #15",
+    }
+  ]
+}
+{% endschema %}

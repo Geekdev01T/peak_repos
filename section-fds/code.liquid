@@ -1,0 +1,1678 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+<style>
+   {% assign full_width = section.settings.full_width %}
+   {% assign section_mt = section.settings.section_mt %}
+   {% assign section_mb = section.settings.section_mb %}
+   {% assign section_radius = section.settings.section_radius %}
+   {% assign full_border = section.settings.full_border %}
+   {% assign section_border_w = section.settings.section_border_w %}
+   {% assign section_border_color = section.settings.section_border_color %}
+   {% assign section_bg = section.settings.section_bg %}
+   {% assign hero_title_bg = section.settings.hero_title_bg %}
+   {% assign hero_title_align = section.settings.hero_title_align %}
+   {% assign hero_title_size = section.settings.hero_title_size %}
+   {% assign hero_title_color = section.settings.hero_title_color %}
+   {% assign hero_title_weight = section.settings.hero_title_weight %}
+   {% assign search_bg_color = section.settings.search_bg_color %}
+   {% assign search_border_width = section.settings.search_border_width %}
+   {% assign search_border_type = section.settings.search_border_type %}
+   {% assign search_border_color = section.settings.search_border_color %}
+   {% assign search_border_focus_color = section.settings.search_border_focus_color %}
+   {% assign search_btn_w = section.settings.search_btn_w %}
+   {% assign search_content_color = section.settings.search_content_color %}
+   {% assign close_btn_w = section.settings.close_btn_w %}
+   {% assign search_size_mobile = section.settings.search_size_mobile %}
+   {% assign result_bg = section.settings.result_bg %}
+   {% assign result_border_w = section.settings.result_border_w %}
+   {% assign result_border_type = section.settings.result_border_type %}
+   {% assign result_border_color = section.settings.result_border_color %}
+   {% assign result_radius = section.settings.result_radius %}
+   {% assign inside_border_bottom_w = section.settings.inside_border_bottom_w %}
+   {% assign inside_border_bottom_type = section.settings.inside_border_bottom_type %}
+   {% assign inside_border_bottom_color = section.settings.inside_border_bottom_color %}
+   {% assign result_align = section.settings.result_align %}
+   {% assign result_size = section.settings.result_size %}
+   {% assign result_color = section.settings.result_color %}
+   {% assign empty_result_align = section.settings.empty_result_align %}
+   {% assign empty_result_size = section.settings.empty_result_size %}
+   {% assign empty_result_color = section.settings.empty_result_color %}
+   {% assign faq_size = section.settings.faq_size %}
+   .fds-container {
+       max-width: {% if section.settings.full_width %}100%{% else %}1200px{% endif %};
+       margin: 0 auto;
+       margin-top:{{section.settings.section_mt}}px;
+       margin-bottom:{{section.settings.section_mb}}px;
+       border-radius: {{section.settings.section_radius}}px;
+       {% if section.settings.full_border %}
+         border: {{section.settings.section_border_w}}px solid {{section.settings.section_border_color}};
+       {% endif %}
+       background:{{section.settings.section_bg}};
+       gap: 40px;
+       font-family: Arial, sans-serif;
+   }
+
+   .fds-container .fds-hero {
+       background: {{section.settings.hero_title_bg}};
+       text-align: {{section.settings.hero_title_align}};
+       padding: 4em 0;
+   }
+
+   .fds-container .fds-hero h1 {
+       font-size: {{section.settings.hero_title_size}}px;
+       color: {{section.settings.hero_title_color}};
+       font-weight:{{section.settings.hero_title_weight}};
+   }
+
+   .fds-container .fds-hero .fds-search-container {
+       width: 80%;
+       max-width: 500px;
+       margin: 0 auto;
+       position: relative;
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-div {
+       width: 100%;
+       display: flex;
+       justify-content: start;
+       align-items: center;
+       background: {{section.settings.search_bg_color}};
+       border-radius: 4px;
+       margin-top: 2em;
+       padding: 4px 8px;
+       border: {{section.settings.search_border_width}}px {{section.settings.search_border_type}} {{section.settings.search_border_color}};
+       box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.16);
+       transition: border-color 0.3s ease;
+   }
+
+  .fds-container .fds-hero .fds-search-container .fds-search-div:focus-within  {
+       border-color: {{section.settings.search_border_focus_color}};
+        /* Change la couleur de la bordure (bleu par exemple)*/
+   }
+
+
+   .fds-container .fds-hero .fds-search-container .fds-search-div svg {
+       width: {{section.settings.search_btn_w}}px;
+       color: {{section.settings.search_content_color}};
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-div .fds-close-search {
+       width: {{section.settings.close_btn_w}}px;
+       color: {{section.settings.search_content_color}};
+       cursor: pointer;
+       display: none;
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-div .fds-search-input {
+       width: 100%;
+       padding: 1rem;
+       outline: none;
+       border: none;
+     box-shadow:none;
+       /*
+       font-size: {{section.settings.search_size}}px;
+
+       color: {{section.settings.search_content_color}}; */
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-div .fds-search-input::placeholder {
+     color: {{section.settings.search_content_color}};
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-results-box {
+       position: absolute;
+       top: 100%;
+       left: 0;
+       right: 0;
+       background: {{section.settings.result_bg}};
+       border: {{section.settings.result_border_w}}px {{section.settings.result_border_type}} {{section.settings.result_border_color}};
+       border-radius: {{section.settings.result_radius}}px;
+       margin-top: 0.2rem;
+       max-height: 300px;
+       padding: .5em 1em;
+       overflow-y: auto;
+       display: none;
+       z-index: 1000;
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-results-box .fds-search-results {
+       background: transparent;
+       border-bottom: {{ section.settings.inside_border_bottom_w }}px {{section.settings.inside_border_bottom_type}} {{section.settings.inside_border_bottom_color}};
+       text-align: {{section.settings.result_align}};
+       padding: .7em 0;
+       max-height: 300px;
+       font-size: {{section.settings.result_size}}px;
+       color: {{section.settings.result_color}};
+       transition: all .3s ease-in-out;
+   }
+
+   .fds-container .fds-hero .fds-search-container .fds-search-results-box .fds-search-results-empty {
+       background: transparent;
+       text-align: {{section.settings.empty_result_align}};
+       padding: 1em 0;
+       max-height: 300px;
+       font-size: {{section.settings.empty_result_size}}px;
+       color: {{section.settings.empty_result_color}};
+   }
+
+
+
+   .fds-container .fds-hero .fds-search-container .fds-search-results-box .fds-search-results:hover {
+       cursor: pointer;
+       text-decoration: underline;
+   }
+
+   .fds-container .fds-faq-head {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding-right: 1.8em;
+       margin-top: 2em;
+   }
+
+
+   .fds-container .fds-faq-head .fds-faq {
+       margin-left: 3em;
+       font-size: {{section.settings.faq_size}}px;
+       color: {{section.settings.faq_color}};
+       font-weight: {{section.settings.faq_weight}};
+   }
+
+   .fds-container .fds-faq-head .fds-menu-select {
+       position: relative;
+       display: none;
+   }
+
+   .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       gap: 6.5em;
+       padding: 12px;
+       border-radius: {{section.settings.btn_radius}}px;
+       background: {{section.settings.btn_bg}};
+       font-size: {{section.settings.btn_size}}px;
+       color: {{section.settings.btn_color}};
+       border: {{section.settings.btn_border_w}}px {{section.settings.btn_border_type}} {{section.settings.btn_border_color}};
+   }
+
+   .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn:focus {
+       border-color: {{section.settings.btn_border_color_hover}};
+   }
+
+   .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-items {
+       position: absolute;
+       top: 3.4em;
+       text-transform:capitalize;
+       max-height: 230px;
+       width: 100%;
+       border-radius: {{section.settings.m_menu_radius}}px;
+       overflow-y: auto;
+       padding: .8em;
+       display: none;
+       flex-direction: column;
+       gap: 1em;
+       background: {{section.settings.m_menu_bg}};
+       border: {{section.settings.m_menu_border_w}}px {{section.settings.m_menu_border_type}} {{section.settings.m_menu_border_color}};
+       box-shadow: {{section.settings.m_menu_shadow_color}} 0px 2px 4px;
+       text-align: {{section.settings.m_menu_align}};
+       transition: all .4s ease;
+   }
+
+   .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-items.active {
+       display: flex;
+   }
+
+
+
+   .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-items .fds-menu-select-item {
+       margin-top: 10px;
+       font-size: {{section.settings.m_menu_size}}px;
+       color: {{section.settings.m_menu_color}};
+       text-decoration: none;
+       cursor: pointer;
+   }
+
+   .fds-container .fds-content-all {
+       display: flex;
+       flex-direction: row;
+       gap: 40px;
+       padding: 20px 6em;
+   }
+
+   .fds-container .fds-content-all .fds-menu {
+       width: 290px;
+       top: 20px;
+       align-self: flex-start;
+   }
+
+
+   .fds-container .fds-content-all .fds-menu .fds-menu-items {
+       display: flex;
+       flex-direction: column;
+       gap: 12px;
+   }
+
+   .fds-container .fds-content-all .fds-menu .fds-menu-items .fds-menu-item {
+       color: {{section.settings.w_menu_color}};
+       margin-left: -8px;
+       text-transform:capitalize;
+       text-decoration: none;
+       padding: 13px 8px;
+       font-weight: {{section.settings.w_menu_weight}};
+       font-size: {{section.settings.w_menu_size}}px;
+       border-radius: {{ section.settings.w_menu_radius }}px;
+       background: {{section.settings.w_menu_bg}};
+       transition: background-color 0.5s;
+   }
+
+   .fds-container .fds-content-all .fds-menu .fds-menu-items .fds-menu-item:hover {
+       background-color: {{section.settings.w_menu_bg_hover}};
+   }
+
+   .fds-container .fds-content-all .fds-content {
+       flex: 1;
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-section {
+       margin-bottom: 40px;
+       scroll-margin-top: 20px;
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-section .fds-item {
+       border-top: {{section.settings.question_border_top_w}}px {{section.settings.question_border_top_type}} {{section.settings.question_border_top_color}};
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-section h2 {
+       font-size: {{section.settings.question_title_size}}px;
+       margin-bottom: 10px;
+       padding-bottom: 10px;
+       font-weight: {{section.settings.question_title_weight}};
+       color:{{section.settings.question_title_color}};
+   }
+
+   .fds-container .fds-content-all .fds-content .first {
+       margin-bottom: 2em;
+       margin-top: -.5em;
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-question {
+       padding: 16px 0;
+       font-size: {{section.settings.question_size}}px;
+       font-weight: {{section.settings.question_weight}};
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       cursor: pointer;
+     color:{{section.settings.question_color}};
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-question svg {
+       transition: transform 0.3s;
+       width: {{section.settings.question_icon_w}}px;
+   }
+
+
+   .fds-container .fds-content-all .fds-content .fds-item.active .fds-question svg {
+       transform: rotate(180deg);
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-item .fds-answer {
+       font-size: {{section.settings.answer_size}}px;
+       line-height: 22px;
+       color: {{section.settings.answer_color}};
+       padding: 0;
+       max-height: 0;
+       overflow: hidden;
+       transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-item .fds-answer .img {
+       margin: 0 auto;
+       width: 35%;
+       margin-left: 30%;
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-item .fds-answer ol {
+       list-style: decimal;
+   }
+
+   .fds-container .fds-content-all .fds-content .fds-item.active .fds-answer {
+       padding: 16px 0;
+       max-height: 500px;
+   }
+
+   @media (max-width:1075px) {
+       .fds-container .fds-faq {
+           margin: 1em .8em;
+       }
+
+       .fds-container .fds-content-all {
+           display: flex;
+           flex-direction: row;
+           gap: 40px;
+           padding: 18px 1.8em;
+       }
+
+       .fds-container .fds-faq-head .fds-faq {
+           margin-left: 1em;
+       }
+   }
+
+   @media (max-width:770px) {
+       .fds-container .fds-faq-head .fds-menu-select {
+           position: relative;
+           display: block;
+       }
+
+       .fds-container .fds-content-all .fds-menu {
+           display: none;
+       }
+   }
+
+   @media (max-width:565px) {
+       .fds-container .fds-hero h1 {
+           font-size: {{section.settings.hero_title_size_mobile}}px;
+       }
+
+       .fds-container .fds-hero .fds-search-container .fds-search-div .fds-search-input {
+         font-size: {{section.settings.search_size_mobile}}px;
+       }
+
+       .fds-container .fds-faq-head .fds-faq {
+           margin-left: 0em;
+           font-size: {{section.settings.faq_size_mobile}}px;
+       }
+
+       .fds-container .fds-faq-head {
+           width: 90%;
+           margin: 0 auto;
+           display: flex;
+           flex-direction: column;
+           align-items: start;
+           padding-right: 0em;
+       }
+
+       .fds-container .fds-faq-head .fds-menu-select {
+           width: 100%;
+       }
+
+       .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn {
+           width: 100% !important;
+       }
+   }
+
+   @media (max-width:400px) {
+       .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn {
+           gap: 6.5em;
+           padding: 6px;
+       }
+   }
+
+   @media (max-width:375px) {
+       .fds-container .fds-content-all {
+           width: 90%;
+           margin: 0 auto;
+           padding: 20px .1em;
+       }
+
+       .fds-container .fds-content-all .fds-menu {
+           width: 100% !important;
+
+       }
+
+       .fds-container .fds-content-all .fds-content .fds-section .fds-item {
+           border-top: 1px solid #DDDDDD;
+       }
+
+       .fds-container .fds-content-all .fds-content .fds-question {
+           width: 95%;
+           padding: 16px 0;
+       }
+   }
+
+   @media (max-width:345px) {
+       .fds-container .fds-content-all {
+           width: 90%;
+           gap: 4px;
+           padding: 20px .1em;
+       }
+
+       .fds-container .fds-content-all .fds-menu {
+           width: 100% !important;
+       }
+
+       .fds-container .fds-content-all .fds-content .fds-section .fds-item {
+           border-top: 1px solid #DDDDDD;
+           width: 90%;
+       }
+
+       .fds-container .fds-content-all .fds-content .fds-question {
+           width: 90%;
+       }
+   }
+</style>
+
+<div class="fds-container">
+  <div class="fds-hero">
+    <h1>{{ section.settings.hero_title }}</h1>
+    <div class="fds-search-container">
+      <div class="fds-search-div">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+
+        <input type="text" class="fds-search-input" placeholder="{{ section.settings.search_placeholder }}">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.1"
+          stroke="currentColor"
+          class="size-6 fds-close-search"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+
+      <div class="fds-search-results-box"></div>
+    </div>
+  </div>
+  <!-- Menu de navigation -->
+  <div class="fds-faq-head">
+    <h2 class="fds-faq">{{ section.settings.faq_text }}</h2>
+    <div class="fds-menu-select">
+      <button class="fds-menu-select-btn">
+        {{ section.settings.btn_text }}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          facing="down"
+          class="css-18gudqo er11us50"
+        >
+          <path
+              d="M8.71005 11.71L11.3001 14.3C11.6901 14.69 12.3201 14.69 12.7101 14.3L15.3001 11.71C15.9301 11.08 15.4801 10 14.5901 10H9.41005C8.52005 10 8.08005 11.08 8.71005 11.71Z"
+              fill="#AFAFAF"></path>
+        </svg>
+      </button>
+      <div class="fds-menu-select-items">
+        {% for block in section.blocks %}
+          {% if block.type == 'menu' %}
+            <a href="#{{ block.settings.menu_title | handleize }}" class="fds-menu-select-item">
+              {{- block.settings.menu_title -}}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="fds-content-all">
+    <nav class="fds-menu">
+      <div class="fds-menu-items">
+        {% for block in section.blocks %}
+          {% if block.type == 'menu' %}
+            <a href="#{{ block.settings.menu_title | handleize }}" class="fds-menu-item">
+              {{ block.settings.menu_title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+
+    <!-- Contenu de la FAQ -->
+    <div class="fds-content">
+      <div class="fds-item first">
+        <div class="fds-question">
+          <span>{{ section.settings.firstBlock_text }}</span>
+          <span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" />
+            </svg>
+          </span>
+        </div>
+        <div class="fds-answer">
+          {% if section.settings.image != blank %}
+            <img
+              src="{{ section.settings.image | img_url: 'master' }}"
+              alt="response IMG"
+              class="img"
+            >
+          {% else %}
+            <div class="img">
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder_svg' }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'menu' %}
+          <section id="{{ block.settings.menu_title | handleize }}" class="fds-section">
+            <h2>{{ block.settings.menu_title }}</h2>
+            {% for sub_block in section.blocks %}
+              {% if sub_block.type == 'question_reponse'
+                and sub_block.settings.menu_title == block.settings.menu_title
+              %}
+                <div class="fds-item">
+                  <div class="fds-question">
+                    <span>{{ sub_block.settings.question_text }}</span>
+                    <span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="fds-answer">
+                    {{ sub_block.settings.answer_text }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </section>
+        {% endif %}
+      {% endfor %}
+      <!-- Autres sections... -->
+    </div>
+  </div>
+</div>
+
+<script>
+// Gestion du menu actif
+
+document.querySelector('.fds-menu-select-btn').addEventListener('click', () => {
+    document.querySelector('.fds-menu-select-items').classList.toggle('active');
+});
+
+const menuItems = document.querySelectorAll('.fds-menu-item');
+const sections = document.querySelectorAll('.fds-section');
+
+function setActiveMenuItem() {
+    const currentScroll = window.scrollY;
+
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
+            menuItems.forEach(item => item.classList.remove('active'));
+            menuItems[index].classList.add('active');
+            document.querySelector('.fds-menu-select-items').classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveMenuItem);
+
+// Gestion des questions dépliables
+const fdsQuestions = document.querySelectorAll('.fds-question');
+
+fdsQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Ferme toutes les questions
+        document.querySelectorAll('.fds-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Ouvre la question cliquée si elle n'était pas déjà ouverte
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// Gestion du défilement doux
+menuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = item.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        
+
+        window.scrollTo({
+            top: targetSection.offsetTop - 20,
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Gestion de la recherche
+const searchInput = document.querySelector('.fds-search-input');
+const searchResultsBox = document.querySelector('.fds-search-results-box');
+const btnClose = document.querySelector('.fds-close-search');
+
+const questions = Array.from(document.querySelectorAll('.fds-question span:first-child')).map(q => ({
+    text: q.textContent,
+    element: q.closest('.fds-item')
+}));
+
+btnClose.addEventListener('click', () => {
+    searchResultsBox.style.display = 'none';
+    btnClose.style.display = 'none';
+    searchInput.value = '';
+});
+
+searchInput.addEventListener('input', (e) => {
+    const searchText = e.target.value.toLowerCase();
+    if (searchText.length < 1) {
+        searchResultsBox.style.display = 'none';
+        return;
+    }
+
+    btnClose.style.display = 'block';
+
+    const filteredQuestions = questions.filter(q =>
+        q.text.toLowerCase().includes(searchText)
+    );
+    
+
+    if (filteredQuestions.length === 0) {
+        searchResultsBox.innerHTML = `<div class="fds-search-results-empty">Il n'y a aucun résultat pour « ${searchText} »</div>`;
+
+    }else{
+        searchResultsBox.innerHTML = filteredQuestions
+            .map(q => `<div class="fds-search-results">${q.text}</div>`)
+            .join('');
+    }
+    
+
+    // searchResultsBox.style.display = filteredQuestions.length ? 'block' : 'none';
+    searchResultsBox.style.display = 'block';
+});
+
+searchResultsBox.addEventListener('click', (e) => {
+
+    if (e.target.classList.contains('fds-search-results')) {
+        const questionText = e.target.textContent;
+        const question = questions.find(q => q.text === questionText);
+        console.log(question)
+
+        if (question) {
+            question.element.scrollIntoView({ behavior: 'smooth' });
+            question.element.querySelector('.fds-question').click();
+            searchResultsBox.style.display = 'none';
+            searchInput.value = '';
+        }
+    }
+});
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+        "type": "header",
+        "content": "This section is a property of PeakConversion",
+        "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Hero Title"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_title",
+      "label": "Text",
+      "default": "<p>Bonjour, comment puis-je vous aider ?</p>"
+    },
+     {
+      "type": "range",
+      "id": "hero_title_size",
+      "label": "Size",
+      "default":40,
+      "min": 15,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_size_mobile",
+      "label": "Mobile Size",
+      "default":24,
+      "min": 15,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_weight",
+      "label": "Font Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "text_alignment",
+      "label": "Text Alignment",
+      "id": "hero_title_align",
+      "default":"center"
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "hero_title_color",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "hero_title_bg",
+      "default":"#535252"
+    },
+
+    {
+      "type": "header",
+      "content": "Search Bar"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Placeholder",
+      "default": "Rechercher"
+    },
+    {
+      "type": "range",
+      "id": "search_size",
+      "label": "Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "search_size_mobile",
+      "label": "Mobile Size",
+      "default":16,
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "search_btn_w",
+      "label": "Search Button Width",
+      "default":25,
+      "min": 15,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "close_btn_w",
+      "label": "Close Button Width",
+      "default":27,
+      "min": 15,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "search_border_width",
+      "label": "Border Width",
+      "default":1,
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "search_border_type",
+      "label": "Border Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "color",
+      "label": "Content Color",
+      "id": "search_content_color",
+      "default":"#757272"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "search_bg_color",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "search_border_color",
+      "default":"#DDDDDD"
+    },
+    {
+      "type": "color",
+      "label": "Border focus Color",
+      "id": "search_border_focus_color",
+      "default":"#115cb5"
+    },
+    {
+      "type": "header",
+      "content": "Result Box"
+    },
+    {
+      "type": "range",
+      "id": "result_size",
+      "label": "Result Size",
+      "default":15,
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "empty_result_size",
+      "label": "Empty Result Size",
+      "default":14,
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "result_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "result_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "result_border_type",
+      "label": "Border Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "range",
+      "id": "inside_border_bottom_w",
+      "label": "Inside Border Bottom Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "inside_border_bottom_type",
+      "label": "Inside Border Bottom Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "text_alignment",
+      "id": "result_align",
+      "label": "Result Text Alignment",
+      "default":"left"
+    },
+    {
+      "type": "text_alignment",
+      "id": "empty_result_align",
+      "label": "Empty Result Text Alignment",
+      "default":"center"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "result_bg",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "label": "Result Color",
+      "id": "result_color",
+      "default":"#161616"
+    },
+    {
+      "type": "color",
+      "label": "Empty Result Color",
+      "id": "empty_result_color",
+      "default":"#6A6A6A"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "result_border_color",
+      "default":"#115cb5"
+    },
+    {
+      "type": "color",
+      "label": "Inside Border Bottom Color",
+      "id": "inside_border_bottom_color",
+      "default":"#dddddd"
+    },
+    {
+      "type": "header",
+      "content": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "faq_text",
+      "label": "Text Content",
+      "default":"FAQ"
+    },
+    {
+      "type": "range",
+      "id": "faq_size",
+      "label": "Size",
+      "default":32,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "range",
+      "id": "faq_size_mobile",
+      "label": "Mobile Size",
+      "default":28,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "faq_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "faq_color",
+      "default":"#161616"
+    },
+    {
+      "type": "header",
+      "content": "Web Menu"
+    },
+    {
+      "type": "range",
+      "id": "w_menu_size",
+      "label": "Size",
+      "default":16,
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "w_menu_weight",
+      "label": "Font Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "w_menu_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "w_menu_bg",
+      "default":"transparent"
+    },
+    {
+      "type": "color",
+      "label": "Background Color Hover",
+      "id": "w_menu_bg_hover",
+      "default":"#eef7f7"
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "w_menu_color",
+      "default":"#333"
+    },
+    {
+      "type": "header",
+      "content": "Button Menu"
+    },
+    {
+      "type": "richtext",
+      "id": "btn_text",
+      "label": "Text",
+      "default":"<p>Acceder a la categorie...</p>"
+    },
+    {
+      "type": "range",
+      "id": "btn_size",
+      "label": "Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "select",
+      "id": "btn_border_type",
+      "label": "Border Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "color",
+      "label": "Background",
+      "id": "btn_bg",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "btn_color",
+      "default":"#AFAFAF"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "btn_border_color",
+      "default":"#DDDDDD"
+    },
+    {
+      "type": "color",
+      "label": "Border Color Hover",
+      "id": "btn_border_color_hover",
+      "default":"#115cb5"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Menu"
+    },
+    {
+      "type": "range",
+      "id": "m_menu_size",
+      "label": "Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "m_menu_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "m_menu_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+     {
+      "type": "select",
+      "id": "m_menu_border_type",
+      "label": "Border Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "text_alignment",
+      "id": "m_menu_align",
+      "label": "Text Alignment",
+      "default":"left"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "m_menu_bg",
+      "default":"#fff"
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "m_menu_color",
+      "default":"#161616"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "m_menu_border_color",
+      "default":"#DDDDDD"
+    },
+    {
+      "type": "color",
+      "label": "Shadow Color",
+      "id": "m_menu_shadow_color",
+      "default":"#dddddd"
+    },
+    {
+      "type": "header",
+      "content": "First Faq Block"
+    },
+    {
+      "type": "richtext",
+      "id": "firstBlock_text",
+      "label": "Text",
+      "default":"<p>Différences Abattant et Bidet</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Questions"
+    },
+    {
+      "type": "range",
+      "id": "question_title_size",
+      "label": "Title Size",
+      "default":20,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "question_title_weight",
+      "label": "Title Font Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "label": "Question Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "question_weight",
+      "label": "Question Font Weight",
+      "default":600,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "question_icon_w",
+      "label": "Icon Width",
+      "default":20,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "question_border_top_w",
+      "label": "Border Top Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "question_border_top_type",
+      "label": "Border Top Type",
+      "default":"solid",
+      "options": [
+        {
+          "label": "Solid",
+          "value": "solid"
+        },
+        {
+          "label": "Dotted",
+          "value": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "value": "dashed"
+        },
+        {
+          "label": "Double",
+          "value": "double"
+        },
+        {
+          "label": "Groove",
+          "value": "groove"
+        },
+        {
+          "label": "Inset",
+          "value": "inset"
+        },
+        {
+          "label": "Outset",
+          "value": "outset"
+        },
+        {
+          "label": "Ridge",
+          "value": "ridge"
+        },
+        {
+          "label": "None",
+          "value": "none"
+        },
+      ]
+    },
+    {
+      "type": "color",
+      "label": "Title Color",
+      "id": "question_title_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": " Question Color",
+      "id": "question_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": " Border Top Color",
+      "id": "question_border_top_color",
+      "default":"#DDDDDD"
+    },
+    {
+      "type": "header",
+      "content": "Answers"
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "label": "Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": " Color",
+      "id": "answer_color",
+      "default":"#222222"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"transparent"
+    },
+  ],
+  "blocks": [
+    { "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title"
+        }
+      ]
+    },
+    {
+      "type": "question_reponse",
+      "name": "Question/Reponse",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title"
+        },
+        {
+          "type": "richtext",
+          "id": "question_text",
+          "label": "Question Text"
+        },
+        {
+          "type": "richtext",
+          "id": "answer_text",
+          "label": "Answer Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,307 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .general {
+  background-color: #706e6e;
+  color: white;
+  padding: 20px;
+}
+
+.general h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.general ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.general li {
+  margin-bottom: 5px;
+}
+
+.faq {
+  padding: 20px;
+}
+
+.faq h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.faq p {
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="general">
+            <h2>GÉNÉRAL.</h2>
+            <ul>
+                <li>ACHATS.</li>
+                <li>LIVRAISONS ET RETOURS.</li>
+                <li>ABONNEMENTS.</li>
+                <li>PROGRAMME FIDÉLITÉ. NOUVEAU.</li>
+                <li>ORIGINAL.</li>
+                <li>LIGHT.</li>
+                <li>SPORT.</li>
+                <li>SNACK.</li>
+            </ul>
+        </div>
+        <div class="faq">
+            <h2>FAQ.</h2>
+            <p>Vos questions. Nos réponses.</p>
+            <div class="faq-content">
+                <div class="faq-item">
+                    <h3>Général.</h3>
+                    <button class="faq-toggle">Feed. c'est quoi ?</button>
+                    <div class="faq-answer">
+                        <p>La réponse à cette question se trouve ici.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">Quelle gamme choisir ?</button>
+                    <div class="faq-answer">
+                        <p>La réponse à cette question se trouve ici.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">Quels sont les engagements écologiques de Feed. ?</button>
+                    <div class="faq-answer">
+                        <p>La réponse à cette question se trouve ici.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">Feed. est-il sur ?</button>
+                    <div class="faq-answer">
+                        <p>La réponse à cette question se trouve ici.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    toggle.classList.toggle('active');
+                    const answer = toggle.nextElementSibling;
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                    } else {
+                        answer.style.display = 'none';
+                    }
+                });
+            });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navigation Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #666;
+            font-weight: bold;
+        }
+
+        nav a.active {
+            color: #333;
+            border-bottom: 4px solid #333;
+        }
+
+        /* FAQ Styles */
+        section {
+            scroll-margin-top: 80px;
+            /* Marge supérieure pour que le menu reste visible */
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item p {
+            flex-grow: 1;
+        }
+
+        .toggle-icon {
+            font-size: 24px;
+            color: #666;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#general" class="active">GÉNÉRAL</a></li>
+                    <li><a href="#achats">ACHATS</a></li>
+                    <li><a href="#livraisons-et-retours">LIVRAISONS ET RETOURS</a></li>
+                    <li><a href="#livraisons-et-retours">LIVRAISONS ET RETOURS</a></li>
+                    <li><a href="#livraisons-et-retours">LIVRAISONS ET RETOURS</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="general">
+                <h2>Général</h2>
+                <div class="faq-item">
+                    <p>Feed, c'est quoi ?</p>
+                    <a href="#" class="toggle-icon">&#9660;</a>
+                </div>
+                <div class="faq-item">
+                    <p>Quelle gamme choisir ?</p>
+                    <a href="#" class="toggle-icon">&#9660;</a>
+                </div>
+                <div class="faq-item">
+                    <p>Quels sont les engagements écologiques de Feed ?</p>
+                    <a href="#" class="toggle-icon">&#9660;</a>
+                </div>
+                <div class="faq-item">
+                    <p>Feed, est-il vegan ?</p>
+                    <a href="#" class="toggle-icon">&#9660;</a>
+                </div>
+                <div class="faq-item">
+                    <p>Feed, est-il sans gluten ?</p>
+                    <a href="#" class="toggle-icon">&#9660;</a>
+                </div>
+            </section>
+
+            <section id="achats">
+                <h2>Achats</h2>
+                <!-- Contenu de la section Achats -->
+            </section>
+
+            <section id="livraisons-et-retours">
+                <h2>Livraisons et Retours</h2>
+                <!-- Contenu de la section Livraisons et Retours -->
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Récupérer tous les liens de navigation
+            const navLinks = document.querySelectorAll('nav a');
+
+            // Ajouter un écouteur d'événements sur le clic des liens
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // Empêcher le comportement par défaut du lien
+
+                    // Récupérer l'ID de la section correspondante
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    // Désactiver toutes les classes "active"
+                    navLinks.forEach(function (link) {
+                        link.classList.remove('active');
+                    });
+
+                    // Activer le lien de navigation cliqué
+                    this.classList.add('active');
+
+                    // Faire défiler la page jusqu'à la section correspondante
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

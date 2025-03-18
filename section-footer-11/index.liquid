@@ -1,0 +1,134 @@
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "business_name",
+      "label": "Business Name"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact Link"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Newsletter Button Text"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram Link"
+    },
+    {
+      "type": "url",
+      "id": "site_credits_link",
+      "label": "Site Credits Link"
+    },
+    {
+      "type": "url",
+      "id": "footer_logo_link",
+      "label": "Footer Logo Link"
+    },
+    {
+      "type": "text",
+      "id": "payment_heading",
+      "label": "Payment Heading"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text"
+    },
+    {
+      "type": "color",
+      "id": "footer_background_color",
+      "label": "Footer Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "Footer Text Color",
+      "default": "#333333"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_heading",
+          "label": "Menu Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Menu Links"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .footer-template {
+    background-color: {{ section.settings.footer_background_color }};
+    color: {{ section.settings.footer_text_color }};
+  }
+</style>
+
+<div class="footer-template">
+  <div class="footer-business-info">
+    <h3>{{ section.settings.business_name }}</h3>
+    <div class="footer-business-icon">
+      <img src="//section.store/cdn/shop/files/star-icon.svg?v=1715964957" alt="">
+    </div>
+  </div>
+  <div class="footer-newsletter">
+    <h2>{{ section.settings.newsletter_heading }}</h2>
+    <form method="post" action="" id="contact_form">
+      <input type="email" name="contact[email]" placeholder="{{ section.settings.newsletter_placeholder }}" required>
+      <button type="submit">{{ section.settings.newsletter_button }}</button>
+    </form>
+  </div>
+  <div class="footer-socials">
+    <a href="{{ section.settings.instagram_link }}">Instagram</a>
+    <a href="{{ section.settings.site_credits_link }}">Site Credits</a>
+  </div>
+  <div class="footer-logo">
+    <a href="{{ section.settings.footer_logo_link }}">
+      <h2>{{ section.settings.business_name }}</h2>
+    </a>
+  </div>
+  <div class="footer-payment">
+    <h3>{{ section.settings.payment_heading }}</h3>
+    <ul>
+      <li>logo1</li>
+      <li>logo2</li>
+    </ul>
+  </div>
+  <div class="footer-copyright">
+    <p>{{ section.settings.copyright_text }}</p>
+  </div>
+</div>

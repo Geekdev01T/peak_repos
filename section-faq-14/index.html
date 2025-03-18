@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+    
+            .section-template--22841108693321__ss_faq_14_UPAFbq {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                overflow: hidden;
+                background-color:#ffffff;
+            }
+    
+            .section-template--22841108693321__ss_faq_14_UPAFbq-settings {
+                margin: 0 auto;
+                padding-top: 45px;
+                padding-bottom: 45px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .faq-body-template--22841108693321__ss_faq_14_UPAFbq {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+    
+            .faq-items-template--22841108693321__ss_faq_14_UPAFbq {
+                grid-area: faq;
+            }
+    
+            .faq-item-template--22841108693321__ss_faq_14_UPAFbq {
+                padding: 16px 0px;
+                width: 100%;
+                position: relative;
+                border-top: 1px solid #cecdca;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .faq-item-template--22841108693321__ss_faq_14_UPAFbq:not(:first-child) {
+                margin-top: 0px;
+            }
+    
+            .faq-toggle-template--22841108693321__ss_faq_14_UPAFbq {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                gap: 12px;
+            }
+    
+            .faq-question-template--22841108693321__ss_faq_14_UPAFbq {
+                margin: 0px;
+                font-size: 12px;
+                color: #1f1e1d;
+                line-height: 130%;
+                text-transform: unset;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .faq-toggle-template--22841108693321__ss_faq_14_UPAFbq.active .faq-question-template--22841108693321__ss_faq_14_UPAFbq {
+                color: #93908a;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .faq-icon-template--22841108693321__ss_faq_14_UPAFbq {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 14px;
+                height: 14px;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .faq-icon-template--22841108693321__ss_faq_14_UPAFbq svg {
+                width: 100%;
+                height: 100%;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .faq-icon-template--22841108693321__ss_faq_14_UPAFbq svg path {
+                fill: #93908a;
+            }
+    
+            .faq-icon-template--22841108693321__ss_faq_14_UPAFbq.active svg {
+                transform: rotate(180deg);
+                transition: all 0.25s ease 0s;
+            }
+    
+            .faq-answer-template--22841108693321__ss_faq_14_UPAFbq {
+                transition: all 0.2s ease-in-out;
+                overflow: hidden;
+            }
+    
+            .faq-answer-template--22841108693321__ss_faq_14_UPAFbq * {
+                margin: 0px;
+                font-size: 14px;
+                color: #1f1e1d;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq {
+                visibility: hidden;
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% - 0px);
+                padding-top: 20px;
+            }
+    
+            .faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq * {
+                margin: 0px;
+                font-size: 14px;
+                color: #1f1e1d;
+                line-height: 150%;
+                text-transform: unset;
+            }
+    
+            .faq-medias-template--22841108693321__ss_faq_14_UPAFbq {
+                grid-area: media;
+            }
+    
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq {
+                display: none;
+                border: 0px solid #1f1e1d;
+                border-radius: 0px;
+                overflow: hidden;
+            }
+    
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq.active {
+                display: block;
+            }
+    
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq img,
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq svg,
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq video,
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq iframe {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border: 0;
+            }
+    
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq svg {
+                background-color: #AFAFAF;
+            }
+    
+            @media(min-width: 1024px) {
+    
+                .section-template--22841108693321__ss_faq_14_UPAFbq {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 0rem;
+                    margin-right: 0rem;
+                    border-radius: 0px;
+                }
+    
+                .section-template--22841108693321__ss_faq_14_UPAFbq-settings {
+                    padding: 0 5rem;
+                    padding-top: 60px;
+                    padding-bottom: 60px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+    
+                .faq-body-template--22841108693321__ss_faq_14_UPAFbq {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 70px;
+                }
+    
+                .faq-item-template--22841108693321__ss_faq_14_UPAFbq {
+                    padding: 16px 0px;
+                }
+    
+                .faq-item-template--22841108693321__ss_faq_14_UPAFbq:not(:first-child) {
+                    margin-top: 0px;
+                }
+    
+                .faq-question-template--22841108693321__ss_faq_14_UPAFbq {
+                    font-size: 12px;
+                }
+    
+                .faq-icon-template--22841108693321__ss_faq_14_UPAFbq {
+                    flex: 0 0 14px;
+                    height: 14px;
+                }
+    
+                .faq-answer-template--22841108693321__ss_faq_14_UPAFbq * {
+                    font-size: 14px;
+                }
+    
+                .faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq {
+                    width: calc(100% - 0px);
+                }
+    
+                .faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq * {
+                    font-size: 14px;
+                }
+            }
+       
+            
+            .section-template--22841108693321__ss_faq_14_UPAFbq-settings {
+                max-width: 1200px;
+            }
+       
+            
+            .faq-question-template--22841108693321__ss_faq_14_UPAFbq {
+                font-family: "Sabon Next", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+        
+            
+            .faq-answer-template--22841108693321__ss_faq_14_UPAFbq * {
+                font-family: "Sabon Next", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+    
+            .faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq * {
+                font-family: "Sabon Next", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+        
+            
+            .faq-body-template--22841108693321__ss_faq_14_UPAFbq {
+                grid-template-areas:
+                    "media"
+                    "faq";
+            }
+        
+            
+            @media(min-width: 1024px) {
+                .faq-body-template--22841108693321__ss_faq_14_UPAFbq {
+                    grid-template-areas: "faq media";
+                }
+            }
+     
+            
+            .faq-media-template--22841108693321__ss_faq_14_UPAFbq {
+                aspect-ratio: 9.6/13;
+            }
+        
+            
+            @media(min-width: 1024px) {
+                .faq-media-template--22841108693321__ss_faq_14_UPAFbq {
+                    aspect-ratio: 9.6/13;
+                }
+            }
+        </style>
+    
+    
+        <div class="section-template--22841108693321__ss_faq_14_UPAFbq faq-template--22841108693321__ss_faq_14_UPAFbq">
+            <div class="section-template--22841108693321__ss_faq_14_UPAFbq-settings">
+                <div class="faq-body-template--22841108693321__ss_faq_14_UPAFbq">
+                    <div class="faq-items-template--22841108693321__ss_faq_14_UPAFbq">
+    
+                        <div class="faq-item-template--22841108693321__ss_faq_14_UPAFbq" id="faq_item_F7CgdB">
+                            <div class="faq-toggle-template--22841108693321__ss_faq_14_UPAFbq">
+                                <p class="faq-question-template--22841108693321__ss_faq_14_UPAFbq">WHAT ARE YOUR PRODUCTS
+                                    MADE FROM?</p>
+                                <div class="faq-icon-template--22841108693321__ss_faq_14_UPAFbq">
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.396 0.474972C13.3123 0.477473 13.2323 0.512472 13.1735 0.573722L6.99977 6.74747L0.826021 0.573722C0.766021 0.511222 0.683521 0.477473 0.597271 0.476222C0.466021 0.477473 0.349771 0.556222 0.299771 0.676222C0.251021 0.797473 0.279771 0.934972 0.373521 1.02622L6.77352 7.42622C6.89852 7.55122 7.10102 7.55122 7.22602 7.42622L13.626 1.02622C13.721 0.934972 13.7498 0.793723 13.6998 0.672473C13.6485 0.551222 13.5285 0.472473 13.396 0.474972Z"
+                                            fill="#93908A"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="faq-answer-template--22841108693321__ss_faq_14_UPAFbq"
+                                style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
+                                <p>Our textiles are woven from 100% GOTS organic cotton.</p>
+                            </div>
+                            <div class="faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq">
+                                <p>Our textiles are woven from 100% GOTS organic cotton.</p>
+                            </div>
+                        </div>
+    
+                        
+    
+                        <div class="faq-item-template--22841108693321__ss_faq_14_UPAFbq" id="faq_item_bkF4zm">
+                            <div class="faq-toggle-template--22841108693321__ss_faq_14_UPAFbq">
+                                <p class="faq-question-template--22841108693321__ss_faq_14_UPAFbq">HOW DO I WASH?</p>
+                                <div class="faq-icon-template--22841108693321__ss_faq_14_UPAFbq">
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.396 0.474972C13.3123 0.477473 13.2323 0.512472 13.1735 0.573722L6.99977 6.74747L0.826021 0.573722C0.766021 0.511222 0.683521 0.477473 0.597271 0.476222C0.466021 0.477473 0.349771 0.556222 0.299771 0.676222C0.251021 0.797473 0.279771 0.934972 0.373521 1.02622L6.77352 7.42622C6.89852 7.55122 7.10102 7.55122 7.22602 7.42622L13.626 1.02622C13.721 0.934972 13.7498 0.793723 13.6998 0.672473C13.6485 0.551222 13.5285 0.472473 13.396 0.474972Z"
+                                            fill="#93908A"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="faq-answer-template--22841108693321__ss_faq_14_UPAFbq"
+                                style="display: block; height: 62px; padding-top: 20px; padding-bottom: 0px;">
+                                <p>Machine wash on cold mode. If this function is not available to you - it's best to hand
+                                    wash them.</p>
+                            </div>
+                            <div class="faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq">
+                                <p>Machine wash on cold mode. If this function is not available to you - it's best to hand
+                                    wash them.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item-template--22841108693321__ss_faq_14_UPAFbq" id="faq_item_NnTbR4">
+                            <div class="faq-toggle-template--22841108693321__ss_faq_14_UPAFbq">
+                                <p class="faq-question-template--22841108693321__ss_faq_14_UPAFbq">WHERE ARE YOU PRODUCTS
+                                    MADE?</p>
+                                <div class="faq-icon-template--22841108693321__ss_faq_14_UPAFbq">
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.396 0.474972C13.3123 0.477473 13.2323 0.512472 13.1735 0.573722L6.99977 6.74747L0.826021 0.573722C0.766021 0.511222 0.683521 0.477473 0.597271 0.476222C0.466021 0.477473 0.349771 0.556222 0.299771 0.676222C0.251021 0.797473 0.279771 0.934972 0.373521 1.02622L6.77352 7.42622C6.89852 7.55122 7.10102 7.55122 7.22602 7.42622L13.626 1.02622C13.721 0.934972 13.7498 0.793723 13.6998 0.672473C13.6485 0.551222 13.5285 0.472473 13.396 0.474972Z"
+                                            fill="#93908A"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="faq-answer-template--22841108693321__ss_faq_14_UPAFbq"
+                                style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
+                                <p>Our textiles are woven in Panipat, India.</p>
+                            </div>
+                            <div class="faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq">
+                                <p>Our textiles are woven in Panipat, India.</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="faq-medias-template--22841108693321__ss_faq_14_UPAFbq">
+    
+                        <div class="faq-media-template--22841108693321__ss_faq_14_UPAFbq" data-id="faq_item_F7CgdB">
+    
+    
+    
+    
+                            <video
+                                src="//section.store/cdn/shop/videos/c/vp/b26270e9466e4a4bac6ffdd0ec85375b/b26270e9466e4a4bac6ffdd0ec85375b.HD-1080p-3.3Mbps-39749270.mp4?v=0"
+                                controls="" muted="" autoplay="" playsinline="" preload="none" loop=""
+                                __idm_id__="663553"></video>
+    
+    
+                        </div>
+    
+                        <div class="faq-media-template--22841108693321__ss_faq_14_UPAFbq" data-id="faq_item_NnTbR4">
+    
+    
+    
+    
+                            <video
+                                src="//section.store/cdn/shop/videos/c/vp/2d42aec627f5465b9e0849c357542a87/2d42aec627f5465b9e0849c357542a87.HD-1080p-7.2Mbps-30002916.mp4?v=0"
+                                controls="" muted="" autoplay="" playsinline="" preload="none" loop=""
+                                __idm_id__="663555"></video>
+    
+    
+                        </div>
+    
+                        <div class="faq-media-template--22841108693321__ss_faq_14_UPAFbq" data-id="faq_item_bkF4zm">
+    
+    
+                            <img src="//section.store/cdn/shop/products/8_7e199b32-7d43-4bf1-b41c-ebb0e95328db.png?v=1708704400"
+                                alt="SUNSET THROW - NAMING THIS LATER - NTL">
+    
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function initFaq14() {
+                const answerPaddingTop = 20;
+                const answerPaddingBottom = 0;
+
+                const buttons = document.querySelectorAll('.faq-toggle-template--22841108693321__ss_faq_14_UPAFbq');
+                const answers = document.querySelectorAll('.faq-answer-template--22841108693321__ss_faq_14_UPAFbq');
+                const answersHeightCalElements = document.querySelectorAll('.faq-height-cal-template--22841108693321__ss_faq_14_UPAFbq');
+                const faqIcons = document.querySelectorAll('.faq-icon-template--22841108693321__ss_faq_14_UPAFbq');
+                const mediaItems = document.querySelectorAll('.faq-media-template--22841108693321__ss_faq_14_UPAFbq');
+
+                let activeIndex = -1;
+
+                function openAnswer(index) {
+                    const height = answersHeightCalElements[index].offsetHeight;
+
+                    answers[index].style.display = 'block';
+                    setTimeout(() => {
+                        answers[index].style.paddingTop = `${answerPaddingTop}px`;
+                        answers[index].style.paddingBottom = `${answerPaddingBottom}px`;
+                        answers[index].style.height = `${height}px`;
+                    });
+
+                    faqIcons[index].classList.add('active');
+                    buttons[index].classList.add('active');
+                }
+
+                function closeAnswer(index) {
+                    answers[index].style.paddingTop = 0;
+                    answers[index].style.paddingBottom = 0;
+                    answers[index].style.height = 0;
+
+                    setTimeout(() => {
+                        answers[index].style.display = 'none';
+                    }, 300);
+
+                    faqIcons[index].classList.remove('active');
+                    buttons[index].classList.remove('active');
+                }
+
+                function toggleAnswer(index) {
+                    if (answers[index].style.display === 'none') {
+                        openAnswer(index);
+                        activeIndex = index;
+                    } else {
+                        closeAnswer(index);
+                        activeIndex = -1;
+                    }
+                }
+
+                function closeAllAnswersBut(index) {
+                    answers.forEach((answer, i) => {
+                        if (i !== index) {
+                            closeAnswer(i);
+                        }
+                    });
+                }
+
+                function stopAllVideos() {
+                    mediaItems.forEach(media => {
+                        const video = media.querySelector('video');
+                        const iframe = media.querySelector('iframe');
+                        media.classList.remove('active');
+
+                        if (video) {
+                            video.pause();
+                        } else if (iframe) {
+                            const iframeSrc = iframe.dataset.src1;
+                            iframe.src = iframeSrc; // Перезагружаем iframe
+                        }
+                    });
+                }
+
+                function playActiveVideo(index) {
+                    const activeMedia = mediaItems[index];
+                    activeMedia.classList.add('active');
+
+                    const video = activeMedia.querySelector('video');
+                    const iframe = activeMedia.querySelector('iframe');
+
+                    if (video) {
+                        video.play();
+                    } else if (iframe) {
+                        const iframeSrc = iframe.src.replace('autoplay=0', 'autoplay=1');
+                        iframe.src = iframeSrc;
+                    }
+                }
+
+                buttons.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        toggleAnswer(index);
+                        closeAllAnswersBut(index);
+
+                        stopAllVideos();
+                        playActiveVideo(index);
+                    });
+                });
+
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        if (activeIndex !== -1) {
+                            const height = answersHeightCalElements[activeIndex].offsetHeight;
+                            answers[activeIndex].style.height = `${height}px`;
+                        }
+                    }, 250);
+                });
+
+
+                openAnswer(0);
+                activeIndex = 0;
+                playActiveVideo(0);
+
+            }
+
+            document.addEventListener('DOMContentLoaded', initFaq14);
+        </script>
+    
+</body>
+</html>

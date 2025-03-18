@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        /* Grid Layout */
+        .sg-grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sg-grid-container .sg-left-section {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .sg-grid-container .sg-right-section {
+            display: grid;
+            grid-column: 2;
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .sg-grid-container .sg-card {
+            background: rgba(212, 210, 210, 0.15);
+            border: 1.5px solid #d4d2d2;
+            /* border-radius: 8px; */
+            padding: 20px;
+            height: 100%;
+            min-height: 250px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sg-grid-container .sg-card .sg-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .sg-grid-container .sg-card:hover .sg-card-img {
+            transform: scale(1.1);
+        }
+
+        .sg-grid-container .sg-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .sg-grid-container .sg-card .sg-card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: white;
+            position: relative;
+            z-index: 3;
+        }
+
+        .sg-grid-container .sg-card .sg-discover-btn {
+            padding: 6px 30px;
+            width: 100%;
+            background: transparent;
+            border: 2px solid #ffffff;
+            font-size: 14px;
+            /* border-radius: 4px; */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+            color: white;
+            position: relative;
+            z-index: 3;
+        }
+
+        .sg-grid-container .sg-card .sg-discover-btn:hover {
+            background: #ffffff;
+            color: black;
+        }
+
+        /* Specific Card Styles */
+        .sg-grid-container .sg-left-section .sg-contenants-card {
+            height: 100%;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .sg-grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sg-grid-container .sg-left-section {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .sg-grid-container .sg-right-section {
+                grid-column: 1;
+            }
+
+            .sg-grid-container .sg-card {
+                min-height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .sg-grid-container .sg-card {
+                padding: 15px;
+            }
+
+            .sg-grid-container .sg-card .sg-card-title {
+                font-size: 16px;
+            }
+
+            .sg-grid-container .sg-card .sg-discover-btn {
+                font-size: 13px;
+                padding: 5px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sg-grid-container">
+        <div class="sg-left-section">
+            <div class="sg-card sg-contenants-card">
+                <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Nos Produits" class="sg-card-img">
+                <h2 class="sg-card-title">Nos Produits</h2>
+                <button class="sg-discover-btn">Explorer</button>
+            </div>
+        </div>
+
+        <div class="sg-right-section">
+            <div class="sg-card">
+                <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg" alt="Promotions" class="sg-card-img">
+                <h2 class="sg-card-title">Promotions</h2>
+                <button class="sg-discover-btn">Explorer</button>
+            </div>
+
+            <div class="sg-card">
+                <img src="https://img.freepik.com/photos-gratuite/vetements-enfants-colores-cintres_23-2147663897.jpg" alt="Collection Enfant" class="sg-card-img">
+                <h2 class="sg-card-title">Collection Enfant</h2>
+                <button class="sg-discover-btn">Explorer</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

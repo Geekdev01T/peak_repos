@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .pc-faq3-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            padding: 30px;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto auto;
+            position: relative;
+        }
+
+        .pc-faq3-container .faq-block-header {
+            height: 100px;
+            grid-column: 2;
+            grid-row: 1;
+            margin-left: 4em;
+            position: relative;
+        }
+
+        .pc-faq3-container .faq-block-header .faq-block-title-background {
+            position: absolute;
+            top: 0px;
+            left: -22px;
+            font-size: 140px;
+            line-height: 100px;
+            letter-spacing: -2.5px;
+            z-index: -1;
+            color: rgba(167, 165, 165, 0.575);
+        }
+
+        .pc-faq3-container .faq-block-header .faq-block-title-content {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 8px;
+        }
+
+        .pc-faq3-container .faq-block-header .faq-block-title-content .faq-block-title {
+            font-size: 64px;
+            color: #222222;
+            font-weight: bold;
+        }
+
+        .pc-faq3-container .faq-block-header .faq-block-title-content .faq-block-subtitle {
+            font-size: 15px;
+            color: #222222;
+            font-weight: 100;
+            margin-top: 20px;
+            margin-left: -10px;
+        }
+
+
+        /* Menu Styles */
+        .pc-faq3-container .menu {
+            grid-column: 1;
+            grid-row: 1;
+            position: -webkit-sticky;
+            /* Pour compatibilité avec les anciens navigateurs */
+            position: sticky;
+            width: 250px;
+            top: 10px;
+            margin-bottom: 38px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            height: fit-content;
+        }
+
+        .pc-faq3-container .menu .menu-list {
+            list-style-type: none;
+        }
+
+        .pc-faq3-container .menu .menu-list .menu-item {
+            margin-bottom: 4px;
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            color: #262626;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pc-faq3-container .menu .menu-list .menu-item.active {
+            background-color: #a09e9e;
+            color: #fff;
+        }
+
+        .pc-faq3-container .menu .menu-list .menu-item:hover {
+            background-color: #e0dfdf;
+        }
+
+        .pc-faq3-container .faq-block {
+            grid-column: 2;
+            grid-row: 1/3;
+            margin-top: 8em;
+            margin-left: 4em;
+            width: 90%;
+            /* position: relative; */
+            padding: 0 12px;
+        }
+
+
+
+        /* Content Styles */
+        .pc-faq3-container .faq-block .content {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .pc-faq3-container .faq-block .content-block {
+            width: 100%;
+            margin: 30px auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-title {
+            font-size: 24px;
+            color: #222222;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer {
+            padding: 20px 0;
+            border-top: 1px solid #dad8d8;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer .content-question {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer .content-question .content-question-text {
+            font-size: 14px;
+            color: #262626;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer .toggle-arrow {
+            font-size: 14px;
+            width: 20px;
+            height: 20px;
+            color: #222222;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer .toggle-arrow.active {
+            transform: rotate(180deg);
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer .content-answer {
+            display: none;
+            margin-top: 20px;
+            color: #909090;
+            font-size: 14px;
+            transition: display 0.4s ease;
+        }
+
+        .pc-faq3-container .faq-block .content-block .content-question-answer .content-answer.active {
+            display: block;
+        }
+
+        .pc-faq3-container .faq-service {
+            grid-column: 1;
+            grid-row: 2/4;
+            position: sticky;
+            height: fit-content;
+            top: 30em;
+            width: 250px;
+            padding: 20px 30px;
+            border: 1px solid #f1f0f0;
+            background-color: #fcfcfcd0;
+            margin: 0 auto;
+        }
+
+        .pc-faq3-container .faq-service .help-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .pc-faq3-container .faq-service .phone-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .pc-faq3-container .faq-service .help-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pc-faq3-container .faq-service .help-text .phone-number {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .pc-faq3-container .faq-service .social-links {
+            display: flex;
+            gap: 5px;
+            margin-top: 15px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pc-faq3-container .faq-service .social-links .social-link svg {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: #222222;
+        }
+
+
+        /* Effet de survol */
+        .pc-faq3-container .faq-service .social-links .social-link svg:hover {
+            color: #686767;
+        }
+
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .pc-faq3-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                padding: 0;
+            }
+
+            .pc-faq3-container .faq-block-header {
+                margin-left: 0;
+                margin-bottom: .6em;
+            }
+
+            .pc-faq3-container .faq-block-header .faq-block-title-background {
+                top: 10px;
+                left: -5px;
+                font-size: 75px;
+                line-height: 60px;
+            }
+
+            .pc-faq3-container .faq-block-header .faq-block-title-content {
+                width: 100%;
+                padding-left: 14px;
+                margin: 0 auto;
+                margin-top: 15px;
+            }
+
+            .pc-faq3-container .faq-block-header .faq-block-title-content .faq-block-title {
+                font-size: 46px;
+            }
+
+            .pc-faq3-container .faq-block-header .faq-block-title-content .faq-block-subtitle {
+                margin-top: 0;
+                margin-left: 0;
+                font-size: 13px;
+            }
+
+            .pc-faq3-container .menu {
+                width: 100%;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+                display: flex;
+                overflow: scroll;
+                box-shadow: none;
+                border-bottom: 1px solid #e0dfdf;
+                margin-bottom: 0;
+                /* overflow: hidden; */
+                padding: 0;
+            }
+
+            .pc-faq3-container .menu {
+                scrollbar-width: none;
+            }
+
+            .pc-faq3-container .menu:after {
+                content: "";
+                position: absolute;
+                pointer-events: none;
+                top: 0;
+                right: 0;
+                width: 45px;
+                height: 100%;
+                background: linear-gradient(270deg, #fff 0, rgba(255, 255, 255, 0.6) 100%);
+                /* background: linear-gradient(270deg, #8c8c8c 0, rgba(140, 140, 140, 0) 100%); */
+            }
+
+            .pc-faq3-container .menu.active:after {
+                background: linear-gradient(270deg, #8c8c8c 0, rgba(140, 140, 140, 0) 100%);
+            }
+
+            .pc-faq3-container .menu.activeDisplay:after {
+                display: none;
+                width: 0px;
+            }
+
+            .pc-faq3-container .menu .menu-list {
+                display: flex;
+                gap: 12px;
+                padding: 12px 16px;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-pack: start;
+                justify-content: flex-start;
+            }
+
+            .pc-faq3-container .menu .menu-list .menu-item {
+                position: relative;
+                width: fit-content;
+                padding: 12px 2px;
+                opacity: .6;
+                font-size: 10.99px;
+                line-height: 1px;
+                letter-spacing: .2px;
+                white-space: nowrap;
+                -webkit-transition: color .3s ease;
+                transition: color .3s ease;
+            }
+
+            .pc-faq3-container .menu .menu-list .menu-item:after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                opacity: 0;
+                visibility: hidden;
+                /* background-color: #262626; */
+                -webkit-transition: opacity .3s ease, visibility .3s ease;
+                transition: opacity .3s ease, visibility .3s ease;
+            }
+
+            .pc-faq3-container .menu .menu-list .menu-item.active::after {
+                background: #fff;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .pc-faq3-container .menu .menu-list .menu-item.activeafter::after {
+                background: #fff;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .pc-faq3-container .menu .menu-list .menu-item:hover {
+                background: transparent;
+            }
+
+            .pc-faq3-container .menu .menu-list .menu-item.active {
+                background: transparent;
+                color: #262626;
+                opacity: 1;
+            }
+
+            .pc-faq3-container .faq-block {
+                flex-basis: none;
+                position: relative;
+                width: 100%;
+                padding: 0;
+                margin-top: 0;
+                margin-left: 0;
+            }
+
+            .pc-faq3-container .faq-block .content {
+                width: 100% !important;
+                flex-basis: auto;
+                margin-top: 0;
+            }
+
+            .pc-faq3-container .faq-block .content-block {
+                margin: 0 auto 20px auto;
+                padding: 15px;
+            }
+
+            .pc-faq3-container .faq-service {
+                width: 100%;
+                padding: 50px 28px;
+                border: none;
+            }
+
+            .pc-faq3-container .faq-service .social-links {
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pc-faq3-container">
+
+        <div class="faq-block-header">
+            <h1 class="faq-block-title-background">FAQ.</h1>
+            <div class="faq-block-title-content">
+                <h2 class="faq-block-title">FAQ.</h2>
+                <p class="faq-block-subtitle">Vos questions. Nos réponses.</p>
+            </div>
+        </div>
+
+        <div class="menu">
+            <ul class="menu-list">
+                <li class="menu-item active">GÉNÉRAL.</li>
+                <li class="menu-item">ACHATS.</li>
+                <li class="menu-item">LIVRAISONS ET RETOURS.</li>
+                <li class="menu-item">ABONNEMENTS.</li>
+                <li class="menu-item">PROGRAMME FIDÉLITÉ. NOUVEAU.</li>
+                <li class="menu-item">ORIGINAL.</li>
+                <li class="menu-item">LIGHT.</li>
+                <li class="menu-item">SPORT.</li>
+                <li class="menu-item">SNACK.</li>
+            </ul>
+        </div>
+
+
+        <div class="faq-block">
+            <div class="content">
+                <div class="content-block">
+                    <h2 class="content-title">General</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Achats</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Livraisons et retours</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Abonnements</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Programme fidélité. nouveau.</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Original.</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Light.</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Sport.</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-block">
+                    <h2 class="content-title">Snack.</h2>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content-question-answer">
+                        <div class="content-question">
+                            <p class="content-question-text">Lorem ipsum dolor sit amet.
+                            </p>
+                            <svg class="toggle-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                            </svg>
+                        </div>
+                        <div class="content-answer">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut risus in augue luctus
+                                venenatis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="faq-service">
+            <h2 class="help-title">
+                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z">
+                    </path>
+                    <path fill="currentColor"
+                        d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z">
+                    </path>
+                </svg>
+                Besoin d'aide ?
+            </h2>
+            <p class="help-text">
+                Nous sommes disponibles par téléphone au
+                <span class="phone-number">09.70.73.18.71</span> et aussi via le chat.
+            </p>
+            <div class="social-links">
+                <a href="#" class="social-link facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="social-link instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 8.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5" />
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M6.77 3.082a47.5 47.5 0 0 1 10.46 0c1.899.212 3.43 1.707 3.653 3.613a45.7 45.7 0 0 1 0 10.61c-.223 1.906-1.754 3.401-3.652 3.614a47.5 47.5 0 0 1-10.461 0c-1.899-.213-3.43-1.708-3.653-3.613a45.7 45.7 0 0 1 0-10.611C3.34 4.789 4.871 3.294 6.77 3.082M17 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-9.75 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="social-link whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12.001 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.95 9.95 0 0 1-5.03-1.355L2.005 22l1.352-4.968A9.95 9.95 0 0 1 2.001 12c0-5.523 4.477-10 10-10M8.593 7.3l-.2.008a1 1 0 0 0-.372.1a1.3 1.3 0 0 0-.294.228c-.12.113-.188.211-.261.306A2.73 2.73 0 0 0 6.9 9.62c.002.49.13.967.33 1.413c.409.902 1.082 1.857 1.97 2.742c.214.213.424.427.65.626a9.45 9.45 0 0 0 3.84 2.046l.568.087c.185.01.37-.004.556-.013a2 2 0 0 0 .833-.231a5 5 0 0 0 .383-.22q.001.002.125-.09c.135-.1.218-.171.33-.288q.126-.13.21-.302c.078-.163.156-.474.188-.733c.024-.198.017-.306.014-.373c-.004-.107-.093-.218-.19-.265l-.582-.261s-.87-.379-1.402-.621a.5.5 0 0 0-.176-.041a.48.48 0 0 0-.378.127c-.005-.002-.072.055-.795.931a.35.35 0 0 1-.368.13a1.4 1.4 0 0 1-.191-.066c-.124-.052-.167-.072-.252-.108a6 6 0 0 1-1.575-1.003c-.126-.11-.243-.23-.363-.346a6.3 6.3 0 0 1-1.02-1.268l-.059-.095a1 1 0 0 1-.102-.205c-.038-.147.061-.265.061-.265s.243-.266.356-.41c.11-.14.203-.276.263-.373c.118-.19.155-.385.093-.536q-.42-1.026-.868-2.041c-.059-.134-.234-.23-.393-.249q-.081-.01-.162-.016a3 3 0 0 0-.403.004z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-link twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M22 5.8a8.5 8.5 0 0 1-2.36.64a4.13 4.13 0 0 0 1.81-2.27a8.2 8.2 0 0 1-2.61 1a4.1 4.1 0 0 0-7 3.74a11.64 11.64 0 0 1-8.45-4.29a4.16 4.16 0 0 0-.55 2.07a4.09 4.09 0 0 0 1.82 3.41a4.05 4.05 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.3 4a4 4 0 0 1-1.1.17a5 5 0 0 1-.77-.07a4.11 4.11 0 0 0 3.83 2.84A8.22 8.22 0 0 1 3 18.34a8 8 0 0 1-1-.06a11.57 11.57 0 0 0 6.29 1.85A11.59 11.59 0 0 0 20 8.45v-.53a8.4 8.4 0 0 0 2-2.12" />
+                    </svg>
+                </a>
+                <a href="#" class="social-link youtube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M23 9.71a8.5 8.5 0 0 0-.91-4.13a2.92 2.92 0 0 0-1.72-1A78 78 0 0 0 12 4.27a79 79 0 0 0-8.34.3a2.87 2.87 0 0 0-1.46.74c-.9.83-1 2.25-1.1 3.45a48 48 0 0 0 0 6.48a9.6 9.6 0 0 0 .3 2a3.14 3.14 0 0 0 .71 1.36a2.86 2.86 0 0 0 1.49.78a45 45 0 0 0 6.5.33c3.5.05 6.57 0 10.2-.28a2.9 2.9 0 0 0 1.53-.78a2.5 2.5 0 0 0 .61-1a10.6 10.6 0 0 0 .52-3.4c.04-.56.04-3.94.04-4.54M9.74 14.85V8.66l5.92 3.11c-1.66.92-3.85 1.96-5.92 3.08" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle active menu item
+            const menuItems = document.querySelectorAll('.menu li');
+            const contentBlocks = document.querySelectorAll('.content-block');
+
+            menuItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    // Remove active class from all menu items
+                    menuItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to the clicked menu item
+                    item.classList.add('active');
+
+                    // Scroll to the corresponding content block
+                    contentBlocks[index].scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Toggle content block visibility
+            const contentQuestions = document.querySelectorAll('.content-question');
+            const toggleArrows = document.querySelectorAll('.toggle-arrow');
+            const contentAnswers = document.querySelectorAll('.content-answer');
+
+            contentQuestions.forEach((question, index) => {
+                question.addEventListener('click', () => {
+                    // Fermer toutes les réponses ouvertes
+                    toggleArrows.forEach((arrow, i) => {
+                        if (i !== index) {
+                            arrow.classList.remove('active');
+                        }
+                    });
+                    contentAnswers.forEach((answer, i) => {
+                        if (i !== index) {
+                            answer.classList.remove('active');
+                        }
+                    });
+
+                    // Ouvrir ou fermer la réponse actuelle
+                    toggleArrows[index].classList.toggle('active');
+                    contentAnswers[index].classList.toggle('active');
+                });
+            });
+
+            // Update menu item background on scroll
+            window.addEventListener('scroll', () => {
+                contentBlocks.forEach((block, index) => {
+                    const rect = block.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        menuItems.forEach(item => item.classList.remove('active'));
+                        menuItems[index].classList.add('active');
+                    }
+                });
+            });
+
+            // Changer le fond du menu lors du défilement sur mobile
+            window.addEventListener('scroll', () => {
+                const menu = document.querySelector('.pc-faq3-container .menu');
+                const isMobile = window.innerWidth <= 768; // Vérifier si l'appareil est mobile
+                const rect = menu.getBoundingClientRect();
+
+                if (isMobile) {
+                    if (rect.top <= 0) {
+                        menu.style.backgroundColor = '#cac8c8'; // Changer la couleur de fond du menu
+                        menu.classList.add('active');
+                        const activeMenuItem = document.querySelector('.menu-item.active');
+                        if (activeMenuItem) {
+                            activeMenuItem.style.color = '#ffffff'; // Couleur du texte en blanc pour l'élément actif
+                            const menuRect = menu.getBoundingClientRect();
+                            const activeItemRect = activeMenuItem.getBoundingClientRect();
+                            if (activeItemRect.left < menuRect.left || activeItemRect.right > menuRect.right) {
+                                activeMenuItem.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                                menu.classList.add('activeDisplay');
+                            }
+                        }
+                        const menuItems = document.querySelectorAll('.menu-item');
+                        menuItems.forEach(item => {
+                            if (!item.classList.contains('active')) {
+                                item.style.color = '#262626'; // Réinitialiser la couleur de départ
+                            }
+                        });
+                    } else {
+                        menu.style.backgroundColor = '#ffffff'; // Réinitialiser la couleur de fond du menu
+                        menu.classList.remove('active');
+                        menu.classList.remove('activeDisplay');
+                        const menuItems = document.querySelectorAll('.menu-item');
+                        menuItems.forEach(item => {
+                            item.style.color = '#262626';
+                        });
+                    }
+                } else {
+                    menu.style.backgroundColor = '#ffffff';
+                    const menuItems = document.querySelectorAll('.menu-item');
+                    menuItems.forEach(item => {
+                        if (item.classList.contains('active')) {
+                            // item.style.color = '#ffffff'; // Couleur blanche pour l'élément actif
+                        } else {
+                            // item.style.color = '#262626';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

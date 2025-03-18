@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+
+        .right .img-dream {
+            width: 450px;
+            height: 450px;
+            animation: rotate 30s linear infinite;
+
+        }
+
+        .right .img-dream svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .right .icon-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 1em;
+        }
+
+        .right .icon-container .icon-item {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            width: fit-content;
+            position: absolute;
+            padding: .5rem 0.6em;
+            background: rgb(218, 216, 216);
+            border-radius: 50px;
+            border: 1px solid #807c7c;
+        }
+
+        .one {
+            top: 10%;
+            left: 40%;
+        }
+
+        .two {
+            top: 35%;
+            left: 50%;
+        }
+
+        .three {
+            top: 60%;
+            left: 35%;
+        }
+
+        .right .icon-container .icon-item .top {
+            display: flex;
+            width: 100%;
+            gap: .8em;
+            align-items: center;
+        }
+
+        .right .icon-container .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right .icon-container .icon-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .right .icon-container .icon-item h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .right .icon-container .description-container {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            background-color: #fafafa;
+            border: 1px solid #d1cece;
+            padding: 10px;
+            width: 250px;
+            display: none;
+            z-index: 1000;
+            border-radius: 12px;
+        }
+
+        .right .icon-container .description-container .close-btn {
+            float: right;
+            display: none;
+            width: 100%;
+            border: 0px;
+            background: transparent;
+            text-align: right;
+        }
+
+        .right .icon-container .description-container .close-btn svg {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            color: #807c7c;
+        }
+
+        .right .icon-container .description-container p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .right .icon-container .icon-item h3 {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .icon-item:active .description-container {
+                display: block;
+            }
+
+            .right .icon-container .description-container .close-btn {
+                display: block
+            }
+
+            .right .icon-container .description-container p {
+                font-size: 12px;
+            }
+
+            .icon-container {
+                flex-direction: column;
+            }
+
+            .right .img-dream {
+                width: 350px;
+                height: 350px;
+            }
+
+            .one {
+                top: 10%;
+                left: 10%;
+            }
+
+            .two {
+                top: 35%;
+                left: 5%;
+            }
+
+            .three {
+                top: 60%;
+                left: 15%;
+            }
+
+            .description-container {
+                top: 100%;
+                left: 50%;
+            }
+
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .right .icon-container {
+                flex-direction: column;
+            }
+
+            .right .img-dream {
+                width: 300px;
+                height: 300px;
+            }
+
+            .right .icon-container .icon-item .top {
+                gap: .5em;
+            }
+
+            .right .icon-container .icon-circle {
+                width: 40px;
+                height: 40px;
+            }
+
+            .right .icon-container .icon-item {
+                padding: .3rem 0.4em;
+            }
+        }
+    </style>
+    <div class="right">
+        <div class="img-dream">
+            <svg width="568" height="562" class="rotetAnimation" viewBox="0 0 568 562" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="280" cy="282" r="279.417" stroke="#BAA6D9" stroke-opacity="0.5" stroke-width="1.16667">
+                </circle>
+                <circle cx="280.001" cy="282" r="206.768" stroke="#BAA6D9" stroke-opacity="0.5" stroke-width="1.16667">
+                </circle>
+                <circle cx="279.999" cy="282" r="123.525" stroke="#BAA6D9" stroke-opacity="0.5" stroke-width="1.16667">
+                </circle>
+                <path
+                    d="M338.061 1.55463C338.382 0.681142 339.618 0.681143 339.939 1.55463L341.527 5.87878C341.629 6.15423 341.846 6.37133 342.121 6.47254L346.445 8.06136C347.319 8.3823 347.319 9.6177 346.445 9.93864L342.121 11.5275C341.846 11.6287 341.629 11.8458 341.527 12.1212L339.939 16.4454C339.618 17.3189 338.382 17.3189 338.061 16.4454L336.473 12.1212C336.371 11.8458 336.154 11.6287 335.879 11.5275L331.555 9.93864C330.681 9.6177 330.681 8.3823 331.555 8.06136L335.879 6.47254C336.154 6.37133 336.371 6.15423 336.473 5.87878L338.061 1.55463Z"
+                    fill="#1A192E"></path>
+                <path
+                    d="M558.061 259.555C558.382 258.681 559.618 258.681 559.939 259.555L561.527 263.879C561.629 264.154 561.846 264.371 562.121 264.473L566.445 266.061C567.319 266.382 567.319 267.618 566.445 267.939L562.121 269.527C561.846 269.629 561.629 269.846 561.527 270.121L559.939 274.445C559.618 275.319 558.382 275.319 558.061 274.445L556.473 270.121C556.371 269.846 556.154 269.629 555.879 269.527L551.555 267.939C550.681 267.618 550.681 266.382 551.555 266.061L555.879 264.473C556.154 264.371 556.371 264.154 556.473 263.879L558.061 259.555Z"
+                    fill="#1A192E"></path>
+                <path
+                    d="M82.0614 471.555C82.3823 470.681 83.6177 470.681 83.9386 471.555L85.5275 475.879C85.6287 476.154 85.8458 476.371 86.1212 476.473L90.4454 478.061C91.3189 478.382 91.3189 479.618 90.4454 479.939L86.1212 481.527C85.8458 481.629 85.6287 481.846 85.5275 482.121L83.9386 486.445C83.6177 487.319 82.3823 487.319 82.0614 486.445L80.4725 482.121C80.3713 481.846 80.1542 481.629 79.8788 481.527L75.5546 479.939C74.6811 479.618 74.6811 478.382 75.5546 478.061L79.8788 476.473C80.1542 476.371 80.3713 476.154 80.4725 475.879L82.0614 471.555Z"
+                    fill="#1A192E"></path>
+            </svg>
+        </div>
+        <div class="icon-container">
+            <div class="icon-item one">
+                <div class="top">
+                    <div class="icon-circle">
+                        <img src="//mysweetdreams.co/cdn/shop/files/Frame_562.png?v=1698644897&amp;width=3840g"
+                            alt="Restorative Sleep">
+                    </div>
+                    <h3>Relaxed & restorative sleep</h3>
+                </div>
+
+                <div class="description-container">
+                    <button class="close-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <p>Our sleep gummies are formulated to help you fall asleep faster.</p>
+
+                </div>
+            </div>
+            <div class="icon-item two">
+                <div class="top">
+                    <div class="icon-circle">
+                        <img src="//mysweetdreams.co/cdn/shop/files/Frame_562.png?v=1698644897&amp;width=3840g"
+                            alt="Restorative Sleep">
+                    </div>
+                    <h3>Relaxed & restorative sleep</h3>
+                </div>
+
+                <div class="description-container">
+                    <button class="close-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <p>Our sleep gummies are formulated to help you fall asleep faster.</p>
+                </div>
+            </div>
+            <div class="icon-item three">
+                <div class="top">
+                    <div class="icon-circle">
+                        <img src="//mysweetdreams.co/cdn/shop/files/Frame_562.png?v=1698644897&amp;width=3840g"
+                            alt="Restorative Sleep">
+                    </div>
+                    <h3>Relaxed & restorative sleep</h3>
+                </div>
+
+                <div class="description-container">
+                    <button class="close-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <p>Our sleep gummies are formulated to help you fall asleep faster.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="overlay"></div>
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Event Handling</title>
+        <style>
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+        </style>
+    </head>
+    
+        <script>
+            function handleMobileEvents() {
+                const iconItems = document.querySelectorAll('.icon-item');
+                const overlay = document.querySelector('.overlay');
+
+                iconItems.forEach(item => {
+                    const descriptionContainer = item.querySelector('.description-container');
+                    const closeBtn = item.querySelector('.close-btn');
+
+                    // Touch/click event to show description
+                    item.addEventListener('click', (e) => {
+                        // Prevent this if clicking inside the description container
+                        if (e.target.closest('.description-container')) return;
+
+                        descriptionContainer.style.display = 'block';
+                        overlay.style.display = 'block';
+                    });
+
+                    // Close button functionality
+                    closeBtn.addEventListener('click', () => {
+                        descriptionContainer.style.display = 'none';
+                        overlay.style.display = 'none';
+                    });
+                });
+            }
+
+            function handleWebEvents() {
+                const iconItems = document.querySelectorAll('.icon-item');
+                const closeButtons = document.querySelectorAll('.close-btn');
+
+                iconItems.forEach((item) => {
+                    item.addEventListener('mouseenter', () => {
+                        item.querySelector('.description-container').style.display = 'block';
+                    });
+
+                    item.addEventListener('mouseleave', () => {
+                        item.querySelector('.description-container').style.display = 'none';
+                    });
+                });
+
+                closeButtons.forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        btn.parentElement.style.display = 'none';
+                    });
+                });
+            }
+
+            function initializeEvents() {
+                const screenWidth = window.innerWidth;
+
+                if (screenWidth <= 768) {
+                    handleMobileEvents();
+                } else {
+                    handleWebEvents();
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', initializeEvents);
+            window.addEventListener('resize', initializeEvents);
+        </script>
+
+</body>
+
+</html>

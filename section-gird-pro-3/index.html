@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    
+            .section-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color:#ffffff;
+            }
+    
+            .section-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc-settings {
+                margin: 0 auto;
+                padding-top: 27px;
+                padding-bottom: 15px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .grid-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                text-align: center;
+            }
+    
+    
+            .grid-items-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                margin-top: 12px;
+                display: grid;
+                align-items: start;
+                grid: auto-flow dense 200px / repeat(1, minmax(0, 1fr));
+                row-gap: 4em;
+            }
+    
+            .grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                height: 100%;
+                /*width: 100%;*/
+                display: flex;
+                flex-direction: column;
+                padding: 20px 16px;
+                border-radius: 8px;
+                position: relative;
+                overflow: hidden;
+                text-decoration: none;
+            }
+    
+            .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                flex: 1 0 auto;
+                border-radius: 8px;
+            }
+    
+            .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+    
+            .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc img,
+            .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc>svg,
+            .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc iframe,
+            .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc video {
+                display: block;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                box-shadow: none;
+                border: 0px;
+                border-radius: 8px;
+            }
+    
+            .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                flex: 1 0 auto;
+                position: relative;
+                z-index: 2;
+                display: flex;
+                gap: 20px;
+                transform: translateX(-64px);
+                transition: all 0.35s ease 0s;
+            }
+    
+            .grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc:hover .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                transform: translateX(0px);
+                transition: all 0.35s ease 0s;
+            }
+    
+            .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg {
+                flex: 0 0 48px;
+                height: 48px;
+                transform: rotate(180deg);
+                opacity: 0;
+                transition: all 0.35s ease 0s;
+            }
+
+            .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg path {
+                fill: #ffffff;
+            }
+    
+            .grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc:hover .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg {
+                opacity: 1;
+                transition: all 0.35s ease 0s;
+            }
+    
+            .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                margin: 0px;
+                margin-top: 3px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+                word-break: break-word;
+            }
+    
+            .grid-item-subheading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                margin: 0px;
+                font-size: 16px;
+                color: #ffffff;
+                line-height: 130%;
+                text-transform: unset;
+                word-break: break-word;
+            }
+    
+            .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                z-index: 2;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                bottom: 35px;
+                right: 31px;
+                background-color: #ffffff;
+            }
+    
+            .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg {
+                width: 14px;
+                height: 14px;
+            }
+    
+            .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc.active .grid-pause-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc,
+            .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc .grid-play-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                display: none;
+            }
+    
+            .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc.active .grid-play-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                display: block;
+            }
+    
+            .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg path {
+                fill: #000000;
+            }
+    
+            @media(min-width: 1024px) {
+                
+    
+                .section-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc-settings {
+                    padding: 0 5rem;
+                    padding-top: 36px;
+                    padding-bottom: 20px;
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+    
+                .grid-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    text-align: center;
+                }
+    
+                .grid-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc * {
+                    font-size: 40px;
+                }
+    
+                .grid-items-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    margin-top: 16px;
+                    gap: 20px;
+                    --calculated-row-height: max(150px, min(100vw / 5, 220px));
+                    grid: auto-flow dense var(--calculated-row-height) / repeat(4, minmax(0, 1fr));
+                }
+    
+                .grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    justify-content: space-between;
+                    flex-direction: row;
+                    grid-template-columns: repeat(2, 1fr);
+                    padding: 20px 16px;
+                }
+    
+                .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    transform: translateX(-64px);
+                }
+    
+                .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg {
+                    flex: 0 0 48px;
+                    height: 48px;
+                }
+    
+                .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    margin-top: 4px;
+                }
+    
+                .grid-item-subheading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    font-size: 16px;
+                }
+    
+                .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    bottom: 30px;
+                    right: 26px;
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+  
+            
+            .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                font-family: Montserrat, sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+    
+    
+            
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 {
+                border-radius: 8px !important;
+                border: 0px solid #000000;
+                background-color: #f3f3f3;
+                grid-area: span min(2, 3) / span min(2, 2);
+            }
+    
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                font-size: 24px;
+            }
+    
+    
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc,
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-item-subheading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc,
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc svg path {
+                color: #212121;
+                fill: #212121;
+            }
+    
+    
+    
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc:after {
+                background-color: rgba(0, 0, 0, 0);
+            }
+    
+    
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                align-items: end;
+            }
+    
+            @media(min-width: 1024px) {
+                .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 {
+                    grid-area: span 3 / span 2;
+                }
+    
+                .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    align-items: end;
+                }
+    
+                .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    font-size: 36px;
+                }
+            }
+       
+            
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 {
+                display: flex;
+                justify-content: end;
+                flex-direction: column;
+            }
+    
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                position: absolute;
+                left: -0.5%;
+                right: 0;
+                top: -0.5%;
+                bottom: 0;
+                width: 101%;
+                height: 101%;
+            }
+    
+            .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                bottom: 20px;
+                right: 16px;
+            }
+    
+            @media(min-width: 1024px) {
+                .grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4 .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    bottom: 20px;
+                    right: 16px;
+                }
+            }
+       
+            
+            .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e {
+                border-radius: 8px !important;
+                border: 0px solid #000000;
+                background-color: #f3f3f3;
+                grid-area: span min(2, 3) / span min(2, 2);
+            }
+    
+            .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                font-size: 24px;
+            }
+    
+    
+            .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                align-items: end;
+            }
+    
+            @media(min-width: 1024px) {
+                .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e {
+                    grid-area: span 3 / span 2;
+                }
+    
+                .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    align-items: end;
+                }
+    
+                .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    font-size: 36px;
+                }
+            }
+       
+            
+            .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e {
+                display: flex;
+                justify-content: end;
+                flex-direction: column;
+            }
+    
+            .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                position: absolute;
+                left: -0.5%;
+                right: 0;
+                top: -0.5%;
+                bottom: 0;
+                width: 101%;
+                height: 101%;
+            }
+    
+            .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                bottom: 20px;
+                right: 16px;
+            }
+    
+            @media(min-width: 1024px) {
+                .grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e .grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc {
+                    bottom: 20px;
+                    right: 16px;
+                }
+            }
+        </style>
+    
+    
+        <div class="section-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc grid-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+            <div class="section-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc-settings">
+    
+                <div class="grid-items-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+      
+                    <div class="grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc grid-item-c279dba7-e889-403f-a7d6-c7d580dbeba4">
+                        <div class="grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                            <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path fill="#ffffff" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4,12l8,8,1.41-1.41L7.83,13H20V11H7.83l5.59-5.59L12,4Z"></path>
+                            </svg>
+                            <div class="grid-text-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+
+                                <p
+                                    class="grid-item-subheading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                                    1980 until today</p>
+    
+    
+                                <p class="grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                                    Klippan through the years</p>
+    
+                            </div>
+                        </div>
+                        <div class="grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+    
+    
+    
+    
+                            <video
+                                data-src="//section.store/cdn/shop/videos/c/vp/bfabaca7fd1743e0aa724e18704d92e9/bfabaca7fd1743e0aa724e18704d92e9.HD-720p-1.6Mbps-21770732.mp4?v=0"
+                                muted="" autoplay="" playsinline="" preload="none" loop="" class="lazy entered loaded"
+                                data-ll-status="loaded"
+                                src="//section.store/cdn/shop/videos/c/vp/bfabaca7fd1743e0aa724e18704d92e9/bfabaca7fd1743e0aa724e18704d92e9.HD-720p-1.6Mbps-21770732.mp4?v=0"
+                                __idm_id__="16387"></video>
+    
+    
+    
+    
+                            <div class="grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                                <svg class="grid-pause-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc"
+                                    width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" role="img">
+                                    <title>Pause</title>
+                                    <path d="M0 0H4V14H0V0Z" fill="currentColor"></path>
+                                    <path d="M8 0H12V14H8V0Z" fill="currentColor"></path>
+                                </svg>
+                                <svg class="grid-play-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc"
+                                    width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" role="img">
+                                    <title>Play</title>
+                                    <path d="M12 7L0 14L6.1196e-07 0L12 7Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc grid-item-6df83cc6-1469-4507-8a51-d8c409d31d7e">
+                        <div class="grid-content-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                            <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path fill="#ffffff" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4,12l8,8,1.41-1.41L7.83,13H20V11H7.83l5.59-5.59L12,4Z"></path>
+                            </svg>
+                            <div class="grid-text-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+    
+                                <p
+                                    class="grid-item-subheading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                                    Warm up your home for the holidays</p>
+    
+    
+                                <p class="grid-item-heading-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+                                    Cosy in the countryside</p>
+    
+                            </div>
+                        </div>
+                        <div class="grid-media-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc">
+    
+    
+                            <img src="//section.store/cdn/shop/files/PH_194357_472d819329.jpg?v=1702181143" alt=""
+                                lazy="loading">
+    
+    
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+    
+        <script>
+            function initGridPro() {
+
+                let lazyLoadInstance = new LazyLoad();
+
+                window.addEventListener(
+                    "LazyLoad::Initialized",
+                    function (event) {
+                        window.lazyLoadInstance = event.detail.instance;
+                    },
+                    false
+                );
+
+                let items = document.querySelectorAll('.grid-item-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc');
+                items.forEach(el => {
+                    let btn = el.querySelector('.grid-action-template--20276747501897__2dace915-78c7-473f-94d5-63421599f1bc');
+                    let video = el.querySelector('video');
+                    let frame = el.querySelector('iframe');
+                    if (btn) {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            btn.classList.toggle('active');
+                            if (btn.classList.contains('active')) {
+                                if (video) {
+                                    video.pause();
+                                }
+                                if (frame) {
+                                    frame.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                                }
+                            } else {
+                                if (video) {
+                                    video.play();
+                                }
+                                if (frame) {
+                                    frame.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+
+            document.addEventListener('DOMContentLoaded', initGridPro);
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+    
+            .section-template--22031113060681__ss_feature_21_WNKGcL {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                overflow: hidden;
+                background-color:#faf9f7;
+                
+            }
+    
+            .section-template--22031113060681__ss_feature_21_WNKGcL-settings {
+                margin: 0 auto;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .feature-body-template--22031113060681__ss_feature_21_WNKGcL {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0px;
+            }
+    
+            .feature-content-template--22031113060681__ss_feature_21_WNKGcL {
+                padding: 24px 0px;
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
+            }
+    
+            .feature-toggles-template--22031113060681__ss_feature_21_WNKGcL {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 14px;
+                padding-bottom: 10px;
+                position: relative;
+                border-bottom: 1px solid #000000;
+            }
+    
+            .feature-toggles-template--22031113060681__ss_feature_21_WNKGcL::-webkit-scrollbar {
+                display: none;
+            }
+    
+            .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL {
+                margin: 0px;
+                font-size: 14px;
+                color: #000000;
+                line-height: 130%;
+                text-transform: unset;
+                position: relative;
+                background-color: transparent;
+                border: 0px;
+                box-shadow: none;
+                cursor: pointer;
+                flex-shrink: 0;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 0px;
+                height: 2px;
+                background-color: #000000;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL.active::after {
+                width: 100%;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-tab-template--22031113060681__ss_feature_21_WNKGcL {
+                display: none;
+            }
+    
+            .feature-tab-template--22031113060681__ss_feature_21_WNKGcL.active {
+                display: block;
+            }
+    
+            .feature-items-template--22031113060681__ss_feature_21_WNKGcL {
+                display: grid;
+                margin-top: 24px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+    
+            .feature-item-template--22031113060681__ss_feature_21_WNKGcL {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+            }
+    
+            .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL {
+                width: 32px;
+                flex-shrink: 0;
+                border: 3px solid;
+                border-radius: 20px;
+            }
+    
+            .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL img,
+            .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL svg path {
+                fill: #000000;
+            }
+    
+            .feature-item-content-template--22031113060681__ss_feature_21_WNKGcL {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+    
+            .feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL {
+                margin: 0px;
+                font-size: 16px;
+                color: #000000;
+                line-height: 130%;
+                text-transform: unset;
+                transition: all 0.25s ease 0s;
+                word-break: break-word;
+            }
+    
+            .feature-item-text-template--22031113060681__ss_feature_21_WNKGcL {
+                margin: 0px;
+                margin-top: 12px;
+                font-size: 13px;
+                color: #000000;
+                line-height: 150%;
+                text-transform: unset;
+                transition: all 0.25s ease 0s;
+                word-break: break-word;
+            }
+    
+            .feature-images-template--22031113060681__ss_feature_21_WNKGcL {
+                position: relative;
+                order: 1;
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+    
+            .feature-images-template--22031113060681__ss_feature_21_WNKGcL::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 15%;
+                background: linear-gradient(to top, #faf9f7, transparent);
+                z-index: 2;
+            }
+    
+            .feature-image-template--22031113060681__ss_feature_21_WNKGcL {
+                display: none;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                height: 100%;
+               
+            }
+    
+            .feature-image-template--22031113060681__ss_feature_21_WNKGcL.active {
+                display: block;
+            }
+    
+            .feature-image-template--22031113060681__ss_feature_21_WNKGcL img,
+            .feature-image-template--22031113060681__ss_feature_21_WNKGcL svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .feature-image-template--22031113060681__ss_feature_21_WNKGcL>svg {
+                background-color: #AFAFAF;
+            }
+    
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+                position: absolute;
+                top: 36px;
+                left: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: calc(100% - 20px);
+                margin: 0;
+                font-size: 14px;
+                color: #ffffff;
+                line-height: 100%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 12px 16px;
+                border-radius: 0px;
+                transition: all 0.25s ease 0s;
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+                font-weight: 700;
+                z-index: 2;
+            }
+    
+            .feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+    
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL:hover {
+                color: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL svg {
+                width: 14px;
+                height: 14px;
+            }
+    
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL svg path {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+    
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL:hover svg path {
+                fill: #ffffff;
+                transition: all 0.25s ease 0s;
+            }
+     
+     
+            .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL {
+                font-family: "ITC New Baskerville", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+     
+     
+            .feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL {
+                font-family: "ITC New Baskerville", serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+   
+   
+            .feature-item-text-template--22031113060681__ss_feature_21_WNKGcL {
+                font-family: Futura, sans-serif;
+                font-weight: 300;
+                font-style: normal;
+            }
+
+
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+                font-family: Futura, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+                background-color: #000000;
+            }
+    
+            .feature-button-template--22031113060681__ss_feature_21_WNKGcL:hover {
+                background-color: #232323;
+            }
+
+               @media(min-width: 1024px) {
+    
+                .section-template--22031113060681__ss_feature_21_WNKGcL-settings {
+                    padding: 0 5rem;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+    
+                .feature-body-template--22031113060681__ss_feature_21_WNKGcL {
+                    grid-template-columns: 2fr 1fr;
+                    gap: 40px;
+                }
+    
+                .feature-content-template--22031113060681__ss_feature_21_WNKGcL {
+                    padding: 76px 0px;
+                    order: 1;
+                }
+    
+                .feature-toggles-template--22031113060681__ss_feature_21_WNKGcL {
+                    gap: 58px;
+                }
+    
+                .feature-toggle-template--22031113060681__ss_feature_21_WNKGcL {
+                    font-size: 20px;
+                }
+    
+                .feature-item-template--22031113060681__ss_feature_21_WNKGcL {
+                    gap: 20px;
+                    flex-direction: row;
+                    align-items: center;
+                }
+    
+                .feature-items-template--22031113060681__ss_feature_21_WNKGcL {
+                    grid-template-columns: repeat(2, 1fr);
+                    margin-top: 80px;
+                    gap: 40px;
+                }
+    
+                .feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL {
+                    width: 46px;
+                }
+    
+                .feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL {
+                    font-size: 21px;
+                }
+    
+                .feature-item-text-template--22031113060681__ss_feature_21_WNKGcL {
+                    margin-top: 12px;
+                    font-size: 16px;
+                }
+    
+                .feature-images-template--22031113060681__ss_feature_21_WNKGcL {
+                    order: 2;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+    
+                .feature-images-template--22031113060681__ss_feature_21_WNKGcL::before {
+                    bottom: unset;
+                    top: 0;
+                    width: 30%;
+                    height: 100%;
+                    background: linear-gradient(to left, transparent, #faf9f7 70%);
+                }
+    
+                .feature-image-template--22031113060681__ss_feature_21_WNKGcL {
+                    margin-right: -5rem;
+                }
+    
+                .feature-button-template--22031113060681__ss_feature_21_WNKGcL {
+                    padding: 12px 16px;
+                    font-size: 14px;
+                    left: calc(30% + 10px);
+                    width: calc(100% - 30% - 20px);
+                }
+            }
+        </style>
+    
+    
+        <div class="section-template--22031113060681__ss_feature_21_WNKGcL feature-template--22031113060681__ss_feature_21_WNKGcL">
+            <div class="section-template--22031113060681__ss_feature_21_WNKGcL-settings">
+                <div class="feature-body-template--22031113060681__ss_feature_21_WNKGcL">
+                    <div class="feature-content-template--22031113060681__ss_feature_21_WNKGcL">
+                        <div class="feature-toggles-template--22031113060681__ss_feature_21_WNKGcL">
+                            <button class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL active"
+                                id="tab_iTBGb6">Humidifiers</button>
+    
+                            <button class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL "
+                                id="tab_RYziye">Essential Oils</button>
+
+                            <button class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL "
+                                id="tab_dHUGLA">Diffuser Bundles</button>
+                                <button class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL active"
+                                    id="tab_iTBGb6">Humidifiers</button>
+                                
+                                <button class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL " id="tab_RYziye">Essential Oils</button>
+                                
+                                <button class="feature-toggle-template--22031113060681__ss_feature_21_WNKGcL " id="tab_dHUGLA">Diffuser Bundles</button>
+                        </div>
+    
+                        <div class="feature-tabs-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                            <div class="feature-tab-template--22031113060681__ss_feature_21_WNKGcL active" data-id="tab_iTBGb6">
+    
+                                <div class="feature-items-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/sound-waves.svg?v=1725127752" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Ultrasonic</p>
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Measures the humidity level and uses high-frequency vibrations to create a
+                                                fine mist.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/sound-waves_1.svg?v=1725128095" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Quiet Operation</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Quiet and energy-efficient, perfect for bedrooms and living rooms.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/moon.svg?v=1725127790" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Better Sleep</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Promote restful sleep by reducing nasal congestion and dryness.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/fern.svg?v=1725127969" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Healthy Houseplants</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Create a favorable environment for your houseplants to thrive.</p>
+    
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+    
+                            <div class="feature-tab-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_RYziye">
+    
+                                <div class="feature-items-template--22031113060681__ss_feature_21_WNKGcL">
+    
+    
+    
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/rosemary.svg?v=1725112873" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Rosemary</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Improves memory, concentration, and mental clarity. Can also help relieve
+                                                headaches.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/flower-petals.svg?v=1725126709" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Rose</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Reduces stress, anxiety, and insomnia. Can also help soothe skin irritations
+                                                and promote relaxation.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/thyme.svg?v=1725125968" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Thyme</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Promotes relaxation, reduces stress, and can help balance emotions.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/sage.svg?v=1725126291" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Sage</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Promotes relaxation, reduces anxiety, and can help balance hormones.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+    
+    
+                                </div>
+                            </div>
+    
+    
+                            <div class="feature-tab-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_dHUGLA">
+    
+                                <div class="feature-items-template--22031113060681__ss_feature_21_WNKGcL">
+    
+    
+    
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/flower-petals.svg?v=1725126709" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Enhanced Relaxation</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">The
+                                                combination of humidified air and calming essential oils can create a
+                                                relaxing atmosphere.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/sound-waves.svg?v=1725127752" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Natural Home Remedy</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">Can
+                                                be used as a complementary therapy to support overall health and well-being.
+                                            </p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/wind.svg?v=1725128664" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Improved Air Quality</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">Can
+                                                help reduce the levels of dust and allergens in the air.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+                                    <div class="feature-item-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                        <div class="feature-item-icon-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <img src="//section.store/cdn/shop/files/rosemary.svg?v=1725112873" alt=""
+                                                loading="lazy">
+    
+                                        </div>
+    
+                                        <div class="feature-item-content-template--22031113060681__ss_feature_21_WNKGcL">
+    
+                                            <p class="feature-item-heading-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Enhanced Concentration</p>
+    
+    
+    
+                                            <p class="feature-item-text-template--22031113060681__ss_feature_21_WNKGcL">
+                                                Certain essential oils, such as peppermint and rosemary, can boost cognitive
+                                                function.</p>
+    
+                                        </div>
+                                    </div>
+    
+    
+    
+    
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="feature-images-template--22031113060681__ss_feature_21_WNKGcL">
+    
+    
+                        <div class="feature-image-template--22031113060681__ss_feature_21_WNKGcL active"
+                            data-id="tab_iTBGb6">
+    
+                            <a href="" class="feature-button-template--22031113060681__ss_feature_21_WNKGcL">
+                                <p class="feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL">
+                                    Learn Humidifiers
+    
+                                </p>
+                            </a>
+    
+                            <img src="//section.store/cdn/shop/files/pexels-cottonbro-7408629.jpg?v=1725109944" alt=""
+                                loading="lazy">
+    
+                        </div>
+    
+    
+    
+                        <div class="feature-image-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_RYziye">
+    
+    
+                            <a href="/pages/404-2" class="feature-button-template--22031113060681__ss_feature_21_WNKGcL">
+                                <p class="feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL">
+                                    Shop Essential Oils
+    
+                                </p>
+                            </a>
+    
+    
+    
+                            <img src="//section.store/cdn/shop/files/pexels-doterra-international-llc-2204678-5380001.jpg?v=1725110364"
+                                alt="" loading="lazy">
+    
+                        </div>
+    
+    
+                        <div class="feature-image-template--22031113060681__ss_feature_21_WNKGcL " data-id="tab_dHUGLA">
+    
+    
+                            <a href="/pages/builder-bundle-2" class="feature-button-template--22031113060681__ss_feature_21_WNKGcL">
+                                <p class="feature-button-inner-template--22031113060681__ss_feature_21_WNKGcL">
+                                    Shop Bundles
+    
+                                </p>
+                            </a>
+    
+    
+    
+                            <img src="//section.store/cdn/shop/files/pexels-doterra-international-llc-2204678-6563887.jpg?v=1725110331"
+                                alt="" loading="lazy">
+    
+                        </div>
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function initFeature21() {
+
+                let toggles = document.querySelectorAll('.feature-toggle-template--22031113060681__ss_feature_21_WNKGcL');
+                let tabs = document.querySelectorAll('.feature-tab-template--22031113060681__ss_feature_21_WNKGcL');
+                let images = document.querySelectorAll('.feature-image-template--22031113060681__ss_feature_21_WNKGcL');
+
+                if (toggles) {
+                    toggles.forEach(el => {
+                        el.addEventListener('click', () => {
+                            toggles.forEach(element => {
+                                element.classList.remove('active');
+                            })
+                            el.classList.add('active');
+
+                            if (tabs) {
+                                tabs.forEach(element => {
+                                    let dataId = element.getAttribute('data-id');
+
+                                    if (el.id == dataId) {
+                                        element.classList.add('active');
+                                    } else {
+                                        element.classList.remove('active');
+                                    }
+                                })
+                            }
+
+                            if (images) {
+                                images.forEach(element => {
+                                    let dataId = element.getAttribute('data-id');
+
+                                    if (el.id == dataId) {
+                                        element.classList.add('active');
+                                    } else {
+                                        element.classList.remove('active');
+                                    }
+                                })
+                            }
+                        })
+                    })
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', initFeature21);
+
+        </script>
+    
+</body>
+</html>

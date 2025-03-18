@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <style>
+
+            .section-template--22834121441609__ss_gallery_8_kkcTf9 {
+                border-top: solid #000000 0px;
+                border-bottom: solid #000000 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 0rem;
+                margin-right: 0rem;
+                border-radius: 0px;
+                background-color:#262613;
+                overflow: hidden;
+            }
+
+            .section-template--22834121441609__ss_gallery_8_kkcTf9-settings {
+                margin: 0 auto;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
+
+            .gallery-body-template--22834121441609__ss_gallery_8_kkcTf9 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0px;
+            }
+
+            .gallery-card-template--22834121441609__ss_gallery_8_kkcTf9 {
+                position: relative;
+                border: 3px solid #ffffff;
+                border-radius: 0px;
+                overflow: hidden;
+            }
+
+            .gallery-image-template--22834121441609__ss_gallery_8_kkcTf9 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .gallery-image-template--22834121441609__ss_gallery_8_kkcTf9 img,
+            .gallery-image-template--22834121441609__ss_gallery_8_kkcTf9 svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .gallery-image-template--22834121441609__ss_gallery_8_kkcTf9 svg {
+                background-color: #AFAFAF;
+            }
+
+            .gallery-image-template--22834121441609__ss_gallery_8_kkcTf9::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #00000080;
+                opacity: 0;
+                transition: all 0.5s ease 0s;
+            }
+
+            .gallery-card-template--22834121441609__ss_gallery_8_kkcTf9:hover .gallery-image-template--22834121441609__ss_gallery_8_kkcTf9::after {
+                opacity: 1;
+                transition: all 0.5s ease 0s;
+            }
+
+            .gallery-card-content-template--22834121441609__ss_gallery_8_kkcTf9 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow-y: scroll;
+                scrollbar-width: none;
+                gap: 10px;
+                position: relative;
+                height: 100%;
+                padding: 24px 24px;
+                z-index: 2;
+            }
+
+            .gallery-card-content-template--22834121441609__ss_gallery_8_kkcTf9::-webkit-scrollbar {
+                display: none;
+            }
+
+            .gallery-subtitle-template--22834121441609__ss_gallery_8_kkcTf9 {
+                text-align: left;
+            }
+
+            .gallery-subtitle-template--22834121441609__ss_gallery_8_kkcTf9 * {
+                margin: 0;
+                font-size: 10px;
+                line-height: 130%;
+                color: #ffffff;
+                text-transform: unset;
+                word-break: break-word;
+            }
+
+            .gallery-title-template--22834121441609__ss_gallery_8_kkcTf9 {
+                margin: 0;
+                margin-top: 16px;
+                text-align: left;
+                font-size: 20px;
+                line-height: 150%;
+                color: #ffffff;
+                text-transform: unset;
+                word-break: break-word;
+            }
+
+            .gallery-bottom-template--22834121441609__ss_gallery_8_kkcTf9 {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .gallery-text-template--22834121441609__ss_gallery_8_kkcTf9 {
+                text-align: left;
+            }
+
+            .gallery-text-template--22834121441609__ss_gallery_8_kkcTf9 * {
+                margin: 0;
+                font-size: 14px;
+                line-height: 150%;
+                color: #ffffff;
+                text-transform: unset;
+                word-break: break-word;
+            }
+
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+                max-width: fit-content;
+                margin: 0;
+                margin-top: 24px;
+                font-size: 13px;
+                color: #383921;
+                line-height: 100%;
+                text-align: center;
+                text-transform: unset;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 100px;
+                transition: all 0.25s ease 0s;
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+                font-weight: 700;
+            }
+
+            .gallery-button-inner-template--22834121441609__ss_gallery_8_kkcTf9 {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9:hover {
+                color: #f6f5f3;
+                transition: all 0.25s ease 0s;
+            }
+
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9 svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9 svg path {
+                fill: #383921;
+                transition: all 0.25s ease 0s;
+            }
+
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9:hover svg path {
+                fill: #f6f5f3;
+                transition: all 0.25s ease 0s;
+            }
+
+            @media(min-width: 1024px) {
+            
+                .section-template--22834121441609__ss_gallery_8_kkcTf9-settings {
+                    padding: 0 5rem;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    padding-left: 0rem;
+                    padding-right: 0rem;
+                }
+
+                .gallery-body-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0px;
+                    align-items: center;
+                }
+
+                .gallery-card-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    overflow: hidden;
+                }
+
+                .gallery-card-content-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    overflow: hidden;
+                    padding: 50px 50px;
+                }
+
+                .gallery-subtitle-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    text-align: left;
+                }
+
+                .gallery-subtitle-template--22834121441609__ss_gallery_8_kkcTf9 * {
+                    font-size: 12px;
+                }
+
+                .gallery-title-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    margin-top: 16px;
+                    text-align: left;
+                    font-size: 24px;
+                }
+
+                .gallery-bottom-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    align-items: start;
+                }
+
+                .gallery-text-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    text-align: left;
+                }
+
+                .gallery-text-template--22834121441609__ss_gallery_8_kkcTf9 * {
+                    font-size: 14px;
+                }
+
+                .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    margin-top: 32px;
+                    padding: 10px 28px;
+                    font-size: 14px;
+                }
+            }
+       
+       
+            .gallery-title-template--22834121441609__ss_gallery_8_kkcTf9 {
+                font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                font-style: normal;
+            }
+       
+       
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9 {
+                font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                font-style: normal;
+            }
+      
+      
+            .gallery-card-template--22834121441609__ss_gallery_8_kkcTf9 {
+                aspect-ratio: 12/12;
+            }
+      
+      
+            @media(min-width: 1024px) {
+                .gallery-card-template--22834121441609__ss_gallery_8_kkcTf9 {
+                    aspect-ratio: 12/12;
+                }
+            }
+     
+     
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9 {
+                background-color: #f6f5f3;
+                border: 1px solid #f6f5f3;
+            }
+
+            .gallery-button-template--22834121441609__ss_gallery_8_kkcTf9:hover {
+                background-color: rgba(0, 0, 0, 0);
+                border: 1px solid #f6f5f3;
+            }
+       
+       
+            .gallery-card-wrapper-card_p6mAfR {
+                padding: 30px;
+            }
+
+            @media(min-width: 1024px) {
+                .gallery-card-wrapper-card_p6mAfR {
+                    padding: 60px;
+                }
+            }
+       
+       
+            .gallery-card-wrapper-card_C3iRgF {
+                padding: 0px;
+            }
+
+            @media(min-width: 1024px) {
+                .gallery-card-wrapper-card_C3iRgF {
+                    padding: 0px;
+                }
+            }
+        </style>
+
+
+        <div class="section-template--22834121441609__ss_gallery_8_kkcTf9 gallery-template--22834121441609__ss_gallery_8_kkcTf9">
+            <div class="section-template--22834121441609__ss_gallery_8_kkcTf9-settings">
+                <div class="gallery-body-template--22834121441609__ss_gallery_8_kkcTf9">
+
+                    <div
+                        class="gallery-card-wrapper-template--22834121441609__ss_gallery_8_kkcTf9 gallery-card-wrapper-card_p6mAfR">
+                        <div class="gallery-card-template--22834121441609__ss_gallery_8_kkcTf9">
+                            <div class="gallery-image-template--22834121441609__ss_gallery_8_kkcTf9">
+
+                                <img src="//section.store/cdn/shop/files/fleur-kaan-j0dxJsNgnVM-unsplash.jpg?v=1734591440"
+                                    alt="">
+
+                            </div>
+                            <div class="gallery-card-content-template--22834121441609__ss_gallery_8_kkcTf9">
+                                <div class="gallery-top-template--22834121441609__ss_gallery_8_kkcTf9">
+
+
+                                    <h3 class="gallery-title-template--22834121441609__ss_gallery_8_kkcTf9">Gel suncare
+                                    </h3>
+
+                                </div>
+                                <div class="gallery-bottom-template--22834121441609__ss_gallery_8_kkcTf9">
+
+                                    <div class="gallery-text-template--22834121441609__ss_gallery_8_kkcTf9">
+                                        <p>Scientifically proven to shield &amp; enhance all skin tones.</p>
+                                    </div>
+
+
+                                    <div class="gallery-button-template--22834121441609__ss_gallery_8_kkcTf9">
+                                        <p class="gallery-button-inner-template--22834121441609__ss_gallery_8_kkcTf9">
+                                            learn more
+
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="gallery-card-wrapper-template--22834121441609__ss_gallery_8_kkcTf9 gallery-card-wrapper-card_C3iRgF">
+                        <div class="gallery-card-template--22834121441609__ss_gallery_8_kkcTf9">
+                            <div class="gallery-image-template--22834121441609__ss_gallery_8_kkcTf9">
+
+                                <img src="//section.store/cdn/shop/files/fleur-kaan-e7jpGYe7OtU-unsplash.jpg?v=1734591131"
+                                    alt="">
+
+                            </div>
+                            <div class="gallery-card-content-template--22834121441609__ss_gallery_8_kkcTf9">
+                                <div class="gallery-top-template--22834121441609__ss_gallery_8_kkcTf9">
+
+                                    <div class="gallery-subtitle-template--22834121441609__ss_gallery_8_kkcTf9">
+                                        <p>*Dermatologist approved</p>
+                                    </div>
+
+
+                                    <h3 class="gallery-title-template--22834121441609__ss_gallery_8_kkcTf9">Our latest
+                                        blendable, hydrating browning radiance gel features Broad Spectrum SPF 30.</h3>
+
+                                </div>
+                                <div class="gallery-bottom-template--22834121441609__ss_gallery_8_kkcTf9">
+
+
+                                    <div class="gallery-button-template--22834121441609__ss_gallery_8_kkcTf9">
+                                        <p class="gallery-button-inner-template--22834121441609__ss_gallery_8_kkcTf9">
+                                            learn more
+
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
